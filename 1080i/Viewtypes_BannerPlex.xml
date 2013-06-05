@@ -1,0 +1,351 @@
+<includes>
+<!-- ================ -->
+<!-- Banner Plex (53) -->
+<!-- ================ -->
+    <include name="Viewtype-BannerPlex">
+        <control type="group">
+            <control type="group">
+                <visible>Control.IsVisible(53) + !Window.IsActive(movieinformation)</visible>
+                <include>CommonViewAnimations</include>
+                <control type="group">
+                    <posx>115</posx>
+        			<posy>148</posy>
+                    <control type="image">
+                        <description>Panel</description>
+        				<posx>41</posx>
+        				<posy>35</posy>
+        				<width>1600</width>
+        				<height>356</height>
+                        <texture border="10">views/newgloss/whitepanel.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>eeeeeeee</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <description>Poster Image Side</description>
+        				<posx>41</posx>
+        				<posy>35</posy>
+        				<width>530</width>
+        				<height>356</height>
+                        <texture background="true" diffuse="views/newgloss/bannerplex-left-diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <fadetime>300</fadetime>
+                    </control>
+                    <control type="image">
+                        <description>Poster Image Side</description>
+        				<posx>41</posx>
+        				<posy>35</posy>
+        				<width>530</width>
+        				<height>356</height>
+                        <texture background="true" diffuse="views/newgloss/bannerplex-left-diffuse.png">views/newgloss/info-gloss.png</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <posx>1541</posx>
+                        <posy>35</posy>
+                        <width>100</width>
+                        <height>100</height>
+                        <aspect>keepaspect</aspect>
+                        <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                    </control>
+					<control type="image">
+                        <description>Left Border</description>
+        				<posx>31</posx>
+        				<posy>25</posy>
+        				<width>540</width>
+        				<height>376</height>
+                        <texture border="25">views/newgloss/border-left.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <description>Right Border</description>
+        				<posx>571</posx>
+        				<posy>25</posy>
+        				<width>1080</width>
+        				<height>376</height>
+                        <texture border="25">views/newgloss/border-right-no.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="group">
+                    <posx>600</posx>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>61</posy>
+                            <width>42</width>
+                            <height>28</height>
+                            <aspect>keepaspect</aspect>
+                            <texture>$VAR[BannerListHDSDFlag]</texture>
+                            <visible>!IsEmpty(ListItem.VideoResolution)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Set icon</description>
+                            <posx>0</posx>
+                            <posy>60</posy>
+                            <width>42</width>
+                            <height>28</height>
+                            <texture>flags/other/set-banner.png</texture>
+                            <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>53</posx>
+                            <posy>60</posy>
+                            <width>671</width>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font-Alaska-S38-BL</font>
+                            <textcolor>mod-infotags</textcolor>
+                            <scroll>false</scroll>
+                            <align>left</align>
+                            <visible>!IsEmpty(ListItem.VideoResolution) | substring(ListItem.Path,videodb://1/7,left)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>60</posy>
+                            <width>744</width>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font-Alaska-S38-BL</font>
+                            <textcolor>mod-infotags</textcolor>
+                            <scroll>false</scroll>
+                            <align>left</align>
+                            <visible>IsEmpty(ListItem.VideoResolution) + !substring(ListItem.Path,videodb://1/7,left)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Rating star</description>
+                            <posx>0</posx>
+                            <posy>115</posy>
+                            <width>21</width>
+                            <height>20</height>
+                            <texture>views/banner/other/rating.png</texture>
+                            <visible>!IsEmpty(ListItem.Rating)</visible>
+                        </control>
+                        <control type="label">
+                            <description>Rating / Year / Runtime Label</description>
+                            <posx>27</posx>
+                            <posy>110</posy>
+                            <width>750</width>
+                            <font>Font-Alaska-S25-BL</font>
+                            <label>$INFO[ListItem.Rating,, • ]$INFO[ListItem.Year]$INFO[ListItem.Studio, • ,]</label>
+                            <textcolor>mod-infotags-li</textcolor>
+                            <align>left</align>
+                            <scroll>false</scroll>
+                            <animation effect="slide" end="-27" time="0" condition="IsEmpty(ListItem.Rating)">Conditional</animation>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>142</posy>
+                            <width>777</width>
+                            <label>$INFO[ListItem.Genre]</label>
+                            <font>Font-Alaska-S25-BL</font>
+                            <textcolor>mod-infotags-li</textcolor>
+                            <scroll>false</scroll>
+                            <align>left</align>
+                        </control>
+                    </control>
+                    <control type="textbox">
+                        <description>Plot</description>
+                        <posx>600</posx>
+                        <posy>194</posy>
+                        <width>1008</width>
+                        <height>178</height>
+                        <info>ListItem.Plot</info>
+                        <align>justify</align>
+                        <textcolor>mod-infotags-li</textcolor>
+                        <autoscroll delay="13000" time="3000" repeat="13000" />
+                        <font>Font-Condensed-S25</font>
+                    </control>
+                    
+                </control>
+                <control type="wraplist" id="53">
+					<posx>170</posx>
+					<posy>575</posy>
+					<width>1666</width>
+					<height>350</height>
+                    <include>OptionsShutdownAnimation</include>
+                    <include>FullscreenDimensions</include>
+                    <scrolltime tween="cubic" easing="out">500</scrolltime>
+                    <orientation>vertical</orientation>
+                    <viewtype label="Banner (Plex)">list</viewtype>
+                    <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                    <onleft condition="Skin.HasSetting(KioskMode)">53</onleft>
+                    <onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">53</onright>
+                    <onup>53</onup>
+                    <ondown>53</ondown>
+                    <preloaditems>2</preloaditems>
+                    <focusposition>1</focusposition>
+                    <movement>1</movement>
+                    <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.HasFolders</visible>
+                    <itemlayout height="118">
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                            <colordiffuse>ff888888</colordiffuse>
+                            <aspectratio>stretch</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos) + [!IsEmpty(ListItem.Art(banner)) | IsEmpty(ListItem.Art(fanart))]</visible>
+                        </control>
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
+                            <colordiffuse>ff888888</colordiffuse>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos) + [IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
+                        </control>
+                        <!-- GLOSS AND BORDER OVERLAY -->
+                        <control type="image">
+                            <description>Gloss</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
+                            <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Border</description>
+                            <posx>-7</posx>
+                            <posy>-7</posy>
+                            <width>520</width>
+                            <height>115</height>
+                            <texture border="25">views/newgloss/border.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
+                        </control> 
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/banner/diffuse/bannerplex.png">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <colordiffuse>ff888888</colordiffuse>
+                            <aspectratio>keep</aspectratio>
+                            <visible>Skin.HasSetting(BannerPlexLogos) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1278</posx>
+                            <posy>23</posy>
+                            <width>280</width>
+                            <height>60</height>
+                            <texture>views/banner/other/$INFO[ListItem.StarRating]</texture>
+                            <visible>!Container.Content(Seasons)</visible>
+                            <colordiffuse>mod-infotags-a</colordiffuse>
+                        </control>
+                        <control type="label">
+                            <description>Label</description>
+                            <posx>527</posx>
+                            <posy>20</posy>
+                            <width>750</width>
+                            <font>Font-Alaska-S34-BL</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>mod-infotags-a</textcolor>
+                            <align>left</align>
+                            <scroll>false</scroll>
+                        </control>
+                        <control type="label">
+                            <description>Rating / Year / Runtime Label</description>
+                            <posx>527</posx>
+                            <posy>54</posy>
+                            <width>750</width>
+                            <font>Font-Alaska-S25-BL</font>
+                            <label>$INFO[ListItem.Genre,, • ]$INFO[ListItem.Year]$INFO[ListItem.Studio, • ,]</label>
+                            <textcolor>mod-infotags-a</textcolor>
+                            <align>left</align>
+                            <scroll>false</scroll>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="118">
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                            <aspectratio>stretch</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos) + [!IsEmpty(ListItem.Art(banner)) | IsEmpty(ListItem.Art(fanart))]</visible>
+                        </control>
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$INFO[ListItem.Art(fanart)]</texture>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos) + [IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
+                        </control>
+                        <!-- GLOSS AND BORDER OVERLAY -->
+                        <control type="image">
+                            <description>Gloss</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
+                            <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Border</description>
+                            <posx>-7</posx>
+                            <posy>-7</posy>
+                            <width>520</width>
+                            <height>115</height>
+                            <texture border="25">views/newgloss/border.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                            <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
+                        </control> 
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>3</posx>
+                            <posy>3</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/banner/diffuse/bannerplex.png">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>Skin.HasSetting(BannerPlexLogos) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+                        </control>
+                        <control type="image">
+                            <posx>1278</posx>
+                            <posy>23</posy>
+                            <width>280</width>
+                            <height>60</height>
+                            <texture>views/banner/other/$INFO[ListItem.StarRating]</texture>
+                            <visible>!Container.Content(Seasons)</visible>
+                            <colordiffuse>mod-infotags-d</colordiffuse>
+                        </control>
+                        <control type="label">
+                            <description>Item Label</description>
+                            <posx>527</posx>
+                            <posy>20</posy>
+                            <width>750</width>
+                            <font>Font-Alaska-S34-BL</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>mod-infotags-d</textcolor>
+                            <align>left</align>
+                            <scroll>false</scroll>
+                        </control>
+                        <control type="label">
+                            <description>Rating / Year / Runtime Label</description>
+                            <posx>527</posx>
+                            <posy>54</posy>
+                            <width>750</width>
+                            <font>Font-Alaska-S25-BL</font>
+                            <label>$INFO[ListItem.Genre,, • ]$INFO[ListItem.Year]$INFO[ListItem.Studio, • ,]</label>
+                            <textcolor>mod-infotags</textcolor>
+                            <align>left</align>
+                            <scroll>false</scroll>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+        </control>
+    </include>    
+</includes>

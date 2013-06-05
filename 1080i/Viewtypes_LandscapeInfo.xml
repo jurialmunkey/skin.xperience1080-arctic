@@ -1,0 +1,314 @@
+<includes>
+<!-- ==================== -->
+<!-- Landscape Poster (507) -->
+<!-- ==================== -->
+    <include name="Viewtype-Landscape">
+        <control type="group">
+            <include>FullscreenDimensions</include>
+            <include>OptionsShutdownAnimation</include>
+            <include>BannerListAnimations</include>
+            <visible>!Window.IsActive(movieinformation) + Control.IsVisible(507)</visible>  
+            <control type="fixedlist" id="507">
+                <posx>-350</posx>
+                <posy>390</posy>
+                <width>2618</width>
+                <height>830</height>
+                <pagecontrol>70</pagecontrol>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <orientation>horizontal</orientation>
+                <viewtype label="Landscape (Info)">list</viewtype>
+                <onleft>507</onleft>
+                <onright>507</onright>
+                <onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
+                <onup condition="Skin.HasSetting(KioskMode)">507</onup>
+                <ondown>70</ondown>
+                <focusposition>3</focusposition>
+                <movement>2</movement>
+                <preloaditems>2</preloaditems>
+                <itemlayout width="374">
+                    <control type="group">
+                        <animation effect="Conditional" condition="true">
+                            <effect type="zoom" end="80" time="0" center="187,250" />
+                        </animation>
+                        <posx>0</posx>
+                        <control type="image">
+                            <description>Back bit</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>471</height>
+                            <texture background="true" diffuse="views/newgloss/landscape.png">windows/common/white.png</texture>
+                            <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                            <colordiffuse>ff181818</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <description>Back bit</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>471</height>
+                            <texture background="true" diffuse="views/newgloss/landscape.png">windows/home/tile-greyed.png</texture>
+                            <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                            <colordiffuse>55ffffff</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <description>Info Band</description>
+                            <posx>0</posx>
+                            <posy>210</posy>
+                            <width>374</width>
+                            <height>81</height>
+                            <texture>windows/common/white.png</texture>
+                            <colordiffuse>ff333333</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <description>Separator</description>
+                            <posx>0</posx>
+                            <posy>209</posy>
+                            <width>374</width>
+                            <height>3</height>
+                            <texture border="1">views/list/other/separator2.png</texture>
+                        </control>
+                        <control type="image">
+                            <description>Separator</description>
+                            <posx>0</posx>
+                            <posy>290</posy>
+                            <width>374</width>
+                            <height>3</height>
+                            <texture border="1">views/list/other/separator2.png</texture>
+                        </control>
+                        <control type="label">
+							<posx>17</posx>
+							<posy>221</posy>
+							<width>350</width>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font-Alaska-S32-BL</font>
+							<textcolor>ddwhite</textcolor>
+							<shadowcolor>88000000</shadowcolor>
+							<scroll>false</scroll>
+							<align>left</align>
+						</control>
+						<control type="label">
+							<posx>17</posx>
+							<posy>256</posy>
+							<width>350</width>
+							<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.Rating, • ,]</label>
+							<font>Font-Condensed-S26</font>
+							<textcolor>ddwhite</textcolor>
+							<shadowcolor>88000000</shadowcolor>
+							<scroll>false</scroll>
+							<align>left</align>
+						</control>
+                        <control type="textbox">
+							<description>Plot</description>
+							<posx>12</posx>
+							<posy>298</posy>
+							<width>346</width>
+							<height>158</height>
+							<info>ListItem.Plot</info>
+							<align>justify</align>
+							<textcolor>99FFFFFF</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<autoscroll>false</autoscroll>
+							<font>Font-Condensed-S22</font>
+						</control>
+                        <control type="image">
+                            <description>Landscape</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>210</height>
+                            <texture background="true" diffuse="views/newgloss/landscape-diffuse.png">$VAR[ListInfoLandscapeVar]</texture>
+                            <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <posx>274</posx>
+                            <posy>0</posy>
+                            <width>100</width>
+                            <height>100</height>
+                            <aspect>keepaspect</aspect>
+                            <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                        </control>
+                        <!-- GLOSS AND BORDER OVERLAY -->
+                        <control type="image">
+                            <description>Gloss</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>210</height>
+                            <texture diffuse="views/newgloss/landscape.png">views/newgloss/info-gloss.png</texture>
+                            <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
+                        </control>
+                        <control type="image">
+                            <description>Border Top</description>
+                            <posx>-10</posx>
+                            <posy>-10</posy>
+                            <width>394</width>
+                            <height>220</height>
+                            <texture border="25">views/newgloss/border-top.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <description>Border Bottom</description>
+                            <posx>-10</posx>
+                            <posy>210</posy>
+                            <width>394</width>
+                            <height>271</height>
+                            <texture border="25">views/newgloss/border-bottom-no.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control> 
+                    </control>
+                </itemlayout>
+                <focusedlayout width="374">
+                    <control type="group">
+                        <animation type="Focus" condition="Container(507).OnNext | Container(507).OnPrevious">
+                            <effect type="zoom" start="80" end="100" time="350" tween="sine" easing="out" center="187,250" />
+                        </animation>
+                        <animation type="Unfocus" condition="Container(507).OnNext | Container(507).OnPrevious">
+                            <effect type="zoom" start="100" end="80" time="250" tween="sine" easing="out" center="187,250" />
+                        </animation>
+                        <posx>0</posx>
+                        <control type="image">
+                            <description>Shadow Focus</description>
+                            <posx>-103</posx>
+                            <posy>-10</posy>
+                            <width>580</width>
+                            <height>481</height>
+                            <texture>views/posterview/shadow-focus.png</texture>
+                            <animation type="Focus" condition="Container(507).OnNext | Container(507).OnPrevious">
+								<effect type="fade" start="0" end="100" time="350" />
+							</animation>
+							<animation type="Unfocus" condition="Container(507).OnNext | Container(507).OnPrevious">
+								<effect type="fade" start="100" end="0" time="250" />
+							</animation>
+                        </control>
+                        <control type="image">
+                            <description>Back bit</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>471</height>
+                            <texture background="true" diffuse="views/newgloss/landscape.png">windows/common/white.png</texture>
+                            <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                            <colordiffuse>ff181818</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <description>Back bit</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>471</height>
+                            <texture background="true" diffuse="views/newgloss/landscape.png">windows/home/tile-greyed.png</texture>
+                            <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                            <colordiffuse>55ffffff</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <description>Info Band</description>
+                            <posx>0</posx>
+                            <posy>210</posy>
+                            <width>374</width>
+                            <height>81</height>
+                            <texture>windows/common/white.png</texture>
+                            <colordiffuse>ff333333</colordiffuse>
+                        </control>
+                        <control type="image">
+                            <description>Separator</description>
+                            <posx>0</posx>
+                            <posy>209</posy>
+                            <width>374</width>
+                            <height>3</height>
+                            <texture border="1">views/list/other/separator2.png</texture>
+                        </control>
+                        <control type="image">
+                            <description>Separator</description>
+                            <posx>0</posx>
+                            <posy>290</posy>
+                            <width>374</width>
+                            <height>3</height>
+                            <texture border="1">views/list/other/separator2.png</texture>
+                        </control>
+                        <control type="label">
+							<posx>17</posx>
+							<posy>221</posy>
+							<width>350</width>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font-Alaska-S32-BL</font>
+							<textcolor>ddwhite</textcolor>
+							<shadowcolor>88000000</shadowcolor>
+							<scroll>false</scroll>
+							<align>left</align>
+						</control>
+						<control type="label">
+							<posx>17</posx>
+							<posy>256</posy>
+							<width>350</width>
+							<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.Rating, • ,]</label>
+							<font>Font-Condensed-S26</font>
+							<textcolor>ddwhite</textcolor>
+							<shadowcolor>88000000</shadowcolor>
+							<scroll>false</scroll>
+							<align>left</align>
+						</control>
+                        <control type="textbox">
+							<description>Plot</description>
+							<posx>12</posx>
+							<posy>298</posy>
+							<width>346</width>
+							<height>158</height>
+							<info>ListItem.Plot</info>
+							<align>justify</align>
+							<textcolor>99FFFFFF</textcolor>
+							<shadowcolor>99000000</shadowcolor>
+							<autoscroll>false</autoscroll>
+							<font>Font-Condensed-S22</font>
+						</control>
+                        <control type="image">
+                            <description>Landscape</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>210</height>
+                            <texture background="true" diffuse="views/newgloss/landscape-diffuse.png">$VAR[ListInfoLandscapeVar]</texture>
+                            <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <posx>274</posx>
+                            <posy>0</posy>
+                            <width>100</width>
+                            <height>100</height>
+                            <aspect>keepaspect</aspect>
+                            <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                        </control>
+                        <!-- GLOSS AND BORDER OVERLAY -->
+                        <control type="image">
+                            <description>Gloss</description>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>374</width>
+                            <height>210</height>
+                            <texture diffuse="views/newgloss/landscape.png">views/newgloss/info-gloss.png</texture>
+                            <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
+                        </control>
+                        <control type="image">
+                            <description>Border Top</description>
+                            <posx>-10</posx>
+                            <posy>-10</posy>
+                            <width>394</width>
+                            <height>220</height>
+                            <texture border="25">views/newgloss/border-top.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <description>Border Bottom</description>
+                            <posx>-10</posx>
+                            <posy>210</posy>
+                            <width>394</width>
+                            <height>271</height>
+                            <texture border="25">views/newgloss/border-bottom-no.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control> 
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </include>
+</includes>

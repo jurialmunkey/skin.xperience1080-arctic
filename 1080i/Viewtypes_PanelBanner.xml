@@ -1,0 +1,206 @@
+<includes>
+<!-- =============== -->
+<!-- Banner Panel (509)      -->
+<!-- =============== -->
+    <include name="Viewtype-BannerPanelVideo">
+        <control type="group">
+            <visible>Control.IsVisible(509) + !Window.IsActive(movieinformation)</visible>
+            <include>CommonViewAnimations</include>
+            <include>OptionsShutdownAnimation</include>
+            <posx>36</posx>
+			<posy>180</posy>
+            <control type="wraplist" id="509">
+				<posx>840</posx>
+				<posy>0</posy>
+				<width>504</width>
+				<height>714</height>
+                <include>FullscreenDimensions</include>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <orientation>vertical</orientation>
+                <viewtype label="Panel (Banners)">list</viewtype>
+                <onup>509</onup>
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <onleft condition="Skin.HasSetting(KioskMode)">509</onleft>
+                <ondown>509</ondown>
+                <onright>509</onright>
+                <preloaditems>2</preloaditems>
+                <focusposition>2</focusposition>
+                <visible>Container.Content(tvshows)</visible>
+                <itemlayout width="504" height="119">
+                    <control type="image">
+                        <description>Banner</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>492</width>
+                        <height>107</height>
+                        <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                        <colordiffuse>ff999999</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <!-- GLOSS AND BORDER OVERLAY -->
+                    <control type="image">
+                        <description>Gloss</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>492</width>
+                        <height>107</height>
+                        <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
+                        <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
+                        <colordiffuse>55ffffff</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <description>Border</description>
+                        <posx>-4</posx>
+                        <posy>-4</posy>
+                        <width>512</width>
+                        <height>127</height>
+                        <texture border="25">views/newgloss/border.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>aaffffff</colordiffuse>
+                    </control> 
+                    <control type="image">
+                        <description>Banner</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>492</width>
+                        <height>107</height>
+                        <texture border="5">views/newgloss/banner-diffuse.png</texture>
+                        <colordiffuse>66ffffff</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="504" height="119">
+                    <control type="group">
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>6</posx>
+                            <posy>6</posy>
+                            <width>492</width>
+                            <height>107</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        <!-- GLOSS AND BORDER OVERLAY -->
+                        <control type="image">
+                            <description>Gloss</description>
+                            <posx>6</posx>
+                            <posy>6</posy>
+                            <width>492</width>
+                            <height>107</height>
+                            <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
+                            <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
+                        </control>
+                        <control type="image">
+                            <description>Border</description>
+                            <posx>-4</posx>
+                            <posy>-4</posy>
+                            <width>512</width>
+                            <height>127</height>
+                            <texture border="25">views/newgloss/border.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control> 
+                        
+                    </control>
+                </focusedlayout>
+            </control>
+            
+            <control type="group">
+                <posx>0</posx>
+                <control type="image">
+                    <description>Landscape</description>
+                    <posx>6</posx>
+                    <posy>6</posy>
+                    <width>828</width>
+                    <height>464</height>
+                    <texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[ListInfoLandscapeVar]</texture>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <fadetime>200</fadetime>
+                </control>
+                <control type="image">
+                    <posx>734</posx>
+                    <posy>6</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <aspect>keepaspect</aspect>
+                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                    <visible>!IsEmpty(ListItem.Overlay)</visible>
+                </control> 
+                <!-- GLOSS AND BORDER OVERLAY -->
+                <control type="image">
+                    <description>Gloss</description>
+                    <posx>6</posx>
+                    <posy>6</posy>
+                    <width>828</width>
+                    <height>464</height>
+                    <texture diffuse="views/newgloss/panel-fanart-diffuse.png">views/newgloss/info-gloss.png</texture>
+                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Border</description>
+                    <posx>-4</posx>
+                    <posy>-4</posy>
+                    <width>848</width>
+                    <height>484</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control> 
+                <control type="group">
+                    <posy>472</posy>
+                    <control type="label">
+                        <posx>24</posx>
+                        <posy>30</posy>
+                        <width>790</width>
+                        <label>$INFO[ListItem.Label]</label>
+                        <font>Font-Alaska-S32-BL</font>
+                        <textcolor>mod-infotags</textcolor>
+                        <scroll>false</scroll>
+                        <align>left</align>
+                    </control>
+                    <control type="textbox">
+                        <posx>24</posx>
+                        <posy>72</posy>
+                        <width>790</width>
+                        <height>147</height>
+                        <label>$INFO[ListItem.Plot]</label>
+                        <font>Font-Alaska-S25-NC</font>
+                        <textcolor>mod-infotags</textcolor>
+                        <align>justify</align>
+                        <autoscroll delay="13000" time="3000" repeat="13000" />
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <posx>1350</posx>
+                <control type="image">
+                    <description>Poster</description>
+                    <posx>0</posx>
+                    <posy>6</posy>
+                    <width>492</width>
+                    <height>702</height>
+                    <texture background="true" diffuse="views/newgloss/panel-bigposter-diffuse.png">$VAR[WallPoster]</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <fadetime>250</fadetime>
+                </control>  
+                <!-- GLOSS AND BORDER OVERLAY -->
+                <control type="image">
+                    <description>Gloss</description>
+                    <posx>0</posx>
+                    <posy>6</posy>
+                    <width>492</width>
+                    <height>702</height>
+                    <texture diffuse="views/newgloss/panel-bigposter-diffuse.png">views/newgloss/gloss.png</texture>
+                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Border</description>
+                    <posx>-10</posx>
+                    <posy>-4</posy>
+                    <width>512</width>
+                    <height>722</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                </control>  
+            </control>
+        </control>
+    </include>    
+</includes>

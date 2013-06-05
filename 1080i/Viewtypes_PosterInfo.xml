@@ -1,0 +1,281 @@
+<includes>
+<!-- ========================= -->
+<!-- Classic Poster small (56) -->
+<!-- ========================= -->
+
+    <include name="Viewtype-PosterInfo">
+        <control type="group">
+            <include>FullscreenDimensions</include>
+            <include>OptionsShutdownAnimation</include>
+            <include>BannerListAnimations</include>
+             
+            <control type="group">
+                <posx>50</posx>
+                <posy>50</posy>
+
+                <control type="group">
+                   <visible>!Window.IsActive(movieinformation) + Control.IsVisible(56)</visible>
+                    <animation effect="slide" start="0" end="0,200" time="150" delay="600" reversible="false" condition="Skin.HasSetting(AltPosterInfo)">Conditional</animation>
+                    <posx>405</posx>
+                    <posy>160</posy>
+                    <control type="image">
+                        <posx>35</posx>
+                        <posy>35</posy>
+                        <width>1372</width>
+                        <height>259</height>
+                        <texture border="25">views/newgloss/whitepanel.png</texture>
+                    </control>
+                    <control type="image">
+						<posx>1332</posx>
+						<posy>35</posy>
+						<width>75</width>
+						<height>75</height>
+						<aspect>keepaspect</aspect>
+						<texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+					</control>
+                    <control type="image">
+                        <posx>35</posx>
+                        <posy>35</posy>
+                        <width>445</width>
+                        <height>260</height>
+                        <texture diffuse="views/newgloss/posterinfo-left-diffuse.png" background="true">$VAR[ListInfoLandscapeVar]</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <fadetime>200</fadetime>
+                    </control>
+                    <control type="image">
+                        <posx>35</posx>
+                        <posy>35</posy>
+                        <width>445</width>
+                        <height>260</height>
+                        <texture diffuse="views/newgloss/posterinfo-left-diffuse.png" background="true">views/newgloss/info-gloss.png</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <posx>25</posx>
+                        <posy>25</posy>
+                        <width>455</width>
+                        <height>280</height>
+                        <texture border="25">views/newgloss/border-left.png</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <posx>480</posx>
+                        <posy>25</posy>
+                        <width>937</width>
+                        <height>280</height>
+                        <texture border="25">views/newgloss/border-right-no.png</texture>
+                        <aspectratio scalediffuse="false">stretch</aspectratio>
+                    </control>
+                    
+                    <control type="group">
+                        <posy>12</posy>
+                        <posx>317</posx>
+                        
+                        <control type="label">
+                            <posx>190</posx>
+                            <posy>44</posy>
+                            <width>680</width>
+                            <label>$INFO[ListItem.Label]</label>
+                            <font>Font-Alaska-S34-BL</font>
+                            <textcolor>mod-infotags</textcolor>
+                            <scroll>false</scroll>
+                            <align>left</align>
+                        </control>
+                        <control type="label">
+                            <posx>190</posx>
+                            <posy>78</posy>
+                            <width>680</width>
+                            <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre]</label>
+                            <font>Font-Alaska-S25-BL</font>
+                            <textcolor>mod-infotags-li</textcolor>
+                            <scroll>false</scroll>
+                            <align>left</align>
+                        </control>
+                        <control type="group">
+                            <visible>![Container(56).OnNext | Container(56).OnPrevious]</visible>
+                            <animation effect="fade" end="100" start="0" time="500" delay="0" reversible="false">Visible</animation>
+                            <control type="textbox">
+                                <description>Plot</description>
+                                <posx>190</posx>
+                                <posy>118</posy>
+                                <width>870</width>
+                                <height>145</height>
+                                <label>$INFO[ListItem.Plot]</label>
+                                <align>justify</align>
+                                <textcolor>mod-infotags-li</textcolor>
+                                <autoscroll delay="13000" time="3000" repeat="13000" />
+                                <font>Font-Alaska-S25-NC</font>
+                            </control>
+                        </control>
+                    </control>
+                </control>
+                <!-- END BANNER INFO -->            
+                <control type="group">
+                    <visible>!Window.IsActive(movieinformation) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + Control.IsVisible(56)</visible>
+                    <control type="wraplist" id="56">
+                        <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(episodes) | Container.Content(Actors) | Container.Content(Sets) | Container.HasFolders</visible>
+                        <posx>-178</posx>
+                        <posy>350</posy>
+                        <width>2200</width>
+                        <height>730</height>
+                        <pagecontrol>70</pagecontrol>
+                        <scrolltime tween="cubic" easing="out">500</scrolltime>
+                        <orientation>horizontal</orientation>
+                        <viewtype label="Poster (Info)">list</viewtype>
+                        <onleft>56</onleft>
+                        <onright>56</onright>
+                        <onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
+                        <onup condition="Skin.HasSetting(KioskMode)">56</onup>
+                        <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+                        <ondown condition="Skin.HasSetting(KioskMode)">56</ondown>
+                        <focusposition>1</focusposition>
+                        <preloaditems>2</preloaditems>  
+                        <itemlayout width="224">
+                            <control type="group">
+                                <animation effect="Conditional" condition="true">
+                                    <effect type="zoom" end="75" time="0" center="190,340" />
+                                </animation>
+                                <!-- REFLECTION-->
+                                <control type="image">
+                                    <description>Reflection</description>
+                                    <posx>60</posx>
+                                    <posy>471</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+                                    <texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$VAR[PosterViewPoster]</texture>
+                                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                                </control>
+                                <!-- SHADOW -->
+                                <control type="image">
+                                    <description>Shadow Bottom</description>
+                                    <posx>40</posx>
+                                    <posy>462</posy>
+                                    <width>310</width>
+                                    <height>18</height>
+                                    <texture>views/posterview/shadow.png</texture>
+                                </control>
+                                <!-- POSTER -->
+                                <control type="image">
+                                    <description>Poster</description>
+                                    <posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+                                    <texture background="true" diffuse="views/newgloss/posterinfo-diffuse.png">$VAR[PosterViewPoster]</texture>
+                                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                                </control>
+                                <!-- WATCHED OVERLAY -->
+                                <control type="image">
+                                    <posx>252</posx>
+                                    <posy>70</posy>
+                                    <width>75</width>
+                                    <height>75</height>
+                                    <aspect>keepaspect</aspect>
+                                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                                </control>
+                                <!-- GLOSS AND BORDER OVERLAY -->
+                                <control type="image">
+                                    <description>Gloss</description>
+                                    <posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+                                    <texture diffuse="views/newgloss/posterinfo-diffuse.png">views/newgloss/gloss.png</texture>
+                                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
+                                </control>
+                                <control type="image">
+                                    <description>Overlay</description>
+                                    <posx>50</posx>
+                                    <posy>60</posy>
+                                    <width>287</width>
+                                    <height>420</height>
+                                    <texture border="25">views/newgloss/border.png</texture>
+                                </control>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="224">
+                            <control type="group">
+                                <animation type="Focus" condition="[Container(56).OnNext | Container(56).OnPrevious]">
+                                    <effect type="zoom" start="75" end="100" time="350" tween="sine" easing="out" center="190,340" />
+                                </animation>
+                                <animation type="Unfocus" condition="[Container(56).OnNext | Container(56).OnPrevious]">
+                                    <effect type="zoom" start="100" end="75" time="250" tween="sine" easing="out" center="190,340" />
+                                </animation>
+
+                                <!-- REFLECTION -->
+                                <control type="image">
+                                    <description>Reflection</description>
+                                    <posx>60</posx>
+                                    <posy>471</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+                                    <texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$VAR[PosterViewPoster]</texture>
+                                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                                </control>
+                                
+                                <!-- SHADOWS -->
+                                <control type="image">
+                                    <description>Shadow Bottom</description>
+                                    <posx>40</posx>
+                                    <posy>462</posy>
+                                    <width>310</width>
+                                    <height>18</height>
+                                    <texture>views/posterview/shadow.png</texture>
+                                </control>
+                                <control type="image">
+                                    <description>Shadow focus</description>
+                                    <posx>-19</posx>
+                                    <posy>70</posy>
+                                    <width>424</width>
+                                    <height>400</height>
+                                    <texture>views/posterview/shadow-focus.png</texture>
+                                </control>
+                                
+                                <!-- POSTER -->
+                                <control type="image">
+                                    <description>Poster</description>
+                                    <posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+                                    <texture background="true" diffuse="views/newgloss/posterinfo-diffuse.png">$VAR[PosterViewPoster]</texture>
+                                    <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
+                                </control>
+
+                                <!-- WATCHED OVERLAY -->
+                                <control type="image">
+                                    <posx>252</posx>
+                                    <posy>70</posy>
+                                    <width>75</width>
+                                    <height>75</height>
+                                    <aspect>keepaspect</aspect>
+                                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                                </control>
+                                
+                                <!-- GLOSS AND BORDER OVERLAY -->
+                                <control type="image">
+                                    <description>Gloss</description>
+                                    <posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+                                    <texture diffuse="views/newgloss/posterinfo-diffuse.png">views/newgloss/gloss.png</texture>
+                                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
+                                </control>
+                                <control type="image">
+                                    <description>Overlay</description>
+                                    <posx>50</posx>
+                                    <posy>60</posy>
+                                    <width>287</width>
+                                    <height>420</height>
+                                    <texture border="25">views/newgloss/border.png</texture>
+                                </control>
+
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+</includes>

@@ -1,0 +1,439 @@
+<includes>
+<!-- =============== -->
+<!-- Music Wall (53)      -->
+<!-- =============== -->
+    <include name="Viewtype-MusicWall">
+        <control type="group">
+            <visible>Control.IsVisible(53) + !Window.IsActive(musicinformation)</visible>
+            <include>CommonViewAnimations</include>
+            <include>OptionsShutdownAnimation</include>
+            <posx>127</posx>
+			<posy>180</posy>
+            <control type="panel" id="53">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1666</width>
+				<height>714</height>
+                <include>FullscreenDimensions</include>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <orientation>vertical</orientation>
+                <viewtype label="Wall">list</viewtype>
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <onleft condition="Skin.HasSetting(KioskMode)">53</onleft>
+                <onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+                <onright condition="Skin.HasSetting(KioskMode)">53</onright>
+                <onup>53</onup>
+                <ondown>53</ondown>
+                <preloaditems>2</preloaditems>
+                <visible>Container.Content(albums) | Container.Content(artists) | Container.Content(songs)</visible>
+                <itemlayout width="238" height="238">
+                    <control type="image">
+                        <description>Poster</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>226</width>
+                        <height>226</height>
+                        <texture background="true" diffuse="views/newgloss/musicwall-diffuse.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
+                        <colordiffuse>ffcccccc</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="group">
+						<visible>Container.Content(artists)</visible>
+						<control type="image">
+							<description>Border</description>
+							<posx>6</posx>
+							<posy>192</posy>
+							<width>226</width>
+							<height>40</height>
+							<texture border="5">views/newgloss/bottom-panel.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>77000000</colordiffuse>
+						</control>
+						<control type="label">
+							<description>Artist Label</description>
+							<posx>218</posx>
+							<posy>197</posy>
+							<width>200</width>
+							<label>$INFO[ListItem.Label]</label>
+							<align>right</align>
+							<textcolor>eeffffff</textcolor>
+							<shadowcolor>cc000000</shadowcolor>
+							<font>Font-Alaska-S20-BL</font>
+							<scroll>false</scroll>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+					</control>
+                    <control type="image">
+                        <description>Gloss</description>
+                        <posx>-4</posx>
+                        <posy>-4</posy>
+                        <width>246</width>
+                        <height>246</height>
+                        <texture border="25">views/newgloss/border.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                </itemlayout>
+                <focusedlayout width="238" height="238">
+                    <control type="group">
+                        <animation effect="zoom" end="135" start="100" time="200" center="auto">Focus</animation>
+                        <control type="image">
+                            <posx>6</posx>
+                            <posy>6</posy>
+                            <width>226</width>
+                            <height>226</height>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <texture background="true" diffuse="views/newgloss/musicwall-diffuse.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
+                        </control>
+                        <control type="group">
+							<visible>Container.Content(artists)</visible>
+							<control type="image">
+								<description>Border</description>
+								<posx>6</posx>
+								<posy>192</posy>
+								<width>226</width>
+								<height>40</height>
+								<texture border="5">views/newgloss/bottom-panel.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>77000000</colordiffuse>
+							</control>
+							<control type="label">
+								<description>Artist Label</description>
+								<posx>218</posx>
+								<posy>197</posy>
+								<width>200</width>
+								<label>$INFO[ListItem.Label]</label>
+								<align>right</align>
+								<textcolor>eeffffff</textcolor>
+								<shadowcolor>cc000000</shadowcolor>
+								<font>Font-Alaska-S20-BL</font>
+								<scroll>false</scroll>
+								<wrapmultiline>false</wrapmultiline>
+							</control>
+						</control>
+                        <control type="image">
+                            <description>Border</description>
+                            <posx>-4</posx>
+                            <posy>-4</posy>
+                            <width>246</width>
+                            <height>246</height>
+                            <texture border="25">views/newgloss/border.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        
+                        <!-- INFO LEFT-->
+                        <control type="group">
+                        	<visible>![Container(53).Column(0) | Container(53).Column(1) | Container(53).Column(2)]</visible>
+                        	<animation type="Focus">
+								<effect type="fade" end="100" start="0" time="200" delay="1000"/>
+                        		<effect type="zoom" end="100" start="65" time="200" delay="1000" center="auto"/>
+                        	</animation>
+                        	<posx>5</posx>
+							<control type="image">
+								<description>Wall Info</description>
+								<posx>-504</posx>
+								<posy>-4</posy>
+								<width>500</width>
+								<height>246</height>
+								<texture border="75">views/newgloss/wallinfo.png</texture>
+								<aspectratio>stretch</aspectratio>
+							</control>
+							<control type="image">
+								<description>Wall Info Fanart</description>
+								<posx>-494</posx>
+								<posy>6</posy>
+								<width>460</width>
+								<height>226</height>
+								<texture>$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<colordiffuse diffuse="views/newgloss/wallinfo-diffuse.png">18ffffff</colordiffuse>
+							</control>
+							<control type="image">
+								<description>Wall Info Fanart Border</description>
+								<posx>-504</posx>
+								<posy>-4</posy>
+								<width>480</width>
+								<height>246</height>
+								<texture border="35">views/newgloss/border-fo.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>77ffffff</colordiffuse>
+							</control>
+							<control type="group">
+								<control type="label">
+									<posx>-476</posx>
+									<posy>20</posy>
+									<width>210</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>left</align>
+									<label>$LOCALIZE[557]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<posx>-52</posx>
+									<posy>20</posy>
+									<width>410</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>right</align>
+									<label>$INFO[ListItem.Artist]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+                            </control>
+                            <control type="group">
+                            	<visible>Container.Content(artists)</visible>
+								<control type="label">
+									<posx>-476</posx>
+									<posy>48</posy>
+									<width>210</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>left</align>
+									<label>$LOCALIZE[515]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<posx>-52</posx>
+									<posy>48</posy>
+									<width>410</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>right</align>
+									<label>$VAR[MusicBottomGenre]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>85</posy>
+									<width>423</width>
+									<height>130</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>justify</align>
+									<label>$INFO[ListItem.Property(Artist_Description)]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>!IsEmpty(ListItem.Property(Artist_Description))</visible>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>120</posy>
+									<width>423</width>
+									<height>32</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>center</align>
+									<label>No Description Available</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>IsEmpty(ListItem.Property(Artist_Description))</visible>
+								</control>
+							</control>
+                            <control type="group">
+                            	<visible>Container.Content(albums)</visible>
+								<control type="label">
+									<posx>-476</posx>
+									<posy>48</posy>
+									<width>210</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>left</align>
+									<label>$LOCALIZE[558]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<posx>-52</posx>
+									<posy>48</posy>
+									<width>410</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>right</align>
+									<label>$INFO[ListItem.Album]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>85</posy>
+									<width>423</width>
+									<height>130</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>justify</align>
+									<label>$INFO[ListItem.Property(Album_Description)]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>!IsEmpty(ListItem.Property(Album_Description))</visible>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>120</posy>
+									<width>423</width>
+									<height>32</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>center</align>
+									<label>$LOCALIZE[19055]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>IsEmpty(ListItem.Property(Album_Description))</visible>
+								</control>
+							</control>
+                        </control>
+                        
+                        <!-- INFO RIGHT-->
+                        <control type="group">
+                        	<visible>[Container(53).Column(0) | Container(53).Column(1) | Container(53).Column(2)]</visible>
+                        	<animation type="Focus">
+								<effect type="fade" end="100" start="0" time="200" delay="1000"/>
+                        		<effect type="zoom" end="100" start="65" time="200" delay="1000" center="auto"/>
+                        	</animation>
+							<control type="image">
+								<description>Wall Info</description>
+								<posx>236</posx>
+								<posy>-4</posy>
+								<width>500</width>
+								<height>246</height>
+								<texture border="75" flipx="true">views/newgloss/wallinfo.png</texture>
+								<aspectratio>stretch</aspectratio>
+							</control>
+							<control type="image">
+								<description>Wall Info Fanart</description>
+								<posx>266</posx>
+								<posy>6</posy>
+								<width>460</width>
+								<height>226</height>
+								<texture>$INFO[ListItem.Art(fanart)]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<colordiffuse diffuse="views/newgloss/wallinfo-diffuse.png">18ffffff</colordiffuse>
+							</control>
+							<control type="image">
+								<description>Wall Info Fanart Border</description>
+								<posx>256</posx>
+								<posy>-4</posy>
+								<width>480</width>
+								<height>246</height>
+								<texture border="35">views/newgloss/border-fo.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>77ffffff</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>760</posx>
+								<control type="label">
+									<posx>-476</posx>
+									<posy>20</posy>
+									<width>210</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>left</align>
+									<label>$LOCALIZE[557]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<posx>-52</posx>
+									<posy>20</posy>
+									<width>410</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>right</align>
+									<label>$INFO[ListItem.Artist]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+                            </control>
+                            <control type="group">
+                            	<posx>760</posx>
+                            	<visible>Container.Content(artists)</visible>
+								<control type="label">
+									<posx>-476</posx>
+									<posy>48</posy>
+									<width>210</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>left</align>
+									<label>$LOCALIZE[515]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<posx>-52</posx>
+									<posy>48</posy>
+									<width>410</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>right</align>
+									<label>$VAR[MusicBottomGenre]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>85</posy>
+									<width>423</width>
+									<height>130</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>justify</align>
+									<label>$INFO[ListItem.Property(Artist_Description)]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>!IsEmpty(ListItem.Property(Artist_Description))</visible>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>120</posy>
+									<width>423</width>
+									<height>32</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>center</align>
+									<label>$LOCALIZE[19055]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>IsEmpty(ListItem.Property(Artist_Description))</visible>
+								</control>
+							</control>
+                            <control type="group">
+                            	<posx>760</posx>
+                            	<visible>Container.Content(albums)</visible>
+								<control type="label">
+									<posx>-476</posx>
+									<posy>48</posy>
+									<width>210</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>left</align>
+									<label>$LOCALIZE[558]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="label">
+									<posx>-52</posx>
+									<posy>48</posy>
+									<width>410</width>
+									<font>Font-Alaska-S18-L</font>
+									<align>right</align>
+									<label>$INFO[ListItem.Album]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>85</posy>
+									<width>423</width>
+									<height>130</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>justify</align>
+									<label>$INFO[ListItem.Property(Album_Description)]</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>!IsEmpty(ListItem.Property(Album_Description))</visible>
+								</control>
+								<control type="textbox">
+									<posx>-476</posx>
+									<posy>120</posy>
+									<width>423</width>
+									<height>32</height>
+									<font>Font-Alaska-S18-NC</font>
+									<align>center</align>
+									<label>No Description Available</label>
+									<textcolor>mod-infotags-d</textcolor>
+									<scroll>false</scroll>
+									<visible>IsEmpty(ListItem.Property(Album_Description))</visible>
+								</control>
+							</control>
+                        </control>
+                    </control>
+                </focusedlayout>
+            </control>
+        </control>
+    </include>    
+</includes>

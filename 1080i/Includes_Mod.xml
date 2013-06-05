@@ -1,0 +1,531 @@
+<includes>
+<!------------------------------------------------------------>
+<!-- This file contains all my custom variables etc         -->
+<!-- Add it to Includes.xml                                 -->
+<!-- Add new viewtypes into Includes_Views.xml              -->
+<!-- Includes_WindowContents.xml has shadow overlay changes -->
+<!-- MyVideoNav.xml has changes to viewtype names etc.      -->
+<!------------------------------------------------------------>
+    
+    <variable name="AeonFlagHDSD">
+        <value condition="IntegerGreaterThan(ListItem.VideoResolution,1079)">aeonflags/resolution/1080.png</value>
+        <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">aeonflags/resolution/720.png</value>
+        <value condition="IntegerGreaterThan(ListItem.VideoResolution,575)">aeonflags/resolution/576.png</value>
+        <value condition="IntegerGreaterThan(ListItem.VideoResolution,539)">aeonflags/resolution/540.png</value>
+        <value>aeonflags/resolution/480.png</value>
+    </variable>
+    
+    <variable name="AeonFlagRating">
+        <value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">aeonflags/rating/MPAA_G_Certificate_US.png</value>
+        <value condition="[substring(ListItem.MPAA,Rated PG) + !substring(ListItem.MPAA,13)] | substring(ListItem.MPAA,USA:PG)">aeonflags/rating/MPAA_PG_Certificate_US.png</value>
+        <value condition="[substring(ListItem.MPAA,PG-13) | substring(ListItem.MPAA,USA:PG-13)] + [!substring(ListItem.MPAA,USA:R) + !substring(ListItem.MPAA,rated R)]">aeonflags/rating/MPAA_PG-13_Certificate_US.png</value>
+        <value condition="substring(ListItem.MPAA,Rated R) | substring(ListItem.MPAA,USA:R)">aeonflags/rating/MPAA_R_Certificate_US.png</value>
+        <value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">aeonflags/rating/MPAA_NC-17_Certificate_US.png</value>
+        <value condition="substring(listitem.mpaa,TV-Y) + ![substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)]">aeonflags/rating/tv-y.png</value>
+        <value condition="substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)">aeonflags/rating/tv-y7.png</value>
+        <value condition="substring(listitem.mpaa,TV-G)">aeonflags/rating/TV-G_Certificate_US.png</value>
+        <value condition="substring(listitem.mpaa,TV-PG)">aeonflags/rating/TV-PG_Certificate_US.png</value>
+        <value condition="substring(listitem.mpaa,TV-14)">aeonflags/rating/TV-14_Certificate_US.png</value>
+        <value condition="substring(listitem.mpaa,TV-MA)">aeonflags/rating/TV-MA_Certificate_US.png</value>
+        <value>aeonflags/rating/MPAA_NR_Certificate_US.png</value>
+    </variable>
+    
+    <variable name="MPAAVar">
+        <value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">G</value>
+        <value condition="[substring(ListItem.MPAA,Rated PG) + !substring(ListItem.MPAA,13)] | substring(ListItem.MPAA,USA:PG)">PG</value>
+        <value condition="[substring(ListItem.MPAA,PG-13) | substring(ListItem.MPAA,USA:PG-13)] + [!substring(ListItem.MPAA,USA:R) + !substring(ListItem.MPAA,rated R)]">PG13</value>
+        <value condition="substring(ListItem.MPAA,Rated R) | substring(ListItem.MPAA,USA:R)">R</value>
+        <value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">NC17</value>
+        <value condition="substring(listitem.mpaa,TV-Y) + ![substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)]">TV-Y</value>
+        <value condition="substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)">TV-Y7</value>
+        <value condition="substring(listitem.mpaa,TV-G)">TV-G</value>
+        <value condition="substring(listitem.mpaa,TV-PG)">TV-PG</value>
+        <value condition="substring(listitem.mpaa,TV-14)">TV-14</value>
+        <value condition="substring(listitem.mpaa,TV-MA)">TV-MA</value>
+        <value>NR</value>
+    </variable>
+    
+    <variable name="AeonFlagAspect">
+        <value condition="!IsEmpty(ListItem.VideoAspect) + [Container.Content(episodes) | Container.Content(movies)]">$INFO[ListItem.VideoAspect,aeonflags/aspectratio/,.png]</value>
+        <value>aeonflags/aspectratio/default.png</value>
+    </variable>
+    
+    <variable name="AeonFlagStudio">
+        <value condition="!IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio,aeonflags/studios/,.png]</value>
+        <value>aeonflags/studios/default-studio.png</value>
+    </variable>
+    
+    <variable name="AeonFlagVideoCodec">
+        <value condition="!IsEmpty(ListItem.VideoCodec) + [Container.Content(episodes) | Container.Content(movies)]">$INFO[ListItem.VideoCodec,aeonflags/source/,.png]</value>
+        <value>aeonflags/source/default.png</value>
+    </variable>
+    
+    <variable name="AeonFlagAudioCodec">
+        <value condition="!IsEmpty(ListItem.AudioCodec) + [Container.Content(episodes) | Container.Content(movies)]">$INFO[ListItem.AudioCodec,aeonflags/audio/,.png]</value>
+        <value condition="!IsEmpty(ListItem.FileExtension) + [Container.Content(songs)]">$INFO[ListItem.FileExtension,aeonflags/audio/,.png]</value>
+        <value>aeonflags/audio/defaultscreen.png</value>
+    </variable>
+    
+    <variable name="AeonFlagStars">
+        <value condition="IntegerGreaterThan(ListItem.Rating,9)">aeonflags/music/rating/rating5.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,7)">aeonflags/music/rating/rating4.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,5)">aeonflags/music/rating/rating3.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,3)">aeonflags/music/rating/rating2.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,1)">aeonflags/music/rating/rating1.png</value>
+        <value>aeonflags/music/rating/rating0.png</value>
+    </variable>
+    
+    
+    <variable name="ClearLogosVar">
+        <value condition="!IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="!IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
+    </variable>
+    
+    <variable name="SeasonalYear">
+        <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Season)">S$INFO[ListItem.Season]</value>
+        <value condition="Container.Content(seasons) + !IsEmpty(ListItem.Season)">S$INFO[ListItem.Season]</value>
+        <value condition="Container.Content(seasons) + IsEmpty(ListItem.Season)">Extras</value>
+        <value condition="Container.Content(songs) + !IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
+        <value condition="![Container.Content(songs) | Container.Content(seasons)] + !IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
+        <value>N/A</value>
+    </variable>
+    
+    
+    <variable name="MusicBottomGenre">
+        <value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Genre))">$INFO[ListItem.Property(Artist_Genre)]</value>
+        <value condition="Container.Content(albums) + !IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
+        <value condition="Container.Content(songs) + !IsEmpty(ListItem.Album)">$INFO[ListItem.Album]</value>
+        <value>N/A</value>
+    </variable>
+    
+    <variable name="PlayerArtworkVar">
+        <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
+        <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
+        <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+        <value>$INFO[Player.Art(clearlogo)]</value>
+    </variable>
+    
+    <variable name="SongFanartVar">
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value>windows/common/darkgrey.png</value>
+    </variable>
+    
+    <variable name="PosterViewPosterAlt">
+        <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+        <value condition="!substring(Container.FolderPath,videodb://,left) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="[Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="Container.Content(Actors)">$INFO[ListItem.Icon]</value>
+        <value condition="Container.Content(Genres)">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</value>
+        <value>$INFO[ListItem.ActualIcon,views/fallbacks/,/large.png]</value>
+    </variable>
+    
+    <variable name="BannerListPosterLeft">
+        <value condition="[Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+        <value condition="!substring(Container.FolderPath,videodb://,left) + !IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+        <value condition="Container.Content(Actors)">$INFO[ListItem.Icon]</value>
+        <value condition="Container.Content(Genres)">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</value>
+        <value>$INFO[ListItem.ActualIcon,views/fallbacks/,/large.png]</value>
+    </variable>
+    
+    <variable name="PlexBanner">
+        <value condition="!IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
+        <value>$INFO[ListItem.ActualIcon,views/fallbacks/,/banner.png]</value>
+    </variable>
+    
+    <variable name="BottomClearLogoText">
+        <value condition="Container.Content(Seasons)">$INFO[ListItem.TVShowTitle]</value>
+        <value>$INFO[ListItem.Label]</value>
+    </variable>
+    
+    <variable name="MusicBottomClearLogoText">
+        <value condition="Container.Content(Songs)">$INFO[ListItem.Artist]</value>
+        <value condition="Container.Content(Albums)">$INFO[ListItem.Artist]</value>
+        <value condition="Container.Content(Artists)">$INFO[ListItem.Artist]</value>
+    </variable>
+    
+    <variable name="VideoInfoTopLabel">
+        <value condition="Container.Content(Episodes)">$INFO[ListItem.TVShowTitle]</value>
+        <value>$INFO[ListItem.Title]</value>
+    </variable>
+    
+    <variable name="MusicCarouselArt">
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <!--<value condition="!IsEmpty(ListItem.Art(album))">$INFO[ListItem.Art(album)]</value>
+        <value>$INFO[ListItem.Icon]</value>-->
+        <!--<value>views/fallbacks/DefaultArtist.png/square-large.png</value>-->
+        <value>DefaultMusicArtists.png</value>
+    </variable>
+    
+    <variable name="MusicCarouselArtBanner">
+        <value condition="!IsEmpty(ListItem.Art(fanart)) + Container.Content(artists)">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+        <value>$INFO[ListItem.ActualIcon,views/fallbacks/,/square-small.png]</value>
+    </variable>
+    
+    <variable name="MusicCarouselFanArtBanner">
+        <value condition="!IsEmpty(ListItem.Art(fanart)) + !Container.Content(albums)">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="!IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+        <value>$INFO[ListItem.ActualIcon,views/fallbacks/,/square-small.png]</value>
+    </variable>
+    
+    <variable name="ListInfoLandscapeVar">
+        <value condition="Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
+        <value condition="!IsEmpty(ListItem.Art(landscape)) + Skin.HasSetting(PreferLandscapeArt)">$INFO[ListItem.Art(landscape)]</value>
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="IsEmpty(ListItem.Thumb)">$INFO[ListItem.ActualIcon,views/fallbacks/,/medium.png]</value>
+        <value>$INFO[ListItem.Thumb]</value>
+    </variable>
+    
+    <variable name="ListInfoPosterVar">
+        <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
+        <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+        <value condition="IsEmpty(ListItem.Art(poster)) + !IsEmpty(ListItem.Icon)">$INFO[ListItem.Icon]</value>
+		<value>$INFO[ListItem.ActualIcon,views/fallbacks/,/medium.png]</value>
+    </variable>
+    
+    <variable name="ListInfoRightFanart">
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value>views/fallbacks/DefaultArtist.png/square-large.png</value>
+    </variable>
+    <!-- The Music Track List Uses An Alarm set in My Music Nav -->
+    
+    <variable name="MusicTracklistVar">
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.13.Title)) + System.AlarmLessOrEqual(cycletracklist,3) + !System.AlarmLessOrEqual(cycletracklist,0)">$INFO[Window(home).Property(Album.Song.13.Title), [B]13. [/B],][CR]$INFO[Window(home).Property(Album.Song.14.Title), [B]14. [/B],][CR]$INFO[Window(home).Property(Album.Song.15.Title), [B]15. [/B],][CR]$INFO[Window(home).Property(Album.Song.16.Title), [B]16. [/B],]</value>
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.9.Title)) + System.AlarmLessOrEqual(cycletracklist,6) + !System.AlarmLessOrEqual(cycletracklist,3)">$INFO[Window(home).Property(Album.Song.9.Title), [B]9. [/B],][CR]$INFO[Window(home).Property(Album.Song.10.Title), [B]10. [/B],][CR]$INFO[Window(home).Property(Album.Song.11.Title), [B]11. [/B],][CR]$INFO[Window(home).Property(Album.Song.12.Title), [B]12. [/B],]</value>
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.5.Title)) + System.AlarmLessOrEqual(cycletracklist,9) + !System.AlarmLessOrEqual(cycletracklist,6)">$INFO[Window(home).Property(Album.Song.5.Title), [B]5. [/B],][CR]$INFO[Window(home).Property(Album.Song.6.Title), [B]6. [/B],][CR]$INFO[Window(home).Property(Album.Song.7.Title), [B]7. [/B],][CR]$INFO[Window(home).Property(Album.Song.8.Title), [B]8. [/B],]</value>
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.1.Title)) + System.AlarmLessOrEqual(cycletracklist,12) + !System.AlarmLessOrEqual(cycletracklist,9)">$INFO[Window(home).Property(Album.Song.1.Title), [B]1. [/B],][CR]$INFO[Window(home).Property(Album.Song.2.Title), [B]2. [/B],][CR]$INFO[Window(home).Property(Album.Song.3.Title), [B]3. [/B],][CR]$INFO[Window(home).Property(Album.Song.4.Title), [B]4. [/B],]</value>
+        <value condition="IsEmpty(ListItem.Property(Album_Description))">$INFO[Window(home).Property(Album.Song.1.Title), [B]1. [/B],][CR]$INFO[Window(home).Property(Album.Song.2.Title), [B]2. [/B],][CR]$INFO[Window(home).Property(Album.Song.3.Title), [B]3. [/B],][CR]$INFO[Window(home).Property(Album.Song.4.Title), [B]4. [/B],]</value>  
+    </variable>
+    
+    <variable name="MusicTracklistInfoVar">
+        <value condition="![[!IsEmpty(Window(home).Property(Album.Song.13.Title)) + System.AlarmLessOrEqual(cycletracklist,3) + !System.AlarmLessOrEqual(cycletracklist,0)] | [!IsEmpty(Window(home).Property(Album.Song.9.Title)) + System.AlarmLessOrEqual(cycletracklist,6) + !System.AlarmLessOrEqual(cycletracklist,3)] | [!IsEmpty(Window(home).Property(Album.Song.5.Title)) + System.AlarmLessOrEqual(cycletracklist,9) + !System.AlarmLessOrEqual(cycletracklist,6)] | [!IsEmpty(Window(home).Property(Album.Song.1.Title)) + System.AlarmLessOrEqual(cycletracklist,12) + !System.AlarmLessOrEqual(cycletracklist,9)]]">$INFO[ListItem.Property(Album_Description)]</value>
+    </variable>
+    
+    <variable name="MusicTracklistAltVar">
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.13.Title)) + System.AlarmLessOrEqual(cycletracklist,6) + !System.AlarmLessOrEqual(cycletracklist,3)">$INFO[Window(home).Property(Album.Song.13.Title), [B]13. [/B],][CR]$INFO[Window(home).Property(Album.Song.14.Title), [B]14. [/B],][CR]$INFO[Window(home).Property(Album.Song.15.Title), [B]15. [/B],][CR]$INFO[Window(home).Property(Album.Song.16.Title), [B]16. [/B],]</value>
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.9.Title)) + System.AlarmLessOrEqual(cycletracklist,9) + !System.AlarmLessOrEqual(cycletracklist,6)">$INFO[Window(home).Property(Album.Song.9.Title), [B]9. [/B],][CR]$INFO[Window(home).Property(Album.Song.10.Title), [B]10. [/B],][CR]$INFO[Window(home).Property(Album.Song.11.Title), [B]11. [/B],][CR]$INFO[Window(home).Property(Album.Song.12.Title), [B]12. [/B],]</value>
+        <value condition="!IsEmpty(Window(home).Property(Album.Song.5.Title)) + System.AlarmLessOrEqual(cycletracklist,12) + !System.AlarmLessOrEqual(cycletracklist,9)">$INFO[Window(home).Property(Album.Song.5.Title), [B]5. [/B],][CR]$INFO[Window(home).Property(Album.Song.6.Title), [B]6. [/B],][CR]$INFO[Window(home).Property(Album.Song.7.Title), [B]7. [/B],][CR]$INFO[Window(home).Property(Album.Song.8.Title), [B]8. [/B],]</value>
+        <value condition="IsEmpty(ListItem.Property(Album_Description)) + ![!IsEmpty(Window(home).Property(Album.Song.13.Title)) + System.AlarmLessOrEqual(cycletracklist,3) + !System.AlarmLessOrEqual(cycletracklist,0)] + ![!IsEmpty(Window(home).Property(Album.Song.9.Title)) + System.AlarmLessOrEqual(cycletracklist,6) + !System.AlarmLessOrEqual(cycletracklist,3)] + ![!IsEmpty(Window(home).Property(Album.Song.5.Title)) + System.AlarmLessOrEqual(cycletracklist,9) + !System.AlarmLessOrEqual(cycletracklist,6)] + ![!IsEmpty(Window(home).Property(Album.Song.1.Title)) + System.AlarmLessOrEqual(cycletracklist,12) + !System.AlarmLessOrEqual(cycletracklist,9)]">$INFO[Window(home).Property(Album.Song.5.Title), [B]5. [/B],][CR]$INFO[Window(home).Property(Album.Song.6.Title), [B]6. [/B],][CR]$INFO[Window(home).Property(Album.Song.7.Title), [B]7. [/B],][CR]$INFO[Window(home).Property(Album.Song.8.Title), [B]8. [/B],]</value>
+    </variable>
+    
+    <variable name="VideoInfoPlayOverlay">
+        <value condition="Container(9333).HasFocus(1)">osd/fullscreen/buttons/play-fo.png</value>
+        <value condition="Container(9333).HasFocus(2)">osd/fullscreen/buttons/video-settings-fo.png</value>
+        <value condition="Container(9333).HasFocus(3)">osd/fullscreen/buttons/info-fo.png</value>
+        <value condition="Container(9333).HasFocus(4)">osd/fullscreen/buttons/lyrics-fo.png</value>
+        <value condition="Container(9333).HasFocus(5)">osd/fullscreen/buttons/viz-presets-fo.png</value>
+    </variable>
+   
+    <variable name="HomeMenuHintHorizontal">
+        <value condition="Container(20).HasFocus(2) + Control.HasFocus(88)">PRESS UP FOR RECENT FILMS</value>
+        <value condition="Container(20).HasFocus(2) + Control.HasFocus(82)">PRESS UP FOR SPOTLIGHT  •  PRESS DOWN TO RETURN TO MENU</value>
+        <value condition="Container(20).HasFocus(2) + Control.HasFocus(83)">PRESS UP FOR IN PROGRESS FILMS  •  PRESS DOWN FOR RECENT FILMS</value>
+        <value condition="Container(20).HasFocus(2) + Control.HasFocus(84)">PRESS DOWN FOR SPOTLIGHT</value>
+
+        <value condition="Container(20).HasFocus(3) + Control.HasFocus(88)">PRESS UP FOR RECENT EPISODES</value>
+        <value condition="Container(20).HasFocus(3) + Control.HasFocus(82)">PRESS DOWN TO RETURN TO MENU</value>
+
+        <value condition="Container(20).HasFocus(4) + Control.HasFocus(88)">PRESS UP FOR MOST PLAYED ALBUMS</value>
+        <value condition="Container(20).HasFocus(4) + Control.HasFocus(82)">PRESS UP FOR RECENTLY ADDED ALBUMS  •  PRESS DOWN TO RETURN TO MENU</value>
+        <value condition="Container(20).HasFocus(4) + Control.HasFocus(83)">PRESS UP FOR RANDOM ALBUMS  •  PRESS DOWN FOR MOST PLAYED ALBUMS</value>
+        <value condition="Container(20).HasFocus(4) + Control.HasFocus(84)">PRESS DOWN FOR RECENTLY ADDED ALBUMS</value> 
+    </variable>
+    
+    <variable name="MovieTileColorVar">
+        <value condition="StringCompare(Skin.String(moviecolor.name),Blue)">aa005180</value>
+        <value condition="StringCompare(Skin.String(moviecolor.name),Green)">aa007949</value>
+        <value condition="StringCompare(Skin.String(moviecolor.name),Red)">aad02e49</value>
+        <value>aa005180</value>
+    </variable>
+    
+    <variable name="TvTileColorVar">
+        <value condition="StringCompare(Skin.String(tvcolor.name),Blue)">aa005180</value>
+        <value condition="StringCompare(Skin.String(tvcolor.name),Green)">aa007949</value>
+        <value condition="StringCompare(Skin.String(tvcolor.name),Red)">aad02e49</value>
+        <value>aa007949</value>
+    </variable>
+    
+    <variable name="MusicTileColorVar">
+        <value condition="StringCompare(Skin.String(musiccolor.name),Blue)">aa005180</value>
+        <value condition="StringCompare(Skin.String(musiccolor.name),Green)">aa007949</value>
+        <value condition="StringCompare(Skin.String(musiccolor.name),Red)">aad02e49</value>
+        <value>aad02e49</value>
+    </variable>
+    <!-- INCLUDES: Common Clearlogo and Ratings etc at bottom of screen -->
+    <include name="CommonClearLogoDetails">
+        <control type="group">
+            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" end="0" start="100" time="200" delay="0" tween="sine" easing="in" />
+            </animation>
+            <control type="group">
+                <posx>760</posx>
+                <control type="image">
+                    <posx>1</posx>
+                    <posy>171r</posy>
+                    <width>400</width>
+                    <height>155</height>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                    <texture>$VAR[ClearLogosVar]</texture>
+                    <colordiffuse>cc000000</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>172r</posy>
+                    <width>400</width>
+                    <height>155</height>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                    <texture>$VAR[ClearLogosVar]</texture>
+                </control>
+                <control type="label">
+                    <posx>45</posx>
+                    <posy>115r</posy>
+                    <width>280</width>
+                    <height>72</height>
+                    <label>$VAR[BottomClearLogoText]</label>
+                    <font>Font-Alaska-S38-BL</font>
+                    <textcolor>mod-infotags</textcolor>
+                    <scroll>false</scroll>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <wrapmultiline>true</wrapmultiline>
+                    <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
+                </control>
+            </control>
+            <control type="group">
+                <posx>100</posx>
+                <posy>950</posy>
+                <control type="group">
+                    <visible>Container.Content(Episodes) | Container.Content(Movies)</visible>
+                    <posx>210</posx>
+                    <control type="image">
+						<posx>0</posx>
+						<posy>22</posy>
+						<width>100</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>7</posx>
+						<posy>22</posy>
+						<width>92</width>
+						<height>52</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagHDSD]</texture>
+						<colordiffuse>mod-infotags-alt</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>100</posx>
+						<posy>22</posy>
+						<width>245</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>128</posx>
+						<posy>22</posy>
+						<width>90</width>
+						<height>52</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture>$VAR[AeonFlagVideoCodec]</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>228</posx>
+						<posy>22</posy>
+						<width>90</width>
+						<height>52</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture>$VAR[AeonFlagAudioCodec]</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+                </control>
+                <!-- RATING AND STUDIO -->
+                <control type="group">
+					<control type="image">
+						<posx>0</posx>
+						<posy>22</posy>
+						<width>100</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>7</posx>
+						<posy>22</posy>
+						<width>92</width>
+						<height>52</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagStudio]</texture>
+						<colordiffuse>mod-infotags-alt</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>100</posx>
+						<posy>22</posy>
+						<width>100</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>100</posx>
+						<posy>22</posy>
+						<width>94</width>
+						<height>52</height>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<texture>$VAR[AeonFlagRating]</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+				</control>
+                <!-- TV GENRES -->
+                <control type="group">
+                    <visible>![Container.Content(Episodes) | Container.Content(Movies)]</visible>
+                    <control type="image">
+						<posx>210</posx>
+						<posy>22</posy>
+						<width>100</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+					<control type="label">
+                        <posx>220</posx>
+                        <posy>34</posy>
+                        <width>85</width>
+                        <label>Genre</label>
+                        <font>Font-Alaska-S25-BL</font>
+                        <textcolor>mod-infotags-alt</textcolor>
+                        <scroll>false</scroll>
+                        <align>center</align>
+                        <wrapmultiline>false</wrapmultiline>
+                    </control>
+					<control type="image">
+						<posx>310</posx>
+						<posy>22</posy>
+						<width>245</width>
+						<height>52</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
+						<colordiffuse>mod-infotags</colordiffuse>
+					</control>
+                    <control type="label">
+                        <posx>328</posx>
+                        <posy>34</posy>
+                        <width>205</width>
+                        <label>$INFO[ListItem.Genre]</label>
+                        <font>Font-Alaska-S25-BL</font>
+                        <textcolor>mod-infotags</textcolor>
+                        <scroll>false</scroll>
+                        <align>center</align>
+                        <wrapmultiline>false</wrapmultiline>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+    
+    <!-- INCLUDES: MUSIC Common Clearlogo and Ratings etc at bottom of screen -->
+    <include name="MusicCommonClearLogoDetails">
+        <control type="group">
+            <animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" end="0" start="100" time="200" delay="0" tween="sine" easing="in" />
+            </animation>
+            <control type="group">
+                <posx>732</posx>
+                <control type="image" id="89456">
+                    <posx>91</posx>
+                    <posy>127r</posy>
+                    <width>280</width>
+                    <height>92</height>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                    <texture fallback="blank.png">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                    <colordiffuse>ee000000</colordiffuse>
+                </control>
+                <control type="image" id="89456">
+                    <posx>90</posx>
+                    <posy>128r</posy>
+                    <width>280</width>
+                    <height>92</height>
+                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
+                    <texture fallback="blank.png">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                </control>
+                <control type="label">
+                    <posx>-5</posx>
+                    <posy>115r</posy>
+                    <width>480</width>
+                    <height>72</height>
+                    <label>$VAR[MusicBottomClearLogoText]</label>
+                    <font>Font-Alaska-S38-BL</font>
+                    <textcolor>mod-infotags</textcolor>
+                    <scroll>false</scroll>
+                    <align>center</align>
+                    <aligny>center</aligny>
+                    <wrapmultiline>true</wrapmultiline>
+                    <visible>StringCompare(Control.GetLabel(89456),blank.png)</visible>
+                </control>
+            </control>
+            <!-- LEFT SIDE -->
+            <control type="group">
+                <posx>100</posx>
+                <control type="image">
+                    <posx>0</posx>
+                    <posy>972</posy>
+                    <width>120</width>
+                    <height>52</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="20,5,20,5">aeonflags/posters/left.png</texture>
+                    <colordiffuse>mod-infotags</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>120</posx>
+                    <posy>972</posy>
+                    <width>435</width>
+                    <height>52</height>
+                    <aspectratio>stretch</aspectratio>
+                    <texture border="20,5,20,5">aeonflags/posters/right.png</texture>
+                    <colordiffuse>mod-infotags</colordiffuse>
+                </control>
+                <control type="image">
+                    <posx>10</posx>
+                    <posy>975</posy>
+                    <width>110</width>
+                    <height>48</height>
+                    <aspectratio align="center" aligny="center">keep</aspectratio>
+                    <texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagAudioCodec]</texture>       
+                </control>
+                <control type="label">
+                    <posx>137</posx>
+                    <posy>984</posy>
+                    <width>400</width>
+                    <label>$VAR[MusicBottomGenre]</label>
+                    <font>Font-Alaska-S25-BL</font>
+                    <textcolor>mod-infotags</textcolor>
+                    <scroll>false</scroll>
+                    <align>center</align>
+                    <wrapmultiline>false</wrapmultiline>
+                </control>
+            </control>
+        </control>
+    </include>
+
+</includes>

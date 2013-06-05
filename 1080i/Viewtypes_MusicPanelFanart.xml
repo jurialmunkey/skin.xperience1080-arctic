@@ -1,0 +1,311 @@
+<includes>
+<!-- =============== -->
+<!-- Music Panel (52)      -->
+<!-- =============== -->
+    <include name="Viewtype-MusicPanelFanart">
+        <control type="group">
+            <visible>Control.IsVisible(52) + !Window.IsActive(musicinformation)</visible>
+            <include>CommonViewAnimations</include>
+            <include>BannerListAnimations</include>
+            <include>OptionsShutdownAnimation</include>
+            <include>listEndAnimation</include>
+            <posx>62</posx>
+			<posy>180</posy>
+			
+            <control type="image">
+                <description>Cover</description>
+                <posx>6</posx>
+                <posy>6</posy>
+                <width>828</width>
+				<height>464</height>
+                <texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$INFO[ListItem.Art(fanart)]</texture>
+                <aspectratio scalediffuse="false">scale</aspectratio>
+                <fadetime>200</fadetime>
+            </control>
+            <control type="image">
+                <description>Gloss</description>
+                <posx>6</posx>
+                <posy>6</posy>
+                <width>828</width>
+				<height>464</height>
+                <texture diffuse="views/newgloss/panel-fanart-diffuse.png">views/newgloss/info-gloss.png</texture>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+            </control>
+            <control type="image">
+                <description>Border</description>
+                <posx>-4</posx>
+                <posy>-4</posy>
+                <width>848</width>
+				<height>484</height>
+                <texture border="25">views/newgloss/border.png</texture>
+                <aspectratio scalediffuse="false">stretch</aspectratio>
+            </control>
+            <control type="panel" id="52">
+				<posx>836</posx>
+				<posy>0</posy>
+				<width>952</width>
+				<height>714</height>
+                <include>FullscreenDimensions</include>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <orientation>horizontal</orientation>
+                <pagecontrol>70</pagecontrol>
+                <viewtype label="Panel (Fanart)">list</viewtype>
+                <ondown>70</ondown>
+                <onleft>52</onleft>
+                <onright>52</onright>
+                <onup>52</onup>
+                <preloaditems>2</preloaditems>
+                <visible>Container.Content(albums) | Container.Content(artists)</visible>
+                <itemlayout width="238" height="238">
+                    <control type="image">
+                        <description>Poster</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>226</width>
+                        <height>226</height>
+                        <texture background="true" diffuse="views/newgloss/musicwall-diffuse.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
+                        <colordiffuse>ffcccccc</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <description>Gloss</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>226</width>
+                        <height>226</height>
+                        <texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/info-gloss.png</texture>
+                        <colordiffuse>ffcccccc</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <description>Border</description>
+                        <posx>-4</posx>
+                        <posy>-4</posy>
+                        <width>246</width>
+                        <height>246</height>
+                        <texture border="25">views/newgloss/border.png</texture>
+                        <colordiffuse>ffcccccc</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="image">
+                        <description>White</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>226</width>
+                        <height>226</height>
+                        <texture>views/newgloss/musicwall-diffuse.png</texture>
+                        <colordiffuse>88ffffff</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    <control type="group">
+						<visible>Container.Content(artists)</visible>
+						<control type="image">
+							<description>Border</description>
+							<posx>6</posx>
+							<posy>192</posy>
+							<width>226</width>
+							<height>40</height>
+							<texture border="5">views/newgloss/bottom-panel.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>77000000</colordiffuse>
+						</control>
+						<control type="label">
+							<description>Artist Label</description>
+							<posx>218</posx>
+							<posy>197</posy>
+							<width>200</width>
+							<label>$INFO[ListItem.Label]</label>
+							<align>right</align>
+							<textcolor>eeffffff</textcolor>
+							<shadowcolor>cc000000</shadowcolor>
+							<font>Font-Alaska-S20-BL</font>
+							<scroll>false</scroll>
+							<wrapmultiline>false</wrapmultiline>
+						</control>
+					</control>
+                </itemlayout>
+                <focusedlayout width="238" height="238">
+                    <control type="button">
+                        <visible>true</visible>
+                        <onfocus>AlarmClock(cycletracklist,null,0:20,silent,loop)</onfocus>
+                    </control>
+                    <control type="group">
+                        <animation effect="zoom" end="100" start="80" time="150" delay="50" center="auto">Focus</animation>
+                        <control type="image">
+							<description>Poster</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>226</width>
+							<height>226</height>
+							<texture background="true" diffuse="views/newgloss/musicwall-diffuse.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Gloss</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>226</width>
+							<height>226</height>
+							<texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/info-gloss.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Border</description>
+							<posx>-4</posx>
+							<posy>-4</posy>
+							<width>246</width>
+							<height>246</height>
+							<texture border="25">views/newgloss/border.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="group">
+							<visible>Container.Content(artists)</visible>
+							<control type="image">
+								<description>Border</description>
+								<posx>6</posx>
+								<posy>192</posy>
+								<width>226</width>
+								<height>40</height>
+								<texture border="5">views/newgloss/bottom-panel.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>77000000</colordiffuse>
+							</control>
+							<control type="label">
+								<description>Artist Label</description>
+								<posx>218</posx>
+								<posy>197</posy>
+								<width>200</width>
+								<label>$INFO[ListItem.Label]</label>
+								<align>right</align>
+								<textcolor>eeffffff</textcolor>
+								<shadowcolor>cc000000</shadowcolor>
+								<font>Font-Alaska-S20-BL</font>
+								<scroll>false</scroll>
+								<wrapmultiline>false</wrapmultiline>
+							</control>
+						</control>
+						<control type="image">
+							<description>Border</description>
+							<posx>-4</posx>
+							<posy>-4</posy>
+							<width>246</width>
+							<height>246</height>
+							<texture border="25">views/newgloss/border-fo.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>ddffffff</colordiffuse>
+						</control>
+					</control>	
+                </focusedlayout>
+            </control>
+			<control type="group">
+				<posy>476</posy>
+				<posx>0</posx>
+				<control type="label">
+					<posx>24</posx>
+					<posy>30</posy>
+					<width>690</width>
+					<label>$INFO[ListItem.Album]</label>
+					<font>Font-Alaska-S32-BL</font>
+					<textcolor>mod-infotags</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<visible>Container.Content(Albums)</visible>
+				</control>
+				<control type="label">
+					<posx>24</posx>
+					<posy>30</posy>
+					<width min="50" max="690">auto</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font-Alaska-S32-BL</font>
+					<textcolor>mod-infotags</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+					<visible>!Container.Content(Albums)</visible>
+				</control>
+				<control type="group">
+					<visible>![Container(52).OnNext | Container(52).OnPrevious] + Container.Content(Albums)</visible>
+					<animation effect="fade" end="100" start="0" time="500" delay="0" reversible="false">Visible</animation>
+					<control type="label">
+						<description>Tracks</description>
+						<posx>24</posx>
+						<posy>74</posy>
+						<width>330</width>
+						<height>125</height>
+						<label>$VAR[MusicTracklistVar]</label>
+						<align>justify</align>
+						<aligny>top</aligny>
+						<textcolor>mod-infotags-l</textcolor>
+						<font>Font-Alaska-S25-NC</font>
+						<scroll>false</scroll>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+					<control type="label">
+						<description>Tracks Right</description>
+						<posx>400</posx>
+						<posy>74</posy>
+						<width>330</width>
+						<height>125</height>
+						<label>$VAR[MusicTracklistAltVar]</label>
+						<align>justify</align>
+						<aligny>top</aligny>
+						<textcolor>mod-infotags-l</textcolor>
+						<font>Font-Alaska-S25-NC</font>
+						<scroll>false</scroll>
+						<wrapmultiline>false</wrapmultiline>
+					</control>
+					<control type="textbox">
+						<description>Plot</description>
+						<posx>24</posx>
+						<posy>74</posy>
+						<width>770</width>
+						<height>147</height>
+						<label>$VAR[MusicTracklistInfoVar]</label>
+						<align>justify</align>
+						<textcolor>mod-infotags-l</textcolor>
+						<font>Font-Alaska-S25-NC</font>
+					</control>
+				</control>
+				<control type="textbox">
+					<posx>24</posx>
+					<posy>74</posy>
+					<width>770</width>
+					<height>147</height>
+					<label>$INFO[ListItem.Property(Artist_Description)]</label>
+					<font>Font-Alaska-S25-NC</font>
+					<textcolor>mod-infotags-l</textcolor>
+					<align>justify</align>
+					<autoscroll delay="13000" time="3000" repeat="13000" />
+					<visible>!IsEmpty(ListItem.Property(Artist_Description)) + Container.Content(Artists)</visible>
+				</control>
+			</control>
+			<!--Scrollbar-->
+            <control type="group">
+				<posx>865</posx>
+				<posy>170r</posy>
+                <control type="image">
+                    <description>Scrollbar background (visible on focus)</description>
+                    <width>900</width>
+                    <height>6</height>
+                    <texture border="6,3,6,3">views/other/scrollbar-h.png</texture>
+                    <visible>Control.IsVisible(52) + Control.HasFocus(70)</visible>
+                    <animation effect="fade" start="0" end="25" time="300" tween="sine" easing="inout">Visible</animation>
+                    <animation effect="fade" start="25" end="0" time="300" tween="sine" easing="inout">Hidden</animation>
+                </control>
+                <control type="scrollbar" id="70">
+                    <description>Scrollbar</description>
+                    <height>6</height>
+                    <width>900</width>
+                    <orientation>horizontal</orientation>
+                    <texturesliderbar border="6,3,6,3">views/other/scrollbar-h.png</texturesliderbar>
+                    <texturesliderbarfocus border="6,3,6,3">views/other/scrollbar-h-fo.png</texturesliderbarfocus>
+                    <showonepage>false</showonepage>
+                    <onup>52</onup>
+                    <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+                    <ondown condition="Skin.HasSetting(KioskMode)">52</ondown>
+                    <animation effect="fade" start="40" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+                    <visible>Control.IsVisible(52)</visible>
+                </control>
+            </control>
+        </control>
+    </include>    
+</includes>
