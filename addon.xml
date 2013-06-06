@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.xperience-mod" version="2.1.0" name="Xperience1080-Arctic" provider-name="jurialmunkey">
+<addon id="skin.xperience1080-arctic" version="2.1.0" name="Xperience1080-Arctic" provider-name="jurialmunkey">
 	<requires>
 		<import addon="xbmc.gui" version="4.0.0" />
 		<import addon="service.skin.widgets" version="0.0.25" />

@@ -56,7 +56,7 @@
                         <height>127</height>
                         <texture border="25">views/newgloss/border.png</texture>
                         <aspectratio>stretch</aspectratio>
-                        <colordiffuse>aaffffff</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                     </control> 
                     <control type="image">
                         <description>Banner</description>
@@ -65,7 +65,7 @@
                         <width>492</width>
                         <height>107</height>
                         <texture border="5">views/newgloss/banner-diffuse.png</texture>
-                        <colordiffuse>66ffffff</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>

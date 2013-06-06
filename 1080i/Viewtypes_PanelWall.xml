@@ -104,7 +104,7 @@
                         <height>226</height>
                         <texture background="true" diffuse="views/newgloss/panel-poster-diffuse.png">$VAR[WallPoster]</texture>
                         <aspectratio>stretch</aspectratio>
-                        <colordiffuse>ffcccccc</colordiffuse>
+                        <colordiffuse>99ffffff</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>112</posx>
@@ -114,7 +114,7 @@
                         <aspect>keepaspect</aspect>
                         <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
                         <visible>!IsEmpty(ListItem.Overlay)</visible>
-                        <colordiffuse>ffcccccc</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                     </control> 
                     <!-- GLOSS AND BORDER OVERLAY -->
                     <control type="image">
@@ -125,7 +125,7 @@
                         <height>226</height>
                         <texture diffuse="views/newgloss/panel-poster-diffuse.png">views/newgloss/gloss.png</texture>
                         <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        <colordiffuse>ffcccccc</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                     </control>
                     <control type="image">
                         <description>Border</description>
@@ -135,7 +135,7 @@
                         <height>246</height>
                         <texture border="25">views/newgloss/border.png</texture>
                         <aspectratio>stretch</aspectratio>
-                        <colordiffuse>ffcccccc</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                     </control>  
                     <control type="image">
                         <description>Poster</description>
@@ -145,7 +145,7 @@
                         <height>226</height>
                         <texture border="5">views/newgloss/whitepanel.png</texture>
                         <aspectratio>stretch</aspectratio>
-                        <colordiffuse>88ffffff</colordiffuse>
+                        <colordiffuse>55ffffff</colordiffuse>
                     </control>
                 </itemlayout>
                 <focusedlayout width="168" height="238">
