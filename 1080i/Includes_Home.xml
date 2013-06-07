@@ -4800,7 +4800,7 @@
                                     <posy>34</posy>
                                     <height>40</height>
                                     <width>190</width>
-                                    <font>Font-Alaska-S31-B</font>
+                                    <font>Font-Alaska-S32-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <textcolor>eewhite</textcolor>
@@ -4812,7 +4812,7 @@
                                     <posy>74</posy>
                                     <height>40</height>
                                     <width>190</width>
-                                    <font>Font-Alaska-S25-B</font>
+                                    <font>Font-Condensed-S26-B</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
@@ -4841,7 +4841,7 @@
                                         <posy>0</posy>
                                         <height>40</height>
                                         <width min="0" max="80">auto</width>
-                                        <font>Font-Alaska-S31-B</font>
+                                        <font>Font-Alaska-S28-L</font>
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
@@ -4861,7 +4861,7 @@
                                         <posy>0</posy>
                                         <height>40</height>
                                         <width min="0" max="80">auto</width>
-                                        <font>Font-Alaska-S31-B</font>
+                                        <font>Font-Alaska-S28-L</font>
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</label>
@@ -4912,7 +4912,7 @@
                                     <posy>34</posy>
                                     <height>40</height>
                                     <width>190</width>
-                                    <font>Font-Alaska-S31-B</font>
+                                    <font>Font-Alaska-S32-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <textcolor>eewhite</textcolor>
@@ -4924,7 +4924,7 @@
                                     <posy>74</posy>
                                     <height>40</height>
                                     <width>190</width>
-                                    <font>Font-Alaska-S25-B</font>
+                                    <font>Font-Condensed-S26-B</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
@@ -4953,7 +4953,7 @@
                                         <posy>0</posy>
                                         <height>40</height>
                                         <width min="0" max="80">auto</width>
-                                        <font>Font-Alaska-S31-B</font>
+                                        <font>Font-Alaska-S28-L</font>
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
@@ -4973,7 +4973,7 @@
                                         <posy>0</posy>
                                         <height>40</height>
                                         <width min="0" max="80">auto</width>
-                                        <font>Font-Alaska-S31-B</font>
+                                        <font>Font-Alaska-S28-L</font>
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</label>
@@ -5024,7 +5024,7 @@
                                     <posy>34</posy>
                                     <height>40</height>
                                     <width>190</width>
-                                    <font>Font-Alaska-S31-B</font>
+                                    <font>Font-Alaska-S32-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <textcolor>eewhite</textcolor>
@@ -5036,7 +5036,7 @@
                                     <posy>74</posy>
                                     <height>40</height>
                                     <width>190</width>
-                                    <font>Font-Alaska-S25-B</font>
+                                    <font>Font-Condensed-S26-B</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
@@ -5065,7 +5065,7 @@
                                         <posy>0</posy>
                                         <height>40</height>
                                         <width min="0" max="80">auto</width>
-                                        <font>Font-Alaska-S31-B</font>
+                                        <font>Font-Alaska-S28-L</font>
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
@@ -5085,7 +5085,7 @@
                                         <posy>0</posy>
                                         <height>40</height>
                                         <width min="0" max="80">auto</width>
-                                        <font>Font-Alaska-S31-B</font>
+                                        <font>Font-Alaska-S28-L</font>
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</label>

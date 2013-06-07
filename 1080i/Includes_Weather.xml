@@ -264,7 +264,7 @@
                 <width>206</width>
                 <height>30</height>
                 <label>$INFO[Window(Weather).Property(Day0.Title)]</label>
-                <font>Font-Alaska-S38-BL</font>
+                <font>Font-Alaska-S32-BL</font>
                 <textcolor>mod-infotags</textcolor>
                 <visible>!Skin.HasSetting(ShowDailyWeatherFanart) | IsEmpty(Skin.String(WeatherFanartDir))</visible>
             </control>
@@ -370,7 +370,7 @@
                 <width>206</width>
                 <height>30</height>
                 <label>$INFO[Window(Weather).Property(Day1.Title)]</label>
-                <font>Font-Alaska-S38-BL</font>
+                <font>Font-Alaska-S32-BL</font>
                 <textcolor>mod-infotags</textcolor>
                 <visible>!Skin.HasSetting(ShowDailyWeatherFanart) | IsEmpty(Skin.String(WeatherFanartDir))</visible>
             </control>
@@ -476,7 +476,7 @@
                 <width>206</width>
                 <height>30</height>
                 <label>$INFO[Window(Weather).Property(Day2.Title)]</label>
-                <font>Font-Alaska-S38-BL</font>
+                <font>Font-Alaska-S32-BL</font>
                 <textcolor>mod-infotags</textcolor>
                 <visible>!Skin.HasSetting(ShowDailyWeatherFanart) | IsEmpty(Skin.String(WeatherFanartDir))</visible>
             </control>
@@ -582,7 +582,7 @@
                 <width>206</width>
                 <height>30</height>
                 <label>$INFO[Window(Weather).Property(Day3.Title)]</label>
-                <font>Font-Alaska-S38-BL</font>
+                <font>Font-Alaska-S32-BL</font>
                 <textcolor>mod-infotags</textcolor>
                 <visible>!Skin.HasSetting(ShowDailyWeatherFanart) | IsEmpty(Skin.String(WeatherFanartDir))</visible>
             </control>
@@ -688,7 +688,7 @@
                 <width>206</width>
                 <height>30</height>
                 <label>$INFO[Window(Weather).Property(Day4.Title)]</label>
-                <font>Font-Alaska-S38-BL</font>
+                <font>Font-Alaska-S32-BL</font>
                 <textcolor>mod-infotags</textcolor>
                 <visible>!Skin.HasSetting(ShowDailyWeatherFanart) | IsEmpty(Skin.String(WeatherFanartDir))</visible>
             </control>
