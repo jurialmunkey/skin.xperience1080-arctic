@@ -186,6 +186,7 @@
                             <scroll>false</scroll>
                             <align>left</align>
                             <visible>stringcompare(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
+                            <animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>
                         </control>
                         <control type="label">
                             <posx>40</posx>
@@ -242,6 +243,7 @@
                             <textcolor>mod-infotags</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
+                            <animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>
                         </control>
                         <control type="label">
                             <posx>0</posx>
