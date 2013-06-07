@@ -32,7 +32,7 @@
                 <control type="label">
                     <description>Category</description>
                     <posx>483</posx>
-                    <posy>240</posy>
+                    <posy>235</posy>
                     <height>40</height>
                     <width>338</width>
                     <align>right</align>
@@ -44,18 +44,18 @@
                 <!-- Panel -->
                 <control type="image">
                     <posx>178</posx>
-                    <posy>278</posy>
-                    <height>613</height>
+                    <posy>281</posy>
+                    <height>608</height>
                     <width>342</width>
-                    <texture border="5">views/newgloss/whitepanel.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <texture border="5">views/newgloss/panel.png</texture>
                 </control>
                 <control type="image">
-                    <posx>168</posx>
-                    <posy>268</posy>
-                    <height>633</height>
-                    <width>362</width>
+                    <posx>160</posx>
+                    <posy>263</posy>
+                    <height>644</height>
+                    <width>1602</width>
                     <texture border="25">views/newgloss/border.png</texture>
+                    <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
                 </control>
                 
                 <!-- Side Buttons -->
@@ -85,7 +85,7 @@
                 <control type="label">
                     <description>Settings info</description>
                     <posx>390</posx>
-                    <posy>240</posy>
+                    <posy>235</posy>
                     <height>40</height>
                     <width>338</width>
                     <align>left</align>
@@ -97,18 +97,10 @@
                 <!-- Panel -->
                 <control type="image">
                     <posx>353</posx>
-                    <posy>278</posy>
-                    <height>613</height>
+                    <posy>281</posy>
+                    <height>608</height>
                     <width>1214</width>
-                    <texture border="5">views/newgloss/whitepanel.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>343</posx>
-                    <posy>268</posy>
-                    <height>633</height>
-                    <width>1234</width>
-                    <texture border="25">views/newgloss/border.png</texture>
+                    <texture border="5">views/newgloss/panel.png</texture>
                 </control>
                 <control type="image">
                     <description>Shadow</description>

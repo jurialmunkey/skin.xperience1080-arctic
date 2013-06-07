@@ -10,22 +10,19 @@
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
             
-            <control type="image">
+			<control type="image">
                 <posx>248</posx>
-                <posy>187</posy>
-                <height>704</height>
+                <posy>189</posy>
+                <height>701</height>
                 <width>1424</width>
-                <texture border="5">views/newgloss/whitepanel.png</texture>
-                <colordiffuse>mod-infotags</colordiffuse>
-                <include>visiblehidefadeinfo</include>
+                <texture border="5">views/newgloss/panel.png</texture>
             </control>
             <control type="image">
-                <posx>238</posx>
-                <posy>177</posy>
-                <height>724</height>
-                <width>1444</width>
+                <posx>230</posx>
+                <posy>171</posy>
+                <height>737</height>
+                <width>1460</width>
                 <texture border="25">views/newgloss/border.png</texture>
-                <include>visiblehidefadeinfo</include>
             </control>
             <control type="image">
                 <description>Shadow</description>

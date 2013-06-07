@@ -14,17 +14,16 @@
             <!-- Panel -->
             <control type="image">
                 <posx>353</posx>
-                <posy>187</posy>
-                <height>704</height>
+                <posy>189</posy>
+                <height>702</height>
                 <width>1214</width>
-                <texture border="5">views/newgloss/whitepanel.png</texture>
-                <colordiffuse>mod-infotags</colordiffuse>
+                <texture border="5">views/newgloss/panel.png</texture>
             </control>
             <control type="image">
-                <posx>343</posx>
-                <posy>177</posy>
-                <height>724</height>
-                <width>1234</width>
+                <posx>335</posx>
+                <posy>171</posy>
+                <height>738</height>
+                <width>1250</width>
                 <texture border="25">views/newgloss/border.png</texture>
             </control>
             <control type="image">

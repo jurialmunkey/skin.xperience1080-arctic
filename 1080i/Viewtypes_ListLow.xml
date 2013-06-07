@@ -48,8 +48,7 @@
                         <posy>145</posy>
                         <width>1824</width>
                         <height>275</height>
-                        <texture border="25">views/newgloss/whitepanel.png</texture>
-                        <colordiffuse>ff252525</colordiffuse>
+                        <texture border="5">views/newgloss/panel.png</texture>
                     </control>
                 </control>        
 
