@@ -745,10 +745,10 @@
 						<font>Font-Condensed-S30-B</font>
 						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
-						<onclick>Skin.SetString(appcolor.name,Pink Tiles)</onclick>
-						<onclick>Skin.SetString(homecolor.name,Pink Tiles)</onclick>
-						<onclick>Skin.SetString(weathercolor.name,Purple Tiles)</onclick>
-						<onclick>Skin.SetString(pvrcolor.name,Purple Tiles)</onclick>
+						<onclick>Skin.SetString(appcolor.name,Grey Tiles)</onclick>
+						<onclick>Skin.SetString(homecolor.name,Grey Tiles)</onclick>
+						<onclick>Skin.SetString(weathercolor.name,Grey Tiles)</onclick>
+						<onclick>Skin.SetString(pvrcolor.name,Grey Tiles)</onclick>
 						<onclick>Skin.SetString(moviecolor.name,Blue Tiles)</onclick>
 						<onclick>Skin.SetString(tvcolor.name,Green Tiles)</onclick>
 						<onclick>Skin.SetString(musiccolor.name,Red Tiles)</onclick>
