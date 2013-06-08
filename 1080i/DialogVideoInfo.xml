@@ -841,22 +841,6 @@
                     </control>
                 </control>
                 
-                <!-- Flags -->
-                <!--<control type="grouplist">
-                    <posx>760</posx>
-                    <posy>519</posy>
-                    <width>549</width>
-                    <height>60</height>
-                    <align>left</align>
-                    <itemgap>-9</itemgap>
-                    <orientation>horizontal</orientation>
-                    <visible>!Container.Content(tvshows)</visible>
-                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
-                    <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
-                    <animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-                    <include>InfoFlags</include>
-                </control>-->
-                
                 <!-- Plot -->
                 <control type="group">
                     <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
@@ -1080,6 +1064,7 @@
 					<posy>220</posy>
 					<width>458</width>
 					<height>687</height>
+					<include>listEndAnimation</include>
 					<texture background="true" diffuse="views/newgloss/videoinfo-poster-diffuse.png">views/newgloss/gloss.png</texture>
 					<aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
 				</control>
@@ -1089,6 +1074,7 @@
 					<posy>210</posy>
 					<width>478</width>
 					<height>707</height>
+					<include>listEndAnimation</include>
 					<texture border="25">views/newgloss/border.png</texture>
 				</control>
                 <control type="image">

@@ -32,7 +32,7 @@
                     <height>60</height>
                     <label>←</label>
                     <font>Font-Condensed-S45</font>
-                    <textcolor>eewhite</textcolor>
+                    <textcolor>mod-infotags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <include>visiblehidefadeinfo</include>
@@ -45,8 +45,8 @@
                     <width min="50" max="332">auto</width>
                     <height>60</height>
                     <label>$LOCALIZE[13511]</label>
-                    <font>Font-Condensed-S45</font>
-                    <textcolor>eewhite</textcolor>
+                    <font>Font-Alaska-S38-BL</font>
+                    <textcolor>mod-infotags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml) | Window.IsActive(filebrowser)">Conditional</animation>
@@ -59,7 +59,7 @@
                     <height>60</height>
                     <label>→</label>
                     <font>Font-Condensed-S45</font>
-                    <textcolor>eewhite</textcolor>
+                    <textcolor>mod-infotags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <include>visiblehidefadeinfo</include>
@@ -71,11 +71,19 @@
                 <include>listEndAnimation</include>
                 <control type="image">
                     <description>Panel</description>
-                    <posx>98</posx>
-                    <posy>217</posy>
-                    <width>462</width>
-                    <height>691</height>
-                    <texture border="3">views/list/panel/panel.png</texture>
+                    <posx>90</posx>
+                    <posy>210</posy>
+                    <width>478</width>
+                    <height>707</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                </control>
+                <control type="image">
+                    <description>Panel</description>
+                    <posx>100</posx>
+                    <posy>220</posy>
+                    <width>458</width>
+                    <height>687</height>
+                    <texture border="5">views/newgloss/panel.png</texture>
                 </control>
                 <control type="image">
                     <description>Shadow</description>
@@ -102,7 +110,7 @@
                     <width>458</width>
                     <height>83</height>
                     <label>$LOCALIZE[13511]</label>
-                    <font>Font-Condensed-S40</font>
+                    <font>Font-Alaska-S34-BL</font>
                     <textoffsetx>30</textoffsetx>
                     <textcolor>eewhite</textcolor>
                     <shadowcolor>33000000</shadowcolor>
@@ -125,7 +133,7 @@
                     <width>458</width>
                     <height>106</height>
                     <label>Artwork Downloader</label>
-                    <font>Font-Condensed-S40-B</font>
+                    <font>Font-Alaska-S34-BL</font>
                     <align>left</align>
                     <aligny>top</aligny>
                     <textcolor>bbwhite</textcolor>
@@ -162,7 +170,7 @@
                             <posy>0</posy>
                             <width>398</width>
                             <height>82</height>
-                            <font>Font-Condensed-S40</font>
+                            <font>Font-Alaska-S34-BL</font>
                             <label>$INFO[ListItem.Label]</label>
                             <textcolor>eewhite</textcolor>
                             <shadowcolor>33000000</shadowcolor>
@@ -193,7 +201,7 @@
                             <posy>0</posy>
                             <width>398</width>
                             <height>82</height>
-                            <font>Font-Condensed-S40</font>
+                            <font>Font-Alaska-S34-BL</font>
                             <label>$INFO[ListItem.Label]</label>
                             <textcolor>eewhite</textcolor>
                             <shadowcolor>33000000</shadowcolor>
@@ -244,6 +252,13 @@
                             <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],clearart)</onclick>
                             <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],clearart)</onclick>
                         </item>
+                        <item id="7">
+                            <description>Get discart</description>
+                            <label>Discart</label>
+                            <onclick>SetProperty(ChooseArt,discart)</onclick>
+                            <onclick condition="Container.Content(Movies)">RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID],discart)</onclick>
+                            <onclick condition="Container.Content(TVShows)">RunScript(script.artwork.downloader,mode=gui,mediatype=tvshow,dbid=$INFO[ListItem.DBID],discart)</onclick>
+                        </item>
                     </content>
                 </control>
                 
@@ -264,6 +279,7 @@
                         <width>100</width>
                         <height>100</height>
                         <texture>osd/fullscreen/weather-loading-back.png</texture>
+                        <aspectratio align="center">keep</aspectratio>
                     </control>
                     <control type="image">
                         <description>Weather loading indicator</description>

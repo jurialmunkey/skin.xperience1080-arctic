@@ -318,6 +318,16 @@
                     <height>296</height>
                     <texture border="25">views/newgloss/border-right-no.png</texture>
                 </control>
+                <!-- CD ART -->
+                <control type="image">
+                    <posx>45</posx>
+                    <posy>-208</posy>
+                    <width>303</width>
+                    <height>303</height>
+                    <texture background="true">$INFO[ListItem.Art(discart)]</texture>
+                    <aspectratio align="center">keep</aspectratio>
+                    <visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+                </control>
                 <!-- LEFT ART POSTER -->
                 <control type="image">
                     <posx>35</posx>
