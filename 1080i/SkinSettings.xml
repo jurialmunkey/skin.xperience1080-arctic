@@ -394,6 +394,13 @@
                         <onclick>ActivateWindow(3003)</onclick>
                         <label>$LOCALIZE[41140]</label>
                     </control>
+                    <!--<control type="radiobutton" id="2003">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(ModAlternateHomeScreen)</selected>
+                        <onclick>Skin.ToggleSetting(ModAlternateHomeScreen)</onclick>
+                        <label>Alternate Home Screen</label>
+                    </control>-->
                     <control type="radiobutton" id="2003">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>

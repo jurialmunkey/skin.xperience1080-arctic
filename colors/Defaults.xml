@@ -43,7 +43,6 @@
 <!-- Selected color -->
         <color name="SelectedGreen">FF72F03A</color>
         
-
 		<!-- WHITES AND BLACKS -->						
 		<color name="mod-black">ccffffff</color> 		
 		<color name="mod-dimfanart">aaffffff</color> 	

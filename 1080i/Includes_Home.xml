@@ -10,24 +10,26 @@
                 <posy>950</posy>
                 <width>100</width>
                 <height>100</height>
-                <onup condition="Container(20).HasFocus(1)">101</onup>
-                <onup condition="Container(20).HasFocus(2)">501</onup>
-                <onup condition="Container(20).HasFocus(3)">201</onup>
-                <onup condition="Container(20).HasFocus(4)">301</onup>
-                <onup condition="Container(20).HasFocus(5)">401</onup>
-                <onup condition="Container(20).HasFocus(6)">601</onup>
-                <onup condition="Container(20).HasFocus(7)">701</onup>
-                <onup condition="Container(20).HasFocus(8)">801</onup>
-                <onup condition="Container(20).HasFocus(9)">901</onup>
-                <ondown condition="Container(20).HasFocus(1)">125</ondown>
-                <ondown condition="Container(20).HasFocus(2)">525</ondown>
-                <ondown condition="Container(20).HasFocus(3)">225</ondown>
-                <ondown condition="Container(20).HasFocus(4)">325</ondown>
-                <ondown condition="Container(20).HasFocus(5)">425</ondown>
-                <ondown condition="Container(20).HasFocus(6)">625</ondown>
-                <ondown condition="Container(20).HasFocus(7)">725</ondown>
-                <ondown condition="Container(20).HasFocus(8)">825</ondown>
-                <ondown condition="Container(20).HasFocus(9)">925</ondown>
+                <onup condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">101</onup>
+                <onup condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">501</onup>
+                <onup condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">201</onup>
+                <onup condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">301</onup>
+                <onup condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">401</onup>
+                <onup condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">601</onup>
+                <onup condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">701</onup>
+                <onup condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">801</onup>
+                <onup condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">901</onup>
+                <ondown condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">125</ondown>
+                <ondown condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
+                <ondown condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">225</ondown>
+                <ondown condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">325</ondown>
+                <ondown condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">425</ondown>
+                <ondown condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">625</ondown>
+                <ondown condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">725</ondown>
+                <ondown condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">825</ondown>
+                <ondown condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">925</ondown>
+                <onup condition="Skin.HasSetting(ModAlternateHomeScreen)">525</onup>
+                <ondown condition="Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
                 <onleft>22</onleft>
                 <onright>22</onright>
                 <texturefocus>buttons/shutdown_fo.png</texturefocus>
@@ -57,24 +59,26 @@
                 <posy>950</posy>
                 <width>100</width>
                 <height>100</height>
-                <onup condition="Container(20).HasFocus(1)">101</onup>
-                <onup condition="Container(20).HasFocus(2)">501</onup>
-                <onup condition="Container(20).HasFocus(3)">201</onup>
-                <onup condition="Container(20).HasFocus(4)">301</onup>
-                <onup condition="Container(20).HasFocus(5)">401</onup>
-                <onup condition="Container(20).HasFocus(6)">601</onup>
-                <onup condition="Container(20).HasFocus(7)">701</onup>
-                <onup condition="Container(20).HasFocus(8)">801</onup>
-                <onup condition="Container(20).HasFocus(9)">901</onup>
-                <ondown condition="Container(20).HasFocus(1)">125</ondown>
-                <ondown condition="Container(20).HasFocus(2)">525</ondown>
-                <ondown condition="Container(20).HasFocus(3)">225</ondown>
-                <ondown condition="Container(20).HasFocus(4)">325</ondown>
-                <ondown condition="Container(20).HasFocus(5)">425</ondown>
-                <ondown condition="Container(20).HasFocus(6)">625</ondown>
-                <ondown condition="Container(20).HasFocus(7)">725</ondown>
-                <ondown condition="Container(20).HasFocus(8)">825</ondown>
-                <ondown condition="Container(20).HasFocus(9)">925</ondown>
+                <onup condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">101</onup>
+                <onup condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">501</onup>
+                <onup condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">201</onup>
+                <onup condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">301</onup>
+                <onup condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">401</onup>
+                <onup condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">601</onup>
+                <onup condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">701</onup>
+                <onup condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">801</onup>
+                <onup condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">901</onup>
+                <ondown condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">125</ondown>
+                <ondown condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
+                <ondown condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">225</ondown>
+                <ondown condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">325</ondown>
+                <ondown condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">425</ondown>
+                <ondown condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">625</ondown>
+                <ondown condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">725</ondown>
+                <ondown condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">825</ondown>
+                <ondown condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">925</ondown>
+                <onup condition="Skin.HasSetting(ModAlternateHomeScreen)">525</onup>
+                <ondown condition="Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
                 <onleft>21</onleft>
                 <onright>21</onright>
                 <texturefocus>buttons/favourites_fo.png</texturefocus>
