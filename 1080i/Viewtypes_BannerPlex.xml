@@ -218,6 +218,17 @@
                             <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
                         </control> 
                         <control type="image">
+                            <description>Banner Shadow</description>
+                            <posx>4</posx>
+                            <posy>4</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <texture background="true" diffuse="views/banner/diffuse/bannerplex.png">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <colordiffuse>cc000000</colordiffuse>
+                            <aspectratio>keep</aspectratio>
+                            <visible>Skin.HasSetting(BannerPlexLogos) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+                        </control>
+                        <control type="image">
                             <description>Banner</description>
                             <posx>3</posx>
                             <posy>3</posy>
@@ -302,6 +313,17 @@
                             <aspectratio>stretch</aspectratio>
                             <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
                         </control> 
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>4</posx>
+                            <posy>4</posy>
+                            <width>500</width>
+                            <height>95</height>
+                            <colordiffuse>cc000000</colordiffuse>
+                            <texture background="true" diffuse="views/banner/diffuse/bannerplex.png">$INFO[ListItem.Art(clearlogo)]</texture>
+                            <aspectratio>keep</aspectratio>
+                            <visible>Skin.HasSetting(BannerPlexLogos) + !IsEmpty(ListItem.Art(clearlogo))</visible>
+                        </control>
                         <control type="image">
                             <description>Banner</description>
                             <posx>3</posx>
