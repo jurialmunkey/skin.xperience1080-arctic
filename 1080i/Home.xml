@@ -13,10 +13,10 @@
     <onload condition="IsEmpty(Skin.String(musiccolor.name)) | !SubString(Skin.String(musiccolor.name),Tiles)">Skin.SetString(musiccolor.name,Red Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(tvcolor.name)) | !SubString(Skin.String(tvcolor.name),Tiles)">Skin.SetString(tvcolor.name,Green Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(moviecolor.name)) | !SubString(Skin.String(moviecolor.name),Tiles)">Skin.SetString(moviecolor.name,Blue Tiles)</onload>
-	<onload condition="IsEmpty(Skin.String(appcolor.name)) | !SubString(Skin.String(appcolor.name),Tiles)">Skin.SetString(appcolor.name,Grey Tiles)</onload>
-	<onload condition="IsEmpty(Skin.String(homecolor.name)) | !SubString(Skin.String(homecolor.name),Tiles)">Skin.SetString(homecolor.name,Grey Tiles)</onload>
-	<onload condition="IsEmpty(Skin.String(pvrcolor.name)) | !SubString(Skin.String(pvrcolor.name),Tiles)">Skin.SetString(pvrcolor.name,Grey Tiles)</onload>
-	<onload condition="IsEmpty(Skin.String(weathercolor.name)) | !SubString(Skin.String(weathercolor.name),Tiles)">Skin.SetString(weathercolor.name,Grey Tiles)</onload>
+	<onload condition="IsEmpty(Skin.String(appcolor.name)) | !SubString(Skin.String(appcolor.name),Tiles)">Skin.SetString(appcolor.name,Pink Tiles)</onload>
+	<onload condition="IsEmpty(Skin.String(homecolor.name)) | !SubString(Skin.String(homecolor.name),Tiles)">Skin.SetString(homecolor.name,Pink Tiles)</onload>
+	<onload condition="IsEmpty(Skin.String(pvrcolor.name)) | !SubString(Skin.String(pvrcolor.name),Tiles)">Skin.SetString(pvrcolor.name,Purple Tiles)</onload>
+	<onload condition="IsEmpty(Skin.String(weathercolor.name)) | !SubString(Skin.String(weathercolor.name),Tiles)">Skin.SetString(weathercolor.name,Purple Tiles)</onload>
     <onunload>CancelAlarm(HomeTileMove,true)</onunload>
     <onunload>CancelAlarm(HomeTileMoveTwo,true)</onunload>
     <onunload>CancelAlarm(HomeTileMoveThree,true)</onunload>
