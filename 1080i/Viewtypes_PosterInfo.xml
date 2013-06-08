@@ -230,7 +230,7 @@
                                     <height>400</height>
                                     <texture>views/posterview/shadow-focus.png</texture>
                                     <animation effect="fade" time="450" start="100" end="0">UnFocus</animation>
-                                    <animation effect="fade" time="450" start="100" end="0">Focus</animation>
+                                    <animation effect="fade" time="250" end="100" start="0">Focus</animation>
                                 </control>
                                 <!-- CD ART -->
 								<control type="image">
