@@ -218,8 +218,8 @@
                             <width>580</width>
                             <height>571</height>
                             <texture>views/posterview/shadow-focus.png</texture>
-							<animation condition="Container(506).OnNext | Container(506).OnPrevious" effect="fade" start="0" end="100" time="350">Focus</animation>
-							<animation condition="Container(506).OnNext | Container(506).OnPrevious" effect="fade" start="100" end="0" time="450">UnFocus</animation>
+							<animation effect="fade" time="450" start="100" end="0">UnFocus</animation>
+							<animation effect="fade" time="450" start="100" end="0">Focus</animation>
                         </control>
                         <!-- CD ART -->
 						<control type="image">
@@ -314,6 +314,8 @@
                             <width>580</width>
                             <height>571</height>
                             <texture>views/posterview/shadow-focus.png</texture>
+                            <animation effect="fade" time="450" start="100" end="0">UnFocus</animation>
+							<animation effect="fade" time="450" start="100" end="0">Focus</animation>
                         </control>
                         
                         <control type="image">
