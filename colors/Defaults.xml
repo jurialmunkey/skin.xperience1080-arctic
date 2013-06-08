@@ -43,6 +43,15 @@
 <!-- Selected color -->
         <color name="SelectedGreen">FF72F03A</color>
         
+        <!-- TILES -->
+        <color name="Blue Tiles">aa005180</color>
+        <color name="Green Tiles">aa007949</color>
+        <color name="Red Tiles">aad02e49</color>
+        <color name="Pink Tiles">aa790059</color>
+        <color name="Purple Tiles">aa3a0079</color>
+        <color name="Lime Tiles">aa7eb000</color>
+        <color name="Grey Tiles">aa404040</color>
+        
 		<!-- WHITES AND BLACKS -->						
 		<color name="mod-black">ccffffff</color> 		
 		<color name="mod-dimfanart">aaffffff</color> 	

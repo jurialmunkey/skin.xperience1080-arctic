@@ -782,7 +782,17 @@
                                     <width>283</width>
                                     <height>283</height>
                                     <texture border="5">views/newgloss/tile-283.png</texture>
-                                    <colordiffuse>mod-infotags-l</colordiffuse>
+                                    <colordiffuse>$INFO[Skin.String(pvrcolor.name)]</colordiffuse>
+                                    <visible>ListItem.Property(colored)</visible>
+                                </control>
+                                <control type="image">
+                                    <posx>24</posx>
+                                    <posy>24</posy>
+                                    <width>283</width>
+                                    <height>283</height>
+                                    <texture border="5">views/newgloss/tile-283.png</texture>
+                                    <colordiffuse>$VAR[PVRAddonTileColorVar]</colordiffuse>
+                                    <visible>!ListItem.Property(colored)</visible>
                                 </control>
                                 <control type="image">
                                     <posx>24</posx>
@@ -849,7 +859,17 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(pvrcolor.name)]</colordiffuse>
+										<visible>ListItem.Property(colored)</visible>
+									</control>
+									<control type="image">
+										<posx>24</posx>
+										<posy>24</posy>
+										<width>283</width>
+										<height>283</height>
+										<texture border="5">views/newgloss/tile-283.png</texture>
+										<colordiffuse>$VAR[PVRAddonTileColorVar]</colordiffuse>
+										<visible>!ListItem.Property(colored)</visible>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -926,6 +946,7 @@
                                 <onclick>ActivateWindow(PVR)</onclick>
                                 <onclick>SetFocus(32)</onclick>
                                 <onclick>SetFocus(11)</onclick>
+                                <property name="colored">1</property>
                             </item>
                             <item id="2">
                                 <label>$LOCALIZE[19024]</label>
@@ -933,6 +954,7 @@
                                 <onclick>ActivateWindow(PVR)</onclick>
                                 <onclick>SetFocus(33)</onclick>
                                 <onclick>SetFocus(12)</onclick>
+                                <property name="colored">1</property>
                             </item>
                             <item id="3">
                                 <label>$LOCALIZE[19069]</label>
@@ -940,6 +962,7 @@
                                 <onclick>ActivateWindow(PVR)</onclick>
                                 <onclick>SetFocus(31)</onclick>
                                 <onclick>SetFocus(10)</onclick>
+                                <property name="colored">1</property>
                             </item>
                             <item id="4">
                                 <label>$LOCALIZE[19163]</label>
@@ -947,6 +970,7 @@
                                 <onclick>ActivateWindow(PVR)</onclick>
                                 <onclick>SetFocus(34)</onclick>
                                 <onclick>SetFocus(13)</onclick>
+                                <property name="colored">1</property>
                             </item>
                             <item id="5">
                                 <label>$LOCALIZE[19040]</label>
@@ -954,6 +978,7 @@
                                 <onclick>ActivateWindow(PVR)</onclick>
                                 <onclick>SetFocus(35)</onclick>
                                 <onclick>SetFocus(14)</onclick>
+                                <property name="colored">1</property>
                             </item>
                             <item id="6">
                                 <label>$LOCALIZE[137]</label>
@@ -961,6 +986,7 @@
                                 <onclick>ActivateWindow(PVR)</onclick>
                                 <onclick>SetFocus(36)</onclick>
                                 <onclick>SetFocus(17)</onclick>
+                                <property name="colored">1</property>
                             </item>
                         </content>
                     </control>
@@ -1436,7 +1462,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>$VAR[HomeTileColorVar]</colordiffuse>
+									<colordiffuse>$INFO[Skin.String(homecolor.name)]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -1504,7 +1530,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>$VAR[HomeTileColorVar]</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(homecolor.name)]</colordiffuse>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -1889,7 +1915,7 @@
                                     <posy>24</posy>
                                     <width>283</width>
                                     <height>283</height>
-                                    <colordiffuse>$VAR[MovieTileColorVar]</colordiffuse>
+                                    <colordiffuse>$INFO[Skin.String(moviecolor.name)]</colordiffuse>
                                     <texture border="7">views/newgloss/tile-283.png</texture>
                                 </control>
                                 <control type="image">
@@ -1969,7 +1995,7 @@
 										<posy>24</posy>
 										<width>283</width>
 										<height>283</height>
-										<colordiffuse>$VAR[MovieTileColorVar]</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(moviecolor.name)]</colordiffuse>
 										<texture border="7">views/newgloss/tile-283.png</texture>
 									</control>
 									<control type="image">
@@ -2629,7 +2655,7 @@
 									<posy>24</posy>
 									<width>283</width>
 									<height>283</height>
-									<colordiffuse>$VAR[TvTileColorVar]</colordiffuse>
+									<colordiffuse>$INFO[Skin.String(tvcolor.name)]</colordiffuse>
 									<texture border="7">views/newgloss/tile-283.png</texture>
 								</control>
 								<control type="image">
@@ -2709,7 +2735,7 @@
 										<posy>24</posy>
 										<width>283</width>
 										<height>283</height>
-										<colordiffuse>$VAR[TvTileColorVar]</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(tvcolor.name)]</colordiffuse>
 										<texture border="7">views/newgloss/tile-283.png</texture>
 									</control>
 									<control type="image">
@@ -3327,7 +3353,7 @@
 									<posy>24</posy>
 									<width>283</width>
 									<height>283</height>
-									<colordiffuse>$VAR[MusicTileColorVar]</colordiffuse>
+									<colordiffuse>$INFO[Skin.String(musiccolor.name)]</colordiffuse>
 									<texture border="7">views/newgloss/tile-283.png</texture>
 								</control>
 								<control type="image">
@@ -3407,7 +3433,7 @@
 										<posy>24</posy>
 										<width>283</width>
 										<height>283</height>
-										<colordiffuse>$VAR[MusicTileColorVar]</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(musiccolor.name)]</colordiffuse>
 										<texture border="7">views/newgloss/tile-283.png</texture>
 									</control>
 									<control type="image">
@@ -3863,7 +3889,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
+									<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -3925,7 +3951,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
+									<colordiffuse>$VAR[AppAddonTileColorVar]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -3998,7 +4024,7 @@
 									<width>382</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
+									<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
 								</control>
                                 <control type="image">
                                     <posx>24</posx>
@@ -4068,7 +4094,17 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
+										<colordiffuse>$VAR[AppAddonTileColorVar]</colordiffuse>
+										<visible>!IsEmpty(ListItem.Property(custom))</visible>
+									</control>
+									<control type="image">
+										<posx>24</posx>
+										<posy>24</posy>
+										<width>283</width>
+										<height>283</height>
+										<texture border="5">views/newgloss/tile-283.png</texture>
+										<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
+										<visible>IsEmpty(ListItem.Property(custom))</visible>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -4166,7 +4202,7 @@
 										<width>382</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
 									</control>
                                     <control type="image">
 										<posx>24</posx>
@@ -4419,8 +4455,16 @@
                             <posy>0</posy>
                             <width>572</width>
                             <height>572</height>
-                            <texture border="7">views/newgloss/whitepanel.png</texture>
-                            <colordiffuse>mod-infotags-l</colordiffuse>
+                            <texture border="7">views/newgloss/tile-283.png</texture>
+                            <colordiffuse>$VAR[WeatherAddonTileColorVar]</colordiffuse>
+                            <visible>![Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir)) + Weather.IsFetched]</visible>
+                        </control>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>572</width>
+                            <height>572</height>
+                            <texture border="7">views/newgloss/tile.png</texture>
                             <visible>![Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir)) + Weather.IsFetched]</visible>
                         </control>
                         <control type="image">
@@ -4771,7 +4815,7 @@
                                 <width>382</width>
                                 <height>187</height>
                                 <texture border="7">views/newgloss/tile-283.png</texture>
-                                <colordiffuse>mod-infotags-l</colordiffuse>
+                                <colordiffuse>$VAR[WeatherAddonTileColorVar]</colordiffuse>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -4821,7 +4865,7 @@
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
                                     <scroll>false</scroll>
-                                    <textcolor>ddC6C6C8</textcolor>
+                                    <textcolor>ccffffff</textcolor>
                                 </control>
                                 <control type="grouplist">
                                     <posx>178</posx>
@@ -4837,7 +4881,7 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-high-small.png</texture>
-                                        <colordiffuse>ddC6C6C8</colordiffuse>
+                                        <colordiffuse>ccffffff</colordiffuse>
                                     </control>
                                     <control type="label">
                                         <description>high temp</description>
@@ -4849,7 +4893,7 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>ddC6C6C8</textcolor>
+                                        <textcolor>ccffffff</textcolor>
                                     </control>
                                     <control type="image">
                                         <posx>15</posx>
@@ -4857,7 +4901,7 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-low-small.png</texture>
-                                        <colordiffuse>ddC6C6C8</colordiffuse>
+                                        <colordiffuse>ccffffff</colordiffuse>
                                     </control>
                                     <control type="label">
                                         <description>low temp</description>
@@ -4869,7 +4913,7 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>ddC6C6C8</textcolor>
+                                        <textcolor>ccffffff</textcolor>
                                     </control>
                                 </control>
                             </control>
@@ -4883,7 +4927,7 @@
                                 <width>382</width>
                                 <height>187</height>
                                 <texture border="7">views/newgloss/tile-283.png</texture>
-                                <colordiffuse>mod-infotags-l</colordiffuse>
+                                <colordiffuse>$VAR[WeatherAddonTileColorVar]</colordiffuse>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -4933,7 +4977,7 @@
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
                                     <scroll>false</scroll>
-                                    <textcolor>ddC6C6C8</textcolor>
+                                    <textcolor>ccffffff</textcolor>
                                 </control>
                                 <control type="grouplist">
                                     <posx>178</posx>
@@ -4949,7 +4993,7 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-high-small.png</texture>
-                                        <colordiffuse>ddC6C6C8</colordiffuse>
+                                        <colordiffuse>ccffffff</colordiffuse>
                                     </control>
                                     <control type="label">
                                         <description>high temp</description>
@@ -4961,7 +5005,7 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>ddC6C6C8</textcolor>
+                                        <textcolor>ccffffff</textcolor>
                                     </control>
                                     <control type="image">
                                         <posx>15</posx>
@@ -4969,7 +5013,7 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-low-small.png</texture>
-                                        <colordiffuse>ddC6C6C8</colordiffuse>
+                                        <colordiffuse>ccffffff</colordiffuse>
                                     </control>
                                     <control type="label">
                                         <description>low temp</description>
@@ -4981,7 +5025,7 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>ddC6C6C8</textcolor>
+                                        <textcolor>ccffffff</textcolor>
                                     </control>
                                 </control>
                             </control>
@@ -4995,7 +5039,7 @@
                                 <width>382</width>
                                 <height>187</height>
                                 <texture border="7">views/newgloss/tile-283.png</texture>
-                                <colordiffuse>mod-infotags-l</colordiffuse>
+                                <colordiffuse>$VAR[WeatherAddonTileColorVar]</colordiffuse>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -5045,7 +5089,7 @@
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
                                     <scroll>false</scroll>
-                                    <textcolor>ddC6C6C8</textcolor>
+                                    <textcolor>ccffffff</textcolor>
                                 </control>
                                 <control type="grouplist">
                                     <posx>178</posx>
@@ -5061,7 +5105,7 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-high-small.png</texture>
-                                        <colordiffuse>ddC6C6C8</colordiffuse>
+                                        <colordiffuse>ccffffff</colordiffuse>
                                     </control>
                                     <control type="label">
                                         <description>high temp</description>
@@ -5073,7 +5117,7 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>ddC6C6C8</textcolor>
+                                        <textcolor>ccffffff</textcolor>
                                     </control>
                                     <control type="image">
                                         <posx>15</posx>
@@ -5081,7 +5125,7 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-low-small.png</texture>
-                                        <colordiffuse>ddC6C6C8</colordiffuse>
+                                        <colordiffuse>ccffffff</colordiffuse>
                                     </control>
                                     <control type="label">
                                         <description>low temp</description>
@@ -5093,7 +5137,7 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>ddC6C6C8</textcolor>
+                                        <textcolor>ccffffff</textcolor>
                                     </control>
                                 </control>
                             </control>
@@ -5129,7 +5173,7 @@
                                     <width>283</width>
                                     <height>283</height>
                                     <texture border="5">views/newgloss/tile-283.png</texture>
-                                    <colordiffuse>mod-infotags-l</colordiffuse>
+                                    <colordiffuse>$INFO[Skin.String(weathercolor.name)]</colordiffuse>
                                 </control>
                                 <control type="image">
                                     <posx>24</posx>
@@ -5196,7 +5240,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$INFO[Skin.String(weathercolor.name)]</colordiffuse>
 									</control>
                                     <control type="image">
 										<posx>24</posx>
