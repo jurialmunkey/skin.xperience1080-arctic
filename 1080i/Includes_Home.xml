@@ -1436,7 +1436,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>mod-infotags-l</colordiffuse>
+									<colordiffuse>$VAR[HomeTileColorVar]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -1504,7 +1504,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$VAR[HomeTileColorVar]</colordiffuse>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -2096,7 +2096,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>mod-infotags-l</colordiffuse>
+									<colordiffuse>$VAR[MovieAddonTileColorVar]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -2176,7 +2176,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$VAR[MovieAddonTileColorVar]</colordiffuse>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -2842,7 +2842,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>mod-infotags-l</colordiffuse>
+									<colordiffuse>$VAR[TvAddonTileColorVar]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -2922,7 +2922,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$VAR[TvAddonTileColorVar]</colordiffuse>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -3530,7 +3530,7 @@
 								<width>283</width>
 								<height>283</height>
 								<texture border="5">views/newgloss/tile-283.png</texture>
-								<colordiffuse>mod-infotags-l</colordiffuse>
+								<colordiffuse>$VAR[MusicAddonTileColorVar]</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>24</posx>
@@ -3612,7 +3612,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$VAR[MusicAddonTileColorVar]</colordiffuse>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -3863,7 +3863,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>mod-infotags-l</colordiffuse>
+									<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -3925,7 +3925,7 @@
 									<width>283</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>mod-infotags-l</colordiffuse>
+									<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
 								</control>
 								<control type="image">
 									<posx>24</posx>
@@ -3998,7 +3998,7 @@
 									<width>382</width>
 									<height>283</height>
 									<texture border="5">views/newgloss/tile-283.png</texture>
-									<colordiffuse>mod-infotags-l</colordiffuse>
+									<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
 								</control>
                                 <control type="image">
                                     <posx>24</posx>
@@ -4068,7 +4068,7 @@
 										<width>283</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
 									</control>
 									<control type="image">
 										<posx>24</posx>
@@ -4166,7 +4166,7 @@
 										<width>382</width>
 										<height>283</height>
 										<texture border="5">views/newgloss/tile-283.png</texture>
-										<colordiffuse>mod-infotags-l</colordiffuse>
+										<colordiffuse>$VAR[AppTileColorVar]</colordiffuse>
 									</control>
                                     <control type="image">
 										<posx>24</posx>

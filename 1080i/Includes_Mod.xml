@@ -236,13 +236,19 @@
         <value condition="StringCompare(Skin.String(moviecolor.name),Blue)">aa005180</value>
         <value condition="StringCompare(Skin.String(moviecolor.name),Green)">aa007949</value>
         <value condition="StringCompare(Skin.String(moviecolor.name),Red)">aad02e49</value>
+		<value condition="StringCompare(Skin.String(moviecolor.name),Purple)">aa3A0079</value>
+		<value condition="StringCompare(Skin.String(moviecolor.name),Pink)">aa790059</value>
+        <value condition="StringCompare(Skin.String(moviecolor.name),Grey)">mod-infotags-l</value>
         <value>aa005180</value>
     </variable>
     
     <variable name="TvTileColorVar">
         <value condition="StringCompare(Skin.String(tvcolor.name),Blue)">aa005180</value>
         <value condition="StringCompare(Skin.String(tvcolor.name),Green)">aa007949</value>
+        <value condition="StringCompare(Skin.String(tvcolor.name),Pink)">aa790059</value>
+        <value condition="StringCompare(Skin.String(tvcolor.name),Purple)">aa3A0079</value>
         <value condition="StringCompare(Skin.String(tvcolor.name),Red)">aad02e49</value>
+		<value condition="StringCompare(Skin.String(tvcolor.name),Grey)">mod-infotags-l</value>
         <value>aa007949</value>
     </variable>
     
@@ -250,7 +256,63 @@
         <value condition="StringCompare(Skin.String(musiccolor.name),Blue)">aa005180</value>
         <value condition="StringCompare(Skin.String(musiccolor.name),Green)">aa007949</value>
         <value condition="StringCompare(Skin.String(musiccolor.name),Red)">aad02e49</value>
+        <value condition="StringCompare(Skin.String(musiccolor.name),Pink)">aa790059</value>
+        <value condition="StringCompare(Skin.String(musiccolor.name),Purple)">aa3a0079</value>
+        <value condition="StringCompare(Skin.String(musiccolor.name),Grey)">mod-infotags-l</value>
         <value>aad02e49</value>
+    </variable>
+    
+    <variable name="HomeTileColorVar">
+        <value condition="StringCompare(Skin.String(homecolor.name),Blue)">aa005180</value>
+        <value condition="StringCompare(Skin.String(homecolor.name),Green)">aa007949</value>
+        <value condition="StringCompare(Skin.String(homecolor.name),Red)">aad02e49</value>
+        <value condition="StringCompare(Skin.String(homecolor.name),Pink)">aa790059</value>
+        <value condition="StringCompare(Skin.String(homecolor.name),Purple)">aa3a0079</value>
+        <value condition="StringCompare(Skin.String(homecolor.name),Grey)">mod-infotags-l</value>
+        <value>mod-infotags-l</value>
+    </variable>
+    
+    <variable name="AppTileColorVar">
+        <value condition="StringCompare(Skin.String(appcolor.name),Blue)">aa005180</value>
+        <value condition="StringCompare(Skin.String(appcolor.name),Green)">aa007949</value>
+        <value condition="StringCompare(Skin.String(appcolor.name),Red)">aad02e49</value>
+        <value condition="StringCompare(Skin.String(appcolor.name),Pink)">aa790059</value>
+        <value condition="StringCompare(Skin.String(appcolor.name),Purple)">aa3a0079</value>
+        <value condition="StringCompare(Skin.String(appcolor.name),Grey)">mod-infotags-l</value>
+        <value>mod-infotags-l</value>
+    </variable>
+    
+    <variable name="MovieAddonTileColorVar">
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(moviecolor.name),Blue)">aa005180</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(moviecolor.name),Green)">aa007949</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(moviecolor.name),Red)">aad02e49</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(moviecolor.name),Grey)">mod-infotags-l</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(moviecolor.name),Pink)">aa790059</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(moviecolor.name),Purple)">aa3a0079</value>
+        <value condition="Skin.HasSetting(AddonTilesColored)">aa005180</value>
+        <value>mod-infotags-l</value>
+    </variable>
+    
+    <variable name="TvAddonTileColorVar">
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(tvcolor.name),Blue)">aa005180</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(tvcolor.name),Green)">aa007949</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(tvcolor.name),Red)">aad02e49</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(tvcolor.name),Grey)">mod-infotags-l</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(tvcolor.name),Pink)">aa790059</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(tvcolor.name),Purple)">aa3a0079</value>
+        <value condition="Skin.HasSetting(AddonTilesColored)">aa007949</value>
+        <value>mod-infotags-l</value>
+    </variable>
+    
+    <variable name="MusicAddonTileColorVar">
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(musiccolor.name),Blue)">aa005180</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(musiccolor.name),Green)">aa007949</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(musiccolor.name),Red)">aad02e49</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(musiccolor.name),Grey)">mod-infotags-l</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(musiccolor.name),Pink)">aa790059</value>
+        <value condition="Skin.HasSetting(AddonTilesColored) + StringCompare(Skin.String(musiccolor.name),Purple)">aa3a0079</value>
+        <value condition="Skin.HasSetting(AddonTilesColored)">aad02e49</value>
+        <value>mod-infotags-l</value>
     </variable>
     
     <include name="DialogHeaderMod">

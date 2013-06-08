@@ -6,7 +6,11 @@
 	<onload condition="IsEmpty(Skin.String(musiccolor.name))">Skin.SetString(musiccolor.name,Red)</onload>
 	<onload condition="IsEmpty(Skin.String(tvcolor.name))">Skin.SetString(tvcolor.name,Green)</onload>
 	<onload condition="IsEmpty(Skin.String(moviecolor.name))">Skin.SetString(moviecolor.name,Blue)</onload>
+	<onload condition="IsEmpty(Skin.String(appcolor.name))">Skin.SetString(appcolor.name,Grey)</onload>
+	<onload condition="IsEmpty(Skin.String(homecolor.name))">Skin.SetString(homecolor.name,Grey)</onload>
     <onload condition="IsEmpty(Skin.String(rss.setting))">Skin.SetString(rss.setting,$LOCALIZE[1223])</onload>
+    <onload condition="IsEmpty(Skin.String(UseRCB.name)) + Skin.HasSetting(UseRCB)">Skin.SetString(UseRCB.name,Rom Collection Browser)</onload>
+    <onload condition="IsEmpty(Skin.String(UseRCB.name)) + !Skin.HasSetting(UseRCB)">Skin.SetString(UseRCB.name,Advanced Launcher)</onload>
     <controls>
         <include>CommonSettingsItems</include>
         <include>SettingsHeader</include>
@@ -126,6 +130,11 @@
                             <label>$LOCALIZE[41130]</label>
                             <onclick>noop</onclick>
                         </item>
+                        <item id="37">
+                            <description>Home Tile Settings</description>
+                            <label>Tile Colors</label>
+                            <onclick>noop</onclick>
+                        </item>
                         <item id="33">
                             <description>Media Settings</description>
                             <label>$LOCALIZE[41190]</label>
@@ -145,12 +154,6 @@
                             <description>Guide menu Settings</description>
                             <label>$LOCALIZE[41460]</label>
                             <onclick>noop</onclick>
-                        </item>
-                        <item id="37">
-                            <description>Live tv Settings</description>
-                            <label>$LOCALIZE[41220]</label>
-                            <onclick>noop</onclick>
-                            <visible>System.GetBool(pvrmanager.enabled)</visible>
                         </item>
                         <item id="38">
                             <description>Add-on Settings</description>
@@ -415,13 +418,23 @@
                         <onclick>Skin.ToggleSetting(HideHomeSubmenuArrow)</onclick>
                         <label>$LOCALIZE[41135]</label>
                     </control>
-                    <control type="radiobutton" id="2005">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(UseRCB)</selected>
+                    <control type="button" id="2005">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>Skin.ToggleSetting(UseRCB)</onclick>
-                        <label>Games tile opens Rom Collection Browser instead of Advanced Launcher</label>
-                    </control>
+                        <onclick condition="Skin.HasSetting(UseRCB)">Skin.SetString(UseRCB.name,Rom Collection Browser)</onclick>
+                        <onclick condition="!Skin.HasSetting(UseRCB)">Skin.SetString(UseRCB.name,Advanced Launcher)</onclick>
+                        <label>Games tile opens</label>
+						<label2>$INFO[Skin.String(UseRCB.name)]</label2>
+					</control>
                     <control type="group" id="2007">
                         <description>Fake spin control</description>
                         <width>1210</width>
@@ -554,251 +567,149 @@
                             <label2>$INFO[Skin.String(music.name)]</label2>
                             <visible>ControlGroup(2007).HasFocus</visible>
                         </control>
-                    </control>
-                    <control type="group" id="2008">
-                        <description>Fake spin control</description>
-                        <width>1210</width>
-                        <height>77</height>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
-                            <visible>!ControlGroup(2008).HasFocus</visible>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
-                            <visible>ControlGroup(2008).HasFocus</visible>
-                        </control>
-                        <control type="button" id="20081">
-                            <posx>1104</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>20082</onleft>
-                            <onright>20082</onright>
-                            <onup>2007</onup>
-                            <ondown>2009</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-down-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-down-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Blue)">Skin.SetString(musiccolor.name,Red)</onclick>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Green)">Skin.SetString(musiccolor.name,Blue)</onclick>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Red)">Skin.SetString(musiccolor.name,Green)</onclick>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Blue)">Skin.SetString(musiccolor.name,Red)</onclick>
-                        </control>
-                        <control type="button" id="20082">
-                            <posx>1147</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>20081</onleft>
-                            <onright>20081</onright>
-                            <onup>2007</onup>
-                            <ondown>2009</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-up-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-up-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Red)">Skin.SetString(musiccolor.name,Blue)</onclick>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Green)">Skin.SetString(musiccolor.name,Red)</onclick>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Blue)">Skin.SetString(musiccolor.name,Green)</onclick>
-                            <onclick condition="stringcompare(Skin.String(musiccolor.name),Red)">Skin.SetString(musiccolor.name,Blue)</onclick>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>96FFFFFF</textcolor>
-                            <label>Music Panel Color</label>
-                            <label2>$INFO[Skin.String(musiccolor.name)]</label2>
-                            <visible>!ControlGroup(2008).HasFocus</visible>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>white</textcolor>
-                            <label>Music Panel Color</label>
-                            <label2>$INFO[Skin.String(musiccolor.name)]</label2>
-                            <visible>ControlGroup(2008).HasFocus</visible>
-                        </control>
-                    </control>
-                    <control type="group" id="2009">
-                        <description>Fake spin control</description>
-                        <width>1210</width>
-                        <height>77</height>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
-                            <visible>!ControlGroup(2009).HasFocus</visible>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
-                            <visible>ControlGroup(2009).HasFocus</visible>
-                        </control>
-                        <control type="button" id="20091">
-                            <posx>1104</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>20092</onleft>
-                            <onright>20092</onright>
-                            <onup>2008</onup>
-                            <ondown>2010</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-down-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-down-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Blue)">Skin.SetString(tvcolor.name,Red)</onclick>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Green)">Skin.SetString(tvcolor.name,Blue)</onclick>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Red)">Skin.SetString(tvcolor.name,Green)</onclick>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Blue)">Skin.SetString(tvcolor.name,Red)</onclick>
-                        </control>
-                        <control type="button" id="20092">
-                            <posx>1147</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>20091</onleft>
-                            <onright>20091</onright>
-                            <onup>2008</onup>
-                            <ondown>2010</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-up-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-up-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Red)">Skin.SetString(tvcolor.name,Blue)</onclick>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Green)">Skin.SetString(tvcolor.name,Red)</onclick>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Blue)">Skin.SetString(tvcolor.name,Green)</onclick>
-                            <onclick condition="stringcompare(Skin.String(tvcolor.name),Red)">Skin.SetString(tvcolor.name,Blue)</onclick>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>96FFFFFF</textcolor>
-                            <label>TV Panel Color</label>
-                            <label2>$INFO[Skin.String(tvcolor.name)]</label2>
-                            <visible>!ControlGroup(2009).HasFocus</visible>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>white</textcolor>
-                            <label>TV Panel Color</label>
-                            <label2>$INFO[Skin.String(tvcolor.name)]</label2>
-                            <visible>ControlGroup(2009).HasFocus</visible>
-                        </control>
-                    </control>
-                    <control type="group" id="2010">
-                        <description>Fake spin control</description>
-                        <width>1210</width>
-                        <height>77</height>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
-                            <visible>!ControlGroup(2010).HasFocus</visible>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
-                            <visible>ControlGroup(2010).HasFocus</visible>
-                        </control>
-                        <control type="button" id="20101">
-                            <posx>1104</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>20102</onleft>
-                            <onright>20102</onright>
-                            <onup>2009</onup>
-                            <ondown>4001</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-down-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-down-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Blue)">Skin.SetString(moviecolor.name,Red)</onclick>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Green)">Skin.SetString(moviecolor.name,Blue)</onclick>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Red)">Skin.SetString(moviecolor.name,Green)</onclick>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Blue)">Skin.SetString(moviecolor.name,Red)</onclick>
-                        </control>
-                        <control type="button" id="20102">
-                            <posx>1147</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>20101</onleft>
-                            <onright>20101</onright>
-                            <onup>2009</onup>
-                            <ondown>4001</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-up-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-up-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Red)">Skin.SetString(moviecolor.name,Blue)</onclick>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Green)">Skin.SetString(moviecolor.name,Red)</onclick>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Blue)">Skin.SetString(moviecolor.name,Green)</onclick>
-                            <onclick condition="stringcompare(Skin.String(moviecolor.name),Red)">Skin.SetString(moviecolor.name,Blue)</onclick>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>96FFFFFF</textcolor>
-                            <label>Movie Panel Color</label>
-                            <label2>$INFO[Skin.String(moviecolor.name)]</label2>
-                            <visible>!ControlGroup(2010).HasFocus</visible>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>white</textcolor>
-                            <label>Movie Panel Color</label>
-                            <label2>$INFO[Skin.String(moviecolor.name)]</label2>
-                            <visible>ControlGroup(2010).HasFocus</visible>
-                        </control>
-                    </control>
+                    </control>    
                 </control>              
+                
+                
+                <!-- =================== -->    
+                <!-- Home Tiles Settings -->
+                <!-- =================== -->
+                <control type="grouplist" id="5">
+                    <onleft>30</onleft>
+                    <include>SettingsCategoryGrouplistVars</include>
+                    <visible>Container(30).HasFocus(37)</visible>
+                    <control type="radiobutton" id="10002">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(AddonTilesColored)</selected>
+                        <onclick>Skin.ToggleSetting(AddonTilesColored)</onclick>
+                        <label>Addon tiles share color</label>
+                    </control>
+                    <control type="button" id="10003">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Grey)">Skin.SetString(musiccolor.name,Red)</onclick>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Green)">Skin.SetString(musiccolor.name,Grey)</onclick>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Blue)">Skin.SetString(musiccolor.name,Green)</onclick>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Pink)">Skin.SetString(musiccolor.name,Blue)</onclick>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Purple)">Skin.SetString(musiccolor.name,Pink)</onclick>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Red)">Skin.SetString(musiccolor.name,Purple)</onclick>
+						<onclick condition="stringcompare(Skin.String(musiccolor.name),Grey)">Skin.SetString(musiccolor.name,Red)</onclick>
+                        <label>$LOCALIZE[2]</label>
+						<label2>$INFO[Skin.String(musiccolor.name)]</label2>
+					</control>
+					<control type="button" id="10004">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Grey)">Skin.SetString(tvcolor.name,Red)</onclick>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Green)">Skin.SetString(tvcolor.name,Grey)</onclick>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Blue)">Skin.SetString(tvcolor.name,Green)</onclick>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Pink)">Skin.SetString(tvcolor.name,Blue)</onclick>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Purple)">Skin.SetString(tvcolor.name,Pink)</onclick>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Red)">Skin.SetString(tvcolor.name,Purple)</onclick>
+						<onclick condition="stringcompare(Skin.String(tvcolor.name),Grey)">Skin.SetString(tvcolor.name,Red)</onclick>
+                        <label>$LOCALIZE[19020]</label>
+						<label2>$INFO[Skin.String(tvcolor.name)]</label2>
+					</control>
+					<control type="button" id="10005">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Grey)">Skin.SetString(moviecolor.name,Red)</onclick>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Green)">Skin.SetString(moviecolor.name,Grey)</onclick>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Blue)">Skin.SetString(moviecolor.name,Green)</onclick>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Pink)">Skin.SetString(moviecolor.name,Blue)</onclick>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Purple)">Skin.SetString(moviecolor.name,Pink)</onclick>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Red)">Skin.SetString(moviecolor.name,Purple)</onclick>
+						<onclick condition="stringcompare(Skin.String(moviecolor.name),Grey)">Skin.SetString(moviecolor.name,Red)</onclick>
+                        <label>$LOCALIZE[342]</label>
+						<label2>$INFO[Skin.String(moviecolor.name)]</label2>
+					</control>
+					<control type="button" id="10006">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Grey)">Skin.SetString(homecolor.name,Red)</onclick>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Green)">Skin.SetString(homecolor.name,Grey)</onclick>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Blue)">Skin.SetString(homecolor.name,Green)</onclick>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Pink)">Skin.SetString(homecolor.name,Blue)</onclick>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Purple)">Skin.SetString(homecolor.name,Pink)</onclick>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Red)">Skin.SetString(homecolor.name,Purple)</onclick>
+						<onclick condition="stringcompare(Skin.String(homecolor.name),Grey)">Skin.SetString(homecolor.name,Red)</onclick>
+                        <label>$LOCALIZE[10000]</label>
+						<label2>$INFO[Skin.String(homecolor.name)]</label2>
+					</control>
+					<control type="button" id="10007">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Grey)">Skin.SetString(appcolor.name,Red)</onclick>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Green)">Skin.SetString(appcolor.name,Grey)</onclick>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Blue)">Skin.SetString(appcolor.name,Green)</onclick>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Pink)">Skin.SetString(appcolor.name,Blue)</onclick>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Purple)">Skin.SetString(appcolor.name,Pink)</onclick>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Red)">Skin.SetString(appcolor.name,Purple)</onclick>
+						<onclick condition="stringcompare(Skin.String(appcolor.name),Grey)">Skin.SetString(appcolor.name,Red)</onclick>
+                        <label>$LOCALIZE[10001]</label>
+						<label2>$INFO[Skin.String(appcolor.name)]</label2>
+					</control>
+					<control type="button" id="10008">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<textcolor>96FFFFFF</textcolor>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick>Skin.SetString(appcolor.name,Grey)</onclick>
+						<onclick>Skin.SetString(homecolor.name,Grey)</onclick>
+						<onclick>Skin.SetString(moviecolor.name,Blue)</onclick>
+						<onclick>Skin.SetString(tvcolor.name,Green)</onclick>
+						<onclick>Skin.SetString(musiccolor.name,Red)</onclick>
+                        <label>$LOCALIZE[409]</label>
+					</control>
+                </control>
+                
                 
                 <!-- ============== --> 
                 <!-- View Settings  -->
@@ -841,6 +752,13 @@
                         <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
                         <onclick>Skin.ToggleSetting(PreferLandscapeArt)</onclick>
                         <label>Prefer Landscape Art when available</label>
+                    </control>
+                    <control type="radiobutton" id="3006">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>
+                        <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
+                        <label>$LOCALIZE[41221]</label>
                     </control>
                 </control>
                 
@@ -1088,21 +1006,7 @@
                     </control>
                 </control>
                 
-                <!-- ================ -->    
-                <!-- Live tv Settings -->
-                <!-- ================ -->
-                <control type="grouplist" id="5">
-                    <onleft>30</onleft>
-                    <include>SettingsCategoryGrouplistVars</include>
-                    <visible>Container(30).HasFocus(37)</visible>
-                    <control type="radiobutton" id="10001">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>
-                        <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
-                        <label>$LOCALIZE[41221]</label>
-                    </control>
-                </control>
+                
                 
                 <!-- =============== -->    
                 <!-- Add-on Settings -->
