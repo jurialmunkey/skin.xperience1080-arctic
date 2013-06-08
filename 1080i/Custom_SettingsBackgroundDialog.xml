@@ -11,9 +11,8 @@
                 <posx>473</posx>
                 <posy>271</posy>
                 <width>974</width>
-                <font>Font-Alaska-S29-BL</font>
+                <include>DialogHeaderMod</include>
                 <label>$INFO[Window(skinsettings).property(Dialog)]</label>
-                <textcolor>mod-infotags</textcolor>
                 <align>center</align>
                 <visible>IsEmpty(Window(skinsettings).property(CustomDialog))</visible>
             </control>
@@ -23,9 +22,8 @@
                 <posx>473</posx>
                 <posy>271</posy>
                 <width>974</width>
-                <font>Font-Alaska-S29-BL</font>
+                <include>DialogHeaderMod</include>
                 <label>$INFO[Window(skinsettings).property(CustomDialog)]</label>
-                <textcolor>mod-infotags</textcolor>
                 <align>center</align>
                 <visible>!IsEmpty(Window(skinsettings).property(CustomDialog))</visible>
             </control>
@@ -88,6 +86,7 @@
                     <ondown>3</ondown>
                     <label>$LOCALIZE[42002]</label>
                     <onclick>PreviousMenu</onclick>
+                   
                 </control>
             </control>
         </control>

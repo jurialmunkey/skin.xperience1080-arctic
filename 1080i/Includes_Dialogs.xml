@@ -1,9 +1,11 @@
 <includes>
 
     <include name="DialogButtonDimensions">
-        <textcolor>ddwhite</textcolor>
-        <focusedcolor>ddwhite</focusedcolor>
-        <disabledcolor>99FFFFFF</disabledcolor>
+    	<font>Font-Alaska-S25-L</font>
+        <textcolor>mod-infotags-d</textcolor>
+        <focusedcolor>mod-infotags-d</focusedcolor>
+        <disabledcolor>mod-infotags-l</disabledcolor>
+        <shadowcolor>mod-shadow</shadowcolor>
         <align>left</align>
         <textoffsetx>85</textoffsetx>
         <width>350</width>
@@ -11,9 +13,11 @@
     </include>
     
     <include name="DialogButtonDimensionsRightAlign">
-        <textcolor>ddwhite</textcolor>
-        <focusedcolor>ddwhite</focusedcolor>
-        <disabledcolor>99FFFFFF</disabledcolor>
+    	<font>Font-Alaska-S25-L</font>
+        <textcolor>mod-infotags-d</textcolor>
+        <focusedcolor>mod-infotags-d</focusedcolor>
+        <disabledcolor>mod-infotags-l</disabledcolor>
+        <shadowcolor>mod-shadow</shadowcolor>
         <align>right</align>
         <textoffsetx>85</textoffsetx>
         <width>350</width>
@@ -2123,9 +2127,8 @@
                     <posx>473</posx>
                     <posy>218</posy>
                     <width>974</width>
-                    <font>Font-Condensed-S34</font>
+                    <include>DialogHeaderMod</include>
                     <label>-</label>
-                    <textcolor>ddwhite</textcolor>
                     <align>center</align>
                 </control>
                 
@@ -2462,8 +2465,7 @@
                 <posy>144</posy>
                 <height>60</height>
                 <label>$INFO[Control.GetLabel(411),,: ]$INFO[Container(450).ListItem.Label,[COLOR=99FFFFFF],[/COLOR]]</label>
-                <font>Font-Condensed-S45</font>
-                <textcolor>eewhite</textcolor>
+                <include>DialogHeaderMod</include>
                 <align>left</align>
                 <scroll>false</scroll>
                 <textoffsetx>30</textoffsetx>
@@ -2912,8 +2914,7 @@
                 <posy>144</posy>
                 <height>60</height>
                 <label>$INFO[Control.GetLabel(1),,: ]$INFO[Container(6).ListItem.Label,[COLOR=99FFFFFF],[/COLOR]]</label>
-                <font>Font-Condensed-S45</font>
-                <textcolor>eewhite</textcolor>
+                <include>DialogHeaderMod</include>
                 <align>left</align>
                 <scroll>false</scroll>
                 <textoffsetx>30</textoffsetx>
@@ -2930,7 +2931,7 @@
                 <height>60</height>
                 <label>Cover →</label>
                 <font>Font-Condensed-S45</font>
-                <textcolor>eewhite</textcolor>
+                <textcolor>mod-infotags</textcolor>
                 <align>left</align>
                 <scroll>false</scroll>
                 <visible>StringCompare(Window(3004).Property(ChooseArt),poster)</visible>

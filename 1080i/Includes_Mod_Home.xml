@@ -1,0 +1,84 @@
+<includes>
+	<include name="Mod_HomeList">
+		<control type="wraplist" id="525">
+			<posx>0</posx>
+			<posy>800</posy>
+			<width>1920</width>
+			<height>300</height>
+			<scrolltime tween="cubic" easing="out">500</scrolltime>
+			<orientation>horizontal</orientation>
+			<viewtype label="Home List">list</viewtype>
+			<onup>21</onup>
+			<ondown>21</ondown>
+			<onleft>525</onleft>
+			<onright>525</onright>
+			<preloaditems>2</preloaditems>
+			<focusposition>2</focusposition>
+			<visible>!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
+			<itemlayout width="384">
+				<control type="image">
+					<description>Settings</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>125</width>
+					<height>125</height>
+					<texture>windows/home/icons/music.png</texture>
+					<colordiffuse>mod-infotags-l</colordiffuse>
+				</control>
+				<control type="label">
+					<posx>125</posx>
+					<posy>0</posy>
+					<width>259</width>
+					<height>100</height>
+					<font>Font-Alaska-S52-BL</font>
+					<textcolor>mod-infotags-l</textcolor>
+					<align>left</align>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+			<focusedlayout width="384">
+				<control type="grouplist">
+					<align>center</align>
+					<orientation>horizontal</orientation>
+					<width>384</width>
+					<control type="image">
+						<description>Settings</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>125</width>
+						<height>125</height>
+						<texture>windows/home/icons/music.png</texture>
+						<colordiffuse>mod-infotags-d</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>125</posx>
+						<posy>0</posy>
+						<width min="100" max="259">auto</width>
+						<height>100</height>
+						<font>Font-Alaska-S52-BL</font>
+						<textcolor>mod-infotags-d</textcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>one</label>
+					<onclick>noop</onclick>
+					<visible>true</visible>
+				</item>
+				<item id="2">
+					<label>games</label>
+					<onclick>noop</onclick>
+					<visible>true</visible>
+				</item>
+				<item id="3">
+					<label>music</label>
+					<onclick>noop</onclick>
+					<visible>true</visible>
+				</item>
+			</content>
+		</control>
+	</include>
+</includes>

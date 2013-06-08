@@ -53,9 +53,8 @@
                     <posy>327</posy>
                     <width>1000</width>
                     <height>22</height>
-                    <font>Font-Alaska-S45-L</font>
+                    <include>DialogHeaderMod</include>
                     <align>center</align>
-                    <textcolor>mod-infotags-l</textcolor>
                     <animation effect="slide" end="0,25" time="0" condition="IsEmpty(Control.GetLabel(2))">Conditional</animation>
                     <animation effect="slide" end="0,25" time="0" condition="IsEmpty(Control.GetLabel(3))">Conditional</animation>
                     <animation effect="slide" end="0,25" time="0" condition="IsEmpty(Control.GetLabel(4))">Conditional</animation>

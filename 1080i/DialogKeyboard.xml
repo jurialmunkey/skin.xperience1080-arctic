@@ -39,9 +39,8 @@
                     <posy>-75</posy>
                     <width>1000</width>
                     <height>22</height>
-                    <font>Font-Alaska-S28-L</font>
+                    <include>DialogHeaderMod</include>
                     <align>center</align>
-                    <textcolor>mod-infotags</textcolor>
                 </control>
                 <control type="label" id="310">
                     <description>Edit Text</description>

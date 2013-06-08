@@ -43,9 +43,8 @@
                 <posx>473</posx>
                 <posy>308</posy>
                 <width>974</width>
-                <font>Font-Condensed-S34</font>
+                <include>DialogHeaderMod</include>
                 <label>$LOCALIZE[35000]</label>
-                <textcolor>ddwhite</textcolor>
                 <align>center</align>
             </control>
             <control type="list" id="20">

@@ -370,6 +370,11 @@
             <size>25</size>
         </font>
         <font>
+            <name>Font-Alaska-S25-L</name>
+            <filename>alaska_regular.ttf</filename>
+            <size>25</size>
+        </font>
+        <font>
             <name>Font-Alaska-S27-BL</name>
             <filename>alaska_black.ttf</filename>
             <size>27</size>
@@ -438,7 +443,11 @@
             <filename>alaska_cond.ttf</filename>
             <size>33</size>
         </font>
-        
+        <font>
+            <name>Font-Alaska-S34-L</name>
+            <filename>alaska_regular.ttf</filename>
+            <size>34</size>
+        </font>
         <font>
             <name>Font-Alaska-S34-BL</name>
             <filename>alaska_black.ttf</filename>

@@ -28,9 +28,8 @@
                     <posx>473</posx>
                     <posy>204</posy>
                     <width>974</width>
-                    <font>Font-Alaska-S28-L</font>
+                    <include>DialogHeaderMod</include>
                     <label>20333</label>
-                    <textcolor>mod-infotags</textcolor>
                     <align>center</align>
                 </control>
                 <control type="group" id="8001">

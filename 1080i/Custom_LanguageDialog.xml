@@ -9,9 +9,8 @@
                     <posx>473</posx>
                     <posy>218</posy>
                     <width>974</width>
-                    <font>Font-Condensed-S34</font>
+                    <include>DialogHeaderMod</include>
                     <label>$LOCALIZE[41193]</label>
-                    <textcolor>ddwhite</textcolor>
                     <align>center</align>
                 </control>
                 
