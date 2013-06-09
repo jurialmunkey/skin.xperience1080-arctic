@@ -26,10 +26,27 @@
                 <animation effect="slide" start="0,0" end="0,-70" time="300" tween="cubic" easing="inout" condition="Window.IsActive(videoosd) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]">Conditional</animation>
                 <control type="image">
                     <posx>0</posx>
-                    <posy>600</posy>
+                    <posy>900</posy>
                     <width>1920</width>
-                    <height>740</height>
-                    <texture border="1,401,1,45">osd/fullscreen/osd-back-info.png</texture>
+                    <height>455</height>
+                    <texture border="35">views/newgloss/border-glass.png</texture>
+                    <animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>5</posx>
+                    <posy>905</posy>
+                    <width>1910</width>
+                    <height>445</height>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
+					<animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]">Conditional</animation>
+                </control>
+                <control type="image">
+                    <posx>20</posx>
+                    <posy>1005</posy>
+                    <width>1880</width>
+                    <height>295</height>
+                    <texture border="5">views/newgloss/whitepanel.png</texture>
+                    <colordiffuse>ff181818</colordiffuse>
                 </control>
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,213" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)">Conditional</animation>
@@ -84,10 +101,20 @@
                         <posy>1027</posy>
                         <width>360</width>
                         <height>25</height>
-                        <label>$INFO[Player.Time(hh:mm:ss)]$INFO[Player.Duration(hh:mm:ss), / ,]</label>
+                        <label>$INFO[Player.Time(hh:mm:ss)]</label>
                         <textcolor>aawhite</textcolor>
-                        <font>Font-Condensed-S34</font>
+                        <font>Font-Alaska-S29-BL</font>
                         <align>left</align>
+                    </control>
+                    <control type="label">
+                        <posx>1850</posx>
+                        <posy>1027</posy>
+                        <width>360</width>
+                        <height>25</height>
+                        <label>$INFO[Player.Duration(hh:mm:ss), /  ,]</label>
+                        <textcolor>aawhite</textcolor>
+                        <font>Font-Alaska-S29-BL</font>
+                        <align>right</align>
                     </control>
                     <control type="label">
                         <description>Pause / finish time</description>
@@ -98,7 +125,7 @@
                         <label>$LOCALIZE[112]</label>
                         <scroll>false</scroll>
                         <textcolor>aawhite</textcolor>
-                        <font>Font-Condensed-S34</font>
+                        <font>Font-Alaska-S29-BL</font>
                         <align>right</align>
                         <visible>Player.Paused + ![Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding] + ![Player.ShowInfo | Window.IsVisible(fullscreeninfo)]</visible>
                         <animation effect="fade" start="0" end="100" time="400" tween="sine" easing="inout">Visible</animation>
@@ -113,7 +140,7 @@
                         <label>$INFO[Player.SeekOffset,$LOCALIZE[773] ,]</label>
                         <scroll>false</scroll>
                         <textcolor>aawhite</textcolor>
-                        <font>Font-Condensed-S34</font>
+                        <font>Font-Alaska-S29-BL</font>
                         <align>right</align>
                         <visible>Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding</visible>
                         <animation effect="fade" start="0" end="100" time="400" tween="sine" easing="inout">Visible</animation>
@@ -177,8 +204,8 @@
                                 <width>1300</width>
                                 <height>56</height>
                                 <label>[UPPERCASE]$LOCALIZE[13350][/UPPERCASE]</label>
-                                <textcolor>99FFFFFF</textcolor>
-                                <font>Font-Condensed-S50</font>
+                                <textcolor>mod-infotags</textcolor>
+                                <font>Font-Alaska-S52-BL</font>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <scroll>false</scroll>
@@ -190,8 +217,8 @@
                                 <width>1300</width>
                                 <height>56</height>
                                 <label>[UPPERCASE]$LOCALIZE[112][/UPPERCASE]</label>
-                                <textcolor>99FFFFFF</textcolor>
-                                <font>Font-Condensed-S50</font>
+                                <textcolor>mod-infotags</textcolor>
+                                <font>Font-Alaska-S52-BL</font>
                                 <align>left</align>
                                 <aligny>center</aligny>
                                 <scroll>false</scroll>
@@ -203,17 +230,17 @@
                                 <width>1300</width>
                                 <height>100</height>
                                 <orientation>horizontal</orientation>
-                                <itemgap>0</itemgap>
+                                <itemgap>10</itemgap>
                                 <visible>VideoPlayer.Content(LiveTV)</visible>
                                 <usecontrolcoords>true</usecontrolcoords>
                                 <control type="label">
                                     <posx>0</posx>
-                                    <posy>0</posy>
+                                    <posy>19</posy>
                                     <width min="0" max="400">auto</width>
                                     <height>100</height>
                                     <label>[B]$INFO[VideoPlayer.ChannelNumber][/B]</label>
-                                    <textcolor>99FFFFFF</textcolor>
-                                    <font>Font-Condensed-S100</font>
+                                    <textcolor>mod-infotags</textcolor>
+                                    <font>Font-Alaska-S92-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <scroll>false</scroll>
@@ -223,9 +250,9 @@
                                     <posy>17</posy>
                                     <width>900</width>
                                     <height>100</height>
-                                    <label>[UPPERCASE]$INFO[VideoPlayer.ChannelName, ,][/UPPERCASE]</label>
-                                    <textcolor>99FFFFFF</textcolor>
-                                    <font>Font-Condensed-S50</font>
+                                    <label>$INFO[VideoPlayer.ChannelName, ,]</label>
+                                    <textcolor>mod-infotags</textcolor>
+                                    <font>Font-Alaska-S52-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
                                     <scroll>false</scroll>
@@ -236,14 +263,28 @@
                             <posy>825</posy>
                             <visible>VideoPlayer.Content(Movies)</visible>
                             <control type="image">
-                                <posx>80</posx>
-                                <posy>-35</posy>
-                                <width>276</width>
-                                <height>394</height>
-                                <texture background="true" fallback="views/fallbacks/DefaultVideo.png/medium.png">$INFO[Player.Art(thumb)]</texture>
-                                <bordertexture border="30">osd/fullscreen/cover-shadow.png</bordertexture>
-                                <bordersize>20</bordersize>
-                                <aspectratio align="right">keep</aspectratio>
+                                <posx>29</posx>
+                                <posy>-227</posy>
+                                <width>300</width>
+                                <height>300</height>
+                                <texture>$INFO[Player.Art(discart)]</texture>
+                                <aspectratio align="center">keep</aspectratio>
+                            </control>
+                            <control type="image">
+                                <posx>19</posx>
+                                <posy>-87</posy>
+                                <width>320</width>
+                                <height>480</height>
+                                <texture background="true" fallback="views/fallbacks/DefaultVideo.png/medium.png" diffuse="views/newgloss/poster-320-480.png">$INFO[Player.Art(poster)]</texture>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                            </control>
+                            <control type="image">
+                                <posx>9</posx>
+                                <posy>-97</posy>
+                                <width>340</width>
+                                <height>500</height>
+                                <texture border="35">views/newgloss/border.png</texture>
+                                <aspectratio>stretch</aspectratio>
                             </control>
                             <control type="label">
                                 <posx>360</posx>
@@ -251,7 +292,7 @@
                                 <width>1240</width>
                                 <height>56</height>
                                 <label>$INFO[VideoPlayer.Title]</label>
-                                <textcolor>bbwhite</textcolor>
+                                <textcolor>$VAR[ExtendPlotColor]</textcolor>
                                 <font>Font-Condensed-S50-B</font>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -306,14 +347,30 @@
                             <posy>825</posy>
                             <visible>VideoPlayer.Content(Episodes)</visible>
                             <control type="image">
-                                <posx>80</posx>
-                                <posy>-35</posy>
-                                <width>276</width>
-                                <height>394</height>
-                                <texture background="true" fallback="views/fallbacks/DefaultVideo.png/medium.png">$INFO[Player.Art(tvshow.poster)]</texture>
-                                <bordertexture border="30">osd/fullscreen/cover-shadow.png</bordertexture>
-                                <bordersize>20</bordersize>
-                                <aspectratio align="right">keep</aspectratio>
+                                <posx>19</posx>
+                                <posy>-87</posy>
+                                <width>320</width>
+                                <height>480</height>
+                                <texture background="true" fallback="views/fallbacks/DefaultVideo.png/medium.png" diffuse="views/newgloss/poster-320-480.png">$INFO[Player.Art(tvshow.poster)]</texture>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <visible>IsEmpty(Player.Art(tvshow.clearlogo))</visible>
+                            </control>
+                            <control type="image">
+                                <posx>9</posx>
+                                <posy>-97</posy>
+                                <width>340</width>
+                                <height>500</height>
+                                <texture border="35">views/newgloss/border.png</texture>
+                                <aspectratio>stretch</aspectratio>
+                                <visible>IsEmpty(Player.Art(tvshow.clearlogo))</visible>
+                            </control>
+                            <control type="image">
+                                <posx>22</posx>
+                                <posy>70</posy>
+                                <width>320</width>
+                                <height>280</height>
+                                <texture>$INFO[Player.Art(tvshow.clearlogo)]</texture>
+                                <aspectratio align="center" aligny="center">keep</aspectratio>
                             </control>
                             <control type="label">
                                 <posx>360</posx>
@@ -321,7 +378,7 @@
                                 <width>1240</width>
                                 <height>56</height>
                                 <label>$INFO[VideoPlayer.Episode,,. ]$INFO[VideoPlayer.Title]</label>
-                                <textcolor>bbwhite</textcolor>
+                                <textcolor>$VAR[ExtendPlotColor]</textcolor>
                                 <font>Font-Condensed-S50-B</font>
                                 <align>left</align>
                                 <aligny>center</aligny>
@@ -361,10 +418,10 @@
                             <posy>825</posy>
                             <visible>VideoPlayer.Content(LiveTV)</visible>                          
                             <control type="image">
-                                <posx>100</posx>
-                                <posy>87</posy>
-                                <width>236</width>
-                                <height>236</height>
+                                <posx>64</posx>
+                                <posy>91</posy>
+                                <width>250</width>
+                                <height>250</height>
                                 <texture background="true">$INFO[Player.Art(thumb)]</texture>
                                 <aspectratio aligny="top">keep</aspectratio>
                             </control>
@@ -374,7 +431,7 @@
                                 <width>1240</width>
                                 <height>56</height>
                                 <label>$VAR[OSDTitle]</label>
-                                <textcolor>bbwhite</textcolor>
+                                <textcolor>$VAR[ExtendPlotColor]</textcolor>
                                 <font>Font-Condensed-S50-B</font>
                                 <align>left</align>
                                 <aligny>center</aligny>

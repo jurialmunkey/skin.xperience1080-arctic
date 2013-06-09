@@ -504,6 +504,11 @@
             <size>64</size>
         </font>
         <font>
+            <name>Font-Alaska-S92-BL</name>
+            <filename>alaska_black.ttf</filename>
+            <size>92</size>
+        </font>
+        <font>
             <name>Font-Alaska-S100</name>
             <filename>alaska_black.ttf</filename>
             <size>100</size>

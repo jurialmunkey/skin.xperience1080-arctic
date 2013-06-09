@@ -263,10 +263,17 @@
 		<value>Grey Tiles</value>
     </variable>
     
+    <variable name="ExtendPlotColor">
+        <value condition="!IsEmpty(Window.Property(ExtendPlot))">mod-infotags</value>
+		<value condition="IsEmpty(Window.Property(ExtendPlot))">bbwhite</value>
+    </variable>
+    
     <include name="DialogHeaderMod">
     	<font>Font-Alaska-S34-L</font>
     	<textcolor>mod-infotags-d</textcolor>
     </include>
+    
+    
     
     <!-- INCLUDES: Common Clearlogo and Ratings etc at bottom of screen -->
     <include name="CommonClearLogoDetails">
