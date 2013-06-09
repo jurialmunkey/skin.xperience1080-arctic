@@ -41,6 +41,7 @@
                     <width>1920</width>
                     <height>455</height>
                     <texture border="35">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
                     <animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Player.Paused] + !Window.IsActive(musicosd)]">Conditional</animation>
                 </control>
                 <control type="image">
@@ -49,6 +50,7 @@
                     <width>1910</width>
                     <height>445</height>
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
+					<colordiffuse>55ffffff</colordiffuse>
                     <animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Player.Paused] + !Window.IsActive(musicosd)]">Conditional</animation>
                 </control>
                 <control type="image">
@@ -57,7 +59,7 @@
                     <width>1880</width>
                     <height>295</height>
                     <texture border="5">views/newgloss/whitepanel.png</texture>
-                    <colordiffuse>ff181818</colordiffuse>
+					<colordiffuse>dd0e0e0e</colordiffuse>
                 </control>
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,213" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Player.Paused] + !Window.IsActive(musicosd)">Conditional</animation>
