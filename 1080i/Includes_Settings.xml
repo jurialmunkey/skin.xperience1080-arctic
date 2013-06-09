@@ -82,11 +82,11 @@
         <height>45</height>
         <align>left</align>
         <aligny>center</aligny>
-        <textcolor>96FFFFFF</textcolor>
-        <focusedcolor>white</focusedcolor>
-        <selectedcolor>white</selectedcolor>
-        <disabledcolor>96FFFFFF</disabledcolor>
-        <font>Font-Condensed-S30-B</font>
+        <textcolor>mod-infotags-l</textcolor>
+        <focusedcolor>mod-infotags-l</focusedcolor>
+        <selectedcolor>mod-infotags-l</selectedcolor>
+        <disabledcolor>mod-infotags-l</disabledcolor>
+        <font>Font-Condensed-S30</font>
         <textoffsetx>35</textoffsetx>
     </include>
     
@@ -95,12 +95,12 @@
         <width>338</width>
         <align>right</align>
         <aligny>center</aligny>
-        <textcolor>aawhite</textcolor>
+        <textcolor>mod-infotags-l</textcolor>
         <focusedcolor>white</focusedcolor>
-        <disabledcolor>77FFFFFF</disabledcolor>
+        <disabledcolor>mod-infotags-vl</disabledcolor>
         <font>Font-Condensed-S30-B</font>
         <textoffsetx>35</textoffsetx>
-        <texturefocus border="150,3,150,3">windows/settings/images/right-focus.png</texturefocus>
+        <texturefocus border="5">views/other/focus-mod.png</texturefocus>
         <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
     </include>
     
@@ -108,12 +108,12 @@
         <height>77</height>
         <align>left</align>
         <aligny>center</aligny>
-        <texturefocus border="150,3,150,3">windows/settings/images/right-focus.png</texturefocus>
+        <texturefocus border="5">views/other/focus-mod.png</texturefocus>
         <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
-        <textcolor>96FFFFFF</textcolor>
+        <textcolor>mod-infotags-l</textcolor>
         <focusedcolor>white</focusedcolor>
         <selectedcolor>white</selectedcolor>
-        <disabledcolor>96FFFFFF</disabledcolor>
+        <disabledcolor>mod-infotags-vl</disabledcolor>
         <font>Font-Condensed-S30-B</font>
         <textoffsetx>35</textoffsetx>
     </include>
@@ -123,11 +123,11 @@
         <radioposx>1087</radioposx>
         <align>left</align>
         <aligny>center</aligny>
-        <texturefocus border="150,1,150,1">windows/settings/images/right-focus.png</texturefocus>
+        <texturefocus border="5">views/other/focus-mod.png</texturefocus>
         <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
-        <textcolor>96FFFFFF</textcolor>
+        <textcolor>mod-infotags-l</textcolor>
         <focusedcolor>white</focusedcolor>
-        <disabledcolor>96FFFFFF</disabledcolor>
+        <disabledcolor>mod-infotags-vl</disabledcolor>
         <font>Font-Condensed-S30-B</font>
         <textoffsetx>35</textoffsetx>
     </include>

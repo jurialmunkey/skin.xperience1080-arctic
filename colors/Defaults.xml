@@ -41,7 +41,7 @@
         <color name="DialogSelected">FF4ea1e7</color>
         
 <!-- Selected color -->
-        <color name="SelectedGreen">FF72F03A</color>
+        <color name="SelectedGreen">eeeeeeee</color>
         
         <!-- TILES -->
         <color name="Blue Tiles">aa005180</color>
@@ -58,6 +58,7 @@
 		<color name="mod-infotags">ee404040</color>
 		<color name="mod-infotags-li">cc404040</color>		
 		<color name="mod-infotags-l">aa404040</color>
+		<color name="mod-infotags-vl">55404040</color>
 		<color name="mod-infotags-a">cc777777</color>
 		<color name="mod-infotags-d">ee181818</color>	
 		<color name="mod-infotags-alt">eeeeeeee</color>	

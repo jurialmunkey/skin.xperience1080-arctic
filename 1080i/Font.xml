@@ -434,6 +434,11 @@
             <size>31</size>
         </font>
         <font>
+            <name>Font-Alaska-S31-L</name>
+            <filename>alaska_regular.ttf</filename>
+            <size>31</size>
+        </font>
+        <font>
             <name>Font-Alaska-S32-BL</name>
             <filename>alaska_black.ttf</filename>
             <size>32</size>

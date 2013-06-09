@@ -43,19 +43,19 @@
                 
                 <!-- Panel -->
                 <control type="image">
-                    <posx>178</posx>
-                    <posy>281</posy>
-                    <height>608</height>
-                    <width>342</width>
-                    <texture border="5">views/newgloss/panel.png</texture>
+                    <posx>160</posx>
+                    <posy>262</posy>
+                    <height>645</height>
+                    <width>1601</width>
+                    <texture border="25">views/newgloss/border-glass.png</texture>
+                    <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
                 </control>
                 <control type="image">
-                    <posx>160</posx>
-                    <posy>263</posy>
-                    <height>644</height>
-                    <width>1602</width>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
+                    <posx>164</posx>
+                    <posy>265</posy>
+                    <height>638</height>
+                    <width>370</width>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 </control>
                 
                 <!-- Side Buttons -->
@@ -96,11 +96,11 @@
                           
                 <!-- Panel -->
                 <control type="image">
-                    <posx>353</posx>
-                    <posy>281</posy>
-                    <height>608</height>
-                    <width>1214</width>
-                    <texture border="5">views/newgloss/panel.png</texture>
+                    <posx>339</posx>
+                    <posy>265</posy>
+                    <height>638</height>
+                    <width>1243</width>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 </control>
                 <control type="image">
                     <description>Shadow</description>
@@ -168,11 +168,11 @@
             <height>77</height>
             <align>left</align>
             <aligny>center</aligny>
-            <texturefocus border="150,3,150,3">windows/settings/images/right-focus.png</texturefocus>
+            <texturefocus border="5">views/other/focus-mod.png</texturefocus>
             <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
-            <textcolor>96FFFFFF</textcolor>
+            <textcolor>mod-infotags-l</textcolor>
             <focusedcolor>white</focusedcolor>
-            <disabledcolor>40FFFFFF</disabledcolor>
+            <disabledcolor>mod-infotags-vl</disabledcolor>
             <font>Font-Condensed-S30-B</font>
             <textoffsetx>35</textoffsetx>
         </control>
@@ -182,11 +182,11 @@
             <radioposx>1087</radioposx>
             <align>left</align>
             <aligny>center</aligny>
-            <texturefocus border="150,3,150,3">windows/settings/images/right-focus.png</texturefocus>
+			<texturefocus border="5">views/other/focus-mod.png</texturefocus>
             <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
-            <textcolor>96FFFFFF</textcolor>
+            <textcolor>mod-infotags-l</textcolor>
             <focusedcolor>white</focusedcolor>
-            <disabledcolor>40FFFFFF</disabledcolor>
+            <disabledcolor>mod-infotags-vl</disabledcolor>
             <font>Font-Condensed-S30-B</font>
             <textoffsetx>35</textoffsetx>
         </control>
@@ -196,11 +196,11 @@
             <spinposx>20</spinposx>
             <align>left</align>
             <aligny>center</aligny>
-            <texturefocus border="150,3,150,3">windows/settings/images/right-focus.png</texturefocus>
+            <texturefocus border="5">views/other/focus-mod.png</texturefocus>
             <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
-            <textcolor>96FFFFFF</textcolor>
+            <textcolor>mod-infotags-l</textcolor>
             <focusedcolor>white</focusedcolor>
-            <disabledcolor>40FFFFFF</disabledcolor>
+            <disabledcolor>mod-infotags-vl</disabledcolor>
             <font>Font-Condensed-S30-B</font>
             <textoffsetx>35</textoffsetx>
         </control>

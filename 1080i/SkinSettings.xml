@@ -44,21 +44,22 @@
                     <textcolor>mod-infotags</textcolor>
                 </control>
                 
+                
                 <!-- Panel -->
                 <control type="image">
-                    <posx>178</posx>
-                    <posy>281</posy>
-                    <height>608</height>
-                    <width>342</width>
-                    <texture border="5">views/newgloss/panel.png</texture>
+                    <posx>160</posx>
+                    <posy>262</posy>
+                    <height>645</height>
+                    <width>1601</width>
+                    <texture border="25">views/newgloss/border-glass.png</texture>
+                    <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
                 </control>
                 <control type="image">
-                    <posx>160</posx>
-                    <posy>263</posy>
-                    <height>644</height>
-                    <width>1602</width>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
+                    <posx>164</posx>
+                    <posy>265</posy>
+                    <height>638</height>
+                    <width>370</width>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 </control>
                 
                 <control type="list" id="30">
@@ -87,7 +88,7 @@
                             <align>right</align>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>
-                            <textcolor>96FFFFFF</textcolor>
+                            <textcolor>mod-infotags-l</textcolor>
                             <font>Font-Condensed-S30-B</font>
                             <textoffsetx>35</textoffsetx>
                         </control>
@@ -98,7 +99,7 @@
                             <posy>0</posy>
                             <width>338</width>
                             <height>77</height>
-                            <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
+                            <texture border="5">views/other/focus-mod.png</texture>
                             <animation effect="fade" start="100" end="50" time="0" condition="!Control.HasFocus(30)">Conditional</animation>
                         </control>
                         <control type="label">
@@ -179,11 +180,11 @@
                           
                 <!-- Panel -->
                 <control type="image">
-                    <posx>353</posx>
-                    <posy>281</posy>
-                    <height>608</height>
-                    <width>1214</width>
-                    <texture border="5">views/newgloss/panel.png</texture>
+                    <posx>339</posx>
+                    <posy>265</posy>
+                    <height>638</height>
+                    <width>1243</width>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 </control>
                 <control type="image">
                     <description>Shadow</description>
@@ -193,6 +194,7 @@
                     <height>150</height>
                     <texture>windows/home/item-shadow.png</texture>
                 </control>
+                
                 <!-- =============== -->    
                 <!-- General Settings -->
                 <!-- =============== -->
@@ -232,7 +234,7 @@
                     <control type="button" id="1009">
                         <width>1210</width>
                         <label> • $LOCALIZE[559]:</label>
-                        <label2>[COLOR=SettingsBlue]$INFO[Skin.String(StartupPlaylist.Path)][/COLOR]</label2>
+                        <label2>$INFO[Skin.String(StartupPlaylist.Path)]</label2>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>Skin.SetFile(StartupPlaylist.Path,.m3u|.xsp,special://profile/playlists/music/)</onclick>
                         <enable>Skin.HasSetting(StartupPlaylist)</enable>
@@ -255,7 +257,7 @@
                             <posy>0</posy>
                             <width>1210</width>
                             <height>77</height>
-                            <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
+                            <texture border="5">views/other/focus-mod.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <visible>ControlGroup(1007).HasFocus</visible>
                         </control>
@@ -324,7 +326,7 @@
                             <aligny>center</aligny>
                             <textoffsetx>35</textoffsetx>
                             <font>Font-Condensed-S30-B</font>
-                            <textcolor>96FFFFFF</textcolor>
+                            <textcolor>mod-infotags-l</textcolor>
                             <label>$LOCALIZE[20304]</label>
                             <label2>$INFO[Skin.String(rss.setting)]</label2>
                             <visible>!ControlGroup(1007).HasFocus</visible>
@@ -346,8 +348,6 @@
                     </control>
                     <control type="button" id="1013">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>Skin.SetPath(cdartlocation)</onclick>
                         <label>Path to Music Art</label>
@@ -365,8 +365,6 @@
                     <include>SettingsCategoryGrouplistVars</include>
                     <control type="button" id="2000">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41131])</onclick>
                         <onclick>ActivateWindow(3001)</onclick>
@@ -376,8 +374,6 @@
                     </control>
                     <control type="button" id="2001">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41136])</onclick>
                         <onclick>ActivateWindow(3003)</onclick>
@@ -385,20 +381,11 @@
                     </control>
                     <control type="button" id="2002">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41140])</onclick>
                         <onclick>ActivateWindow(3003)</onclick>
                         <label>$LOCALIZE[41140]</label>
                     </control>
-                    <!--<control type="radiobutton" id="2003">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(ModAlternateHomeScreen)</selected>
-                        <onclick>Skin.ToggleSetting(ModAlternateHomeScreen)</onclick>
-                        <label>Alternate Home Screen</label>
-                    </control>-->
                     <control type="radiobutton" id="2003">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -422,7 +409,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>Skin.ToggleSetting(UseRCB)</onclick>
                         <onclick condition="Skin.HasSetting(UseRCB)">Skin.SetString(UseRCB.name,Rom Collection Browser)</onclick>
@@ -447,7 +433,7 @@
                             <posy>0</posy>
                             <width>1210</width>
                             <height>77</height>
-                            <texture border="150,3,150,3">windows/settings/images/right-focus.png</texture>
+                            <texture border="5">views/other/focus-mod.png</texture>
                             <visible>ControlGroup(2007).HasFocus</visible>
                         </control>
                         <control type="button" id="20071">
@@ -543,7 +529,7 @@
                             <aligny>center</aligny>
                             <textoffsetx>35</textoffsetx>
                             <font>Font-Condensed-S30-B</font>
-                            <textcolor>96FFFFFF</textcolor>
+                            <textcolor>mod-infotags-l</textcolor>
                             <label>$LOCALIZE[41152]</label>
                             <label2>$INFO[Skin.String(music.name)]</label2>
                             <visible>!ControlGroup(2007).HasFocus</visible>
@@ -589,7 +575,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(musiccolor.name),Grey Tiles)">Skin.SetString(musiccolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(musiccolor.name),Lime Tiles)">Skin.SetString(musiccolor.name,Grey Tiles)</onclick>
@@ -611,7 +596,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(tvcolor.name),Grey Tiles)">Skin.SetString(tvcolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(tvcolor.name),Lime Tiles)">Skin.SetString(tvcolor.name,Grey Tiles)</onclick>
@@ -633,7 +617,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(moviecolor.name),Grey Tiles)">Skin.SetString(moviecolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(moviecolor.name),Lime Tiles)">Skin.SetString(moviecolor.name,Grey Tiles)</onclick>
@@ -655,7 +638,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(homecolor.name),Grey Tiles)">Skin.SetString(homecolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(homecolor.name),Lime Tiles)">Skin.SetString(homecolor.name,Grey Tiles)</onclick>
@@ -677,7 +659,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(appcolor.name),Grey Tiles)">Skin.SetString(appcolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(appcolor.name),Lime Tiles)">Skin.SetString(appcolor.name,Grey Tiles)</onclick>						
@@ -699,7 +680,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(pvrcolor.name),Grey Tiles)">Skin.SetString(pvrcolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(pvrcolor.name),Lime Tiles)">Skin.SetString(pvrcolor.name,Grey Tiles)</onclick>
@@ -721,7 +701,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick condition="stringcompare(Skin.String(weathercolor.name),Grey Tiles)">Skin.SetString(weathercolor.name,Purple Tiles)</onclick>
 						<onclick condition="stringcompare(Skin.String(weathercolor.name),Lime Tiles)">Skin.SetString(weathercolor.name,Grey Tiles)</onclick>
@@ -743,7 +722,6 @@
 						<aligny>center</aligny>
 						<textoffsetx>35</textoffsetx>
 						<font>Font-Condensed-S30-B</font>
-						<textcolor>96FFFFFF</textcolor>
 						<include>SettingsCategoryDefaultButtonVars</include>
 						<onclick>Skin.SetString(appcolor.name,Grey Tiles)</onclick>
 						<onclick>Skin.SetString(homecolor.name,Grey Tiles)</onclick>
@@ -789,7 +767,7 @@
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41192]</label>
-                        <label2 fallback="US">[COLOR=SettingsBlue]$VAR[MovieMPAALangLabel][/COLOR]</label2>
+                        <label2 fallback="US">$VAR[MovieMPAALangLabel]</label2>
                         <onclick>ActivateWindow(3006)</onclick>
                     </control>
                     <control type="radiobutton" id="3005">
@@ -872,8 +850,6 @@
                     <visible>Container(30).HasFocus(35)</visible>
                     <control type="button" id="5000">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41251]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
@@ -883,8 +859,6 @@
                     </control>
                     <control type="button" id="5001">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[5]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
@@ -894,8 +868,6 @@
                     </control>
                     <control type="button" id="5002">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[342]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
@@ -905,8 +877,6 @@
                     </control>
                     <control type="button" id="5003">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[20343]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
@@ -916,8 +886,6 @@
                     </control>
                     <control type="button" id="5006">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[2]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
@@ -927,8 +895,6 @@
                     </control>
                     <control type="button" id="5009">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41504]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
@@ -938,8 +904,6 @@
                     </control>
                     <control type="button" id="5010">
                         <width>1210</width>
-                        <texturefocus border="150,3,150,3">windows/settings/images/right-focus-arrow-fo.png</texturefocus>
-                        <texturenofocus border="150,3,150,3">windows/settings/images/right-focus-arrow-nf.png</texturenofocus>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[12600]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
