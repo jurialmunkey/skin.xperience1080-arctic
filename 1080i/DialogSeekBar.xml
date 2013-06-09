@@ -26,12 +26,12 @@
                 <animation effect="slide" start="0,0" end="0,-70" time="300" tween="cubic" easing="inout" condition="Window.IsActive(videoosd) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]">Conditional</animation>
                 <control type="image">
                     <posx>0</posx>
-                    <posy>900</posy>
+                    <posy>985</posy>
                     <width>1920</width>
                     <height>455</height>
                     <texture border="35">views/newgloss/border-glass.png</texture>
                     <colordiffuse>77ffffff</colordiffuse>
-                    <animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]">Conditional</animation>
+                    <visible>![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]</visible>
                 </control>
                 <control type="image">
                     <posx>5</posx>
@@ -39,7 +39,7 @@
                     <width>1910</width>
                     <height>445</height>
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
-                    <colordiffuse>55ffffff</colordiffuse>
+                    <colordiffuse>99ffffff</colordiffuse>
 					<animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]">Conditional</animation>
                 </control>
                 <control type="image">
@@ -48,7 +48,7 @@
                     <width>1880</width>
                     <height>295</height>
                     <texture border="5">views/newgloss/whitepanel.png</texture>
-                    <colordiffuse>dd0e0e0e</colordiffuse>
+                    <colordiffuse>d0000000</colordiffuse>
                 </control>
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,213" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)">Conditional</animation>
