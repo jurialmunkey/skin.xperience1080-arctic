@@ -363,6 +363,7 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[AeonFlagVideoCodec]</texture>
 						<colordiffuse>mod-infotags</colordiffuse>
+						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
 					</control>
 					<control type="image">
 						<posx>228</posx>
@@ -372,7 +373,21 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[AeonFlagAudioCodec]</texture>
 						<colordiffuse>mod-infotags</colordiffuse>
+						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
 					</control>
+					<control type="label">
+                        <posx>108</posx>
+						<posy>22</posy>
+						<width>220</width>
+						<height>52</height>
+                        <label>$LOCALIZE[20457]</label>
+                        <font>Font-Alaska-S25-BL</font>
+                        <textcolor>mod-infotags</textcolor>
+                        <scroll>false</scroll>
+                        <align>center</align>
+                        <wrapmultiline>false</wrapmultiline>
+                        <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+                    </control>
                 </control>
                 <!-- RATING AND STUDIO -->
                 <control type="group">
