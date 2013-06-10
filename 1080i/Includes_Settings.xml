@@ -101,7 +101,7 @@
         <font>Font-Condensed-S30-B</font>
         <textoffsetx>35</textoffsetx>
         <texturefocus border="5">views/other/focus-mod.png</texturefocus>
-        <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+        <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
     </include>
     
     <include name="SettingsCategoryDefaultButtonVars">
@@ -109,7 +109,7 @@
         <align>left</align>
         <aligny>center</aligny>
         <texturefocus border="5">views/other/focus-mod.png</texturefocus>
-        <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+        <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
         <textcolor>mod-infotags-l</textcolor>
         <focusedcolor>white</focusedcolor>
         <selectedcolor>white</selectedcolor>
@@ -124,7 +124,7 @@
         <align>left</align>
         <aligny>center</aligny>
         <texturefocus border="5">views/other/focus-mod.png</texturefocus>
-        <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+        <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
         <textcolor>mod-infotags-l</textcolor>
         <focusedcolor>white</focusedcolor>
         <disabledcolor>mod-infotags-vl</disabledcolor>

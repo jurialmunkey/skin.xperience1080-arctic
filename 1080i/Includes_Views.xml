@@ -536,11 +536,9 @@
     </variable>
     
     <variable name="SelectedColor.Open">
-        <value condition="ListItem.IsPlaying">[COLOR=SelectedGreen]</value>
     </variable>
     
     <variable name="SelectedColor.Close">
-        <value condition="ListItem.IsPlaying">[/COLOR]</value>
     </variable>
     
     <variable name="CoverViewBottomInfo">

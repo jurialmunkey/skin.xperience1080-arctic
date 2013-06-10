@@ -9,18 +9,18 @@
             <include>OptionsShutdownAnimation</include>
         
             <control type="image">
-                <posx>248</posx>
-                <posy>189</posy>
-                <height>701</height>
-                <width>1424</width>
-                <texture border="5">views/newgloss/panel.png</texture>
-            </control>
-            <control type="image">
                 <posx>230</posx>
                 <posy>171</posy>
                 <height>737</height>
                 <width>1460</width>
-                <texture border="25">views/newgloss/border.png</texture>
+                <texture border="25">views/newgloss/border-glass.png</texture>
+            </control>
+            <control type="image">
+                <posx>234</posx>
+                <posy>175</posy>
+                <height>729</height>
+                <width>1452</width>
+                <texture border="35">views/newgloss/whitepanel-15.png</texture>
             </control>
             <control type="image">
                 <description>Shadow</description>
@@ -53,7 +53,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
@@ -61,7 +61,7 @@
                         <width>1420</width>
                         <height>94</height>
                         <texture>views/other/selected.png</texture>
-                        <colordiffuse>07FFFFFF</colordiffuse>
+                        <colordiffuse>25FFFFFF</colordiffuse>
                         <aspectratio aligny="top">center</aspectratio>
                         <visible>ListItem.IsPlaying</visible>
                     </control>
@@ -90,8 +90,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$VAR[MusicListLabel]</label>
-                        <textcolor>aawhite</textcolor>
-                        <selectedcolor>SelectedGreen</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -104,8 +104,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$VAR[MusicListLabel]</label>
-                        <textcolor>aawhite</textcolor>
-                        <selectedcolor>SelectedGreen</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
                         <scroll>false</scroll>
                         <visible>IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -118,8 +118,8 @@
                         <font>Font-Condensed-S28</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Artist]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>D4FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -132,8 +132,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>D4FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                     </control>
                 </itemlayout>
@@ -144,7 +144,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -163,7 +163,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>mod-infotags</textcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Property(Artist_Genre))</visible>
                     </control>
@@ -176,7 +176,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>mod-infotags</textcolor>
                         <scroll>false</scroll>
                         <visible>IsEmpty(ListItem.Property(Artist_Genre))</visible>
                     </control>
@@ -189,8 +189,8 @@
                         <font>Font-Condensed-S28</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Property(Artist_Genre)]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>99FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Property(Artist_Genre))</visible>
                     </control>
@@ -202,7 +202,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -221,7 +221,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>mod-infotags</textcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -234,7 +234,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>mod-infotags</textcolor>
                         <scroll>false</scroll>
                         <visible>IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -247,8 +247,8 @@
                         <font>Font-Condensed-S28</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Artist]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>99FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -260,8 +260,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
                         <label>$INFO[ListItem.Year]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>99FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Year)</visible>
                     </control>
@@ -280,9 +280,9 @@
                         <height>100</height>
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
-                        <label fallback="[COLOR=33FFFFFF]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>99FFFFFF</selectedcolor>
+                        <label fallback="[COLOR=mod-infotags-l]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Album)</visible>
                     </control>
@@ -294,7 +294,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
@@ -302,7 +302,7 @@
                         <width>1420</width>
                         <height>94</height>
                         <texture>views/other/selected.png</texture>
-                        <colordiffuse>07FFFFFF</colordiffuse>
+                        <colordiffuse>25FFFFFF</colordiffuse>
                         <aspectratio aligny="top">center</aspectratio>
                         <visible>ListItem.IsPlaying</visible>
                     </control>
@@ -323,8 +323,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$VAR[MusicListSongLabel]</label>
-                        <textcolor>aawhite</textcolor>
-                        <selectedcolor>SelectedGreen</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -337,8 +337,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$VAR[MusicListSongLabel]</label>
-                        <textcolor>aawhite</textcolor>
-                        <selectedcolor>SelectedGreen</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
                         <scroll>false</scroll>
                         <visible>IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -351,8 +351,8 @@
                         <font>Font-Condensed-S28</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Artist]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>D4FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Artist)</visible>
                     </control>
@@ -373,8 +373,8 @@
                             <height>42</height>
                             <label>$INFO[ListItem.PlayCount]</label>
                             <font>Font-Condensed-S30-B</font>
-                            <textcolor>99FFFFFF</textcolor>
-                            <selectedcolor>D4FFFFFF</selectedcolor>
+                            <textcolor>mod-infotags-l</textcolor>
+                            <selectedcolor>mod-infotags-l</selectedcolor>
                             <scroll>no</scroll>
                             <align>center</align>
                         </control>
@@ -387,8 +387,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
                         <label>$VAR[MusicListSongLabel2]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>D4FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!stringcompare(Container.FolderPath,musicdb://5/1/)</visible>
                     </control>
@@ -407,9 +407,9 @@
                         <height>100</height>
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
-                        <label fallback="[COLOR=33FFFFFF]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>D4FFFFFF</selectedcolor>
+                        <label fallback="[COLOR=mod-infotags-l]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Title)</visible>
                     </control>
@@ -421,7 +421,16 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1420</width>
+                        <height>99</height>
+                        <texture border="5">views/other/focus-mod.png</texture>
+                        <include>defaultfocusanim</include>
+                        <include>visiblehidefadeinfo</include>
                     </control>
                     <control type="image">
                         <posx>0</posx>
@@ -429,19 +438,9 @@
                         <width>1420</width>
                         <height>94</height>
                         <texture>views/other/selected.png</texture>
-                        <colordiffuse>07FFFFFF</colordiffuse>
+                        <colordiffuse>25FFFFFF</colordiffuse>
                         <aspectratio aligny="top">center</aspectratio>
                         <visible>ListItem.IsPlaying</visible>
-                    </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1420</width>
-                        <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
-                        <include>defaultfocusanim</include>
-                        <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50) + !Window.IsVisible(songinformation)</visible>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -475,7 +474,7 @@
                             <align>left</align>
                             <label>$VAR[MusicListLabel]</label>
                             <textcolor>eewhite</textcolor>
-                            <selectedcolor>SelectedGreen</selectedcolor>
+                            <selectedcolor>eewhite</selectedcolor>
                             <scroll>false</scroll>
                             <visible>!IsEmpty(ListItem.Artist)</visible>
                         </control>
@@ -529,17 +528,16 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1420</width>
                         <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
+                        <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -603,17 +601,16 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1420</width>
                         <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
+                        <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -686,7 +683,7 @@
                             <posy>-3</posy>
                             <width>105</width>
                             <height>105</height>
-                            <texture>views/thumb/other/star_fo.png</texture>
+                            <texture>views/thumb/other/whitestar.png</texture>
                             <include>defaultfocusanim3</include>
                             <visible>!IsEmpty(ListItem.Album)</visible>
                         </control>
@@ -697,7 +694,7 @@
                             <height>100</height>
                             <font>Font-Condensed-S34-B</font>
                             <align>right</align>
-                            <label fallback="[COLOR=47FFFFFF]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
+                            <label fallback="[COLOR=D4FFFFFF]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
                             <textcolor>D4FFFFFF</textcolor>
                             <selectedcolor>D4FFFFFF</selectedcolor>
                             <scroll>false</scroll>
@@ -712,7 +709,16 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1420</width>
+                        <height>99</height>
+                        <texture border="5">views/other/focus-mod.png</texture>
+                        <include>defaultfocusanim</include>
+                        <include>visiblehidefadeinfo</include>
                     </control>
                     <control type="image">
                         <posx>0</posx>
@@ -720,21 +726,12 @@
                         <width>1420</width>
                         <height>94</height>
                         <texture>views/other/selected.png</texture>
-                        <colordiffuse>07FFFFFF</colordiffuse>
+                        <colordiffuse>25FFFFFF</colordiffuse>
                         <aspectratio aligny="top">center</aspectratio>
                         <visible>ListItem.IsPlaying</visible>
                         <animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="Window.IsVisible(songinformation)">Conditional</animation>>
                     </control>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1420</width>
-                        <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
-                        <include>defaultfocusanim</include>
-                        <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50) + !Window.IsVisible(songinformation)</visible>
-                    </control>
+                    
                     <control type="image">
                         <posx>20</posx>
                         <posy>7</posy>
@@ -761,7 +758,7 @@
                                 <align>left</align>
                                 <label>$VAR[MusicListSongLabel]</label>
                                 <textcolor>eewhite</textcolor>
-                                <selectedcolor>SelectedGreen</selectedcolor>
+                                <selectedcolor>eewhite</selectedcolor>
                                 <scroll>false</scroll>
                                 <visible>!IsEmpty(ListItem.Artist)</visible>
                             </control>
@@ -775,7 +772,7 @@
                                 <align>left</align>
                                 <label>$VAR[MusicListSongLabel]</label>
                                 <textcolor>eewhite</textcolor>
-                                <selectedcolor>SelectedGreen</selectedcolor>
+                                <selectedcolor>eewhite</selectedcolor>
                                 <scroll>false</scroll>
                                 <visible>IsEmpty(ListItem.Artist)</visible>
                             </control>
@@ -833,7 +830,7 @@
                                 <posy>-3</posy>
                                 <width>105</width>
                                 <height>105</height>
-                                <texture>views/thumb/other/star_nofo.png</texture>
+                                <texture>views/thumb/other/whitestar.png</texture>
                                 <visible>!IsEmpty(ListItem.Title)</visible>
                             </control>
                             <control type="image">
@@ -841,7 +838,7 @@
                                 <posy>-3</posy>
                                 <width>105</width>
                                 <height>105</height>
-                                <texture>$VAR[MusicListStarFo]</texture>
+                                <texture>views/thumb/other/whitestar.png</texture>
                                 <include>defaultfocusanim3</include>
                                 <visible>!IsEmpty(ListItem.Title)</visible>
                             </control>
@@ -852,7 +849,7 @@
                                 <height>100</height>
                                 <font>Font-Condensed-S34-B</font>
                                 <align>right</align>
-                                <label fallback="[COLOR=47FFFFFF]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
+                                <label fallback="[COLOR=D4FFFFFF]0.0[/COLOR]">$INFO[ListItem.Rating,,.0]</label>
                                 <textcolor>D4FFFFFF</textcolor>
                                 <selectedcolor>D4FFFFFF</selectedcolor>
                                 <scroll>false</scroll>
@@ -874,11 +871,11 @@
                 <onright condition="Skin.HasSetting(KioskMode)">50</onright>
                 <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
                 <ondown condition="Skin.HasSetting(KioskMode)">50</ondown>
-                <texturesliderbar border="1">views/other/scrollbar-sq.png</texturesliderbar>
-                <texturesliderbarfocus border="1">views/other/scrollbar-sq.png</texturesliderbarfocus>
+                <texturesliderbar border="3,6,3,6">views/other/scrollbar.png</texturesliderbar>
+                <texturesliderbarfocus border="3,6,3,6">views/other/scrollbar.png</texturesliderbarfocus>
                 <orientation>vertical</orientation>
                 <showonepage>false</showonepage>
-                <animation effect="fade" start="45" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+                <animation effect="fade" start="75" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
                 <visible>Control.IsVisible(50)</visible>
             </control>
         </control>

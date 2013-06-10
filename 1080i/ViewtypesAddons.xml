@@ -10,19 +10,19 @@
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
             
-			<control type="image">
-                <posx>248</posx>
-                <posy>189</posy>
-                <height>701</height>
-                <width>1424</width>
-                <texture border="5">views/newgloss/panel.png</texture>
-            </control>
             <control type="image">
                 <posx>230</posx>
                 <posy>171</posy>
                 <height>737</height>
                 <width>1460</width>
-                <texture border="25">views/newgloss/border.png</texture>
+                <texture border="25">views/newgloss/border-glass.png</texture>
+            </control>
+            <control type="image">
+                <posx>235</posx>
+                <posy>176</posy>
+                <height>727</height>
+                <width>1450</width>
+                <texture border="35">views/newgloss/whitepanel-15.png</texture>
             </control>
             <control type="image">
                 <description>Shadow</description>
@@ -55,7 +55,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="label">
                         <description>Label</description>
@@ -66,7 +66,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>mod-infotags-l</textcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Icon)</visible>
                     </control>
@@ -79,7 +79,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
+                        <textcolor>mod-infotags-l</textcolor>
                         <scroll>false</scroll>
                         <visible>IsEmpty(ListItem.Icon)</visible>
                     </control>
@@ -92,7 +92,7 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
-                        <textcolor>99FFFFFF</textcolor>
+                        <textcolor>mod-infotags-l</textcolor>
                         <scroll>false</scroll>
                     </control>
                     <control type="image">
@@ -111,14 +111,14 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1420</width>
                         <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
+                        <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
                         <visible>Control.HasFocus(50)</visible>

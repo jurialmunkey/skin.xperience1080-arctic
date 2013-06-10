@@ -78,7 +78,7 @@
                             <posy>0</posy>
                             <width>338</width>
                             <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                            <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                         </control>
                         <control type="label">
                             <posx>338</posx>
@@ -249,7 +249,7 @@
                             <posy>0</posy>
                             <width>1210</width>
                             <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                            <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                             <visible>!ControlGroup(1007).HasFocus</visible>
                         </control>
                         <control type="image">
@@ -425,7 +425,7 @@
                             <posy>0</posy>
                             <width>1210</width>
                             <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                            <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                             <visible>!ControlGroup(2007).HasFocus</visible>
                         </control>
                         <control type="image">
