@@ -517,7 +517,6 @@
                         <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -637,7 +636,6 @@
                         <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <description>Thumbnail</description>
@@ -739,7 +737,6 @@
                         <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <description>Thumbnail</description>
@@ -840,7 +837,6 @@
                         <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <description>Thumbnail</description>
@@ -938,7 +934,6 @@
                         <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <description>Thumbnail</description>
