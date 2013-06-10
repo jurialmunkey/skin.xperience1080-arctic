@@ -8,21 +8,22 @@
             <visible>Control.IsVisible(50) + !Window.IsActive(addoninformation) + !Window.IsActive(1122) + !Window.IsActive(favourites) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + !Window.IsActive(favourites)</visible>
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
-        
-            <control type="image">
-                <posx>248</posx>
-                <posy>189</posy>
-                <height>701</height>
-                <width>1424</width>
-                <texture border="5">views/newgloss/panel.png</texture>
-            </control>
+
             <control type="image">
                 <posx>230</posx>
                 <posy>171</posy>
                 <height>737</height>
                 <width>1460</width>
-                <texture border="25">views/newgloss/border.png</texture>
+                <texture border="25">views/newgloss/border-glass.png</texture>
             </control>
+            <control type="image">
+                <posx>235</posx>
+                <posy>176</posy>
+                <height>727</height>
+                <width>1450</width>
+                <texture border="35">views/newgloss/whitepanel-15.png</texture>
+            </control>
+            
             <control type="image">
                 <description>Shadow</description>
                 <posx>150</posx>
@@ -54,7 +55,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="label">
                         <description>Label</description>
@@ -65,8 +66,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
-                        <selectedcolor>aawhite</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
                         <scroll>false</scroll>
                     </control>
                     <control type="label">
@@ -78,8 +79,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
                         <label>$INFO[ListItem.Label2]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>99FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                     </control>
                     <control type="image">
@@ -98,7 +99,7 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="label">
                         <description>Label</description>
@@ -109,8 +110,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <selectedcolor>aawhite</selectedcolor>
-                        <textcolor>aawhite</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
                         <scroll>false</scroll>
                         <visible>!IsEmpty(ListItem.Studio) | !IsEmpty(ListItem.Genre)</visible>
                     </control>
@@ -123,8 +124,8 @@
                         <font>Font-Condensed-S28</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Genre]$INFO[ListItem.Studio, • ,]</label>
-                        <selectedcolor>99FFFFFF</selectedcolor>
-                        <textcolor>99FFFFFF</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
                         <scroll>false</scroll>
                     </control>
                     <control type="label">
@@ -136,8 +137,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>left</align>
                         <label>$INFO[ListItem.Label]</label>
-                        <textcolor>aawhite</textcolor>
-                        <selectedcolor>aawhite</selectedcolor>
+                        <textcolor>mod-infotags</textcolor>
+                        <selectedcolor>mod-infotags</selectedcolor>
                         <scroll>false</scroll>
                         <visible>IsEmpty(ListItem.Studio) + IsEmpty(ListItem.Genre)</visible>
                     </control>
@@ -150,8 +151,8 @@
                         <font>Font-Condensed-S34-B</font>
                         <align>right</align>
                         <label>$INFO[ListItem.Year]</label>
-                        <textcolor>99FFFFFF</textcolor>
-                        <selectedcolor>99FFFFFF</selectedcolor>
+                        <textcolor>mod-infotags-l</textcolor>
+                        <selectedcolor>mod-infotags-l</selectedcolor>
                         <scroll>false</scroll>
                     </control>
                     <control type="image">
@@ -170,17 +171,16 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1420</width>
                         <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
+                        <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <posx>20</posx>
@@ -229,17 +229,16 @@
                         <posy>0</posy>
                         <width>1420</width>
                         <height>101</height>
-                        <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                        <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                     </control>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
                         <width>1420</width>
                         <height>99</height>
-                        <texture border="150,1,150,1">views/other/focus.png</texture>
+                        <texture border="5">views/other/focus-mod.png</texture>
                         <include>defaultfocusanim</include>
                         <include>visiblehidefadeinfo</include>
-                        <visible>Control.HasFocus(50)</visible>
                     </control>
                     <control type="image">
                         <posx>20</posx>
