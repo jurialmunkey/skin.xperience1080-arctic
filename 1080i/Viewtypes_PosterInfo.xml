@@ -315,8 +315,8 @@
 									<texture background="true">$INFO[ListItem.Art(discart)]</texture>
 									<aspectratio align="center">keep</aspectratio>
 									<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-									<animation effect="slide" start="0" end="0,-250" time="600" delay="450">Focus</animation>
-									<animation effect="slide" end="0" start="0,-250" time="600" delay="0">UnFocus</animation>
+									<animation effect="slide" start="0" end="0,-250" time="500" delay="250">Focus</animation>
+									<animation effect="slide" end="0" start="0,-250" time="400" delay="0">UnFocus</animation>
 								</control>
                                 <!-- POSTER -->
                                 <control type="image">
