@@ -1916,7 +1916,7 @@
                 <align>center</align>
                 <textoffsetx>30</textoffsetx>
                 <label>$INFO[ListItem.Title]</label>
-                <font>Font-Condensed-S34-B</font>
+                <font>Font-Alaska-S32-BL</font>
                 <textcolor>bbwhite</textcolor>
                 <shadowcolor>66000000</shadowcolor>
             </control>
@@ -1933,11 +1933,11 @@
                 	<textoffsetx>30</textoffsetx>
                 	<textwidth>540</textwidth>
                 	<font>Font-Condensed-S34</font>
-                	<textcolor>99FFFFFF</textcolor>
-                	<disabledcolor>99FFFFFF</disabledcolor>
-                	<texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+                	<textcolor>mod-infotags-l</textcolor>
+                	<disabledcolor>mod-infotags-l</disabledcolor>
+                	<texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
                 	<label>[B]$LOCALIZE[142][/B]</label>
-                	<label2>[COLOR=AAFFFFFF]$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($INFO[ListItem.StartDate])[/COLOR]</label2>
+                	<label2>[COLOR=mod-infotags-l]$INFO[ListItem.StartTime] - $INFO[ListItem.EndTime] ($INFO[ListItem.StartDate])[/COLOR]</label2>
                 	<enable>false</enable>
                 </control>
                 <control type="button">
@@ -1950,11 +1950,11 @@
                 	<textoffsetx>30</textoffsetx>
                 	<textwidth>540</textwidth>
                 	<font>Font-Condensed-S34</font>
-                	<textcolor>99FFFFFF</textcolor>
-                	<disabledcolor>99FFFFFF</disabledcolor>
-                	<texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+                	<textcolor>mod-infotags-l</textcolor>
+                	<disabledcolor>mod-infotags-l</disabledcolor>
+                	<texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
                 	<label>[B]$LOCALIZE[180]:[/B]</label>
-                	<label2>[COLOR=AAFFFFFF]$INFO[ListItem.Duration][/COLOR]</label2>
+                	<label2>[COLOR=mod-infotags-l]$INFO[ListItem.Duration][/COLOR]</label2>
                 	<enable>false</enable>
                 </control>
                 <control type="button">
@@ -1967,11 +1967,11 @@
                 	<textoffsetx>30</textoffsetx>
                 	<textwidth>540</textwidth>
                 	<font>Font-Condensed-S34</font>
-                	<textcolor>99FFFFFF</textcolor>
-                	<disabledcolor>99FFFFFF</disabledcolor>
-                	<texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+                	<textcolor>mod-infotags-l</textcolor>
+                	<disabledcolor>mod-infotags-l</disabledcolor>
+                	<texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
                 	<label>[B]$LOCALIZE[19148]:[/B]</label>
-                	<label2>[COLOR=AAFFFFFF]$INFO[ListItem.ChannelName][/COLOR]</label2>
+                	<label2>[COLOR=mod-infotags-l]$INFO[ListItem.ChannelName][/COLOR]</label2>
                 	<enable>false</enable>
                 </control>
                 <control type="button">
@@ -1984,11 +1984,11 @@
                 	<textoffsetx>30</textoffsetx>
                 	<textwidth>540</textwidth>
                 	<font>Font-Condensed-S34</font>
-                	<textcolor>99FFFFFF</textcolor>
-                	<disabledcolor>99FFFFFF</disabledcolor>
-                	<texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+                	<textcolor>mod-infotags-l</textcolor>
+                	<disabledcolor>mod-infotags-l</disabledcolor>
+                	<texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
                 	<label>[B]$LOCALIZE[135]:[/B]</label>
-                	<label2 fallback="161">[COLOR=AAFFFFFF]$INFO[ListItem.Genre][/COLOR]</label2>
+                	<label2 fallback="161">[COLOR=mod-infotags-l]$INFO[ListItem.Genre][/COLOR]</label2>
                 	<enable>false</enable>
                 </control>
             </control>
@@ -2000,7 +2000,7 @@
             	<height>415</height>
             	<font>Font-Condensed-S34</font>
             	<align>justify</align>
-            	<textcolor>aawhite</textcolor>
+            	<textcolor>mod-infotags</textcolor>
             	<pagecontrol>60</pagecontrol>
             	<autoscroll delay="10000" time="3000" repeat="6000">!Control.HasFocus(60)</autoscroll>
             	<label fallback="161">$INFO[ListItem.Plot]</label>
@@ -2015,22 +2015,22 @@
                 <onright>8000</onright>
                 <ondown>60</ondown>
                 <onup>60</onup>
-                <texturesliderbar border="0,6,0,6">views/other/scrollbar.png</texturesliderbar>
-                <texturesliderbarfocus border="0,6,0,6">views/other/scrollbar.png</texturesliderbarfocus>
+                <texturesliderbar border="3,6,3,6">views/other/scrollbar.png</texturesliderbar>
+                <texturesliderbarfocus border="3,6,3,6">views/other/scrollbar.png</texturesliderbarfocus>
                 <orientation>vertical</orientation>
                 <showonepage>false</showonepage>
                 <animation effect="fade" start="30" end="0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">Conditional</animation>
             </control>
             <control type="group" id="8000">
                 <posx>100</posx>
-                <posy>840</posy>
+                <posy>860</posy>
                 <defaultcontrol>5</defaultcontrol>
                 <control type="button" id="7">
                     <description>Select</description>
                     <texturefocus>buttons/cancel-fo.png</texturefocus>
                     <texturenofocus>buttons/cancel-nf.png</texturenofocus>
                     <textcolor>77white</textcolor>
-                    <selectedcolor>aawhite</selectedcolor>
+                    <focusedcolor>white</focusedcolor>
                     <include>DialogButtonDimensions</include>
                     <label>$LOCALIZE[42002]</label>
                     <onleft>6</onleft>
@@ -2045,7 +2045,7 @@
                     <texturefocus>buttons/switch-fo.png</texturefocus>
                     <texturenofocus>buttons/switch-nf.png</texturenofocus>
                     <textcolor>77white</textcolor>
-                    <selectedcolor>aawhite</selectedcolor>
+                    <focusedcolor>white</focusedcolor>
                     <include>DialogButtonDimensions</include>
                     <onleft>7</onleft>
                     <onright>6</onright>
@@ -2057,7 +2057,7 @@
                     <description>Record</description>
                     <label>-</label>
                     <textcolor>77white</textcolor>
-                    <selectedcolor>aawhite</selectedcolor>
+                    <focusedcolor>white</focusedcolor>
                     <include>DialogButtonDimensionsRightAlign</include>
                     <texturefocus>buttons/record-fo.png</texturefocus>
                     <texturenofocus>buttons/record-nf.png</texturenofocus>
