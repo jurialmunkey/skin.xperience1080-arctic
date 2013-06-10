@@ -75,6 +75,19 @@
                         <textcolor>mod-infotags</textcolor>
                         <align>justify</align>
                         <autoscroll delay="13000" time="3000" repeat="13000" />
+                        <visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+                    </control>
+                    <control type="textbox">
+                        <posx>24</posx>
+                        <posy>72</posy>
+                        <width>790</width>
+                        <height>147</height>
+                        <font>Font-Alaska-S25-NC</font>
+                        <textcolor>mod-infotags</textcolor>
+                        <align>justify</align>
+						<autoscroll delay="5000" time="3000" repeat="5000" />
+						<info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
+						<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
                     </control>
                 </control>
             </control>

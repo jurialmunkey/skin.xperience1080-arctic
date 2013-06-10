@@ -41,6 +41,7 @@
                 <width>148</width>
                 <height>148</height>
                 <texture>windows/home/loading-back.png</texture>
+                <aspectratio align="center">keep</aspectratio>
             </control>
             <control type="image">
                 <description>Loading</description>
@@ -49,6 +50,7 @@
                 <width>148</width>
                 <height>148</height>
                 <texture>windows/home/loading.png</texture>
+                <aspectratio align="center">keep</aspectratio>
                 <animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="Control.IsVisible(12)">Conditional</animation>
             </control>
             <control type="label">
@@ -60,7 +62,7 @@
                 <font>Font-Condensed-S36-B</font>
                 <align>center</align>
                 <aligny>center</aligny>
-                <textcolor>99FFFFFF</textcolor>
+                <textcolor>mod-infotags-d</textcolor>
                 <label>$LOCALIZE[41601]...</label>
                 <scroll>false</scroll>
             </control>

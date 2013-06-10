@@ -12,7 +12,67 @@
             <control type="group">
                 <posx>50</posx>
                 <posy>50</posy>
-
+				<!-- DISC ART FOR SETS -->
+				<control type="group">
+					<posx>490</posx>
+					<posy>75</posy>
+					<animation effect="slide" start="0,75" end="0" time="250" delay="250" reversible="false">Visible</animation>
+					<visible>![Container(56).OnNext | Container(56).OnPrevious] + !Window.IsActive(movieinformation) + Control.IsVisible(56)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+					</control>	
+					<control type="image">
+						<posx>200</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.5.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+					</control>
+					<control type="image">
+						<posx>400</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.4.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+					</control>
+					<control type="image">
+						<posx>600</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+					</control>
+					<control type="image">
+						<posx>800</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+					</control>
+					<control type="image">
+						<posx>1000</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.1.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+					</control>									
+				</control>
                 <control type="group">
                    <visible>!Window.IsActive(movieinformation) + Control.IsVisible(56)</visible>
                     <animation effect="slide" start="0" end="0,200" time="150" delay="600" reversible="false" condition="Skin.HasSetting(AltPosterInfo)">Conditional</animation>
@@ -85,7 +145,7 @@
                             <posx>190</posx>
                             <posy>78</posy>
                             <width>680</width>
-                            <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre]</label>
+                            <label>$INFO[ListItem.Year]$INFO[ListItem.Genre, • ,]</label>
                             <font>Font-Alaska-S25-BL</font>
                             <textcolor>mod-infotags-li</textcolor>
                             <scroll>false</scroll>
@@ -105,6 +165,20 @@
                                 <textcolor>mod-infotags-li</textcolor>
                                 <autoscroll delay="13000" time="3000" repeat="13000" />
                                 <font>Font-Alaska-S25-NC</font>
+                                <visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+                            </control>
+                            <control type="textbox">
+                                <description>Plot</description>
+                                <posx>190</posx>
+                                <posy>118</posy>
+                                <width>870</width>
+                                <height>145</height>
+                                <align>justify</align>
+                                <textcolor>mod-infotags-li</textcolor>
+                                <font>Font-Alaska-S25-NC</font>
+								<autoscroll delay="5000" time="3000" repeat="5000" />
+								<info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
+								<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
                             </control>
                         </control>
                     </control>

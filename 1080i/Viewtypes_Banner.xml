@@ -442,7 +442,7 @@
                                 <posx>27</posx>
                                 <posy>45</posy>
                                 <width>670</width>
-                                <label>$INFO[ListItem.Rating,, • ]$INFO[ListItem.date,$LOCALIZE[41805]: ,]</label>
+                                <label>$INFO[ListItem.Rating]$INFO[ListItem.date,$LOCALIZE[41805]: , • ,]</label>
                                 <font>Font-Alaska-S28-L</font>
                                 <textcolor>FF484848</textcolor>
                                 <scroll>false</scroll>
@@ -454,7 +454,7 @@
                                 <posx>27</posx>
                                 <posy>45</posy>
                                 <width>670</width>
-                                <label>$INFO[ListItem.Rating,, • ]$INFO[ListItem.Genre]</label>
+                                <label>$INFO[ListItem.Rating]$INFO[ListItem.Genre, • ,]</label>
                                 <font>Font-Alaska-S28-L</font>
                                 <textcolor>FF484848</textcolor>
                                 <scroll>false</scroll>
@@ -473,6 +473,20 @@
                                 <textcolor>FF484848</textcolor>
                                 <autoscroll delay="13000" time="3000" repeat="13000" />
                                 <font>Font-Condensed-S25</font>
+                                <visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+                            </control>
+							<control type="textbox">
+                                <description>Plot</description>
+                                <posx>0</posx>
+                                <posy>87</posy>
+                                <width>740</width>
+                                <height>140</height>
+                                <info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
+                                <align>justify</align>
+                                <textcolor>FF484848</textcolor>
+                                <autoscroll delay="13000" time="3000" repeat="13000" />
+                                <font>Font-Condensed-S25</font>
+                                <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
                             </control>
                         </control>
                     </control>

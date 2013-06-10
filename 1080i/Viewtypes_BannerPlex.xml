@@ -88,7 +88,7 @@
                         <control type="label">
                             <posx>53</posx>
                             <posy>60</posy>
-                            <width>671</width>
+                            <width>740</width>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font-Alaska-S38-BL</font>
                             <textcolor>mod-infotags</textcolor>
@@ -150,6 +150,20 @@
                         <textcolor>mod-infotags-li</textcolor>
                         <autoscroll delay="13000" time="3000" repeat="13000" />
                         <font>Font-Condensed-S25</font>
+                        <visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+                    </control>
+                    <control type="textbox">
+                        <description>Plot</description>
+                        <posx>600</posx>
+                        <posy>154</posy>
+                        <width>1008</width>
+                        <height>210</height>
+                        <info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
+                        <align>justify</align>
+                        <textcolor>mod-infotags-li</textcolor>
+                        <autoscroll delay="8000" time="3000" repeat="8000" />
+                        <font>Font-Condensed-S25</font>
+                        <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
                     </control>
                     
                 </control>
