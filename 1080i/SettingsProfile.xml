@@ -18,6 +18,7 @@
                 <height>748</height>
                 <width>1260</width>
                 <texture border="35">views/newgloss/border-glass.png</texture>
+                <colordiffuse>77ffffff</colordiffuse>
             </control>-->
             <control type="image">
                 <posx>340</posx>

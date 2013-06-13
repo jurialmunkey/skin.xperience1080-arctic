@@ -70,7 +70,7 @@
             <control type="group">
                 <include>listEndAnimation</include>
                 
-                <control type="image">
+                <!--<control type="image">
                     <description>Panel</description>
                     <posx>80</posx>
                     <posy>200</posy>
@@ -78,7 +78,7 @@
                     <height>726</height>
                     <texture border="35">views/newgloss/border-glass.png</texture>
                     <colordiffuse>77ffffff</colordiffuse>
-                </control>
+                </control>-->
                 <control type="image">
                     <description>Panel</description>
                     <posx>85</posx>
@@ -87,14 +87,14 @@
                     <height>717</height>
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 </control>
-                <control type="image">
+                <!--<control type="image">
                     <description>Shadow</description>
                     <posx>57</posx>
                     <posy>900</posy>
                     <width>544</width>
                     <height>125</height>
                     <texture>windows/home/item-shadow.png</texture>
-                </control>
+                </control>-->
             
                 <control type="image">
                     <posx>100</posx>

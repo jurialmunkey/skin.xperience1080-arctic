@@ -44,7 +44,7 @@
             <include>FullscreenDimensions</include>
             <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
             <texture>windows/common/white.png</texture>
-            <colordiffuse>44eeeeee</colordiffuse>
+            <colordiffuse>22eeeeee</colordiffuse>
             <visible>Skin.HasSetting(disable.dimfanart)</visible>
         </control>
     </include>

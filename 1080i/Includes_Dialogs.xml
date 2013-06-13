@@ -2947,7 +2947,7 @@
                 <visible>StringCompare(Window(3004).Property(ChooseArt),poster)</visible>
             </control>
             
-            <control type="image">
+            <!--<control type="image">
 				<posx>80</posx>
 				<posy>200</posy>
 				<width>1243</width>
@@ -2975,9 +2975,9 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<colordiffuse>77ffffff</colordiffuse>
 				<visible>StringCompare(Window(3004).Property(ChooseArt),poster)</visible>
-			</control>
+			</control>-->
             
-            <control type="image">
+            <!--<control type="image">
                 <description>Shadow</description>
                 <posx>57</posx>
                 <posy>900</posy>
@@ -2987,7 +2987,7 @@
                 <include condition="StringCompare(Window(3004).Property(ChooseArt),poster)">ArtDialogShadowWidthPoster</include>
                 <include condition="StringCompare(Window(3004).Property(ChooseArt),banner)">ArtDialogShadowWidthBanner</include>
                 <include condition="StringCompare(Window(3004).Property(ChooseArt),fanart) | StringCompare(Window(3004).Property(ChooseArt),landscape)">ArtDialogShadowWidthLandscape</include>
-            </control>
+            </control>-->
             
             <control type="image">
                 <posx>1091</posx>
