@@ -91,23 +91,41 @@
             <visible>Window.IsActive(fullscreenvideo) | Window.IsActive(visualisation)</visible>
             <control type="group">
                 <visible>!Player.Passthrough</visible>
-                <control type="image">
+                <!--<control type="image">
                     <posx>1570</posx>
                     <posy>0</posy>
                     <width>305</width>
                     <height>194</height>
                     <texture>overlays/volume/back-vf.png</texture>
                     <aspectratio>stretch</aspectratio>
-                </control>
+                </control>-->
+                <control type="image">
+					<posx>1603</posx>
+					<posy>40</posy>
+					<width>234</width>
+					<height>114</height>
+					<texture border="35">views/newgloss/border-glass.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<!--<visible>![Player.ShowInfo | Window.IsVisible(fullscreeninfo) | Window.IsActive(videoosd) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>-->
+				</control>
+                <control type="image">
+					<posx>1606</posx>
+					<posy>43</posy>
+					<width>228</width>
+					<height>108</height>
+					<texture border="35">views/newgloss/whitepanel-15.png</texture>
+					<aspectratio>stretch</aspectratio>
+				</control>
                 <control type="label">
                     <description>Volume label</description>
                     <posx>1742</posx>
-                    <posy>79</posy>
+                    <posy>80</posy>
                     <width>150</width>
                     <height>34</height>
                     <label>$INFO[Player.Volume]</label>
-                    <font>Font-Condensed-S34</font>
-                    <textcolor>aawhite</textcolor>
+                    <font>Font-Alaska-S29-BL</font>
+                    <textcolor>mod-infotags-l</textcolor>
+                    <shadowcolor>mod-shadow</shadowcolor>
                     <align>right</align>
                     <scroll>No</scroll>
                 </control>
@@ -125,7 +143,7 @@
                 <control type="label">
                     <description>Volume label</description>
                     <posx>1742</posx>
-                    <posy>79</posy>
+                    <posy>80</posy>
                     <width>345</width>
                     <height>34</height>
                     <label>$LOCALIZE[29802]</label>
@@ -135,14 +153,40 @@
                     <scroll>No</scroll>
                 </control>
             </control>
-            <control type="image">
+			<control type="group">
+				<posx>1735</posx>
+				<posy>18</posy>
+				<visible>!Player.Passthrough</visible>
+				<control type="progress" id="22">
+					<visible>false</visible>
+					<info>Player.Volume</info>
+				</control>
+				<control type="image">
+                    <posx>-4</posx>
+                    <posy>27</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>overlays/volume/volume-back.png</texture>
+                    <aspectratio align="center">keep</aspectratio>
+                    <colordiffuse>mod-infotags</colordiffuse>
+                </control>
+				<control type="image">
+					<posx>-4</posx>
+					<posy>27</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture>$INFO[Control.GetLabel(22),overlays/volume/progress/p,.png]</texture>
+					<aspectratio align="center">keep</aspectratio>
+				</control>
+			</control>
+            <!--<control type="image">
                 <description>Volume image</description>
                 <posx>1730</posx>
                 <posy>47</posy>
                 <width>100</width>
                 <height>100</height>
                 <texture>overlays/volume/volume-vf.png</texture>
-            </control>
+            </control>-->
         </control>
     </controls>
 </window>

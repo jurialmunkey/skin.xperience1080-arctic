@@ -15,8 +15,9 @@
         <posy>79</posy>
         <width>150</width>
         <height>34</height>
-        <font>Font-Condensed-S34</font>
-        <textcolor>aawhite</textcolor>
+        <font>Font-Alaska-S34-BL</font>
+        <textcolor>mod-infotags-l</textcolor>
+        <shadowcolor>mod-shadow</shadowcolor>
         <align>right</align>
         <scroll>false</scroll>
     </include>
@@ -87,34 +88,79 @@
                 <effect type="zoom" start="100" end="50" center="1569,97" tween="sine" easing="inout" time="300" />
             </animation>
             <control type="image">
+                <posx>1300</posx>
+                <posy>40</posy>
+                <width>538</width>
+                <height>114</height>
+                <texture border="25">views/newgloss/border-glass.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <!--<visible>!Window.IsActive(volumebar) + ![Player.Muted | substring(Player.Volume,-60.0)]</visible>-->
+            </control>
+            <!--<control type="image">
+                <posx>1300</posx>
+                <posy>40</posy>
+                <width>752</width>
+                <height>114</height>
+                <texture border="25">views/newgloss/border-glass.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>Window.IsActive(volumebar) + ![Player.Muted | substring(Player.Volume,-60.0)]</visible>
+            </control>
+            <control type="image">
+                <posx>1300</posx>
+                <posy>40</posy>
+                <width>638</width>
+                <height>114</height>
+                <texture border="25">views/newgloss/border-glass.png</texture>
+                <aspectratio>stretch</aspectratio>
+                <visible>[Player.Muted | substring(Player.Volume,-60.0)]</visible>
+            </control>-->
+            <control type="image">
+                <posx>1303</posx>
+                <posy>43</posy>
+                <width>532</width>
+                <height>108</height>
+                <texture border="25">views/newgloss/whitepanel-15.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!--<control type="image">
                 <posx>1218</posx>
                 <posy>0</posy>
                 <width>702</width>
                 <height>194</height>
                 <texture>osd/fullscreen/osd-back-weatherclock.png</texture>
                 <aspectratio>stretch</aspectratio>
-            </control>
+            </control>-->
             <control type="group">
                 <visible>![stringcompare(Weather.FanartCode,na) + substring(Weather.Conditions,/)]</visible>
                 <include>visiblehidefadeinfo</include>
                 <control type="image">
                     <description>Small weather</description>
-                    <posx>1388</posx>
+                    <posx>1389</posx>
                     <posy>47</posy>
                     <width>100</width>
                     <height>100</height>
-                    <colordiffuse>aawhite</colordiffuse>
+                    <colordiffuse>mod-shadow</colordiffuse>
+                    <texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
+                </control>
+                <control type="image">
+                    <description>Small weather</description>
+                    <posx>1388</posx>
+                    <posy>46</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <colordiffuse>ff666666</colordiffuse>
                     <texture>$INFO[Weather.FanartCode,weather/small/,.png]</texture>
                 </control>
                 <control type="label">
                     <description>Temp label</description>
-                    <posx>1400</posx>
+                    <posx>1410</posx>
                     <posy>79</posy>
                     <width>75</width>
                     <height>34</height>
                     <label>$INFO[Weather.Temperature]</label>
-                    <font>Font-Condensed-S34</font>
-                    <textcolor>aawhite</textcolor>
+                    <font>Font-Alaska-S34-BL</font>
+                    <textcolor>mod-infotags-l</textcolor>
+                    <shadowcolor>mod-shadow</shadowcolor>
                     <align>right</align>
                     <scroll>false</scroll>
                     <visible>Weather.IsFetched</visible>
@@ -130,6 +176,8 @@
                     <width>100</width>
                     <height>100</height>
                     <texture>osd/fullscreen/weather-loading-back.png</texture>
+                    <aspectratio align="center">keep</aspectratio>
+                    <colordiffuse>mod-infotags-d</colordiffuse>
                 </control>
                 <control type="image">
                     <description>Weather loading indicator</description>
@@ -139,6 +187,7 @@
                     <height>100</height>
                     <texture>osd/fullscreen/weather-loading.png</texture>
                     <animation effect="rotate" center="auto" start="360" end="0" time="1000" loop="true" condition="stringcompare(Weather.FanartCode,na) + substring(Weather.Conditions,/)">Conditional</animation>
+                    <aspectratio align="center">keep</aspectratio>
                 </control>
             </control>
             <control type="image">
@@ -166,8 +215,9 @@
                 <width>150</width>
                 <height>34</height>
                 <label>$INFO[System.Time(hh)]:$INFO[System.Time(mm)]</label>
-                <font>Font-Condensed-S34</font>
-                <textcolor>aawhite</textcolor>
+                <font>Font-Alaska-S34-BL</font>
+                <textcolor>mod-infotags-l</textcolor>
+                <shadowcolor>mod-shadow</shadowcolor>
                 <align>right</align>
                 <scroll>false</scroll>
             </control>
@@ -189,8 +239,9 @@
                     <width>150</width>
                     <height>34</height>
                     <label>$INFO[Player.FinishTime(hh:mm)]</label>
-                    <font>Font-Condensed-S34</font>
-                    <textcolor>aawhite</textcolor>
+                    <font>Font-Alaska-S34-BL</font>
+                    <textcolor>mod-infotags-l</textcolor>
+                    <shadowcolor>mod-shadow</shadowcolor>
                     <align>right</align>
                     <scroll>false</scroll>
                 </control>

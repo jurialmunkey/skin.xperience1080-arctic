@@ -20,12 +20,29 @@
                 <effect type="fade" start="100" end="0" time="200" tween="sine" easing="inout" />
                 <effect type="slide" start="0" end="50" time="200" tween="sine" easing="inout" />
             </animation>
-            <control type="image">
+            <!--<control type="image">
                 <posx>1683</posx>
                 <posy>0</posy>
                 <width>194</width>
                 <height>194</height>
                 <texture>overlays/volume/mute-back.png</texture>
+                <aspectratio>stretch</aspectratio>
+            </control>-->
+            <control type="image">
+                <posx>1723</posx>
+                <posy>40</posy>
+                <width>114</width>
+                <height>114</height>
+                <texture border="35">views/newgloss/border-glass.png</texture>
+                <aspectratio>stretch</aspectratio>
+				<!--<visible>![Player.ShowInfo | Window.IsVisible(fullscreeninfo) | Window.IsActive(videoosd) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>-->
+            </control>
+            <control type="image">
+                <posx>1726</posx>
+                <posy>43</posy>
+                <width>108</width>
+                <height>108</height>
+                <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 <aspectratio>stretch</aspectratio>
             </control>
             <control type="image">

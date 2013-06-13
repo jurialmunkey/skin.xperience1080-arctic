@@ -10,14 +10,15 @@
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
         
-        	<!--<control type="image">
+        	<control type="image">
                 <posx>230</posx>
                 <posy>171</posy>
                 <height>737</height>
                 <width>1460</width>
                 <texture border="25">views/newgloss/border-glass.png</texture>
                 <colordiffuse>77ffffff</colordiffuse>
-            </control>-->
+                <visible>!Skin.HasSetting(hide.glass)</visible>
+            </control>
             <control type="image">
                 <posx>234</posx>
                 <posy>175</posy>

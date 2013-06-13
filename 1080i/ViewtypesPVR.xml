@@ -39,11 +39,21 @@
                 <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(32) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
                 <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(32) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
                 <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(32) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+				<control type="image">
+					<posx>130</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1650</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
                 <control type="group">
                     <description>Channel Preview + Info</description>
                     <posx>1184</posx>
                     <posy>218</posy>
-
+					<!-- Panel -->
                     <include>PVR-RightPanel</include>
                 
                     <control type="label">
@@ -158,11 +168,11 @@
                 <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(32) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
                 <control type="label">
                 	<posx>168</posx>
-                	<posy>180</posy>
+                	<posy>173</posy>
                 	<width>200</width>
                 	<height>30</height>
                 	<font>Font-Alaska-S29-BL</font>
-                	<textcolor>mod-infotags-l</textcolor>
+                	<textcolor>mod-infotags</textcolor>
                 	<shadowcolor>mod-shadow</shadowcolor>
                 	<align>left</align>
                 	<aligny>center</aligny>
@@ -539,6 +549,17 @@
 	            <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(33) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(33) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(33) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+	            
+	            <control type="image">
+					<posx>130</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1650</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
 	            <control type="group">
                     <description>Channel Preview + Info</description>
                     <posx>1184</posx>
@@ -1436,6 +1457,17 @@
 	            <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(31) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(31) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(31) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+	            
+	            <control type="image">
+					<posx>130</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1650</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
 	            <control type="group">
 	                <description>Channel Preview + Info</description>
 	                <posx>1184</posx>
@@ -1800,6 +1832,16 @@
 	            <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(31) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(31) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(31) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+	            <control type="image">
+					<posx>130</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1650</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
 	            <control type="group">
 	                <description>Channel Preview + Info</description>
 	                <posx>1184</posx>
@@ -1879,7 +1921,7 @@
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(31) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <control type="label">
 	            	<posx>168</posx>
-	            	<posy>178</posy>
+	            	<posy>173</posy>
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
@@ -2152,6 +2194,16 @@
 	            <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(34) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(34) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(34) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+	            <control type="image">
+					<posx>130</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1650</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
 	            <control type="group">
 	                <description>Channel Preview + Info</description>
 	                <posx>1184</posx>
@@ -2231,7 +2283,7 @@
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(34) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <control type="label">
 	            	<posx>168</posx>
-	            	<posy>178</posy>
+	            	<posy>173</posy>
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
@@ -2444,9 +2496,19 @@
 	            <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(35) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(35) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(35) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+	            <control type="image">
+					<posx>282</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1358</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
 	            <control type="label">
 	            	<posx>318</posx>
-	            	<posy>178</posy>
+	            	<posy>173</posy>
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
@@ -2658,6 +2720,16 @@
 	            <animation effect="slide" start="75" end="0" time="300" tween="quadratic" easing="out" condition="ControlGroup(9001).HasFocus(36) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(36) + !IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
 	            <animation effect="slide" start="0" end="-75" time="300" tween="quadratic" easing="out" condition="!ControlGroup(9001).HasFocus(36) + IsEmpty(Window.property(Movement))" reversible="false">Conditional</animation>
+	            <control type="image">
+					<posx>282</posx>
+					<posy>200</posy>
+					<height>707</height>
+					<width>1358</width>
+					<texture border="25">views/newgloss/border-glass.png</texture>
+					<colordiffuse>77ffffff</colordiffuse>
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
+
                 <control type="label">
                 	<posx>318</posx>
                 	<posy>178</posy>

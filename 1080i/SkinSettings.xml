@@ -46,7 +46,7 @@
                 
                 
                 <!-- Panel -->
-                <!--<control type="image">
+                <control type="image">
                     <posx>160</posx>
                     <posy>262</posy>
                     <height>645</height>
@@ -54,7 +54,8 @@
                     <texture border="25">views/newgloss/border-glass.png</texture>
                     <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
                     <colordiffuse>77ffffff</colordiffuse>
-                </control>-->
+                    <visible>!Skin.HasSetting(hide.glass)</visible>
+                </control>
                 <control type="image">
                     <posx>164</posx>
                     <posy>265</posy>

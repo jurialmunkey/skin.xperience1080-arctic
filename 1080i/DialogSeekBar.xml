@@ -26,7 +26,7 @@
                 <animation effect="slide" start="0,0" end="0,-70" time="300" tween="cubic" easing="inout" condition="Window.IsActive(videoosd) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]">Conditional</animation>
                 <control type="image">
                     <posx>0</posx>
-                    <posy>985</posy>
+                    <posy>982</posy>
                     <width>1920</width>
                     <height>455</height>
                     <texture border="35">views/newgloss/border-glass.png</texture>
@@ -35,7 +35,7 @@
                 </control>
                 <control type="image">
                     <posx>5</posx>
-                    <posy>905</posy>
+                    <posy>900</posy>
                     <width>1910</width>
                     <height>445</height>
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
@@ -43,12 +43,12 @@
 					<animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]">Conditional</animation>
                 </control>
                 <control type="image">
-                    <posx>20</posx>
-                    <posy>1005</posy>
-                    <width>1880</width>
-                    <height>295</height>
-                    <texture border="5">views/newgloss/whitepanel.png</texture>
-                    <colordiffuse>d0000000</colordiffuse>
+                    <posx>5</posx>
+                    <posy>985</posy>
+                    <width>1910</width>
+                    <height>325</height>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
+                    <colordiffuse>dd000000</colordiffuse>
                 </control>
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,213" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)">Conditional</animation>
@@ -262,7 +262,7 @@
                             </control>
                         </control>
                         <control type="group">
-                            <posy>825</posy>
+                            <posy>820</posy>
                             <visible>VideoPlayer.Content(Movies)</visible>
                             <control type="image">
                                 <posx>29</posx>

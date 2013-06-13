@@ -236,14 +236,15 @@
                 <control type="group">
                     <posx>100</posx>
                     <posy>220</posy>
-                    <!--<control type="image">
+                    <control type="image">
 						<posx>-20</posx>
 						<posy>-20</posy>
 						<width>1760</width>
 						<height>726</height>
 						<texture border="25">views/newgloss/border-glass.png</texture>
 						<colordiffuse>77ffffff</colordiffuse>
-					</control>-->
+						<visible>!Skin.HasSetting(hide.glass)</visible>
+					</control>
 					<control type="image">
 						<posx>626</posx>
 						<posy>-15</posy>
@@ -912,14 +913,15 @@
                     <effect type="zoom" start="100" end="75" center="640,540" time="250" tween="sine" easing="inout" />
                     <effect type="slide" end="2320" time="500" delay="0" tween="sine" easing="inout" />
                 </animation>
-                <!--<control type="image">
+                <control type="image">
 					<posx>80</posx>
 					<posy>200</posy>
 					<width>1762</width>
 					<height>730</height>
 					<texture border="25">views/newgloss/border-glass.png</texture>
 					<colordiffuse>77ffffff</colordiffuse>
-				</control>-->
+					<visible>!Skin.HasSetting(hide.glass)</visible>
+				</control>
 				<control type="image">
 					<posx>85</posx>
 					<posy>205</posy>
@@ -1088,7 +1090,7 @@
                     <align>left</align>
                     <scroll>false</scroll>
                 </control>
-                <!--<control type="image">
+                <control type="image">
                     <description>Glass</description>
                     <posx>80</posx>
                     <posy>200</posy>
@@ -1097,7 +1099,8 @@
                     <texture border="25">views/newgloss/border-glass.png</texture>
                     <include>listEndAnimation</include>
                     <colordiffuse>77ffffff</colordiffuse>
-                </control>-->
+                    <visible>!Skin.HasSetting(hide.glass)</visible>
+                </control>
                 <control type="image">
                     <description>Cover</description>
                     <posx>100</posx>
