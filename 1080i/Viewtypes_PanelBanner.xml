@@ -17,6 +17,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
+				<visible>!Skin.HasSetting(viewtypes.hidepanel)</visible>
 			</control> 
 			
             <control type="wraplist" id="509">

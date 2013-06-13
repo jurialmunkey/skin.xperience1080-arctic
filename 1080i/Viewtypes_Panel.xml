@@ -19,7 +19,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>IntegerGreaterThan(Container(508).NumItems,6)</visible>
+				<visible>IntegerGreaterThan(Container(508).NumItems,6) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
 			</control>
 			<control type="image">
 				<description>Glass</description>
@@ -29,7 +29,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!IntegerGreaterThan(Container(508).NumItems,6) + IntegerGreaterThan(Container(508).NumItems,3)</visible>
+				<visible>!IntegerGreaterThan(Container(508).NumItems,6) + IntegerGreaterThan(Container(508).NumItems,3) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
 			</control>
 			<control type="image">
 				<description>Glass</description>
@@ -39,7 +39,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!IntegerGreaterThan(Container(508).NumItems,3)</visible>
+				<visible>!IntegerGreaterThan(Container(508).NumItems,3) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
 			</control>
             <control type="group">
                 <posx>0</posx>
