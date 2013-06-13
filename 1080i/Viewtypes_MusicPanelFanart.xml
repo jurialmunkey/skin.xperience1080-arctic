@@ -11,7 +11,15 @@
             <include>listEndAnimation</include>
             <posx>62</posx>
 			<posy>180</posy>
-			
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1818</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control> 
             <control type="image">
                 <description>Cover</description>
                 <posx>6</posx>

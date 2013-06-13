@@ -9,6 +9,15 @@
             <include>OptionsShutdownAnimation</include>
             <posx>127</posx>
 			<posy>180</posy>
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1696</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control> 
             <control type="panel" id="53">
 				<posx>0</posx>
 				<posy>0</posy>
@@ -17,7 +26,7 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>vertical</orientation>
-                <viewtype label="Wall">list</viewtype>
+                <viewtype label="Panel (Wall)">list</viewtype>
                 <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
                 <onleft condition="Skin.HasSetting(KioskMode)">53</onleft>
                 <onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
@@ -64,18 +73,29 @@
 						</control>
 					</control>
                     <control type="image">
-                        <description>Gloss</description>
+                        <description>Border</description>
                         <posx>-4</posx>
                         <posy>-4</posy>
                         <width>246</width>
                         <height>246</height>
                         <texture border="25">views/newgloss/border.png</texture>
                         <aspectratio>stretch</aspectratio>
+                        <colordiffuse>ffcccccc</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <description>Poster</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>226</width>
+                        <height>226</height>
+                        <texture>views/newgloss/musicwall-diffuse.png</texture>
+                        <colordiffuse>88ffffff</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
                 <focusedlayout width="238" height="238">
                     <control type="group">
-                        <animation effect="zoom" end="135" start="100" time="200" center="auto">Focus</animation>
+                        <animation effect="zoom" end="125" start="75" time="200" center="auto">Focus</animation>
                         <control type="image">
                             <posx>6</posx>
                             <posy>6</posy>
@@ -122,7 +142,7 @@
                         
                         <!-- INFO LEFT-->
                         <control type="group">
-                        	<visible>![Container(53).Column(0) | Container(53).Column(1) | Container(53).Column(2)]</visible>
+                        	<visible>Skin.HasSetting(musicwall.showinfo) + ![Container(53).Column(0) | Container(53).Column(1) | Container(53).Column(2)]</visible>
                         	<animation type="Focus">
 								<effect type="fade" end="100" start="0" time="200" delay="1000"/>
                         		<effect type="zoom" end="100" start="65" time="200" delay="1000" center="auto"/>
@@ -277,7 +297,7 @@
                         
                         <!-- INFO RIGHT-->
                         <control type="group">
-                        	<visible>[Container(53).Column(0) | Container(53).Column(1) | Container(53).Column(2)]</visible>
+                        	<visible>Skin.HasSetting(musicwall.showinfo) + [Container(53).Column(0) | Container(53).Column(1) | Container(53).Column(2)]</visible>
                         	<animation type="Focus">
 								<effect type="fade" end="100" start="0" time="200" delay="1000"/>
                         		<effect type="zoom" end="100" start="65" time="200" delay="1000" center="auto"/>

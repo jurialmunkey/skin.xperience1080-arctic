@@ -123,6 +123,8 @@
         <radioposx>1087</radioposx>
         <align>left</align>
         <aligny>center</aligny>
+        <textureradiofocus>buttons/radio/radio-light-fo.png</textureradiofocus>
+        <textureradionofocus>buttons/radio/radio-light-nf.png</textureradionofocus>
         <texturefocus border="5">views/other/focus-mod.png</texturefocus>
         <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
         <textcolor>mod-infotags-l</textcolor>
@@ -1563,7 +1565,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeVideoTile1.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeVideoTile1.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeVideoTile1.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -1735,7 +1737,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeVideoTile2.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeVideoTile2.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeVideoTile2.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -1907,7 +1909,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeVideoTile3.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeVideoTile3.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeVideoTile3.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2079,7 +2081,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeVideoTile4.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeVideoTile4.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeVideoTile4.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2251,7 +2253,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeTVShowTile1.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeTVShowTile1.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeTVShowTile1.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2423,7 +2425,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeTVShowTile2.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeTVShowTile2.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeTVShowTile2.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2595,7 +2597,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeMusicTile1.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeMusicTile1.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeMusicTile1.Icon,,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2767,7 +2769,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeMusicTile2.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeMusicTile2.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeMusicTile2.Icon,,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2939,7 +2941,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeProgramTile1.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeProgramTile1.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeProgramTile1.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3111,7 +3113,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeProgramTile2.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeProgramTile2.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeProgramTile2.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3283,7 +3285,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeProgramTile3.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeProgramTile3.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeProgramTile3.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3455,7 +3457,7 @@
                 <include>SettingsCustomDialogButtonVars</include>
                 <label>$LOCALIZE[41139]</label>
                 <label2>$INFO[Skin.String(HomeProgramTile4.Icon)]</label2>
-                <onclick>Skin.SetImage(HomeProgramTile4.Icon)</onclick>
+                <onclick>Skin.SetFile(HomeProgramTile4.Icon,.png|.jpg|.gif,special://skin/media/windows/home/icons/)</onclick>
             </control>
             <control type="radiobutton" id="2403">
                 <include>SettingsCustomDialogRadioButtonVars</include>

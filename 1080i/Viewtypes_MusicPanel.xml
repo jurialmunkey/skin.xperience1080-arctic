@@ -11,8 +11,17 @@
             <include>listEndAnimation</include>
             <posx>127</posx>
 			<posy>190</posy>
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1698</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control> 
 			
-            <control type="image">
+            <!--<control type="image">
                 <description>Cover Shadow</description>
                 <posx>-12</posx>
                 <posy>690</posy>
@@ -20,7 +29,7 @@
                 <height>36</height>
                 <texture background="true">views/posterview/shadow.png</texture>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
-            </control>
+            </control>-->
             <control type="image">
                 <description>Cover</description>
                 <posx>6</posx>
@@ -61,7 +70,7 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
-                <viewtype label="Panel">list</viewtype>
+                <viewtype label="Panel (Covers)">list</viewtype>
                 <pagecontrol>70</pagecontrol>
                 <ondown>70</ondown>
                 <onright>51</onright>

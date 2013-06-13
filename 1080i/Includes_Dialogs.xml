@@ -2138,8 +2138,18 @@
                     <width>317</width>
                     <height>478</height>
                     <aspectratio>keep</aspectratio>
+                    <texture>$INFO[ListItem.FileNameAndPath]</texture>
+                    <visible>IsEmpty(Container(450).ListItem.Thumb) + SubString(ListItem.FileNameAndPath,windows/home/icons)</visible>
+                </control>
+                
+                <control type="image">
+                    <posx>1123</posx>
+                    <posy>301</posy>
+                    <width>317</width>
+                    <height>478</height>
+                    <aspectratio>keep</aspectratio>
                     <texture>$INFO[ListItem.ActualIcon,dialogs/filebrowser/icons/,]</texture>
-                    <visible>IsEmpty(Container(450).ListItem.Thumb)</visible>
+                    <visible>IsEmpty(Container(450).ListItem.Thumb) + !SubString(ListItem.FileNameAndPath,windows/home/icons)</visible>
                 </control>
                 
                 <control type="image">
@@ -2913,7 +2923,7 @@
                 <posx>88</posx>
                 <posy>144</posy>
                 <height>60</height>
-                <label>$INFO[Control.GetLabel(1),,: ]$INFO[Container(6).ListItem.Label,[COLOR=99FFFFFF],[/COLOR]]</label>
+                <label>$INFO[Control.GetLabel(1),,: ]$INFO[Container(6).ListItem.Label,[COLOR=mod-infotags-l],[/COLOR]]</label>
                 <include>DialogHeaderMod</include>
                 <align>left</align>
                 <scroll>false</scroll>
@@ -2936,6 +2946,36 @@
                 <scroll>false</scroll>
                 <visible>StringCompare(Window(3004).Property(ChooseArt),poster)</visible>
             </control>
+            
+            <control type="image">
+				<posx>80</posx>
+				<posy>200</posy>
+				<width>1243</width>
+				<height>726</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<colordiffuse>77ffffff</colordiffuse>
+				<visible>StringCompare(Window(3004).Property(ChooseArt),fanart) | StringCompare(Window(3004).Property(ChooseArt),landscape)</visible>
+			</control>
+			
+			<control type="image">
+				<posx>80</posx>
+				<posy>200</posy>
+				<width>1445</width>
+				<height>726</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<colordiffuse>77ffffff</colordiffuse>
+				<visible>![StringCompare(Window(3004).Property(ChooseArt),fanart) | StringCompare(Window(3004).Property(ChooseArt),landscape) | StringCompare(Window(3004).Property(ChooseArt),poster)]</visible>
+			</control>
+			
+			<control type="image">
+				<posx>80</posx>
+				<posy>200</posy>
+				<width>1490</width>
+				<height>726</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<colordiffuse>77ffffff</colordiffuse>
+				<visible>StringCompare(Window(3004).Property(ChooseArt),poster)</visible>
+			</control>
             
             <control type="image">
                 <description>Shadow</description>

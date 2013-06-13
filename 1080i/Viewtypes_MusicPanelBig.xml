@@ -19,7 +19,7 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">350</scrolltime>
                 <orientation>horizontal</orientation>
-                <viewtype label="Panel">list</viewtype>
+                <viewtype label="Covers (Big)">list</viewtype>
                 <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
                 <ondown condition="Skin.HasSetting(KioskMode)">RunScript(special://skin/extras/scripts/setClearProperty.py,BounceTop)</ondown>
                 <onright>55</onright>

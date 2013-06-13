@@ -9,6 +9,16 @@
             <include>OptionsShutdownAnimation</include>
             <posx>36</posx>
 			<posy>180</posy>
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1880</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control> 
+			
             <control type="wraplist" id="509">
 				<posx>840</posx>
 				<posy>0</posy>

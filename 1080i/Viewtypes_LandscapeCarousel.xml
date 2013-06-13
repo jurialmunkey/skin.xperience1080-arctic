@@ -98,6 +98,7 @@
 					<control type="group">
 						<animation condition="Container(513).OnNext | Container(513).OnPrevious" effect="zoom" start="50" end="100" time="350" tween="sine" easing="out" center="auto">Focus</animation>
 						<animation condition="Container(513).OnNext | Container(513).OnPrevious" effect="zoom" start="100" end="50" time="250" tween="sine" easing="out" center="auto">UnFocus</animation>
+						
 						<control type="image">
 							<description>Landscape</description>
 							<posx>10</posx>

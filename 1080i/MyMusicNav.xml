@@ -3,10 +3,8 @@
     <allowoverlay>yes</allowoverlay>
     <backgroundcolor>0</backgroundcolor>
     <views>50,51,52,53,54,55,56,57,500,501,60,502,509</views>
-    <onload>Skin.SetBool(MusicWallTitles)</onload>
     <onload>Runscript(script.extendedinfo, backend="true")</onload>
     <onload>AlarmClock(cycletracklist,null,0:20,silent,loop)</onload>
-    <!--<onload>Skin.SetString(cdartlocation,/media/MYBOOK/TORRENTS/cdart/)</onload>-->
     <controls>
         
         <include>CommonItems</include>
@@ -76,7 +74,7 @@
                     <texturefocus border="70,2,2,2">dialogs/options/buttons/custom-fo.png</texturefocus>
                     <texturenofocus border="70,2,2,2">dialogs/options/buttons/custom-nf.png</texturenofocus>
                     <animation effect="fade" start="100" end="50" time="0" condition="!Control.IsEnabled(21)">Conditional</animation>
-                    <enable>[[Container.Content(Artists) | Container.Content(Albums)] + [Control.IsVisible(52) | Control.IsVisible(53)]] | Control.IsVisible(500)</enable>
+                    <enable>Control.IsVisible(53)</enable>
                 </control>
                 <control type="button" id="3">
                     <description>sort</description>
@@ -185,57 +183,9 @@
                     <include>optionsbuttonsdimensions</include>
                     <label>$LOCALIZE[42018]</label>
                     <texturefocus border="2">dialogs/options/buttons/default-fo.png</texturefocus>
-                    <onclick>Skin.ToggleSetting(MusicInfoListReview)</onclick>
-                    <selected>Skin.HasSetting(MusicInfoListReview)</selected>
-                    <visible>Container.Content(Albums) + Control.IsVisible(52)</visible>
-                    <textureradioon>buttons/radio/options-radio-button-fo.png</textureradioon>
-                    <textureradiooff>buttons/radio/options-radio-button-nf.png</textureradiooff>
-                    <radioposx>-19</radioposx>
-                </control>
-                <control type="radiobutton" id="103">
-                    <description>Show review in Info Panel</description>
-                    <include>optionsbuttonsdimensions</include>
-                    <label>$LOCALIZE[42018]</label>
-                    <texturefocus border="2">dialogs/options/buttons/default-fo.png</texturefocus>
-                    <onclick>Skin.ToggleSetting(MusicPanelReview)</onclick>
-                    <selected>Skin.HasSetting(MusicPanelReview)</selected>
-                    <visible>Container.Content(Albums) + Control.IsVisible(53)</visible>
-                    <textureradioon>buttons/radio/options-radio-button-fo.png</textureradioon>
-                    <textureradiooff>buttons/radio/options-radio-button-nf.png</textureradiooff>
-                    <radioposx>-19</radioposx>
-                </control>
-                <control type="radiobutton" id="104">
-                    <description>Show biography in Info List</description>
-                    <include>optionsbuttonsdimensions</include>
-                    <label>$LOCALIZE[42018]</label>
-                    <texturefocus border="2">dialogs/options/buttons/default-fo.png</texturefocus>
-                    <onclick>Skin.ToggleSetting(MusicInfoListBiography)</onclick>
-                    <selected>Skin.HasSetting(MusicInfoListBiography)</selected>
-                    <visible>Container.Content(Artists) + Control.IsVisible(52)</visible>
-                    <textureradioon>buttons/radio/options-radio-button-fo.png</textureradioon>
-                    <textureradiooff>buttons/radio/options-radio-button-nf.png</textureradiooff>
-                    <radioposx>-19</radioposx>
-                </control>
-                <control type="radiobutton" id="105">
-                    <description>Show biography in Info List / Panel</description>
-                    <include>optionsbuttonsdimensions</include>
-                    <label>$LOCALIZE[42018]</label>
-                    <texturefocus border="2">dialogs/options/buttons/default-fo.png</texturefocus>
-                    <onclick>Skin.ToggleSetting(MusicPanelBiography)</onclick>
-                    <selected>Skin.HasSetting(MusicPanelBiography)</selected>
-                    <visible>Container.Content(Artists) +Control.IsVisible(53)</visible>
-                    <textureradioon>buttons/radio/options-radio-button-fo.png</textureradioon>
-                    <textureradiooff>buttons/radio/options-radio-button-nf.png</textureradiooff>
-                    <radioposx>-19</radioposx>
-                </control>
-                <control type="radiobutton" id="106">
-                    <description>Use small thumbs in thumbnail view</description>
-                    <include>optionsbuttonsdimensions</include>
-                    <label>$LOCALIZE[42022]</label>
-                    <texturefocus border="2">dialogs/options/buttons/default-fo.png</texturefocus>
-                    <onclick>Skin.ToggleSetting(ThumbnailSmall)</onclick>
-                    <selected>Skin.HasSetting(ThumbnailSmall)</selected>
-                    <visible>Control.IsVisible(500)</visible>
+                    <onclick>Skin.ToggleSetting(musicwall.showinfo)</onclick>
+                    <selected>Skin.HasSetting(musicwall.showinfo)</selected>
+                    <visible>Control.IsVisible(53)</visible>
                     <textureradioon>buttons/radio/options-radio-button-fo.png</textureradioon>
                     <textureradiooff>buttons/radio/options-radio-button-nf.png</textureradiooff>
                     <radioposx>-19</radioposx>
@@ -298,18 +248,6 @@
                     <visible>Container.Content(Artists) | Container.Content(Albums)</visible>
                 </control>
                 <control type="radiobutton" id="205">
-                    <description>Panel (Big Covers)</description>
-                    <include>optionsbuttonsdimensions</include>
-                    <label>Panel (Big Covers)</label>
-                    <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
-                    <onclick>Container.SetViewMode(55)</onclick>
-                    <selected>Control.IsVisible(55)</selected>
-                    <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
-                    <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
-                    <radioposx>-19</radioposx>
-                    <visible>Container.Content(Artists) | Container.Content(Albums)</visible>
-                </control>
-                <control type="radiobutton" id="206">
                     <description>Panel (Fanart)</description>
                     <include>optionsbuttonsdimensions</include>
                     <label>Panel (Fanart)</label>
@@ -321,13 +259,25 @@
                     <radioposx>-19</radioposx>
                     <visible>Container.Content(Artists) | Container.Content(Albums)</visible>
                 </control>
-                <control type="radiobutton" id="207">
-                    <description>Covers (Wall)</description>
+                <control type="radiobutton" id="206">
+                    <description>Panel (Wall)</description>
                     <include>optionsbuttonsdimensions</include>
-                    <label>Covers (Wall)</label>
+                    <label>Panel (Wall)</label>
                     <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
                     <onclick>Container.SetViewMode(53)</onclick>
                     <selected>Control.IsVisible(53)</selected>
+                    <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                    <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                    <radioposx>-19</radioposx>
+                    <visible>Container.Content(Artists) | Container.Content(Albums)</visible>
+                </control>
+                <control type="radiobutton" id="207">
+                    <description>Covers (Big)</description>
+                    <include>optionsbuttonsdimensions</include>
+                    <label>Covers (Big)</label>
+                    <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                    <onclick>Container.SetViewMode(55)</onclick>
+                    <selected>Control.IsVisible(55)</selected>
                     <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
                     <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
                     <radioposx>-19</radioposx>

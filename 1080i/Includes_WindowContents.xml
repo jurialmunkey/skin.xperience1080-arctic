@@ -15,7 +15,6 @@
 <!-- ================================================== -->
 <!-- Common Items: Shutdown, Options, Clock etc. -->
 <!-- ================================================== --> 
-
     <include name="CommonOverlay">
         <control type="videowindow">
             <include>FullscreenDimensions</include>
@@ -28,26 +27,27 @@
             <height>4120</height>
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
-            <fadetime>900</fadetime>
-            <visible>!Control.IsVisible(505)</visible>
             <colordiffuse>mod-black</colordiffuse>
-        </control>
-        <control type="image">
-            <posx>0</posx>
-            <posy>175r</posy>
-            <width>1920</width>
-            <height>175</height>
-            <texture border="10">osd/fullscreen/bar.png</texture>
-            <visible>Control.IsVisible(505)</visible>
+            <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="350">Visible</animation>
+            <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
+            <animation effect="fade" end="0" start="100" time="250">Hidden</animation>
+            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + [StringCompare(Skin.String(homescreen.style),simple) | StringCompare(Skin.String(homescreen.style),panel)]]]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <animation effect="fade" start="0" time="400">VisibleChange</animation>
+            <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>mod-dimfanart</colordiffuse>
         </control>
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+            <texture>windows/common/white.png</texture>
+            <colordiffuse>44eeeeee</colordiffuse>
+            <visible>Skin.HasSetting(disable.dimfanart)</visible>
+        </control>
     </include>
-
     <include name="CommonItemsHome">
         <include>CommonContent</include>
         <include>HomeCustomBackdrops</include>
@@ -226,7 +226,13 @@
             <animation effect="fade" time="300" start="0" end="95" tween="sine" easing="out">WindowOpen</animation>
             <animation effect="fade" time="300" start="95" end="0" tween="sine" easing="in">WindowClose</animation>
         </control>
-        
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" time="300" start="0" end="100" tween="sine" easing="out">WindowOpen</animation>
+            <animation effect="fade" time="300" start="100" end="0" tween="sine" easing="in">WindowClose</animation>
+            <texture>windows/common/white.png</texture>
+            <colordiffuse>ccffffff</colordiffuse>
+        </control>
     </include>
     <include name="FadeBackground">
         <control type="image">

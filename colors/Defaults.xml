@@ -53,8 +53,8 @@
         <color name="Grey Tiles">aa404040</color>
         
 		<!-- WHITES AND BLACKS -->						
-		<color name="mod-black">ccffffff</color> 		
-		<color name="mod-dimfanart">aaffffff</color> 	
+		<color name="mod-black">ddeeeeee</color> 		
+		<color name="mod-dimfanart">aaeeeeee</color> 	
 		<color name="mod-infotags">ee404040</color>
 		<color name="mod-infotags-li">cc404040</color>		
 		<color name="mod-infotags-l">aa404040</color>

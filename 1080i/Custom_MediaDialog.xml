@@ -69,21 +69,23 @@
             
             <control type="group">
                 <include>listEndAnimation</include>
+                
                 <control type="image">
                     <description>Panel</description>
-                    <posx>90</posx>
-                    <posy>210</posy>
-                    <width>478</width>
-                    <height>707</height>
-                    <texture border="25">views/newgloss/border.png</texture>
+                    <posx>80</posx>
+                    <posy>200</posy>
+                    <width>499</width>
+                    <height>726</height>
+                    <texture border="35">views/newgloss/border-glass.png</texture>
+                    <colordiffuse>77ffffff</colordiffuse>
                 </control>
                 <control type="image">
                     <description>Panel</description>
-                    <posx>100</posx>
-                    <posy>220</posy>
-                    <width>458</width>
-                    <height>687</height>
-                    <texture border="5">views/newgloss/panel.png</texture>
+                    <posx>85</posx>
+                    <posy>205</posy>
+                    <width>489</width>
+                    <height>717</height>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
                 </control>
                 <control type="image">
                     <description>Shadow</description>
@@ -99,7 +101,7 @@
                     <posy>220</posy>
                     <width>458</width>
                     <height>82</height>
-                    <texture border="150,1,150,1">views/other/focus.png</texture>
+                    <texture border="5">views/other/focus-mod.png</texture>
                     <include>visiblehidefadeinfo</include>
                     <visible>Control.HasFocus(2)</visible>
                 </control>
@@ -112,11 +114,11 @@
                     <label>$LOCALIZE[13511]</label>
                     <font>Font-Alaska-S34-BL</font>
                     <textoffsetx>30</textoffsetx>
-                    <textcolor>eewhite</textcolor>
-                    <shadowcolor>33000000</shadowcolor>
+                    <textcolor>mod-infotags-l</textcolor>
+                    <shadowcolor>mod-shadow</shadowcolor>
                     <focusedcolor>eewhite</focusedcolor>
-                    <texturefocus border="90,3,90,3">views/list/other/separator.png</texturefocus>
-                    <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+                    <texturefocus border="90,3,90,3">views/list/other/separator-l.png</texturefocus>
+                    <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
                     <align>left</align>
                     <onclick>SetProperty(ChooseArt,1)</onclick>
                     <onclick>SendClick(2003,10)</onclick>
@@ -136,12 +138,12 @@
                     <font>Font-Alaska-S34-BL</font>
                     <align>left</align>
                     <aligny>top</aligny>
-                    <textcolor>bbwhite</textcolor>
-                    <disabledcolor>bbwhite</disabledcolor>
+                    <textcolor>mod-infotags</textcolor>
+                    <disabledcolor>mod-infotags</disabledcolor>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety>34</textoffsety>
                     <enable>false</enable>
-                    <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
+                    <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
                     <visible>System.HasAddon(script.artwork.downloader)</visible>
                 </control>
                 
@@ -163,7 +165,7 @@
                             <posy>0</posy>
                             <width>458</width>
                             <height>84</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                            <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                         </control>
                         <control type="label">
                             <posx>30</posx>
@@ -172,8 +174,8 @@
                             <height>82</height>
                             <font>Font-Alaska-S34-BL</font>
                             <label>$INFO[ListItem.Label]</label>
-                            <textcolor>eewhite</textcolor>
-                            <shadowcolor>33000000</shadowcolor>
+                            <textcolor>mod-infotags</textcolor>
+                            <shadowcolor>mod-shadow</shadowcolor>
                             <animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
                         </control>
                     </itemlayout>
@@ -183,14 +185,14 @@
                             <posy>0</posy>
                             <width>458</width>
                             <height>84</height>
-                            <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                            <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                         </control>
                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
                             <width>458</width>
                             <height>82</height>
-                            <texture border="150,1,150,1">views/other/focus.png</texture>
+                            <texture border="5">views/other/focus-mod.png</texture>
                             <animation effect="slide" start="0,83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(3).OnPrevious">Focus</animation>
                             <animation effect="slide" start="0,-83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(3).OnNext">Focus</animation>
                             <include>visiblehidefadeinfo</include>
@@ -207,6 +209,20 @@
                             <shadowcolor>33000000</shadowcolor>
                             <animation effect="fade" start="50" end="100" time="300" tween="sine" easing="inout" reversible="false" condition="Container(3).OnNext | Container(3).OnPrevious">Focus</animation>
                             <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(3)">Conditional</animation>
+                            <visible>Control.HasFocus(3)</visible>
+                        </control>
+                        <control type="label">
+                            <posx>30</posx>
+                            <posy>0</posy>
+                            <width>398</width>
+                            <height>82</height>
+                            <font>Font-Alaska-S34-BL</font>
+                            <label>$INFO[ListItem.Label]</label>
+                            <textcolor>mod-infotags</textcolor>
+                            <shadowcolor>mod-shadow</shadowcolor>
+                            <animation effect="fade" start="50" end="100" time="300" tween="sine" easing="inout" reversible="false" condition="Container(3).OnNext | Container(3).OnPrevious">Focus</animation>
+                            <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(3)">Conditional</animation>
+                            <visible>!Control.HasFocus(3)</visible>
                         </control>
                     </focusedlayout>
                     <content>

@@ -17,6 +17,7 @@
 	<onload condition="IsEmpty(Skin.String(homecolor.name)) | !SubString(Skin.String(homecolor.name),Tiles)">Skin.SetString(homecolor.name,Grey Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(pvrcolor.name)) | !SubString(Skin.String(pvrcolor.name),Tiles)">Skin.SetString(pvrcolor.name,Grey Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(weathercolor.name)) | !SubString(Skin.String(weathercolor.name),Tiles)">Skin.SetString(weathercolor.name,Grey Tiles)</onload>
+	<onload condition="IsEmpty(Skin.String(homescreen.style))">Skin.SetString(homescreen.style,metro)</onload>
     <onunload>CancelAlarm(HomeTileMove,true)</onunload>
     <onunload>CancelAlarm(HomeTileMoveTwo,true)</onunload>
     <onunload>CancelAlarm(HomeTileMoveThree,true)</onunload>
@@ -26,11 +27,11 @@
         <include>CommonItemsHome</include>
         
         <!-- Home screen -->
-        <include>HomeControlList</include>
-        <include>HomeControlListLabels</include>
-        <include>HomeItems</include>
-        
-        <!--<include>Mod_HomeList</include>-->
+        <include condition="!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">HomeControlList</include>
+        <include condition="!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">HomeControlListLabels</include>
+        <include condition="!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">HomeItems</include>        
+        <include condition="StringCompare(Skin.String(homescreen.style),panel)">Mod_HomeList</include>
+		<include condition="StringCompare(Skin.String(homescreen.style),simple)">Mod_SimpleHomeList</include>
         
         <!-- Profile Stuff -->
         <include>HomeProfileInfo</include>

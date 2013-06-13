@@ -372,7 +372,7 @@
         <font>
             <name>Font-Alaska-S25-L</name>
             <filename>alaska_regular.ttf</filename>
-            <size>25</size>
+            <size>24</size>
         </font>
         <font>
             <name>Font-Alaska-S27-BL</name>
@@ -488,6 +488,7 @@
             <filename>alaska_regular.ttf</filename>
             <size>45</size>
         </font>
+        
 		<font>
             <name>Font-Alaska-S49</name>
             <filename>alaska_cond.ttf</filename>
@@ -512,6 +513,11 @@
             <name>Font-Alaska-S100</name>
             <filename>alaska_black.ttf</filename>
             <size>100</size>
+        </font>
+        <font>
+            <name>Font-ModHome</name>
+            <filename>alaska_black.ttf</filename>
+            <size>34</size>
         </font>
     </fontset>
 </fonts>

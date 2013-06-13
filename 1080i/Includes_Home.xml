@@ -10,26 +10,26 @@
                 <posy>950</posy>
                 <width>100</width>
                 <height>100</height>
-                <onup condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">101</onup>
-                <onup condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">501</onup>
-                <onup condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">201</onup>
-                <onup condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">301</onup>
-                <onup condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">401</onup>
-                <onup condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">601</onup>
-                <onup condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">701</onup>
-                <onup condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">801</onup>
-                <onup condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">901</onup>
-                <ondown condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">125</ondown>
-                <ondown condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
-                <ondown condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">225</ondown>
-                <ondown condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">325</ondown>
-                <ondown condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">425</ondown>
-                <ondown condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">625</ondown>
-                <ondown condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">725</ondown>
-                <ondown condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">825</ondown>
-                <ondown condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">925</ondown>
-                <onup condition="Skin.HasSetting(ModAlternateHomeScreen)">525</onup>
-                <ondown condition="Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
+                <onup condition="Container(20).HasFocus(1) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">101</onup>
+                <onup condition="Container(20).HasFocus(2) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">501</onup>
+                <onup condition="Container(20).HasFocus(3) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">201</onup>
+                <onup condition="Container(20).HasFocus(4) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">301</onup>
+                <onup condition="Container(20).HasFocus(5) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">401</onup>
+                <onup condition="Container(20).HasFocus(6) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">601</onup>
+                <onup condition="Container(20).HasFocus(7) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">701</onup>
+                <onup condition="Container(20).HasFocus(8) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">801</onup>
+                <onup condition="Container(20).HasFocus(9) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">901</onup>
+                <ondown condition="Container(20).HasFocus(1) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">125</ondown>
+                <ondown condition="Container(20).HasFocus(2) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">525</ondown>
+                <ondown condition="Container(20).HasFocus(3) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">225</ondown>
+                <ondown condition="Container(20).HasFocus(4) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">325</ondown>
+                <ondown condition="Container(20).HasFocus(5) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">425</ondown>
+                <ondown condition="Container(20).HasFocus(6) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">625</ondown>
+                <ondown condition="Container(20).HasFocus(7) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">725</ondown>
+                <ondown condition="Container(20).HasFocus(8) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">825</ondown>
+                <ondown condition="Container(20).HasFocus(9) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">925</ondown>
+                <onup condition="StringCompare(Skin.String(homescreen.style),panel) | StringCompare(Skin.String(homescreen.style),simple)">525</onup>
+                <ondown condition="StringCompare(Skin.String(homescreen.style),panel) | StringCompare(Skin.String(homescreen.style),simple)">525</ondown>
                 <onleft>22</onleft>
                 <onright>22</onright>
                 <texturefocus>buttons/shutdown_fo.png</texturefocus>
@@ -38,7 +38,8 @@
                 <include>Animation_ShutdownButton</include>
                 <include>homebuttonsanim</include>
                 <visible allowhiddenfocus="true">true</visible>
-                <colordiffuse>mod-infotags-a</colordiffuse>
+                <colordiffuse>mod-infotags-d</colordiffuse>
+                <animation effect="fade" start="100" end="50" time="150" condition="Skin.HasSetting(ModAlternateHomeScreen) + !Control.HasFocus(84)">Conditional</animation>
             </control>
             <control type="label">
                 <description>Shutdown Label</description>
@@ -59,26 +60,26 @@
                 <posy>950</posy>
                 <width>100</width>
                 <height>100</height>
-                <onup condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">101</onup>
-                <onup condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">501</onup>
-                <onup condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">201</onup>
-                <onup condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">301</onup>
-                <onup condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">401</onup>
-                <onup condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">601</onup>
-                <onup condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">701</onup>
-                <onup condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">801</onup>
-                <onup condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">901</onup>
-                <ondown condition="Container(20).HasFocus(1) + !Skin.HasSetting(ModAlternateHomeScreen)">125</ondown>
-                <ondown condition="Container(20).HasFocus(2) + !Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
-                <ondown condition="Container(20).HasFocus(3) + !Skin.HasSetting(ModAlternateHomeScreen)">225</ondown>
-                <ondown condition="Container(20).HasFocus(4) + !Skin.HasSetting(ModAlternateHomeScreen)">325</ondown>
-                <ondown condition="Container(20).HasFocus(5) + !Skin.HasSetting(ModAlternateHomeScreen)">425</ondown>
-                <ondown condition="Container(20).HasFocus(6) + !Skin.HasSetting(ModAlternateHomeScreen)">625</ondown>
-                <ondown condition="Container(20).HasFocus(7) + !Skin.HasSetting(ModAlternateHomeScreen)">725</ondown>
-                <ondown condition="Container(20).HasFocus(8) + !Skin.HasSetting(ModAlternateHomeScreen)">825</ondown>
-                <ondown condition="Container(20).HasFocus(9) + !Skin.HasSetting(ModAlternateHomeScreen)">925</ondown>
-                <onup condition="Skin.HasSetting(ModAlternateHomeScreen)">525</onup>
-                <ondown condition="Skin.HasSetting(ModAlternateHomeScreen)">525</ondown>
+                <onup condition="Container(20).HasFocus(1) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">101</onup>
+                <onup condition="Container(20).HasFocus(2) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">501</onup>
+                <onup condition="Container(20).HasFocus(3) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">201</onup>
+                <onup condition="Container(20).HasFocus(4) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">301</onup>
+                <onup condition="Container(20).HasFocus(5) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">401</onup>
+                <onup condition="Container(20).HasFocus(6) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">601</onup>
+                <onup condition="Container(20).HasFocus(7) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">701</onup>
+                <onup condition="Container(20).HasFocus(8) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">801</onup>
+                <onup condition="Container(20).HasFocus(9) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">901</onup>
+                <ondown condition="Container(20).HasFocus(1) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">125</ondown>
+                <ondown condition="Container(20).HasFocus(2) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">525</ondown>
+                <ondown condition="Container(20).HasFocus(3) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">225</ondown>
+                <ondown condition="Container(20).HasFocus(4) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">325</ondown>
+                <ondown condition="Container(20).HasFocus(5) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">425</ondown>
+                <ondown condition="Container(20).HasFocus(6) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">625</ondown>
+                <ondown condition="Container(20).HasFocus(7) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">725</ondown>
+                <ondown condition="Container(20).HasFocus(8) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">825</ondown>
+                <ondown condition="Container(20).HasFocus(9) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">925</ondown>
+                <onup condition="StringCompare(Skin.String(homescreen.style),panel) | StringCompare(Skin.String(homescreen.style),simple)">525</onup>
+                <ondown condition="StringCompare(Skin.String(homescreen.style),panel) | StringCompare(Skin.String(homescreen.style),simple)">525</ondown>
                 <onleft>21</onleft>
                 <onright>21</onright>
                 <texturefocus>buttons/favourites_fo.png</texturefocus>
@@ -89,7 +90,7 @@
                 <onclick>ActivateWindow(Favourites)</onclick>
                 <include>Animation_FavButton</include>
                 <include>homebuttonsanim3</include>
-                <visible allowhiddenfocus="true">!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
+                <visible allowhiddenfocus="true">!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple) + !Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
                 <colordiffuse>mod-infotags-a</colordiffuse>
             </control>
             <control type="label">
@@ -104,7 +105,7 @@
                 <shadowcolor>mod-shadow</shadowcolor>
                 <include>Animation_FavButton</include>
                 <include>homebuttonsanim4</include>
-                <visible>!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
+                <visible>!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple) + !Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
             </control>
         </control>
     </include>
@@ -125,7 +126,7 @@
         <posy>46</posy>
         <width>600</width>
         <height>60</height>
-        <font>Font-Alaska-S36</font>
+        <font>Font-Alaska-S29-BL</font>
         <textcolor>mod-infotags</textcolor>
         <scroll>false</scroll>
         <align>left</align>
@@ -192,10 +193,6 @@
             <include>BannerListInfoAnimation</include>
             <control type="group">
                 <visible>!Skin.HasSetting(HideHomeProfileInfo)</visible>
-                <animation type="Conditional" condition="System.HasMediaDVD">
-                    <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
-                    <effect type="zoom" start="100" end="50" center="125,80" tween="sine" easing="inout" time="300" />
-                </animation>
                 <control type="image">
                     <posx>25</posx>
                     <posy>46</posy>
@@ -212,7 +209,7 @@
                 </control>
                 <control type="label">
                     <include>HomeProfileInfoLabel</include>
-                    <label>[B]$INFO[System.ProfileName][/B]</label>
+                    <label>$INFO[System.ProfileName]</label>
                     <visible>Container(30).HasFocus(1)</visible>
                 </control>
                 <control type="label">
@@ -4794,7 +4791,7 @@
                                     </item>
                                     <item id="6">
                                         <label>$LOCALIZE[404]</label>
-                                        <label2>$INFO[Window(Weather).Property(Current.UVIndex)]</label2>
+                                        <label2>$INFO[Window(Weather).Property(Current.Wind)]</label2>
                                         <propery name="bottom">1</propery>
                                         <onclick>noop</onclick>
                                     </item>

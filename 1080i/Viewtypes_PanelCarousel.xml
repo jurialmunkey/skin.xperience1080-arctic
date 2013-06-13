@@ -36,9 +36,9 @@
 			</control>
             <control type="wraplist" id="503">
 				<posx>0</posx>
-				<posy>180</posy>
+				<posy>170</posy>
 				<width>1920</width>
-				<height>722</height>
+				<height>800</height>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
                 <viewtype label="Panel (Carousel)">list</viewtype>
@@ -55,6 +55,16 @@
 							<effect type="zoom" start="100" end="50" time="0" center="auto" />
 						</animation>
 						<animation effect="slide" start="0" end="280,32" condition="Container.Content(episodes)">Conditional</animation>
+						<posy>15</posy>
+						<control type="image">
+							<description>Glass</description>
+							<posx>-15</posx>
+							<posy>-15</posy>
+							<width>1374</width>
+							<height>744</height>
+							<texture border="25">views/newgloss/border-glass.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
 						<control type="group">
 							<control type="image">
 								<description>Landscape</description>
@@ -165,6 +175,16 @@
                             <effect type="zoom" start="100" end="50" time="250" tween="sine" easing="out" center="auto" />
                         </animation>
 						<posx>286</posx>
+						<posy>15</posy>
+						<control type="image">
+							<description>Glass</description>
+							<posx>-15</posx>
+							<posy>-15</posy>
+							<width>1374</width>
+							<height>744</height>
+							<texture border="25">views/newgloss/border-glass.png</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
 						<control type="group">
 							<control type="image">
 								<description>Landscape</description>

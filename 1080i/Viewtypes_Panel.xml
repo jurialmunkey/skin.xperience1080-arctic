@@ -11,7 +11,36 @@
 			<posy>180</posy>
 			<animation effect="slide" start="0" end="84" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,6)">Conditional</animation>
 			<animation effect="slide" start="0" end="84" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,3)">Conditional</animation>
-
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1880</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>IntegerGreaterThan(Container(508).NumItems,6)</visible>
+			</control>
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1712</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>!IntegerGreaterThan(Container(508).NumItems,6) + IntegerGreaterThan(Container(508).NumItems,3)</visible>
+			</control>
+			<control type="image">
+				<description>Glass</description>
+				<posx>-15</posx>
+				<posy>-15</posy>
+				<width>1544</width>
+				<height>744</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>!IntegerGreaterThan(Container(508).NumItems,3)</visible>
+			</control>
             <control type="group">
                 <posx>0</posx>
                 <control type="image">

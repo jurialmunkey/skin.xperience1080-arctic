@@ -46,14 +46,14 @@
                 
                 
                 <!-- Panel -->
-                <control type="image">
+                <!--<control type="image">
                     <posx>160</posx>
                     <posy>262</posy>
                     <height>645</height>
                     <width>1601</width>
                     <texture border="25">views/newgloss/border-glass.png</texture>
                     <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
-                </control>
+                </control>-->
                 <control type="image">
                     <posx>164</posx>
                     <posy>265</posy>
@@ -130,6 +130,7 @@
                             <description>Home Tile Settings</description>
                             <label>Tile Colors</label>
                             <onclick>noop</onclick>
+                            <visible>StringCompare(Skin.String(homescreen.style),metro)</visible>
                         </item>
                         <item id="33">
                             <description>Media Settings</description>
@@ -350,9 +351,20 @@
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>Skin.SetPath(cdartlocation)</onclick>
-                        <label>Path to Music Art</label>
+                        <label>Music clearlogos path</label>
+                        <label2>$INFO[Skin.String(cdartlocation)]</label2>
                         <onup>1007</onup>
 						<ondown>1001</ondown>
+                    </control>
+                    <control type="button" id="1014">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <onclick>Skin.SetPath(pictures.slideshowpath)</onclick>
+                        <label>Programs slideshow path</label>
+                        <label2>$INFO[Skin.String(pictures.slideshowpath)]</label2>
+                        <onup>1007</onup>
+						<ondown>1001</ondown>
+						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.programs)</visible>
                     </control>
                 </control>
             
@@ -364,6 +376,23 @@
                     <onleft>30</onleft>
                     <include>SettingsCategoryGrouplistVars</include>
                     <control type="button" id="2000">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<include>SettingsCategoryDefaultButtonVars</include>
+                        <onclick condition="StringCompare(Skin.String(homescreen.style),simple)">Skin.SetString(homescreen.style,panel)</onclick>
+                        <onclick condition="StringCompare(Skin.String(homescreen.style),metro)">Skin.SetString(homescreen.style,simple)</onclick>
+                        <onclick condition="StringCompare(Skin.String(homescreen.style),panel)">Skin.SetString(homescreen.style,metro)</onclick>
+                        <onclick condition="StringCompare(Skin.String(homescreen.style),simple)">Skin.SetString(homescreen.style,panel)</onclick>
+                        <label>Home screen style</label>
+						<label2>[UPPERCASE]$INFO[Skin.String(homescreen.style)][/UPPERCASE]</label2>
+					</control>
+                    <control type="button" id="2001">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41131])</onclick>
@@ -372,35 +401,38 @@
                         <onfocus condition="!IsEmpty(Window(Home).Property(ReloadSkin))">ClearProperty(ReloadSkin,Home)</onfocus>
                         <label>$LOCALIZE[41131]</label>
                     </control>
-                    <control type="button" id="2001">
+                    <control type="button" id="2002">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41136])</onclick>
                         <onclick>ActivateWindow(3003)</onclick>
                         <label>$LOCALIZE[41136]</label>
                     </control>
-                    <control type="button" id="2002">
+                    <control type="button" id="2003">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41140])</onclick>
                         <onclick>ActivateWindow(3003)</onclick>
                         <label>$LOCALIZE[41140]</label>
+                        <visible>StringCompare(Skin.String(homescreen.style),metro)</visible>
                     </control>
-                    <control type="radiobutton" id="2003">
+                    <control type="radiobutton" id="2004">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>!Skin.HasSetting(HideHomeProfileInfo)</selected>
                         <onclick>Skin.ToggleSetting(HideHomeProfileInfo)</onclick>
                         <label>$LOCALIZE[41134]</label>
                     </control>
-                    <control type="radiobutton" id="2004">
+                    <control type="radiobutton" id="2005">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>!Skin.HasSetting(HideHomeSubmenuArrow)</selected>
                         <onclick>Skin.ToggleSetting(HideHomeSubmenuArrow)</onclick>
                         <label>$LOCALIZE[41135]</label>
+                        <visible>StringCompare(Skin.String(homescreen.style),metro)</visible>
                     </control>
-                    <control type="button" id="2005">
+                    
+                    <control type="button" id="2006">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>1210</width>
@@ -783,6 +815,13 @@
                         <selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>
                         <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
                         <label>$LOCALIZE[41221]</label>
+                    </control>
+                    <control type="radiobutton" id="3007">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(disable.dimfanart)</selected>
+                        <onclick>Skin.ToggleSetting(disable.dimfanart)</onclick>
+                        <label>Show more background</label>
                     </control>
                 </control>
                 

@@ -42,14 +42,14 @@
                 </control>
                 
                 <!-- Panel -->
-                <control type="image">
+                <!--<control type="image">
                     <posx>160</posx>
                     <posy>262</posy>
                     <height>645</height>
                     <width>1601</width>
                     <texture border="25">views/newgloss/border-glass.png</texture>
                     <animation effect="fade" end="100" start="0" time="300" delay="350">WindowOpen</animation>
-                </control>
+                </control>-->
                 <control type="image">
                     <posx>164</posx>
                     <posy>265</posy>
@@ -182,6 +182,8 @@
             <radioposx>1087</radioposx>
             <align>left</align>
             <aligny>center</aligny>
+            <textureradiofocus>buttons/radio/radio-light-fo.png</textureradiofocus>
+			<textureradionofocus>buttons/radio/radio-light-nf.png</textureradionofocus>
 			<texturefocus border="5">views/other/focus-mod.png</texturefocus>
             <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
             <textcolor>mod-infotags-l</textcolor>

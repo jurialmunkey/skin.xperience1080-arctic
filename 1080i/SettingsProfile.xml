@@ -12,13 +12,13 @@
             <include>OptionsShutdownAnimation</include>
             <visible>!Window.IsActive(favourites)</visible>
             <!-- Panel -->
-            <control type="image">
+            <!--<control type="image">
                 <posx>330</posx>
                 <posy>166</posy>
                 <height>748</height>
                 <width>1260</width>
                 <texture border="35">views/newgloss/border-glass.png</texture>
-            </control>
+            </control>-->
             <control type="image">
                 <posx>340</posx>
                 <posy>176</posy>
