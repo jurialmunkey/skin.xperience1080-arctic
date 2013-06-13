@@ -1,6 +1,272 @@
 <includes>
 	<include name="Mod_SimpleHomeList">
 		<control type="group">
+			<posy>1080</posy>
+			<animation effect="slide" start="0" end="0,-840" time="350" delay="150" condition="Control.HasFocus(82)">Conditional</animation>
+			<!-- GLass -->
+			<control type="image">
+				<posx>-10</posx>
+				<posy>-40</posy>
+				<width>1940</width>
+				<height>800</height>
+				<texture border="25">views/newgloss/border-glass.png</texture>
+				<colordiffuse>77ffffff</colordiffuse>
+			</control>
+			<!-- DARK PANEL -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>-20</posy>
+				<width>1920</width>
+				<height>760</height>
+				<texture border="5">views/newgloss/whitepanel.png</texture>
+				<colordiffuse>dd000000</colordiffuse>
+			</control>
+			<!-- BOTTOM FANART AND INFO PANEL -->
+			<control type="group">
+				<posy>-20</posy>
+				<animation effect="fade" start="0" end="100" time="450" tween="cubic" easing="out" reversible="false">VisibleChange</animation>
+				<control type="image">
+					<posx>20</posx>
+					<posy>20</posy>
+					<width>391</width>
+					<height>200</height>
+					<texture diffuse="views/newgloss/landscape-391-220.png">$INFO[Container(82).ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<visible>!IsEmpty(Container(82).ListItem.Icon)</visible>
+				</control>
+				<control type="image">
+					<posx>20</posx>
+					<posy>20</posy>
+					<width>391</width>
+					<height>200</height>
+					<texture diffuse="views/newgloss/landscape-391-220.png">$INFO[Container(82).ListItem.Property(poster)]</texture>
+					<aspectratio>scale</aspectratio>
+					<visible>IsEmpty(Container(82).ListItem.Icon)</visible>
+				</control>
+				<control type="image">
+					<posx>10</posx>
+					<posy>10</posy>
+					<width>411</width>
+					<height>220</height>
+					<texture border="25">views/newgloss/border.png</texture>
+					<colordiffuse>55ffffff</colordiffuse>
+					<visible>!IsEmpty(Container(82).ListItem.Icon) | !IsEmpty(Container(82).ListItem.Property(poster))</visible>
+				</control>
+				<control type="label">
+					<posx>440</posx>
+					<posy>22</posy>
+					<label>$INFO[Container(82).ListItem.Label]</label>
+					<align>left</align>
+					<font>Font-ModHome</font>
+					<textcolor>eedddddd</textcolor>
+					<width>700</width>
+					<scroll>false</scroll>
+				</control>
+				<control type="label">
+					<posx>440</posx>
+					<posy>54</posy>
+					<label>$INFO[Container(82).ListItem.Label2]</label>
+					<align>left</align>
+					<font>Font-Alaska-S28-L</font>
+					<textcolor>eebbbbbb</textcolor>
+					<width>700</width>
+					<scroll>false</scroll>
+				</control>
+				<control type="textbox">
+					<posx>440</posx>
+					<posy>96</posy>
+					<label>$INFO[Container(82).ListItem.Property(Plot)]</label>
+					<align>justify</align>
+					<font>Font-Condensed-S28</font>
+					<textcolor>eebbbbbb</textcolor>
+					<width>1010</width>
+					<height>120</height>
+					<autoscroll delay="13000" time="3000" repeat="13000" />
+				</control>
+				<control type="image">
+					<posx>1480</posx>
+					<posy>10</posy>
+					<width>400</width>
+					<height>220</height>
+					<texture>$INFO[Container(82).ListItem.Property(logo)]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<visible>!Container(525).HasFocus(3)</visible>
+				</control>
+				<control type="image">
+					<posx>1572</posx>
+					<posy>-28</posy>
+					<width>380</width>
+					<height>380</height>
+					<texture>windows/home/icons/music.png</texture>
+					<aspectratio align="right" aligny="center">keep</aspectratio>
+					<visible>Container(525).HasFocus(3)</visible>
+					<colordiffuse>mod-infotags-alt</colordiffuse>
+				</control>
+			</control>
+			
+			<!-- Panel -->
+			<control type="image">
+				<include>Mod_GreyPanelDimensions</include>
+			</control>
+			<!-- RECENT ITEMS -->
+			<control type="list" id="82">
+				<onup>525</onup>
+				<ondown>525</ondown>
+				<onleft>82</onleft>
+				<onright>82</onright>
+				<posx>35</posx>
+				<posy>270</posy>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<width>1860</width>
+				<height>600</height>
+				<viewtype>list</viewtype>
+				<orientation>horizontal</orientation>
+				<itemlayout width="184" condition="!Container(525).HasFocus(3)">
+					<control type="group">
+						<animation effect="fade" start="100" end="66" condition="true">Conditional</animation>
+						<control type="image">
+							<posx>10</posx>
+							<posy>264</posy>
+							<width>169</width>
+							<height>254</height>
+							<texture diffuse="views/posterview/diffuse-ref.png" flipy="true">$INFO[ListItem.Property(poster)]</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>169</width>
+							<height>254</height>
+							<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+						</control>
+					</control>
+					<control type="image">
+						<width>189</width>
+						<height>274</height>
+						<texture border="25">views/newgloss/border.png</texture>
+						<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+					</control>
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>169</width>
+						<height>254</height>
+						<texture border="5">views/newgloss/whitepanel.png</texture>
+						<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+					</control>
+				</itemlayout>
+				<itemlayout width="230" condition="Container(525).HasFocus(3)">
+					<control type="group">
+						<posy>34</posy>
+						<control type="group">
+							<animation effect="fade" start="100" end="66" condition="true">Conditional</animation>
+							<control type="image">
+								<posx>10</posx>
+								<posy>230</posy>
+								<width>220</width>
+								<height>220</height>
+								<texture diffuse="views/posterview/diffuse-ref.png" flipy="true">$INFO[ListItem.Property(poster)]</texture>
+							</control>
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>220</width>
+								<height>220</height>
+								<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+							</control>
+						</control>
+						<control type="image">
+							<width>240</width>
+							<height>240</height>
+							<texture border="25">views/newgloss/border.png</texture>
+							<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>220</height>
+							<texture border="5">views/newgloss/whitepanel.png</texture>
+							<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="184" condition="!Container(525).HasFocus(3)">
+					<control type="group">
+						<animation effect="fade" start="100" end="66" condition="!Control.HasFocus(82)">Conditional</animation>
+						<control type="image">
+							<posx>10</posx>
+							<posy>264</posy>
+							<width>169</width>
+							<height>254</height>
+							<texture diffuse="views/posterview/diffuse-ref.png" flipy="true">$INFO[ListItem.Property(poster)]</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>169</width>
+							<height>254</height>
+							<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+						</control>
+					</control>
+					<control type="image">
+						<width>189</width>
+						<height>274</height>
+						<texture border="25">views/newgloss/border.png</texture>
+						<animation effect="fade" start="100" end="33" condition="!Control.HasFocus(82)">Conditional</animation>
+					</control>
+					<control type="image">
+						<posx>10</posx>
+						<posy>10</posy>
+						<width>169</width>
+						<height>254</height>
+						<texture border="5">views/newgloss/whitepanel.png</texture>
+						<visible>!Control.HasFocus(82)</visible>
+						<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+					</control>
+				</focusedlayout>
+				<focusedlayout width="230" condition="Container(525).HasFocus(3)">
+					<control type="group">
+						<posy>34</posy>
+						<control type="group">
+							<animation effect="fade" start="100" end="66" condition="!Control.HasFocus(82)">Conditional</animation>
+							<control type="image">
+								<posx>10</posx>
+								<posy>230</posy>
+								<width>220</width>
+								<height>220</height>
+								<texture diffuse="views/posterview/diffuse-ref.png" flipy="true">$INFO[ListItem.Property(poster)]</texture>
+							</control>
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>220</width>
+								<height>220</height>
+								<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+							</control>
+						</control>
+						<control type="image">
+							<width>240</width>
+							<height>240</height>
+							<texture border="25">views/newgloss/border.png</texture>
+							<animation effect="fade" start="100" end="33" condition="!Control.HasFocus(82)">Conditional</animation>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>220</width>
+							<height>220</height>
+							<texture border="5">views/newgloss/whitepanel.png</texture>
+							<visible>!Control.HasFocus(82)</visible>
+							<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<include>Mod_82Content</include>
+				</content>
+			</control>
+		</control>
+		<control type="group">
 			<posy>695</posy>
 			<animation effect="slide" start="0" end="0,-230" time="250" condition="Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
 			<animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
@@ -37,55 +303,55 @@
 					<width>30</width>
 					<height>30</height>
 					<texture>windows/home/favourites.png</texture>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(10)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(10)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.favourites)</visible>
 				</control>
 				<control type="label">
 					<label>20342</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(1)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(1)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.movies)</visible>
 				</control>
 				<control type="label">
 					<label>20343</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(2)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(2)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.tvshows)</visible>
 				</control>
 				<control type="label">
 					<label>2</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(3)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(3)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.music)</visible>
 				</control>
 				<control type="label">
 					<label>41220</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(4)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(4)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.pvr)</visible>
 				</control>
 				<control type="label">
 					<label>1</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(5)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(5)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.pictures)</visible>
 				</control>
 				<control type="label">
 					<label>15016</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(6)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(6)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.games)</visible>
 				</control>
 				<control type="label">
 					<label>0</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(7)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(7)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.programs)</visible>
 				</control>
 				<control type="label">
 					<label>8</label>
 					<include>Mod_HomeLabel</include>
-					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(84) | !Container(525).HasFocus(8)">Conditional</animation>
+					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(8)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.weather)</visible>
 				</control>
 				<control type="image">
@@ -97,7 +363,7 @@
 			</control>
 			<control type="list" id="525">
 				<onup>83</onup>
-				<ondown>83</ondown>
+				<ondown>85</ondown>
 				<onleft>525</onleft>
 				<onright>525</onright>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -290,8 +556,8 @@
 			
 			<!-- SUBMENU ITEMS -->
 			<control type="list" id="83">
-				<onup>525</onup>
-				<ondown>84</ondown>
+				<onup>82</onup>
+				<ondown>525</ondown>
 				<onleft>83</onleft>
 				<onright>83</onright>
 				<posx>35</posx>
@@ -407,6 +673,16 @@
 			<texture border="35">views/newgloss/whitepanel-15.png</texture>
 			<animation effect="fade" start="0" end="100" time="150">WindowOpen</animation>
             <animation effect="fade" start="0" end="100" time="150">Visible</animation>
+		</control>
+		<control type="button" id="85">
+			<width>1</width>
+			<height>1</height>
+			<visible allowhiddenfocus="true">false</visible>
+			<onclick>SetFocus(84)</onclick>
+			<onup>525</onup>
+			<ondown>525</ondown>
+			<onleft>525</onleft>
+			<onright>525</onright>
 		</control>
 	</include>
 </includes>

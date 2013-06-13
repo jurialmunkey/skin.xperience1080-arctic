@@ -39,7 +39,7 @@
                 <include>homebuttonsanim</include>
                 <visible allowhiddenfocus="true">true</visible>
                 <colordiffuse>mod-infotags-d</colordiffuse>
-                <animation effect="fade" start="100" end="50" time="150" condition="Skin.HasSetting(ModAlternateHomeScreen) + !Control.HasFocus(84)">Conditional</animation>
+                <animation effect="fade" start="100" end="50" time="150" condition="![Control.HasFocus(84) | Control.HasFocus(85) | Control.HasFocus(21)]">Conditional</animation>
             </control>
             <control type="label">
                 <description>Shutdown Label</description>
