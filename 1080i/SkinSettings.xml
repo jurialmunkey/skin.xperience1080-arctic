@@ -958,6 +958,15 @@
                         <onclick>SetProperty(Dialog,$LOCALIZE[12600])</onclick>
                         <onclick>ActivateWindow(3002)</onclick>
                     </control>
+                    <!-- USE WEATHER FANART -->
+                    <control type="radiobutton" id="5014">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(weather.usefanart)</selected>
+                        <onclick>Skin.ToggleSetting(weather.usefanart)</onclick>
+                        <label>Use weather fanart</label>
+                        <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
+                    </control>
                     <!-- LIVE TV BACKGROUND -->
                     <control type="button" id="5011">
                         <width>1210</width>
@@ -967,6 +976,7 @@
                         <onclick>ClearProperty(CustomDialog)</onclick>
                         <onclick>SetProperty(Dialog,$LOCALIZE[41220])</onclick>
                         <onclick>ActivateWindow(3002)</onclick>
+                        <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
                     </control>
                     <!-- Pictures BACKGROUND -->
                     <control type="button" id="5012">
@@ -977,6 +987,7 @@
                         <onclick>ClearProperty(CustomDialog)</onclick>
                         <onclick>SetProperty(Dialog,$LOCALIZE[10002])</onclick>
                         <onclick>ActivateWindow(3002)</onclick>
+                        <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
                     </control>
                     <!-- Games BACKGROUND -->
                     <control type="button" id="5013">
@@ -987,6 +998,7 @@
                         <onclick>ClearProperty(CustomDialog)</onclick>
                         <onclick>SetProperty(Dialog,$LOCALIZE[15016])</onclick>
                         <onclick>ActivateWindow(3002)</onclick>
+                        <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
                     </control>
                 </control>
                 
