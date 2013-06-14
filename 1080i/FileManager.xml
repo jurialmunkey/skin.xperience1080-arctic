@@ -103,19 +103,11 @@
                         <texture>windows/home/item-shadow.png</texture>
                     </control>
                     <control type="image">
-                        <posx>-2</posx>
-                        <posy>-3</posy>
-                        <width>756</width>
-                        <height>604</height>
-                        <texture border="5">views/newgloss/whitepanel.png</texture>
-                        <colordiffuse>mod-infotags</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posx>-12</posx>
-                        <posy>-13</posy>
-                        <width>776</width>
-                        <height>624</height>
-                        <texture border="25">views/newgloss/border.png</texture>
+                        <posx>-16</posx>
+                        <posy>-16</posy>
+                        <width>784</width>
+                        <height>631</height>
+                        <texture border="35">views/newgloss/whitepanel-15.png</texture>
                     </control>
                     <control type="list" id="20">
                         <description>Left File List</description>
@@ -139,7 +131,7 @@
                                 <posy>0</posy>
                                 <width>752</width>
                                 <height>61</height>
-                                <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                                <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -168,9 +160,9 @@
                                 <font>Font-Condensed-S30</font>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <textcolor>77white</textcolor>
-                                <selectedcolor>SelectedGreen</selectedcolor>
-                                <shadowcolor>22000000</shadowcolor>
+                                <textcolor>mod-infotags-l</textcolor>
+                                <selectedcolor>mod-infotags-l</selectedcolor>
+                                <shadowcolor>mod-shadow</shadowcolor>
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
@@ -182,9 +174,9 @@
                                 <font>Font-Condensed-S27</font>
                                 <align>right</align>
                                 <aligny>center</aligny>
-                                <textcolor>77white</textcolor>
-                                <selectedcolor>SelectedGreen</selectedcolor>
-                                <shadowcolor>22000000</shadowcolor>
+                                <textcolor>mod-infotags-l</textcolor>
+                                <selectedcolor>mod-infotags-l</selectedcolor>
+                                <shadowcolor>mod-shadow</shadowcolor>
                                 <scroll>false</scroll>
                             </control>
                         </itemlayout>
@@ -200,7 +192,7 @@
                                 <posy>0</posy>
                                 <width>752</width>
                                 <height>61</height>
-                                <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                                <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -217,7 +209,7 @@
                                 <posy>0</posy>
                                 <width>752</width>
                                 <height>59</height>
-                                <texture border="150,1,150,1">views/other/focus.png</texture>
+                                <texture border="5">views/other/focus-mod.png</texture>
                                 <animation type="Focus" condition="Container(20).OnNext" reversible="false">
                                     <effect type="slide" start="0,-60" end="0,0" time="300" tween="back" easing="out" />
                                 </animation>
@@ -235,42 +227,84 @@
                                 <texture>$INFO[ListItem.Icon,windows/filemanager/icons/,/fo.png]</texture>
                                 <aspectratio>keep</aspectratio>
                             </control> 
-                            <control type="label">
-                                <posx>70</posx>
-                                <posy>0</posy>
-                                <width>662</width>
-                                <height>59</height>
-                                <info>ListItem.Label</info>
-                                <font>Font-Condensed-S30</font>
-                                <align>left</align>
-                                <aligny>center</aligny>
-                                <textcolor>eewhite</textcolor>
-                                <selectedcolor>SelectedGreen</selectedcolor>
-                                <shadowcolor>22000000</shadowcolor>
-                                <scroll>false</scroll>
-                                <animation type="Focus" condition="[Container(20).OnNext | Container(20).OnPrevious] + !Container(20).ListItem.IsSelected" reversible="false">
-                                    <effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
-                                </animation>
-                                <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20) + !ListItem.IsSelected">Conditional</animation>
-                            </control>
-                            <control type="label">
-                                <posx>732</posx>
-                                <posy>0</posy>
-                                <width>662</width>
-                                <height>59</height>
-                                <info>ListItem.Label2</info>
-                                <font>Font-Condensed-S27</font>
-                                <align>right</align>
-                                <aligny>center</aligny>
-                                <textcolor>eewhite</textcolor>
-                                <selectedcolor>SelectedGreen</selectedcolor>
-                                <shadowcolor>22000000</shadowcolor>
-                                <scroll>false</scroll>
-                                <animation type="Focus" condition="[Container(20).OnNext | Container(20).OnPrevious] + !Container(20).ListItem.IsSelected" reversible="false">
-                                    <effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
-                                </animation>
-                                <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20) + !Container(20).ListItem.IsSelected">Conditional</animation>
-                            </control>
+                            <control type="group">
+                            	<visible>Control.HasFocus(20)</visible>
+								<control type="label">
+									<posx>70</posx>
+									<posy>0</posy>
+									<width>662</width>
+									<height>59</height>
+									<info>ListItem.Label</info>
+									<font>Font-Condensed-S30</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<textcolor>eewhite</textcolor>
+									<selectedcolor>eewhite</selectedcolor>
+									<shadowcolor>22000000</shadowcolor>
+									<scroll>false</scroll>
+									<animation type="Focus" condition="[Container(20).OnNext | Container(20).OnPrevious] + !Container(20).ListItem.IsSelected" reversible="false">
+										<effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
+									</animation>
+									<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20) + !ListItem.IsSelected">Conditional</animation>
+								</control>
+								<control type="label">
+									<posx>732</posx>
+									<posy>0</posy>
+									<width>662</width>
+									<height>59</height>
+									<info>ListItem.Label2</info>
+									<font>Font-Condensed-S27</font>
+									<align>right</align>
+									<aligny>center</aligny>
+									<textcolor>eewhite</textcolor>
+									<selectedcolor>eewhite</selectedcolor>
+									<shadowcolor>22000000</shadowcolor>
+									<scroll>false</scroll>
+									<animation type="Focus" condition="[Container(20).OnNext | Container(20).OnPrevious] + !Container(20).ListItem.IsSelected" reversible="false">
+										<effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
+									</animation>
+									<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20) + !Container(20).ListItem.IsSelected">Conditional</animation>
+								</control>
+							</control>
+							<control type="group">
+                            	<visible>!Control.HasFocus(20)</visible>
+								<control type="label">
+									<posx>70</posx>
+									<posy>0</posy>
+									<width>662</width>
+									<height>59</height>
+									<info>ListItem.Label</info>
+									<font>Font-Condensed-S30</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<textcolor>mod-infotags-l</textcolor>
+									<selectedcolor>mod-infotags-l</selectedcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
+									<scroll>false</scroll>
+									<animation type="Focus" condition="[Container(20).OnNext | Container(20).OnPrevious] + !Container(20).ListItem.IsSelected" reversible="false">
+										<effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
+									</animation>
+									<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20) + !ListItem.IsSelected">Conditional</animation>
+								</control>
+								<control type="label">
+									<posx>732</posx>
+									<posy>0</posy>
+									<width>662</width>
+									<height>59</height>
+									<info>ListItem.Label2</info>
+									<font>Font-Condensed-S27</font>
+									<align>right</align>
+									<aligny>center</aligny>
+									<textcolor>mod-infotags-l</textcolor>
+									<selectedcolor>mod-infotags-l</selectedcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
+									<scroll>false</scroll>
+									<animation type="Focus" condition="[Container(20).OnNext | Container(20).OnPrevious] + !Container(20).ListItem.IsSelected" reversible="false">
+										<effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
+									</animation>
+									<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(20) + !Container(20).ListItem.IsSelected">Conditional</animation>
+								</control>
+							</control>
                         </focusedlayout>
                     </control>
                     <control type="image" id="32">
@@ -388,19 +422,11 @@
                         <texture>windows/home/item-shadow.png</texture>
                     </control>
                     <control type="image">
-                        <posx>-2</posx>
-                        <posy>-3</posy>
-                        <width>756</width>
-                        <height>604</height>
-                        <texture border="5">views/newgloss/whitepanel.png</texture>
-                        <colordiffuse>mod-infotags</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posx>-12</posx>
-                        <posy>-13</posy>
-                        <width>776</width>
-                        <height>624</height>
-                        <texture border="25">views/newgloss/border.png</texture>
+                        <posx>-16</posx>
+                        <posy>-16</posy>
+                        <width>784</width>
+                        <height>631</height>
+                        <texture border="35">views/newgloss/whitepanel-15.png</texture>
                     </control>
                     <control type="list" id="21">
                         <description>Right File List</description>
@@ -424,7 +450,17 @@
                                 <posy>0</posy>
                                 <width>752</width>
                                 <height>61</height>
-                                <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                                <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
+                            </control>
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>1</posy>
+                                <width>752</width>
+                                <height>60</height>
+                                <texture>selected.png</texture>
+                                <colordiffuse>08FFFFFF</colordiffuse>
+                                <aspectratio aligny="top">keep</aspectratio>
+                                <visible>ListItem.IsSelected</visible>
                             </control>
                             <control type="image">
                                 <posx>5</posx>
@@ -434,40 +470,32 @@
                                 <texture>$INFO[ListItem.Icon,windows/filemanager/icons/,/fo.png]</texture>
                                 <aspectratio>keep</aspectratio>
                             </control>
-                            <control type="image">
-                                <posx>723</posx>
-                                <posy>-10</posy>
-                                <width>39</width>
-                                <height>39</height>
-                                <texture>windows/filemanager/selected.png</texture>
-                                <visible>ListItem.IsSelected</visible>
-                            </control>
                             <control type="label">
                                 <posx>70</posx>
                                 <posy>0</posy>
                                 <width>662</width>
-                                <height>60</height>
+                                <height>59</height>
                                 <info>ListItem.Label</info>
                                 <font>Font-Condensed-S30</font>
                                 <align>left</align>
                                 <aligny>center</aligny>
-                                <textcolor>77white</textcolor>
-                                <selectedcolor>77white</selectedcolor>
-                                <shadowcolor>22000000</shadowcolor>
+                                <textcolor>mod-infotags-l</textcolor>
+                                <selectedcolor>mod-infotags-l</selectedcolor>
+                                <shadowcolor>mod-shadow</shadowcolor>
                                 <scroll>false</scroll>
                             </control>
                             <control type="label">
                                 <posx>732</posx>
                                 <posy>0</posy>
                                 <width>662</width>
-                                <height>60</height>
+                                <height>59</height>
                                 <info>ListItem.Label2</info>
                                 <font>Font-Condensed-S27</font>
                                 <align>right</align>
                                 <aligny>center</aligny>
-                                <textcolor>77white</textcolor>
-                                <selectedcolor>77white</selectedcolor>
-                                <shadowcolor>22000000</shadowcolor>
+                                <textcolor>mod-infotags-l</textcolor>
+                                <selectedcolor>mod-infotags-l</selectedcolor>
+                                <shadowcolor>mod-shadow</shadowcolor>
                                 <scroll>false</scroll>
                             </control>
                         </itemlayout>
@@ -483,14 +511,14 @@
                                 <posy>0</posy>
                                 <width>752</width>
                                 <height>61</height>
-                                <texture border="90,3,90,3">views/list/other/separator.png</texture>
+                                <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
                                 <posy>0</posy>
                                 <width>752</width>
                                 <height>59</height>
-                                <texture border="150,1,150,1">views/other/focus.png</texture>
+                                <texture border="5">views/other/focus-mod.png</texture>
                                 <animation type="Focus" condition="Container(21).OnNext" reversible="false">
                                     <effect type="slide" start="0,-60" end="0,0" time="300" tween="back" easing="out" />
                                 </animation>
@@ -517,6 +545,7 @@
                                 <aspectratio>keep</aspectratio>
                             </control>
                             <control type="group">
+                            	<visible>Control.HasFocus(21)</visible>
                                 <animation type="Focus" condition="Container(21).OnNext | Container(21).OnPrevious" reversible="false">
                                     <effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
                                 </animation>
@@ -547,6 +576,41 @@
                                     <textcolor>eewhite</textcolor>
                                     <selectedcolor>eewhite</selectedcolor>
                                     <shadowcolor>22000000</shadowcolor>
+                                    <scroll>false</scroll>
+                                </control>
+                            </control>
+                            <control type="group">
+                            	<visible>!Control.HasFocus(21)</visible>
+                                <animation type="Focus" condition="Container(21).OnNext | Container(21).OnPrevious" reversible="false">
+                                    <effect type="fade" start="50" end="100" time="500" tween="sine" easing="inout" />
+                                </animation>
+                                <animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(21)">Conditional</animation>
+                                <control type="label">
+                                    <posx>70</posx>
+                                    <posy>0</posy>
+                                    <width>662</width>
+                                    <height>60</height>
+                                    <info>ListItem.Label</info>
+                                    <font>Font-Condensed-S30</font>
+                                    <align>left</align>
+                                    <aligny>center</aligny>
+                                    <textcolor>mod-infotags-l</textcolor>
+                                    <selectedcolor>mod-infotags-l</selectedcolor>
+                                    <shadowcolor>mod-shadow</shadowcolor>
+                                    <scroll>false</scroll>
+                                </control>
+                                <control type="label">
+                                    <posx>732</posx>
+                                    <posy>0</posy>
+                                    <width>662</width>
+                                    <height>60</height>
+                                    <info>ListItem.Label2</info>
+                                    <font>Font-Condensed-S27</font>
+                                    <align>right</align>
+                                    <aligny>center</aligny>
+                                    <textcolor>mod-infotags-l</textcolor>
+                                    <selectedcolor>mod-infotags-l</selectedcolor>
+                                    <shadowcolor>mod-shadow</shadowcolor>
                                     <scroll>false</scroll>
                                 </control>
                             </control>
