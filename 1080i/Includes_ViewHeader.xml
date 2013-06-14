@@ -835,6 +835,7 @@
                 <height>100</height>
                 <texture>dialogs/extendedprogress/loading-back-busy.png</texture>
                 <aspectratio align="center">keep</aspectratio>
+                <colordiffuse>mod-infotags</colordiffuse>
             </control>
             <control type="image">
                 <posx>10</posx>

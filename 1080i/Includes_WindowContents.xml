@@ -49,31 +49,20 @@
         
         <!-- GLASS STUFF -->
         <control type="image">
-            <posx>1590</posx>
-            <posy>0</posy>
-            <width>270</width>
-            <height>100</height>
+            <posx>1585</posx>
+            <posy>-5</posy>
+            <width>280</width>
+            <height>110</height>
             <animation type="VisibleChange">
             	<effect type="slide" start="0" end="0,50" time="220"/>
             	<effect type="fade" start="0" end="100" time="150"/>            
             </animation>
-            <texture border="35">views/newgloss/border-glass.png</texture>
-            <visible>Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(volumebar) + !Player.HasMedia</visible>
-        </control>
-        <control type="image">
-            <posx>-20</posx>
-            <posy>-20</posy>
-            <width>1960</width>
-            <height>1120</height>
-            <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
-            <animation effect="fade" start="0" end="100" time="350">Visible</animation>
-            <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
-            <animation effect="fade" end="0" start="100" time="250">Hidden</animation>
-            <texture border="35">views/newgloss/border-glass.png</texture>
-            <visible>Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple) + Player.HasMedia]</visible>
-            <colordiffuse>cfffffff</colordiffuse>
+            <texture border="35">views/newgloss/whitepanel-15.png</texture>
+            <colordiffuse>mod-osd</colordiffuse>
+            <visible>Window.IsActive(home) + StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(volumebar)</visible>
         </control>
         
+    
     </include>
     <include name="CommonItemsHome">
         <include>CommonContent</include>
