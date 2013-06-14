@@ -33,25 +33,15 @@
         <include condition="!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">HomeControlListLabels</include>
         <include condition="!StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">HomeItems</include>        
         <include condition="StringCompare(Skin.String(homescreen.style),panel)">Mod_HomeList</include>
-        <control type="group">
-        	<animation effect="slide" end="0,500" start="0" time="350">WindowClose</animation>
-        	<animation effect="slide" start="0,500" end="0" time="250">WindowOpen</animation>
-			<include condition="StringCompare(Skin.String(homescreen.style),simple)">Mod_SimpleHomeList</include>
-		</control>
+		<include condition="StringCompare(Skin.String(homescreen.style),simple)">Mod_SimpleHomeList</include>
 		        
-			<!-- Profile Stuff -->
-			<include>HomeProfileInfo</include>
-		
-			<!-- Fade background -->
-			<include>FadeBackground</include>
-
-		<control type="group">
-        	<animation effect="slide" end="0,500" start="0" time="350" condition="StringCompare(Skin.String(homescreen.style),simple)">WindowClose</animation>
-        	<animation effect="slide" start="0,500" end="0" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">WindowOpen</animation>
-			<!-- Bottom buttons -->
-			<include condition="!Skin.HasSetting(HideHomeButtons)">shutdown-favs</include>
-			<!-- Common/profile info -->
-			<include>Common-Home-Info</include>
-		</control>
+		<!-- Profile Stuff -->
+		<include>HomeProfileInfo</include>
+		<!-- Fade background -->
+		<include>FadeBackground</include>
+		<!-- Bottom buttons -->
+		<include condition="!Skin.HasSetting(HideHomeButtons)">shutdown-favs</include>
+		<!-- Common/profile info -->
+		<include>Common-Home-Info</include>
     </controls>
 </window>

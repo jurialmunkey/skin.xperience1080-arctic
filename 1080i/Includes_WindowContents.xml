@@ -15,6 +15,7 @@
 <!-- ================================================== -->
 <!-- Common Items: Shutdown, Options, Clock etc. -->
 <!-- ================================================== --> 
+
     <include name="CommonOverlay">
         <control type="videowindow">
             <include>FullscreenDimensions</include>
@@ -36,18 +37,26 @@
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+            <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
+			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
+			<animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
+			<animation effect="fade" end="0" start="100" time="250">Hidden</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>mod-dimfanart</colordiffuse>
             <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
+			<animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
+			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
+			<animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
+			<animation effect="fade" end="0" start="100" time="250">Hidden</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>22eeeeee</colordiffuse>
             <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
+        
+        <!-- GLASS STUFF -->
         <control type="image">
             <posx>1590</posx>
             <posy>0</posy>
@@ -151,8 +160,6 @@
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + IsEmpty(Container(20).ListItem.property(single)) + IsEmpty(Container(20).ListItem.property(multi)) + !IsEmpty(Skin.String(GlobalBackdropSingle)) + !IsEmpty(Skin.String(GlobalBackdropSingle))">$INFO[Skin.String(GlobalBackdropSingle)]</value>
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(20).ListItem.property(multi))">$INFO[Container(20).ListItem.property(multi)]</value>
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + IsEmpty(Container(20).ListItem.property(multi)) + !IsEmpty(Container(20).ListItem.property(single))">$INFO[Container(20).ListItem.property(single)]</value>
-
-    	
     </variable>
 
     <include name="CommonContent">

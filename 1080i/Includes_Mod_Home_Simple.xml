@@ -269,8 +269,6 @@
 		<control type="group">
 			<posy>695</posy>
 			<animation effect="slide" start="0" end="0,-230" time="250" condition="Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
-			<animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
-            <animation effect="fade" start="0" end="100" time="250">Visible</animation>
 			<visible>!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
 			<!-- GLASS BORDER -->
 			<control type="image">
@@ -867,8 +865,6 @@
 			<width>1950</width>
 			<height>286</height>
 			<texture border="35">views/newgloss/whitepanel-15.png</texture>
-			<animation effect="fade" start="0" end="100" time="150">WindowOpen</animation>
-            <animation effect="fade" start="0" end="100" time="150">Visible</animation>
 		</control>
 		<control type="button" id="85">
 			<width>1</width>
