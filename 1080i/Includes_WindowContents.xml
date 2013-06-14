@@ -31,16 +31,12 @@
             <colordiffuse>mod-black</colordiffuse>
             <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
             <animation effect="fade" start="0" end="100" time="350">Visible</animation>
-            <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
-            <animation effect="fade" end="0" start="100" time="250">Hidden</animation>
             <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + [StringCompare(Skin.String(homescreen.style),simple) | StringCompare(Skin.String(homescreen.style),panel)]]]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
             <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
 			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
-			<animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
-			<animation effect="fade" end="0" start="100" time="250">Hidden</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>mod-dimfanart</colordiffuse>
             <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
@@ -49,8 +45,6 @@
             <include>FullscreenDimensions</include>
 			<animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
 			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
-			<animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
-			<animation effect="fade" end="0" start="100" time="250">Hidden</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>22eeeeee</colordiffuse>
             <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
