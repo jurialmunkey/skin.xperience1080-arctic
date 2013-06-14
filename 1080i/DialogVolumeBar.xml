@@ -13,6 +13,10 @@
                 <effect type="slide" end="0,-75" time="700" delay="300" />
             </animation>
             <animation effect="slide" end="-76" time="300" tween="sine" easing="inout" condition="Window.IsActive(busydialog)">Conditional</animation>
+			<animation effect="slide" start="0" end="-200,900" time="0" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Conditional</animation>
+			<animation effect="slide" start="0" end="-65" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(mutebug)">Conditional</animation>
+            <animation effect="slide" start="0" end="-60" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
+            
             <visible>!Window.IsActive(fullscreenvideo) + !Window.IsActive(visualisation)</visible>
             <control type="group">
                 <control type="image">

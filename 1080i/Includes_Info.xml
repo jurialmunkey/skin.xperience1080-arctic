@@ -196,14 +196,23 @@
         <control type="group">
             <posx>1741</posx>
             <posy>26</posy>
-            <include>BannerListInfoAnimation</include>
+            <include condition="![StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)]">BannerListInfoAnimation</include>
+            <animation effect="slide" start="0" end="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">WindowClose</animation>
+        	<animation effect="slide" start="0" end="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Hidden</animation>
             <visible>Player.HasMedia + IsEmpty(Window(videos).property(TvTunesIsAlive)) + !Window.IsActive(visualisation)</visible>
+            <animation effect="slide" start="0" end="-200,900" time="0" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Conditional</animation>
+            <animation effect="slide" start="0" end="-210" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(volumebar)">Conditional</animation>
+            <animation effect="slide" start="0" end="-65" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(mutebug)">Conditional</animation>
+            <animation effect="slide" start="0" end="-60" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
+
+
+
             <animation effect="slide" end="-76" time="300" tween="sine" easing="inout" condition="Window.IsActive(busydialog)">Conditional</animation>
-            <animation type="Conditional" condition="Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(volumebar)">
+            <animation type="Conditional" condition="![StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)] + [Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(volumebar)]">
                 <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" />
                 <effect type="zoom" start="100" end="50" center="1745,100" tween="sine" easing="inout" time="300" />
             </animation>
-            <control type="image">
+            <!--<control type="image">
 				<posx>-816</posx>
 				<posy>10</posy>
 				<width>942</width>
@@ -211,7 +220,7 @@
 				<texture border="35">views/newgloss/whitepanel-15.png</texture>
 				<visible>StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)</visible>
 				<colordiffuse>mod-osd</colordiffuse>
-			</control>
+			</control>-->
             <control type="group">
                 <control type="label">
                     <description>Title label</description>
