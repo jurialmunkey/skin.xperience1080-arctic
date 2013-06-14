@@ -271,6 +271,7 @@
                                 <height>300</height>
                                 <texture>$INFO[Player.Art(discart)]</texture>
                                 <aspectratio align="center">keep</aspectratio>
+                                <animation effect="rotate" center="auto" reversible="false" start="360" end="0" time="2500" loop="true" condition="Player.Playing">Conditional</animation>
                             </control>
                             <control type="image">
                                 <posx>19</posx>

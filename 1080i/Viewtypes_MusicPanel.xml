@@ -20,16 +20,7 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
 			</control> 
-			
-            <!--<control type="image">
-                <description>Cover Shadow</description>
-                <posx>-12</posx>
-                <posy>690</posy>
-                <width>738</width>
-                <height>36</height>
-                <texture background="true">views/posterview/shadow.png</texture>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-            </control>-->
+
             <control type="image">
                 <description>Cover</description>
                 <posx>6</posx>
@@ -248,7 +239,7 @@
 					<visible>!IsEmpty(ListItem.Property(Artist_Description)) + Container.Content(Artists)</visible>
 				</control>
 			</control>
-			<control type="image">
+			<!--<control type="image">
 				<description>Right Arrow</description>
 				<posx>155r</posx>
 				<posy>-88</posy>
@@ -259,7 +250,7 @@
 				<animation effect="slide" end="42, 305" time="400" condition="true">Conditional</animation>
 				<colordiffuse>mod-infotags</colordiffuse>
 				<visible>IntegerGreaterThan(Container(51).NumItems,8)</visible>
-			</control>
+			</control>-->
 			<!--Scrollbar-->
             <control type="group">
 				<posx>740</posx>

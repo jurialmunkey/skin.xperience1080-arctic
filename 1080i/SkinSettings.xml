@@ -226,7 +226,6 @@
                         <onclick>Skin.ToggleSetting(SpinControl.Default)</onclick>
                         <label>$LOCALIZE[41112]</label>
                     </control>
-                    
                     <control type="radiobutton" id="1008">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -783,6 +782,20 @@
                         <onclick>Skin.ToggleSetting(HideFanart)</onclick>
                         <label>$LOCALIZE[41191]</label>
                     </control>
+                    <control type="radiobutton" id="3013">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(hide.glass)</selected>
+                        <onclick>Skin.ToggleSetting(hide.glass)</onclick>
+                        <label>Show glass borders on lists</label>
+                    </control>
+                    <control type="radiobutton" id="3007">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(disable.dimfanart)</selected>
+                        <onclick>Skin.ToggleSetting(disable.dimfanart)</onclick>
+                        <label>Show more background</label>
+                    </control>
                     <control type="radiobutton" id="3002">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -817,13 +830,6 @@
                         <selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>
                         <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
                         <label>$LOCALIZE[41221]</label>
-                    </control>
-                    <control type="radiobutton" id="3007">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(disable.dimfanart)</selected>
-                        <onclick>Skin.ToggleSetting(disable.dimfanart)</onclick>
-                        <label>Show more background</label>
                     </control>
                 </control>
                 
@@ -950,6 +956,36 @@
                         <onclick>ClearProperty(CustomDialogType)</onclick>
                         <onclick>ClearProperty(CustomDialog)</onclick>
                         <onclick>SetProperty(Dialog,$LOCALIZE[12600])</onclick>
+                        <onclick>ActivateWindow(3002)</onclick>
+                    </control>
+                    <!-- LIVE TV BACKGROUND -->
+                    <control type="button" id="5011">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <label>$LOCALIZE[41220]</label>
+                        <onclick>ClearProperty(CustomDialogType)</onclick>
+                        <onclick>ClearProperty(CustomDialog)</onclick>
+                        <onclick>SetProperty(Dialog,$LOCALIZE[41220])</onclick>
+                        <onclick>ActivateWindow(3002)</onclick>
+                    </control>
+                    <!-- Pictures BACKGROUND -->
+                    <control type="button" id="5012">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <label>$LOCALIZE[10002]</label>
+                        <onclick>ClearProperty(CustomDialogType)</onclick>
+                        <onclick>ClearProperty(CustomDialog)</onclick>
+                        <onclick>SetProperty(Dialog,$LOCALIZE[10002])</onclick>
+                        <onclick>ActivateWindow(3002)</onclick>
+                    </control>
+                    <!-- Games BACKGROUND -->
+                    <control type="button" id="5013">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <label>$LOCALIZE[15016]</label>
+                        <onclick>ClearProperty(CustomDialogType)</onclick>
+                        <onclick>ClearProperty(CustomDialog)</onclick>
+                        <onclick>SetProperty(Dialog,$LOCALIZE[15016])</onclick>
                         <onclick>ActivateWindow(3002)</onclick>
                     </control>
                 </control>

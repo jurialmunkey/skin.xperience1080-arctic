@@ -88,48 +88,14 @@
                 <effect type="zoom" start="100" end="50" center="1569,97" tween="sine" easing="inout" time="300" />
             </animation>
             <control type="image">
-                <posx>1300</posx>
-                <posy>40</posy>
-                <width>538</width>
-                <height>114</height>
-                <texture border="25">views/newgloss/border-glass.png</texture>
-                <aspectratio>stretch</aspectratio>
-                <!--<visible>!Window.IsActive(volumebar) + ![Player.Muted | substring(Player.Volume,-60.0)]</visible>-->
-            </control>
-            <!--<control type="image">
-                <posx>1300</posx>
-                <posy>40</posy>
-                <width>752</width>
-                <height>114</height>
-                <texture border="25">views/newgloss/border-glass.png</texture>
-                <aspectratio>stretch</aspectratio>
-                <visible>Window.IsActive(volumebar) + ![Player.Muted | substring(Player.Volume,-60.0)]</visible>
-            </control>
-            <control type="image">
-                <posx>1300</posx>
-                <posy>40</posy>
-                <width>638</width>
-                <height>114</height>
-                <texture border="25">views/newgloss/border-glass.png</texture>
-                <aspectratio>stretch</aspectratio>
-                <visible>[Player.Muted | substring(Player.Volume,-60.0)]</visible>
-            </control>-->
-            <control type="image">
                 <posx>1303</posx>
                 <posy>43</posy>
                 <width>532</width>
                 <height>108</height>
                 <texture border="25">views/newgloss/whitepanel-15.png</texture>
                 <aspectratio>stretch</aspectratio>
+                <colordiffuse>mod-osd</colordiffuse>
             </control>
-            <!--<control type="image">
-                <posx>1218</posx>
-                <posy>0</posy>
-                <width>702</width>
-                <height>194</height>
-                <texture>osd/fullscreen/osd-back-weatherclock.png</texture>
-                <aspectratio>stretch</aspectratio>
-            </control>-->
             <control type="group">
                 <visible>![stringcompare(Weather.FanartCode,na) + substring(Weather.Conditions,/)]</visible>
                 <include>visiblehidefadeinfo</include>
@@ -153,12 +119,12 @@
                 </control>
                 <control type="label">
                     <description>Temp label</description>
-                    <posx>1410</posx>
-                    <posy>79</posy>
+                    <posx>1400</posx>
+                    <posy>80</posy>
                     <width>75</width>
                     <height>34</height>
                     <label>$INFO[Weather.Temperature]</label>
-                    <font>Font-Alaska-S34-BL</font>
+                    <font>Font-Alaska-S29-BL</font>
                     <textcolor>mod-infotags-l</textcolor>
                     <shadowcolor>mod-shadow</shadowcolor>
                     <align>right</align>
@@ -211,11 +177,11 @@
             <control type="label">
                 <description>Clock label</description>
                 <posx>1575</posx>
-                <posy>79</posy>
+                <posy>80</posy>
                 <width>150</width>
                 <height>34</height>
                 <label>$INFO[System.Time(hh)]:$INFO[System.Time(mm)]</label>
-                <font>Font-Alaska-S34-BL</font>
+                <font>Font-Alaska-S29-BL</font>
                 <textcolor>mod-infotags-l</textcolor>
                 <shadowcolor>mod-shadow</shadowcolor>
                 <align>right</align>
@@ -235,11 +201,11 @@
                 <control type="label">
                     <description>Clock label</description>
                     <posx>1742</posx>
-                    <posy>79</posy>
+                    <posy>80</posy>
                     <width>150</width>
                     <height>34</height>
                     <label>$INFO[Player.FinishTime(hh:mm)]</label>
-                    <font>Font-Alaska-S34-BL</font>
+                    <font>Font-Alaska-S29-BL</font>
                     <textcolor>mod-infotags-l</textcolor>
                     <shadowcolor>mod-shadow</shadowcolor>
                     <align>right</align>

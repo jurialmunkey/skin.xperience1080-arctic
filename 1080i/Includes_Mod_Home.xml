@@ -22,6 +22,13 @@
 		<height>490</height>
 		<texture border="35">views/newgloss/whitepanel-15.png</texture>
 	</include>
+	<include name="Mod_GreyPanelDimensions2">
+		<posx>-15</posx>
+		<posy>205</posy>
+		<width>1950</width>
+		<height>1490</height>
+		<texture border="35">views/newgloss/whitepanel-15.png</texture>
+	</include>
 	<variable name="Mod_FlagStars">
         <value condition="IntegerGreaterThan(Container(82).ListItem.Property(Rating),9)">aeonflags/music/rating/rating5.png</value>
         <value condition="IntegerGreaterThan(Container(82).ListItem.Property(Rating),7)">aeonflags/music/rating/rating4.png</value>
@@ -91,7 +98,7 @@
 					<label>41220</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="!Control.HasFocus(525) | !Container(525).HasFocus(4)">Conditional</animation>
-					<visible>!Skin.HasSetting(disable.pvr)</visible>
+					<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
 				</control>
 				<control type="label">
 					<label>0</label>
@@ -126,50 +133,7 @@
 				<focusedlayout width="2">
 				</focusedlayout>
 				<content>
-					<item id="1">
-						<label>Movies</label>
-						<visible>!Skin.HasSetting(disable.movies)</visible>
-						<onclick>ActivateWindow(videos,movietitles,return)</onclick>
-					</item>
-					<item id="2">
-						<label>TV</label>
-						<visible>!Skin.HasSetting(disable.tvshows)</visible>
-						<onclick>ActivateWindow(videos,tvshowtitles,return)</onclick>
-					</item>
-					<item id="3">
-						<label>Music</label>
-						<visible>!Skin.HasSetting(disable.music)</visible>
-						<onclick>ActivateWindow(musiclibrary,albums,return)</onclick>
-					</item>
-					<item id="4">
-						<label>Live TV</label>
-						<visible>!Skin.HasSetting(disable.pvr)</visible>
-						<onclick>ActivateWindow(PVR)</onclick>
-                        <onclick>SetFocus(32)</onclick>
-                        <onclick>SetFocus(11)</onclick>
-                    </item>
-					<item id="7">
-						<label>Programs</label>
-						<visible>!Skin.HasSetting(disable.programs)</visible>
-						<onclick>ActivateWindow(programs)</onclick>
-					</item>
-					<item id="8">
-						<label>Weather</label>
-						<visible>!Skin.HasSetting(disable.weather)</visible>
-						<onclick>ActivateWindow(weather)</onclick>
-					</item>
-					<item id="9">
-						<label>Settings</label>
-						<visible>true</visible>
-						<onclick>SetFocus(83)</onclick>
-					</item>
-					<item id="10">
-						<label>Favourites</label>
-						<visible>true</visible>
-						<onclick>SetFocus(525)</onclick>
-                        <onclick>ActivateWindow(Favourites)</onclick>
-                        <visible>!Skin.HasSetting(disable.favourites)</visible>
-					</item>
+					<include>Mod_525Content</include>
 				</content>
 			</control>
 			
@@ -624,11 +588,11 @@
 					<control type="group">
 						<visible>Container(525).HasFocus(7) + !IsEmpty(Skin.String(pictures.slideshowpath)) + !Control.HasFocus(84)</visible>
 						<control type="image">
-							<posx>0</posx>
-							<posy>-10</posy>
-							<width>551</width>
-							<height>310</height>
-							<texture border="5">views/newgloss/whitepanel.png</texture>
+							<posx>-15</posx>
+							<posy>-25</posy>
+							<width>581</width>
+							<height>340</height>
+							<texture border="35">views/newgloss/whitepanel-15.png</texture>
 							<colordiffuse>mod-infotags-d</colordiffuse>
 						</control>
 						<control type="multiimage">
@@ -644,14 +608,6 @@
 							<animation effect="fade" start="100" delay="500" end="0" time="10">Hidden</animation>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<imagepath background="true" diffuse="views/newgloss/tile-572.png">$INFO[Skin.String(pictures.slideshowpath)]</imagepath>
-						</control>
-						<control type="image">
-							<posx>-10</posx>
-							<posy>-20</posy>
-							<width>571</width>
-							<height>330</height>
-							<texture border="25">views/newgloss/border.png</texture>
-							<colordiffuse>bbffffff</colordiffuse>
 						</control>
 					</control>
 					<control type="grouplist">
@@ -832,12 +788,12 @@
 						<posy>132</posy>
 						<posx>572</posx>
 						<control type="image">
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>169</width>
-							<height>169</height>
-							<texture border="5">views/newgloss/whitepanel.png</texture>
-							<colordiffuse>mod-infotags-d</colordiffuse>
+							<posx>-5</posx>
+							<posy>-5</posy>
+							<width>199</width>
+							<height>199</height>
+							<texture border="35">views/newgloss/whitepanel-15.png</texture>
+							<colordiffuse>88eeeeee</colordiffuse>
 						</control>
 						<control type="image">
 							<posx>10</posx>
@@ -846,15 +802,16 @@
 							<height>169</height>
 							<texture>$INFO[Window(Weather).Property(Day0.FanartCode),weather/medium/,.png]</texture>
 							<aspectratio align="center">keep</aspectratio>
-							<colordiffuse>mod-infotags-alt</colordiffuse>
+							<colordiffuse>mod-infotags</colordiffuse>
 						</control>
 						<control type="label">
 							<posx>20</posx>
-							<posy>146</posy>
+							<posy>142</posy>
 							<label>33006</label>
 							<align>center</align>
 							<font>Font-Alaska-S25-L</font>
-							<textcolor>mod-infotags-alt</textcolor>
+							<textcolor>mod-infotags</textcolor>
+							<shadowcolor>mod-shadow</shadowcolor>
 							<width>149</width>
 							<scroll>false</scroll>
 						</control>
@@ -865,12 +822,12 @@
 						<control type="group">
 							<posx>0</posx>
 							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>353</width>
-								<height>169</height>
-								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<colordiffuse>mod-infotags-d</colordiffuse>
+								<posx>-5</posx>
+								<posy>-5</posy>
+								<width>383</width>
+								<height>199</height>
+								<texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<colordiffuse>88eeeeee</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>0</posx>
@@ -879,15 +836,16 @@
 								<height>169</height>
 								<texture>$INFO[Window(Weather).Property(Day1.FanartCode),weather/medium/,.png]</texture>
 								<aspectratio align="left">keep</aspectratio>
-								<colordiffuse>mod-infotags-alt</colordiffuse>
+								<colordiffuse>mod-infotags</colordiffuse>
 							</control>
 							<control type="label">
 								<posx>10</posx>
-								<posy>146</posy>
+								<posy>142</posy>
 								<label>$INFO[Window(Weather).Property(Day1.Title)]</label>
 								<align>center</align>
 								<font>Font-Alaska-S25-L</font>
-								<textcolor>mod-infotags-alt</textcolor>
+								<textcolor>mod-infotags</textcolor>
+								<shadowcolor>mod-shadow</shadowcolor>
 								<width>149</width>
 								<scroll>false</scroll>
 							</control>
@@ -904,7 +862,8 @@
 									<aligny>center</aligny>
 									<label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
 									<scroll>false</scroll>
-									<textcolor>mod-infotags-alt</textcolor>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
 								</control>
 								<control type="grouplist">
 									<posx>178</posx>
@@ -920,7 +879,7 @@
 										<width>12</width>
 										<height>24</height>
 										<texture>weather/temp-high-small.png</texture>
-										<colordiffuse>mod-infotags-alt</colordiffuse>
+										<colordiffuse>mod-infotags</colordiffuse>
 									</control>
 									<control type="label">
 										<description>high temp</description>
@@ -932,7 +891,8 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
-										<textcolor>mod-infotags-alt</textcolor>
+										<textcolor>mod-infotags</textcolor>
+										<shadowcolor>mod-shadow</shadowcolor>
 									</control>
 									<control type="image">
 										<posx>15</posx>
@@ -940,7 +900,7 @@
 										<width>12</width>
 										<height>24</height>
 										<texture>weather/temp-low-small.png</texture>
-										<colordiffuse>mod-infotags-alt</colordiffuse>
+										<colordiffuse>mod-infotags</colordiffuse>
 									</control>
 									<control type="label">
 										<description>low temp</description>
@@ -952,7 +912,8 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</label>
-										<textcolor>mod-infotags-alt</textcolor>
+										<textcolor>mod-infotags</textcolor>
+										<shadowcolor>mod-shadow</shadowcolor>
 									</control>
 								</control>
 							</control>
@@ -960,12 +921,12 @@
 						<control type="group">
 							<posx>371</posx>
 							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>353</width>
-								<height>169</height>
-								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<colordiffuse>mod-infotags-d</colordiffuse>
+								<posx>-5</posx>
+								<posy>-5</posy>
+								<width>383</width>
+								<height>199</height>
+								<texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<colordiffuse>88eeeeee</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>0</posx>
@@ -974,15 +935,16 @@
 								<height>169</height>
 								<texture>$INFO[Window(Weather).Property(Day2.FanartCode),weather/medium/,.png]</texture>
 								<aspectratio align="left">keep</aspectratio>
-								<colordiffuse>mod-infotags-alt</colordiffuse>
+								<colordiffuse>mod-infotags</colordiffuse>
 							</control>
 							<control type="label">
 								<posx>10</posx>
-								<posy>146</posy>
+								<posy>142</posy>
 								<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
 								<align>center</align>
 								<font>Font-Alaska-S25-L</font>
-								<textcolor>mod-infotags-alt</textcolor>
+								<textcolor>mod-infotags</textcolor>
+								<shadowcolor>mod-shadow</shadowcolor>
 								<width>149</width>
 								<scroll>false</scroll>
 							</control>
@@ -999,7 +961,8 @@
 									<aligny>center</aligny>
 									<label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
 									<scroll>false</scroll>
-									<textcolor>mod-infotags-alt</textcolor>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
 								</control>
 								<control type="grouplist">
 									<posx>178</posx>
@@ -1015,7 +978,7 @@
 										<width>12</width>
 										<height>24</height>
 										<texture>weather/temp-high-small.png</texture>
-										<colordiffuse>mod-infotags-alt</colordiffuse>
+										<colordiffuse>mod-infotags</colordiffuse>
 									</control>
 									<control type="label">
 										<description>high temp</description>
@@ -1027,7 +990,8 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
-										<textcolor>mod-infotags-alt</textcolor>
+										<textcolor>mod-infotags</textcolor>
+										<shadowcolor>mod-shadow</shadowcolor>
 									</control>
 									<control type="image">
 										<posx>15</posx>
@@ -1035,7 +999,7 @@
 										<width>12</width>
 										<height>24</height>
 										<texture>weather/temp-low-small.png</texture>
-										<colordiffuse>mod-infotags-alt</colordiffuse>
+										<colordiffuse>mod-infotags</colordiffuse>
 									</control>
 									<control type="label">
 										<description>low temp</description>
@@ -1047,7 +1011,8 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</label>
-										<textcolor>mod-infotags-alt</textcolor>
+										<textcolor>mod-infotags</textcolor>
+										<shadowcolor>mod-shadow</shadowcolor>
 									</control>
 								</control>
 							</control>
@@ -1055,12 +1020,12 @@
 						<control type="group">
 							<posx>742</posx>
 							<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>353</width>
-								<height>169</height>
-								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<colordiffuse>mod-infotags-d</colordiffuse>
+								<posx>-5</posx>
+								<posy>-5</posy>
+								<width>383</width>
+								<height>199</height>
+								<texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<colordiffuse>88eeeeee</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>0</posx>
@@ -1069,15 +1034,16 @@
 								<height>169</height>
 								<texture>$INFO[Window(Weather).Property(Day3.FanartCode),weather/medium/,.png]</texture>
 								<aspectratio align="left">keep</aspectratio>
-								<colordiffuse>mod-infotags-alt</colordiffuse>
+								<colordiffuse>mod-infotags</colordiffuse>
 							</control>
 							<control type="label">
 								<posx>10</posx>
-								<posy>146</posy>
+								<posy>142</posy>
 								<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
 								<align>center</align>
 								<font>Font-Alaska-S25-L</font>
-								<textcolor>mod-infotags-alt</textcolor>
+								<textcolor>mod-infotags</textcolor>
+								<shadowcolor>mod-shadow</shadowcolor>
 								<width>149</width>
 								<scroll>false</scroll>
 							</control>
@@ -1094,7 +1060,8 @@
 									<aligny>center</aligny>
 									<label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
 									<scroll>false</scroll>
-									<textcolor>mod-infotags-alt</textcolor>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
 								</control>
 								<control type="grouplist">
 									<posx>178</posx>
@@ -1110,7 +1077,7 @@
 										<width>12</width>
 										<height>24</height>
 										<texture>weather/temp-high-small.png</texture>
-										<colordiffuse>mod-infotags-alt</colordiffuse>
+										<colordiffuse>mod-infotags</colordiffuse>
 									</control>
 									<control type="label">
 										<description>high temp</description>
@@ -1122,7 +1089,8 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
-										<textcolor>mod-infotags-alt</textcolor>
+										<textcolor>mod-infotags</textcolor>
+										<shadowcolor>mod-shadow</shadowcolor>
 									</control>
 									<control type="image">
 										<posx>15</posx>
@@ -1130,7 +1098,7 @@
 										<width>12</width>
 										<height>24</height>
 										<texture>weather/temp-low-small.png</texture>
-										<colordiffuse>mod-infotags-alt</colordiffuse>
+										<colordiffuse>mod-infotags</colordiffuse>
 									</control>
 									<control type="label">
 										<description>low temp</description>
@@ -1142,7 +1110,8 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</label>
-										<textcolor>mod-infotags-alt</textcolor>
+										<textcolor>mod-infotags</textcolor>
+										<shadowcolor>mod-shadow</shadowcolor>
 									</control>
 								</control>
 							</control>
@@ -1150,11 +1119,11 @@
 					</control>
 					
 					<control type="image">
-						<posx>10</posx>
-						<posy>0</posy>
-						<width>551</width>
-						<height>310</height>
-						<texture border="5">views/newgloss/whitepanel.png</texture>
+						<posx>-5</posx>
+						<posy>-15</posy>
+						<width>581</width>
+						<height>340</height>
+						<texture border="25">views/newgloss/whitepanel-15.png</texture>
 						<colordiffuse>mod-infotags-d</colordiffuse>
 					</control>
 					<control type="multiimage">
@@ -1170,14 +1139,6 @@
 						<aspectratio scalediffuse="false">scale</aspectratio>
 						<imagepath background="true" diffuse="views/newgloss/tile-572.png">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Current.FanartCode)]</imagepath>
 						<colordiffuse>ff999999</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>-10</posy>
-						<width>571</width>
-						<height>330</height>
-						<texture border="25">views/newgloss/border.png</texture>
-						<colordiffuse>bbffffff</colordiffuse>
 					</control>
 					<control type="group">
 						<posx>25</posx>
@@ -1255,7 +1216,7 @@
 						<posx>585</posx>
 						<posy>0</posy>
 						<orientation>vertical</orientation>
-						<itemgap>2</itemgap>
+						<itemgap>1</itemgap>
 						<align>left</align>
 						<control type="label">
 							<label>[B]$LOCALIZE[33006]:[/B] $INFO[System.Date(DDD d mmm yyyy)]</label>

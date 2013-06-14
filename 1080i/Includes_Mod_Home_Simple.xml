@@ -2,7 +2,7 @@
 	<include name="Mod_SimpleHomeList">
 		<control type="group">
 			<posy>1080</posy>
-			<animation effect="slide" start="0" end="0,-840" time="350" delay="150" condition="Control.HasFocus(82)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,-840" time="550" delay="150" tween="back" easing="out" condition="Control.HasFocus(82)">Conditional</animation>
 			<!-- GLass -->
 			<control type="image">
 				<posx>-10</posx>
@@ -106,7 +106,7 @@
 			
 			<!-- Panel -->
 			<control type="image">
-				<include>Mod_GreyPanelDimensions</include>
+				<include>Mod_GreyPanelDimensions2</include>
 			</control>
 			<!-- RECENT ITEMS -->
 			<control type="list" id="82">
@@ -328,7 +328,7 @@
 					<label>41220</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(4)">Conditional</animation>
-					<visible>!Skin.HasSetting(disable.pvr)</visible>
+					<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
 				</control>
 				<control type="label">
 					<label>1</label>
@@ -375,62 +375,7 @@
 				<focusedlayout width="2">
 				</focusedlayout>
 				<content>
-					<item id="1">
-						<label>Movies</label>
-						<visible>!Skin.HasSetting(disable.movies)</visible>
-						<onclick>ActivateWindow(videos,movietitles,return)</onclick>
-					</item>
-					<item id="2">
-						<label>TV</label>
-						<visible>!Skin.HasSetting(disable.tvshows)</visible>
-						<onclick>ActivateWindow(videos,tvshowtitles,return)</onclick>
-					</item>
-					<item id="3">
-						<label>Music</label>
-						<visible>!Skin.HasSetting(disable.music)</visible>
-						<onclick>ActivateWindow(musiclibrary,albums,return)</onclick>
-					</item>
-					<item id="4">
-						<label>Live TV</label>
-						<visible>!Skin.HasSetting(disable.pvr)</visible>
-						<onclick>ActivateWindow(PVR)</onclick>
-                        <onclick>SetFocus(32)</onclick>
-                        <onclick>SetFocus(11)</onclick>
-                    </item>
-					<item id="5">
-						<label>Pictures</label>
-						<visible>!Skin.HasSetting(disable.pictures)</visible>
-						<onclick>ActivateWindow(pictures)</onclick>
-					</item>
-					<item id="6">
-						<label>Games</label>
-						<visible>!Skin.HasSetting(disable.games)</visible>
-						<onclick condition="IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
-						<onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
-						<onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
-					</item>
-					<item id="7">
-						<label>Programs</label>
-						<visible>!Skin.HasSetting(disable.programs)</visible>
-						<onclick>ActivateWindow(programs)</onclick>
-					</item>
-					<item id="8">
-						<label>Weather</label>
-						<visible>!Skin.HasSetting(disable.weather)</visible>
-						<onclick>ActivateWindow(weather)</onclick>
-					</item>
-					<item id="9">
-						<label>Settings</label>
-						<visible>true</visible>
-						<onclick>SetFocus(83)</onclick>
-					</item>
-					<item id="10">
-						<label>Favourites</label>
-						<visible>true</visible>
-						<onclick>SetFocus(525)</onclick>
-                        <onclick>ActivateWindow(Favourites)</onclick>
-                        <visible>!Skin.HasSetting(disable.favourites)</visible>
-					</item>
+					<include>Mod_525Content</include>
 				</content>
 			</control>
 			
@@ -571,7 +516,7 @@
 				<animation type="VisibleChange">
 					<effect type="fade" end="100" start="0" time="350"/>
 				</animation>
-				<itemlayout width="184">
+				<itemlayout width="184" condition="!Container(525).HasFocus(8)">
 					<control type="group">
 						<control type="image">
 							<posx>10</posx>
@@ -601,7 +546,102 @@
 						</control>
 					</control>
 				</itemlayout>
-				<focusedlayout width="184">
+				<itemlayout width="368" condition="Container(525).HasFocus(8)">
+					<control type="group">
+						<control type="group">
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>353</width>
+								<height>169</height>
+								<texture border="5">views/newgloss/whitepanel.png</texture>
+								<colordiffuse>mod-infotags-alt</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>169</width>
+								<height>169</height>
+								<texture fallback="windows/home/icons/addtile.png">$INFO[ListItem.Property(poster)]</texture>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="label">
+								<posx>87</posx>
+								<posy>146</posy>
+								<label>$INFO[ListItem.Label]</label>
+								<align>center</align>
+								<font>Font-Alaska-S25-L</font>
+								<textcolor>mod-infotags</textcolor>
+								<width>149</width>
+								<scroll>false</scroll>
+							</control>
+						</control>
+						<control type="group">
+							<posy>-16</posy>
+							<posx>6</posx>
+							<control type="label">
+								<posx>178</posx>
+								<posy>74</posy>
+								<height>40</height>
+								<width>190</width>
+								<font>Font-Condensed-S26-B</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(Outlook)]</label>
+								<scroll>false</scroll>
+								<textcolor>mod-infotags</textcolor>
+								<shadowcolor>mod-shadow</shadowcolor>
+							</control>
+							<control type="group">
+								<posx>178</posx>
+								<posy>114</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>8</posy>
+									<width>12</width>
+									<height>24</height>
+									<texture>weather/temp-high-small.png</texture>
+									<colordiffuse>mod-infotags</colordiffuse>
+								</control>
+								<control type="label">
+									<description>high temp</description>
+									<posx>20</posx>
+									<posy>0</posy>
+									<height>40</height>
+									<width>80</width>
+									<font>Font-Alaska-S28-L</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(High)]</label>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
+								</control>
+								<control type="image">
+									<posx>85</posx>
+									<posy>8</posy>
+									<width>12</width>
+									<height>24</height>
+									<texture>weather/temp-low-small.png</texture>
+									<colordiffuse>mod-infotags</colordiffuse>
+								</control>
+								<control type="label">
+									<description>low temp</description>
+									<posx>105</posx>
+									<posy>0</posy>
+									<height>40</height>
+									<width>80</width>
+									<font>Font-Alaska-S28-L</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(Low)]</label>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
+								</control>
+							</control>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="184" condition="!Container(525).HasFocus(8)">
 					<control type="group">
 						<visible>Control.HasFocus(83)</visible>
 						<control type="image">
@@ -660,11 +700,167 @@
 						</control>
 					</control>
 				</focusedlayout>
+				<focusedlayout width="368" condition="Container(525).HasFocus(8)">
+					<control type="group">
+						<control type="group">
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>353</width>
+								<height>169</height>
+								<texture border="5">views/newgloss/whitepanel.png</texture>
+								<colordiffuse>mod-infotags-alt</colordiffuse>
+							</control>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>169</width>
+								<height>169</height>
+								<texture fallback="windows/home/icons/addtile.png">$INFO[ListItem.Property(poster)]</texture>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="label">
+								<posx>87</posx>
+								<posy>146</posy>
+								<label>$INFO[ListItem.Label]</label>
+								<align>center</align>
+								<font>Font-Alaska-S25-L</font>
+								<textcolor>mod-infotags</textcolor>
+								<width>149</width>
+								<scroll>false</scroll>
+							</control>
+						</control>
+						<control type="group">
+							<posy>-16</posy>
+							<posx>6</posx>
+							<control type="label">
+								<posx>178</posx>
+								<posy>74</posy>
+								<height>40</height>
+								<width>190</width>
+								<font>Font-Condensed-S26-B</font>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$INFO[ListItem.Property(Outlook)]</label>
+								<scroll>false</scroll>
+								<textcolor>mod-infotags</textcolor>
+								<shadowcolor>mod-shadow</shadowcolor>
+							</control>
+							<control type="group">
+								<posx>178</posx>
+								<posy>114</posy>
+								<control type="image">
+									<posx>0</posx>
+									<posy>8</posy>
+									<width>12</width>
+									<height>24</height>
+									<texture>weather/temp-high-small.png</texture>
+									<colordiffuse>mod-infotags</colordiffuse>
+								</control>
+								<control type="label">
+									<description>high temp</description>
+									<posx>20</posx>
+									<posy>0</posy>
+									<height>40</height>
+									<width>80</width>
+									<font>Font-Alaska-S28-L</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(High)]</label>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
+								</control>
+								<control type="image">
+									<posx>85</posx>
+									<posy>8</posy>
+									<width>12</width>
+									<height>24</height>
+									<texture>weather/temp-low-small.png</texture>
+									<colordiffuse>mod-infotags</colordiffuse>
+								</control>
+								<control type="label">
+									<description>low temp</description>
+									<posx>105</posx>
+									<posy>0</posy>
+									<height>40</height>
+									<width>80</width>
+									<font>Font-Alaska-S28-L</font>
+									<align>left</align>
+									<aligny>center</aligny>
+									<label>$INFO[ListItem.Property(Low)]</label>
+									<textcolor>mod-infotags</textcolor>
+									<shadowcolor>mod-shadow</shadowcolor>
+								</control>
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
 				<content>
 					<include>Mod_83Content</include>
+					<item id="0">
+						<description>Todays Weather</description>
+						<property name="Poster">$INFO[Window(Weather).Property(Day0.FanartCode),weather/medium/,.png]</property>
+						<property name="Outlook">$INFO[Window(Weather).Property(Day0.Outlook)]</property>
+						<property name="High">$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</property>
+						<property name="Low">$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
+						<label>$LOCALIZE[33006]</label>
+						<onclick>SetFocus(525)</onclick>
+						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
+						<visible>Container(525).HasFocus(8)</visible>
+					</item>
+					<item id="1">
+						<description>Tomorrow Weather</description>
+						<property name="Poster">$INFO[Window(Weather).Property(Day1.FanartCode),weather/medium/,.png]</property>
+						<property name="Outlook">$INFO[Window(Weather).Property(Day1.Outlook)]</property>
+						<property name="High">$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</property>
+						<property name="Low">$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</property>
+						<label>$INFO[Window(Weather).Property(Day1.Title)]</label>
+						<onclick>SetFocus(525)</onclick>
+						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
+						<visible>Container(525).HasFocus(8)</visible>
+					</item>
+					<item id="2">
+						<description>Tomorrow Weather</description>
+						<property name="Poster">$INFO[Window(Weather).Property(Day2.FanartCode),weather/medium/,.png]</property>
+						<property name="Outlook">$INFO[Window(Weather).Property(Day2.Outlook)]</property>
+						<property name="High">$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</property>
+						<property name="Low">$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</property>
+						<label>$INFO[Window(Weather).Property(Day2.Title)]</label>
+						<onclick>SetFocus(525)</onclick>
+						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
+						<visible>Container(525).HasFocus(8)</visible>
+					</item>
+					<item id="3">
+						<description>Tomorrow Weather</description>
+						<property name="Poster">$INFO[Window(Weather).Property(Day3.FanartCode),weather/medium/,.png]</property>
+						<property name="Outlook">$INFO[Window(Weather).Property(Day3.Outlook)]</property>
+						<property name="High">$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</property>
+						<property name="Low">$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</property>
+						<label>$INFO[Window(Weather).Property(Day3.Title)]</label>
+						<onclick>SetFocus(525)</onclick>
+						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
+						<visible>Container(525).HasFocus(8)</visible>
+					</item>
+					<item id="4">
+						<description>Tomorrow Weather</description>
+						<property name="Poster">$INFO[Window(Weather).Property(Day4.FanartCode),weather/medium/,.png]</property>
+						<property name="Outlook">$INFO[Window(Weather).Property(Day4.Outlook)]</property>
+						<property name="High">$INFO[Window(Weather).Property(Day4.HighTemp)]$INFO[System.TemperatureUnits]</property>
+						<property name="Low">$INFO[Window(Weather).Property(Day4.LowTemp)]$INFO[System.TemperatureUnits]</property>
+						<label>$INFO[Window(Weather).Property(Day4.Title)]</label>
+						<onclick>SetFocus(525)</onclick>
+						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
+						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
+						<visible>Container(525).HasFocus(8)</visible>
+					</item>
 				</content>
 			</control>
 		</control>
+		
 		<control type="image">
 			<posx>-15</posx>
 			<posy>900</posy>

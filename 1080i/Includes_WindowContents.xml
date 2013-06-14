@@ -39,14 +39,41 @@
             <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>mod-dimfanart</colordiffuse>
+            <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
             <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
             <texture>windows/common/white.png</texture>
             <colordiffuse>22eeeeee</colordiffuse>
-            <visible>Skin.HasSetting(disable.dimfanart)</visible>
+            <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
+        <control type="image">
+            <posx>1590</posx>
+            <posy>0</posy>
+            <width>270</width>
+            <height>100</height>
+            <animation type="VisibleChange">
+            	<effect type="slide" start="0" end="0,50" time="220"/>
+            	<effect type="fade" start="0" end="100" time="150"/>            
+            </animation>
+            <texture border="35">views/newgloss/border-glass.png</texture>
+            <visible>Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(volumebar) + !Player.HasMedia</visible>
+        </control>
+        <control type="image">
+            <posx>-20</posx>
+            <posy>-20</posy>
+            <width>1960</width>
+            <height>1120</height>
+            <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
+            <animation effect="fade" start="0" end="100" time="350">Visible</animation>
+            <animation effect="fade" end="0" start="100" time="250">WindowClose</animation>
+            <animation effect="fade" end="0" start="100" time="250">Hidden</animation>
+            <texture border="35">views/newgloss/border-glass.png</texture>
+            <visible>Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple) + Player.HasMedia]</visible>
+            <colordiffuse>cfffffff</colordiffuse>
+        </control>
+        
     </include>
     <include name="CommonItemsHome">
         <include>CommonContent</include>
@@ -106,7 +133,7 @@
             <include>Animation_FanartFade</include>
             <fadetime>600</fadetime>
             <texture background="true" fallback=".">$INFO[Container(20).ListItem.property(single)]</texture>
-            <visible>!IsEmpty(Container(20).ListItem.property(single)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Container(20).Scrolling + !Window.IsActive(favourites)</visible>
+            <visible>StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(20).ListItem.property(single)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Container(20).Scrolling + !Window.IsActive(favourites)</visible>
         </control> 
         <control type="multiimage">
             <include>FullscreenDimensions</include>
@@ -116,8 +143,25 @@
             <loop>yes</loop>
             <include>Animation_FanartFade</include>
             <imagepath background="true" fallback=".">$INFO[Container(20).ListItem.property(multi)]</imagepath>
-            <visible>!IsEmpty(Container(20).ListItem.property(multi)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Container(20).Scrolling + !Window.IsActive(favourites)</visible>
+            <visible>StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(20).ListItem.property(multi)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Container(20).Scrolling + !Window.IsActive(favourites)</visible>
+        </control>
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <include>Animation_FanartFade</include>
+            <fadetime>600</fadetime>
+            <texture background="true" fallback=".">$INFO[Container(525).ListItem.property(single)]</texture>
+            <visible>!StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(525).ListItem.property(single)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Container(525).Scrolling + !Window.IsActive(favourites)</visible>
         </control> 
+        <control type="multiimage">
+            <include>FullscreenDimensions</include>
+            <timeperimage>10000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>600</fadetime>
+            <loop>yes</loop>
+            <include>Animation_FanartFade</include>
+            <imagepath background="true" fallback=".">$INFO[Container(525).ListItem.property(multi)]</imagepath>
+            <visible>!StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(525).ListItem.property(multi)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Container(525).Scrolling + !Window.IsActive(favourites)</visible>
+        </control>  
         <control type="image">
             <description>Search results fanart</description>
             <include>FullscreenDimensions</include>

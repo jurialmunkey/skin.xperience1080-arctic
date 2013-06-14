@@ -411,12 +411,7 @@
             <size>29</size>
             <style>bold</style>
         </font>
-		<font>
-            <name>Font-Alaska-S29-B</name>
-            <filename>alaska_cond.ttf</filename>
-            <size>29</size>
-            <style>bold</style>
-        </font>
+		
         <font>
             <name>Font-Alaska-S29-BL</name>
             <filename>alaska_black.ttf</filename>
@@ -445,8 +440,8 @@
         </font>
 		<font>
             <name>Font-Alaska-S33</name>
-            <filename>alaska_cond.ttf</filename>
-            <size>33</size>
+            <filename>alaska_black.ttf</filename>
+            <size>28</size>
         </font>
         <font>
             <name>Font-Alaska-S34-L</name>
@@ -489,11 +484,6 @@
             <size>45</size>
         </font>
         
-		<font>
-            <name>Font-Alaska-S49</name>
-            <filename>alaska_cond.ttf</filename>
-            <size>49</size>
-        </font>
         <font>
             <name>Font-Alaska-S52-BL</name>
             <filename>alaska_black.ttf</filename>
@@ -518,6 +508,29 @@
             <name>Font-ModHome</name>
             <filename>alaska_black.ttf</filename>
             <size>34</size>
+        </font>
+        
+        
+        <!-- METRO FONTS -->
+        <font>
+            <name>Font-Metro-Tile-S</name>
+            <filename>alaska_black.ttf</filename>
+            <size>25</size>
+        </font>
+        <font>
+            <name>Font-Metro-Tile</name>
+            <filename>alaska_black.ttf</filename>
+            <size>27</size>
+        </font>
+        <font>
+            <name>Font-Metro-Widget</name>
+            <filename>alaska_black.ttf</filename>
+            <size>27</size>
+        </font>
+        <font>
+            <name>Font-Metro-Menu</name>
+            <filename>alaska_black.ttf</filename>
+            <size>42</size>
         </font>
     </fontset>
 </fonts>

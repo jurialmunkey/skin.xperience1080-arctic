@@ -17,7 +17,9 @@
 	<onload condition="IsEmpty(Skin.String(homecolor.name)) | !SubString(Skin.String(homecolor.name),Tiles)">Skin.SetString(homecolor.name,Grey Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(pvrcolor.name)) | !SubString(Skin.String(pvrcolor.name),Tiles)">Skin.SetString(pvrcolor.name,Grey Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(weathercolor.name)) | !SubString(Skin.String(weathercolor.name),Tiles)">Skin.SetString(weathercolor.name,Grey Tiles)</onload>
-	<onload condition="IsEmpty(Skin.String(homescreen.style))">Skin.SetString(homescreen.style,metro)</onload>
+	<onload condition="IsEmpty(Skin.String(homescreen.style))">Skin.SetString(homescreen.style,simple)</onload>
+	<onload condition="!Skin.HasSetting(mod.settingsdefault)">Skin.SetBool(hide.glass)</onload>
+	<onload condition="!Skin.HasSetting(mod.settingsdefault)">Skin.SetBool(mod.settingsdefault)</onload>
     <onunload>CancelAlarm(HomeTileMove,true)</onunload>
     <onunload>CancelAlarm(HomeTileMoveTwo,true)</onunload>
     <onunload>CancelAlarm(HomeTileMoveThree,true)</onunload>

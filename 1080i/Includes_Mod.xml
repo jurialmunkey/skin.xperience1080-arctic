@@ -1117,7 +1117,7 @@
 		<item id="2">
 			<description>Addons</description>
 			<property name="Poster">windows/home/icons/addons.png</property>
-			<label>$LOCALIZE[1043]</label>
+			<label>$LOCALIZE[24001]</label>
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(programs,addons,return)</onclick>
 			<visible>Container(525).HasFocus(7)</visible>
@@ -1745,6 +1745,84 @@
 			<label>$INFO[Window.Property(RecommendedAlbum.8.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.8.Title)]$INFO[Window.Property(RecommendedAlbum.8.Year), • ,]</label2>
 			<visible>Container(525).HasFocus(3)</visible>
+		</item>
+	</include>
+	<include name="Mod_525Content">
+		<item id="1">
+			<label>Movies</label>
+			<visible>!Skin.HasSetting(disable.movies)</visible>
+			<property name="single">$INFO[Skin.String(HomeMoviesSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeMoviesMultiImage)]</property>
+			<onclick>ActivateWindow(videos,movietitles,return)</onclick>
+		</item>
+		<item id="2">
+			<label>TV</label>
+			<visible>!Skin.HasSetting(disable.tvshows)</visible>
+			<property name="single">$INFO[Skin.String(HomeTVShowsSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeTVShowsMultiImage)]</property>
+			<onclick>ActivateWindow(videos,tvshowtitles,return)</onclick>
+		</item>
+		<item id="3">
+			<label>Music</label>
+			<visible>!Skin.HasSetting(disable.music)</visible>
+			<property name="single">$INFO[Skin.String(HomeMusicSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeMusicMultiImage)]</property>
+			<onclick>ActivateWindow(musiclibrary,albums,return)</onclick>
+		</item>
+		<item id="4">
+			<label>Live TV</label>
+			<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
+			<property name="single">$INFO[Skin.String(HomeLiveTVSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeLiveTVMultiImage)]</property>
+			<onclick>ActivateWindow(PVR)</onclick>
+			<onclick>SetFocus(32)</onclick>
+			<onclick>SetFocus(11)</onclick>
+		</item>
+		<item id="5">
+			<label>Pictures</label>
+			<visible>!Skin.HasSetting(disable.pictures) + StringCompare(Skin.String(homescreen.style),simple)</visible>
+			<property name="single">$INFO[Skin.String(HomePicturesSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomePicturesMultiImage)]</property>
+			<onclick>ActivateWindow(pictures)</onclick>
+		</item>
+		<item id="6">
+			<label>Games</label>
+			<visible>!Skin.HasSetting(disable.games) + StringCompare(Skin.String(homescreen.style),simple)</visible>
+			<property name="single">$INFO[Skin.String(HomeGamesSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeGamesMultiImage)]</property>
+			<onclick condition="IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
+			<onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
+		</item>
+		<item id="7">
+			<label>Programs</label>
+			<visible>!Skin.HasSetting(disable.programs)</visible>
+			<property name="single">$INFO[Skin.String(HomeProgramsSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeProgramsMultiImage)]</property>
+			<onclick>ActivateWindow(programs)</onclick>
+		</item>
+		<item id="8">
+			<label>Weather</label>
+			<visible>!Skin.HasSetting(disable.weather)</visible>
+			<property name="single">$INFO[Skin.String(HomeWeatherSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeWeatherMultiImage)]</property>
+			<onclick>ActivateWindow(weather)</onclick>
+		</item>
+		<item id="9">
+			<label>Settings</label>
+			<visible>true</visible>
+			<property name="single">$INFO[Skin.String(HomeSettingsSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeSettingsMultiImage)]</property>
+			<onclick>SetFocus(83)</onclick>
+		</item>
+		<item id="10">
+			<label>Favourites</label>
+			<visible>true</visible>
+			<property name="single">$INFO[Skin.String(HomeHomeSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeHomeMultiImage)]</property>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(Favourites)</onclick>
+			<visible>!Skin.HasSetting(disable.favourites)</visible>
 		</item>
 	</include>
 </includes>

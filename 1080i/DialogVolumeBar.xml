@@ -91,30 +91,14 @@
             <visible>Window.IsActive(fullscreenvideo) | Window.IsActive(visualisation)</visible>
             <control type="group">
                 <visible>!Player.Passthrough</visible>
-                <!--<control type="image">
-                    <posx>1570</posx>
-                    <posy>0</posy>
-                    <width>305</width>
-                    <height>194</height>
-                    <texture>overlays/volume/back-vf.png</texture>
-                    <aspectratio>stretch</aspectratio>
-                </control>-->
-                <control type="image">
-					<posx>1603</posx>
-					<posy>40</posy>
-					<width>234</width>
-					<height>114</height>
-					<texture border="35">views/newgloss/border-glass.png</texture>
-					<aspectratio>stretch</aspectratio>
-					<!--<visible>![Player.ShowInfo | Window.IsVisible(fullscreeninfo) | Window.IsActive(videoosd) | Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]</visible>-->
-				</control>
                 <control type="image">
 					<posx>1606</posx>
 					<posy>43</posy>
-					<width>228</width>
+					<width>238</width>
 					<height>108</height>
 					<texture border="35">views/newgloss/whitepanel-15.png</texture>
 					<aspectratio>stretch</aspectratio>
+					<colordiffuse>mod-osd</colordiffuse>
 				</control>
                 <control type="label">
                     <description>Volume label</description>

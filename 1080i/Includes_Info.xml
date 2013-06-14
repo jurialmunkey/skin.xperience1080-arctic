@@ -246,6 +246,7 @@
     			        <effect type="zoom" start="100" end="50" center="50,77" tween="sine" easing="inout" time="300" />
     			    </animation>
     			    <visible>Player.Paused</visible>
+    			    <colordiffuse>mod-infotags</colordiffuse>
     			</control>
     			<control type="image">
     			    <description>Now Playing - Play</description>
@@ -264,6 +265,7 @@
     			        <effect type="zoom" start="100" end="50" center="50,77" tween="sine" easing="inout" time="300" />
     			    </animation>
     			    <visible>!Player.Paused</visible>
+    			    <colordiffuse>mod-infotags</colordiffuse>
     			</control>
     			<control type="image">
     			    <posx>0</posx>
