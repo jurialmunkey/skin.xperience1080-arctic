@@ -29,22 +29,19 @@
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
             <colordiffuse>mod-black</colordiffuse>
-            <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
-            <animation effect="fade" start="0" end="100" time="350">Visible</animation>
+
             <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + [StringCompare(Skin.String(homescreen.style),simple) | StringCompare(Skin.String(homescreen.style),panel)]]]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
-			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
+
             <texture>windows/common/white.png</texture>
             <colordiffuse>mod-dimfanart</colordiffuse>
             <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-			<animation effect="fade" start="0" end="100" time="350">WindowOpen</animation>
-			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
+
             <texture>windows/common/white.png</texture>
             <colordiffuse>22eeeeee</colordiffuse>
             <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
