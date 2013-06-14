@@ -184,7 +184,7 @@
                 <include>FullscreenDimensions</include>
                 <texture fallback="special://skin/extras/backgrounds/01.jpg">$INFO[Skin.String(GlobalBackdropSingle)]</texture>
                 <include>visiblehidefadeinfo</include>
-                <visible>IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+                <visible>IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + IsEmpty(Container(525).ListItem.property(single)) + IsEmpty(Container(525).ListItem.property(multi))</visible>
             </control>
             <control type="multiimage">
                 <description>Custom Wallpaper Image</description>
@@ -195,7 +195,7 @@
                 <loop>yes</loop>
                 <imagepath background="true">$INFO[Skin.String(GlobalBackdropMulti)]</imagepath>
                 <include>visiblehidefadeinfo</include>
-                <visible>!IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+                <visible>!IsEmpty(Skin.String(GlobalBackdropMulti)) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + IsEmpty(Container(525).ListItem.property(single)) + IsEmpty(Container(525).ListItem.property(multi))</visible>
             </control>
         </control>
     </include>
