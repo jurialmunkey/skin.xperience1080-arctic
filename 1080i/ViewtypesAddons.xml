@@ -298,6 +298,7 @@
                             <width>252</width>
                             <height>252</height>
                             <texture border="25">views/newgloss/border.png</texture>
+                            <colordiffuse>Mod_Border_Fade</colordiffuse>
                         </control>
                         <control type="image">
                             <description>Border</description>
@@ -306,7 +307,7 @@
                             <width>232</width>
                             <height>232</height>
                             <texture border="5">views/newgloss/whitepanel.png</texture>
-                            <colordiffuse>88ffffff</colordiffuse>
+                            <colordiffuse>Mod_Cover_Fade</colordiffuse>
                         </control>
                     </itemlayout>
                     <focusedlayout width="244" height="250">
@@ -349,6 +350,7 @@
 								<width>252</width>
 								<height>252</height>
 								<texture border="25">views/newgloss/border.png</texture>
+								<colordiffuse>Mod_Border</colordiffuse>
 							</control>
                             <control type="image">
                                 <posx>2</posx>
@@ -407,6 +409,7 @@
                     <width>496</width>
                     <height>502</height>
                     <texture border="25">views/newgloss/border.png</texture>
+                    <colordiffuse>Mod_Border</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>1332</posx>
@@ -458,8 +461,8 @@
                         <height>74</height>
                         <font>Font-Alaska-S29-BL</font>
                         <label>$INFO[ListItem.Property(Addon.Summary)]</label>
-                        <textcolor>mod-infotags</textcolor>
-                        <shadowcolor>22000000</shadowcolor>
+                        <textcolor>Mod_Tags</textcolor>
+                        <shadowcolor>Mod_Shadow</shadowcolor>
                         <scroll>false</scroll>
                     </control>
                     <control type="button">
@@ -471,8 +474,8 @@
                         <font>Font-Alaska-S25-BL</font>
                         <label>$LOCALIZE[146]</label>
                         <label2>$INFO[ListItem.Property(Addon.Type)]</label2>
-                        <textcolor>mod-infotags</textcolor>
-                        <shadowcolor>mod-shadow</shadowcolor>
+                        <textcolor>Mod_Tags</textcolor>
+                        <shadowcolor>Mod_Shadow</shadowcolor>
                     </control>
                     <control type="button">
                         <posx>25</posx>
@@ -483,8 +486,8 @@
                         <font>Font-Alaska-S25-BL</font>
                         <label>$LOCALIZE[21863]:</label>
                         <label2>$INFO[ListItem.Property(Addon.Creator)]</label2>
-                        <textcolor>mod-infotags</textcolor>
-                        <shadowcolor>mod-shadow</shadowcolor>
+                        <textcolor>Mod_Tags</textcolor>
+                        <shadowcolor>Mod_Shadow</shadowcolor>
                     </control>
                     <control type="button">
                         <posx>25</posx>
@@ -495,8 +498,8 @@
                         <font>Font-Alaska-S25-BL</font>
                         <label>$LOCALIZE[24051]</label>
                         <label2>[B]$INFO[ListItem.Property(Addon.Version)][/B]</label2>
-                        <textcolor>mod-infotags</textcolor>
-                        <shadowcolor>mod-shadow</shadowcolor>
+                        <textcolor>Mod_Tags</textcolor>
+                        <shadowcolor>Mod_Shadow</shadowcolor>
                     </control>
                 </control>
                 <control type="image">

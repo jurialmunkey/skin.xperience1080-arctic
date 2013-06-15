@@ -31,15 +31,6 @@
                         <fadetime>300</fadetime>
                     </control>
                     <control type="image">
-                        <description>Poster Image Side</description>
-        				<posx>41</posx>
-        				<posy>35</posy>
-        				<width>530</width>
-        				<height>356</height>
-                        <texture background="true" diffuse="views/newgloss/bannerplex-left-diffuse.png">views/newgloss/info-gloss.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                    </control>
-                    <control type="image">
                         <posx>1541</posx>
                         <posy>35</posy>
                         <width>100</width>
@@ -55,6 +46,7 @@
         				<height>376</height>
                         <texture border="25">views/newgloss/border-left.png</texture>
                         <aspectratio>stretch</aspectratio>
+                        <colordiffuse>Mod_Border</colordiffuse>
                     </control>
                     <control type="image">
                         <description>Right Border</description>
@@ -64,6 +56,7 @@
         				<height>376</height>
                         <texture border="25">views/newgloss/border-right-no.png</texture>
                         <aspectratio>stretch</aspectratio>
+                        <colordiffuse>Mod_Border</colordiffuse>
                     </control>
                     <control type="group">
                     <posx>600</posx>
@@ -164,9 +157,9 @@
                         <autoscroll delay="8000" time="3000" repeat="8000" />
                         <font>Font-Condensed-S25</font>
                         <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
-                    </control>
-                    
+                    </control>  
                 </control>
+                
                 <control type="wraplist" id="53">
 					<posx>170</posx>
 					<posy>575</posy>
@@ -210,17 +203,6 @@
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <visible>!Skin.HasSetting(BannerPlexLogos) + [IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>3</posx>
-                            <posy>3</posy>
-                            <width>500</width>
-                            <height>95</height>
-                            <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
-                            <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
-                        </control>
                         <control type="image">
                             <description>Border</description>
                             <posx>-7</posx>
@@ -230,6 +212,7 @@
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                         <control type="image">
                             <description>Banner Shadow</description>
@@ -260,7 +243,7 @@
                             <height>60</height>
                             <texture>views/banner/other/$INFO[ListItem.StarRating]</texture>
                             <visible>!Container.Content(Seasons)</visible>
-                            <colordiffuse>mod-infotags-a</colordiffuse>
+                            <colordiffuse>Mod_Tags_Plex</colordiffuse>
                         </control>
                         <control type="label">
                             <description>Label</description>
@@ -269,7 +252,7 @@
                             <width>750</width>
                             <font>Font-Alaska-S34-BL</font>
                             <label>$INFO[ListItem.Label]</label>
-                            <textcolor>mod-infotags-a</textcolor>
+                            <textcolor>Mod_Tags_Plex</textcolor>
                             <align>left</align>
                             <scroll>false</scroll>
                         </control>
@@ -280,7 +263,7 @@
                             <width>750</width>
                             <font>Font-Alaska-S25-BL</font>
                             <label>$INFO[ListItem.Genre,, • ]$INFO[ListItem.Year]$INFO[ListItem.Studio, • ,]</label>
-                            <textcolor>mod-infotags-a</textcolor>
+                            <textcolor>Mod_Tags_Plex</textcolor>
                             <align>left</align>
                             <scroll>false</scroll>
                         </control>
@@ -306,17 +289,6 @@
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <visible>!Skin.HasSetting(BannerPlexLogos) + [IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>3</posx>
-                            <posy>3</posy>
-                            <width>500</width>
-                            <height>95</height>
-                            <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
-                            <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
-                        </control>
                         <control type="image">
                             <description>Border</description>
                             <posx>-7</posx>
@@ -326,6 +298,7 @@
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <visible>!Skin.HasSetting(BannerPlexLogos)</visible>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                         <control type="image">
                             <description>Banner</description>
@@ -355,7 +328,7 @@
                             <height>60</height>
                             <texture>views/banner/other/$INFO[ListItem.StarRating]</texture>
                             <visible>!Container.Content(Seasons)</visible>
-                            <colordiffuse>mod-infotags-d</colordiffuse>
+                            <colordiffuse>Mod_Tags_Dark</colordiffuse>
                         </control>
                         <control type="label">
                             <description>Item Label</description>
@@ -364,7 +337,7 @@
                             <width>750</width>
                             <font>Font-Alaska-S34-BL</font>
                             <label>$INFO[ListItem.Label]</label>
-                            <textcolor>mod-infotags-d</textcolor>
+                            <textcolor>Mod_Tags_Dark</textcolor>
                             <align>left</align>
                             <scroll>false</scroll>
                         </control>
@@ -375,7 +348,7 @@
                             <width>750</width>
                             <font>Font-Alaska-S25-BL</font>
                             <label>$INFO[ListItem.Genre,, • ]$INFO[ListItem.Year]$INFO[ListItem.Studio, • ,]</label>
-                            <textcolor>mod-infotags</textcolor>
+                            <textcolor>Mod_Tags</textcolor>
                             <align>left</align>
                             <scroll>false</scroll>
                         </control>

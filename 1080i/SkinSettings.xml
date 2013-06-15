@@ -41,7 +41,7 @@
                     <align>right</align>
                     <font>Font-Alaska-S25-BL</font>
                     <label>$LOCALIZE[42130]</label>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                 </control>
                 
                 
@@ -178,7 +178,7 @@
                     <align>left</align>
                     <font>Font-Alaska-S25-BL</font>
                     <label>[UPPERCASE]$LOCALIZE[5]:[/UPPERCASE]$INFO[Container(30).ListItem.Label, ,]</label>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                 </control>
                           
                 <!-- Panel -->
@@ -662,7 +662,7 @@
                         <label>$LOCALIZE[342]</label>
 						<label2>$INFO[Skin.String(moviecolor.name)]</label2>
 					</control>
-					<control type="button" id="10006">
+					<!--<control type="button" id="10006">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>1210</width>
@@ -745,7 +745,7 @@
 						<onclick condition="stringcompare(Skin.String(weathercolor.name),Grey Tiles)">Skin.SetString(weathercolor.name,Purple Tiles)</onclick>
                         <label>$LOCALIZE[24027]</label>
 						<label2>$INFO[Skin.String(weathercolor.name)]</label2>
-					</control>
+					</control>-->
 					<control type="button" id="10012">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -760,9 +760,9 @@
 						<onclick>Skin.SetString(homecolor.name,Grey Tiles)</onclick>
 						<onclick>Skin.SetString(weathercolor.name,Grey Tiles)</onclick>
 						<onclick>Skin.SetString(pvrcolor.name,Grey Tiles)</onclick>
-						<onclick>Skin.SetString(moviecolor.name,Blue Tiles)</onclick>
-						<onclick>Skin.SetString(tvcolor.name,Green Tiles)</onclick>
-						<onclick>Skin.SetString(musiccolor.name,Red Tiles)</onclick>
+						<onclick>Skin.SetString(moviecolor.name,Grey Tiles)</onclick>
+						<onclick>Skin.SetString(tvcolor.name,Grey Tiles)</onclick>
+						<onclick>Skin.SetString(musiccolor.name,Grey Tiles)</onclick>
                         <label>$LOCALIZE[409]</label>
 					</control>
                 </control>

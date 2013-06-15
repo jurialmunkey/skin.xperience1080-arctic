@@ -44,7 +44,7 @@
                     <height>100</height>
                     <label>$INFO[ListItem.Title]</label>
                     <font>Font-Alaska-S64-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <visible>!Container.Content(episodes)</visible>
@@ -59,7 +59,7 @@
                     <height>100</height>
                     <label>$INFO[ListItem.TVShowTitle]</label>
                     <font>Font-Alaska-S64-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <visible>Container.Content(episodes)</visible>
@@ -80,7 +80,7 @@
                     <height>100</height>
                     <label>$INFO[ListItem.Title]</label>
                     <font>Font-Alaska-S64-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <visible>!Container.Content(episodes)</visible>
@@ -95,7 +95,7 @@
                     <height>100</height>
                     <label>$INFO[ListItem.TVShowTitle]</label>
                     <font>Font-Alaska-S64-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <visible>Container.Content(episodes)</visible>
@@ -116,7 +116,7 @@
                     <aspectratio align="right" aligny="center">center</aspectratio>
                     <height>120</height>
                     <texture background="true" fallback=".">$INFO[ListItem.Studio,special://skin/extras/studioflags/,.png]</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                     <visible>!IsEmpty(ListItem.Studio)</visible>
                 </control>
                 <control type="label">
@@ -127,7 +127,7 @@
                     <height>100</height>
                     <label>$INFO[ListItem.Rating,, ★]</label>
                     <font>Font-Condensed-S75</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>right</align>
                     <scroll>false</scroll>
                     <visible>stringcompare(Control.GetLabel(9340),.)</visible>
@@ -159,7 +159,7 @@
                     <height>60</height>
                     <label>←</label>
                     <font>Font-Condensed-S45</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <include>visiblehidefadeinfo</include>
@@ -173,7 +173,7 @@
                     <height>60</height>
                     <label>$LOCALIZE[41319]</label>
                     <font>Font-Alaska-S38-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9334) | Control.HasFocus(50) | Control.HasFocus(1110) | Window.IsActive(script-Actors-DialogInfo.xml) | Window.IsActive(3004) | [!IsEmpty(Window(3004).Property(ChooseArt)) + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]]">Conditional</animation>
@@ -186,7 +186,7 @@
                     <height>60</height>
                     <label>$VAR[CastLabel]</label>
                     <font>Font-Alaska-S38-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>  
                     <animation effect="fade" start="100" end="50" time="200" tween="sine" easing="inout" condition="Control.HasFocus(9333) | Control.HasFocus(9335) | Control.HasFocus(1101) | Control.HasFocus(1104) | Control.HasFocus(1105) | Control.HasFocus(1110) | Control.HasFocus(70) | Control.HasFocus(71) | Window.IsActive(script-Actors-DialogInfo.xml) | [!IsEmpty(Window(3004).Property(ChooseArt)) + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]]">Conditional</animation>
@@ -200,7 +200,7 @@
                     <height>60</height>
                     <label>→</label>
                     <font>Font-Condensed-S45</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                     <include>visiblehidefadeinfo</include>
@@ -1086,7 +1086,7 @@
                     <height>60</height>
                     <label>$LOCALIZE[21371]</label>
                     <font>Font-Alaska-S38-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
                 </control>

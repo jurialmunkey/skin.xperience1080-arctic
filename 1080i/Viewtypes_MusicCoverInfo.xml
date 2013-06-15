@@ -45,6 +45,7 @@
 						<width>272</width>
 						<height>282</height>
 						<texture border="25">views/newgloss/border-left.png</texture>
+						<colordiffuse>Mod_Border</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>297</posx>
@@ -52,6 +53,7 @@
 						<width>820</width>
 						<height>282</height>
 						<texture border="25">views/newgloss/border-right-no.png</texture>
+						<colordiffuse>Mod_Border</colordiffuse>
 					</control>
                     <control type="group">
                         <posy>12</posy>
@@ -278,6 +280,7 @@
                                     <width>464</width>
                                     <height>464</height>
                                     <texture border="25">views/newgloss/border.png</texture>
+                                    <colordiffuse>Mod_Border</colordiffuse>
                                 </control>
                                 <control type="group">
 									<visible>Container.Content(artists)</visible>
@@ -402,6 +405,7 @@
                                     <width>464</width>
                                     <height>464</height>
                                     <texture border="25">views/newgloss/border.png</texture>
+                                    <colordiffuse>Mod_Border</colordiffuse>
                                 </control>
                                 <control type="group">
 									<visible>Container.Content(artists)</visible>

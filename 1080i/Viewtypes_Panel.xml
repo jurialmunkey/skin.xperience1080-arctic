@@ -20,6 +20,7 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>IntegerGreaterThan(Container(508).NumItems,6) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
+				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control>
 			<control type="image">
 				<description>Glass</description>
@@ -30,6 +31,7 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>!IntegerGreaterThan(Container(508).NumItems,6) + IntegerGreaterThan(Container(508).NumItems,3) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
+				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control>
 			<control type="image">
 				<description>Glass</description>
@@ -40,6 +42,7 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<visible>!IntegerGreaterThan(Container(508).NumItems,3) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
+				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control>
             <control type="group">
                 <posx>0</posx>
@@ -62,16 +65,6 @@
                     <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
-                <!-- GLOSS AND BORDER OVERLAY -->
-                <control type="image">
-                    <description>Gloss</description>
-                    <posx>6</posx>
-                    <posy>6</posy>
-                    <width>828</width>
-                    <height>464</height>
-                    <texture diffuse="views/newgloss/panel-fanart-diffuse.png">views/newgloss/info-gloss.png</texture>
-                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                </control>
                 <control type="image">
                     <description>Border</description>
                     <posx>-4</posx>
@@ -80,6 +73,7 @@
                     <height>484</height>
                     <texture border="25">views/newgloss/border.png</texture>
                     <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
                 </control> 
 
 
@@ -91,7 +85,7 @@
                         <width>790</width>
                         <label>$INFO[ListItem.Label]</label>
                         <font>Font-Alaska-S32-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -102,7 +96,7 @@
                         <height>147</height>
                         <label>$INFO[ListItem.Plot]</label>
                         <font>Font-Alaska-S25-NC</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <align>justify</align>
                         <autoscroll delay="13000" time="3000" repeat="13000" />
                     </control>
@@ -139,6 +133,7 @@
                     <height>722</height>
                     <texture border="25">views/newgloss/border.png</texture>
                     <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
                 </control> 
             </control>
             <control type="panel" id="508">
@@ -196,7 +191,7 @@
                         <height>246</height>
                         <texture border="25">views/newgloss/border.png</texture>
                         <aspectratio>stretch</aspectratio>
-                        <colordiffuse>aaffffff</colordiffuse>
+                        <colordiffuse>Mod_Border_Fade</colordiffuse>
                     </control>  
                     <control type="image">
                         <description>Poster</description>
@@ -205,7 +200,7 @@
                         <width>156</width>
                         <height>226</height>
                         <texture border="5">views/newgloss/panel-poster-diffuse.png</texture>
-                        <colordiffuse>88ffffff</colordiffuse>
+                        <colordiffuse>Mod_Cover_Fade</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
@@ -247,6 +242,7 @@
                             <height>246</height>
                             <texture border="25">views/newgloss/border-focus.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                         <control type="image">
                             <description>Border</description>

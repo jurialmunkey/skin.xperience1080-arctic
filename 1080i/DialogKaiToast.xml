@@ -21,6 +21,11 @@
                 <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
                 <effect type="zoom" start="100" end="50" center="1745,100" tween="sine" easing="inout" time="300" />
             </animation>
+            <animation effect="slide" start="0" end="-200,900" time="0" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Conditional</animation>
+            <animation effect="slide" start="0" end="-600" time="0" condition="Player.HasMedia + StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Conditional</animation>
+            <animation effect="slide" start="0" end="-210" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(volumebar)">Conditional</animation>
+            <animation effect="slide" start="0" end="-65" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(mutebug)">Conditional</animation>
+            <animation effect="slide" start="0" end="-60" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
             <control type="group">
                 <control type="label">
                     <description>Line 1</description>
@@ -30,7 +35,7 @@
                     <height>120</height>
                     <label>$INFO[Control.GetLabel(401)]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>$VAR[NowPlayingColor]</textcolor>
                     <scroll>false</scroll>
                     <align>right</align>
                     <animation effect="slide" end="0,16" time="300" tween="sine" easing="inout" condition="IsEmpty(Control.GetLabel(402))">Conditional</animation>
@@ -43,7 +48,7 @@
                     <height>120</height>
                     <label>$INFO[Control.GetLabel(402)]</label>
                     <font>Font-Alaska-S28-L</font>
-                    <textcolor>mod-infotags-l</textcolor>
+                    <textcolor>$VAR[NowPlayingColorLight]</textcolor>
                     <scroll>false</scroll>
                     <align>right</align>
                 </control>
@@ -95,6 +100,7 @@
 			<animation effect="slide" end="-100" time="300" tween="sine" easing="inout" condition="Player.Muted | substring(Player.Volume,-60.0)">Conditional</animation>
 			<animation effect="slide" end="-213" time="300" tween="sine" easing="inout" condition="Window.IsActive(volumebar) + !Player.Passthrough">Conditional</animation>
 			<animation effect="slide" end="-463" time="300" tween="sine" easing="inout" condition="Window.IsActive(volumebar) + Player.Passthrough">Conditional</animation>
+			
 			<control type="image">
 				<posx>1218</posx>
 				<posy>0</posy>

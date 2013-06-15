@@ -273,11 +273,69 @@
     	<font>Font-Alaska-S34-L</font>
     	<textcolor>mod-infotags-d</textcolor>
     </include>
+
+
+	<!-- STAR RATING AND YEAR -->   
+    <include name="CommonClearLogoRight">
+		<control type="group">
+			<animation type="Visible" reversible="false">
+				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
+			</animation>
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" end="0" start="100" time="200" delay="0" tween="sine" easing="in" />
+			</animation>
+			<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
+				<animation effect="slide" start="0" end="35" time="300" tween="sine" easing="inout" condition="![PVR.IsRecording | PVR.HasTimer] + !Window.IsActive(mutebug)">Conditional</animation>
+				<control type="image">
+					<posx>501r</posx>
+					<posy>966</posy>
+					<width>150</width>
+					<height>64</height>
+					<aspectratio align="right" aligny="top">keep</aspectratio>
+					<texture fallback="aeonflags/music/rating/rating0.png">$INFO[ListItem.StarRating,aeonflags/music/rating/,]</texture>
+					<colordiffuse>Mod_Tags</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>495r</posx>
+					<posy>972</posy>
+					<width>141</width>
+					<height>52</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>aeonflags/posters/imdb.png</texture>
+					<colordiffuse>Mod_Tags</colordiffuse>
+				</control>
+			</control>
+			<control type="image">
+				<posx>640r</posx>
+				<posy>972</posy>
+				<width>141</width>
+				<height>52</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>aeonflags/posters/top250.png</texture>
+				<colordiffuse>Mod_Tags</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>586r</posx>
+				<posy>984</posy>
+				<width>75</width>
+				<label>$VAR[SeasonalYear]</label>
+				<font>Font-Alaska-S25-BL</font>
+				<textcolor>Mod_Tags</textcolor>
+				<scroll>false</scroll>
+				<align>center</align>
+				<wrapmultiline>false</wrapmultiline>
+			</control>
+		</control>
+    </include>
     
-    
-    
-    <!-- INCLUDES: Common Clearlogo and Ratings etc at bottom of screen -->
+    <!-- CLEAR LOGO AND LEFT HAND INFO TAGS -->
     <include name="CommonClearLogoDetails">
+    	<include>CommonClearLogoRight</include>
         <control type="group">
             <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
             <animation type="Visible" reversible="false">
@@ -298,7 +356,7 @@
                     <height>155</height>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <texture>$VAR[ClearLogosVar]</texture>
-                    <colordiffuse>cc000000</colordiffuse>
+                    <colordiffuse>Mod_Tags_Logo_Shadow</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>0</posx>
@@ -315,7 +373,7 @@
                     <height>72</height>
                     <label>$VAR[BottomClearLogoText]</label>
                     <font>Font-Alaska-S38-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -336,7 +394,7 @@
 						<height>52</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>7</posx>
@@ -345,7 +403,7 @@
 						<height>52</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagHDSD]</texture>
-						<colordiffuse>mod-infotags-alt</colordiffuse>
+						<colordiffuse>Mod_Tags_Alt</colordiffuse>
 						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
 					</control>
 					<control type="image">
@@ -355,7 +413,7 @@
 						<height>38</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>flags/other/set-info.png</texture>
-						<colordiffuse>mod-infotags-alt</colordiffuse>
+						<colordiffuse>Mod_Tags_Alt</colordiffuse>
 						<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
 					</control>
 					<control type="image">
@@ -365,7 +423,7 @@
 						<height>52</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>128</posx>
@@ -374,7 +432,7 @@
 						<height>52</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[AeonFlagVideoCodec]</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
 					</control>
 					<control type="image">
@@ -384,7 +442,7 @@
 						<height>52</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[AeonFlagAudioCodec]</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
 					</control>
 					<control type="label">
@@ -394,7 +452,7 @@
 						<height>52</height>
                         <label>$LOCALIZE[20457]</label>
                         <font>Font-Alaska-S25-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags_Alt</textcolor>
                         <scroll>false</scroll>
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
@@ -410,7 +468,7 @@
 						<height>52</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>7</posx>
@@ -419,7 +477,7 @@
 						<height>52</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagStudio]</texture>
-						<colordiffuse>mod-infotags-alt</colordiffuse>
+						<colordiffuse>Mod_Tags_Alt</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>100</posx>
@@ -428,7 +486,7 @@
 						<height>52</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>100</posx>
@@ -437,7 +495,7 @@
 						<height>52</height>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[AeonFlagRating]</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
 				</control>
                 <!-- TV GENRES -->
@@ -450,7 +508,7 @@
 						<height>52</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
 					<control type="label">
                         <posx>220</posx>
@@ -458,7 +516,7 @@
                         <width>85</width>
                         <label>Genre</label>
                         <font>Font-Alaska-S25-BL</font>
-                        <textcolor>mod-infotags-alt</textcolor>
+                        <textcolor>Mod_Tags_Alt</textcolor>
                         <scroll>false</scroll>
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
@@ -470,7 +528,7 @@
 						<height>52</height>
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
-						<colordiffuse>mod-infotags</colordiffuse>
+						<colordiffuse>Mod_Tags</colordiffuse>
 					</control>
                     <control type="label">
                         <posx>328</posx>
@@ -478,7 +536,7 @@
                         <width>205</width>
                         <label>$INFO[ListItem.Genre]</label>
                         <font>Font-Alaska-S25-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
@@ -488,8 +546,9 @@
         </control>
     </include>
     
-    <!-- INCLUDES: MUSIC Common Clearlogo and Ratings etc at bottom of screen -->
+    <!-- MUSIC CLEAR LOGOS AND GENRE STUDIOS -->
     <include name="MusicCommonClearLogoDetails">
+    	<include>CommonClearLogoRight</include>
         <control type="group">
             <animation type="Visible" reversible="false">
                 <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
@@ -509,7 +568,7 @@
                     <height>92</height>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <texture fallback="blank.png">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/logo.png]</texture>
-                    <colordiffuse>ee000000</colordiffuse>
+                    <colordiffuse>Mod_Tags_Logo_Shadow</colordiffuse>
                 </control>
                 <control type="image" id="89456">
                     <posx>90</posx>
@@ -526,7 +585,7 @@
                     <height>72</height>
                     <label>$VAR[MusicBottomClearLogoText]</label>
                     <font>Font-Alaska-S38-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>center</align>
                     <aligny>center</aligny>
@@ -544,7 +603,7 @@
                     <height>52</height>
                     <aspectratio>stretch</aspectratio>
                     <texture border="20,5,20,5">aeonflags/posters/left.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>120</posx>
@@ -553,7 +612,7 @@
                     <height>52</height>
                     <aspectratio>stretch</aspectratio>
                     <texture border="20,5,20,5">aeonflags/posters/right.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <control type="image">
                     <posx>10</posx>
@@ -562,6 +621,7 @@
                     <height>46</height>
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagAudioCodec]</texture>       
+                    <colordiffuse>Mod_Tags_Alt</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>137</posx>
@@ -569,7 +629,7 @@
                     <width>400</width>
                     <label>$VAR[MusicBottomGenre]</label>
                     <font>Font-Alaska-S25-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>center</align>
                     <wrapmultiline>false</wrapmultiline>
@@ -1824,5 +1884,293 @@
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<visible>!Skin.HasSetting(disable.favourites)</visible>
 		</item>
+	</include>
+	<include name="Mod_MetroTile283_Square">
+		<!-- LIGHT TILES -->
+		<control type="image">
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>313</width>
+			<height>313</height>
+			<texture border="35">views/newgloss/whitepanel-15.png</texture>
+			<colordiffuse>mod-osd</colordiffuse>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>mod-infotags-alt</colordiffuse>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		
+		<!-- DARK TILES -->
+		<control type="image">
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>313</width>
+			<height>313</height>
+			<texture border="35">views/newgloss/whitepanel-15.png</texture>
+			<colordiffuse>ffaaaaaa</colordiffuse>
+			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))]</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(moviecolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(movietile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(tvcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(tvtile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(musiccolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+	</include>
+	<include name="Mod_MetroTile382_Wide">
+		<control type="image">
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>412</width>
+			<height>313</height>
+			<texture border="35">views/newgloss/whitepanel-15.png</texture>
+			<colordiffuse>mod-osd</colordiffuse>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>382</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>mod-infotags-alt</colordiffuse>
+		</control>
+	</include>
+	<include name="Mod_MetroTile283_Item">
+		<include>Mod_MetroTile283_Square</include>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<colordiffuse>mod-infotags-alt</colordiffuse>
+		</control>
+		<control type="label">
+			<posx>45</posx>
+			<posy>241</posy>
+			<width>243</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags-alt</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))]</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<colordiffuse>mod-infotags-d</colordiffuse>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		<control type="label">
+			<posx>45</posx>
+			<posy>241</posy>
+			<width>243</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+	</include>
+	<include name="Mod_MetroTile382_Item">
+		<include>Mod_MetroTile382_Wide</include>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>382</width>
+			<height>283</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<colordiffuse>mod-infotags-d</colordiffuse>
+			<aspectratio align="center">keep</aspectratio>
+		</control>
+		<control type="label">
+			<posx>45</posx>
+			<posy>241</posy>
+			<width>342</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+		</control>
+	</include>
+	<include name="Mod_MetroTile283_Focused">
+		<include>Mod_MetroTile283_Square</include>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/other/focus-mod.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(moviecolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(movietile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(tvcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(tvtile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(musiccolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<colordiffuse>mod-infotags-alt</colordiffuse>
+		</control>
+		<control type="label">
+			<posx>45</posx>
+			<posy>241</posy>
+			<width>243</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags-alt</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+		</control>
+		<control type="image">
+			<posx>14</posx>
+			<posy>14</posy>
+			<width>303</width>
+			<height>303</height>
+			<texture border="25">views/newgloss/border-fo.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+		</control>
+	</include>
+	<include name="Mod_MetroTile382_Focused">
+		<include>Mod_MetroTile382_Wide</include>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>382</width>
+			<height>283</height>
+			<texture border="5">views/other/focus-mod.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		<control type="image">
+			<posx>14</posx>
+			<posy>14</posy>
+			<width>402</width>
+			<height>303</height>
+			<texture border="25">views/newgloss/border-fo.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>382</width>
+			<height>283</height>
+			<texture>$INFO[ListItem.Icon]</texture>
+			<colordiffuse>mod-infotags-alt</colordiffuse>
+			<aspectratio align="center">keep</aspectratio>
+		</control>
+		<control type="label">
+			<posx>45</posx>
+			<posy>241</posy>
+			<width>342</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags-alt</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+		</control>
 	</include>
 </includes>

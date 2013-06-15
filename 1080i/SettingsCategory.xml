@@ -38,7 +38,7 @@
                     <align>right</align>
                     <font>Font-Alaska-S25-BL</font>
                     <label>[UPPERCASE]$LOCALIZE[42130][/UPPERCASE]</label>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                 </control>
                 
                 <!-- Panel -->
@@ -93,7 +93,7 @@
                     <align>left</align>
                     <font>Font-Alaska-S25-BL</font>
                     <label>[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</label>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                 </control>
                           
                 <!-- Panel -->

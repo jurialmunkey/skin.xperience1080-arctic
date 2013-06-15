@@ -21,6 +21,8 @@
             <include>FullscreenDimensions</include>
             <visible>Skin.HasSetting(BackgroundVideo) + Player.HasVideo</visible>
         </control>
+        
+        <!-- FLOOR -->
         <control type="image">   
             <posx>0</posx>
             <posy>-2700</posy>
@@ -28,42 +30,27 @@
             <height>4120</height>
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
-            <colordiffuse>mod-black</colordiffuse>
-
+            <colordiffuse>Mod_Overlay_Floor</colordiffuse>
             <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + [StringCompare(Skin.String(homescreen.style),simple) | StringCompare(Skin.String(homescreen.style),panel)]]]</visible>
         </control>
+        
+        <!-- DIM FANART -->
         <control type="image">
             <include>FullscreenDimensions</include>
-
             <texture>windows/common/white.png</texture>
-            <colordiffuse>mod-dimfanart</colordiffuse>
+            <colordiffuse>Mod_Overlay_Dimfanart</colordiffuse>
             <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
+        
         <control type="image">
             <include>FullscreenDimensions</include>
-
             <texture>windows/common/white.png</texture>
-            <colordiffuse>22eeeeee</colordiffuse>
+            <colordiffuse>Mod_Overlay_Dimfanart_Extra</colordiffuse>
             <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
-        
-        <!-- GLASS STUFF -->
-        <!--<control type="image">
-            <posx>1585</posx>
-            <posy>-5</posy>
-            <width>280</width>
-            <height>110</height>
-            <animation type="VisibleChange">
-            	<effect type="slide" start="0" end="0,50" time="220"/>
-            	<effect type="fade" start="0" end="100" time="150"/>            
-            </animation>
-            <texture border="35">views/newgloss/whitepanel-15.png</texture>
-            <colordiffuse>mod-osd</colordiffuse>
-            <visible>Window.IsActive(home) + StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(volumebar)</visible>
-        </control>-->
-        
-    
     </include>
+    
+    
     <include name="CommonItemsHome">
         <include>CommonContent</include>
         <include>HomeCustomBackdrops</include>
@@ -143,9 +130,19 @@
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + IsEmpty(Container(20).ListItem.property(single)) + IsEmpty(Container(20).ListItem.property(multi)) + !IsEmpty(Skin.String(GlobalBackdropSingle)) + !IsEmpty(Skin.String(GlobalBackdropSingle))">$INFO[Skin.String(GlobalBackdropSingle)]</value>
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(20).ListItem.property(multi))">$INFO[Container(20).ListItem.property(multi)]</value>
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + IsEmpty(Container(20).ListItem.property(multi)) + !IsEmpty(Container(20).ListItem.property(single))">$INFO[Container(20).ListItem.property(single)]</value>
+    	<value>windows/common/white.png</value>
     </variable>
 
     <include name="CommonContent">
+		<control type="group">
+            <animation effect="slide" end="0" time="0" delay="400" condition="!IsEmpty(Window(home).property(NoAnimation))" reversible="false">WindowClose</animation>
+            <control type="image">
+                <description>Custom Wallpaper Image</description>
+                <include>FullscreenDimensions</include>
+                <texture>windows/common/black.png</texture>
+                <include>visiblehidefadeinfo</include>
+            </control>
+        </control>
         <control type="group">
             <animation effect="slide" end="0" time="0" delay="400" condition="!IsEmpty(Window(home).property(NoAnimation))" reversible="false">WindowClose</animation>
             <control type="multiimage">

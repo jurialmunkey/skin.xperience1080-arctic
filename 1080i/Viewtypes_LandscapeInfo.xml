@@ -128,16 +128,6 @@
                             <aspect>keepaspect</aspect>
                             <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>374</width>
-                            <height>210</height>
-                            <texture diffuse="views/newgloss/landscape.png">views/newgloss/info-gloss.png</texture>
-                            <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
                         <control type="image">
                             <description>Border Top</description>
                             <posx>-10</posx>
@@ -146,6 +136,7 @@
                             <height>220</height>
                             <texture border="25">views/newgloss/border-top.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control>
                         <control type="image">
                             <description>Border Bottom</description>
@@ -155,6 +146,7 @@
                             <height>271</height>
                             <texture border="25">views/newgloss/border-bottom-no.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                     </control>
                 </itemlayout>
@@ -278,16 +270,6 @@
                             <aspect>keepaspect</aspect>
                             <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>374</width>
-                            <height>210</height>
-                            <texture diffuse="views/newgloss/landscape.png">views/newgloss/info-gloss.png</texture>
-                            <aspectratio align="right" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
                         <control type="image">
                             <description>Border Top</description>
                             <posx>-10</posx>
@@ -296,6 +278,7 @@
                             <height>220</height>
                             <texture border="25">views/newgloss/border-top.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control>
                         <control type="image">
                             <description>Border Bottom</description>
@@ -305,6 +288,7 @@
                             <height>271</height>
                             <texture border="25">views/newgloss/border-bottom-no.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                     </control>
                 </focusedlayout>

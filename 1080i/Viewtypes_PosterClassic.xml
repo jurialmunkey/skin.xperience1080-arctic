@@ -94,6 +94,7 @@
                             <height>581</height>
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                     </control>
                 </itemlayout>
@@ -177,6 +178,7 @@
                             <height>581</height>
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                     </control>
                 </itemlayout>
@@ -268,6 +270,7 @@
                             <height>581</height>
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                     </control>
                 </focusedlayout>
@@ -327,24 +330,6 @@
                             <texture background="true" diffuse="views/newgloss/classicposter-diffuse.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
-                        <!--<control type="label">
-                            <posx>55</posx>
-                            <posy>10</posy>
-                            <height>561</height>
-                            <label>$INFO[ListItem.Season]</label>
-                            <font>Font-Condensed-S400-B</font>
-                            <textcolor>ccffffff</textcolor>
-                            <scroll>false</scroll>
-                            <align>center</align>
-                            <aligny>center</aligny>
-                            <visible>Container.Content(Seasons)</visible>
-                            <animation type="Focus" condition="Container(506).OnNext | Container(506).OnPrevious">
-                                <effect type="fade" start="0" end="100" time="350" />
-                            </animation>
-                            <animation type="Unfocus" condition="Container(506).OnNext | Container(506).OnPrevious">
-                                <effect type="fade" start="100" end="0" time="250"/>
-                            </animation>
-                        </control>-->
 
                         <control type="image">
                             <posx>242</posx>
@@ -372,6 +357,7 @@
                             <height>581</height>
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                     </control>
                 </focusedlayout>

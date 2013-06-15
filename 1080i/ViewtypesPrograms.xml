@@ -455,7 +455,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>Font-Alaska-S45-BL</font>
-							<textcolor>mod-infotags</textcolor>
+							<textcolor>Mod_Tags</textcolor>
 							<info>ListItem.Label</info>
 							<scroll>false</scroll>
 						</control>
@@ -467,7 +467,7 @@
 							<align>left</align>
 							<aligny>center</aligny>
 							<font>Font-Alaska-S29-BL</font>
-							<textcolor>mod-infotags-l</textcolor>
+							<textcolor>Mod_Tags_Light</textcolor>
 							<label>$INFO[ListItem.Studio,,  •  ]$INFO[ListItem.Genre]</label>
 							<scroll>false</scroll>
 						</control>
@@ -478,7 +478,7 @@
 							<height>150</height>
 							<align>justify</align>
 							<font>Font-Alaska-S25-NC</font>
-							<textcolor>mod-infotags</textcolor>
+							<textcolor>Mod_Tags</textcolor>
 							<label>$INFO[ListItem.Plot]</label>
 							<scroll>false</scroll>
 						</control>

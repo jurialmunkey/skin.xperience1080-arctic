@@ -67,6 +67,7 @@
                             <height>360</height>
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control>  
                     </itemlayout>
                     <focusedlayout width="238" height="366">
@@ -116,6 +117,7 @@
                                 <height>360</height>
                                 <texture border="25">views/newgloss/border.png</texture>
                                 <aspectratio>stretch</aspectratio>
+                                <colordiffuse>Mod_Border</colordiffuse>
                             </control>  
                         </control>
                     </focusedlayout>

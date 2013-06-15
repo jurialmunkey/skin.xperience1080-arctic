@@ -17,56 +17,102 @@
     
     <include name="SettingsButtonBackground">
         <control type="image">
-			<posx>24</posx>
-			<posy>10</posy>
-			<width>246</width>
-			<height>283</height>
-			<texture border="7">views/newgloss/tile-283.png</texture>
-			<colordiffuse>mod-infotags-l</colordiffuse>
+			<posx>9</posx>
+			<posy>-5</posy>
+			<width>276</width>
+			<height>313</height>
+			<texture border="35">views/newgloss/whitepanel-15.png</texture>
+			<colordiffuse>mod-osd</colordiffuse>
 		</control>
 		<control type="image">
 			<posx>24</posx>
 			<posy>10</posy>
 			<width>246</width>
 			<height>283</height>
-			<texture border="7">views/newgloss/tile.png</texture>
-		</control>
-		<control type="image">
-			<posx>14</posx>
-			<posy>0</posy>
-			<width>266</width>
-			<height>303</height>
-			<texture border="27">views/newgloss/border.png</texture>
-		</control>
-		<control type="image">
-			<posx>24</posx>
-			<posy>227</posy>
-			<width>246</width>
-			<height>66</height>
-			<texture border="7">windows/home/tile-overlay-r.png</texture>
-			<colordiffuse>99FFFFFF</colordiffuse>
+			<texture border="7">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>mod-infotags-alt</colordiffuse>
 		</control>
     </include>
     
     <include name="SettingsLabelVars">
-        <posx>19</posx>
-        <posy>222</posy>
+        <posx>24</posx>
+        <posy>232</posy>
         <width>246</width>
         <height>66</height>
         <font>Font-Alaska-S33</font>
-        <textcolor>aawhite</textcolor>
+        <textcolor>mod-infotags</textcolor>
         <align>left</align>
         <aligny>center</aligny>
         <textoffsetx>20</textoffsetx>
         <scroll>false</scroll>
     </include>
+    <include name="SettingsLabelVarsFocus">
+        <posx>24</posx>
+        <posy>232</posy>
+        <width>246</width>
+        <height>66</height>
+        <font>Font-Alaska-S33</font>
+        <textcolor>mod-infotags-alt</textcolor>
+        <align>left</align>
+        <aligny>center</aligny>
+        <textoffsetx>20</textoffsetx>
+        <scroll>false</scroll>
+    </include>
+    <variable name="SettingsIcon111">
+    	<value condition="!Control.HasFocus(111)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon110">
+    	<value condition="!Control.HasFocus(110)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon109">
+    	<value condition="!Control.HasFocus(109)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon108">
+    	<value condition="!Control.HasFocus(108)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon107">
+    	<value condition="!Control.HasFocus(107)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon106">
+    	<value condition="!Control.HasFocus(106)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon105">
+    	<value condition="!Control.HasFocus(105)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon104">
+    	<value condition="!Control.HasFocus(104)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon103">
+    	<value condition="!Control.HasFocus(103)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon102">
+    	<value condition="!Control.HasFocus(102)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon101">
+    	<value condition="!Control.HasFocus(101)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
+    <variable name="SettingsIcon100">
+    	<value condition="!Control.HasFocus(100)">mod-infotags-d</value>
+    	<value>mod-infotags-alt</value>
+    </variable>
     
     <include name="SettingsFocusImageVars">
-        <posx>14</posx>
-		<posy>0</posy>
-		<width>266</width>
-		<height>303</height>
-        <texture border="40">views/newgloss/border-fo.png</texture>
+        <posx>24</posx>
+		<posy>10</posy>
+		<width>246</width>
+		<height>283</height>
+        <texture border="5">views/other/focus-mod.png</texture>
         <animation type="Visible">
             <effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
             <effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />

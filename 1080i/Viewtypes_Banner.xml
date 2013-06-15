@@ -51,6 +51,7 @@
     	            <height>720</height>
     	            <texture border="25">views/newgloss/border.png</texture>
     	            <aspectratio scalediffuse="false">stretch</aspectratio>
+    	            <colordiffuse>Mod_Border</colordiffuse>
     	        </control>
     	    </control>
             <control type="group">
@@ -97,6 +98,7 @@
     	            <height>720</height>
     	            <texture border="25">views/newgloss/border.png</texture>
     	            <aspectratio scalediffuse="false">stretch</aspectratio>
+    	            <colordiffuse>Mod_Border</colordiffuse>
     	        </control>
     	    </control>
             <control type="fixedlist" id="60">
@@ -126,7 +128,7 @@
                             <width>705</width>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font-Alaska-S32-BL</font>
-                            <textcolor>mod-infotags</textcolor>
+                            <textcolor>Mod_Tags</textcolor>
                             <scroll>false</scroll>
                             <align>center</align>
                             <visible>stringcompare(ListItem.ActualIcon,DefaultFolderBack.png) | [!Container.Content(Seasons) + IsEmpty(ListItem.Genre)] | [Container.Content(Seasons) + IsEmpty(ListItem.Property(TotalEpisodes))]</visible>
@@ -137,7 +139,7 @@
                             <width>705</width>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font-Alaska-S32-BL</font>
-                            <textcolor>mod-infotags</textcolor>
+                            <textcolor>Mod_Tags</textcolor>
                             <scroll>false</scroll>
                             <align>center</align>
                             <visible>!stringcompare(ListItem.ActualIcon,DefaultFolderBack.png) + ![!Container.Content(Seasons) + IsEmpty(ListItem.Genre)] + ![Container.Content(Seasons) + IsEmpty(ListItem.Property(TotalEpisodes))]</visible>
@@ -148,7 +150,7 @@
                             <width>705</width>
                             <label>$VAR[BannerListInfoGenreTotalSeasons]</label>
                             <font>Font-Condensed-S28</font>
-                            <textcolor>mod-infotags-l</textcolor>
+                            <textcolor>Mod_Tags_Light</textcolor>
                             <scroll>false</scroll>
                             <align>center</align>
                         </control>
@@ -164,7 +166,7 @@
                             <height>96</height>
                             <label>$INFO[ListItem.Episode]</label>
                             <font>Font-Condensed-S80-B</font>
-                            <textcolor>mod-infotags-l</textcolor>
+                            <textcolor>Mod_Tags_Light</textcolor>
                             <scroll>false</scroll>
                             <align>right</align>
                         </control>
@@ -182,7 +184,7 @@
                             <width>370</width>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font-Alaska-S32-BL</font>
-                            <textcolor>mod-infotags</textcolor>
+                            <textcolor>Mod_Tags</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
                             <visible>stringcompare(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
@@ -194,7 +196,7 @@
                             <width>480</width>
                             <label>$INFO[ListItem.Title]</label>
                             <font>Font-Alaska-S32-BL</font>
-                            <textcolor>mod-infotags</textcolor>
+                            <textcolor>Mod_Tags</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
                             <visible>!stringcompare(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
@@ -205,7 +207,7 @@
                             <width>370</width>
                             <label>$INFO[ListItem.date,$LOCALIZE[41805]: ,]</label>
                             <font>Font-Condensed-S28</font>
-                            <textcolor>mod-infotags-l</textcolor>
+                            <textcolor>Mod_Tags_Light</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
                         </control>
@@ -221,7 +223,7 @@
                             <height>96</height>
                             <label>$INFO[ListItem.Year]</label>
                             <font>Font-Condensed-S80-B</font>
-                            <textcolor>mod-infotags-l</textcolor>
+                            <textcolor>Mod_Tags_Light</textcolor>
                             <scroll>false</scroll>
                             <align>right</align>
                             <visible>Container.Content(movies)</visible>
@@ -240,7 +242,7 @@
                             <width>480</width>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font-Alaska-S32-BL</font>
-                            <textcolor>mod-infotags</textcolor>
+                            <textcolor>Mod_Tags</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
                             <animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>
@@ -251,7 +253,7 @@
                             <width>470</width>
                             <label>$INFO[ListItem.Genre]</label>
                             <font>Font-Condensed-S28</font>
-                            <textcolor>mod-infotags-l</textcolor>
+                            <textcolor>Mod_Tags_Light</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
                         </control>
@@ -304,6 +306,7 @@
                             <height>282</height>
                             <texture border="25">views/newgloss/border.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                         <control type="label">
                             <posx>230</posx>
@@ -406,6 +409,7 @@
                             <height>282</height>
                             <texture border="25">views/newgloss/border-left.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                         <control type="image">
                             <description>Border Right</description>
@@ -415,6 +419,7 @@
                             <height>282</height>
                             <texture border="25">views/newgloss/border-right-no.png</texture>
                             <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
                         <control type="group">
                             <posy>55</posy>

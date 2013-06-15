@@ -63,7 +63,7 @@
 				<height>52</height>
 				<aspectratio>stretch</aspectratio>
 				<texture border="20,5,20,5">aeonflags/posters/left.png</texture>
-				<colordiffuse>mod-infotags</colordiffuse>
+				<colordiffuse>Mod_Tags</colordiffuse>
 			</control>
 			<control type="image">
 				<posx>195</posx>
@@ -72,7 +72,7 @@
 				<height>52</height>
 				<aspectratio>stretch</aspectratio>
 				<texture border="20,5,20,5">aeonflags/posters/right.png</texture>
-				<colordiffuse>mod-infotags</colordiffuse>
+				<colordiffuse>Mod_Tags</colordiffuse>
 			</control>
 			<!-- NUMBER OF PLAYERS -->
 			<control type="image">
@@ -82,7 +82,7 @@
 				<width>120</width>
 				<height>90</height>
 				<texture>windows/home/icons/games.png</texture>
-				<colordiffuse>mod-infotags-alt</colordiffuse>
+				<colordiffuse>Mod_Tags_Alt</colordiffuse>
 			</control>
 			<control type="label">
 				<posx>190</posx>
@@ -91,27 +91,12 @@
 				<height>52</height>
 				<label>$INFO[ListItem.Property(maxplayers)]  Player</label>
 				<font>Font-Alaska-S32-BL</font>
-				<textcolor>mod-infotags</textcolor>
+				<textcolor>Mod_Tags</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<aligny>bottom</aligny>
 			</control>
 		</control>
-		<!--<control type="group">
-			<control type="image">
-				<animation effect="slide" start="0" end="-335" time="0" condition="IsEmpty(ListItem.Property(maxplayers))">Conditional</animation>
-				<posx>420</posx>
-				<posy>973</posy>
-				<description>GAME SYSTEM ICON</description>
-				<width>450</width>
-				<height>51</height>
-				<texture>$INFO[ListItem.Property(console),gamelogos/,.png]</texture>
-				<aspectratio align="left" aligny="center">keep</aspectratio>
-				<bordertexture border="25">views/newgloss/greypanel.png</bordertexture>
-				<bordersize>10</bordersize>
-				<colordiffuse>ffdddddd</colordiffuse>
-			</control>
-		</control>-->
 
 		<!-- VIEWTYPES -->
         <control type="group" id="200">
@@ -147,7 +132,7 @@
 								<width>690</width>
 								<label>$INFO[ListItem.Label]</label>
 								<font>Font-Alaska-S32-BL</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>Mod_Tags</textcolor>
 								<scroll>false</scroll>
 								<align>left</align>
 							</control>
@@ -157,7 +142,7 @@
 								<width>690</width>
 								<label>$INFO[ListItem.Property(console)]</label>
 								<font>Font-Alaska-S25-BL</font>
-								<textcolor>mod-infotags-l</textcolor>
+								<textcolor>Mod_Tags_Light</textcolor>
 								<scroll>false</scroll>
 								<align>left</align>
 							</control>
@@ -189,6 +174,7 @@
 								<width>272</width>
 								<height>282</height>
 								<texture border="25">views/newgloss/border-left.png</texture>
+								<colordiffuse>Mod_Border</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>297</posx>
@@ -196,6 +182,7 @@
 								<width>740</width>
 								<height>282</height>
 								<texture border="25">views/newgloss/border-right-no.png</texture>
+								<colordiffuse>Mod_Border</colordiffuse>
 							</control>
 							<control type="group">
 								<posy>55</posy>
@@ -379,7 +366,7 @@
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S45-BL</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>Mod_Tags</textcolor>
 								<info>ListItem.Label</info>
 								<scroll>false</scroll>
 							</control>
@@ -391,7 +378,7 @@
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>mod-infotags-l</textcolor>
+								<textcolor>Mod_Tags_Light</textcolor>
 								<label>$INFO[ListItem.Property(Publisher),,  •  ]$INFO[ListItem.Property(Genre)]</label>
 								<scroll>false</scroll>
 							</control>
@@ -402,7 +389,7 @@
 								<height>150</height>
 								<align>justify</align>
 								<font>Font-Alaska-S25-NC</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>Mod_Tags</textcolor>
 								<label>$INFO[ListItem.Property(Plot)]</label>
 								<scroll>false</scroll>
 							</control>
@@ -443,7 +430,7 @@
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S45-BL</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>Mod_Tags</textcolor>
 								<info>ListItem.Label</info>
 								<scroll>false</scroll>
 							</control>
@@ -455,7 +442,7 @@
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>mod-infotags-l</textcolor>
+								<textcolor>Mod_Tags_Light</textcolor>
 								<label>$INFO[ListItem.Property(Publisher),,  •  ]$INFO[ListItem.Property(Genre),,  •  ]$INFO[ListItem.Property(console)]</label>
 								<scroll>false</scroll>
 							</control>
@@ -466,7 +453,7 @@
 								<height>150</height>
 								<align>justify</align>
 								<font>Font-Alaska-S25-NC</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>Mod_Tags</textcolor>
 								<label>$INFO[ListItem.Property(Plot)]</label>
 								<scroll>false</scroll>
 							</control>

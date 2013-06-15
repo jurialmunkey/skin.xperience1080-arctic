@@ -19,6 +19,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
+				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control> 
             <control type="image">
                 <description>Cover</description>
@@ -31,15 +32,6 @@
                 <fadetime>200</fadetime>
             </control>
             <control type="image">
-                <description>Gloss</description>
-                <posx>6</posx>
-                <posy>6</posy>
-                <width>828</width>
-				<height>464</height>
-                <texture diffuse="views/newgloss/panel-fanart-diffuse.png">views/newgloss/info-gloss.png</texture>
-                <aspectratio scalediffuse="false">stretch</aspectratio>
-            </control>
-            <control type="image">
                 <description>Border</description>
                 <posx>-4</posx>
                 <posy>-4</posy>
@@ -47,6 +39,7 @@
 				<height>484</height>
                 <texture border="25">views/newgloss/border.png</texture>
                 <aspectratio scalediffuse="false">stretch</aspectratio>
+                <colordiffuse>Mod_Border</colordiffuse>
             </control>
             <control type="panel" id="52">
 				<posx>836</posx>
@@ -81,9 +74,9 @@
                         <posy>6</posy>
                         <width>226</width>
                         <height>226</height>
-                        <texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/info-gloss.png</texture>
+                        <texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/gloss.png</texture>
                         <colordiffuse>ffcccccc</colordiffuse>
-                        <aspectratio>stretch</aspectratio>
+                        <aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
                     </control>
                     <control type="image">
                         <description>Border</description>
@@ -92,7 +85,7 @@
                         <width>246</width>
                         <height>246</height>
                         <texture border="25">views/newgloss/border.png</texture>
-                        <colordiffuse>ffcccccc</colordiffuse>
+                        <colordiffuse>Mod_Border_Fade</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <control type="image">
@@ -102,7 +95,7 @@
                         <width>226</width>
                         <height>226</height>
                         <texture>views/newgloss/musicwall-diffuse.png</texture>
-                        <colordiffuse>88ffffff</colordiffuse>
+                        <colordiffuse>Mod_Cover_Fade</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <control type="group">
@@ -154,8 +147,8 @@
 							<posy>6</posy>
 							<width>226</width>
 							<height>226</height>
-							<texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/info-gloss.png</texture>
-							<aspectratio>stretch</aspectratio>
+							<texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/gloss.png</texture>
+							<aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
 						</control>
 						<control type="image">
 							<description>Border</description>
@@ -165,6 +158,7 @@
 							<height>246</height>
 							<texture border="25">views/newgloss/border.png</texture>
 							<aspectratio>stretch</aspectratio>
+							<colordiffuse>Mod_Border</colordiffuse>
 						</control>
 						<control type="group">
 							<visible>Container.Content(artists)</visible>
@@ -214,7 +208,7 @@
 					<width>690</width>
 					<label>$INFO[ListItem.Album]</label>
 					<font>Font-Alaska-S32-BL</font>
-					<textcolor>mod-infotags</textcolor>
+					<textcolor>Mod_Tags</textcolor>
 					<scroll>false</scroll>
 					<align>left</align>
 					<visible>Container.Content(Albums)</visible>
@@ -225,7 +219,7 @@
 					<width min="50" max="690">auto</width>
 					<label>$INFO[ListItem.Label]</label>
 					<font>Font-Alaska-S32-BL</font>
-					<textcolor>mod-infotags</textcolor>
+					<textcolor>Mod_Tags</textcolor>
 					<scroll>false</scroll>
 					<align>left</align>
 					<visible>!Container.Content(Albums)</visible>
@@ -242,7 +236,7 @@
 						<label>$VAR[MusicTracklistVar]</label>
 						<align>justify</align>
 						<aligny>top</aligny>
-						<textcolor>mod-infotags-l</textcolor>
+						<textcolor>Mod_Tags_Light</textcolor>
 						<font>Font-Alaska-S25-NC</font>
 						<scroll>false</scroll>
 						<wrapmultiline>false</wrapmultiline>
@@ -256,7 +250,7 @@
 						<label>$VAR[MusicTracklistAltVar]</label>
 						<align>justify</align>
 						<aligny>top</aligny>
-						<textcolor>mod-infotags-l</textcolor>
+						<textcolor>Mod_Tags_Light</textcolor>
 						<font>Font-Alaska-S25-NC</font>
 						<scroll>false</scroll>
 						<wrapmultiline>false</wrapmultiline>
@@ -269,7 +263,7 @@
 						<height>147</height>
 						<label>$VAR[MusicTracklistInfoVar]</label>
 						<align>justify</align>
-						<textcolor>mod-infotags-l</textcolor>
+						<textcolor>Mod_Tags_Light</textcolor>
 						<font>Font-Alaska-S25-NC</font>
 					</control>
 				</control>
@@ -280,7 +274,7 @@
 					<height>147</height>
 					<label>$INFO[ListItem.Property(Artist_Description)]</label>
 					<font>Font-Alaska-S25-NC</font>
-					<textcolor>mod-infotags-l</textcolor>
+					<textcolor>Mod_Tags_Light</textcolor>
 					<align>justify</align>
 					<autoscroll delay="13000" time="3000" repeat="13000" />
 					<visible>!IsEmpty(ListItem.Property(Artist_Description)) + Container.Content(Artists)</visible>

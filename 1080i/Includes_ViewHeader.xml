@@ -147,7 +147,7 @@
         <width min="0" max="400">auto</width>
         <height>120</height>
         <font>Font-Alaska-S28-L</font>
-        <textcolor>mod-infotags</textcolor>
+        <textcolor>Mod_Tags</textcolor>
         <scroll>false</scroll>
         <align>left</align>
     </include>
@@ -163,7 +163,7 @@
                 <height>120</height>
                 <label>$INFO[Container.NumItems,, $LOCALIZE[41822]]</label>
                 <font>Font-Alaska-S28-L</font>
-                <textcolor>mod-infotags</textcolor>
+                <textcolor>Mod_Tags</textcolor>
                 <scroll>false</scroll>
                 <align>left</align>
                 <visible>IntegerGreaterThan(Container.NumItems,0) + !IntegerGreaterThan(Container.NumItems,1)</visible>
@@ -173,7 +173,7 @@
                 <height>120</height>
                 <label>$INFO[Container.NumItems,, $LOCALIZE[41817]]</label>
                 <font>Font-Alaska-S28-L</font>
-                <textcolor>mod-infotags</textcolor>
+                <textcolor>Mod_Tags</textcolor>
                 <scroll>false</scroll>
                 <align>left</align>
                 <visible>!IntegerGreaterThan(Container.NumItems,0) | IntegerGreaterThan(Container.NumItems,1)</visible>
@@ -183,7 +183,7 @@
                 <height>120</height>
                 <label>$INFO[Container.CurrentPage, • $LOCALIZE[41819] ,]$INFO[Container.NumPages,/,]</label>
                 <font>Font-Alaska-S28-L</font>
-                <textcolor>mod-infotags</textcolor>
+                <textcolor>Mod_Tags</textcolor>
                 <scroll>false</scroll>
                 <align>left</align>
                 <visible>IntegerGreaterThan(Container.NumPages,1)</visible>
@@ -210,7 +210,7 @@
                 <width>85</width>
                 <height>85</height>
                 <texture>DefaultSortLetter.png</texture>
-                <colordiffuse>mod-infotags</colordiffuse>
+                <colordiffuse>Mod_Tags</colordiffuse>
             </control>
             <control type="label">
                 <posx>0</posx>
@@ -220,8 +220,8 @@
                 <align>center</align>
                 <font>Font-Condensed-S52-B</font>
                 <label>$INFO[ListItem.SortLetter]</label>
-                <textcolor>mod-infotags-alt</textcolor>
-                <shadowcolor>mod-infotags</shadowcolor>
+                <textcolor>Mod_Tags_Alt</textcolor>
+                <shadowcolor>Mod_Tags</shadowcolor>
             </control>
         </control>
     </include>
@@ -252,7 +252,7 @@
                 <control type="image">
                     <include>ViewHeaderIconVars</include>
                     <texture>$VAR[VideoHeaderIcon]</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <include>ViewHeaderSortLetter</include>
                 <control type="grouplist">
@@ -265,7 +265,7 @@
                         <height>120</height>
                         <label>$VAR[VideoHeaderLabel]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -274,7 +274,7 @@
                         <height>120</height>
                         <label>$INFO[Container.FolderName,: ,]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                         <visible>!substring(Container.FolderPath,library,left) + !substring(Container.FolderPath,special,left) + !substring(Container.FolderPath,addons,left) + !substring(Container.FolderPath,sources,left) + !Container.Content(episodes) + !stringcompare(Container.FolderPath,videodb://4/)</visible>
@@ -284,7 +284,7 @@
                         <height>120</height>
                         <label>$INFO[Container.ListItem.TVShowTitle,: ,]$INFO[Container.ListItem.Season, (,)]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                         <visible>Container.Content(episodes)</visible>
@@ -304,7 +304,7 @@
             <control type="image">
                 <include>ViewHeaderIconVars</include>
                 <texture>$VAR[MusicHeaderIcon]</texture>
-                <colordiffuse>mod-infotags</colordiffuse>
+                <colordiffuse>Mod_Tags</colordiffuse>
             </control>
             <include>ViewHeaderSortLetter</include>
             <control type="grouplist">
@@ -317,7 +317,7 @@
                     <height>120</height>
                     <label>$VAR[MusicHeaderLabel]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                 </control>
@@ -326,7 +326,7 @@
                     <height>120</height>
                     <label>$INFO[Container.FolderName,: ,]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                     <visible>!stringcompare(Container.FolderPath,musicdb://1/) + !stringcompare(Container.FolderPath,musicdb://2/) + !stringcompare(Container.FolderPath,musicdb://3/) + !stringcompare(Container.FolderPath,musicdb://4/) + !stringcompare(Container.FolderPath,musicdb://5/) + !stringcompare(Container.FolderPath,musicdb://6/) + !stringcompare(Container.FolderPath,musicdb://7/) + !stringcompare(Container.FolderPath,musicdb://8/) + !stringcompare(Container.FolderPath,musicdb://9/) + !stringcompare(Container.FolderPath,musicdb://5/1/) + !stringcompare(Container.FolderPath,special://musicplaylists/) + !Container.Content(albums)</visible>
@@ -336,7 +336,7 @@
                     <height>120</height>
                     <label>$INFO[ListItem.Artist,: ,]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                     <visible>Container.Content(albums)</visible>
@@ -356,7 +356,7 @@
                 <control type="image">
                     <include>ViewHeaderIconVars</include>
                     <texture>DefaultProgram.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <include>ViewHeaderSortLetter</include>
                 <control type="grouplist">
@@ -369,7 +369,7 @@
                         <height>120</height>
                         <label>$LOCALIZE[41504]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -378,7 +378,7 @@
                         <height>120</height>
                         <label>$INFO[Container.FolderName,: ,]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                         <visible>!IsEmpty(Container.FolderPath)</visible>
@@ -399,7 +399,7 @@
                 <control type="image">
                     <include>ViewHeaderIconVars</include>
                     <texture>DefaultPicture.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <include>ViewHeaderSortLetter</include>
                 <control type="grouplist">
@@ -412,7 +412,7 @@
                         <height>120</height>
                         <label>$LOCALIZE[1]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -421,7 +421,7 @@
                         <height>120</height>
                         <label>$INFO[Container.FolderName,: ,]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                         <visible>!IsEmpty(Container.FolderPath)</visible>
@@ -442,7 +442,7 @@
                 <control type="image">
                     <include>ViewHeaderIconVars</include>
                     <texture>$VAR[AddonHeaderIcon]</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <include>ViewHeaderSortLetter</include>
                 <control type="grouplist">
@@ -455,7 +455,7 @@
                         <height>120</height>
                         <label>$VAR[AddonHeaderLabel]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -464,7 +464,7 @@
                         <height>120</height>
                         <label>$INFO[Container.FolderName,: ,]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                         <visible>!IsEmpty(Container.FolderPath) + !stringcompare(Container.FolderPath,addons://disabled/) + !stringcompare(Container.FolderPath,addons://enabled/) + !stringcompare(Container.FolderPath,addons://repos/)</visible>
@@ -497,7 +497,7 @@
                         <effect type="fade" start="8" end="100" tween="sine" easing="out" time="300" delay="2000" /> 
                         <effect type="zoom" start="50" end="100" center="60,75" tween="sine" easing="inout" time="300" delay="2000" />
                     </animation>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <control type="group">
                     <posx>17</posx>
@@ -517,7 +517,7 @@
                         <width>85</width>
                         <height>85</height>
                         <texture>DefaultSortLetter.png</texture>
-                        <colordiffuse>mod-infotags</colordiffuse>
+                        <colordiffuse>Mod_Tags</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>0</posx>
@@ -527,8 +527,8 @@
                         <align>center</align>
                         <font>Font-Condensed-S52-B</font>
                         <label>$VAR[FileManagerSortLetterLabel]</label>
-                        <textcolor>mod-infotags-alt</textcolor>
-                        <shadowcolor>mod-infotags</shadowcolor>
+                        <textcolor>Mod_Tags_Alt</textcolor>
+                        <shadowcolor>Mod_Tags</shadowcolor>
                     </control>
                 </control>
                 <control type="label">
@@ -538,7 +538,7 @@
                     <height>120</height>
                     <label>$LOCALIZE[7]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                 </control>
@@ -559,7 +559,7 @@
                     <width>85</width>
                     <height>85</height>
                     <texture>DefaultPlaylist.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>110</posx>
@@ -568,7 +568,7 @@
                     <height>120</height>
                     <label>$LOCALIZE[10503]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                 </control>
@@ -589,7 +589,7 @@
                     <width>85</width>
                     <height>85</height>
                     <texture>$VAR[SettingsIcon]</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <control type="grouplist">
                     <posx>110</posx>
@@ -601,7 +601,7 @@
                         <height>120</height>
                         <label>$LOCALIZE[5]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -610,7 +610,7 @@
                         <height>120</height>
                         <label>: $VAR[SettingsHeaderLabel]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -623,7 +623,7 @@
                 <height>120</height>
                 <label>$VAR[SettingsHeaderSubLabel]</label>
                 <font>Font-Alaska-S28-L</font>
-                <textcolor>mod-infotags</textcolor>
+                <textcolor>Mod_Tags</textcolor>
                 <scroll>false</scroll>
                 <align>left</align>
                 <wrapmultiline>false</wrapmultiline>
@@ -641,7 +641,7 @@
                 <control type="image">
                     <include>ViewHeaderIconVars</include>
                     <texture>DefaultTVShows.png</texture>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
                 <include>ViewHeaderSortLetter</include>
                 <control type="grouplist">
@@ -654,7 +654,7 @@
                         <height>120</height>
                         <label>$LOCALIZE[19020]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -663,7 +663,7 @@
                         <height>120</height>
                         <label>$INFO[Control.GetLabel(29),: ,]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -672,7 +672,7 @@
                         <height>120</height>
                         <label>$INFO[Control.GetLabel(30),: ,]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -692,7 +692,7 @@
                 </control>
                 <control type="label">
                     <description>Spacer</description>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <include>PVRSubLabel</include>
                     <label> • </label>
                 </control>
@@ -704,7 +704,7 @@
                 </control>
                 <control type="label">
                     <description>Spacer</description>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <include>PVRSubLabel</include>
                     <label> • </label>
                 </control>
@@ -716,7 +716,7 @@
                 </control>
                 <control type="label">
                     <description>Spacer</description>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <include>PVRSubLabel</include>
                     <label> • </label>
                 </control>
@@ -728,7 +728,7 @@
                 </control>
                 <control type="label">
                     <description>Spacer</description>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <include>PVRSubLabel</include>
                     <label> • </label>
                 </control>
@@ -740,7 +740,7 @@
                 </control>
                 <control type="label">
                     <description>Spacer</description>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <include>PVRSubLabel</include>
                     <label> • </label>
                 </control>
@@ -752,7 +752,7 @@
                     <height>20</height>
                     <texture>windows/pvr/search.png</texture>
                     <animation effect="fade" start="100" end="55" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(36)">Conditional</animation>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                 </control>
             </control>
         </control>
@@ -772,7 +772,7 @@
                     <height>85</height>
                     <texture>DefaultAddonWeather.png</texture>
                     <visible>Weather.IsFetched</visible>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>Mod_Tags</colordiffuse>
                     <animation type="Hidden">
                         <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
                         <effect type="zoom" start="100" end="50" center="60,75" tween="sine" easing="inout" time="300" />
@@ -789,7 +789,7 @@
                     <height>100</height>
                     <label>$LOCALIZE[41562]</label>
                     <font>Font-Alaska-S36-BL</font>
-                    <textcolor>mod-infotags</textcolor>
+                    <textcolor>Mod_Tags</textcolor>
                     <scroll>false</scroll>
                     <align>left</align>
                     <visible>!Weather.IsFetched</visible>
@@ -805,7 +805,7 @@
                         <height>120</height>
                         <label fallback="41563">$INFO[Window.Property(Location)]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -816,7 +816,7 @@
                         <height>120</height>
                         <label>$INFO[Window.Property(WeatherProvider)]</label>
                         <font>Font-Alaska-S28-L</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
                     </control>
@@ -835,7 +835,7 @@
                 <height>100</height>
                 <texture>dialogs/extendedprogress/loading-back-busy.png</texture>
                 <aspectratio align="center">keep</aspectratio>
-                <colordiffuse>mod-infotags</colordiffuse>
+                <colordiffuse>Mod_Tags</colordiffuse>
             </control>
             <control type="image">
                 <posx>10</posx>

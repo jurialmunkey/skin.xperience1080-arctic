@@ -172,8 +172,8 @@
                 	<width>200</width>
                 	<height>30</height>
                 	<font>Font-Alaska-S29-BL</font>
-                	<textcolor>mod-infotags</textcolor>
-                	<shadowcolor>mod-shadow</shadowcolor>
+                	<textcolor>Mod_Tags</textcolor>
+                	<shadowcolor>Mod_Shadow</shadowcolor>
                 	<align>left</align>
                 	<aligny>center</aligny>
                 	<label>$VAR[TVNumItemsLabel]</label>
@@ -682,9 +682,9 @@
 	            	<posy>180</posy>
 	            	<width>200</width>
 	            	<height>30</height>
-	            	<font>Font-Condensed-S30-B</font>
-	            	<textcolor>99FFFFFF</textcolor>
-	            	<shadowcolor>55000000</shadowcolor>
+	            	<font>Font-Alaska-S29-BL</font>
+	            	<textcolor>Mod_Tags</textcolor>
+	            	<shadowcolor>Mod_Shadow</shadowcolor>
 	            	<align>left</align>
 	            	<aligny>center</aligny>
 	            	<label>$VAR[TVNumItemsLabel]</label>
@@ -1552,8 +1552,8 @@
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
-	            	<textcolor>mod-infotags</textcolor>
-	            	<shadowcolor>mod-shadow</shadowcolor>
+	            	<textcolor>Mod_Tags</textcolor>
+	            	<shadowcolor>Mod_Shadow</shadowcolor>
 	            	<align>left</align>
 	            	<aligny>center</aligny>
 	            	<label>$VAR[TVNumItemsLabel]</label>
@@ -1925,8 +1925,8 @@
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
-	            	<textcolor>mod-infotags</textcolor>
-	            	<shadowcolor>mod-shadow</shadowcolor>
+	            	<textcolor>Mod_Tags</textcolor>
+	            	<shadowcolor>Mod_Shadow</shadowcolor>
 	            	<align>left</align>
 	            	<aligny>center</aligny>
 	            	<label>$VAR[TVNumItemsLabel]</label>
@@ -2287,8 +2287,8 @@
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
-	            	<textcolor>mod-infotags</textcolor>
-	            	<shadowcolor>mod-shadow</shadowcolor>
+	            	<textcolor>Mod_Tags</textcolor>
+	            	<shadowcolor>Mod_Shadow</shadowcolor>
 	            	<align>left</align>
 	            	<aligny>center</aligny>
 	            	<label>$VAR[TVNumItemsLabel]</label>
@@ -2512,8 +2512,8 @@
 	            	<width>200</width>
 	            	<height>30</height>
 	            	<font>Font-Alaska-S29-BL</font>
-	            	<textcolor>mod-infotags</textcolor>
-	            	<shadowcolor>mod-shadow</shadowcolor>
+	            	<textcolor>Mod_Tags</textcolor>
+	            	<shadowcolor>Mod_Shadow</shadowcolor>
 	            	<align>left</align>
 	            	<aligny>center</aligny>
 	            	<label>$VAR[TVNumItemsLabel]</label>
@@ -2736,8 +2736,8 @@
                 	<width>200</width>
                 	<height>30</height>
                 	<font>Font-Alaska-S29-BL</font>
-                	<textcolor>mod-infotags</textcolor>
-                	<shadowcolor>mod-shadow</shadowcolor>
+                	<textcolor>Mod_Tags</textcolor>
+                	<shadowcolor>Mod_Shadow</shadowcolor>
                 	<align>left</align>
                 	<aligny>center</aligny>
                 	<label>$VAR[TVNumItemsLabel]</label>

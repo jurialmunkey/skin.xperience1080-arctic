@@ -546,7 +546,7 @@
                         <width>85</width>
                         <height>85</height>
                         <texture>windows/tvguide/status/airing.png</texture>
-                        <colordiffuse>mod-infotags</colordiffuse>
+                        <colordiffuse>Mod_Tags</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>0</posx>
@@ -555,7 +555,7 @@
                         <height>120</height>
                         <label>$INFO[Window(Home).Property(NextAired.NextTitle)]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>right</align>
                     </control>
@@ -566,7 +566,7 @@
                         <height>120</height>
                         <label>$INFO[Window(Home).Property(NextAired.AirTime),, • ]$INFO[Window(Home).Property(NextAired.NextDate)]</label>
                         <font>Font-Alaska-S28-L</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>right</align>
                     </control>
@@ -579,7 +579,7 @@
                         <width>85</width>
                         <height>85</height>
                         <texture>$INFO[Window(Home).Property(NextAired.StatusID),windows/tvguide/status/,.png]</texture>
-                        <colordiffuse>mod-infotags</colordiffuse>
+                        <colordiffuse>Mod_Tags</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>0</posx>
@@ -588,7 +588,7 @@
                         <height>120</height>
                         <label>$INFO[Window(Home).Property(NextAired.LatestTitle)]</label>
                         <font>Font-Alaska-S36-BL</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>right</align>
                     </control>
@@ -599,7 +599,7 @@
                         <height>120</height>
                         <label>$INFO[Window(Home).Property(NextAired.Status),, • ]$INFO[Window(Home).Property(NextAired.LatestDate)]</label>
                         <font>Font-Alaska-S28-L</font>
-                        <textcolor>mod-infotags</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>right</align>
                     </control>

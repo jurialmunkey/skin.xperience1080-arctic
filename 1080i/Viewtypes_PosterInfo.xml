@@ -117,6 +117,7 @@
                         <height>280</height>
                         <texture border="25">views/newgloss/border-left.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <colordiffuse>Mod_Border</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>480</posx>
@@ -125,6 +126,7 @@
                         <height>280</height>
                         <texture border="25">views/newgloss/border-right-no.png</texture>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
+                        <colordiffuse>Mod_Border</colordiffuse>
                     </control>
                     
                     <control type="group">
@@ -258,12 +260,13 @@
                                     <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
                                 </control>
                                 <control type="image">
-                                    <description>Overlay</description>
+                                    <description>Border</description>
                                     <posx>50</posx>
                                     <posy>60</posy>
                                     <width>287</width>
                                     <height>420</height>
                                     <texture border="25">views/newgloss/border.png</texture>
+                                    <colordiffuse>Mod_Border</colordiffuse>
                                 </control>
                             </control>
                         </itemlayout>
@@ -350,14 +353,14 @@
                                     <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
                                 </control>
                                 <control type="image">
-                                    <description>Overlay</description>
+                                    <description>Border</description>
                                     <posx>50</posx>
                                     <posy>60</posy>
                                     <width>287</width>
                                     <height>420</height>
                                     <texture border="25">views/newgloss/border.png</texture>
+                                    <colordiffuse>Mod_Border</colordiffuse>
                                 </control>
-
                             </control>
                         </focusedlayout>
                     </control>
