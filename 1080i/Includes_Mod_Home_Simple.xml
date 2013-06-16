@@ -110,6 +110,7 @@
 			</control>
 			<!-- RECENT ITEMS -->
 			<control type="list" id="82">
+				
 				<onup>525</onup>
 				<ondown>525</ondown>
 				<onleft>82</onleft>
@@ -267,6 +268,7 @@
 			</control>
 		</control>
 		<control type="group">
+			<include>listEndAnimation</include>
 			<posy>695</posy>
 			<animation effect="slide" start="0" end="0,-230" time="250" condition="Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
 			<visible>!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
@@ -525,7 +527,8 @@
 			<!-- SUBMENU ITEMS -->
 			<control type="list" id="83">
 				<animation effect="slide" end="276" condition="Container(525).HasFocus(4)">Conditional</animation>
-				<onup>82</onup>
+				<onup condition="Container(525).HasFocus(1) | Container(525).HasFocus(2) | Container(525).HasFocus(3)">82</onup>
+				<onup condition="![Container(525).HasFocus(1) | Container(525).HasFocus(2) | Container(525).HasFocus(3)]">AlarmClock(bounce.up.alarm,noop,00:01,silent)</onup>
 				<ondown>525</ondown>
 				<onleft>83</onleft>
 				<onright>83</onright>
