@@ -91,7 +91,7 @@
 						<width>75</width>
 						<height>75</height>
 						<aspect>keepaspect</aspect>
-						<texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+						<include>overlay.visibility</include>
 					</control>
                     <control type="image">
                         <posx>35</posx>
@@ -247,7 +247,7 @@
                                     <width>75</width>
                                     <height>75</height>
                                     <aspect>keepaspect</aspect>
-                                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                                    <include>overlay.visibility</include>
                                 </control>
                                 <!-- GLOSS AND BORDER OVERLAY -->
                                 <control type="image">
@@ -339,7 +339,7 @@
                                     <width>75</width>
                                     <height>75</height>
                                     <aspect>keepaspect</aspect>
-                                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                                    <include>overlay.visibility</include>
                                 </control>
                                 
                                 <!-- GLOSS AND BORDER OVERLAY -->

@@ -62,7 +62,7 @@
                     <width>100</width>
                     <height>100</height>
                     <aspect>keepaspect</aspect>
-                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                    <include>overlay.visibility</include>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
                 <control type="image">
@@ -169,7 +169,7 @@
                         <width>50</width>
                         <height>50</height>
                         <aspect>keepaspect</aspect>
-                        <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                        <include>overlay.visibility</include>
                         <visible>!IsEmpty(ListItem.Overlay)</visible>
                         <colordiffuse>ffcccccc</colordiffuse>
                     </control> 
@@ -221,7 +221,7 @@
                             <width>50</width>
                             <height>50</height>
                             <aspect>keepaspect</aspect>
-                            <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                            <include>overlay.visibility</include>
                             <visible>!IsEmpty(ListItem.Overlay)</visible>
                         </control> 
                         <!-- GLOSS AND BORDER OVERLAY -->

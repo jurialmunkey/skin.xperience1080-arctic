@@ -1,5 +1,9 @@
 <includes>
-
+	<variable name="powerbutton.highlight">
+		<value condition="!StringCompare(Skin.String(homescreen.style),metro) + Control.HasFocus(85)">ff0088dd</value>
+		<value condition="StringCompare(Skin.String(homescreen.style),simple) + !Control.HasFocus(85)">mod-infotags-d</value>
+		<value>Mod_Tags_Dark</value>
+	</variable>
     <!--Home shutdown-favs Buttons-->
     <include name="shutdown-favs">
         <control type="group" id="80">
@@ -37,8 +41,8 @@
                 <onclick>ActivateWindow(ShutdownMenu)</onclick>
                 <include>Animation_ShutdownButton</include>
                 <include>homebuttonsanim</include>
-                <visible allowhiddenfocus="true">!StringCompare(Skin.String(homescreen.style),simple)</visible>
-                <colordiffuse>Mod_Tags_Dark</colordiffuse>
+                <visible allowhiddenfocus="true">true</visible>
+                <colordiffuse>$VAR[powerbutton.highlight]</colordiffuse>
                 <animation effect="fade" start="100" end="50" time="150" condition="![Control.HasFocus(84) | Control.HasFocus(85) | Control.HasFocus(21)]">Conditional</animation>
             </control>
             <control type="label">
@@ -53,58 +57,6 @@
                 <shadowcolor>Mod_Shadow</shadowcolor>
                 <include>Animation_ShutdownButton</include>
                 <include>homebuttonsanim2</include>
-                <visible>!StringCompare(Skin.String(homescreen.style),simple)</visible>
-            </control>
-            <control type="button" id="21">
-                <description>Shutdown Button</description>
-                <posx>72</posx>
-                <posy>950</posy>
-                <width>100</width>
-                <height>100</height>
-                <onup condition="Container(20).HasFocus(1) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">101</onup>
-                <onup condition="Container(20).HasFocus(2) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">501</onup>
-                <onup condition="Container(20).HasFocus(3) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">201</onup>
-                <onup condition="Container(20).HasFocus(4) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">301</onup>
-                <onup condition="Container(20).HasFocus(5) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">401</onup>
-                <onup condition="Container(20).HasFocus(6) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">601</onup>
-                <onup condition="Container(20).HasFocus(7) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">701</onup>
-                <onup condition="Container(20).HasFocus(8) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">801</onup>
-                <onup condition="Container(20).HasFocus(9) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">901</onup>
-                <ondown condition="Container(20).HasFocus(1) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">125</ondown>
-                <ondown condition="Container(20).HasFocus(2) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">525</ondown>
-                <ondown condition="Container(20).HasFocus(3) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">225</ondown>
-                <ondown condition="Container(20).HasFocus(4) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">325</ondown>
-                <ondown condition="Container(20).HasFocus(5) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">425</ondown>
-                <ondown condition="Container(20).HasFocus(6) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">625</ondown>
-                <ondown condition="Container(20).HasFocus(7) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">725</ondown>
-                <ondown condition="Container(20).HasFocus(8) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">825</ondown>
-                <ondown condition="Container(20).HasFocus(9) + !StringCompare(Skin.String(homescreen.style),panel) + !StringCompare(Skin.String(homescreen.style),simple)">925</ondown>
-                <onup condition="StringCompare(Skin.String(homescreen.style),panel) | StringCompare(Skin.String(homescreen.style),simple)">525</onup>
-                <ondown condition="StringCompare(Skin.String(homescreen.style),panel) | StringCompare(Skin.String(homescreen.style),simple)">525</ondown>
-                <onleft>22</onleft>
-                <onright>22</onright>
-                <texturefocus>buttons/shutdown_fo.png</texturefocus>
-                <texturenofocus>buttons/shutdown_nofo.png</texturenofocus>
-                <onclick>ActivateWindow(ShutdownMenu)</onclick>
-                <include>Animation_ShutdownButton</include>
-                <include>homebuttonsanim</include>
-                <visible allowhiddenfocus="true">StringCompare(Skin.String(homescreen.style),simple)</visible>
-                <colordiffuse>mod-infotags-d</colordiffuse>
-                <animation effect="fade" start="100" end="50" time="150" condition="![Control.HasFocus(84) | Control.HasFocus(85) | Control.HasFocus(21)]">Conditional</animation>
-            </control>
-            <control type="label">
-                <description>Shutdown Label</description>
-                <posx>157</posx>
-                <posy>950</posy>
-                <width>180</width>
-                <height>100</height>
-                <label>$LOCALIZE[41507]</label>
-                <font>Font-Alaska-S29-BL</font>
-                <textcolor>mod-infotags</textcolor>
-                <shadowcolor>mod-shadow</shadowcolor>
-                <include>Animation_ShutdownButton</include>
-                <include>homebuttonsanim2</include>
-                <visible>StringCompare(Skin.String(homescreen.style),simple)</visible>
             </control>
             <control type="button" id="22">
                 <description>Favourites Button</description>

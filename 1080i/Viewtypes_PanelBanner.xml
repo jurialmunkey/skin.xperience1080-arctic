@@ -46,7 +46,7 @@
                         <width>492</width>
                         <height>107</height>
                         <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
-                        <colordiffuse>ff999999</colordiffuse>
+                        <colordiffuse>ff666666</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
                     <!-- GLOSS AND BORDER OVERLAY -->
@@ -125,7 +125,7 @@
                     <width>100</width>
                     <height>100</height>
                     <aspect>keepaspect</aspect>
-                    <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                    <include>overlay.visibility</include>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
                 <control type="image">

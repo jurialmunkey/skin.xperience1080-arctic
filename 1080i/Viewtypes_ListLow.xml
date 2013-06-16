@@ -2,6 +2,13 @@
 <!-- ========================= -->
 <!-- Low List (511) -->
 <!-- ========================= -->
+	<variable name="lowlist.tagline">
+		<value condition="!IsEmpty(ListItem.Tagline)">$INFO[ListItem.Tagline]</value>
+		<value condition="Container.Content(movies)">$LOCALIZE[24007]</value>
+		<value condition="Container.Content(episodes)">$LOCALIZE[20352]</value>
+		<value condition="Container.Content(tvshows)">$LOCALIZE[20351]</value>
+		<value>$LOCALIZE[42131]</value>
+	</variable>
     <include name="Viewtype-LowList">     
         <control type="group">
             <include>FullscreenDimensions</include>
@@ -33,7 +40,7 @@
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-						<fadetime>250</fadetime>
+						<fadetime>200</fadetime>
 					</control>
 					<control type="image">
 						<posx>400</posx>
@@ -43,7 +50,7 @@
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-						<fadetime>250</fadetime>
+						<fadetime>200</fadetime>
 					</control>
 					<control type="image">
 						<posx>600</posx>
@@ -53,7 +60,7 @@
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.4.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-						<fadetime>250</fadetime>
+						<fadetime>200</fadetime>
 					</control>
 					<control type="image">
 						<posx>800</posx>
@@ -63,7 +70,7 @@
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.5.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-						<fadetime>250</fadetime>
+						<fadetime>200</fadetime>
 					</control>
 					<control type="image">
 						<posx>1000</posx>
@@ -73,7 +80,7 @@
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-						<fadetime>250</fadetime>
+						<fadetime>200</fadetime>
 					</control>
 					<control type="image">
 						<posx>1200</posx>
@@ -83,7 +90,7 @@
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.7.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-						<fadetime>250</fadetime>
+						<fadetime>200</fadetime>
 					</control>											
 				</control>
     			<!-- LIST BANNER -->
@@ -138,7 +145,7 @@
                     <viewtype label="List (Low)">list</viewtype>
                     <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
                     <onleft condition="Skin.HasSetting(KioskMode)">511</onleft>
-                    <onright>511</onright>
+                    <onright>72</onright>
                     <onup>511</onup>
                     <ondown>511</ondown>
                     <focusposition>2</focusposition>
@@ -170,8 +177,6 @@
                                 <width>500</width>
                                 <label>$INFO[ListItem.Label]</label>
                                 <font>Font-Alaska-S25-BL</font>
-                                <!--<textcolor>FF484848</textcolor>-->
-                                <!--<textcolor>77eeeeee</textcolor>-->
                                 <textcolor>77eeeeee</textcolor>
                                 <scroll>false</scroll>
                                 <align>left</align>
@@ -183,7 +188,6 @@
                                 <label>$INFO[ListItem.Premiered]$INFO[ListItem.Duration,  •  , $LOCALIZE[12391]]</label>
                                 <font>Font-Condensed-S20-B</font>
                                 <textcolor>77eeeeee</textcolor>
-                                <!--<textcolor>FF484848</textcolor>-->
                                 <scroll>false</scroll>
                                 <align>right</align>
                                 <visible>Container.Content(episodes)</visible>
@@ -195,7 +199,6 @@
                                 <label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                                 <font>Font-Condensed-S20-B</font>
                                 <textcolor>77eeeeee</textcolor>
-                                <!--<textcolor>FF484848</textcolor>-->
                                 <scroll>false</scroll>
                                 <align>right</align>
                                 <visible>Container.Content(movies)</visible>
@@ -207,7 +210,17 @@
                                 <width>100</width>
                                 <height>100</height>
                                 <aspect>keepaspect</aspect>
-                                <colordiffuse>7FFFFFFF</colordiffuse>
+                                <colordiffuse>7fffffff</colordiffuse>
+                                <texture>$VAR[DefaultListOverlay]</texture>
+                            </control>
+                            <control type="image">
+                                <description>Watched/unwatched overlay</description>
+                                <posx>808</posx>
+                                <posy>-36</posy>
+                                <width>100</width>
+                                <height>100</height>
+                                <aspect>keepaspect</aspect>
+                                <include>overlay.diffuse</include>
                                 <texture>$VAR[DefaultListOverlay]</texture>
                             </control>
                         </control>
@@ -283,19 +296,29 @@
                                 <colordiffuse>AFFFFFFF</colordiffuse>
                                 <texture>$VAR[DefaultListOverlay]</texture>
                             </control>
+                            <control type="image">
+                                <description>Watched/unwatched overlay</description>
+                                <posx>808</posx>
+                                <posy>-36</posy>
+                                <width>100</width>
+                                <height>100</height>
+                                <aspect>keepaspect</aspect>
+                                <include>overlay.diffuse</include>
+                                <texture>$VAR[DefaultListOverlay]</texture>
+                            </control>
                         </control>
                     </focusedlayout>
                 </control>                
                 <!-- INFO SIDE -->
                 <control type="group">
-                    <posy>118</posy>
+                    <posy>114</posy>
                     <posx>1274</posx>
                     <control type="label">
                         <posx>0</posx>
-                        <posy>42</posy>
+                        <posy>44</posy>
                         <width>550</width>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font-Alaska-S34-BL</font>
+                        <label>$VAR[lowlist.tagline]</label>
+                        <font>Font-Alaska-S29-BL</font>
                         <textcolor>cceeeeee</textcolor>
                         <scroll>false</scroll>
                         <align>left</align>
@@ -373,6 +396,7 @@
                             <autoscroll delay="13000" time="3000" repeat="13000" />
                             <font>Font-Alaska-S25-NC</font>
                             <visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+                            <pagecontrol>72</pagecontrol>
                         </control>
                         <control type="textbox">
 							<description>Plot</description>
@@ -389,20 +413,27 @@
 							<autoscroll delay="8000" time="3000" repeat="8000" />
 							<info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
 							<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+							<pagecontrol>72</pagecontrol>
+						</control>
+						<control type="scrollbar" id="72">
+							<description>Plot Scrollbar</description>
+							<posx>578</posx>
+							<posy>120</posy>
+							<width>6</width>
+							<height>180</height>
+							<onleft>511</onleft>
+							<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+							<onright condition="Skin.HasSetting(KioskMode)">50</onright>
+							<texturesliderbar border="3,6,3,6">-</texturesliderbar>
+							<texturesliderbarfocus border="3,6,3,6">views/other/scrollbar-light.png</texturesliderbarfocus>
+							<orientation>vertical</orientation>
+							<showonepage>false</showonepage>
+							<visible>Control.IsVisible(511)</visible>
 						</control>
                     </control>
                 </control>
 
-                <!-- GLOSS AND POSTER -->
-                <control type="image">
-                    <posx>1074</posx>
-                    <posy>145</posy>
-                    <width>785</width>
-                    <height>175</height>
-                    <texture>views/newgloss/info-gloss.png</texture>
-                    <aspectratio align="left" aligny="top">stretch</aspectratio>
-                    <colordiffuse>bbffffff</colordiffuse>
-                </control>
+                <!-- BORDER -->
                 <control type="image">
                     <posx>40</posx>
                     <posy>135</posy>
@@ -410,7 +441,6 @@
                     <height>296</height>
                     <texture border="25">views/newgloss/border-right-no.png</texture>
                 </control>
-                
                 <!-- CD ART -->
                 <control type="image">
                     <posx>45</posx>
@@ -420,10 +450,9 @@
                     <texture background="true">$INFO[ListItem.Art(discart)]</texture>
                     <aspectratio align="center">keep</aspectratio>
                     <visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-                    <fadetime>250</fadetime>
+                    <!--<animation effect="slide" start="0" end="0,-250" time="500" delay="250" reversible="false" condition="![Container(511).OnNext | Container(511).OnPrevious]">Conditional</animation>-->
+                    <fadetime>200</fadetime>
                 </control>
-                
-                
                 <!-- LEFT ART POSTER -->
                 <control type="image">
                     <posx>35</posx>
@@ -432,8 +461,16 @@
                     <height>485</height>
                     <texture diffuse="views/newgloss/lowinfo-poster.png" background="true">$VAR[ListInfoPosterVar]</texture>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <fadetime>250</fadetime>
+                    <fadetime>200</fadetime>
                 </control>
+                <control type="image">
+					<posx>258</posx>
+					<posy>-65</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspect>keepaspect</aspect>
+					<include>overlay.visibility</include>
+				</control>
                 <control type="image">
                     <posx>35</posx>
                     <posy>-65</posy>

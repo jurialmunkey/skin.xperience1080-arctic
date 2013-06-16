@@ -135,14 +135,14 @@
     </variable>
     
     <variable name="BottomClearLogoText">
-        <value condition="Container.Content(Seasons)">$INFO[ListItem.TVShowTitle]</value>
-        <value>$INFO[ListItem.Label]</value>
+        <value condition="Container.Content(Seasons) + IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.TVShowTitle]</value>
+        <value condition="IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Label]</value>
     </variable>
     
     <variable name="MusicBottomClearLogoText">
-        <value condition="Container.Content(Songs)">$INFO[ListItem.Artist]</value>
-        <value condition="Container.Content(Albums)">$INFO[ListItem.Artist]</value>
-        <value condition="Container.Content(Artists)">$INFO[ListItem.Artist]</value>
+        <value condition="Container.Content(Songs) + StringCompare(Control.GetLabel(89456),blank.png)">$INFO[ListItem.Artist]</value>
+        <value condition="Container.Content(Albums) + StringCompare(Control.GetLabel(89456),blank.png)">$INFO[ListItem.Artist]</value>
+        <value condition="Container.Content(Artists) + StringCompare(Control.GetLabel(89456),blank.png)">$INFO[ListItem.Artist]</value>
     </variable>
     
     <variable name="VideoInfoTopLabel">
@@ -274,20 +274,39 @@
     	<textcolor>mod-infotags-d</textcolor>
     </include>
 
-
+	<include name="infotags.animation">
+		<animation type="Visible" reversible="false">
+			<effect type="fade" start="0" end="100" time="350" delay="0" tween="sine" easing="in" />
+			<effect type="zoom" start="0" end="100" time="450" delay="200" center="auto" tween="back" easing="out" />
+		</animation>
+		<animation type="WindowOpen" reversible="false">
+			<effect type="fade" start="0" end="100" time="350" delay="0" tween="sine" easing="in" />
+			<effect type="zoom" start="0" end="100" time="450" delay="200" center="auto" tween="back" easing="out" />
+		</animation>
+		<animation type="Hidden" reversible="false">
+			<effect type="fade" end="0" start="100" time="250" delay="0" tween="sine" easing="out" />
+			<effect type="zoom" end="0" start="100" time="350" delay="0" center="auto" tween="back" easing="in" />
+		</animation>
+		<animation type="WindowClose" reversible="false">
+			<effect type="fade" end="0" start="100" time="250" delay="0" tween="sine" easing="out" />
+			<effect type="zoom" end="0" start="100" time="350" delay="0" center="auto" tween="back" easing="in" />
+		</animation>
+	</include>
+	<include name="infotags.anim">
+		<include>infotags.animation</include>
+		<visible>[[Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(hide.infotags)] | Window.IsVisible(movieinformation)</visible>
+	</include>
+	<include name="infotags.movie.anim">
+		<include>infotags.animation</include>
+		<visible>[[Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons)] + !Skin.HasSetting(hide.infotags)] | Window.IsVisible(movieinformation)</visible>
+	</include>
+	<include name="infotags.music.anim">
+		<include>infotags.animation</include>
+		<visible>[[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(hide.infotags)] | Window.IsVisible(movieinformation)</visible>
+	</include>
 	<!-- STAR RATING AND YEAR -->   
     <include name="CommonClearLogoRight">
 		<control type="group">
-			<animation type="Visible" reversible="false">
-				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
-			</animation>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
-			</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="fade" end="0" start="100" time="200" delay="0" tween="sine" easing="in" />
-			</animation>
-			<visible>Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)</visible>
 			<control type="group">
 				<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
 				<animation effect="slide" start="0" end="35" time="300" tween="sine" easing="inout" condition="![PVR.IsRecording | PVR.HasTimer] + !Window.IsActive(mutebug)">Conditional</animation>
@@ -299,6 +318,7 @@
 					<aspectratio align="right" aligny="top">keep</aspectratio>
 					<texture fallback="aeonflags/music/rating/rating0.png">$INFO[ListItem.StarRating,aeonflags/music/rating/,]</texture>
 					<colordiffuse>Mod_Tags</colordiffuse>
+					<include>infotags.anim</include>
 				</control>
 				<control type="image">
 					<posx>495r</posx>
@@ -308,6 +328,7 @@
 					<aspectratio>stretch</aspectratio>
 					<texture>aeonflags/posters/imdb.png</texture>
 					<colordiffuse>Mod_Tags</colordiffuse>
+					<include>infotags.anim</include>
 				</control>
 			</control>
 			<control type="image">
@@ -318,6 +339,7 @@
 				<aspectratio>stretch</aspectratio>
 				<texture>aeonflags/posters/top250.png</texture>
 				<colordiffuse>Mod_Tags</colordiffuse>
+				<include>infotags.anim</include>
 			</control>
 			<control type="label">
 				<posx>586r</posx>
@@ -329,6 +351,7 @@
 				<scroll>false</scroll>
 				<align>center</align>
 				<wrapmultiline>false</wrapmultiline>
+				<include>infotags.anim</include>
 			</control>
 		</control>
     </include>
@@ -336,17 +359,8 @@
     <!-- CLEAR LOGO AND LEFT HAND INFO TAGS -->
     <include name="CommonClearLogoDetails">
     	<include>CommonClearLogoRight</include>
+    	
         <control type="group">
-            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-            <animation type="Visible" reversible="false">
-                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
-            </animation>
-            <animation type="WindowOpen" reversible="false">
-                <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
-            </animation>
-            <animation type="WindowClose" reversible="false">
-                <effect type="fade" end="0" start="100" time="200" delay="0" tween="sine" easing="in" />
-            </animation>
             <control type="group">
                 <posx>760</posx>
                 <control type="image">
@@ -357,6 +371,7 @@
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <texture>$VAR[ClearLogosVar]</texture>
                     <colordiffuse>Mod_Tags_Logo_Shadow</colordiffuse>
+                    <include>infotags.movie.anim</include>
                 </control>
                 <control type="image">
                     <posx>0</posx>
@@ -365,6 +380,7 @@
                     <height>155</height>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <texture>$VAR[ClearLogosVar]</texture>
+                    <include>infotags.movie.anim</include>
                 </control>
                 <control type="label">
                     <posx>45</posx>
@@ -378,7 +394,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <wrapmultiline>true</wrapmultiline>
-                    <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(tvshow.clearlogo))</visible>
+                    <include>infotags.movie.anim</include>
                 </control>
             </control>
             <control type="group">
@@ -395,6 +411,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>7</posx>
@@ -405,6 +422,7 @@
 						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagHDSD]</texture>
 						<colordiffuse>Mod_Tags_Alt</colordiffuse>
 						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>13</posx>
@@ -415,6 +433,7 @@
 						<texture>flags/other/set-info.png</texture>
 						<colordiffuse>Mod_Tags_Alt</colordiffuse>
 						<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>100</posx>
@@ -424,6 +443,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>128</posx>
@@ -434,6 +454,7 @@
 						<texture>$VAR[AeonFlagVideoCodec]</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
 						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>228</posx>
@@ -444,6 +465,7 @@
 						<texture>$VAR[AeonFlagAudioCodec]</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
 						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="label">
                         <posx>108</posx>
@@ -457,6 +479,7 @@
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
                         <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+                        <include>infotags.movie.anim</include>
                     </control>
                 </control>
                 <!-- RATING AND STUDIO -->
@@ -469,6 +492,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>7</posx>
@@ -478,6 +502,7 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagStudio]</texture>
 						<colordiffuse>Mod_Tags_Alt</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>100</posx>
@@ -487,6 +512,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="image">
 						<posx>100</posx>
@@ -496,6 +522,7 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture>$VAR[AeonFlagRating]</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 				</control>
                 <!-- TV GENRES -->
@@ -509,6 +536,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
 					<control type="label">
                         <posx>220</posx>
@@ -520,6 +548,7 @@
                         <scroll>false</scroll>
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
+                        <include>infotags.movie.anim</include>
                     </control>
 					<control type="image">
 						<posx>310</posx>
@@ -529,6 +558,7 @@
 						<aspectratio>stretch</aspectratio>
 						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
 						<colordiffuse>Mod_Tags</colordiffuse>
+						<include>infotags.movie.anim</include>
 					</control>
                     <control type="label">
                         <posx>328</posx>
@@ -540,6 +570,7 @@
                         <scroll>false</scroll>
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
+                        <include>infotags.movie.anim</include>
                     </control>
                 </control>
             </control>
@@ -569,6 +600,7 @@
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <texture fallback="blank.png">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/logo.png]</texture>
                     <colordiffuse>Mod_Tags_Logo_Shadow</colordiffuse>
+                    <include>infotags.music.anim</include>
                 </control>
                 <control type="image" id="89456">
                     <posx>90</posx>
@@ -577,6 +609,7 @@
                     <height>92</height>
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                     <texture fallback="blank.png">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                    <include>infotags.music.anim</include>
                 </control>
                 <control type="label">
                     <posx>-5</posx>
@@ -590,7 +623,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <wrapmultiline>true</wrapmultiline>
-                    <visible>StringCompare(Control.GetLabel(89456),blank.png)</visible>
+                    <include>infotags.music.anim</include>
                 </control>
             </control>
             <!-- LEFT SIDE -->
@@ -604,6 +637,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture border="20,5,20,5">aeonflags/posters/left.png</texture>
                     <colordiffuse>Mod_Tags</colordiffuse>
+                    <include>infotags.music.anim</include>
                 </control>
                 <control type="image">
                     <posx>120</posx>
@@ -613,6 +647,7 @@
                     <aspectratio>stretch</aspectratio>
                     <texture border="20,5,20,5">aeonflags/posters/right.png</texture>
                     <colordiffuse>Mod_Tags</colordiffuse>
+                    <include>infotags.music.anim</include>
                 </control>
                 <control type="image">
                     <posx>10</posx>
@@ -622,6 +657,7 @@
                     <aspectratio align="center" aligny="center">keep</aspectratio>
                     <texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagAudioCodec]</texture>       
                     <colordiffuse>Mod_Tags_Alt</colordiffuse>
+                    <include>infotags.music.anim</include>
                 </control>
                 <control type="label">
                     <posx>137</posx>
@@ -633,6 +669,7 @@
                     <scroll>false</scroll>
                     <align>center</align>
                     <wrapmultiline>false</wrapmultiline>
+                    <include>infotags.music.anim</include>
                 </control>
             </control>
         </control>
@@ -863,6 +900,66 @@
 			<property name="animate">$INFO[Skin.String(HomeVideoTile1.Animate)]</property>
 			<visible>Container(525).HasFocus(1)</visible>
 		</item>
+		<item id="10">
+			<label>$INFO[Skin.String(HomeVideoTile2.Label)]</label>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeVideoTile2.Type),4) + !stringcompare(Skin.String(HomeVideoTile2.Type),5) + !stringcompare(Skin.String(HomeVideoTile2.Type),6) + !stringcompare(Skin.String(HomeVideoTile2.Type),7)">RunAddon($INFO[Skin.String(HomeVideoTile2.Path)])</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeVideoTile2.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeVideoTile2.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeVideoTile2.Type),6) | stringcompare(Skin.String(HomeVideoTile2.Type),7)]">$INFO[Skin.String(HomeVideoTile2.Path)]</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeVideoTile2)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile2.Type))">Skin.SetString(HomeVideoTile2.Type,0)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile2.TypeName))">Skin.SetString(HomeVideoTile2.TypeName,$LOCALIZE[41145])</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,two,3003)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
+			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
+			<property name="Poster">$INFO[Skin.String(HomeVideoTile2.Icon)]</property>
+			<property name="pos">top</property>
+			<property name="showlabel">$INFO[Skin.String(HomeVideoTile2.ShowLabel)]</property>
+			<property name="path">$INFO[Skin.String(HomeVideoTile2.Path)]</property>
+			<property name="animate">$INFO[Skin.String(HomeVideoTile2.Animate)]</property>
+			<visible>Container(525).HasFocus(1)</visible>
+		</item>
+		<item id="11">
+			<label>$INFO[Skin.String(HomeVideoTile3.Label)]</label>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeVideoTile3.Type),4) + !stringcompare(Skin.String(HomeVideoTile3.Type),5) + !stringcompare(Skin.String(HomeVideoTile3.Type),6) + !stringcompare(Skin.String(HomeVideoTile3.Type),7)">RunAddon($INFO[Skin.String(HomeVideoTile3.Path)])</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile3.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeVideoTile3.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile3.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeVideoTile3.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeVideoTile3.Type),6) | stringcompare(Skin.String(HomeVideoTile3.Type),7)]">$INFO[Skin.String(HomeVideoTile3.Path)]</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeVideoTile3)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile3.Type))">Skin.SetString(HomeVideoTile3.Type,0)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile3.TypeName))">Skin.SetString(HomeVideoTile3.TypeName,$LOCALIZE[41145])</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,three,3003)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
+			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
+			<property name="Poster">$INFO[Skin.String(HomeVideoTile3.Icon)]</property>
+			<property name="pos">bottom</property>
+			<property name="showlabel">$INFO[Skin.String(HomeVideoTile3.ShowLabel)]</property>
+			<property name="path">$INFO[Skin.String(HomeVideoTile3.Path)]</property>
+			<property name="animate">$INFO[Skin.String(HomeVideoTile3.Animate)]</property>
+			<visible>Container(525).HasFocus(1)</visible>
+		</item>
+		<item id="12">
+			<label>$INFO[Skin.String(HomeVideoTile4.Label)]</label>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeVideoTile4.Type),4) + !stringcompare(Skin.String(HomeVideoTile4.Type),5) + !stringcompare(Skin.String(HomeVideoTile4.Type),6) + !stringcompare(Skin.String(HomeVideoTile4.Type),7)">RunAddon($INFO[Skin.String(HomeVideoTile4.Path)])</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile4.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeVideoTile4.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile4.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeVideoTile4.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeVideoTile4.Type),6) | stringcompare(Skin.String(HomeVideoTile4.Type),7)]">$INFO[Skin.String(HomeVideoTile4.Path)]</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeVideoTile4)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile4.Type))">Skin.SetString(HomeVideoTile4.Type,0)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile4.TypeName))">Skin.SetString(HomeVideoTile4.TypeName,$LOCALIZE[41145])</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,four,3003)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
+			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
+			<property name="Poster">$INFO[Skin.String(HomeVideoTile4.Icon)]</property>
+			<property name="pos">bottom</property>
+			<property name="showlabel">$INFO[Skin.String(HomeVideoTile4.ShowLabel)]</property>
+			<property name="path">$INFO[Skin.String(HomeVideoTile4.Path)]</property>
+			<property name="animate">$INFO[Skin.String(HomeVideoTile4.Animate)]</property>
+			<visible>Container(525).HasFocus(1)</visible>
+		</item>
 		
 		<!--TVSHOW ITEMS-->
 		<item id="0">
@@ -927,14 +1024,14 @@
 			<onclick>ActivateWindow(videos,tvshowgenres,return)</onclick>   
 			<visible>Container(525).HasFocus(2)</visible>
 		</item>
-		<item id="8">
+		<!--<item id="8">
 			<description>Years</description>
 			<property name="Poster">windows/home/icons/ticket2.png</property>
 			<label>$LOCALIZE[652]</label>
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(videos,tvshowyears,return)</onclick>
 			<visible>Container(525).HasFocus(2)</visible>
-		</item>
+		</item>-->
 		<item id="9">
 			<label>$INFO[Skin.String(HomeTVShowTile1.Label)]</label>
 			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeTVShowTile1.Type),4) + !stringcompare(Skin.String(HomeTVShowTile1.Type),5) + !stringcompare(Skin.String(HomeTVShowTile1.Type),6) + !stringcompare(Skin.String(HomeTVShowTile1.Type),7)">RunAddon($INFO[Skin.String(HomeTVShowTile1.Path)])</onclick>
@@ -952,6 +1049,25 @@
 			<property name="showlabel">$INFO[Skin.String(HomeTVShowTile1.ShowLabel)]</property>
 			<property name="path">$INFO[Skin.String(HomeTVShowTile1.Path)]</property>
 			<property name="animate">$INFO[Skin.String(HomeTVShowTile1.Animate)]</property>
+			<visible>Container(525).HasFocus(2)</visible>
+		</item>
+		<item id="10">
+			<label>$INFO[Skin.String(HomeTVShowTile2.Label)]</label>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeTVShowTile2.Type),4) + !stringcompare(Skin.String(HomeTVShowTile2.Type),5) + !stringcompare(Skin.String(HomeTVShowTile2.Type),6) + !stringcompare(Skin.String(HomeTVShowTile2.Type),7)">RunAddon($INFO[Skin.String(HomeTVShowTile2.Path)])</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeTVShowTile2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeTVShowTile2.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeTVShowTile2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeTVShowTile2.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeTVShowTile2.Type),6) | stringcompare(Skin.String(HomeTVShowTile2.Type),7)]">$INFO[Skin.String(HomeTVShowTile2.Path)]</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeTVShowTile2.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeTVShowTile2)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeTVShowTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeTVShowTile2.Type))">Skin.SetString(HomeTVShowTile2.Type,0)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeTVShowTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeTVShowTile2.TypeName))">Skin.SetString(HomeTVShowTile2.TypeName,$LOCALIZE[41145])</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeTVShowTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,five,3003)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeTVShowTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeTVShowTile2.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
+			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
+			<property name="Poster">$INFO[Skin.String(HomeTVShowTile2.Icon)]</property>
+			<property name="showlabel">$INFO[Skin.String(HomeTVShowTile2.ShowLabel)]</property>
+			<property name="path">$INFO[Skin.String(HomeTVShowTile2.Path)]</property>
+			<property name="animate">$INFO[Skin.String(HomeTVShowTile2.Animate)]</property>
 			<visible>Container(525).HasFocus(2)</visible>
 		</item>
 		
@@ -1034,6 +1150,46 @@
 			<onclick>SendClick(8)</onclick>
 			<visible>Container(525).HasFocus(3)</visible>
 		</item>
+		<item id="11">
+			<label>$INFO[Skin.String(HomeMusicTile1.Label)]</label>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeMusicTile1.Type),4) + !stringcompare(Skin.String(HomeMusicTile1.Type),5) + !stringcompare(Skin.String(HomeMusicTile1.Type),6) + !stringcompare(Skin.String(HomeMusicTile1.Type),7)">RunAddon($INFO[Skin.String(HomeMusicTile1.Path)])</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeMusicTile1.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeMusicTile1.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeMusicTile1.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeMusicTile1.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeMusicTile1.Type),6) | stringcompare(Skin.String(HomeMusicTile1.Type),7)]">$INFO[Skin.String(HomeMusicTile1.Path)]</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeMusicTile1)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeMusicTile1.Type))">Skin.SetString(HomeMusicTile1.Type,0)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeMusicTile1.TypeName))">Skin.SetString(HomeMusicTile1.TypeName,$LOCALIZE[41145])</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,eleven,3003)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
+			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
+			<property name="Poster">$INFO[Skin.String(HomeMusicTile1.Icon)]</property>
+			<property name="showlabel">$INFO[Skin.String(HomeMusicTile1.ShowLabel)]</property>
+			<property name="path">$INFO[Skin.String(HomeMusicTile1.Path)]</property>
+			<property name="animate">$INFO[Skin.String(HomeMusicTile1.Animate)]</property>
+			<property name="musictile">1</property>
+			<visible>Container(525).HasFocus(3)</visible>
+		</item>
+		<item id="12">
+			<label>$INFO[Skin.String(HomeMusicTile2.Label)]</label>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeMusicTile2.Type),4) + !stringcompare(Skin.String(HomeMusicTile2.Type),5) + !stringcompare(Skin.String(HomeMusicTile2.Type),6) + !stringcompare(Skin.String(HomeMusicTile2.Type),7)">RunAddon($INFO[Skin.String(HomeMusicTile2.Path)])</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeMusicTile2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeMusicTile1.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeMusicTile2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeMusicTile2.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeMusicTile2.Type),6) | stringcompare(Skin.String(HomeMusicTile2.Type),7)]">$INFO[Skin.String(HomeMusicTile2.Path)]</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile1.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeMusicTile2)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeMusicTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeMusicTile2.Type))">Skin.SetString(HomeMusicTile2.Type,0)</onclick>
+			<onclick condition="[IsEmpty(Skin.String(HomeMusicTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeMusicTile2.TypeName))">Skin.SetString(HomeMusicTile2.TypeName,$LOCALIZE[41145])</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,twelve,3003)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeMusicTile2.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
+			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
+			<property name="Poster">$INFO[Skin.String(HomeMusicTile2.Icon)]</property>
+			<property name="showlabel">$INFO[Skin.String(HomeMusicTile2.ShowLabel)]</property>
+			<property name="path">$INFO[Skin.String(HomeMusicTile2.Path)]</property>
+			<property name="animate">$INFO[Skin.String(HomeMusicTile2.Animate)]</property>
+			<property name="musictile">1</property>
+			<visible>Container(525).HasFocus(3)</visible>
+		</item>
 		
 		<!--PVR ITEMS-->
 		<item id="1">
@@ -1102,66 +1258,6 @@
 			<onclick>ActivateWindow(videos,addons,return)</onclick>
 			<property name="Poster">windows/home/icons/videoaddons.png</property>
 			<label>$LOCALIZE[24001]</label> 
-			<visible>Container(525).HasFocus(4)</visible>
-		</item>
-		<item id="8">
-			<label>$INFO[Skin.String(HomeVideoTile2.Label)]</label>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeVideoTile2.Type),4) + !stringcompare(Skin.String(HomeVideoTile2.Type),5) + !stringcompare(Skin.String(HomeVideoTile2.Type),6) + !stringcompare(Skin.String(HomeVideoTile2.Type),7)">RunAddon($INFO[Skin.String(HomeVideoTile2.Path)])</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile2.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeVideoTile2.Path)],return)</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile2.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeVideoTile2.Path)],return)</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeVideoTile2.Type),6) | stringcompare(Skin.String(HomeVideoTile2.Type),7)]">$INFO[Skin.String(HomeVideoTile2.Path)]</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeVideoTile2)</onclick>
-			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile2.Type))">Skin.SetString(HomeVideoTile2.Type,0)</onclick>
-			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile2.TypeName))">Skin.SetString(HomeVideoTile2.TypeName,$LOCALIZE[41145])</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,two,3003)</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile2.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
-			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
-			<property name="Poster">$INFO[Skin.String(HomeVideoTile2.Icon)]</property>
-			<property name="pos">top</property>
-			<property name="showlabel">$INFO[Skin.String(HomeVideoTile2.ShowLabel)]</property>
-			<property name="path">$INFO[Skin.String(HomeVideoTile2.Path)]</property>
-			<property name="animate">$INFO[Skin.String(HomeVideoTile2.Animate)]</property>
-			<visible>Container(525).HasFocus(4)</visible>
-		</item>
-		<item id="9">
-			<label>$INFO[Skin.String(HomeVideoTile3.Label)]</label>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeVideoTile3.Type),4) + !stringcompare(Skin.String(HomeVideoTile3.Type),5) + !stringcompare(Skin.String(HomeVideoTile3.Type),6) + !stringcompare(Skin.String(HomeVideoTile3.Type),7)">RunAddon($INFO[Skin.String(HomeVideoTile3.Path)])</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile3.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeVideoTile3.Path)],return)</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile3.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeVideoTile3.Path)],return)</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeVideoTile3.Type),6) | stringcompare(Skin.String(HomeVideoTile3.Type),7)]">$INFO[Skin.String(HomeVideoTile3.Path)]</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeVideoTile3)</onclick>
-			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile3.Type))">Skin.SetString(HomeVideoTile3.Type,0)</onclick>
-			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile3.TypeName))">Skin.SetString(HomeVideoTile3.TypeName,$LOCALIZE[41145])</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,three,3003)</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile3.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
-			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
-			<property name="Poster">$INFO[Skin.String(HomeVideoTile3.Icon)]</property>
-			<property name="pos">bottom</property>
-			<property name="showlabel">$INFO[Skin.String(HomeVideoTile3.ShowLabel)]</property>
-			<property name="path">$INFO[Skin.String(HomeVideoTile3.Path)]</property>
-			<property name="animate">$INFO[Skin.String(HomeVideoTile3.Animate)]</property>
-			<visible>Container(525).HasFocus(4)</visible>
-		</item>
-		<item id="10">
-			<label>$INFO[Skin.String(HomeVideoTile4.Label)]</label>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeVideoTile4.Type),4) + !stringcompare(Skin.String(HomeVideoTile4.Type),5) + !stringcompare(Skin.String(HomeVideoTile4.Type),6) + !stringcompare(Skin.String(HomeVideoTile4.Type),7)">RunAddon($INFO[Skin.String(HomeVideoTile4.Path)])</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile4.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeVideoTile4.Path)],return)</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + stringcompare(Skin.String(HomeVideoTile4.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeVideoTile4.Path)],return)</onclick>
-			<onclick condition="IsEmpty(Window.Property(EditTile)) + [stringcompare(Skin.String(HomeVideoTile4.Type),6) | stringcompare(Skin.String(HomeVideoTile4.Type),7)]">$INFO[Skin.String(HomeVideoTile4.Path)]</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">Skin.SetBool(HomeVideoTile4)</onclick>
-			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile4.Type))">Skin.SetString(HomeVideoTile4.Type,0)</onclick>
-			<onclick condition="[IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))] + IsEmpty(Skin.String(HomeVideoTile4.TypeName))">Skin.SetString(HomeVideoTile4.TypeName,$LOCALIZE[41145])</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(SingleDialog,four,3003)</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
-			<onclick condition="IsEmpty(Skin.String(HomeVideoTile4.Path)) | !IsEmpty(Window.Property(EditTile))">ActivateWindow(3003)</onclick>
-			<onclick condition="!IsEmpty(Window.Property(EditTile))">ClearProperty(EditTile)</onclick>
-			<property name="Poster">$INFO[Skin.String(HomeVideoTile4.Icon)]</property>
-			<property name="pos">bottom</property>
-			<property name="showlabel">$INFO[Skin.String(HomeVideoTile4.ShowLabel)]</property>
-			<property name="path">$INFO[Skin.String(HomeVideoTile4.Path)]</property>
-			<property name="animate">$INFO[Skin.String(HomeVideoTile4.Animate)]</property>
 			<visible>Container(525).HasFocus(4)</visible>
 		</item>
 		
@@ -1298,6 +1394,7 @@
 			<property name="custom">1</property>
 			<visible>Container(525).HasFocus(7)</visible>
 		</item>
+		
 		<!--SETTINGS ITEMS-->
 		<item id="1">
 			<description>Appearance</description>
@@ -1403,7 +1500,6 @@
 			<onclick>SetFocus(525)</onclick>
 			<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 			<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
-			<visible>Container(525).HasFocus(8)</visible>
 			<property name="Poster">windows/home/icons/weather.png</property>
 		</item>
 		<item id="1">
@@ -1485,7 +1581,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentMovie.1.Art(clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentMovie.1.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.1.Year),, • ]$INFO[Window.Property(RecentMovie.1.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.1.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="2">
 			<onclick>SetFocus(525)</onclick>
@@ -1498,7 +1594,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.2.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.2.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.2.Year),, • ]$INFO[Window.Property(RecentMovie.2.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.2.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="3">
 			<onclick>SetFocus(525)</onclick>
@@ -1511,7 +1607,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.3.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.3.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.3.Year),, • ]$INFO[Window.Property(RecentMovie.3.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.3.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="4">
 			<onclick>SetFocus(525)</onclick>
@@ -1524,7 +1620,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.4.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.4.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.4.Year),, • ]$INFO[Window.Property(RecentMovie.4.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.4.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="5">
 			<onclick>SetFocus(525)</onclick>
@@ -1537,7 +1633,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.5.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.5.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.5.Year),, • ]$INFO[Window.Property(RecentMovie.5.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.5.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="6">
 			<onclick>SetFocus(525)</onclick>
@@ -1550,7 +1646,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.6.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.6.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.6.Year),, • ]$INFO[Window.Property(RecentMovie.6.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.6.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="7">
 			<onclick>SetFocus(525)</onclick>
@@ -1563,7 +1659,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.7.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.7.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.7.Year),, • ]$INFO[Window.Property(RecentMovie.7.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.7.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="8">
 			<onclick>SetFocus(525)</onclick>
@@ -1576,7 +1672,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.8.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.8.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.8.Year),, • ]$INFO[Window.Property(RecentMovie.8.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.8.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="9">
 			<onclick>SetFocus(525)</onclick>
@@ -1589,7 +1685,7 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.9.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.9.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.9.Year),, • ]$INFO[Window.Property(RecentMovie.9.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.9.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
 		</item>
 		<item id="10">
 			<onclick>SetFocus(525)</onclick>
@@ -1602,7 +1698,269 @@
 			<property name="Rating">$INFO[Window.Property(RecentMovie.10.Rating)]</property>
 			<label>$INFO[Window.Property(RecentMovie.10.Title)]</label>
 			<label2>$INFO[Window.Property(RecentMovie.10.Year),, • ]$INFO[Window.Property(RecentMovie.10.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecentMovie.10.Rating), • ,]</label2>
-			<visible>Container(525).HasFocus(1)</visible>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41552])</visible>
+		</item>
+		<!-- recommended movies -->
+		<item id="1">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.1.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.1.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.1.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.1.Watched)]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.1.Rating)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.1.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.1.Art(clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.1.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.1.Year),, • ]$INFO[Window.Property(RecommendedMovie.1.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.1.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="2">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.2.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.2.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.2.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.2.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.2.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.2.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.2.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.2.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.2.Year),, • ]$INFO[Window.Property(RecommendedMovie.2.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.2.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="3">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.3.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.3.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.3.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.3.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.3.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.3.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.3.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.3.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.3.Year),, • ]$INFO[Window.Property(RecommendedMovie.3.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.3.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="4">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.4.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.4.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.4.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.4.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.4.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.4.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.4.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.4.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.4.Year),, • ]$INFO[Window.Property(RecommendedMovie.4.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.4.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="5">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.5.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.5.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.5.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.5.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.5.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.5.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.5.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.5.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.5.Year),, • ]$INFO[Window.Property(RecommendedMovie.5.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.5.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="6">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.6.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.6.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.6.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.6.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.6.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.6.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.6.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.6.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.6.Year),, • ]$INFO[Window.Property(RecommendedMovie.6.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.6.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="7">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.7.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.7.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.7.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.7.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.7.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.7.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.7.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.7.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.7.Year),, • ]$INFO[Window.Property(RecommendedMovie.7.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.7.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="8">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.8.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.8.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.8.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.8.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.8.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.8.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.8.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.8.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.8.Year),, • ]$INFO[Window.Property(RecommendedMovie.8.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.8.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="9">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.9.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.9.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.9.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.9.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.9.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.9.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.9.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.9.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.9.Year),, • ]$INFO[Window.Property(RecommendedMovie.9.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.9.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<item id="10">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedMovie.10.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedMovie.10.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedMovie.10.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedMovie.10.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedMovie.10.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedMovie.10.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RecommendedMovie.10.Rating)]</property>
+			<label>$INFO[Window.Property(RecommendedMovie.10.Title)]</label>
+			<label2>$INFO[Window.Property(RecommendedMovie.10.Year),, • ]$INFO[Window.Property(RecommendedMovie.10.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RecommendedMovie.10.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[575])</visible>
+		</item>
+		<!-- Random movies -->
+		<item id="1">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.1.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.1.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.1.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.1.Watched)]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.1.Rating)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.1.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.1.Art(clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomMovie.1.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.1.Year),, • ]$INFO[Window.Property(RandomMovie.1.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.1.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="2">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.2.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.2.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.2.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.2.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.2.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.2.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.2.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.2.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.2.Year),, • ]$INFO[Window.Property(RandomMovie.2.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.2.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="3">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.3.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.3.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.3.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.3.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.3.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.3.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.3.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.3.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.3.Year),, • ]$INFO[Window.Property(RandomMovie.3.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.3.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="4">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.4.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.4.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.4.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.4.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.4.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.4.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.4.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.4.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.4.Year),, • ]$INFO[Window.Property(RandomMovie.4.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.4.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="5">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.5.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.5.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.5.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.5.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.5.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.5.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.5.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.5.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.5.Year),, • ]$INFO[Window.Property(RandomMovie.5.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.5.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="6">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.6.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.6.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.6.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.6.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.6.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.6.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.6.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.6.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.6.Year),, • ]$INFO[Window.Property(RandomMovie.6.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.6.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="7">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.7.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.7.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.7.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.7.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.7.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.7.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.7.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.7.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.7.Year),, • ]$INFO[Window.Property(RandomMovie.7.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.7.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="8">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.8.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.8.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.8.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.8.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.8.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.8.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.8.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.8.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.8.Year),, • ]$INFO[Window.Property(RandomMovie.8.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.8.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="9">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.9.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.9.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.9.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.9.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.9.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.9.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.9.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.9.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.9.Year),, • ]$INFO[Window.Property(RandomMovie.9.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.9.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="10">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomMovie.10.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomMovie.10.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomMovie.10.Art(poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomMovie.10.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomMovie.10.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomMovie.10.Art(clearlogo))]</property>
+			<property name="Rating">$INFO[Window.Property(RandomMovie.10.Rating)]</property>
+			<label>$INFO[Window.Property(RandomMovie.10.Title)]</label>
+			<label2>$INFO[Window.Property(RandomMovie.10.Year),, • ]$INFO[Window.Property(RandomMovie.10.Runtime),, $LOCALIZE[12391]]$INFO[Window.Property(RandomMovie.10.Rating), • ,]</label2>
+			<visible>Container(525).HasFocus(1) + StringCompare(Skin.String(movie.widget.type),$LOCALIZE[41550])</visible>
 		</item>
 		<!-- recent tv -->
 		<item id="1">
@@ -1615,7 +1973,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.1.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.1.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.1.Title),, • ]$INFO[Window.Property(RecentEpisode.1.Season),S,]$INFO[Window.Property(RecentEpisode.1.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553])</visible>
 		</item>
 		<item id="2">
 			<onclick>SetFocus(525)</onclick>
@@ -1627,7 +1985,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.2.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.2.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.2.Title),, • ]$INFO[Window.Property(RecentEpisode.2.Season),S,]$INFO[Window.Property(RecentEpisode.2.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="3">
 			<onclick>SetFocus(525)</onclick>
@@ -1639,7 +1997,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.3.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.3.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.3.Title),, • ]$INFO[Window.Property(RecentEpisode.3.Season),S,]$INFO[Window.Property(RecentEpisode.3.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="4">
 			<onclick>SetFocus(525)</onclick>
@@ -1651,7 +2009,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.4.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.4.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.4.Title),, • ]$INFO[Window.Property(RecentEpisode.4.Season),S,]$INFO[Window.Property(RecentEpisode.4.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="5">
 			<onclick>SetFocus(525)</onclick>
@@ -1663,7 +2021,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.5.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.5.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.5.Title),, • ]$INFO[Window.Property(RecentEpisode.5.Season),S,]$INFO[Window.Property(RecentEpisode.5.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="6">
 			<onclick>SetFocus(525)</onclick>
@@ -1675,7 +2033,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.6.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.6.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.6.Title),, • ]$INFO[Window.Property(RecentEpisode.6.Season),S,]$INFO[Window.Property(RecentEpisode.6.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="7">
 			<onclick>SetFocus(525)</onclick>
@@ -1687,7 +2045,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.7.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.7.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.7.Title),, • ]$INFO[Window.Property(RecentEpisode.7.Season),S,]$INFO[Window.Property(RecentEpisode.7.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="8">
 			<onclick>SetFocus(525)</onclick>
@@ -1699,7 +2057,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.8.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.8.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.8.Title),, • ]$INFO[Window.Property(RecentEpisode.8.Season),S,]$INFO[Window.Property(RecentEpisode.8.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="9">
 			<onclick>SetFocus(525)</onclick>
@@ -1711,7 +2069,7 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.9.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.9.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.9.Title),, • ]$INFO[Window.Property(RecentEpisode.9.Season),S,]$INFO[Window.Property(RecentEpisode.9.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
 		</item>
 		<item id="10">
 			<onclick>SetFocus(525)</onclick>
@@ -1723,7 +2081,249 @@
 			<property name="Logo">$INFO[Window.Property(RecentEpisode.10.Art(tvshow.clearlogo))]</property>
 			<label>$INFO[Window.Property(RecentEpisode.10.TVshowTitle)]</label>
 			<label2>$INFO[Window.Property(RecentEpisode.10.Title),, • ]$INFO[Window.Property(RecentEpisode.10.Season),S,]$INFO[Window.Property(RecentEpisode.10.Episode),E,]</label2>
-			<visible>Container(525).HasFocus(2)</visible>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553]</visible>
+		</item>
+		<!-- recommended tv -->
+		<item id="1">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.1.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.1.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.1.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.1.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.1.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.1.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.1.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.1.Title),, • ]$INFO[Window.Property(RecommendedEpisode.1.Season),S,]$INFO[Window.Property(RecommendedEpisode.1.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551])</visible>
+		</item>
+		<item id="2">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.2.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.2.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.2.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.2.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.2.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.2.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.2.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.2.Title),, • ]$INFO[Window.Property(RecommendedEpisode.2.Season),S,]$INFO[Window.Property(RecommendedEpisode.2.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="3">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.3.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.3.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.3.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.3.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.3.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.3.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.3.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.3.Title),, • ]$INFO[Window.Property(RecommendedEpisode.3.Season),S,]$INFO[Window.Property(RecommendedEpisode.3.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="4">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.4.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.4.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.4.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.4.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.4.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.4.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.4.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.4.Title),, • ]$INFO[Window.Property(RecommendedEpisode.4.Season),S,]$INFO[Window.Property(RecommendedEpisode.4.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="5">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.5.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.5.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.5.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.5.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.5.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.5.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.5.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.5.Title),, • ]$INFO[Window.Property(RecommendedEpisode.5.Season),S,]$INFO[Window.Property(RecommendedEpisode.5.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="6">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.6.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.6.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.6.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.6.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.6.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.6.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.6.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.6.Title),, • ]$INFO[Window.Property(RecommendedEpisode.6.Season),S,]$INFO[Window.Property(RecommendedEpisode.6.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="7">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.7.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.7.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.7.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.7.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.7.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.7.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.7.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.7.Title),, • ]$INFO[Window.Property(RecommendedEpisode.7.Season),S,]$INFO[Window.Property(RecommendedEpisode.7.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="8">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.8.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.8.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.8.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.8.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.8.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.8.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.8.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.8.Title),, • ]$INFO[Window.Property(RecommendedEpisode.8.Season),S,]$INFO[Window.Property(RecommendedEpisode.8.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="9">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.9.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.9.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.9.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.9.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.9.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.9.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.9.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.9.Title),, • ]$INFO[Window.Property(RecommendedEpisode.9.Season),S,]$INFO[Window.Property(RecommendedEpisode.9.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<item id="10">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecommendedEpisode.10.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecommendedEpisode.10.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecommendedEpisode.10.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RecommendedEpisode.10.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RecommendedEpisode.10.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RecommendedEpisode.10.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RecommendedEpisode.10.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RecommendedEpisode.10.Title),, • ]$INFO[Window.Property(RecommendedEpisode.10.Season),S,]$INFO[Window.Property(RecommendedEpisode.10.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]</visible>
+		</item>
+		<!-- random tv -->
+		<item id="1">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.1.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.1.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.1.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.1.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.1.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.1.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.1.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.1.Title),, • ]$INFO[Window.Property(RandomEpisode.1.Season),S,]$INFO[Window.Property(RandomEpisode.1.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550])</visible>
+		</item>
+		<item id="2">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.2.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.2.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.2.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.2.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.2.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.2.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.2.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.2.Title),, • ]$INFO[Window.Property(RandomEpisode.2.Season),S,]$INFO[Window.Property(RandomEpisode.2.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="3">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.3.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.3.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.3.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.3.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.3.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.3.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.3.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.3.Title),, • ]$INFO[Window.Property(RandomEpisode.3.Season),S,]$INFO[Window.Property(RandomEpisode.3.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="4">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.4.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.4.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.4.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.4.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.4.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.4.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.4.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.4.Title),, • ]$INFO[Window.Property(RandomEpisode.4.Season),S,]$INFO[Window.Property(RandomEpisode.4.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="5">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.5.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.5.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.5.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.5.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.5.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.5.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.5.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.5.Title),, • ]$INFO[Window.Property(RandomEpisode.5.Season),S,]$INFO[Window.Property(RandomEpisode.5.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="6">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.6.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.6.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.6.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.6.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.6.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.6.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.6.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.6.Title),, • ]$INFO[Window.Property(RandomEpisode.6.Season),S,]$INFO[Window.Property(RandomEpisode.6.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="7">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.7.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.7.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.7.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.7.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.7.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.7.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.7.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.7.Title),, • ]$INFO[Window.Property(RandomEpisode.7.Season),S,]$INFO[Window.Property(RandomEpisode.7.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="8">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.8.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.8.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.8.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.8.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.8.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.8.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.8.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.8.Title),, • ]$INFO[Window.Property(RandomEpisode.8.Season),S,]$INFO[Window.Property(RandomEpisode.8.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="9">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.9.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.9.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.9.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.9.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.9.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.9.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.9.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.9.Title),, • ]$INFO[Window.Property(RandomEpisode.9.Season),S,]$INFO[Window.Property(RandomEpisode.9.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="10">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomEpisode.10.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomEpisode.10.Art(thumb))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomEpisode.10.Art(tvshow.poster))]</property>
+			<property name="Overlay">$INFO[Window.Property(RandomEpisode.10.Watched)]</property>
+			<property name="Plot">$INFO[Window.Property(RandomEpisode.10.Plot)]</property>
+			<property name="Logo">$INFO[Window.Property(RandomEpisode.10.Art(tvshow.clearlogo))]</property>
+			<label>$INFO[Window.Property(RandomEpisode.10.TVshowTitle)]</label>
+			<label2>$INFO[Window.Property(RandomEpisode.10.Title),, • ]$INFO[Window.Property(RandomEpisode.10.Season),S,]$INFO[Window.Property(RandomEpisode.10.Episode),E,]</label2>
+			<visible>Container(525).HasFocus(2) + StringCompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]</visible>
 		</item>
 		<!-- recent album -->
 		<item id="1">
@@ -1734,7 +2334,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.1.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.1.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.1.Title)]$INFO[Window.Property(RecommendedAlbum.1.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="2">
 			<onclick>SetFocus(525)</onclick>
@@ -1744,7 +2344,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.2.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.2.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.2.Title)]$INFO[Window.Property(RecommendedAlbum.2.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="3">
 			<onclick>SetFocus(525)</onclick>
@@ -1754,7 +2354,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.3.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.3.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.3.Title)]$INFO[Window.Property(RecommendedAlbum.3.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="4">
 			<onclick>SetFocus(525)</onclick>
@@ -1764,7 +2364,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.4.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.4.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.4.Title)]$INFO[Window.Property(RecommendedAlbum.4.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="5">
 			<onclick>SetFocus(525)</onclick>
@@ -1774,7 +2374,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.5.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.5.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.5.Title)]$INFO[Window.Property(RecommendedAlbum.5.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="6">
 			<onclick>SetFocus(525)</onclick>
@@ -1784,7 +2384,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.6.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.6.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.6.Title)]$INFO[Window.Property(RecommendedAlbum.6.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="7">
 			<onclick>SetFocus(525)</onclick>
@@ -1794,7 +2394,7 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.7.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.7.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.7.Title)]$INFO[Window.Property(RecommendedAlbum.7.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
 		<item id="8">
 			<onclick>SetFocus(525)</onclick>
@@ -1804,8 +2404,172 @@
 			<property name="Plot">$INFO[Window.Property(RecommendedAlbum.8.Description)]</property>
 			<label>$INFO[Window.Property(RecommendedAlbum.8.Artist)]</label>
 			<label2>$INFO[Window.Property(RecommendedAlbum.8.Title)]$INFO[Window.Property(RecommendedAlbum.8.Year), • ,]</label2>
-			<visible>Container(525).HasFocus(3)</visible>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41555]</visible>
 		</item>
+		<!-- recent album -->
+		<item id="1">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.1.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.1.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.1.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.1.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.1.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.1.Title)]$INFO[Window.Property(RecentAlbum.1.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="2">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.2.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.2.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.2.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.2.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.2.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.2.Title)]$INFO[Window.Property(RecentAlbum.2.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="3">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.3.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.3.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.3.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.3.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.3.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.3.Title)]$INFO[Window.Property(RecentAlbum.3.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="4">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.4.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.4.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.4.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.4.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.4.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.4.Title)]$INFO[Window.Property(RecentAlbum.4.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="5">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.5.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.5.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.5.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.5.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.5.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.5.Title)]$INFO[Window.Property(RecentAlbum.5.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="6">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.6.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.6.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.6.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.6.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.6.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.6.Title)]$INFO[Window.Property(RecentAlbum.6.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="7">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.7.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.7.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.7.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.7.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.7.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.7.Title)]$INFO[Window.Property(RecentAlbum.7.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<item id="8">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RecentAlbum.8.Play)]</onclick>
+			<icon>$INFO[Window.Property(RecentAlbum.8.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RecentAlbum.8.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RecentAlbum.8.Description)]</property>
+			<label>$INFO[Window.Property(RecentAlbum.8.Artist)]</label>
+			<label2>$INFO[Window.Property(RecentAlbum.8.Title)]$INFO[Window.Property(RecentAlbum.8.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41554]</visible>
+		</item>
+		<!-- recent album -->
+		<item id="1">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.1.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.1.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.1.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.1.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.1.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.1.Title)]$INFO[Window.Property(RandomAlbum.1.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="2">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.2.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.2.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.2.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.2.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.2.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.2.Title)]$INFO[Window.Property(RandomAlbum.2.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="3">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.3.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.3.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.3.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.3.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.3.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.3.Title)]$INFO[Window.Property(RandomAlbum.3.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="4">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.4.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.4.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.4.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.4.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.4.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.4.Title)]$INFO[Window.Property(RandomAlbum.4.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="5">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.5.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.5.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.5.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.5.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.5.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.5.Title)]$INFO[Window.Property(RandomAlbum.5.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="6">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.6.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.6.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.6.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.6.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.6.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.6.Title)]$INFO[Window.Property(RandomAlbum.6.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="7">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.7.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.7.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.7.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.7.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.7.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.7.Title)]$INFO[Window.Property(RandomAlbum.7.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+		<item id="8">
+			<onclick>SetFocus(525)</onclick>
+			<onclick>$INFO[Window.Property(RandomAlbum.8.Play)]</onclick>
+			<icon>$INFO[Window.Property(RandomAlbum.8.Art(fanart))]</icon>
+			<property name="Poster">$INFO[Window.Property(RandomAlbum.8.Art(thumb))]</property>
+			<property name="Plot">$INFO[Window.Property(RandomAlbum.8.Description)]</property>
+			<label>$INFO[Window.Property(RandomAlbum.8.Artist)]</label>
+			<label2>$INFO[Window.Property(RandomAlbum.8.Title)]$INFO[Window.Property(RandomAlbum.8.Year), • ,]</label2>
+			<visible>Container(525).HasFocus(3) + StringCompare(Skin.String(music.widget.type),$LOCALIZE[41550]</visible>
+		</item>
+
+
 	</include>
 	<include name="Mod_525Content">
 		<item id="1">
@@ -1863,7 +2627,7 @@
 		</item>
 		<item id="8">
 			<label>Weather</label>
-			<visible>!Skin.HasSetting(disable.weather)</visible>
+			<visible>!Skin.HasSetting(disable.weather) + StringCompare(Skin.String(homescreen.style),simple)</visible>
 			<property name="single">$INFO[Skin.String(HomeWeatherSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeWeatherMultiImage)]</property>
 			<onclick>ActivateWindow(weather)</onclick>

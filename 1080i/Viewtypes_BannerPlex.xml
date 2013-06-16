@@ -36,7 +36,7 @@
                         <width>100</width>
                         <height>100</height>
                         <aspect>keepaspect</aspect>
-                        <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+                        <include>overlay.visibility</include>
                     </control>
 					<control type="image">
                         <description>Left Border</description>

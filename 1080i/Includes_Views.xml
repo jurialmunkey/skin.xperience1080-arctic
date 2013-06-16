@@ -170,74 +170,74 @@
     
     <!-- Overlays -->
     <variable name="InfoListOverlay">
-        <value condition="ListItem.IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/list-p.png]</value>
-        <value condition="!SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/list-w.png]</value>
+        <value condition="ListItem.IsResumable">$INFO[ListItem.Overlay,overlays/,/list-p.png]</value>
+        <value>$INFO[ListItem.Overlay,overlays/,/list-w.png]</value>
     </variable>
     
     <variable name="InfoPanelOverlay">
-        <value condition="ListItem.IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/panel-p.png]</value>
-        <value condition="!IntegerGreaterThan(ListItem.PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/panel-w.png]</value>
+        <value condition="ListItem.IsResumable">$INFO[ListItem.Overlay,overlays/,/panel-p.png]</value>
+        <value condition="!IntegerGreaterThan(ListItem.PlayCount,0)">$INFO[ListItem.Overlay,overlays/,/panel-w.png]</value>
     </variable>
     
     <variable name="DefaultListOverlay">
-        <value condition="Container.ListItem.IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/default-p.png]</value>
-        <value condition="!SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/default-w.png]</value>
+        <value condition="Container.ListItem.IsResumable">$INFO[ListItem.Overlay,overlays/,/default-p.png]</value>
+        <value>$INFO[ListItem.Overlay,overlays/,/default-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay">
-        <value condition="Container.ListItem.IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(ListItem.PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/extended-w.png]</value>
+        <value condition="Container.ListItem.IsResumable">$INFO[ListItem.Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(ListItem.PlayCount,0)">$INFO[ListItem.Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay0">
-        <value condition="Container.ListItem(0).IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(0).Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(Container.ListItem(0).PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(0).Overlay,overlays/,/extended-w.png]</value>
+        <value condition="Container.ListItem(0).IsResumable">$INFO[Container.ListItem(0).Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(Container.ListItem(0).PlayCount,0)">$INFO[Container.ListItem(0).Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay1">
-        <value condition="Container.ListItem(1).IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(1).Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(Container.ListItem(1).PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(1).Overlay,overlays/,/extended-w.png]</value>
+        <value condition="Container.ListItem(1).IsResumable">$INFO[Container.ListItem(1).Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(Container.ListItem(1).PlayCount,0)">$INFO[Container.ListItem(1).Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay2">
-        <value condition="Container.ListItem(2).IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(2).Overlay,overlays/,/extended-p.png]</value>
+        <value condition="Container.ListItem(2).IsResumable">$INFO[Container.ListItem(2).Overlay,overlays/,/extended-p.png]</value>
         <value condition="!IntegerGreaterThan(Container.ListItem(2).PlayCount,0) +!SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(2).Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay3">
-        <value condition="Container.ListItem(3).IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(3).Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(Container.ListItem(3).PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(3).Overlay,overlays/,/extended-w.png]</value>
+        <value condition="Container.ListItem(3).IsResumable">$INFO[Container.ListItem(3).Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(Container.ListItem(3).PlayCount,0)">$INFO[Container.ListItem(3).Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay4">
-        <value condition="Container.ListItem(4).IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(4).Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(Container.ListItem(4).PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(4).Overlay,overlays/,/extended-w.png]</value>
+        <value condition="Container.ListItem(4).IsResumable">$INFO[Container.ListItem(4).Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(Container.ListItem(4).PlayCount,0)">$INFO[Container.ListItem(4).Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ExtendedOverlay-1">
-        <value condition="Container.ListItem(-1).IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(-1).Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(Container.ListItem(-1).PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[Container.ListItem(-1).Overlay,overlays/,/extended-w.png]</value>
+        <value condition="Container.ListItem(-1).IsResumable">$INFO[Container.ListItem(-1).Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(Container.ListItem(-1).PlayCount,0)">$INFO[Container.ListItem(-1).Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="VideoInfoOverlay">
-        <value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,99) + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!IntegerGreaterThan(ListItem.PlayCount,0) + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/extended-w.png]</value>
+        <value condition="IntegerGreaterThan(ListItem.PercentPlayed,0) + !IntegerGreaterThan(ListItem.PercentPlayed,99)">$INFO[ListItem.Overlay,overlays/,/extended-p.png]</value>
+        <value condition="!IntegerGreaterThan(ListItem.PlayCount,0)">$INFO[ListItem.Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="ActorsVideoInfoOverlay">
-        <value condition="!IsEmpty(ListItem.Property(isResumable)) + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/extended-p.png]</value>
-        <value condition="!SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/extended-w.png]</value>
+        <value condition="!IsEmpty(ListItem.Property(isResumable))">$INFO[ListItem.Overlay,overlays/,/extended-p.png]</value>
+        <value>$INFO[ListItem.Overlay,overlays/,/extended-w.png]</value>
     </variable>
     
     <variable name="BannerOverlayFo">
         <value condition="ListItem.IsPlaying">views/banner/other/playing-top.png</value>
-        <value condition="ListItem.IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/banner-p-fo.png]</value>
-        <value condition="!SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/banner-w-fo.png]</value>
+        <value condition="ListItem.IsResumable">$INFO[ListItem.Overlay,overlays/,/banner-p-fo.png]</value>
+        <value>$INFO[ListItem.Overlay,overlays/,/banner-w-fo.png]</value>
     </variable>
     
     <variable name="BannerOverlayNF">
-        <value condition="Container.ListItem.IsResumable + !SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/banner-p-nf.png]</value>
-        <value condition="!SubString(ListItem.Overlay,UnWatched)">$INFO[ListItem.Overlay,overlays/,/banner-w-nf.png]</value>
+        <value condition="Container.ListItem.IsResumable">$INFO[ListItem.Overlay,overlays/,/banner-p-nf.png]</value>
+        <value>$INFO[ListItem.Overlay,overlays/,/banner-w-nf.png]</value>
     </variable>
     
     <variable name="AddonOverlay">
@@ -684,5 +684,15 @@
         <value condition="IntegerGreaterThan(Container.NumItems,0) + !IntegerGreaterThan(Container.NumItems,1)">$INFO[Container.NumItems,, $LOCALIZE[41822]]</value>
         <value condition="IntegerGreaterThan(Container.NumItems,0)">$INFO[Container.NumItems,, $LOCALIZE[41817]]</value>
     </variable>
+    
+    <!-- New and Watched Labels -->
+    <include name="overlay.visibility">
+        <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
+        <visible>[SubString(ListItem.Overlay,OverlayWatched.png)] | [SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+    </include>
+    <include name="overlay.diffuse">
+        <visible>[SubString(ListItem.Overlay,OverlayUnwatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
+		<colordiffuse>7fff00ff</colordiffuse>
+	</include>
     
 </includes>

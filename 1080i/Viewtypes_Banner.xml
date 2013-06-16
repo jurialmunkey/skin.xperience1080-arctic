@@ -178,6 +178,15 @@
                             <aspect>keepaspect</aspect>
                             <texture>$VAR[BannerOverlayNF]</texture>
                         </control>
+                        <control type="image">
+                            <posx>-19</posx>
+                            <posy>-5</posy>
+                            <width>66</width>
+                            <height>66</height>
+                            <aspect>keepaspect</aspect>
+                            <texture>$VAR[BannerOverlayNF]</texture>
+                            <include>overlay.diffuse</include>
+                        </control>
                         <control type="label">
                             <posx>0</posx>
                             <posy>33</posy>
@@ -188,7 +197,7 @@
                             <scroll>false</scroll>
                             <align>left</align>
                             <visible>stringcompare(ListItem.ActualIcon,DefaultFolderBack.png)</visible>
-                            <animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>
+                            <!--<animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>-->
                         </control>
                         <control type="label">
                             <posx>40</posx>
@@ -236,6 +245,15 @@
                             <aspect>keepaspect</aspect>
                             <texture>$VAR[BannerOverlayNF]</texture>
                         </control>
+                        <control type="image">
+                            <posx>-19</posx>
+                            <posy>-5</posy>
+                            <width>66</width>
+                            <height>66</height>
+                            <aspect>keepaspect</aspect>
+                            <texture>$VAR[BannerOverlayNF]</texture>
+                            <include>overlay.diffuse</include>
+                        </control>
                         <control type="label">
                             <posx>40</posx>
                             <posy>13</posy>
@@ -245,7 +263,7 @@
                             <textcolor>Mod_Tags</textcolor>
                             <scroll>false</scroll>
                             <align>left</align>
-                            <animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>
+                            <!--<animation effect="slide" start="0" end="-40" condition="SubString(ListItem.Overlay,UnWatched)" time="0">Conditional</animation>-->
                         </control>
                         <control type="label">
                             <posx>0</posx>
@@ -285,8 +303,7 @@
                             <posy>35</posy>
                             <width>75</width>
                             <height>75</height>
-                            <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
-                            <visible>!IsEmpty(ListItem.Overlay)</visible>
+                            <include>overlay.visibility</include>
                         </control>
                         <!-- GLOSS AND BORDER OVERLAY -->
                         <control type="image">
@@ -388,8 +405,7 @@
                             <posy>35</posy>
                             <width>75</width>
                             <height>75</height>
-                            <texture>$INFO[ListItem.Overlay,overlays/aeon/,]</texture>
-                            <visible>!IsEmpty(ListItem.Overlay)</visible>
+                            <include>overlay.visibility</include>
                         </control>
                         <!-- GLOSS AND BORDER OVERLAY -->
                         <control type="image">

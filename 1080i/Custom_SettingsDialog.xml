@@ -118,7 +118,7 @@
                     <selected>!Skin.HasSetting(disable.weather)</selected>
                     <onclick>Skin.ToggleSetting(disable.weather)</onclick>
                     <label>$LOCALIZE[8]</label>
-                    <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
+                    <visible>StringCompare(Skin.String(homescreen.style),simple)</visible>
                 </control>
                 <control type="radiobutton" id="2110">
                     <width>1210</width>

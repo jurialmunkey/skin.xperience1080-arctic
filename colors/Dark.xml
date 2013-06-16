@@ -1,5 +1,5 @@
 <colors>		
-	<color name="Mod_Tags">ffeeeeee</color>
+	<color name="Mod_Tags">eaeeeeee</color>
 	<color name="Mod_Tags_Alt">ee404040</color>
 	<color name="Mod_Tags_Light">eed0d0d0</color>
 	<color name="Mod_Tags_Dark">ffeeeeee</color>
@@ -7,7 +7,7 @@
 	<color name="Mod_Tags_Plex">cc777777</color>
 	<color name="Mod_Tags_Logo_Shadow">00ffffff</color>
 	
-	<color name="Mod_Overlay_Floor">ee252525</color>
+	<color name="Mod_Overlay_Floor">f9252525</color>
 	<color name="Mod_Overlay_Dimfanart">55000000</color>
 	<color name="Mod_Overlay_Dimfanart_Extra">22000000</color>
 	

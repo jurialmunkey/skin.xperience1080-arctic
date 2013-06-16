@@ -360,7 +360,7 @@
 				</control>
 			</control>
 			<control type="list" id="525">
-				<onup>83</onup>
+				<onup>SetFocus(83,0)</onup>
 				<ondown>85</ondown>
 				<onleft>525</onleft>
 				<onright>525</onright>
@@ -496,9 +496,35 @@
 					<include>Mod_84Content</include>
                 </content>
             </control>
-			
+            <!-- ARROWS -->
+			<control type="group">
+				<visible>Control.HasFocus(83) + IntegerGreaterThan(Container(83).NumItems,10)</visible>
+            	<posy>314</posy>
+				<animation effect="fade" start="0" end="100" time="350" delay="150" reversible="false">Visible</animation>
+				<control type="image">
+					<description>Left Arrow</description>
+					<posx>6</posx>
+					<posy>0</posy>
+					<width>28</width>
+					<height>28</height>
+					<texture background="true">dialogs/shutdown/left.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>mod-infotags-alt</colordiffuse>
+				</control>
+				<control type="image">
+					<description>Right Arrow</description>
+					<posx>38r</posx>
+					<posy>0</posy>
+					<width>28</width>
+					<height>28</height>
+					<texture background="true">dialogs/shutdown/right.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>mod-infotags-alt</colordiffuse>
+				</control>
+			</control>
 			<!-- SUBMENU ITEMS -->
 			<control type="list" id="83">
+				<animation effect="slide" end="276" condition="Container(525).HasFocus(4)">Conditional</animation>
 				<onup>82</onup>
 				<ondown>525</ondown>
 				<onleft>83</onleft>

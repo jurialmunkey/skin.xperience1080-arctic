@@ -13,7 +13,7 @@
 		<shadowcolor>22ffffff</shadowcolor>
 		<scroll>false</scroll>
 		<width>1000</width>
-		<animation effect="fade" start="100" end="20" time="0" condition="![Control.HasFocus(82) | Control.HasFocus(84) | [Control.HasFocus(83) + [Container(525).HasFocus(9) | Container(525).HasFocus(10)  | Container(525).HasFocus(4)  | Container(525).HasFocus(8)]]]">Conditional</animation>
+		<animation effect="fade" start="100" end="20" time="0" condition="![Control.HasFocus(82) | Control.HasFocus(84)]">Conditional</animation>
 	</include>
 	<include name="Mod_GreyPanelDimensions">
 		<posx>-15</posx>
@@ -106,12 +106,12 @@
 					<animation effect="fade" start="100" end="30" time="250" condition="!Control.HasFocus(525) | !Container(525).HasFocus(7)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.programs)</visible>
 				</control>
-				<control type="label">
+				<!--<control type="label">
 					<label>8</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="!Control.HasFocus(525) | !Container(525).HasFocus(8)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.weather)</visible>
-				</control>
+				</control>-->
 				<control type="image">
 					<width>30</width>
 					<height>30</height>
@@ -120,8 +120,9 @@
 				</control>
 			</control>
 			<control type="list" id="525">
-				<onup>83</onup>
-				<ondown>83</ondown>
+				<onup>Skin.SetBool(move.from525)</onup>
+				<onup>SetFocus(84,0)</onup>
+				<ondown>SetFocus(83,0)</ondown>
 				<onleft>525</onleft>
 				<onright>525</onright>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -143,6 +144,7 @@
 				<ondown>525</ondown>
 				<onleft>84</onleft>
 				<onright>84</onright>
+				<onback>525</onback>
 				<posx>35</posx>
 				<posy>704</posy>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -256,29 +258,61 @@
 					<include>Mod_84Content</include>
                 </content>
             </control>
+            
+			<control type="group">
+				<visible>Control.HasFocus(83) + IntegerGreaterThan(Container(83).NumItems,10)</visible>
+            	<posy>314</posy>
+				<animation effect="fade" start="0" end="100" time="350" delay="150" reversible="false">Visible</animation>
+				<control type="image">
+					<description>Left Arrow</description>
+					<posx>6</posx>
+					<posy>0</posy>
+					<width>28</width>
+					<height>28</height>
+					<texture background="true">dialogs/shutdown/left.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>mod-infotags-alt</colordiffuse>
+				</control>
+				<control type="image">
+					<description>Right Arrow</description>
+					<posx>38r</posx>
+					<posy>0</posy>
+					<width>28</width>
+					<height>28</height>
+					<texture background="true">dialogs/shutdown/right.png</texture>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>mod-infotags-alt</colordiffuse>
+				</control>
+			</control>
 			
 			<!-- SUBMENU ITEMS -->
 			<control type="list" id="83">
+				<include>listEndAnimation</include>
+				<animation effect="slide" end="276" condition="Container(525).HasFocus(4)">Conditional</animation>
 				<onup>525</onup>
 				<ondown>82</ondown>
+				<onback>525</onback>
 				<onleft>83</onleft>
 				<onright>83</onright>
 				<posx>35</posx>
-				<posy>704</posy>
+				<posy>230</posy>
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<width>1840</width>
 				<height>220</height>
 				<viewtype>list</viewtype>
 				<orientation>horizontal</orientation>
-				<visible allowhiddenfocus="true">![Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(82) | Control.HasFocus(84)]</visible>
-				<animation type="Focus">
+				<visible allowhiddenfocus="true">[Control.HasFocus(525) + !Container(525).HasFocus(8)] | Control.HasFocus(83) | Control.HasFocus(85)</visible>
+				<!--<animation type="Focus">
 					<effect type="slide" end="0,-474" start="0"/>
-					<effect type="fade" end="100" start="0" time="350"/>
+					<effect type="fade" end="100" start="0" time="350" delay="150" reversible="false"/>
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(85)">
+					<effect type="slide" end="0,-474" start="0"/>
 				</animation>
 				<animation type="UnFocus">
 					<effect type="slide" start="0,-474" end="0"/>
 					<effect type="fade" end="100" start="0" time="350"/>
-				</animation>
+				</animation>-->
 				<animation type="VisibleChange">
 					<effect type="fade" end="100" start="0" time="350"/>
 				</animation>
@@ -463,8 +497,9 @@
 				</control>
 			</control>
 			
-			<control type="group">	
-				<animation effect="slide" start="0" end="0,220" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(83)">Conditional</animation>
+			<control type="group">
+				<animation effect="slide" start="0" end="0,220" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(83) | [Control.HasFocus(525) + !Container(525).HasFocus(8)]">Conditional</animation>
+				<include>listEndAnimation</include>
 				<!-- GREY PANEL -->
 				<control type="image">
 					<include>Mod_GreyPanelDimensions</include>
@@ -483,46 +518,25 @@
 				<control type="label">
 					<posx>48</posx>
 					<posy>260</posy>
-					<label>$LOCALIZE[20386]</label>
+					<label>$INFO[Skin.String(movie.widget.type)]</label>
 					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(1) + !Control.HasFocus(84) + !Control.HasFocus(83)</visible>
-				</control>
-				<control type="label">
-					<posx>48</posx>
-					<posy>260</posy>
-					<label>$LOCALIZE[20342]: $INFO[Container(83).ListItem.Label]</label>
-					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(1) + Control.HasFocus(83)</visible>
+					<visible>Container(525).HasFocus(1) + !Control.HasFocus(84)</visible>
 				</control>
 				<!-- recent episodes -->
 				<control type="label">
 					<posx>48</posx>
 					<posy>260</posy>
-					<label>$LOCALIZE[20387]</label>
+					<label>$INFO[Skin.String(tvshow.widget.type)]</label>
 					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(2) + !Control.HasFocus(84) + !Control.HasFocus(83)</visible>
-				</control>
-				<control type="label">
-					<posx>48</posx>
-					<posy>260</posy>
-					<label>$LOCALIZE[20343]: $INFO[Container(83).ListItem.Label]</label>
-					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(2) + Control.HasFocus(83)</visible>
+					<visible>Container(525).HasFocus(2) + !Control.HasFocus(84)</visible>
 				</control>
 				<!-- most played albums -->
 				<control type="label">
 					<posx>48</posx>
 					<posy>260</posy>
-					<label>$LOCALIZE[41555]</label>
+					<label>$INFO[Skin.String(music.widget.type)]</label>
 					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(3) + !Control.HasFocus(84) + !Control.HasFocus(83)</visible>
-				</control>
-				<control type="label">
-					<posx>48</posx>
-					<posy>260</posy>
-					<label>$LOCALIZE[2]: $INFO[Container(83).ListItem.Label]</label>
-					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(3) + Control.HasFocus(83)</visible>
+					<visible>Container(525).HasFocus(3) + !Control.HasFocus(84)</visible>
 				</control>
 				<!-- live tv -->
 				<control type="label">
@@ -530,14 +544,7 @@
 					<posy>260</posy>
 					<label>$LOCALIZE[41220]</label>
 					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(4) + !Control.HasFocus(84)  + !Control.HasFocus(83)</visible>
-				</control>
-				<control type="label">
-					<posx>48</posx>
-					<posy>260</posy>
-					<label>$LOCALIZE[41220]: $INFO[Container(83).ListItem.Label]</label>
-					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(4) + Control.HasFocus(83)</visible>
+					<visible>Container(525).HasFocus(4) + !Control.HasFocus(84)</visible>
 				</control>
 				<!-- programs -->
 				<control type="label">
@@ -561,20 +568,13 @@
 					<posy>260</posy>
 					<label>$LOCALIZE[138]</label>
 					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(9) + ![Control.HasFocus(84) | Control.HasFocus(83)]</visible>
-				</control>
-				<control type="label">
-					<posx>48</posx>
-					<posy>260</posy>
-					<label>$LOCALIZE[5]: $INFO[Container(83).ListItem.Label]</label>
-					<include>Mod_RecentLabel</include>
-					<visible>Container(525).HasFocus(9) + Control.HasFocus(83)</visible>
+					<visible>Container(525).HasFocus(9) + !Control.HasFocus(84)</visible>
 				</control>
 				<!-- power button settings -->
 				<control type="label">
 					<posx>48</posx>
 					<posy>260</posy>
-					<label>$LOCALIZE[41507]: $INFO[Container(84).ListItem.Label]</label>
+					<label>$INFO[Container(84).ListItem.Label]</label>
 					<include>Mod_RecentLabel</include>
 					<visible>Control.HasFocus(84)</visible>
 				</control>
@@ -583,7 +583,7 @@
 				<control type="group">
 					<posx>48</posx>
 					<posy>330</posy>
-					<visible>Control.HasFocus(84) | Container(525).HasFocus(9) | Container(525).HasFocus(10) | Container(525).HasFocus(7)</visible>
+					<visible>![Container(84).HasFocus(0) + Control.HasFocus(84)] + [Container(525).HasFocus(9) | Container(525).HasFocus(10) | Container(525).HasFocus(7) | [!Container(84).HasFocus(0) + Control.HasFocus(84)]]</visible>
 					<animation effect="fade" start="0" end="100" time="250">Visible</animation>
 					<control type="group">
 						<visible>Container(525).HasFocus(7) + !IsEmpty(Skin.String(pictures.slideshowpath)) + !Control.HasFocus(84)</visible>
@@ -782,7 +782,7 @@
 				<control type="group">
 					<posx>35</posx>
 					<posy>325</posy>
-					<visible>Container(525).HasFocus(8) + !Control.HasFocus(84)</visible>
+					<visible>Control.HasFocus(84) + Container(84).HasFocus(0)</visible>
 					<animation effect="fade" start="0" end="100" time="250">Visible</animation>
 					<control type="group">
 						<posy>132</posy>
@@ -1257,10 +1257,11 @@
 				
 				<!-- RECENT ITEMS -->
 				<control type="list" id="82">
-					<onup>525</onup>
-					<ondown>84</ondown>
+					<onup>83</onup>
+					<ondown>AlarmClock(bounce.down.alarm,noop,00:01,silent)</ondown>
 					<onleft>82</onleft>
 					<onright>82</onright>
+					<onback>525</onback>
 					<posx>35</posx>
 					<posy>320</posy>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -1414,6 +1415,16 @@
 					</content>
 				</control>
 			</control>
+		</control>
+		<control type="button" id="85">
+			<width>1</width>
+			<height>1</height>
+			<visible allowhiddenfocus="true">false</visible>
+			<onclick>SetFocus(84)</onclick>
+			<onup>525</onup>
+			<ondown>525</ondown>
+			<onleft>525</onleft>
+			<onright>525</onright>
 		</control>
 	</include>
 </includes>

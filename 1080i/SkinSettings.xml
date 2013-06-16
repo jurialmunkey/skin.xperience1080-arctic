@@ -416,7 +416,66 @@
                         <onclick>ActivateWindow(3003)</onclick>
                         <label>$LOCALIZE[41140]</label>
                         <visible>StringCompare(Skin.String(homescreen.style),metro)</visible>
-                    </control>
+                    </control>                    
+                    <!-- MOVIES WIDGET -->
+                    <control type="button" id="2011">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[575])">Skin.SetString(movie.widget.type,$LOCALIZE[41552])</onclick>
+						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[41550])">Skin.SetString(movie.widget.type,$LOCALIZE[575])</onclick>
+						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[41552])">Skin.SetString(movie.widget.type,$LOCALIZE[41550])</onclick>
+						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[575])">Skin.SetString(movie.widget.type,$LOCALIZE[41552])</onclick>
+                        <label>$LOCALIZE[20342] $LOCALIZE[41162]</label>
+						<label2>$INFO[Skin.String(movie.widget.type)]</label2>
+						<visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
+					</control>
+					<!-- TV SHOWS WIDGET -->
+                    <control type="button" id="2012">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41553])</onclick>
+						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41551])</onclick>
+						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41550])</onclick>
+						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41553])</onclick>
+                        <label>$LOCALIZE[20343] $LOCALIZE[41162]</label>
+						<label2>$INFO[Skin.String(tvshow.widget.type)]</label2>
+						<visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
+					</control>
+					<!-- Music WIDGET -->
+                    <control type="button" id="2013">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41555])">Skin.SetString(music.widget.type,$LOCALIZE[41554])</onclick>
+						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41550])">Skin.SetString(music.widget.type,$LOCALIZE[41555])</onclick>
+						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41554])">Skin.SetString(music.widget.type,$LOCALIZE[41550])</onclick>
+						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41555])">Skin.SetString(music.widget.type,$LOCALIZE[41554])</onclick>												
+                        <label>$LOCALIZE[2] $LOCALIZE[41162]</label>
+						<label2>$INFO[Skin.String(music.widget.type)]</label2>
+						<visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
+					</control>
+					
+					
                     <control type="radiobutton" id="2004">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -796,6 +855,13 @@
                         <onclick>Skin.ToggleSetting(disable.dimfanart)</onclick>
                         <label>Show more background</label>
                     </control>
+                    <control type="radiobutton" id="3014">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(hide.infotags)</selected>
+                        <onclick>Skin.ToggleSetting(hide.infotags)</onclick>
+                        <label>Show info tags</label>
+                    </control>
                     <control type="radiobutton" id="3002">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -810,13 +876,14 @@
                         <onclick>Skin.ToggleSetting(PlayTrailer.Minimized)</onclick>
                         <label>$LOCALIZE[41203]</label>
                     </control>
-                    <control type="button" id="3004">
+                    <!--<control type="button" id="3004">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41192]</label>
                         <label2 fallback="US">$VAR[MovieMPAALangLabel]</label2>
                         <onclick>ActivateWindow(3006)</onclick>
-                    </control>
+                    </control>-->
+                    
                     <control type="radiobutton" id="3005">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
