@@ -2649,28 +2649,82 @@
 			<visible>!Skin.HasSetting(disable.favourites)</visible>
 		</item>
 	</include>
+	
+	<!-- Tile Color Includes -->
+	<include name="metro.pvr.tile">
+		<property name="pvrtile">1</property>
+	</include>
+	<include name="metro.home.tile">
+		<property name="hometile">1</property>
+	</include>
+	<include name="metro.movie.tile">
+		<property name="movietile">1</property>
+	</include>
+	<include name="metro.tv.tile">
+		<property name="tvtile">1</property>
+	</include>
+	<include name="metro.music.tile">
+		<property name="musictile">1</property>
+	</include>
+	<include name="metro.app.tile">
+		<property name="apptile">1</property>
+	</include>
+	<include name="metro.weather.tile">
+		<property name="weathertile">1</property>
+	</include>
+	
+	<!-- Weather Specific Includes -->
+	<include name="metro.weather.tile.light">
+		<colordiffuse>mod-infotags-alt</colordiffuse>
+	</include>
+	<include name="metro.weather.tile.dark">
+		<colordiffuse>mod-infotags</colordiffuse>
+	</include>
+	<include name="metro.weather.tile.darker">
+		<colordiffuse>mod-infotags-d</colordiffuse>
+	</include>
+	<include name="metro.weather.text.light">
+		<textcolor>mod-infotags-alt</textcolor>
+	</include>
+	<include name="metro.weather.text.dark">
+		<textcolor>mod-infotags</textcolor>
+	</include>
+	<include name="metro.weather.text.darker">
+		<textcolor>mod-infotags-d</textcolor>
+	</include>
+	<include name="metro.weather.tile.color">
+		<colordiffuse>$INFO[Skin.String(weathercolor.name)]</colordiffuse>
+	</include>
+	<include name="metro.weather.tile.modosd">
+		<colordiffuse>mod-osd</colordiffuse>
+	</include>
+	<include name="metro.weather.tile.ffaaaaaa">
+		<colordiffuse>ffaaaaaa</colordiffuse>
+	</include>
+	
 	<include name="Mod_MetroTile283_Square">
 		<!-- LIGHT TILES -->
-		<control type="image">
-			<posx>9</posx>
-			<posy>9</posy>
-			<width>313</width>
-			<height>313</height>
-			<texture border="35">views/newgloss/whitepanel-15.png</texture>
-			<colordiffuse>mod-osd</colordiffuse>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
-		</control>
-		<control type="image">
-			<posx>24</posx>
-			<posy>24</posy>
-			<width>283</width>
-			<height>283</height>
-			<texture border="35">views/newgloss/whitepanel.png</texture>
-			<colordiffuse>mod-infotags-alt</colordiffuse>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+		<control type="group">
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
+			<control type="image">
+				<posx>9</posx>
+				<posy>9</posy>
+				<width>313</width>
+				<height>313</height>
+				<texture border="35">views/newgloss/whitepanel-15.png</texture>
+				<colordiffuse>mod-osd</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>283</width>
+				<height>283</height>
+				<texture border="35">views/newgloss/whitepanel.png</texture>
+				<colordiffuse>mod-infotags-alt</colordiffuse>
+			</control>
 		</control>
 		
-		<!-- DARK TILES -->
+		<!-- COLOR TILES -->
 		<control type="image">
 			<posx>9</posx>
 			<posy>9</posy>
@@ -2678,7 +2732,7 @@
 			<height>313</height>
 			<texture border="35">views/newgloss/whitepanel-15.png</texture>
 			<colordiffuse>ffaaaaaa</colordiffuse>
-			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))]</visible>
+			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
 		<control type="image">
 			<posx>24</posx>
@@ -2707,6 +2761,42 @@
 			<colordiffuse>$INFO[Skin.String(musiccolor.name)]</colordiffuse>
 			<visible>!IsEmpty(ListItem.Property(musictile))</visible>
 		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(pvrcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(pvrtile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(homecolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(hometile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(weathercolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(weathertile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(apptile))</visible>
+		</control>
 	</include>
 	<include name="Mod_MetroTile382_Wide">
 		<control type="image">
@@ -2716,6 +2806,7 @@
 			<height>313</height>
 			<texture border="35">views/newgloss/whitepanel-15.png</texture>
 			<colordiffuse>mod-osd</colordiffuse>
+			<visible>IsEmpty(ListItem.Property(apptile))</visible>
 		</control>
 		<control type="image">
 			<posx>24</posx>
@@ -2724,6 +2815,25 @@
 			<height>283</height>
 			<texture border="35">views/newgloss/whitepanel.png</texture>
 			<colordiffuse>mod-infotags-alt</colordiffuse>
+			<visible>IsEmpty(ListItem.Property(apptile))</visible>
+		</control>
+		<control type="image">
+			<posx>9</posx>
+			<posy>9</posy>
+			<width>412</width>
+			<height>313</height>
+			<texture border="35">views/newgloss/whitepanel-15.png</texture>
+			<colordiffuse>ffaaaaaa</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(apptile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>382</width>
+			<height>283</height>
+			<texture border="35">views/newgloss/whitepanel.png</texture>
+			<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(apptile))</visible>
 		</control>
 	</include>
 	<include name="Mod_MetroTile283_Item">
@@ -2746,7 +2856,7 @@
 			<textcolor>mod-infotags-alt</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
-			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))]</visible>
+			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
 		<control type="image">
 			<posx>24</posx>
@@ -2755,7 +2865,7 @@
 			<height>283</height>
 			<texture>$INFO[ListItem.Icon]</texture>
 			<colordiffuse>mod-infotags-d</colordiffuse>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 		<control type="label">
 			<posx>45</posx>
@@ -2767,30 +2877,56 @@
 			<textcolor>mod-infotags</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 	</include>
 	<include name="Mod_MetroTile382_Item">
 		<include>Mod_MetroTile382_Wide</include>
-		<control type="image">
-			<posx>24</posx>
-			<posy>24</posy>
-			<width>382</width>
-			<height>283</height>
-			<texture>$INFO[ListItem.Icon]</texture>
-			<colordiffuse>mod-infotags-d</colordiffuse>
-			<aspectratio align="center">keep</aspectratio>
+		<control type="group">
+			<visible>IsEmpty(ListItem.Property(apptile))</visible>
+			<control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>382</width>
+				<height>283</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<colordiffuse>mod-infotags-d</colordiffuse>
+				<aspectratio align="center">keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>45</posx>
+				<posy>241</posy>
+				<width>342</width>
+				<height>66</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font-Alaska-S29-BL</font>
+				<textcolor>mod-infotags</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
 		</control>
-		<control type="label">
-			<posx>45</posx>
-			<posy>241</posy>
-			<width>342</width>
-			<height>66</height>
-			<label>$INFO[ListItem.Label]</label>
-			<font>Font-Alaska-S29-BL</font>
-			<textcolor>mod-infotags</textcolor>
-			<align>left</align>
-			<aligny>center</aligny>
+		<control type="group">
+			<visible>!IsEmpty(ListItem.Property(apptile))</visible>
+			<control type="image">
+				<posx>24</posx>
+				<posy>24</posy>
+				<width>382</width>
+				<height>283</height>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<colordiffuse>mod-infotags-alt</colordiffuse>
+				<aspectratio align="center">keep</aspectratio>
+			</control>
+			<control type="label">
+				<posx>45</posx>
+				<posy>241</posy>
+				<width>342</width>
+				<height>66</height>
+				<label>$INFO[ListItem.Label]</label>
+				<font>Font-Alaska-S29-BL</font>
+				<textcolor>mod-infotags-alt</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+			</control>
 		</control>
 	</include>
 	<include name="Mod_MetroTile283_Focused">
@@ -2807,7 +2943,7 @@
 			<animation type="Unfocus">
 				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
 			</animation>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 		<control type="image">
 			<posx>24</posx>
@@ -2853,6 +2989,66 @@
 			</animation>
 			<colordiffuse>$INFO[Skin.String(musiccolor.name)]</colordiffuse>
 			<visible>!IsEmpty(ListItem.Property(musictile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(pvrcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(pvrtile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(homecolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(hometile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(weathercolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(weathertile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>283</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(apptile))</visible>
 		</control>
 		<control type="image">
 			<posx>24</posx>
@@ -2901,7 +3097,22 @@
 			<animation type="Unfocus">
 				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
 			</animation>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile))</visible>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
+		</control>
+		<control type="image">
+			<posx>24</posx>
+			<posy>24</posy>
+			<width>382</width>
+			<height>283</height>
+			<texture border="5">views/newgloss/whitepanel.png</texture>
+			<animation type="Focus">
+				<effect type="fade" start="0" end="100" time="200" tween="sine" easing="in" />
+			</animation>
+			<animation type="Unfocus">
+				<effect type="fade" start="100" end="0" time="200" tween="sine" easing="out" />
+			</animation>
+			<colordiffuse>$INFO[Skin.String(appcolor.name)]</colordiffuse>
+			<visible>!IsEmpty(ListItem.Property(apptile))</visible>
 		</control>
 		<control type="image">
 			<posx>14</posx>

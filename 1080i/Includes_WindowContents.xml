@@ -31,7 +31,7 @@
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
             <colordiffuse>Mod_Overlay_Floor</colordiffuse>
-            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + [StringCompare(Skin.String(homescreen.style),simple) | StringCompare(Skin.String(homescreen.style),panel)]]]</visible>
+            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]]</visible>
         </control>
         
         <!-- DIM FANART -->

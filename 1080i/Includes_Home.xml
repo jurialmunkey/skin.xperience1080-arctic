@@ -862,6 +862,7 @@
                                 <onclick>SetFocus(32)</onclick>
                                 <onclick>SetFocus(11)</onclick>
                                 <property name="colored">1</property>
+                                <include condition="!SubString(Skin.String(pvrcolor.name),White)">metro.pvr.tile</include>
                             </item>
                             <item id="2">
                                 <label>$LOCALIZE[19024]</label>
@@ -870,6 +871,7 @@
                                 <onclick>SetFocus(33)</onclick>
                                 <onclick>SetFocus(12)</onclick>
                                 <property name="colored">1</property>
+                                <include condition="!SubString(Skin.String(pvrcolor.name),White)">metro.pvr.tile</include>
                             </item>
                             <item id="3">
                                 <label>$LOCALIZE[19069]</label>
@@ -878,6 +880,7 @@
                                 <onclick>SetFocus(31)</onclick>
                                 <onclick>SetFocus(10)</onclick>
                                 <property name="colored">1</property>
+                                <include condition="!SubString(Skin.String(pvrcolor.name),White)">metro.pvr.tile</include>
                             </item>
                             <item id="4">
                                 <label>$LOCALIZE[19163]</label>
@@ -886,6 +889,7 @@
                                 <onclick>SetFocus(34)</onclick>
                                 <onclick>SetFocus(13)</onclick>
                                 <property name="colored">1</property>
+                                <include condition="!SubString(Skin.String(pvrcolor.name),White)">metro.pvr.tile</include>
                             </item>
                             <item id="5">
                                 <label>$LOCALIZE[19040]</label>
@@ -894,6 +898,7 @@
                                 <onclick>SetFocus(35)</onclick>
                                 <onclick>SetFocus(14)</onclick>
                                 <property name="colored">1</property>
+                                <include condition="!SubString(Skin.String(pvrcolor.name),White)">metro.pvr.tile</include>
                             </item>
                             <item id="6">
                                 <label>$LOCALIZE[137]</label>
@@ -902,6 +907,7 @@
                                 <onclick>SetFocus(36)</onclick>
                                 <onclick>SetFocus(17)</onclick>
                                 <property name="colored">1</property>
+                                <include condition="!SubString(Skin.String(pvrcolor.name),White)">metro.pvr.tile</include>
                             </item>
                         </content>
                     </control>
@@ -1392,12 +1398,14 @@
                                 <icon>windows/home/icons/video.png</icon>
                                 <onclick condition="!Library.HasContent(movies)">ActivateWindow(videos,files,return)</onclick>
                                 <onclick condition="Library.HasContent(movies)">ActivateWindow(videos,RecentlyAddedMovies,return)</onclick>
+                                <include condition="!SubString(Skin.String(homecolor.name),White)">metro.home.tile</include>
                             </item>
                             <item id="2">
                                 <label>$LOCALIZE[41451]</label>
                                 <icon>windows/home/icons/tvshows.png</icon>
                                 <onclick condition="!Library.HasContent(tvshows)">ActivateWindow(videos,files,return)</onclick>
                                 <onclick condition="Library.HasContent(tvshows)">ActivateWindow(videos,RecentlyAddedEpisodes,return)</onclick>
+                                <include condition="!SubString(Skin.String(homecolor.name),White)">metro.home.tile</include>
                             </item>
                         </content>
                     </control>
@@ -1711,14 +1719,14 @@
                                 <label>$LOCALIZE[342]</label>
                                 <label2>$INFO[Window.Property(Movies.Count)]</label2>
                                 <icon>windows/home/icons/video.png</icon>
-                                <property name="movietile">1</property>
+                                <include condition="!SubString(Skin.String(moviecolor.name),White)">metro.movie.tile</include>
                                 <onclick condition="!Library.HasContent(movies)">ActivateWindow(videos,files,return)</onclick>
                                 <onclick condition="Library.HasContent(movies)">ActivateWindow(videos,movietitles,return)</onclick>
                             </item>
                             <item id="2">
                                 <label>$LOCALIZE[1037]</label>
                                 <icon>windows/home/icons/videoaddons.png</icon>
-                                <property name="movietile">1</property>
+                                <include condition="!SubString(Skin.String(moviecolor.name),White)">metro.movie.tile</include>
                                 <onclick>ActivateWindow(videos,addons,return)</onclick>
                             </item>
                         </content>
@@ -1780,7 +1788,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeVideoTile1.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeVideoTile1.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeVideoTile1.Animate)]</property>
-                                <property name="movietile">1</property>
+                                <include condition="!SubString(Skin.String(moviecolor.name),White)">metro.movie.tile</include>
                             </item>
                             <item id="2">
                                 <label>$INFO[Skin.String(HomeVideoTile2.Label)]</label>
@@ -1800,7 +1808,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeVideoTile2.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeVideoTile2.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeVideoTile2.Animate)]</property>
-                                <property name="movietile">1</property>
+                                <include condition="!SubString(Skin.String(moviecolor.name),White)">metro.movie.tile</include>
                             </item>
                             <item id="3">
                                 <label>$INFO[Skin.String(HomeVideoTile3.Label)]</label>
@@ -1820,7 +1828,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeVideoTile3.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeVideoTile3.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeVideoTile3.Animate)]</property>
-                                <property name="movietile">1</property>
+                                <include condition="!SubString(Skin.String(moviecolor.name),White)">metro.movie.tile</include>
                             </item>
                             <item id="4">
                                 <label>$INFO[Skin.String(HomeVideoTile4.Label)]</label>
@@ -1840,7 +1848,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeVideoTile4.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeVideoTile4.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeVideoTile4.Animate)]</property>
-                                <property name="movietile">1</property>
+                                <include condition="!SubString(Skin.String(moviecolor.name),White)">metro.movie.tile</include>
                             </item>
                         </content>
                     </control>
@@ -2150,14 +2158,14 @@
                                 <icon>windows/home/icons/tvshows.png</icon>
                                 <onclick condition="!Library.HasContent(tvshows)">ActivateWindow(videos,files,return)</onclick>
                                 <onclick condition="Library.HasContent(tvshows)">ActivateWindow(videos,tvshowtitles,return)</onclick>
-                                <property name="tvtile">1</property>
+                                <include condition="!SubString(Skin.String(tvcolor.name),White)">metro.tv.tile</include>
                             </item>
                             <item id="1">
                                 <label>$LOCALIZE[1037]</label>
                                 <icon>windows/home/icons/videoaddons.png</icon>
                                 <onclick>ActivateWindow(videos,addons,return)</onclick>
                                 <visible>!System.HasAddon(script.tv.show.next.aired)</visible>
-                                <property name="tvtile">1</property>
+                                <include condition="!SubString(Skin.String(tvcolor.name),White)">metro.tv.tile</include>
                             </item>
                             <item id="1">
                                 <label>$LOCALIZE[42160]</label>
@@ -2165,7 +2173,7 @@
                                 <icon>windows/home/icons/tvguide.png</icon>
                                 <onclick>RunAddon(script.tv.show.next.aired)</onclick>
                                 <visible>System.HasAddon(script.tv.show.next.aired)</visible>
-                                <property name="tvtile">1</property>
+                                <include condition="!SubString(Skin.String(tvcolor.name),White)">metro.tv.tile</include>
                             </item>
                         </content>
                     </control>
@@ -2223,7 +2231,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeTVShowTile1.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeTVShowTile1.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeTVShowTile1.Animate)]</property>
-                                <property name="tvtile">1</property>
+                                <include condition="!SubString(Skin.String(tvcolor.name),White)">metro.tv.tile</include>
                             </item>
                             <item id="2">
                                 <label>$INFO[Skin.String(HomeTVShowTile2.Label)]</label>
@@ -2242,7 +2250,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeTVShowTile2.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeTVShowTile2.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeTVShowTile2.Animate)]</property>
-                                <property name="tvtile">1</property>
+                                <include condition="!SubString(Skin.String(tvcolor.name),White)">metro.tv.tile</include>
                             </item>
                         </content>
                     </control>
@@ -2545,14 +2553,14 @@
                                 <onclick condition="!Library.HasContent(music)">ActivateWindow(musicfiles)</onclick>
                                 <onclick condition="Library.HasContent(music) + IsEmpty(Skin.String(music.path))">ActivateWindow(musiclibrary)</onclick>
                                 <onclick condition="Library.HasContent(music) + !IsEmpty(Skin.String(music.path))">ActivateWindow(musiclibrary,$INFO[Skin.String(music.path)],return)</onclick>
-                                <property name="musictile">1</property>
+                                <include condition="!SubString(Skin.String(musiccolor.name),White)">metro.music.tile</include>
                             </item>
                             <item id="1">
                                 <label>$LOCALIZE[1038]</label>
                                 <icon>windows/home/icons/addons.png</icon>
                                 <onclick condition="!Library.HasContent(music)">ActivateWindow(musicfiles,addons,return)</onclick>
                                 <onclick condition="Library.HasContent(music)">ActivateWindow(musiclibrary,addons,return)</onclick>
-                                <property name="musictile">1</property>
+                                <include condition="!SubString(Skin.String(musiccolor.name),White)">metro.music.tile</include>
                             </item>
                         </content>
                     </control>
@@ -2608,7 +2616,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeMusicTile1.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeMusicTile1.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeMusicTile1.Animate)]</property>
-                                <property name="musictile">1</property>
+                                <include condition="!SubString(Skin.String(musiccolor.name),White)">metro.music.tile</include>
                             </item>
                             <item id="2">
                                 <label>$INFO[Skin.String(HomeMusicTile2.Label)]</label>
@@ -2627,7 +2635,7 @@
                                 <property name="showlabel">$INFO[Skin.String(HomeMusicTile2.ShowLabel)]</property>
                                 <property name="path">$INFO[Skin.String(HomeMusicTile2.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeMusicTile2.Animate)]</property>
-                                <property name="musictile">1</property>
+                                <include condition="!SubString(Skin.String(musiccolor.name),White)">metro.music.tile</include>
                             </item>
                         </content>
                     </control>
@@ -2787,6 +2795,7 @@
                                 <label>$LOCALIZE[41504]</label>
                                 <icon>windows/home/icons/appearance.png</icon>
                                 <onclick>ActivateWindow(programs)</onclick>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="2">
                                 <label>$LOCALIZE[15016]</label>
@@ -2795,6 +2804,7 @@
                                 <onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
                                 <onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
                                 <property name="wide">1</property>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="3">
                                 <label>$INFO[Skin.String(HomeProgramTile1.Label)]</label>
@@ -2814,6 +2824,7 @@
                                 <property name="path">$INFO[Skin.String(HomeProgramTile1.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeProgramTile1.Animate)]</property>
                                 <property name="custom">1</property>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="4">
                                 <label>$INFO[Skin.String(HomeProgramTile2.Label)]</label>
@@ -2833,17 +2844,20 @@
                                 <property name="path">$INFO[Skin.String(HomeProgramTile2.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeProgramTile2.Animate)]</property>
                                 <property name="custom">1</property>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="5">
                                 <label>$LOCALIZE[1043]</label>
                                 <icon>windows/home/icons/addons.png</icon>
                                 <onclick>ActivateWindow(programs,addons,return)</onclick>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="6">
                                 <label>$LOCALIZE[1]</label>
                                 <icon>windows/home/icons/pictures.png</icon>
                                 <onclick>ActivateWindow(pictures)</onclick>
                                 <property name="wide">1</property>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="7">
                                 <label>$INFO[Skin.String(HomeProgramTile3.Label)]</label>
@@ -2863,6 +2877,7 @@
                                 <property name="path">$INFO[Skin.String(HomeProgramTile3.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeProgramTile3.Animate)]</property>
                                 <property name="custom">1</property>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                             <item id="8">
                                 <label>$INFO[Skin.String(HomeProgramTile4.Label)]</label>
@@ -2882,6 +2897,7 @@
                                 <property name="path">$INFO[Skin.String(HomeProgramTile4.Path)]</property>
                                 <property name="animate">$INFO[Skin.String(HomeProgramTile4.Animate)]</property>
                                 <property name="custom">1</property>
+                                <include condition="!SubString(Skin.String(appcolor.name),White)">metro.app.tile</include>
                             </item>
                         </content>
                     </control>
@@ -2973,7 +2989,7 @@
                             <width>572</width>
                             <height>572</height>
                             <texture border="7">views/newgloss/tile-283.png</texture>
-                            <colordiffuse>$VAR[WeatherAddonTileColorVar]</colordiffuse>
+                            <include>metro.weather.tile.darker</include>
                             <visible>![Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir)) + Weather.IsFetched]</visible>
                         </control>
                         <control type="image">
@@ -3326,7 +3342,8 @@
                                 <width>412</width>
                                 <height>217</height>
                                 <texture border="35">views/newgloss/whitepanel-15.png</texture>
-                                <colordiffuse>mod-osd</colordiffuse>
+								<include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.modosd</include>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.ffaaaaaa</include>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -3334,7 +3351,8 @@
                                 <width>382</width>
                                 <height>187</height>
                                 <texture border="7">views/newgloss/whitepanel.png</texture>
-                                <colordiffuse>mod-infotags-alt</colordiffuse>
+                                <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.color</include>
                             </control>
                             <control type="group">
                                 <visible>Weather.IsFetched</visible>
@@ -3347,7 +3365,8 @@
                                     <width>138</width>
                                     <texture>$INFO[Window(Weather).Property(Day1.FanartCode),weather/medium/,.png]</texture>
                                     <aspectratio align="center">keep</aspectratio>
-                                    <colordiffuse>mod-infotags-d</colordiffuse>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.darker</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                 </control>
                                 <control type="label">
                                     <posx>178</posx>
@@ -3357,7 +3376,8 @@
                                     <font>Font-Alaska-S32-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <textcolor>mod-infotags</textcolor>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     <label>$INFO[Window(Weather).Property(Day1.Title)]</label>
                                     <scroll>false</scroll>
                                 </control>
@@ -3371,7 +3391,8 @@
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day1.Outlook)]</label>
                                     <scroll>false</scroll>
-                                    <textcolor>mod-infotags</textcolor>
+									<include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                 </control>
                                 <control type="grouplist">
                                     <posx>178</posx>
@@ -3387,7 +3408,8 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-high-small.png</texture>
-                                        <colordiffuse>mod-infotags</colordiffuse>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                     </control>
                                     <control type="label">
                                         <description>high temp</description>
@@ -3399,7 +3421,8 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day1.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>mod-infotags</textcolor>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     </control>
                                     <control type="image">
                                         <posx>15</posx>
@@ -3407,7 +3430,8 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-low-small.png</texture>
-                                        <colordiffuse>mod-infotags</colordiffuse>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                     </control>
                                     <control type="label">
                                         <description>low temp</description>
@@ -3419,7 +3443,8 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day1.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>mod-infotags</textcolor>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     </control>
                                 </control>
                             </control>
@@ -3432,8 +3457,9 @@
                                 <posy>-15</posy>
                                 <width>412</width>
                                 <height>217</height>
-                                <texture border="7">views/newgloss/whitepanel-15.png</texture>
-                                <colordiffuse>mod-osd</colordiffuse>
+                                <texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.modosd</include>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.ffaaaaaa</include>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -3441,8 +3467,9 @@
                                 <width>382</width>
                                 <height>187</height>
                                 <texture border="7">views/newgloss/whitepanel.png</texture>
-                                <colordiffuse>mod-infotags-alt</colordiffuse>
-                            </control>                            
+                                <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.color</include>
+                            </control>                          
                             <control type="group">
                                 <visible>Weather.IsFetched</visible>
                                 <include>visiblehidefadeinfo</include>
@@ -3454,7 +3481,8 @@
                                     <width>138</width>
                                     <texture>$INFO[Window(Weather).Property(Day2.FanartCode),weather/medium/,.png]</texture>
                                     <aspectratio align="center">keep</aspectratio>
-                                    <colordiffuse>mod-infotags-d</colordiffuse>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.darker</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                 </control>
                                 <control type="label">
                                     <posx>178</posx>
@@ -3464,7 +3492,8 @@
                                     <font>Font-Alaska-S32-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <textcolor>mod-infotags</textcolor>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     <label>$INFO[Window(Weather).Property(Day2.Title)]</label>
                                     <scroll>false</scroll>
                                 </control>
@@ -3478,7 +3507,8 @@
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day2.Outlook)]</label>
                                     <scroll>false</scroll>
-                                    <textcolor>mod-infotags</textcolor>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                 </control>
                                 <control type="grouplist">
                                     <posx>178</posx>
@@ -3494,7 +3524,8 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-high-small.png</texture>
-                                        <colordiffuse>mod-infotags</colordiffuse>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                     </control>
                                     <control type="label">
                                         <description>high temp</description>
@@ -3506,7 +3537,8 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day2.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>mod-infotags</textcolor>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     </control>
                                     <control type="image">
                                         <posx>15</posx>
@@ -3514,7 +3546,8 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-low-small.png</texture>
-                                        <colordiffuse>mod-infotags</colordiffuse>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                     </control>
                                     <control type="label">
                                         <description>low temp</description>
@@ -3526,7 +3559,8 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day2.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>mod-infotags</textcolor>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     </control>
                                 </control>
                             </control>
@@ -3540,7 +3574,8 @@
                                 <width>412</width>
                                 <height>217</height>
                                 <texture border="35">views/newgloss/whitepanel-15.png</texture>
-                                <colordiffuse>mod-osd</colordiffuse>
+								<include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.modosd</include>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.ffaaaaaa</include>
                             </control>
                             <control type="image">
                                 <posx>0</posx>
@@ -3548,7 +3583,8 @@
                                 <width>382</width>
                                 <height>187</height>
                                 <texture border="7">views/newgloss/whitepanel.png</texture>
-                                <colordiffuse>mod-infotags-alt</colordiffuse>
+                                <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.color</include>
                             </control>
                             <control type="group">
                                 <visible>Weather.IsFetched</visible>
@@ -3561,7 +3597,8 @@
                                     <width>138</width>
                                     <texture>$INFO[Window(Weather).Property(Day3.FanartCode),weather/medium/,.png]</texture>
                                     <aspectratio align="center">keep</aspectratio>
-                                    <colordiffuse>mod-infotags-d</colordiffuse>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.darker</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                 </control>
                                 <control type="label">
                                     <posx>178</posx>
@@ -3571,7 +3608,8 @@
                                     <font>Font-Alaska-S32-BL</font>
                                     <align>left</align>
                                     <aligny>center</aligny>
-                                    <textcolor>mod-infotags</textcolor>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     <label>$INFO[Window(Weather).Property(Day3.Title)]</label>
                                     <scroll>false</scroll>
                                 </control>
@@ -3585,7 +3623,8 @@
                                     <aligny>center</aligny>
                                     <label>$INFO[Window(Weather).Property(Day3.Outlook)]</label>
                                     <scroll>false</scroll>
-                                    <textcolor>mod-infotags</textcolor>
+                                    <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+									<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                 </control>
                                 <control type="grouplist">
                                     <posx>178</posx>
@@ -3601,7 +3640,8 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-high-small.png</texture>
-                                        <colordiffuse>mod-infotags</colordiffuse>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                     </control>
                                     <control type="label">
                                         <description>high temp</description>
@@ -3613,7 +3653,8 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day3.HighTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>mod-infotags</textcolor>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     </control>
                                     <control type="image">
                                         <posx>15</posx>
@@ -3621,7 +3662,8 @@
                                         <width>12</width>
                                         <height>24</height>
                                         <texture>weather/temp-low-small.png</texture>
-                                        <colordiffuse>mod-infotags</colordiffuse>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile.light</include>
                                     </control>
                                     <control type="label">
                                         <description>low temp</description>
@@ -3633,7 +3675,8 @@
                                         <align>left</align>
                                         <aligny>center</aligny>
                                         <label>$INFO[Window(Weather).Property(Day3.LowTemp)]$INFO[System.TemperatureUnits]</label>
-                                        <textcolor>mod-infotags</textcolor>
+                                        <include condition="SubString(Skin.String(weathercolor.name),White)">metro.weather.text.dark</include>
+										<include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.text.light</include>
                                     </control>
                                 </control>
                             </control>
@@ -3685,11 +3728,13 @@
                                 <icon>windows/home/icons/weather.png</icon>
                                 <onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
                                 <onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile</include>
                             </item>
                             <item id="1">
                                 <label>$LOCALIZE[5]</label>
                                 <icon>windows/home/icons/settings.png</icon>
                                 <onclick>ActivateWindow(weathersettings)</onclick>
+                                <include condition="!SubString(Skin.String(weathercolor.name),White)">metro.weather.tile</include>
                             </item>
                         </content>
                     </control>

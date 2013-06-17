@@ -509,6 +509,11 @@
             <filename>alaska_black.ttf</filename>
             <size>34</size>
         </font>
+        <font>
+            <name>Font-ModRecent</name>
+            <filename>alaska_black.ttf</filename>
+            <size>52</size>
+        </font>
         
         
         <!-- METRO FONTS -->
