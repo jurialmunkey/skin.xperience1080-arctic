@@ -298,7 +298,7 @@
 				<height>38</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<itemgap>50</itemgap>
+				<itemgap>5</itemgap>
 				<control type="image">
 					<width>30</width>
 					<height>30</height>
@@ -306,17 +306,57 @@
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(10)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.favourites)</visible>
 				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.movies)</visible>
+				</control>
+				<control type="image">
+					<width>19</width>
+					<height>28</height>
+					<texture>windows/home/submenu-arrow.png</texture>
+					<include>visiblehidefadeinfo</include>
+					<colordiffuse>white</colordiffuse>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Container(525).HasFocus(1) | Control.HasFocus(84) | Control.HasFocus(85)">Conditional</animation>
+					<visible>!Skin.HasSetting(disable.movies)</visible>
+				</control>
 				<control type="label">
 					<label>20342</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(1)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.movies)</visible>
 				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.tvshows)</visible>
+				</control>
+				<control type="image">
+					<width>19</width>
+					<height>28</height>
+					<texture>windows/home/submenu-arrow.png</texture>
+					<include>visiblehidefadeinfo</include>
+					<colordiffuse>white</colordiffuse>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Container(525).HasFocus(2) | Control.HasFocus(84) | Control.HasFocus(85)">Conditional</animation>
+					<visible>!Skin.HasSetting(disable.tvshows)</visible>
+				</control>
+
 				<control type="label">
 					<label>20343</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(2)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.tvshows)</visible>
+				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.music)</visible>
+				</control>
+				<control type="image">
+					<width>19</width>
+					<height>28</height>
+					<texture>windows/home/submenu-arrow.png</texture>
+					<include>visiblehidefadeinfo</include>
+					<colordiffuse>white</colordiffuse>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Container(525).HasFocus(3) | Control.HasFocus(84) | Control.HasFocus(85)">Conditional</animation>
+					<visible>!Skin.HasSetting(disable.music)</visible>
 				</control>
 				<control type="label">
 					<label>2</label>
@@ -324,11 +364,28 @@
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(3)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.music)</visible>
 				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.pvr)</visible>
+				</control>
+				<control type="image">
+					<width>19</width>
+					<height>28</height>
+					<texture>windows/home/submenu-arrow.png</texture>
+					<include>visiblehidefadeinfo</include>
+					<colordiffuse>white</colordiffuse>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Container(525).HasFocus(4) | Control.HasFocus(83)  | Control.HasFocus(84) | Control.HasFocus(85)">Conditional</animation>
+					<visible>!Skin.HasSetting(disable.pvr)</visible>
+				</control>
 				<control type="label">
 					<label>41220</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(4)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
+				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.pictures)</visible>
 				</control>
 				<control type="label">
 					<label>1</label>
@@ -336,11 +393,28 @@
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(5)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.pictures)</visible>
 				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.games)</visible>
+				</control>
 				<control type="label">
 					<label>15016</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(6)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.games)</visible>
+				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.programs)</visible>
+				</control>
+				<control type="image">
+					<width>19</width>
+					<height>28</height>
+					<texture>windows/home/submenu-arrow.png</texture>
+					<include>visiblehidefadeinfo</include>
+					<colordiffuse>white</colordiffuse>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Container(525).HasFocus(7) | Control.HasFocus(83)  | Control.HasFocus(84) | Control.HasFocus(85)">Conditional</animation>
+					<visible>!Skin.HasSetting(disable.programs)</visible>
 				</control>
 				<control type="label">
 					<label>0</label>
@@ -348,11 +422,27 @@
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(7)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.programs)</visible>
 				</control>
+				<control type="image">
+					<width>30</width>
+					<visible>!Skin.HasSetting(disable.weather)</visible>
+				</control>
+				<control type="image">
+					<width>19</width>
+					<height>28</height>
+					<texture>windows/home/submenu-arrow.png</texture>
+					<include>visiblehidefadeinfo</include>
+					<colordiffuse>white</colordiffuse>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Container(525).HasFocus(8) | Control.HasFocus(83)  | Control.HasFocus(84) | Control.HasFocus(85)">Conditional</animation>
+					<visible>!Skin.HasSetting(disable.weather)</visible>
+				</control>
 				<control type="label">
 					<label>8</label>
 					<include>Mod_HomeLabel</include>
 					<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(8)">Conditional</animation>
 					<visible>!Skin.HasSetting(disable.weather)</visible>
+				</control>
+				<control type="image">
+					<width>30</width>
 				</control>
 				<control type="image">
 					<width>30</width>
@@ -582,7 +672,20 @@
 								<width>353</width>
 								<height>169</height>
 								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<colordiffuse>mod-infotags-alt</colordiffuse>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="multiimage">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>353</width>
+								<height>169</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<timeperimage>10000</timeperimage>
+								<randomize>true</randomize>
+								<fadetime>600</fadetime>
+								<loop>yes</loop>
+								<imagepath>$INFO[ListItem.Property(WeatherArt)]</imagepath>
+								<colordiffuse>ff555555</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>0</posx>
@@ -590,7 +693,7 @@
 								<width>169</width>
 								<height>169</height>
 								<texture fallback="windows/home/icons/addtile.png">$INFO[ListItem.Property(poster)]</texture>
-								<colordiffuse>mod-infotags-d</colordiffuse>
+								<colordiffuse>mod-infotags-alt</colordiffuse>
 							</control>
 							<control type="label">
 								<posx>87</posx>
@@ -598,7 +701,7 @@
 								<label>$INFO[ListItem.Label]</label>
 								<align>center</align>
 								<font>Font-Alaska-S25-L</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>mod-infotags-alt</textcolor>
 								<width>149</width>
 								<scroll>false</scroll>
 							</control>
@@ -616,7 +719,7 @@
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(Outlook)]</label>
 								<scroll>false</scroll>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>mod-infotags-alt</textcolor>
 								<shadowcolor>mod-shadow</shadowcolor>
 							</control>
 							<control type="group">
@@ -628,7 +731,7 @@
 									<width>12</width>
 									<height>24</height>
 									<texture>weather/temp-high-small.png</texture>
-									<colordiffuse>mod-infotags</colordiffuse>
+									<colordiffuse>mod-infotags-alt</colordiffuse>
 								</control>
 								<control type="label">
 									<description>high temp</description>
@@ -640,8 +743,7 @@
 									<align>left</align>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Property(High)]</label>
-									<textcolor>mod-infotags</textcolor>
-									<shadowcolor>mod-shadow</shadowcolor>
+									<textcolor>mod-infotags-alt</textcolor>
 								</control>
 								<control type="image">
 									<posx>85</posx>
@@ -649,7 +751,7 @@
 									<width>12</width>
 									<height>24</height>
 									<texture>weather/temp-low-small.png</texture>
-									<colordiffuse>mod-infotags</colordiffuse>
+									<colordiffuse>mod-infotags-alt</colordiffuse>
 								</control>
 								<control type="label">
 									<description>low temp</description>
@@ -661,8 +763,7 @@
 									<align>left</align>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Property(Low)]</label>
-									<textcolor>mod-infotags</textcolor>
-									<shadowcolor>mod-shadow</shadowcolor>
+									<textcolor>mod-infotags-alt</textcolor>
 								</control>
 							</control>
 						</control>
@@ -736,7 +837,21 @@
 								<width>353</width>
 								<height>169</height>
 								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<colordiffuse>mod-infotags-alt</colordiffuse>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="multiimage">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>353</width>
+								<height>169</height>
+								<texture>$INFO[ListItem.Property(WeatherArt)]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<timeperimage>10000</timeperimage>
+								<randomize>true</randomize>
+								<fadetime>600</fadetime>
+								<loop>yes</loop>
+								<imagepath>$INFO[ListItem.Property(WeatherArt)]</imagepath>
+								<colordiffuse>ff555555</colordiffuse>
 							</control>
 							<control type="image">
 								<posx>0</posx>
@@ -744,7 +859,7 @@
 								<width>169</width>
 								<height>169</height>
 								<texture fallback="windows/home/icons/addtile.png">$INFO[ListItem.Property(poster)]</texture>
-								<colordiffuse>mod-infotags-d</colordiffuse>
+								<colordiffuse>mod-infotags-alt</colordiffuse>
 							</control>
 							<control type="label">
 								<posx>87</posx>
@@ -752,7 +867,7 @@
 								<label>$INFO[ListItem.Label]</label>
 								<align>center</align>
 								<font>Font-Alaska-S25-L</font>
-								<textcolor>mod-infotags</textcolor>
+								<textcolor>mod-infotags-alt</textcolor>
 								<width>149</width>
 								<scroll>false</scroll>
 							</control>
@@ -770,8 +885,7 @@
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Property(Outlook)]</label>
 								<scroll>false</scroll>
-								<textcolor>mod-infotags</textcolor>
-								<shadowcolor>mod-shadow</shadowcolor>
+								<textcolor>mod-infotags-alt</textcolor>
 							</control>
 							<control type="group">
 								<posx>178</posx>
@@ -782,7 +896,7 @@
 									<width>12</width>
 									<height>24</height>
 									<texture>weather/temp-high-small.png</texture>
-									<colordiffuse>mod-infotags</colordiffuse>
+									<colordiffuse>mod-infotags-alt</colordiffuse>
 								</control>
 								<control type="label">
 									<description>high temp</description>
@@ -794,8 +908,7 @@
 									<align>left</align>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Property(High)]</label>
-									<textcolor>mod-infotags</textcolor>
-									<shadowcolor>mod-shadow</shadowcolor>
+									<textcolor>mod-infotags-alt</textcolor>
 								</control>
 								<control type="image">
 									<posx>85</posx>
@@ -803,7 +916,7 @@
 									<width>12</width>
 									<height>24</height>
 									<texture>weather/temp-low-small.png</texture>
-									<colordiffuse>mod-infotags</colordiffuse>
+									<colordiffuse>mod-infotags-alt</colordiffuse>
 								</control>
 								<control type="label">
 									<description>low temp</description>
@@ -815,8 +928,7 @@
 									<align>left</align>
 									<aligny>center</aligny>
 									<label>$INFO[ListItem.Property(Low)]</label>
-									<textcolor>mod-infotags</textcolor>
-									<shadowcolor>mod-shadow</shadowcolor>
+									<textcolor>mod-infotags-alt</textcolor>
 								</control>
 							</control>
 						</control>
@@ -830,6 +942,7 @@
 						<property name="Outlook">$INFO[Window(Weather).Property(Day0.Outlook)]</property>
 						<property name="High">$INFO[Window(Weather).Property(Day0.HighTemp)]$INFO[System.TemperatureUnits]</property>
 						<property name="Low">$INFO[Window(Weather).Property(Day0.LowTemp)]$INFO[System.TemperatureUnits]</property>
+						<property name="WeatherArt">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day0.FanartCode)]</property>
 						<label>$LOCALIZE[33006]</label>
 						<onclick>SetFocus(525)</onclick>
 						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
@@ -847,6 +960,8 @@
 						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
 						<visible>Container(525).HasFocus(8)</visible>
+						<property name="WeatherArt">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day1.FanartCode)]</property>
+
 					</item>
 					<item id="2">
 						<description>Tomorrow Weather</description>
@@ -859,6 +974,7 @@
 						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
 						<visible>Container(525).HasFocus(8)</visible>
+						<property name="WeatherArt">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day2.FanartCode)]</property>
 					</item>
 					<item id="3">
 						<description>Tomorrow Weather</description>
@@ -871,6 +987,7 @@
 						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
 						<visible>Container(525).HasFocus(8)</visible>
+						<property name="WeatherArt">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day3.FanartCode)]</property>
 					</item>
 					<item id="4">
 						<description>Tomorrow Weather</description>
@@ -883,6 +1000,7 @@
 						<onclick condition="!IsEmpty(Weather.Plugin)">ActivateWindow(weather)</onclick>
 						<onclick condition="IsEmpty(Weather.Plugin)">ActivateWindow(weathersettings)</onclick>
 						<visible>Container(525).HasFocus(8)</visible>
+						<property name="WeatherArt">$INFO[Skin.String(WeatherFanartDir)]$INFO[Window(Weather).Property(Day4.FanartCode)]</property>
 					</item>
 				</content>
 			</control>
