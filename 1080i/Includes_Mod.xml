@@ -2858,6 +2858,18 @@
 			<aligny>center</aligny>
 			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
+		<control type="label">
+			<posx>288</posx>
+			<posy>241</posy>
+			<width>243</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label2]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags-alt</textcolor>
+			<align>right</align>
+			<aligny>center</aligny>
+			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
+		</control>
 		<control type="image">
 			<posx>24</posx>
 			<posy>24</posy>
@@ -2876,6 +2888,18 @@
 			<font>Font-Alaska-S29-BL</font>
 			<textcolor>mod-infotags</textcolor>
 			<align>left</align>
+			<aligny>center</aligny>
+			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
+		</control>
+		<control type="label">
+			<posx>288</posx>
+			<posy>241</posy>
+			<width>243</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label2]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags</textcolor>
+			<align>right</align>
 			<aligny>center</aligny>
 			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
@@ -3067,6 +3091,17 @@
 			<font>Font-Alaska-S29-BL</font>
 			<textcolor>mod-infotags-alt</textcolor>
 			<align>left</align>
+			<aligny>center</aligny>
+		</control>
+		<control type="label">
+			<posx>288</posx>
+			<posy>241</posy>
+			<width>243</width>
+			<height>66</height>
+			<label>$INFO[ListItem.Label2]</label>
+			<font>Font-Alaska-S29-BL</font>
+			<textcolor>mod-infotags-alt</textcolor>
+			<align>right</align>
 			<aligny>center</aligny>
 		</control>
 		<control type="image">
