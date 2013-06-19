@@ -31,7 +31,7 @@
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
             <colordiffuse>Mod_Overlay_Floor</colordiffuse>
-            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]]</visible>
+            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + !StringCompare(Skin.String(homescreen.style),metro)]]</visible>
         </control>
         
         <!-- DIM FANART -->
@@ -378,6 +378,20 @@
         <scroll>false</scroll>      
     </include>
     
+    <include name="PVRMenuButtonVars">
+        <posx>0</posx>
+        <width>458</width>
+        <height>107</height>
+        <font>Font-Alaska-S34-BL</font>
+        <textoffsetx>110</textoffsetx>
+        <textwidth>318</textwidth>
+        <textcolor>mod-infotags-l</textcolor>
+        <focusedcolor>mod-infotags-alt</focusedcolor>
+        <align>left</align>
+        <animation effect="fade" start="64.435" end="100" time="300" tween="sine" easing="inout" reversible="false">Focus</animation>
+        <animation effect="slide" start="0" end="0,15" time="0" condition="true">Conditional</animation>
+    </include>
+        
     <include name="AddonDescHeight_1">
         <height>330</height>
     </include>

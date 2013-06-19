@@ -25,12 +25,12 @@
                 <animation effect="slide" start="0,0" end="0,-275" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)">Conditional</animation>
                 <animation effect="slide" start="0,0" end="0,-70" time="300" tween="cubic" easing="inout" condition="Window.IsActive(videoosd) + [Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding]">Conditional</animation>
                 <control type="image">
-                    <posx>0</posx>
+                    <posx>5</posx>
                     <posy>982</posy>
-                    <width>1920</width>
-                    <height>455</height>
-                    <texture border="35">views/newgloss/border-glass.png</texture>
-                    <colordiffuse>77ffffff</colordiffuse>
+                    <width>1910</width>
+                    <height>435</height>
+                    <texture border="35">views/newgloss/whitepanel-15.png</texture>
+                    <colordiffuse>mod-infotags-d</colordiffuse>
                     <visible>![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]</visible>
                 </control>
                 <control type="image">
@@ -41,6 +41,7 @@
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
                     <colordiffuse>99ffffff</colordiffuse>
 					<animation effect="slide" start="0,0" end="0,85" time="300" tween="cubic" easing="inout" condition="![[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]">Conditional</animation>
+					<visible>[[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]</visible>
                 </control>
                 <control type="image">
                     <posx>5</posx>
@@ -49,6 +50,8 @@
                     <height>325</height>
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
                     <colordiffuse>dd000000</colordiffuse>
+					<visible>[[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]</visible>
+
                 </control>
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,213" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)">Conditional</animation>

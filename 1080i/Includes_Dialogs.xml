@@ -2904,7 +2904,8 @@
     </include>
     
     <include name="DialogSelectArt">
-        <control type="group">                
+        <control type="group">   
+        	<posy>-32</posy>             
             <animation type="WindowOpen">
                 <effect type="fade" start="50" end="100" time="400" tween="sine" easing="inout" />
                 <effect type="slide" start="-1781" end="0" time="400" tween="sine" easing="inout" />
@@ -2921,7 +2922,7 @@
             <control type="label">
                 <description>Heading</description>
                 <posx>88</posx>
-                <posy>144</posy>
+                <posy>152</posy>
                 <height>60</height>
                 <label>$INFO[Control.GetLabel(1),,: ]$INFO[Container(6).ListItem.Label,[COLOR=mod-infotags-l],[/COLOR]]</label>
                 <include>DialogHeaderMod</include>
@@ -2936,7 +2937,7 @@
             
             <control type="label">
                 <posx>1118</posx>
-                <posy>144</posy>
+                <posy>152</posy>
                 <width>200</width>
                 <height>60</height>
                 <label>Cover →</label>

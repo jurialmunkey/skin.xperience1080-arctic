@@ -474,7 +474,7 @@
 						<height>52</height>
                         <label>$LOCALIZE[20457]</label>
                         <font>Font-Alaska-S25-BL</font>
-                        <textcolor>Mod_Tags_Alt</textcolor>
+                        <textcolor>Mod_Tags</textcolor>
                         <scroll>false</scroll>
                         <align>center</align>
                         <wrapmultiline>false</wrapmultiline>
