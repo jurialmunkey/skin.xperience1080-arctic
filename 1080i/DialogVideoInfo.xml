@@ -449,28 +449,17 @@
 							</control>
 							<control type="image">
 								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>848</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>828</width>
+								<height>464</height>
+								<texture border="25">views/newgloss/frame.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
 							</control> 
 						</control>
 						<control type="group">
 							<visible>Player.HasVideo</visible>
 							<include>visiblehidefadeinfo</include>
-							<control type="image">
-								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>848</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
-							</control> 
 							<control type="image">
 								<description>black</description>
 								<posx>5</posx>
@@ -515,13 +504,12 @@
 							</control>
 							<control type="image">
 								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>329</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>309</width>
+								<height>464</height>
+								<texture border="25">views/newgloss/frame.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
 							</control> 
 						</control>
 						<!-- Plot -->

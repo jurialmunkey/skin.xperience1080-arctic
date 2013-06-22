@@ -106,7 +106,6 @@
 					<height>478</height>
 					<texture border="35">views/newgloss/darkpanel-15.png</texture>
 					<aspectratio>stretch</aspectratio>
-					<colordiffuse>mod-osd</colordiffuse>
 				</control>
 				<control type="image">
 					<description>Bottom</description>
@@ -116,7 +115,6 @@
 					<height>255</height>
 					<texture border="35">views/newgloss/whitepanel-15-b.png</texture>
 					<aspectratio>stretch</aspectratio>
-					<colordiffuse>mod-osd</colordiffuse>
 				</control>
 			
 				<!-- RIGHT PANEL INFO -->
@@ -404,25 +402,16 @@
 								<aspectratio scalediffuse="false">scale</aspectratio>
 								<fadetime>200</fadetime>
 							</control>
-							<control type="image">
-								<posx>733</posx>
-								<posy>5</posy>
-								<width>100</width>
-								<height>100</height>
-								<aspect>keepaspect</aspect>
-								<include>overlay.visibility</include>
-								<visible>!IsEmpty(ListItem.Overlay)</visible>
-							</control> 
+							
 							<control type="image">
 								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>848</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>828</width>
+								<height>464</height>
+								<texture border="5">views/newgloss/frame.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
-							</control> 
+							</control>
 						</control>
 						<!-- Poster -->
 						<control type="group">
@@ -438,14 +427,13 @@
 							</control>
 							<control type="image">
 								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>484</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>464</width>
+								<height>464</height>
+								<texture border="5">views/newgloss/frame.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
-							</control> 
+							</control>
 						</control>
 						<!-- Plot -->
 						<control type="group">
@@ -456,7 +444,7 @@
 								<width>790</width>
 								<label>41325</label>
 								<font>Font-Alaska-S32-BL</font>
-								<textcolor>Mod_Tags</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<scroll>false</scroll>
 								<align>left</align>
 								<visible>Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description)) | Container.Content(artist) + !IsEmpty(ListItem.Property(Artist_Description))</visible>
@@ -468,7 +456,7 @@
 								<height>147</height>
 								<label>42132</label>
 								<font>Font-Alaska-S25-NC</font>
-								<textcolor>Mod_Tags</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<scroll>false</scroll>
 								<align>center</align>
 								<visible>![Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description)) | Container.Content(artist) + !IsEmpty(ListItem.Property(Artist_Description))]</visible>
