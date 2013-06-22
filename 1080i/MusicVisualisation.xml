@@ -178,8 +178,8 @@
                             </control>
                         </control>
 						<control type="group">
-							<posx>-145</posx>
-							<posy>800</posy>
+							<posx>-150</posx>
+							<posy>810</posy>
 							<!-- CD ART -->
 							<control type="image">
 								<posx>40</posx>
@@ -200,14 +200,14 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<fadetime>250</fadetime>
 							</control>
-							<control type="image">
+							<!--<control type="image">
 								<posx>30</posx>
 								<posy>-27</posy>
 								<width>444</width>
 								<height>444</height>
 								<texture diffuse="views/newgloss/cover-444.png">views/newgloss/gloss.png</texture>
 								<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
-							</control>
+							</control>-->
 							<control type="image">
 								<posx>20</posx>
 								<posy>-37</posy>

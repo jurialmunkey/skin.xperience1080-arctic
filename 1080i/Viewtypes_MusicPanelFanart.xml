@@ -10,7 +10,7 @@
             <include>OptionsShutdownAnimation</include>
             <include>listEndAnimation</include>
             <posx>62</posx>
-			<posy>180</posy>
+			<posy>173</posy>
 			<control type="image">
 				<description>Glass</description>
 				<posx>-15</posx>
@@ -283,7 +283,7 @@
 			<!--Scrollbar-->
             <control type="group">
 				<posx>865</posx>
-				<posy>170r</posy>
+				<posy>182r</posy>
                 <control type="image">
                     <description>Scrollbar background (visible on focus)</description>
                     <width>900</width>

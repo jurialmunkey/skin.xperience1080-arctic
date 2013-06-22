@@ -504,6 +504,9 @@
             <filename>alaska_black.ttf</filename>
             <size>100</size>
         </font>
+        
+        
+        <!-- MOD FONTS -->
         <font>
             <name>Font-ModHome</name>
             <filename>alaska_black.ttf</filename>
@@ -513,10 +516,7 @@
             <name>Font-ModRecent</name>
             <filename>alaska_black.ttf</filename>
             <size>52</size>
-        </font>
-        
-        
-        <!-- METRO FONTS -->
+        </font>        
         <font>
             <name>Font-Metro-Tile-S</name>
             <filename>alaska_black.ttf</filename>
@@ -537,5 +537,35 @@
             <filename>alaska_black.ttf</filename>
             <size>42</size>
         </font>
+        <font>
+        	<name>Font-OSD-Clock</name>
+        	<filename>BebasNeue.ttf</filename>
+            <size>34</size>
+            <style>bold</style>
+        </font>
+        <font>
+        	<name>Font-OSD-Volume</name>
+        	<filename>BebasNeue.ttf</filename>
+            <size>42</size>
+        </font>
+        <font>
+        	<name>Font-OSD-Clock-Large</name>
+        	<filename>BebasNeue.ttf</filename>
+            <size>72</size>
+            <style>bold</style>
+        </font>
+        <font>
+        	<name>Font-Simple-Clock-Large</name>
+        	<filename>BebasNeue.ttf</filename>
+            <size>112</size>
+            <style>bold</style>
+        </font>
+        <font>
+        	<name>Font-Simple-Clock</name>
+        	<filename>BebasNeue.ttf</filename>
+            <size>54</size>
+            <style>bold</style>
+        </font>
+        
     </fontset>
 </fonts>

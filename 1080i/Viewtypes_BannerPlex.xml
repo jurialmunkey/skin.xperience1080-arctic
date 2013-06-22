@@ -4,6 +4,7 @@
 <!-- ================ -->
     <include name="Viewtype-BannerPlex">
         <control type="group">
+        	<animation effect="slide" start="0" end="0,-20" time="0" condition="!Skin.HasSetting(hide.lowerpanel)">Conditional</animation>
             <control type="group">
                 <visible>Control.IsVisible(53) + !Window.IsActive(movieinformation)</visible>
                 <include>CommonViewAnimations</include>

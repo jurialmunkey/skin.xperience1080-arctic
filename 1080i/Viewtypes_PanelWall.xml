@@ -8,7 +8,7 @@
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
             <posx>36</posx>
-			<posy>170</posy>
+			<posy>180</posy>
 			<control type="image">
 				<description>Glass</description>
 				<posx>-15</posx>

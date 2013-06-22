@@ -265,7 +265,7 @@
                             </control>
                         </control>
                         <control type="group">
-                            <posy>820</posy>
+                            <posy>832</posy>
                             <visible>VideoPlayer.Content(Movies)</visible>
                             <control type="image">
                                 <posx>29</posx>

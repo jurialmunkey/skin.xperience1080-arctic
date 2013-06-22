@@ -102,7 +102,7 @@
                 <itemlayout width="310" condition="[[IntegerGreaterThan(Container(506).NumItems,1) + !IntegerGreaterThan(Container(506).NumItems,2)] | [IntegerGreaterThan(Container(506).NumItems,3) + !IntegerGreaterThan(Container(506).NumItems,4)]]">
                     <control type="group">
                         <animation effect="Conditional" condition="true">
-                            <effect type="zoom" end="75" time="0" center="155,700" />
+                            <effect type="zoom" end="75" time="0" center="-45,702" />
                         </animation>
                         <posx>-200</posx>
                         <posy>300</posy>
@@ -175,8 +175,8 @@
                 <focusedlayout width="310" condition="![[IntegerGreaterThan(Container(506).NumItems,1) + !IntegerGreaterThan(Container(506).NumItems,2)] | [IntegerGreaterThan(Container(506).NumItems,3) + !IntegerGreaterThan(Container(506).NumItems,4)]]">
                     <control type="group">
 						<posy>300</posy>
-                        <animation condition="Container(506).OnNext | Container(506).OnPrevious" effect="zoom" start="75" end="100" time="350" tween="sine" easing="out" center="155,700">Focus</animation>
-                        <animation condition="Container(506).OnNext | Container(506).OnPrevious" effect="zoom" start="100" end="75" time="250" tween="sine" easing="out" center="155,700">UnFocus</animation>
+                        <animation condition="Container(506).OnNext | Container(506).OnPrevious" effect="zoom" start="75" end="100" time="350" tween="sine" easing="out" center="155,702">Focus</animation>
+                        <animation condition="Container(506).OnNext | Container(506).OnPrevious" effect="zoom" start="100" end="75" time="250" tween="sine" easing="out" center="155,702">UnFocus</animation>
                         <control type="image">
                             <description>Shadow Back</description>
                             <posx>-42</posx>
@@ -268,12 +268,12 @@
                     <control type="group">
                     	<posy>300</posy>
                         <animation type="Focus" condition="Container(506).OnNext | Container(506).OnPrevious">
-                            <effect type="zoom" start="75" end="100" time="350" tween="sine" easing="out" center="0,702" />
+                            <effect type="zoom" start="75" end="100" time="350" tween="sine" easing="out" center="-45,702" />
                         </animation>
                         <animation type="Unfocus" condition="Container(506).OnNext | Container(506).OnPrevious">
-                            <effect type="zoom" start="100" end="75" time="250" tween="sine" easing="out" center="0,702" />
+                            <effect type="zoom" start="100" end="75" time="250" tween="sine" easing="out" center="-45,702" />
                         </animation>
-                        <posx>-150</posx>
+                        <posx>-200</posx>
                         <control type="image">
                             <description>Shadow Back</description>
                             <posx>-42</posx>

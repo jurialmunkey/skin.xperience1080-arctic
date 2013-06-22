@@ -39,7 +39,7 @@
                 <control type="label">
                     <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                     <posx>60</posx>
-                    <posy>70</posy>
+                    <posy>50</posy>
                     <width>1490</width>
                     <height>100</height>
                     <label>$VAR[VideoInfoTitleLabel]</label>
@@ -47,14 +47,14 @@
                     <textcolor>Mod_Tags</textcolor>
                     <align>left</align>
                     <scroll>false</scroll>
-                    <visible>!Container.Content(episodes) + IsEmpty(Window(3004).Property(ChooseArt))</visible>
+                    <visible>!Container.Content(episodes)</visible>
                 </control>
     
                 <!-- Title Label -->            
                 <control type="label">
                     <animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in">WindowOpen</animation>
                     <posx>60</posx>
-                    <posy>70</posy>
+                    <posy>50</posy>
                     <width>1490</width>
                     <height>100</height>
                     <label>$INFO[ListItem.TVShowTitle]</label>
@@ -96,7 +96,6 @@
 						<height>379</height>
 						<texture border="35">views/newgloss/darkpanel-15.png</texture>
 						<aspectratio>stretch</aspectratio>
-						<colordiffuse>mod-osd</colordiffuse>
 					</control>
 					<control type="image">
 						<posx>1799</posx>
@@ -115,7 +114,6 @@
 						<height>338</height>
 						<texture border="35">views/newgloss/whitepanel-15-b.png</texture>
 						<aspectratio>stretch</aspectratio>
-						<colordiffuse>mod-osd</colordiffuse>
 					</control>
 				
 					<!-- RIGHT PANEL INFO -->
@@ -435,6 +433,7 @@
 					<!-- LEFT FANART AND PLOT SECTION -->
 					<control type="group">
 						<!-- Fanart -->
+						
 						<control type="group">
 							<visible>!Player.HasVideo</visible>
 							<include>visiblehidefadeinfo</include>
@@ -506,6 +505,15 @@
 								<fadetime>200</fadetime>
 							</control>
 							<control type="image">
+								<description>Poster</description>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>309</width>
+								<height>464</height>
+								<texture background="true" diffuse="views/newgloss/poster-309-464.png">views/newgloss/gloss.png</texture>
+								<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
+							</control>
+							<control type="image">
 								<description>Border</description>
 								<posx>-5</posx>
 								<posy>-5</posy>
@@ -525,7 +533,7 @@
 								<width>790</width>
 								<label>203</label>
 								<font>Font-Alaska-S32-BL</font>
-								<textcolor>Mod_Tags</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<scroll>false</scroll>
 								<align>left</align>
 							</control>
@@ -536,10 +544,9 @@
 								<height>147</height>
 								<label>$INFO[ListItem.Plot]</label>
 								<font>Font-Alaska-S25-NC</font>
-								<textcolor>Mod_Tags</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<align>justify</align>
 								<autoscroll delay="13000" time="3000" repeat="13000" />
-								<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
 							</control>
 						</control>
 					</control>  

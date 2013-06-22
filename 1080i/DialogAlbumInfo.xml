@@ -97,199 +97,22 @@
                 <animation effect="slide" start="0" end="1339" time="400" tween="sine" easing="inout" condition="!IsEmpty(Window(3004).Property(ChooseArt)) + [StringCompare(Window(3004).Property(ChooseArt),fanart) | StringCompare(Window(3004).Property(ChooseArt),landscape)] + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]">Conditional</animation>
                 <animation effect="slide" start="0" end="1801" time="400" tween="sine" easing="inout" condition="!IsEmpty(Window(3004).Property(ChooseArt)) + StringCompare(Window(3004).Property(ChooseArt),banner) + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]">Conditional</animation>
 
-				<!-- Rating -->
-				<control type="image">
-					<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="150" easing="in">WindowOpen</animation>
-					<posx>1495</posx>
-					<posy>42</posy>
-					<width>350</width>
-					<height>120</height>
-					<texture>$INFO[ListItem.StarRating,dialogs/music-info/,]</texture>
-					<visible>Container.Content(albums)</visible>
-					<animation type="Conditional" condition="Player.HasMedia | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog)">
-						<effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
-						<effect type="zoom" start="100" end="50" center="1670,99" tween="sine" easing="inout" time="300" />
-					</animation>
-					<colordiffuse>Mod_Tags_Dark</colordiffuse>
-				</control>
-		
-				<!-- BACKGROUND Fanart etc -->
-				<control type="group">
-					<posx>55</posx>
-					<posy>170</posy>
-					<control type="image">
-						<description>Grey</description>
-						<posx>-20</posx>
-						<posy>-20</posy>
-						<width>1352</width>
-						<height>753</height>
-						<texture border="35">views/newgloss/whitepanel-15.png</texture>
-						<aspectratio>stretch</aspectratio>
-					</control>
-					<!-- LEFT FANART AND PLOT SECTION -->
-					<control type="group">
-						<!-- Fanart -->
-						<control type="group">
-							<posx>474</posx>
-							<visible>!Player.HasVideo</visible>
-							<include>visiblehidefadeinfo</include>
-							<control type="image">
-								<description>Landscape</description>
-								<posx>5</posx>
-								<posy>5</posy>
-								<width>828</width>
-								<height>464</height>
-								<texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[VideoInfoArt]</texture>
-								<aspectratio scalediffuse="false">scale</aspectratio>
-								<fadetime>200</fadetime>
-							</control>
-							<control type="image">
-								<posx>733</posx>
-								<posy>5</posy>
-								<width>100</width>
-								<height>100</height>
-								<aspect>keepaspect</aspect>
-								<include>overlay.visibility</include>
-								<visible>!IsEmpty(ListItem.Overlay)</visible>
-							</control> 
-							<control type="image">
-								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>848</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
-							</control> 
-						</control>
-						<control type="group">
-							<posx>474</posx>
-							<visible>Player.HasVideo</visible>
-							<include>visiblehidefadeinfo</include>
-							<control type="image">
-								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>848</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
-							</control> 
-							<control type="image">
-								<description>black</description>
-								<posx>5</posx>
-								<posy>5</posy>
-								<width>828</width>
-								<height>464</height>
-								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<colordiffuse>ff000000</colordiffuse>
-							</control>
-							<control type="videowindow">
-								<description>video</description>
-								<posx>5</posx>
-								<posy>10</posy>
-								<width>828</width>
-								<height>454</height>
-								<aspectratio>stretch</aspectratio>
-								<include>visiblehidefadeinfo</include>
-								<visible>Window.IsActive(movieinformation)</visible>
-							</control>
-						</control>
-						<!-- Poster -->
-						<control type="group">
-							<control type="image">
-								<description>Poster</description>
-								<posx>5</posx>
-								<posy>5</posy>
-								<width>464</width>
-								<height>464</height>
-								<texture background="true" diffuse="views/newgloss/poster-309-464.png">$VAR[AlbumInfoThumb]</texture>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-								<fadetime>200</fadetime>
-							</control>
-							<control type="image">
-								<description>Border</description>
-								<posx>-5</posx>
-								<posy>-5</posy>
-								<width>484</width>
-								<height>484</height>
-								<texture border="25">views/newgloss/border.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<colordiffuse>Mod_Border</colordiffuse>
-							</control> 
-						</control>
-						<!-- Plot -->
-						<control type="group">
-							<posy>472</posy>
-							<control type="label">
-								<posx>24</posx>
-								<posy>30</posy>
-								<width>790</width>
-								<label>41325</label>
-								<font>Font-Alaska-S32-BL</font>
-								<textcolor>Mod_Tags</textcolor>
-								<scroll>false</scroll>
-								<align>left</align>
-								<visible>Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description)) | Container.Content(artist) + !IsEmpty(ListItem.Property(Artist_Description))</visible>
-							</control>
-							<control type="label">
-								<posx>24</posx>
-								<posy>40</posy>
-								<width>1243</width>
-								<height>147</height>
-								<label>42132</label>
-								<font>Font-Alaska-S25-NC</font>
-								<textcolor>Mod_Tags</textcolor>
-								<scroll>false</scroll>
-								<align>center</align>
-								<visible>![Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description)) | Container.Content(artist) + !IsEmpty(ListItem.Property(Artist_Description))]</visible>
-							</control>
-							<control type="textbox">
-								<posx>24</posx>
-								<posy>72</posy>
-								<width>1263</width>
-								<height>147</height>
-								<label>$INFO[ListItem.Property(Album_Description)]</label>
-								<font>Font-Alaska-S25-NC</font>
-								<textcolor>Mod_Tags</textcolor>
-								<align>justify</align>
-								<autoscroll delay="13000" time="3000" repeat="13000" />
-								<visible>Container.Content(albums)</visible>
-							</control>
-							<control type="textbox">
-								<posx>24</posx>
-								<posy>72</posy>
-								<width>1263</width>
-								<height>147</height>
-								<label>$INFO[ListItem.Property(Artist_Description)]</label>
-								<font>Font-Alaska-S25-NC</font>
-								<textcolor>Mod_Tags</textcolor>
-								<align>justify</align>
-								<autoscroll delay="13000" time="3000" repeat="13000" />
-								<visible>Container.Content(artists)</visible>
-							</control>
-						</control>
-					</control>  
-				</control>
-
 				<!-- RIGHT PANEL -->
 				<control type="image">
 					<description>Top</description>
-					<posx>1375</posx>
-					<posy>150</posy>
-					<width>509</width>
-					<height>498</height>
+					<posx>1350</posx>
+					<posy>160</posy>
+					<width>534</width>
+					<height>478</height>
 					<texture border="35">views/newgloss/darkpanel-15.png</texture>
 					<aspectratio>stretch</aspectratio>
 					<colordiffuse>mod-osd</colordiffuse>
 				</control>
 				<control type="image">
 					<description>Bottom</description>
-					<posx>1375</posx>
-					<posy>648</posy>
-					<width>509</width>
+					<posx>1350</posx>
+					<posy>638</posy>
+					<width>534</width>
 					<height>255</height>
 					<texture border="35">views/newgloss/whitepanel-15-b.png</texture>
 					<aspectratio>stretch</aspectratio>
@@ -301,7 +124,7 @@
 				<control type="grouplist">
 					<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="500" easing="in">Visible</animation>
 					<animation effect="fade" start="100" end="0" time="300" tween="sine" delay="500" easing="out">Hidden</animation>
-					<posx>1409</posx>
+					<posx>1399</posx>
 					<posy>182</posy>
 					<width>438</width>
 					<height>385</height>
@@ -392,9 +215,9 @@
 			
 				<!-- PLAY CONTROL LIST -->
 				<control type="list" id="9333">
-					<posx>1390</posx>
-					<posy>640</posy>
-					<width>479</width>
+					<posx>1365</posx>
+					<posy>630</posy>
+					<width>510</width>
 					<height>249</height>
 					<onup>SetFocus(9334)</onup>
 					<ondown>9333</ondown>
@@ -407,12 +230,12 @@
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>479</width>
+							<width>504</width>
 							<height>84</height>
 							<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 						</control>
 						<control type="label">
-							<posx>100</posx>
+							<posx>120</posx>
 							<posy>0</posy>
 							<width>419</width>
 							<height>82</height>
@@ -423,7 +246,7 @@
 							<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-							<posx>2</posx>
+							<posx>12</posx>
 							<posy>-10</posy>
 							<width>100</width>
 							<height>100</height>
@@ -436,14 +259,14 @@
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>479</width>
+							<width>504</width>
 							<height>84</height>
 							<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 						</control>
 						<control type="image">
 							<posx>0</posx>
 							<posy>0</posy>
-							<width>478</width>
+							<width>503</width>
 							<height>82</height>
 							<texture border="5">views/other/focus-mod.png</texture>
 							<animation effect="slide" start="0,83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(9333).OnPrevious">Focus</animation>
@@ -452,7 +275,7 @@
 							<visible>Control.HasFocus(9333)</visible>
 						</control>
 						<control type="label">
-							<posx>100</posx>
+							<posx>120</posx>
 							<posy>0</posy>
 							<width>419</width>
 							<height>82</height>
@@ -465,7 +288,7 @@
 							<visible>Control.HasFocus(9333)</visible>
 						</control>
 						<control type="label">
-							<posx>100</posx>
+							<posx>120</posx>
 							<posy>0</posy>
 							<width>419</width>
 							<height>82</height>
@@ -478,7 +301,7 @@
 							<visible>!Control.HasFocus(9333)</visible>
 						</control>
 						<control type="image">
-							<posx>2</posx>
+							<posx>12</posx>
 							<posy>-10</posy>
 							<width>100</width>
 							<height>100</height>
@@ -488,7 +311,7 @@
 							<aspectratio>keep</aspectratio>
 						</control>
 						<control type="image">
-							<posx>2</posx>
+							<posx>12</posx>
 							<posy>-10</posy>
 							<width>100</width>
 							<height>100</height>
@@ -535,6 +358,150 @@
 						</item>
 					</content>
 				</control>
+				
+				<!-- Rating -->
+				<control type="image">
+					<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="150" easing="in">WindowOpen</animation>
+					<posx>1495</posx>
+					<posy>42</posy>
+					<width>350</width>
+					<height>120</height>
+					<texture>$INFO[ListItem.StarRating,dialogs/music-info/,]</texture>
+					<visible>Container.Content(albums)</visible>
+					<animation type="Conditional" condition="Player.HasMedia | Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog)">
+						<effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" /> 
+						<effect type="zoom" start="100" end="50" center="1670,99" tween="sine" easing="inout" time="300" />
+					</animation>
+					<colordiffuse>Mod_Tags_Dark</colordiffuse>
+				</control>
+		
+				<!-- BACKGROUND Fanart etc -->
+				<control type="group">
+					<posx>55</posx>
+					<posy>170</posy>
+					<control type="image">
+						<description>Grey</description>
+						<posx>-20</posx>
+						<posy>-20</posy>
+						<width>1352</width>
+						<height>753</height>
+						<texture border="35">views/newgloss/whitepanel-15.png</texture>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<!-- LEFT FANART AND PLOT SECTION -->
+					<control type="group">
+						<!-- Fanart -->
+						<control type="group">
+							<posx>474</posx>
+							<include>visiblehidefadeinfo</include>
+							<control type="image">
+								<description>Landscape</description>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>828</width>
+								<height>464</height>
+								<texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[VideoInfoArt]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<posx>733</posx>
+								<posy>5</posy>
+								<width>100</width>
+								<height>100</height>
+								<aspect>keepaspect</aspect>
+								<include>overlay.visibility</include>
+								<visible>!IsEmpty(ListItem.Overlay)</visible>
+							</control> 
+							<control type="image">
+								<description>Border</description>
+								<posx>-5</posx>
+								<posy>-5</posy>
+								<width>848</width>
+								<height>484</height>
+								<texture border="25">views/newgloss/border.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>Mod_Border</colordiffuse>
+							</control> 
+						</control>
+						<!-- Poster -->
+						<control type="group">
+							<control type="image">
+								<description>Poster</description>
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>464</width>
+								<height>464</height>
+								<texture background="true" diffuse="views/newgloss/poster-309-464.png">$VAR[AlbumInfoThumb]</texture>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<fadetime>200</fadetime>
+							</control>
+							<control type="image">
+								<description>Border</description>
+								<posx>-5</posx>
+								<posy>-5</posy>
+								<width>484</width>
+								<height>484</height>
+								<texture border="25">views/newgloss/border.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>Mod_Border</colordiffuse>
+							</control> 
+						</control>
+						<!-- Plot -->
+						<control type="group">
+							<posy>472</posy>
+							<control type="label">
+								<posx>24</posx>
+								<posy>30</posy>
+								<width>790</width>
+								<label>41325</label>
+								<font>Font-Alaska-S32-BL</font>
+								<textcolor>Mod_Tags</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<visible>Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description)) | Container.Content(artist) + !IsEmpty(ListItem.Property(Artist_Description))</visible>
+							</control>
+							<control type="label">
+								<posx>24</posx>
+								<posy>40</posy>
+								<width>1243</width>
+								<height>147</height>
+								<label>42132</label>
+								<font>Font-Alaska-S25-NC</font>
+								<textcolor>Mod_Tags</textcolor>
+								<scroll>false</scroll>
+								<align>center</align>
+								<visible>![Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description)) | Container.Content(artist) + !IsEmpty(ListItem.Property(Artist_Description))]</visible>
+							</control>
+							<control type="textbox">
+								<posx>24</posx>
+								<posy>72</posy>
+								<width>1263</width>
+								<height>147</height>
+								<label>$INFO[ListItem.Property(Album_Description)]</label>
+								<font>Font-Alaska-S25-NC</font>
+								<textcolor>Mod_Tags</textcolor>
+								<align>justify</align>
+								<autoscroll delay="13000" time="3000" repeat="13000" />
+								<visible>Container.Content(albums)</visible>
+							</control>
+							<control type="textbox">
+								<posx>24</posx>
+								<posy>72</posy>
+								<width>1263</width>
+								<height>147</height>
+								<label>$INFO[ListItem.Property(Artist_Description)]</label>
+								<font>Font-Alaska-S25-NC</font>
+								<textcolor>Mod_Tags</textcolor>
+								<align>justify</align>
+								<autoscroll delay="13000" time="3000" repeat="13000" />
+								<visible>Container.Content(artists)</visible>
+							</control>
+						</control>
+					</control>  
+				</control>
+
+				
 			</control>
 		</control>
         <control type="list" id="50">

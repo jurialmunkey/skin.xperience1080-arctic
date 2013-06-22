@@ -8,8 +8,8 @@
             <include>OptionsShutdownAnimation</include>
             <control type="group">
                 <visible>Control.IsVisible(54) + !Window.IsActive(movieinformation)</visible>
-    			<posy>480</posy>
-                <posx>10</posx>
+    			<posy>479</posy>
+                <posx>12</posx>
                 <include>BannerListAnimations</include>    			
     			<!-- LIST BANNER -->
                 <control type="group">

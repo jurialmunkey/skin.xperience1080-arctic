@@ -4,10 +4,10 @@
 <!-- =========== -->
     <include name="Viewtype-CoverList">
         <control type="group">
-            <include>FullscreenDimensions</include>
             <include>OptionsShutdownAnimation</include>
             <include>BannerListAnimations</include>
             <visible>Control.IsVisible(60)</visible>
+            <posy>-20</posy>
             <!-- SIDE ALBUM ART -->
             <control type="group">
                 <posy>10</posy>
@@ -18,7 +18,7 @@
                     <width>740</width>
                     <height>740</height>
                     <texture diffuse="views/posterview/diffuse-ref-square.png" flipy="true" background="true">$VAR[MusicCarouselArtBanner]</texture>
-                    <aspectratio scalediffuse="false" align="left" aligny="top">scale</aspectratio>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
                     <fadetime>500</fadetime>
                 </control>
                 <control type="image">
@@ -37,14 +37,6 @@
                     <texture diffuse="views/newgloss/banner-740.png" background="true">$VAR[MusicCarouselArtBanner]</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <fadetime>300</fadetime>
-                </control>
-                <control type="image">
-                    <posx>45</posx>
-                    <posy>170</posy>
-                    <width>740</width>
-                    <height>740</height>
-                    <texture diffuse="views/newgloss/banner-740.png" background="true">views/newgloss/info-gloss.png</texture>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
                 </control>
                 <control type="image">
                     <posx>35</posx>

@@ -1,6 +1,6 @@
 <includes>
-	<include name="SimpleHome-Clock">
-        <control type="group">
+	<include name="Old-Common-Clock">
+		<control type="group">
             <animation type="WindowOpen" condition="Window.IsActive(loginscreen) | [Window.IsActive(startup) + !Window.Previous(loginscreen)] | Window.Previous(fullscreenvideo) | Window.Previous(visualisation) | Window.Previous(slideshow)" reversible="false">
                 <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
             </animation>
@@ -21,7 +21,7 @@
                     <texture>weather/small/$INFO[Weather.FanartCode].png</texture>
                     <visible>Weather.IsFetched + ![stringcompare(Weather.FanartCode,na) + substring(Weather.Conditions,/)]</visible>
                     <include>visiblehidefadeinfo</include>
-                    <colordiffuse>mod-infotags</colordiffuse>
+                    <colordiffuse>$VAR[simplehome.normal]</colordiffuse>
                 </control>
                 <control type="label">
                     <description>Clock label</description>
@@ -31,90 +31,7 @@
                     <height>100</height>
                     <label>$INFO[System.Time]</label>
                     <font>Font-Alaska-S29-BL</font>
-                    <textcolor>mod-infotags</textcolor>
-                    <shadowcolor>mod-shadow</shadowcolor>
-                    <align>right</align>
-                    <scroll>false</scroll>
-                    <animation effect="slide" end="60" time="300" tween="sine" easing="inout" condition="!Weather.IsFetched | [stringcompare(Weather.FanartCode,na) + substring(Weather.Conditions,/)]">Conditional</animation>
-                </control>
-            </control>
-            <control type="group">
-                <visible>PVR.IsRecording</visible>
-                <animation effect="slide" end="-60" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
-                <include>visiblehidefadeinfo</include>
-                <control type="image">
-                    <posx>174r</posx>
-                    <posy>950</posy>
-                    <width>100</width>
-                    <height>100</height>
-                    <texture>windows/pvr/recording-info.png</texture>
-                </control>
-                <control type="image">
-                    <posx>174r</posx>
-                    <posy>950</posy>
-                    <width>100</width>
-                    <height>100</height>
-                    <texture>windows/pvr/recording-info-pulse.png</texture>
-                    <animation effect="fade" start="65" end="100" time="750" tween="sine" easing="in" pulse="true" condition="true">Conditional</animation>
-                </control>
-            </control>
-            <control type="image">
-                <posx>174r</posx>
-                <posy>950</posy>
-                <width>100</width>
-                <height>100</height>
-                <texture>windows/pvr/timer.png</texture>
-                <animation effect="slide" end="-60" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
-                <include>visiblehidefadeinfo</include>
-                <visible>!PVR.IsRecording + PVR.HasTimer</visible>
-                <colordiffuse>mod-infotags</colordiffuse>
-            </control>
-            <control type="image">
-                <description>Mute</description>
-                <posx>174r</posx>
-                <posy>950</posy>
-                <width>100</width>
-                <height>100</height>
-                <texture>overlays/volume/muted.png</texture>
-                <include>visiblehidefadeinfo</include>
-                <visible>Window.IsActive(mutebug)</visible>
-                <colordiffuse>mod-infotags-d</colordiffuse>
-            </control>
-        </control>
-    </include>
-    <include name="Common-Clock">
-        <control type="group">
-            <animation type="WindowOpen" condition="Window.IsActive(loginscreen) | [Window.IsActive(startup) + !Window.Previous(loginscreen)] | Window.Previous(fullscreenvideo) | Window.Previous(visualisation) | Window.Previous(slideshow)" reversible="false">
-                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
-            </animation>
-            <animation type="WindowClose" condition="Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)" reversible="false">
-                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
-            </animation>
-            <control type="group">
-				<animation effect="slide" end="0" start="0,500" time="250" condition="Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)">WindowOpen</animation>
-				<animation effect="slide" end="0" start="0,500" time="250" condition="Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)">Visible</animation>
-                <animation effect="slide" end="-65" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
-                <animation effect="slide" end="-60" time="300" tween="sine" easing="inout" condition="PVR.IsRecording | PVR.HasTimer">Conditional</animation>
-                <control type="image">
-                    <description>Small weather</description>
-                    <posx>174r</posx>
-                    <posy>950</posy>
-                    <width>100</width>
-                    <height>100</height>
-                    <texture>weather/small/$INFO[Weather.FanartCode].png</texture>
-                    <visible>Weather.IsFetched + ![stringcompare(Weather.FanartCode,na) + substring(Weather.Conditions,/)]</visible>
-                    <include>visiblehidefadeinfo</include>
-                    <colordiffuse>Mod_Tags</colordiffuse>
-                </control>
-                <control type="label">
-                    <description>Clock label</description>
-                    <posx>165r</posx>
-                    <posy>953</posy>
-                    <width>180</width>
-                    <height>100</height>
-                    <label>$INFO[System.Time]</label>
-                    <font>Font-Alaska-S29-BL</font>
-                    <textcolor>Mod_Tags</textcolor>
+                    <textcolor>$VAR[simplehome.normal]</textcolor>
                     <shadowcolor>Mod_Tags_Shadow</shadowcolor>
                     <align>right</align>
                     <scroll>false</scroll>
@@ -150,7 +67,7 @@
                 <animation effect="slide" end="-60" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
                 <include>visiblehidefadeinfo</include>
                 <visible>!PVR.IsRecording + PVR.HasTimer</visible>
-                <colordiffuse>Mod_Tags</colordiffuse>
+                <colordiffuse>$VAR[simplehome.normal]</colordiffuse>
             </control>
             <control type="image">
                 <description>Mute</description>
@@ -161,9 +78,135 @@
                 <texture>overlays/volume/muted.png</texture>
                 <include>visiblehidefadeinfo</include>
                 <visible>Window.IsActive(mutebug)</visible>
-                <colordiffuse>Mod_Tags_Dark</colordiffuse>
+                <colordiffuse>$VAR[simplehome.dark]</colordiffuse>
             </control>
         </control>
+	</include>
+	<include name="SimpleHome-Clock">
+        <control type="group">
+            <animation type="WindowOpen" condition="Window.IsActive(loginscreen) | [Window.IsActive(startup) + !Window.Previous(loginscreen)] | Window.Previous(fullscreenvideo) | Window.Previous(visualisation) | Window.Previous(slideshow)" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="inout" />
+            </animation>
+            <animation type="WindowClose" condition="Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)" reversible="false">
+                <effect type="fade" start="100" end="0" time="300" tween="sine" easing="inout" />
+            </animation>
+            <control type="group">
+				<animation effect="slide" end="0" start="0,500" time="250" condition="Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)">WindowOpen</animation>
+				<animation effect="slide" end="0" start="0,500" time="250" condition="Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)">Visible</animation>
+                <animation effect="slide" end="-55" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
+                <animation effect="slide" end="-50" time="300" tween="sine" easing="inout" condition="PVR.IsRecording | PVR.HasTimer">Conditional</animation>
+                <control type="group">
+					<posy>904</posy>
+					<posx>285r</posx>
+					<control type="label">
+						<description>Clock label</description>
+						<posx>13</posx>
+						<posy>62</posy>
+						<width>150</width>
+						<height>78</height>
+						<label>$INFO[System.Time(hh)]</label>
+						<font>Font-Simple-Clock-Large</font>
+						<textcolor>$VAR[simplehome.dark]</textcolor>
+						<align>right</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<description>Clock label</description>
+						<posx>70</posx>
+						<posy>37</posy>
+						<width>100</width>
+						<height>78</height>
+						<label>$INFO[System.Time(mm)]</label>
+						<font>Font-Simple-Clock</font>
+						<textcolor>$VAR[simplehome.normal]</textcolor>
+						<align>right</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<description>Clock label</description>
+						<posx>70</posx>
+						<posy>80</posy>
+						<width>100</width>
+						<height>78</height>
+						<label>$INFO[System.Time(xx)]</label>
+						<font>Font-Simple-Clock</font>
+						<textcolor>$VAR[simplehome.light]</textcolor>
+						<align>right</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<description>Day label</description>
+						<posx>82</posx>
+						<posy>43</posy>
+						<width>300</width>
+						<height>78</height>
+						<label>$INFO[System.Date(DDD)]</label>
+						<font>Font-OSD-Clock</font>
+						<textcolor>$VAR[simplehome.light]</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+					<control type="label">
+						<description>Day label</description>
+						<posx>82</posx>
+						<posy>73</posy>
+						<width>300</width>
+						<height>78</height>
+						<label>$INFO[System.Date(MMM dd)]</label>
+						<font>Font-OSD-Clock</font>
+						<textcolor>$VAR[simplehome.dark]</textcolor>
+						<align>left</align>
+						<scroll>false</scroll>
+					</control>
+				</control>
+            </control>
+            <control type="group">
+                <visible>PVR.IsRecording</visible>
+                <animation effect="slide" end="-60" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
+                <include>visiblehidefadeinfo</include>
+                <control type="image">
+                    <posx>124r</posx>
+                    <posy>950</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>windows/pvr/recording-info.png</texture>
+                </control>
+                <control type="image">
+                    <posx>124r</posx>
+                    <posy>950</posy>
+                    <width>100</width>
+                    <height>100</height>
+                    <texture>windows/pvr/recording-info-pulse.png</texture>
+                    <animation effect="fade" start="65" end="100" time="750" tween="sine" easing="in" pulse="true" condition="true">Conditional</animation>
+                </control>
+            </control>
+            <control type="image">
+                <posx>124r</posx>
+                <posy>950</posy>
+                <width>100</width>
+                <height>100</height>
+                <texture>windows/pvr/timer.png</texture>
+                <animation effect="slide" end="-60" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
+                <include>visiblehidefadeinfo</include>
+                <visible>!PVR.IsRecording + PVR.HasTimer</visible>
+                <colordiffuse>$VAR[simplehome.normal]</colordiffuse>
+            </control>
+            <control type="image">
+                <description>Mute</description>
+                <posx>124r</posx>
+                <posy>950</posy>
+                <width>100</width>
+                <height>100</height>
+                <texture>overlays/volume/muted.png</texture>
+                <include>visiblehidefadeinfo</include>
+                <visible>Window.IsActive(mutebug)</visible>
+                <colordiffuse>$VAR[simplehome.dark]</colordiffuse>
+            </control>
+        </control>
+    </include>
+    <include name="Common-Clock">
+    	<include condition="!Skin.HasSetting(old.clock)">SimpleHome-Clock</include>
+        <include condition="Skin.HasSetting(old.clock)">Old-Common-Clock</include>
     </include>
     
     <variable name="OptionsButtonTexture">
@@ -265,8 +308,8 @@
     </variable>
     
     <variable name="NowPlayingColor">
-    	<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">mod-infotags</value>
-    	<value>Mod_Tags</value>
+    	<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">mod-infotags-d</value>
+    	<value>Mod_Tags_Dark</value>
     </variable>
     <variable name="NowPlayingColorLight">
     	<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">mod-infotags-l</value>
@@ -277,25 +320,27 @@
         <control type="group">
             <posx>1741</posx>
             <posy>26</posy>
-            <include condition="![StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)]">BannerListInfoAnimation</include>
-            <animation effect="slide" start="0" end="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">WindowClose</animation>
-        	<animation effect="slide" start="0" end="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Hidden</animation>
-        	        	<animation effect="slide" end="0" start="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">WindowOpen</animation>
-        	<animation effect="slide" end="0" start="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">Visible</animation>
             <visible>Player.HasMedia + IsEmpty(Window(videos).property(TvTunesIsAlive)) + !Window.IsActive(visualisation)</visible>
-            <animation effect="slide" start="0" end="-200,900" time="0" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)">Conditional</animation>
-            <animation effect="slide" start="0" end="-210" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(volumebar)">Conditional</animation>
-            <animation effect="slide" start="0" end="-65" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Window.IsActive(mutebug)">Conditional</animation>
-            <animation effect="slide" start="0" end="-60" time="300" tween="sine" easing="inout" condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
-
-
-
+            <include>BannerListInfoAnimation</include>
             <animation effect="slide" end="-76" time="300" tween="sine" easing="inout" condition="Window.IsActive(busydialog)">Conditional</animation>
-            <animation type="Conditional" condition="![StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home)] + [Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(volumebar)]">
+            <animation type="Conditional" condition="[Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Window.IsActive(volumebar)]">
                 <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" />
                 <effect type="zoom" start="100" end="50" center="1745,100" tween="sine" easing="inout" time="300" />
             </animation>
+            <!--<control type="group">
+				<posy>19</posy>
+				<posx>175r</posx>
+				<visible>Player.HasAudio + Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)</visible>
+				<control type="image">
+					<posx>12</posx>
+					<posy>12</posy>
+					<width>86</width>
+					<height>86</height>
+					<texture diffuse="views/newgloss/whitepanel.png">$INFO[MusicPlayer.Cover]</texture>
+				</control>
+			</control>-->
             <control type="group">
+            	<!--<animation effect="slide" end="-90" time="300" condition="Player.HasAudio + Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)">Conditional</animation>-->
                 <control type="label">
                     <description>Title label</description>
                     <posx>0</posx>
@@ -403,8 +448,7 @@
 		<control type="group">        
 			<animation effect="slide" start="0" end="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">WindowClose</animation>
 			<animation effect="slide" start="0" end="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">Hidden</animation>
-			<include condition="![StringCompare(Skin.String(homescreen.style),simple) + Window.IsVisible(home)]">Common-Clock</include>
-			<include condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsVisible(home)">SimpleHome-Clock</include>
+			<include>Common-Clock</include>
 		</control>
         <include>Common-NowPlaying</include>
     </include>

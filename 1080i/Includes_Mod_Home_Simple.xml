@@ -12,6 +12,7 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<colordiffuse>77ffffff</colordiffuse>
 			</control>
+			
 			<!-- DARK PANEL -->
 			<control type="image">
 				<posx>0</posx>

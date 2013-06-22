@@ -1,9 +1,4 @@
 <includes>
-	<variable name="powerbutton.highlight">
-		<value condition="!StringCompare(Skin.String(homescreen.style),metro) + Control.HasFocus(85)">ff0088dd</value>
-		<value condition="StringCompare(Skin.String(homescreen.style),simple) + !Control.HasFocus(85)">mod-infotags-d</value>
-		<value>Mod_Tags_Dark</value>
-	</variable>
     <!--Home shutdown-favs Buttons-->
     <include name="shutdown-favs">
         <control type="group" id="80">
@@ -53,7 +48,7 @@
                 <height>100</height>
                 <label>$LOCALIZE[41507]</label>
                 <font>Font-Alaska-S29-BL</font>
-                <textcolor>Mod_Tags</textcolor>
+                <textcolor>$VAR[simplehome.normal]</textcolor>
                 <shadowcolor>Mod_Shadow</shadowcolor>
                 <include>Animation_ShutdownButton</include>
                 <include>homebuttonsanim2</include>

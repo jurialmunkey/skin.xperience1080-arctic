@@ -153,10 +153,10 @@
                 <focusedlayout width="374">
                     <control type="group">
                         <animation type="Focus" condition="Container(507).OnNext | Container(507).OnPrevious">
-                            <effect type="zoom" start="80" end="100" time="350" tween="sine" easing="out" center="187,250" />
+                            <effect type="zoom" start="80" end="110" time="350" tween="sine" easing="out" center="187,250" />
                         </animation>
                         <animation type="Unfocus" condition="Container(507).OnNext | Container(507).OnPrevious">
-                            <effect type="zoom" start="100" end="80" time="250" tween="sine" easing="out" center="187,250" />
+                            <effect type="zoom" start="110" end="80" time="250" tween="sine" easing="out" center="187,250" />
                         </animation>
                         <posx>0</posx>
                         <control type="image">
@@ -248,8 +248,8 @@
 							<height>158</height>
 							<info>ListItem.Plot</info>
 							<align>justify</align>
-							<textcolor>99FFFFFF</textcolor>
-							<shadowcolor>99000000</shadowcolor>
+							<textcolor>ccFFFFFF</textcolor>
+							<shadowcolor>55000000</shadowcolor>
 							<autoscroll>false</autoscroll>
 							<font>Font-Condensed-S22</font>
 						</control>

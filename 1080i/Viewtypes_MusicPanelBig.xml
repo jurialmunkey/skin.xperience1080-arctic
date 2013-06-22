@@ -10,7 +10,7 @@
             <include>OptionsShutdownAnimation</include>
             <include>listEndAnimation</include>
             <posx>127</posx>
-			<posy>190</posy>
+			<posy>172</posy>
             <control type="fixedlist" id="55">
 				<posx>-480</posx>
 				<posy>-4</posy>

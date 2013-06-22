@@ -48,6 +48,64 @@
             <colordiffuse>Mod_Overlay_Dimfanart_Extra</colordiffuse>
             <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
+        
+        <!-- GLass -->
+		<control type="image">
+			<posx>860</posx>
+			<posy>40</posy>
+			<width>1000</width>
+			<height>120</height>
+			<texture border="0,25,25,25">views/newgloss/border-glass-fade.png</texture>
+			<visible>Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple) + [Window.IsActive(busydialog) | Window.IsActive(volumebar) | Window.IsActive(infodialog) | Window.IsActive(extendedprogressdialog) | Player.HasMedia]</visible>
+			<animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+                <effect type="slide" end="0,-75" time="700" delay="300" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+                <effect type="slide" end="0,-75" time="700" delay="300" />
+            </animation>
+            <animation type="Conditional" condition="Window.IsActive(volumebar)">
+                <effect type="fade" start="100" end="8" tween="sine" easing="out" time="300" />
+                <effect type="zoom" start="100" end="50" center="1745,100" tween="sine" easing="inout" time="300" />
+            </animation>
+		</control>
+		<control type="image">
+			<posx>1360</posx>
+			<posy>40</posy>
+			<width>500</width>
+			<height>120</height>
+			<texture border="0,25,25,25">views/newgloss/border-glass-fade.png</texture>
+			<visible>Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(volumebar)</visible>
+			<animation type="Visible" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+                <effect type="slide" end="0,-75" time="700" delay="300" />
+            </animation>
+            <animation type="WindowOpen" reversible="false">
+                <effect type="fade" start="0" end="100" time="300" tween="sine" easing="in"  />
+                <effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" />
+            </animation>
+            <animation type="WindowClose" reversible="false">
+                <effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+                <effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+                <effect type="slide" end="0,-75" time="700" delay="300" />
+            </animation>
+		</control>
     </include>
     
     
@@ -168,7 +226,15 @@
         <value condition="!Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent))">$INFO[ListItem.Art(fanart)]</value>
         <value>-</value>
     </variable>
-
+    
+    <variable name="extrafanart.path">
+    	<value condition="Skin.HasSetting(tvshows.use.extrafanart) + [Container.Content(tvshows) | Container.Content(seasons)]">$INFO[ListItem.Path,,/extrafanart/]</value>
+    	<value condition="Skin.HasSetting(tvshows.use.extrafanart) + Container.Content(episodes)">$INFO[ListItem.Path,,/../extrafanart/]</value>
+    	<value condition="Skin.HasSetting(music.use.extrafanart) + Container.Content(albums) | Container.Content(artists) | Container.Content(songs)">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/extrafanart/]</value>
+    	<value condition="Skin.HasSetting(movies.use.extrafanart) + [Container.Content(movies)]">$INFO[ListItem.Path,,/extrafanart/]</value>
+    	<value>-</value>
+    </variable>
+    
     <include name="BackgroundFanart">
         <control type="image">
             <description>List Panel fanart</description>
@@ -185,6 +251,19 @@
             <texture background="true">$VAR[ViewFanart]</texture>
             <fadetime>500</fadetime>
             <include>Animation_FanartFade</include>
+            <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Window.IsActive(favourites)</visible>
+        </control>
+        <control type="multiimage">
+            <aspectratio>scale</aspectratio>
+            <include>FullscreenDimensions</include>
+            <timeperimage>9000</timeperimage>
+            <randomize>true</randomize>
+            <fadetime>600</fadetime>
+            <loop>yes</loop>
+            <include>Animation_FanartFade</include>
+            <imagepath background="true">$VAR[extrafanart.path]</imagepath>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Window.IsActive(favourites)</visible>
         </control>
     </include>

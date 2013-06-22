@@ -6,7 +6,7 @@
     <include name="Viewtype-ClassicCoverView">
         <control type="group">
             <posx>110</posx>
-            <posy>72</posy>
+            <posy>55</posy>
             <control type="group">
                 <include>FullscreenDimensions</include>
                 <include>OptionsShutdownAnimation</include>

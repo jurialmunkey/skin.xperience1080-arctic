@@ -1,12 +1,25 @@
 <includes>
-<!------------------------------------------------------------>
-<!-- This file contains all my custom variables etc         -->
-<!-- Add it to Includes.xml                                 -->
-<!-- Add new viewtypes into Includes_Views.xml              -->
-<!-- Includes_WindowContents.xml has shadow overlay changes -->
-<!-- MyVideoNav.xml has changes to viewtype names etc.      -->
-<!------------------------------------------------------------>
-    
+    <variable name="powerbutton.highlight">
+		<value condition="!StringCompare(Skin.String(homescreen.style),metro) + Control.HasFocus(85)">ff0088dd</value>
+		<value condition="StringCompare(Skin.String(homescreen.style),simple) + !Control.HasFocus(85)">mod-infotags-d</value>
+		<value>Mod_Tags_Dark</value>
+	</variable>
+	
+	<variable name="simplehome.dark">
+		<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsVisible(home)">mod-infotags-d</value>
+		<value>Mod_Tags_Dark</value>
+	</variable>
+	
+	<variable name="simplehome.normal">
+		<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsVisible(home)">mod-infotags</value>
+		<value>Mod_Tags</value>
+	</variable>
+	
+	<variable name="simplehome.light">
+		<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsVisible(home)">mod-infotags-l</value>
+		<value>Mod_Tags_Light</value>
+	</variable>
+	
     <variable name="AeonFlagHDSD">
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,1079)">aeonflags/resolution/1080.png</value>
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">aeonflags/resolution/720.png</value>
@@ -307,11 +320,11 @@
 	<!-- STAR RATING AND YEAR -->   
     <include name="CommonClearLogoRight">
 		<control type="group">
+			<posx>665</posx>
 			<control type="group">
-				<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug) + [PVR.IsRecording | PVR.HasTimer]">Conditional</animation>
-				<animation effect="slide" start="0" end="35" time="300" tween="sine" easing="inout" condition="![PVR.IsRecording | PVR.HasTimer] + !Window.IsActive(mutebug)">Conditional</animation>
+				<animation effect="slide" start="0" end="30" time="300" tween="sine" easing="inout" condition="true">Conditional</animation>
 				<control type="image">
-					<posx>501r</posx>
+					<posx>116</posx>
 					<posy>966</posy>
 					<width>150</width>
 					<height>64</height>
@@ -321,7 +334,7 @@
 					<include>infotags.anim</include>
 				</control>
 				<control type="image">
-					<posx>495r</posx>
+					<posx>122</posx>
 					<posy>972</posy>
 					<width>141</width>
 					<height>52</height>
@@ -332,7 +345,7 @@
 				</control>
 			</control>
 			<control type="image">
-				<posx>640r</posx>
+				<posx>0</posx>
 				<posy>972</posy>
 				<width>141</width>
 				<height>52</height>
@@ -342,7 +355,7 @@
 				<include>infotags.anim</include>
 			</control>
 			<control type="label">
-				<posx>586r</posx>
+				<posx>54</posx>
 				<posy>984</posy>
 				<width>75</width>
 				<label>$VAR[SeasonalYear]</label>
@@ -358,228 +371,234 @@
     
     <!-- CLEAR LOGO AND LEFT HAND INFO TAGS -->
     <include name="CommonClearLogoDetails">
-    	<include>CommonClearLogoRight</include>
-    	
-        <control type="group">
-            <control type="group">
-                <posx>760</posx>
-                <control type="image">
-                    <posx>1</posx>
-                    <posy>171r</posy>
-                    <width>400</width>
-                    <height>155</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$VAR[ClearLogosVar]</texture>
-                    <colordiffuse>Mod_Tags_Logo_Shadow</colordiffuse>
-                    <include>infotags.movie.anim</include>
-                </control>
-                <control type="image">
-                    <posx>0</posx>
-                    <posy>172r</posy>
-                    <width>400</width>
-                    <height>155</height>
-                    <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                    <texture>$VAR[ClearLogosVar]</texture>
-                    <include>infotags.movie.anim</include>
-                </control>
-                <control type="label">
-                    <posx>45</posx>
-                    <posy>115r</posy>
-                    <width>280</width>
-                    <height>72</height>
-                    <label>$VAR[BottomClearLogoText]</label>
-                    <font>Font-Alaska-S38-BL</font>
-                    <textcolor>Mod_Tags</textcolor>
-                    <scroll>false</scroll>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <wrapmultiline>true</wrapmultiline>
-                    <include>infotags.movie.anim</include>
-                </control>
-            </control>
-            <control type="group">
-                <posx>100</posx>
-                <posy>950</posy>
-                <control type="group">
-                    <visible>Container.Content(Episodes) | Container.Content(Movies)</visible>
-                    <posx>210</posx>
-                    <control type="image">
+    	<control type="group">
+    		<posx>0</posx>
+			<include>CommonClearLogoRight</include>
+			<control type="group">
+				<control type="group">
+					<posx>1075</posx>
+					<posy>172r</posy>
+					<animation effect="slide" end="-35" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
+					<animation effect="slide" end="-30" time="300" tween="sine" easing="inout" condition="PVR.IsRecording | PVR.HasTimer">Conditional</animation>
+					<visible>!Skin.HasSetting(hide.clearlogos)</visible>
+					<control type="image">
+						<posx>1</posx>
+						<posy>1</posy>
+						<width>400</width>
+						<height>155</height>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<texture>$VAR[ClearLogosVar]</texture>
+						<colordiffuse>Mod_Tags_Logo_Shadow</colordiffuse>
+						<include>infotags.movie.anim</include>
+					</control>
+					<control type="image">
 						<posx>0</posx>
-						<posy>22</posy>
-						<width>100</width>
-						<height>52</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>7</posx>
-						<posy>22</posy>
-						<width>92</width>
-						<height>52</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagHDSD]</texture>
-						<colordiffuse>Mod_Tags_Alt</colordiffuse>
-						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>13</posx>
-						<posy>28</posy>
-						<width>82</width>
-						<height>38</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture>flags/other/set-info.png</texture>
-						<colordiffuse>Mod_Tags_Alt</colordiffuse>
-						<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>100</posx>
-						<posy>22</posy>
-						<width>245</width>
-						<height>52</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>128</posx>
-						<posy>22</posy>
-						<width>90</width>
-						<height>52</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture>$VAR[AeonFlagVideoCodec]</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>228</posx>
-						<posy>22</posy>
-						<width>90</width>
-						<height>52</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture>$VAR[AeonFlagAudioCodec]</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+						<posy>0</posy>
+						<width>400</width>
+						<height>155</height>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<texture>$VAR[ClearLogosVar]</texture>
 						<include>infotags.movie.anim</include>
 					</control>
 					<control type="label">
-                        <posx>108</posx>
-						<posy>22</posy>
-						<width>220</width>
-						<height>52</height>
-                        <label>$LOCALIZE[20457]</label>
-                        <font>Font-Alaska-S25-BL</font>
-                        <textcolor>Mod_Tags</textcolor>
-                        <scroll>false</scroll>
-                        <align>center</align>
-                        <wrapmultiline>false</wrapmultiline>
-                        <visible>substring(ListItem.Path,videodb://1/7,left)</visible>
-                        <include>infotags.movie.anim</include>
-                    </control>
-                </control>
-                <!-- RATING AND STUDIO -->
-                <control type="group">
-					<control type="image">
-						<posx>0</posx>
-						<posy>22</posy>
-						<width>100</width>
-						<height>52</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>7</posx>
-						<posy>22</posy>
-						<width>92</width>
-						<height>52</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagStudio]</texture>
-						<colordiffuse>Mod_Tags_Alt</colordiffuse>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>100</posx>
-						<posy>22</posy>
-						<width>100</width>
-						<height>52</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<include>infotags.movie.anim</include>
-					</control>
-					<control type="image">
-						<posx>100</posx>
-						<posy>22</posy>
-						<width>94</width>
-						<height>52</height>
-						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<texture>$VAR[AeonFlagRating]</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
+						<posx>-30</posx>
+						<posy>55</posy>
+						<width>480</width>
+						<height>72</height>
+						<label>$VAR[BottomClearLogoText]</label>
+						<font>Font-Alaska-S38-BL</font>
+						<textcolor>Mod_Tags</textcolor>
+						<scroll>false</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<wrapmultiline>true</wrapmultiline>
 						<include>infotags.movie.anim</include>
 					</control>
 				</control>
-                <!-- TV GENRES -->
-                <control type="group">
-                    <visible>![Container.Content(Episodes) | Container.Content(Movies)]</visible>
-                    <control type="image">
+				<control type="group">
+					<posx>100</posx>
+					<posy>950</posy>
+					<control type="group">
+						<animation effect="fade" start="100" end="0" time="0" condition="![Container.Content(Episodes) | Container.Content(Movies)]">Conditional</animation>
 						<posx>210</posx>
-						<posy>22</posy>
-						<width>100</width>
-						<height>52</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<include>infotags.movie.anim</include>
+						<control type="image">
+							<posx>0</posx>
+							<posy>22</posy>
+							<width>100</width>
+							<height>52</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>7</posx>
+							<posy>22</posy>
+							<width>92</width>
+							<height>52</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagHDSD]</texture>
+							<colordiffuse>Mod_Tags_Alt</colordiffuse>
+							<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>13</posx>
+							<posy>28</posy>
+							<width>82</width>
+							<height>38</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>flags/other/set-info.png</texture>
+							<colordiffuse>Mod_Tags_Alt</colordiffuse>
+							<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>100</posx>
+							<posy>22</posy>
+							<width>245</width>
+							<height>52</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>128</posx>
+							<posy>22</posy>
+							<width>90</width>
+							<height>52</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[AeonFlagVideoCodec]</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>228</posx>
+							<posy>22</posy>
+							<width>90</width>
+							<height>52</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[AeonFlagAudioCodec]</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="label">
+							<posx>108</posx>
+							<posy>22</posy>
+							<width>220</width>
+							<height>52</height>
+							<label>$LOCALIZE[20457]</label>
+							<font>Font-Alaska-S25-BL</font>
+							<textcolor>Mod_Tags</textcolor>
+							<scroll>false</scroll>
+							<align>center</align>
+							<wrapmultiline>false</wrapmultiline>
+							<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
+							<include>infotags.movie.anim</include>
+						</control>
 					</control>
-					<control type="label">
-                        <posx>220</posx>
-                        <posy>34</posy>
-                        <width>85</width>
-                        <label>Genre</label>
-                        <font>Font-Alaska-S25-BL</font>
-                        <textcolor>Mod_Tags_Alt</textcolor>
-                        <scroll>false</scroll>
-                        <align>center</align>
-                        <wrapmultiline>false</wrapmultiline>
-                        <include>infotags.movie.anim</include>
-                    </control>
-					<control type="image">
-						<posx>310</posx>
-						<posy>22</posy>
-						<width>245</width>
-						<height>52</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<include>infotags.movie.anim</include>
+					<!-- RATING AND STUDIO -->
+					<control type="group">
+						<control type="image">
+							<posx>0</posx>
+							<posy>22</posy>
+							<width>100</width>
+							<height>52</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>7</posx>
+							<posy>22</posy>
+							<width>92</width>
+							<height>52</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture fallback="aeonflags/studios/default-studio.png">$VAR[AeonFlagStudio]</texture>
+							<colordiffuse>Mod_Tags_Alt</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>100</posx>
+							<posy>22</posy>
+							<width>100</width>
+							<height>52</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>100</posx>
+							<posy>22</posy>
+							<width>94</width>
+							<height>52</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[AeonFlagRating]</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
 					</control>
-                    <control type="label">
-                        <posx>328</posx>
-                        <posy>34</posy>
-                        <width>205</width>
-                        <label>$INFO[ListItem.Genre]</label>
-                        <font>Font-Alaska-S25-BL</font>
-                        <textcolor>Mod_Tags</textcolor>
-                        <scroll>false</scroll>
-                        <align>center</align>
-                        <wrapmultiline>false</wrapmultiline>
-                        <include>infotags.movie.anim</include>
-                    </control>
-                </control>
-            </control>
+					<!-- TV GENRES -->
+					<control type="group">
+						<visible>![Container.Content(Episodes) | Container.Content(Movies)]</visible>
+						<control type="image">
+							<posx>210</posx>
+							<posy>22</posy>
+							<width>100</width>
+							<height>52</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="20,10,20,10">aeonflags/posters/left.png</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="label">
+							<posx>220</posx>
+							<posy>34</posy>
+							<width>85</width>
+							<label>Genre</label>
+							<font>Font-Alaska-S25-BL</font>
+							<textcolor>Mod_Tags_Alt</textcolor>
+							<scroll>false</scroll>
+							<align>center</align>
+							<wrapmultiline>false</wrapmultiline>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="image">
+							<posx>310</posx>
+							<posy>22</posy>
+							<width>245</width>
+							<height>52</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="20,10,20,10">aeonflags/posters/right.png</texture>
+							<colordiffuse>Mod_Tags</colordiffuse>
+							<include>infotags.movie.anim</include>
+						</control>
+						<control type="label">
+							<posx>328</posx>
+							<posy>34</posy>
+							<width>205</width>
+							<label>$INFO[ListItem.Genre]</label>
+							<font>Font-Alaska-S25-BL</font>
+							<textcolor>Mod_Tags</textcolor>
+							<scroll>false</scroll>
+							<align>center</align>
+							<wrapmultiline>false</wrapmultiline>
+							<include>infotags.movie.anim</include>
+						</control>
+					</control>
+				</control>
+			</control>
         </control>
     </include>
     
     <!-- MUSIC CLEAR LOGOS AND GENRE STUDIOS -->
     <include name="MusicCommonClearLogoDetails">
-    	<include>CommonClearLogoRight</include>
+		<include>CommonClearLogoRight</include>
         <control type="group">
             <animation type="Visible" reversible="false">
                 <effect type="fade" start="0" end="100" time="450" delay="0" tween="sine" easing="in" />
@@ -591,7 +610,10 @@
                 <effect type="fade" end="0" start="100" time="200" delay="0" tween="sine" easing="in" />
             </animation>
             <control type="group">
-                <posx>732</posx>
+                <posx>1060</posx>
+                <animation effect="slide" end="-35" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
+				<animation effect="slide" end="-30" time="300" tween="sine" easing="inout" condition="PVR.IsRecording | PVR.HasTimer">Conditional</animation>
+				<visible>!Skin.HasSetting(hide.clearlogos)</visible>
                 <control type="image" id="89456">
                     <posx>91</posx>
                     <posy>127r</posy>
@@ -612,7 +634,7 @@
                     <include>infotags.music.anim</include>
                 </control>
                 <control type="label">
-                    <posx>-5</posx>
+                    <posx>-15</posx>
                     <posy>115r</posy>
                     <width>480</width>
                     <height>72</height>
