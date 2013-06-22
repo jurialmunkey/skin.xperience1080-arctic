@@ -14,7 +14,7 @@
             <titlecolor>mod-infotags</titlecolor>
             <shadowcolor>mod-shadow</shadowcolor>
             <headlinecolor>mod-infotags</headlinecolor>
-            <animation effect="slide" end="0,1014" time="0" condition="Skin.HasSetting(GlobalRSS.Bottom)">Conditional</animation>
+            <!--<animation effect="slide" end="0,1014" time="0" condition="Skin.HasSetting(GlobalRSS.Bottom)">Conditional</animation>-->
             <visible>!Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow)</visible>
         </control>
     </controls>
