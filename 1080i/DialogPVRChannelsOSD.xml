@@ -12,6 +12,7 @@
 				<width>718</width>
 				<height>920</height>
                 <texture border="25">views/newgloss/border-glass.png</texture>
+                <colordiffuse>88ffffff</colordiffuse>
             </control>
             <control type="image">
                 <posx>99</posx>
@@ -19,7 +20,7 @@
 				<width>682</width>
 				<height>884</height>
                 <texture border="5">views/newgloss/whitepanel.png</texture>
-                <colordiffuse>ff181818</colordiffuse>
+                <colordiffuse>cf000000</colordiffuse>
             </control>
             <control type="image">
                 <posx>84</posx>

@@ -245,8 +245,8 @@
         </control>
         <control type="grouplist" id="2000">
             <description>Custom group list</description>
-            <posx>-819</posx>
-            <posy>90</posy>
+            <posx>-160</posx>
+            <posy>-380</posy>
             <width>1000</width>
             <height>100</height>
             <itemgap>-275</itemgap>

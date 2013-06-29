@@ -45,7 +45,7 @@
                 <onright>70</onright>
                 <onup>50</onup>
                 <ondown>50</ondown>
-                <viewtype label="42220">list</viewtype>
+                <viewtype label="Big List">list</viewtype>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <preloaditems>2</preloaditems>
                 <itemlayout height="100" condition="!Container.Content(Artists) + !Container.Content(Albums) + !Container.Content(Songs) + !Window.IsVisible(MusicPlaylist)">

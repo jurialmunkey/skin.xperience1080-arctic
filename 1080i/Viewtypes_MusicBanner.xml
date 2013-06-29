@@ -10,6 +10,7 @@
             <posy>-20</posy>
             <!-- SIDE ALBUM ART -->
             <control type="group">
+            	<visible>Skin.HasSetting(musicbanner.showcover)</visible>
                 <posy>10</posy>
                 <posx>25</posx>
                 <control type="image">
@@ -34,7 +35,7 @@
                     <posy>170</posy>
                     <width>740</width>
                     <height>740</height>
-                    <texture diffuse="views/newgloss/banner-740.png" background="true">$VAR[MusicCarouselArtBanner]</texture>
+                    <texture diffuse="arctic/covers/740.png" background="true">$VAR[MusicCarouselArtBanner]</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <fadetime>300</fadetime>
                 </control>
@@ -43,7 +44,7 @@
                     <posy>160</posy>
                     <width>760</width>
                     <height>760</height>
-                    <texture border="25">views/newgloss/border.png</texture>
+                    <texture border="25">arctic/common/border.png</texture>
                 </control>
             </control>
             
@@ -65,6 +66,7 @@
                 <movement>2</movement>
                 <focusposition>1</focusposition>
                 <preloaditems>2</preloaditems>
+                <animation effect="slide" end="-400" condition="!Skin.HasSetting(musicbanner.showcover)">Conditional</animation>
                 <itemlayout height="112" condition="!Container.Content(Songs) + !Window.IsVisible(MusicPlaylist)">
                     <control type="group">
                         <posx>746</posx>
@@ -188,40 +190,19 @@
                         <animation effect="slide" start="0,96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(60).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(60).OnNext">Focus</animation>                        
                         <control type="image">
-                            <posx>35</posx>
-                            <posy>35</posy>
-                            <width>992</width>
-                            <height>262</height>
-                            <texture border="25">views/newgloss/whitepanel.png</texture>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1062</width>
+                            <height>332</height>
+                            <texture border="50">arctic/common/banner-35.png</texture>
                         </control>
                         <control type="image">
                             <posx>35</posx>
                             <posy>35</posy>
                             <width>262</width>
                             <height>262</height>
-                            <texture diffuse="views/newgloss/banner-left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
+                            <texture diffuse="arctic/banner/left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                        </control>
-                        <control type="image">
-                            <posx>35</posx>
-                            <posy>35</posy>
-                            <width>262</width>
-                            <height>262</height>
-                            <texture diffuse="views/newgloss/banner-left-262.png" background="true">views/newgloss/gloss.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>25</posx>
-                            <posy>25</posy>
-                            <width>272</width>
-                            <height>282</height>
-                            <texture border="25">views/newgloss/border-left.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>297</posx>
-                            <posy>25</posy>
-                            <width>740</width>
-                            <height>282</height>
-                            <texture border="25">views/newgloss/border-right-no.png</texture>
                         </control>
                         <control type="group">
                             <posy>55</posy>
@@ -277,47 +258,51 @@
                         <animation effect="slide" start="0,96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(60).OnPrevious">Focus</animation>
                         <animation effect="slide" start="0,-96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(60).OnNext">Focus</animation>
                         <control type="image">
-                            <posx>35</posx>
-                            <posy>35</posy>
-                            <width>992</width>
-                            <height>262</height>
-                            <texture border="25">views/newgloss/whitepanel.png</texture>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1062</width>
+                            <height>332</height>
+                            <texture border="50">arctic/common/banner-35.png</texture>
+                            <colordiffuse>ffeeeeee</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>35</posx>
                             <posy>35</posy>
                             <width>262</width>
                             <height>262</height>
-                            <texture diffuse="views/newgloss/banner-left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
+                            <texture diffuse="arctic/banner/left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
-                        <control type="image">
-                            <posx>35</posx>
-                            <posy>35</posy>
-                            <width>262</width>
-                            <height>262</height>
-                            <texture diffuse="views/newgloss/banner-left-262.png" background="true">views/newgloss/gloss.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>25</posx>
-                            <posy>25</posy>
-                            <width>272</width>
-                            <height>282</height>
-                            <texture border="25">views/newgloss/border-left.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>297</posx>
-                            <posy>25</posy>
-                            <width>740</width>
-                            <height>282</height>
-                            <texture border="25">views/newgloss/border-right-no.png</texture>
+                        <control type="group">
+                        	<posx>1027</posx>
+                        	<posy>35</posy>
+                        	<control type="image">
+								<posx>-221</posx>
+								<posy>1</posy>
+								<width>220</width>
+								<height>50</height>
+								<texture border="10">arctic/common/corner.png</texture>
+							</control>
+                        	<control type="image">
+								<posx>-220</posx>
+								<posy>0</posy>
+								<width>220</width>
+								<height>50</height>
+								<texture border="10">arctic/common/corner.png</texture>
+								<colordiffuse>ff111111</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>-225</posx>
+								<posy>-16</posy>
+								<include>Mod_Banner_Stars</include>
+							</control>
                         </control>
                         <control type="group">
                             <posy>55</posy>
                             <posx>317</posx>
                             <control type="label">
                                 <posx>0</posx>
-                                <posy>2</posy>
+                                <posy>36</posy>
                                 <width>690</width>
                                 <label>$INFO[ListItem.Album]</label>
                                 <font>Font-Alaska-S34-BL</font>
@@ -327,7 +312,7 @@
                             </control>
                             <control type="label">
                                 <posx>0</posx>
-                                <posy>42</posy>
+                                <posy>62</posy>
                                 <width>690</width>
                                 <label>$INFO[ListItem.Year,, • ]$INFO[ListItem.Genre]</label>
                                 <font>Font-Alaska-S25-BL</font>
@@ -338,9 +323,9 @@
                             <control type="textbox">
                                 <description>Plot</description>
                                 <posx>0</posx>
-                                <posy>84</posy>
+                                <posy>108</posy>
                                 <width>690</width>
-                                <height>144</height>
+                                <height>100</height>
                                 <info>ListItem.Property(Album_Description)</info>
                                 <align>justify</align>
                                 <textcolor>FF484848</textcolor>
@@ -357,40 +342,44 @@
                         <animation effect="slide" start="0,-96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(60).OnNext">Focus</animation>
                         <animation effect="fade" start="100" end="0" time="0" condition="Window.IsVisible(songinformation)">Conditional</animation>
                         <control type="image">
-                            <posx>35</posx>
-                            <posy>35</posy>
-                            <width>992</width>
-                            <height>262</height>
-                            <texture border="25">views/newgloss/whitepanel.png</texture>
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>1062</width>
+                            <height>332</height>
+                            <texture border="50">arctic/common/banner-35.png</texture>
+                            <colordiffuse>ffeeeeee</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>35</posx>
                             <posy>35</posy>
                             <width>262</width>
                             <height>262</height>
-                            <texture diffuse="views/newgloss/banner-left-262.png" background="true">$VAR[MusicCarouselFanArtBanner]</texture>
+                            <texture diffuse="arctic/banner/left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
-                        <control type="image">
-                            <posx>35</posx>
-                            <posy>35</posy>
-                            <width>262</width>
-                            <height>262</height>
-                            <texture diffuse="views/newgloss/banner-left-262.png" background="true">views/newgloss/gloss.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>25</posx>
-                            <posy>25</posy>
-                            <width>272</width>
-                            <height>282</height>
-                            <texture border="25">views/newgloss/border-left.png</texture>
-                        </control>
-                        <control type="image">
-                            <posx>297</posx>
-                            <posy>25</posy>
-                            <width>740</width>
-                            <height>282</height>
-                            <texture border="25">views/newgloss/border-right-no.png</texture>
+                        <control type="group">
+                        	<posx>1027</posx>
+                        	<posy>35</posy>
+                        	<control type="image">
+								<posx>-221</posx>
+								<posy>1</posy>
+								<width>220</width>
+								<height>50</height>
+								<texture border="10">arctic/common/corner.png</texture>
+							</control>
+                        	<control type="image">
+								<posx>-220</posx>
+								<posy>0</posy>
+								<width>220</width>
+								<height>50</height>
+								<texture border="10">arctic/common/corner.png</texture>
+								<colordiffuse>ff111111</colordiffuse>
+							</control>
+							<control type="group">
+								<posx>-225</posx>
+								<posy>-16</posy>
+								<include>Mod_Banner_Stars</include>
+							</control>
                         </control>
                         <control type="group">
                             <posy>55</posy>

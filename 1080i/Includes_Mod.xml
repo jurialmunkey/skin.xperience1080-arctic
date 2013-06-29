@@ -20,6 +20,84 @@
 		<value>Mod_Tags_Light</value>
 	</variable>
 	
+	<variable name="Mod_Banner_Stars_1">
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating5.png)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,9)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,8)">views/list/other/star_half.png</value>
+		<value>views/list/other/star_nofo.png</value>
+	</variable>
+	<variable name="Mod_Banner_Stars_2">
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating5.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating4.png)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,7)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,6)">views/list/other/star_half.png</value>
+		<value>views/list/other/star_nofo.png</value>
+	</variable>
+	<variable name="Mod_Banner_Stars_3">
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating5.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating4.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating3.png)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,5)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,4)">views/list/other/star_half.png</value>
+		<value>views/list/other/star_nofo.png</value>
+	</variable>
+	<variable name="Mod_Banner_Stars_4">
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating5.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating4.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating3.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating2.png)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,3)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,2)">views/list/other/star_half.png</value>
+		<value>views/list/other/star_nofo.png</value>
+	</variable>
+	<variable name="Mod_Banner_Stars_5">
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating5.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating4.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating3.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating2.png)">views/list/other/star_fo.png</value>
+		<value condition="[Container.Content(albums) | Container.Content(artists)] + StringCompare(ListItem.StarRating,rating1.png)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,1)">views/list/other/star_fo.png</value>
+		<value condition="IntegerGreaterThan(ListItem.Rating,0)">views/list/other/star_half.png</value>
+		<value>views/list/other/star_nofo.png</value>
+	</variable>
+	<include name="Mod_Banner_Stars">
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$VAR[Mod_Banner_Stars_1]</texture>
+		</control>
+		<control type="image">
+			<posx>40</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$VAR[Mod_Banner_Stars_2]</texture>
+		</control>
+		<control type="image">
+			<posx>80</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$VAR[Mod_Banner_Stars_3]</texture>
+		</control>
+		<control type="image">
+			<posx>120</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$VAR[Mod_Banner_Stars_4]</texture>
+		</control>
+		<control type="image">
+			<posx>160</posx>
+			<posy>0</posy>
+			<width>72</width>
+			<height>72</height>
+			<texture>$VAR[Mod_Banner_Stars_5]</texture>
+		</control>
+	</include>
+	
     <variable name="AeonFlagHDSD">
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,1079)">aeonflags/resolution/1080.png</value>
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">aeonflags/resolution/720.png</value>

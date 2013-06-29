@@ -9,8 +9,8 @@
             <include>OptionsShutdownAnimation</include>
             <posx>36</posx>
 			<posy>180</posy>
-			<animation effect="slide" start="0" end="84" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,6)">Conditional</animation>
-			<animation effect="slide" start="0" end="84" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,3)">Conditional</animation>
+			<animation effect="slide" start="0" end="84" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,2)">Conditional</animation>
+			<animation effect="slide" start="0" end="84" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,1)">Conditional</animation>
 			<control type="image">
 				<description>Glass</description>
 				<posx>-15</posx>
@@ -19,7 +19,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>IntegerGreaterThan(Container(508).NumItems,6) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
+				<visible>IntegerGreaterThan(Container(508).NumItems,2) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
 				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control>
 			<control type="image">
@@ -30,7 +30,7 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!IntegerGreaterThan(Container(508).NumItems,6) + IntegerGreaterThan(Container(508).NumItems,3) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
+				<visible>!IntegerGreaterThan(Container(508).NumItems,2) + IntegerGreaterThan(Container(508).NumItems,1) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
 				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control>
 			<control type="image">
@@ -41,11 +41,21 @@
 				<height>744</height>
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
-				<visible>!IntegerGreaterThan(Container(508).NumItems,3) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
+				<visible>!IntegerGreaterThan(Container(508).NumItems,1) + !Skin.HasSetting(viewtypes.hidepanel)</visible>
 				<colordiffuse>Mod_Panel_Glass</colordiffuse>
 			</control>
             <control type="group">
                 <posx>0</posx>
+                <control type="image">
+                    <description>Border</description>
+                    <posx>-4</posx>
+                    <posy>-4</posy>
+                    <width>848</width>
+                    <height>484</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
+                </control> 
                 <control type="image">
                     <description>Landscape</description>
                     <posx>6</posx>
@@ -65,16 +75,7 @@
                     <include>overlay.visibility</include>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
-                <control type="image">
-                    <description>Border</description>
-                    <posx>-4</posx>
-                    <posy>-4</posy>
-                    <width>848</width>
-                    <height>484</height>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <aspectratio>stretch</aspectratio>
-                    <colordiffuse>Mod_Border</colordiffuse>
-                </control> 
+                
 
 
                 <control type="group">
@@ -104,28 +105,9 @@
             </control>
             <control type="group">
                 <posx>1350</posx>
-    			<animation effect="slide" start="0" end="-168" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,6)">Conditional</animation>
-    			<animation effect="slide" start="0" end="-168" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,3)">Conditional</animation>
-                <control type="image">
-                    <description>Poster</description>
-                    <posx>0</posx>
-                    <posy>6</posy>
-                    <width>492</width>
-                    <height>702</height>
-                    <texture background="true" diffuse="views/newgloss/panel-bigposter-diffuse.png">$VAR[WallPoster]</texture>
-                    <aspectratio>stretch</aspectratio>  
-                </control>
-                <!-- GLOSS AND BORDER OVERLAY -->
-                <control type="image">
-                    <description>Gloss</description>
-                    <posx>0</posx>
-                    <posy>6</posy>
-                    <width>492</width>
-                    <height>702</height>
-                    <texture diffuse="views/newgloss/panel-bigposter-diffuse.png">views/newgloss/gloss.png</texture>
-                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                </control>
-                <control type="image">
+    			<animation effect="slide" start="0" end="-168" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,2)">Conditional</animation>
+    			<animation effect="slide" start="0" end="-168" time="0" condition="!IntegerGreaterThan(Container(508).NumItems,1)">Conditional</animation>
+    			<control type="image">
                     <description>Border</description>
                     <posx>-10</posx>
                     <posy>-4</posy>
@@ -135,6 +117,16 @@
                     <aspectratio>stretch</aspectratio>
                     <colordiffuse>Mod_Border</colordiffuse>
                 </control> 
+                <control type="image">
+                    <description>Poster</description>
+                    <posx>0</posx>
+                    <posy>6</posy>
+                    <width>492</width>
+                    <height>702</height>
+                    <texture background="true" diffuse="views/newgloss/panel-bigposter-diffuse.png">$VAR[WallPoster]</texture>
+                    <aspectratio>stretch</aspectratio>  
+                </control>
+                
             </control>
             <control type="panel" id="508">
 				<posx>840</posx>
@@ -143,16 +135,26 @@
 				<height>714</height>
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
-                <orientation>horizontal</orientation>
-                <viewtype label="Panel (Posters)">list</viewtype>
+                <orientation>vertical</orientation>
+                <viewtype label="Season Panel">list</viewtype>
                 <onup>508</onup>
-                <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
-                <ondown condition="Skin.HasSetting(KioskMode)">508</ondown>
-                <onleft>508</onleft>
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <onleft condition="Skin.HasSetting(KioskMode)">508</onleft>
+                <ondown>508</ondown>
                 <onright>508</onright>
                 <preloaditems>2</preloaditems>
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.HasFolders | Container.Content(episodes) | Container.Content(seasons)</visible>
                 <itemlayout width="168" height="238">
+					<control type="image">
+                        <description>Border</description>
+                        <posx>-4</posx>
+                        <posy>-4</posy>
+                        <width>176</width>
+                        <height>246</height>
+                        <texture border="25">views/newgloss/border.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>Mod_Border_Fade</colordiffuse>
+                    </control>  
                     <control type="image">
                         <description>Poster</description>
                         <posx>6</posx>
@@ -173,26 +175,7 @@
                         <visible>!IsEmpty(ListItem.Overlay)</visible>
                         <colordiffuse>ffcccccc</colordiffuse>
                     </control> 
-                    <!-- GLOSS AND BORDER OVERLAY -->
-                    <control type="image">
-                        <description>Gloss</description>
-                        <posx>6</posx>
-                        <posy>6</posy>
-                        <width>156</width>
-                        <height>226</height>
-                        <texture diffuse="views/newgloss/panel-poster-diffuse.png">views/newgloss/gloss.png</texture>
-                        <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                    </control>
-                    <control type="image">
-                        <description>Border</description>
-                        <posx>-4</posx>
-                        <posy>-4</posy>
-                        <width>176</width>
-                        <height>246</height>
-                        <texture border="25">views/newgloss/border.png</texture>
-                        <aspectratio>stretch</aspectratio>
-                        <colordiffuse>Mod_Border_Fade</colordiffuse>
-                    </control>  
+                    
                     <control type="image">
                         <description>Poster</description>
                         <posx>6</posx>
@@ -203,10 +186,44 @@
                         <colordiffuse>Mod_Cover_Fade</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
+                    <control type="label">
+							<posx>85</posx>
+							<posy>7</posy>
+							<width>156</width>
+							<height>226</height>
+							<label>$INFO[ListItem.Season]</label>
+							<font>Font-Season-Panel</font>
+							<textcolor>mod-infotags-d</textcolor>
+							<scroll>false</scroll>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
+                    <control type="label">
+                        <posx>84</posx>
+                        <posy>6</posy>
+                        <width>156</width>
+                        <height>226</height>
+                        <label>$INFO[ListItem.Season]</label>
+                        <font>Font-Season-Panel</font>
+                        <textcolor>mod-infotags-alt</textcolor>
+                        <scroll>false</scroll>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                    </control>
                 </itemlayout>
                 <focusedlayout width="168" height="238">
                     <control type="group">
                         <animation effect="zoom" start="75" end="100" time="150" center="auto">Focus</animation>
+                        <control type="image">
+                            <description>Border</description>
+                            <posx>-4</posx>
+                            <posy>-4</posy>
+                            <width>176</width>
+                            <height>246</height>
+                            <texture border="25">views/newgloss/border-focus.png</texture>
+                            <aspectratio>stretch</aspectratio>
+                            <colordiffuse>Mod_Border</colordiffuse>
+                        </control> 
                         <control type="image">
                             <posx>6</posx>
                             <posy>6</posy>
@@ -224,26 +241,6 @@
                             <include>overlay.visibility</include>
                             <visible>!IsEmpty(ListItem.Overlay)</visible>
                         </control> 
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>6</posx>
-                            <posy>6</posy>
-                            <width>156</width>
-                            <height>226</height>
-                            <texture diffuse="views/newgloss/panel-poster-diffuse.png">views/newgloss/gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
-                        <control type="image">
-                            <description>Border</description>
-                            <posx>-4</posx>
-                            <posy>-4</posy>
-                            <width>176</width>
-                            <height>246</height>
-                            <texture border="25">views/newgloss/border-focus.png</texture>
-                            <aspectratio>stretch</aspectratio>
-                            <colordiffuse>Mod_Border</colordiffuse>
-                        </control> 
                         <control type="image">
                             <description>Border</description>
                             <posx>-4</posx>
@@ -254,6 +251,30 @@
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>ddffffff</colordiffuse>
                         </control> 
+                        <control type="label">
+							<posx>85</posx>
+							<posy>7</posy>
+							<width>156</width>
+							<height>226</height>
+							<label>$INFO[ListItem.Season]</label>
+							<font>Font-Season-Panel</font>
+							<textcolor>mod-infotags-d</textcolor>
+							<scroll>false</scroll>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
+                        <control type="label">
+							<posx>84</posx>
+							<posy>6</posy>
+							<width>156</width>
+							<height>226</height>
+							<label>$INFO[ListItem.Season]</label>
+							<font>Font-Season-Panel</font>
+							<textcolor>mod-infotags-alt</textcolor>
+							<scroll>false</scroll>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
                     </control>
                 </focusedlayout>
             </control>

@@ -50,7 +50,7 @@
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
                 <pagecontrol>70</pagecontrol>
-                <viewtype label="Panel (Fanart)">list</viewtype>
+                <viewtype label="Fanart Panel">list</viewtype>
                 <ondown>70</ondown>
                 <onleft>52</onleft>
                 <onright>52</onright>

@@ -1,0 +1,378 @@
+<includes>
+<!-- ========================= -->
+<!-- Episode Info (516) -->
+<!-- ========================= -->
+	
+    <include name="Viewtype-EpisodeInfo">
+        <control type="group">
+            <include>FullscreenDimensions</include>
+            <include>OptionsShutdownAnimation</include>
+            <include>BannerListAnimations</include>    
+			<visible>!Window.IsActive(movieinformation) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + Control.IsVisible(516)</visible>
+			<control type="fixedlist" id="516">
+				<posx>-265</posx>
+				<posy>135</posy>
+				<width>2300</width>
+				<height>801</height>
+				<pagecontrol>70</pagecontrol>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<viewtype label="Episode Info">list</viewtype>
+				<onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+				<onleft condition="Skin.HasSetting(KioskMode)">516</onleft>
+				<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+				<onright condition="Skin.HasSetting(KioskMode)">516</onright>
+				<focusposition>3</focusposition>
+				<movement>0</movement>
+				<preloaditems>0</preloaditems>  
+				<itemlayout height="108">							
+					<control type="group">
+						<posx>976</posx>
+						<posy>40</posy>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Episode]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Episode,0,]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>!IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Season]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>IntegerGreaterThan(ListItem.Season,9) + Container.Content(seasons)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Season,0,]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>!IntegerGreaterThan(ListItem.Season,9) + Container.Content(seasons)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),9) + !IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Property(UnWatchedEpisodes),0,]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),9) + Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<number>99</number>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>1020</posx>
+							<posy>4</posy>
+							<width>900</width>
+							<label>$INFO[ListItem.Title]</label>
+							<font>Font-Alaska-S34-BL</font>
+							<textcolor>Mod_Tags</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+						</control>
+						<control type="label">
+							<posx>1020</posx>
+							<posy>4</posy>
+							<width>900</width>
+							<label>20373</label>
+							<font>Font-Alaska-S34-BL</font>
+							<textcolor>Mod_Tags</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>Container.Content(seasons)</visible>
+						</control>
+						<control type="label">
+							<posx>1020</posx>
+							<posy>34</posy>
+							<width>900</width>
+							<label>$INFO[ListItem.Premiered]</label>
+							<font>Font-Alaska-S25-BL</font>
+							<textcolor>Mod_Tags_Light</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>!Container.Content(Seasons)</visible>
+						</control>
+						<control type="label">
+							<posx>1020</posx>
+							<posy>34</posy>
+							<width>900</width>
+							<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</label>
+							<font>Font-Alaska-S25-BL</font>
+							<textcolor>Mod_Tags_Light</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>Container.Content(Seasons)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout height="341">
+					<control type="group">
+						<animation effect="slide" start="0,96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(516).OnPrevious">Focus</animation>
+                        <animation effect="slide" start="0,-96" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(516).OnNext">Focus</animation>    
+                        <posx>200</posx>
+						<control type="group">
+							<posy>52</posy>
+							<control type="image">
+								<posx>265</posx>
+								<posy>-50</posy>
+								<width>1695</width>
+								<height>377</height>
+								<texture border="50">arctic/common/banner-35.png</texture>
+							</control>
+							<control type="image">
+								<posx>300</posx>
+								<posy>-15</posy>
+								<width>1625</width>
+								<height>307</height>
+								<texture border="35">arctic/common/panel.png</texture>
+							</control>
+							<control type="image">
+								<description>Thumb</description>
+								<posx>300</posx>
+								<posy>-15</posy>
+								<width>546</width>
+								<height>307</height>
+								<texture background="true" diffuse="arctic/banner/episodeend.png">$VAR[ListInfoLandscapeVar]</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+							</control>
+							<control type="image">
+								<posx>846</posx>
+								<posy>-15</posy>
+								<width>3</width>
+								<height>307</height>
+								<texture border="1,150,1,150">arctic/common/separator-v.png</texture>
+								<aspectratio>stretch</aspectratio>
+							</control>
+							<control type="group">
+								<posx>290</posx>
+								<posy>-25</posy>
+								<control type="image">
+                            		<posx>11</posx>
+                            		<posy>11</posy>
+									<width>75</width>
+									<height>75</height>
+									<aspectratio align="left" aligny="top">keep</aspectratio>
+									<texture  flipx="true" flipy="false">arctic/common/triangle.png</texture>
+									<colordiffuse>22ffffff</colordiffuse>
+								</control>
+                            	<control type="image">
+                            		<posx>10</posx>
+                            		<posy>10</posy>
+									<width>75</width>
+									<height>75</height>
+									<aspectratio align="left" aligny="top">keep</aspectratio>
+									<texture  flipx="true" flipy="false">arctic/common/triangle.png</texture>
+									<colordiffuse>ff111111</colordiffuse>
+								</control>
+								<control type="image">
+									<width>66</width>
+									<height>66</height>
+									<aspectratio align="left" aligny="top">keep</aspectratio>
+									<texture>$VAR[BannerOverlayNF]</texture>
+								</control>
+								<control type="image">
+									<width>66</width>
+									<height>66</height>
+									<aspectratio align="left" aligny="top">keep</aspectratio>
+									<texture>$VAR[BannerOverlayNF]</texture>
+									<include>overlay.diffuse</include>
+								</control>
+							</control>
+							<control type="group">
+								<posy>53</posy>
+								<posx>778</posx>
+								<control type="group">
+									<posx>905</posx>
+									<posy>-78</posy>
+									<include>Mod_Banner_Stars</include>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Episode]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Episode,0,]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>!IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Season]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>IntegerGreaterThan(ListItem.Season,9) + Container.Content(seasons)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Season,0,]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>!IntegerGreaterThan(ListItem.Season,9) + Container.Content(seasons)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),9) + Container.Content(tvshows)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Property(UnWatchedEpisodes),0,]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),9) + Container.Content(tvshows)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<number>99</number>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(tvshows)</visible>
+								</control>
+								<control type="label">
+									<posx>1025</posx>
+									<posy>4</posy>
+									<width>900</width>
+									<label>$INFO[ListItem.Title]</label>
+									<font>Font-Alaska-S34-BL</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+								</control>
+								<control type="label">
+									<posx>1025</posx>
+									<posy>4</posy>
+									<width>900</width>
+									<label>20373</label>
+									<font>Font-Alaska-S34-BL</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>Container.Content(seasons)</visible>
+								</control>
+								<control type="label">
+									<posx>1025</posx>
+									<posy>34</posy>
+									<width>900</width>
+									<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</label>
+									<font>Font-Alaska-S25-BL</font>
+									<textcolor>mod-infotags-alt2</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>Container.Content(Seasons)</visible>
+								</control>
+								<control type="label">
+									<posx>1025</posx>
+									<posy>34</posy>
+									<width>900</width>
+									<label>$INFO[ListItem.Premiered]</label>
+									<font>Font-Alaska-S25-BL</font>
+									<textcolor>mod-infotags-alt2</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>!Container.Content(Seasons)</visible>
+								</control>								
+								<control type="textbox">
+									<description>Plot</description>
+									<posx>90</posx>
+									<posy>77</posy>
+									<width>1035</width>
+									<height>140</height>
+									<label>$INFO[ListItem.Plot]</label>
+									<align>justify</align>
+									<textcolor>mod-infotags-alt2</textcolor>
+									<autoscroll delay="13000" time="3000" repeat="13000" />
+									<font>Font-Alaska-S25-NC</font>
+									<visible>![Container(516).OnNext | Container(516).OnPrevious]</visible>
+								</control>
+							</control>
+						</control>
+					</control>
+				</focusedlayout>
+			
+			</control>
+        </control>
+    </include>
+</includes>

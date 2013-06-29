@@ -17,6 +17,19 @@
 <!-- ================================================== --> 
 
     <include name="CommonOverlay">
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>windows/common/black.png</texture>
+			<aspectratio>scale</aspectratio>
+			<visible>Container.Content(episodes) + Control.IsVisible(511) + !IsEmpty(ListItem.Thumb) + Skin.HasSetting(lowlist.showepisodethumb)</visible>
+		</control> 
+    	<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>$INFO[ListItem.Thumb]</texture>
+			<aspectratio>scale</aspectratio>
+			<visible>Container.Content(episodes) + Control.IsVisible(511) + !IsEmpty(ListItem.Thumb) + Skin.HasSetting(lowlist.showepisodethumb)</visible>
+			<fadetime>200</fadetime>
+		</control> 
         <control type="videowindow">
             <include>FullscreenDimensions</include>
             <visible>Skin.HasSetting(BackgroundVideo) + Player.HasVideo</visible>
@@ -31,7 +44,7 @@
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
             <colordiffuse>Mod_Overlay_Floor</colordiffuse>
-            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + !StringCompare(Skin.String(homescreen.style),metro)]]</visible>
+            <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]]</visible>
         </control>
         
         <!-- DIM FANART -->
@@ -46,7 +59,7 @@
             <include>FullscreenDimensions</include>
             <texture>windows/common/white.png</texture>
             <colordiffuse>Mod_Overlay_Dimfanart_Extra</colordiffuse>
-            <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
+            <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + !StringCompare(Skin.String(homescreen.style),metro)]</visible>
         </control>
         
         <!-- GLass -->

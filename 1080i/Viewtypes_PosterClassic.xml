@@ -17,7 +17,7 @@
                 <pagecontrol>70</pagecontrol>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
-                <viewtype label="Poster (Classic)">list</viewtype>
+                <viewtype label="Classic Poster">list</viewtype>
                 <onleft>506</onleft>
                 <onright>506</onright>
                 <onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
@@ -66,7 +66,7 @@
                             <posy>10</posy>
                             <width>374</width>
                             <height>561</height>
-                            <texture background="true" diffuse="views/newgloss/classicposter-diffuse.png">$VAR[PosterViewPosterAlt]</texture>
+                            <texture background="true" diffuse="arctic/poster/classic.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
                         <control type="image">
@@ -77,23 +77,13 @@
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>-32</posx>
-                            <posy>10</posy>
-                            <width>374</width>
-                            <height>561</height>
-                            <texture diffuse="views/newgloss/classicposter-diffuse.png">views/newgloss/gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
                         <control type="image">
                             <description>Border</description>
                             <posx>-42</posx>
                             <posy>0</posy>
                             <width>394</width>
                             <height>581</height>
-                            <texture border="25">views/newgloss/border.png</texture>
+                            <texture border="50">arctic/common/border.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
@@ -139,7 +129,7 @@
                             <posy>10</posy>
                             <width>374</width>
                             <height>561</height>
-                            <texture background="true" diffuse="views/newgloss/classicposter-diffuse.png">$VAR[PosterViewPosterAlt]</texture>
+                            <texture background="true" diffuse="arctic/poster/classic.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
                         <control type="image">
@@ -150,23 +140,13 @@
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>-32</posx>
-                            <posy>10</posy>
-                            <width>374</width>
-                            <height>561</height>
-                            <texture diffuse="views/newgloss/classicposter-diffuse.png">views/newgloss/gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
                         <control type="image">
                             <description>Border</description>
                             <posx>-42</posx>
                             <posy>0</posy>
                             <width>394</width>
                             <height>581</height>
-                            <texture border="25">views/newgloss/border.png</texture>
+                            <texture border="35">arctic/common/border.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
@@ -231,7 +211,7 @@
                             <posy>10</posy>
                             <width>374</width>
                             <height>561</height>
-                            <texture background="true" diffuse="views/newgloss/classicposter-diffuse.png">$VAR[PosterViewPosterAlt]</texture>
+                            <texture background="true" diffuse="arctic/poster/classic.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
                         <control type="image">
@@ -242,23 +222,13 @@
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>-32</posx>
-                            <posy>10</posy>
-                            <width>374</width>
-                            <height>561</height>
-                            <texture diffuse="views/newgloss/classicposter-diffuse.png">views/newgloss/gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
                         <control type="image">
                             <description>Border</description>
                             <posx>-42</posx>
                             <posy>0</posy>
                             <width>394</width>
                             <height>581</height>
-                            <texture border="25">views/newgloss/border.png</texture>
+                            <texture border="25">arctic/common/border.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
@@ -328,10 +298,9 @@
                             <posy>10</posy>
                             <width>374</width>
                             <height>561</height>
-                            <texture background="true" diffuse="views/newgloss/classicposter-diffuse.png">$VAR[PosterViewPosterAlt]</texture>
+                            <texture background="true" diffuse="arctic/poster/classic.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
-
                         <control type="image">
                             <posx>242</posx>
                             <posy>10</posy>
@@ -340,23 +309,13 @@
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
                         </control>
-                        <!-- GLOSS AND BORDER OVERLAY -->
-                        <control type="image">
-                            <description>Gloss</description>
-                            <posx>-32</posx>
-                            <posy>10</posy>
-                            <width>374</width>
-                            <height>561</height>
-                            <texture diffuse="views/newgloss/classicposter-diffuse.png">views/newgloss/gloss.png</texture>
-                            <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        </control>
                         <control type="image">
                             <description>Border</description>
                             <posx>-42</posx>
                             <posy>0</posy>
                             <width>394</width>
                             <height>581</height>
-                            <texture border="25">views/newgloss/border.png</texture>
+                            <texture border="25">arctic/common/border.png</texture>
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 

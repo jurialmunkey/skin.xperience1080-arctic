@@ -23,6 +23,16 @@
 			<control type="group">
                 <posx>0</posx>
                 <control type="image">
+                    <description>Border</description>
+                    <posx>-4</posx>
+                    <posy>-4</posy>
+                    <width>848</width>
+                    <height>484</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
+                </control> 
+                <control type="image">
                     <description>Landscape</description>
                     <posx>6</posx>
                     <posy>6</posy>
@@ -41,16 +51,7 @@
                     <include>overlay.visibility</include>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
-                <control type="image">
-                    <description>Border</description>
-                    <posx>-4</posx>
-                    <posy>-4</posy>
-                    <width>848</width>
-                    <height>484</height>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <aspectratio>stretch</aspectratio>
-                    <colordiffuse>Mod_Border</colordiffuse>
-                </control> 
+                
 
 
                 <control type="group">
@@ -109,6 +110,16 @@
                 <preloaditems>2</preloaditems>
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.HasFolders | Container.Content(episodes) | Container.Content(seasons)</visible>
                 <itemlayout width="168" height="238">
+					<control type="image">
+                        <description>Border</description>
+                        <posx>-4</posx>
+                        <posy>-4</posy>
+                        <width>176</width>
+                        <height>246</height>
+                        <texture border="25">views/newgloss/border.png</texture>
+                        <aspectratio>stretch</aspectratio>
+                        <colordiffuse>Mod_Border_Fade</colordiffuse>
+                    </control>  
                     <control type="image">
                         <description>Poster</description>
                         <posx>6</posx>
@@ -129,27 +140,7 @@
                         <visible>!IsEmpty(ListItem.Overlay)</visible>
                         <colordiffuse>55ffffff</colordiffuse>
                     </control> 
-                    <!-- GLOSS AND BORDER OVERLAY -->
-                    <control type="image">
-                        <description>Gloss</description>
-                        <posx>6</posx>
-                        <posy>6</posy>
-                        <width>156</width>
-                        <height>226</height>
-                        <texture diffuse="views/newgloss/panel-poster-diffuse.png">views/newgloss/gloss.png</texture>
-                        <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                        <colordiffuse>55ffffff</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <description>Border</description>
-                        <posx>-4</posx>
-                        <posy>-4</posy>
-                        <width>176</width>
-                        <height>246</height>
-                        <texture border="25">views/newgloss/border.png</texture>
-                        <aspectratio>stretch</aspectratio>
-                        <colordiffuse>Mod_Border_Fade</colordiffuse>
-                    </control>  
+                    
                     <control type="image">
                         <description>Poster</description>
                         <posx>6</posx>
@@ -164,6 +155,16 @@
                 <focusedlayout width="168" height="238">
                     <control type="group">
                         <animation effect="zoom" start="75" end="122" time="150" center="auto">Focus</animation>
+                        <control type="image">
+							<description>Border</description>
+							<posx>-4</posx>
+							<posy>-4</posy>
+							<width>176</width>
+							<height>246</height>
+							<texture border="25">views/newgloss/border.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>Mod_Border</colordiffuse>
+						</control>
 						<control type="image">
 							<description>Poster</description>
 							<posx>6</posx>
@@ -182,16 +183,6 @@
 							<include>overlay.visibility</include>
 							<visible>!IsEmpty(ListItem.Overlay)</visible>
 						</control> 
-						<!-- GLOSS AND BORDER OVERLAY -->
-						<control type="image">
-							<description>Gloss</description>
-							<posx>6</posx>
-							<posy>6</posy>
-							<width>156</width>
-							<height>226</height>
-							<texture diffuse="views/newgloss/panel-poster-diffuse.png">views/newgloss/gloss.png</texture>
-							<aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-						</control>
 						<control type="image">
 							<description>Border</description>
 							<posx>-4</posx>

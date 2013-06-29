@@ -5,7 +5,6 @@
     <include name="Viewtype-MusicPanelBig">
         <control type="group">
             <visible>Control.IsVisible(55) + !Window.IsActive(musicinformation)</visible>
-            <include>CommonViewAnimations</include>
             <include>BannerListAnimations</include>
             <include>OptionsShutdownAnimation</include>
             <include>listEndAnimation</include>
@@ -19,7 +18,7 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">350</scrolltime>
                 <orientation>horizontal</orientation>
-                <viewtype label="Covers (Big)">list</viewtype>
+                <viewtype label="Big Cover">list</viewtype>
                 <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
                 <ondown condition="Skin.HasSetting(KioskMode)">RunScript(special://skin/extras/scripts/setClearProperty.py,BounceTop)</ondown>
                 <onright>55</onright>
@@ -55,19 +54,9 @@
 							<posy>10</posy>
 							<width>464</width>
 							<height>464</height>
-							<texture background="true" diffuse="views/newgloss/musicwall-diffuse.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
+							<texture background="true" diffuse="arctic/covers/464.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
 							<colordiffuse>ffcccccc</colordiffuse>
 							<aspectratio>stretch</aspectratio>
-						</control>
-						<control type="image">
-							<description>Gloss</description>
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>464</width>
-							<height>464</height>
-							<texture background="true" diffuse="views/newgloss/music-diffuse-702.png">views/newgloss/gloss.png</texture>
-							<aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
-							<colordiffuse>ffcccccc</colordiffuse>
 						</control>
 						<control type="image">
 							<description>Border</description>
@@ -75,7 +64,7 @@
 							<posy>0</posy>
 							<width>484</width>
 							<height>484</height>
-							<texture border="25">views/newgloss/border.png</texture>
+							<texture border="25">arctic/common/border.png</texture>
 							<colordiffuse>Mod_Border</colordiffuse>
 							<aspectratio>stretch</aspectratio>
 							<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
@@ -86,7 +75,7 @@
 							<posy>10</posy>
 							<width>464</width>
 							<height>464</height>
-							<texture>views/newgloss/musicwall-diffuse.png</texture>
+							<texture border="50">arctic/common/whitepanel.png</texture>
 							<colordiffuse>Mod_Cover_Fade</colordiffuse>
 							<aspectratio>stretch</aspectratio>
 						</control>
@@ -120,23 +109,22 @@
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 						</control>
 						<control type="image">
+							<description>Shadow Focus</description>
+							<posx>-93</posx>
+							<posy>0</posy>
+							<width>908</width>
+							<height>722</height>
+							<texture border="103,0,103,0">views/posterview/shadow-focus-square.png</texture>
+						</control>
+						<control type="image">
 							<description>Cover</description>
 							<posx>10</posx>
 							<posy>10</posy>
 							<width>702</width>
 							<height>702</height>
-							<texture background="true" diffuse="views/newgloss/music-diffuse-702.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
+							<texture background="true" diffuse="arctic/covers/702.png" fallback="views/fallbacks/DefaultAlbumCover.png/square-large.png">$VAR[WallPoster]</texture>
 							<aspectratio scalediffuse="false">scale</aspectratio>
 							<fadetime>200</fadetime>
-						</control>
-						<control type="image">
-							<description>Gloss</description>
-							<posx>10</posx>
-							<posy>10</posy>
-							<width>702</width>
-							<height>702</height>
-							<texture background="true" diffuse="views/newgloss/music-diffuse-702.png">views/newgloss/gloss.png</texture>
-							<aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
 						</control>
 						<control type="image">
 							<description>Border</description>
@@ -144,7 +132,7 @@
 							<posy>0</posy>
 							<width>722</width>
 							<height>722</height>
-							<texture border="25">views/newgloss/border.png</texture>
+							<texture border="25">arctic/common/border.png</texture>
 							<aspectratio scalediffuse="false">stretch</aspectratio>
 							<colordiffuse>Mod_Border</colordiffuse>
 						</control>
@@ -153,6 +141,9 @@
                 </focusedlayout>
             </control>
 			<control type="group">
+				<animation effect="fade" time="0" end="0">WindowClose</animation>
+				<animation effect="fade" time="0" end="0">Hidden</animation>
+				<visible>Control.IsVisible(55)</visible>
 				<posy>476</posy>
 				<posx>714</posx>
 				<control type="label">

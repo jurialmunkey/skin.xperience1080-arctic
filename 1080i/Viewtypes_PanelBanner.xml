@@ -29,7 +29,7 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>vertical</orientation>
-                <viewtype label="Panel (Banners)">list</viewtype>
+                <viewtype label="Banner Panel">list</viewtype>
                 <onup>509</onup>
                 <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
                 <onleft condition="Skin.HasSetting(KioskMode)">509</onleft>
@@ -39,28 +39,7 @@
                 <focusposition>2</focusposition>
                 <visible>Container.Content(tvshows)</visible>
                 <itemlayout width="504" height="119">
-                    <control type="image">
-                        <description>Banner</description>
-                        <posx>6</posx>
-                        <posy>6</posy>
-                        <width>492</width>
-                        <height>107</height>
-                        <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
-                        <colordiffuse>ff666666</colordiffuse>
-                        <aspectratio>stretch</aspectratio>
-                    </control>
-                    <!-- GLOSS AND BORDER OVERLAY -->
-                    <control type="image">
-                        <description>Gloss</description>
-                        <posx>6</posx>
-                        <posy>6</posy>
-                        <width>492</width>
-                        <height>107</height>
-                        <texture diffuse="views/newgloss/banner-diffuse.png">views/newgloss/info-gloss.png</texture>
-                        <aspectratio align="left" aligny="top" scalediffuse="false">stretch</aspectratio>
-                        <colordiffuse>55ffffff</colordiffuse>
-                    </control>
-                    <control type="image">
+					<control type="image">
                         <description>Border</description>
                         <posx>-4</posx>
                         <posy>-4</posy>
@@ -76,6 +55,17 @@
                         <posy>6</posy>
                         <width>492</width>
                         <height>107</height>
+                        <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                        <colordiffuse>ff666666</colordiffuse>
+                        <aspectratio>stretch</aspectratio>
+                    </control>
+                    
+                    <control type="image">
+                        <description>Banner</description>
+                        <posx>6</posx>
+                        <posy>6</posy>
+                        <width>492</width>
+                        <height>107</height>
                         <texture border="5">views/newgloss/banner-diffuse.png</texture>
                         <colordiffuse>Mod_Cover_Fade</colordiffuse>
                         <aspectratio>stretch</aspectratio>
@@ -83,16 +73,7 @@
                 </itemlayout>
                 <focusedlayout width="504" height="119">
                     <control type="group">
-                        <control type="image">
-                            <description>Banner</description>
-                            <posx>6</posx>
-                            <posy>6</posy>
-                            <width>492</width>
-                            <height>107</height>
-                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
-                            <aspectratio>stretch</aspectratio>
-                        </control>
-                        <control type="image">
+						<control type="image">
                             <description>Border</description>
                             <posx>-4</posx>
                             <posy>-4</posy>
@@ -102,6 +83,16 @@
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
+                        <control type="image">
+                            <description>Banner</description>
+                            <posx>6</posx>
+                            <posy>6</posy>
+                            <width>492</width>
+                            <height>107</height>
+                            <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
+                            <aspectratio>stretch</aspectratio>
+                        </control>
+                        
                         
                     </control>
                 </focusedlayout>
@@ -109,6 +100,16 @@
             
             <control type="group">
                 <posx>0</posx>
+                <control type="image">
+                    <description>Border</description>
+                    <posx>-4</posx>
+                    <posy>-4</posy>
+                    <width>848</width>
+                    <height>484</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
+                </control> 
                 <control type="image">
                     <description>Landscape</description>
                     <posx>6</posx>
@@ -128,16 +129,7 @@
                     <include>overlay.visibility</include>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
-                <control type="image">
-                    <description>Border</description>
-                    <posx>-4</posx>
-                    <posy>-4</posy>
-                    <width>848</width>
-                    <height>484</height>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <aspectratio>stretch</aspectratio>
-                    <colordiffuse>Mod_Border</colordiffuse>
-                </control> 
+                
                 <control type="group">
                     <posy>472</posy>
                     <control type="label">
@@ -166,6 +158,16 @@
             <control type="group">
                 <posx>1350</posx>
                 <control type="image">
+                    <description>Border</description>
+                    <posx>-10</posx>
+                    <posy>-4</posy>
+                    <width>512</width>
+                    <height>722</height>
+                    <texture border="25">views/newgloss/border.png</texture>
+                    <aspectratio>stretch</aspectratio>
+                    <colordiffuse>Mod_Border</colordiffuse>
+                </control> 
+                <control type="image">
                     <description>Poster</description>
                     <posx>0</posx>
                     <posy>6</posy>
@@ -175,26 +177,8 @@
                     <aspectratio>stretch</aspectratio>
                     <fadetime>250</fadetime>
                 </control>  
-                <!-- GLOSS AND BORDER OVERLAY -->
-                <control type="image">
-                    <description>Gloss</description>
-                    <posx>0</posx>
-                    <posy>6</posy>
-                    <width>492</width>
-                    <height>702</height>
-                    <texture diffuse="views/newgloss/panel-bigposter-diffuse.png">views/newgloss/gloss.png</texture>
-                    <aspectratio align="left" aligny="top" scalediffuse="false">keep</aspectratio>
-                </control>
-                <control type="image">
-                    <description>Border</description>
-                    <posx>-10</posx>
-                    <posy>-4</posy>
-                    <width>512</width>
-                    <height>722</height>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <aspectratio>stretch</aspectratio>
-                    <colordiffuse>Mod_Border</colordiffuse>
-                </control>  
+
+                 
             </control>
         </control>
     </include>    

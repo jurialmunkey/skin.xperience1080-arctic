@@ -63,7 +63,7 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
-                <viewtype label="Panel (Covers)">list</viewtype>
+                <viewtype label="Cover Panel">list</viewtype>
                 <pagecontrol>70</pagecontrol>
                 <ondown>70</ondown>
                 <onright>51</onright>
