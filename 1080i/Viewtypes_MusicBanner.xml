@@ -195,6 +195,7 @@
                             <width>1062</width>
                             <height>332</height>
                             <texture border="50">arctic/common/banner-35.png</texture>
+                            <colordiffuse>eeeeeeee</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>35</posx>
@@ -263,7 +264,7 @@
                             <width>1062</width>
                             <height>332</height>
                             <texture border="50">arctic/common/banner-35.png</texture>
-                            <colordiffuse>ffeeeeee</colordiffuse>
+                            <colordiffuse>eeeeeeee</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>35</posx>
@@ -347,7 +348,7 @@
                             <width>1062</width>
                             <height>332</height>
                             <texture border="50">arctic/common/banner-35.png</texture>
-                            <colordiffuse>ffeeeeee</colordiffuse>
+                            <colordiffuse>eeeeeeee</colordiffuse>
                         </control>
                         <control type="image">
                             <posx>35</posx>
