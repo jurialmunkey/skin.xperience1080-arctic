@@ -18,9 +18,6 @@
 	<onload condition="!Skin.HasSetting(mod2.settingsdefault) | IsEmpty(Skin.String(pvrcolor.name)) | !SubString(Skin.String(pvrcolor.name),Tiles)">Skin.SetString(pvrcolor.name,Grey Tiles)</onload>
 	<onload condition="!Skin.HasSetting(mod2.settingsdefault) | IsEmpty(Skin.String(weathercolor.name)) | !SubString(Skin.String(weathercolor.name),Tiles)">Skin.SetString(weathercolor.name,Grey Tiles)</onload>
 	<onload condition="IsEmpty(Skin.String(homescreen.style))">Skin.SetString(homescreen.style,simple)</onload>
-	<onload condition="IsEmpty(Skin.String(movie.widget.type))">Skin.SetString(movie.widget.type,$LOCALIZE[41552])</onload>
-	<onload condition="IsEmpty(Skin.String(tvshow.widget.type))">Skin.SetString(tvshow.widget.type,$LOCALIZE[41553])</onload>
-	<onload condition="IsEmpty(Skin.String(music.widget.type))">Skin.SetString(music.widget.type,$LOCALIZE[41555])</onload>
 	<onload condition="![stringcompare(Skin.String(movie.widget.type),$LOCALIZE[41550]) | stringcompare(Skin.String(movie.widget.type),$LOCALIZE[41552]) | stringcompare(Skin.String(movie.widget.type),$LOCALIZE[575])]">Skin.SetString(movie.widget.type,$LOCALIZE[41552])</onload>
 	<onload condition="![stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551]) | stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550]) | stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553])]">Skin.SetString(tvshow.widget.type,$LOCALIZE[41553])</onload>
 	<onload condition="![stringcompare(Skin.String(music.widget.type),$LOCALIZE[41555]) | stringcompare(Skin.String(music.widget.type),$LOCALIZE[41550]) | stringcompare(Skin.String(music.widget.type),$LOCALIZE[41554])]">Skin.SetString(music.widget.type,$LOCALIZE[41555])</onload>
