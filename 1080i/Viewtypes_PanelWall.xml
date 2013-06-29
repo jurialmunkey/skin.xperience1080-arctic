@@ -101,12 +101,13 @@
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <pagecontrol>70</pagecontrol>
-                <orientation>horizontal</orientation>
+                <orientation>vertical</orientation>
                 <viewtype label="Panel (Wall)">list</viewtype>
                 <onup>510</onup>
-                <ondown>70</ondown>
-                <onleft>510</onleft>
-                <onright>510</onright>
+                <ondown>510</ondown>
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <onleft condition="Skin.HasSetting(KioskMode)">510</onleft>
+                <onright>70</onright>
                 <preloaditems>2</preloaditems>
                 <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(actors) | Container.HasFolders | Container.Content(episodes) | Container.Content(seasons)</visible>
                 <itemlayout width="168" height="238">
@@ -128,7 +129,7 @@
                         <height>226</height>
                         <texture background="true" diffuse="views/newgloss/panel-poster-diffuse.png">$VAR[WallPoster]</texture>
                         <aspectratio>stretch</aspectratio>
-                        <colordiffuse>99ffffff</colordiffuse>
+                        <colordiffuse>cfffffff</colordiffuse>
                     </control>
                     <control type="image">
                         <posx>112</posx>
@@ -138,7 +139,7 @@
                         <aspect>keepaspect</aspect>
                         <include>overlay.visibility</include>
                         <visible>!IsEmpty(ListItem.Overlay)</visible>
-                        <colordiffuse>55ffffff</colordiffuse>
+                        <colordiffuse>99ffffff</colordiffuse>
                     </control> 
                     
                     <control type="image">
@@ -198,28 +199,26 @@
             </control>
             <!--Scrollbar-->
             <control type="group">
-				<posx>850</posx>
-				<posy>180r</posy>
+				<posx>28r</posx>
+				<posy>80</posy>
                 <control type="image">
                     <description>Scrollbar background (visible on focus)</description>
-                    <width>986</width>
-                    <height>6</height>
-                    <texture border="6,3,6,3">views/other/scrollbar-h.png</texture>
+                    <width>6</width>
+                    <height>586</height>
+                    <texture border="3,6,3,6">views/other/scrollbar.png</texture>
                     <visible>Control.IsVisible(510) + Control.HasFocus(70)</visible>
                     <animation effect="fade" start="0" end="25" time="300" tween="sine" easing="inout">Visible</animation>
                     <animation effect="fade" start="25" end="0" time="300" tween="sine" easing="inout">Hidden</animation>
                 </control>
                 <control type="scrollbar" id="70">
                     <description>Scrollbar</description>
-                    <width>992</width>
-                    <height>6</height>
-                    <orientation>horizontal</orientation>
-                    <texturesliderbar border="6,3,6,3">views/other/scrollbar-h.png</texturesliderbar>
-                    <texturesliderbarfocus border="6,3,6,3">views/other/scrollbar-h-fo.png</texturesliderbarfocus>
+                    <width>6</width>
+                    <height>592</height>
+                    <orientation>vertical</orientation>
+                    <texturesliderbar border="3,6,3,6">views/other/scrollbar.png</texturesliderbar>
+                    <texturesliderbarfocus border="3,6,3,6">views/other/scrollbar-fo.png</texturesliderbarfocus>
                     <showonepage>false</showonepage>
-                    <onup>510</onup>
-                    <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
-                    <ondown condition="Skin.HasSetting(KioskMode)">510</ondown>
+                    <onleft>510</onleft>
                     <animation effect="fade" start="40" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
                     <visible>Control.IsVisible(510)</visible>
                 </control>

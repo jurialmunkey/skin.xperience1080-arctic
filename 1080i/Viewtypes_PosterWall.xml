@@ -8,13 +8,14 @@
             <control type="group">
                 <visible>Control.IsVisible(502) + !Window.IsActive(movieinformation)</visible>
                 <include>CommonViewAnimation</include>
+                <include>FullscreenDimensions</include>
+				<include>OptionsShutdownAnimation</include>
+				<include>BannerListAnimations</include>
                 <control type="panel" id="502">
 					<width>1920</width>
 					<height>730</height>
 					<posx>95</posx>
 					<posy>170</posy>
-                    <include>FullscreenDimensions</include>
-                    <include>OptionsShutdownAnimation</include>
                     <pagecontrol>70</pagecontrol>
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
                     <orientation>vertical</orientation>
