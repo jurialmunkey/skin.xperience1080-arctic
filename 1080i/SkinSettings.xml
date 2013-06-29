@@ -900,7 +900,13 @@
                         <onclick>Skin.ToggleSetting(PlayTrailer.Minimized)</onclick>
                         <label>$LOCALIZE[41203]</label>
                     </control>
-                    
+                    <control type="radiobutton" id="3017">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(old.infostyle)</selected>
+                        <onclick>Skin.ToggleSetting(old.infostyle)</onclick>
+                        <label>Use old info screens</label>
+                    </control>
                     <control type="radiobutton" id="3005">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
