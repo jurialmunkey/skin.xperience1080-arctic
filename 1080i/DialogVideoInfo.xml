@@ -262,47 +262,6 @@
 						</content>
 					</control>
 				</control>
-				<!-- POSTER -->
-				<control type="group">
-					<posx>180</posx>
-					<posy>190</posy>                
-					<control type="image">
-						<description>Reflection</description>
-						<posx>0</posx>
-						<posy>700</posy>
-						<width>466</width>
-						<height>700</height>
-						<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$VAR[VideoInfoThumb]</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-					</control>
-					<control type="image">
-						<description>Shadow</description>
-						<posx>-100</posx>
-						<posy>-10</posy>
-						<width>666</width>
-						<height>710</height>
-						<texture border="150">views/posterview/shadow-focus.png</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-					</control>
-					<control type="image">
-						<description>Poster</description>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>466</width>
-						<height>700</height>
-						<texture background="true" diffuse="arctic/banner/poster.png">$VAR[VideoInfoThumb]</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-					</control>
-					<control type="image">
-						<description>Border</description>
-						<posx>-10</posx>
-						<posy>-10</posy>
-						<width>486</width>
-						<height>720</height>
-						<texture border="25">arctic/common/border.png</texture>
-						<aspectratio scalediffuse="false">stretch</aspectratio>
-					</control>
-				</control>
 				<!-- DIRECTOR -->
 				<control type="group">
 					<animation effect="slide" start="0" end="0,58" condition="IsEmpty(ListItem.Writer)">Conditional</animation>
@@ -480,6 +439,47 @@
 						</control>
 					</control>
 				</control>      
+				<!-- POSTER -->
+				<control type="group">
+					<posx>180</posx>
+					<posy>190</posy>                
+					<control type="image">
+						<description>Reflection</description>
+						<posx>0</posx>
+						<posy>700</posy>
+						<width>466</width>
+						<height>700</height>
+						<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$VAR[VideoInfoThumb]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Shadow</description>
+						<posx>-100</posx>
+						<posy>-10</posy>
+						<width>666</width>
+						<height>710</height>
+						<texture border="150">views/posterview/shadow-focus.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Poster</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>466</width>
+						<height>700</height>
+						<texture background="true" diffuse="arctic/banner/poster.png">$VAR[VideoInfoThumb]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<description>Border</description>
+						<posx>-10</posx>
+						<posy>-10</posy>
+						<width>486</width>
+						<height>720</height>
+						<texture border="25">arctic/common/border.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+				</control>
             </control>
         </control>
         
