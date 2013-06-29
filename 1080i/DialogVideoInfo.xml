@@ -309,7 +309,7 @@
 					<posx>985</posx>
 					<posy>257</posy>
 					<control type="image">
-						<posx>-472</posx>
+						<posx>-785</posx>
 						<posy>-93</posy>
 						<width>1680</width>
 						<height>84</height>
@@ -361,7 +361,7 @@
 					<posx>985</posx>
 					<posy>315</posy>
 					<control type="image">
-						<posx>-472</posx>
+						<posx>-785</posx>
 						<posy>-93</posy>
 						<width>1680</width>
 						<height>84</height>
