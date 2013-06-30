@@ -1365,6 +1365,7 @@
 						<itemlayout width="184" condition="!Container(525).HasFocus(3)">
 							<control type="group">
 								<animation effect="fade" start="100" end="66" condition="true">Conditional</animation>
+								<animation effect="fade" start="100" end="55" condition="Control.HasFocus(82)">Conditional</animation>
 								<control type="image">
 									<posx>10</posx>
 									<posy>264</posy>
@@ -1393,6 +1394,7 @@
 								<height>254</height>
 								<texture border="5">views/newgloss/whitepanel.png</texture>
 								<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+								<visible>Control.HasFocus(82)</visible>
 							</control>
 						</itemlayout>
 						<itemlayout width="230" condition="Container(525).HasFocus(3)">
@@ -1400,6 +1402,7 @@
 								<posy>34</posy>
 								<control type="group">
 									<animation effect="fade" start="100" end="66" condition="true">Conditional</animation>
+									<animation effect="fade" start="100" end="55" condition="Control.HasFocus(82)">Conditional</animation>
 									<control type="image">
 										<posx>10</posx>
 										<posy>230</posy>
@@ -1428,6 +1431,7 @@
 									<height>220</height>
 									<texture border="5">views/newgloss/whitepanel.png</texture>
 									<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
+									<visible>Control.HasFocus(82)</visible>
 								</control>
 							</control>
 						</itemlayout>
@@ -1455,7 +1459,7 @@
 								<texture border="25">views/newgloss/border.png</texture>
 								<animation effect="fade" start="100" end="33" condition="!Control.HasFocus(82)">Conditional</animation>
 							</control>
-							<control type="image">
+							<!--<control type="image">
 								<posx>10</posx>
 								<posy>10</posy>
 								<width>169</width>
@@ -1463,7 +1467,7 @@
 								<texture border="5">views/newgloss/whitepanel.png</texture>
 								<visible>!Control.HasFocus(82)</visible>
 								<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
-							</control>
+							</control>-->
 						</focusedlayout>
 						<focusedlayout width="230" condition="Container(525).HasFocus(3)">
 							<control type="group">
@@ -1491,7 +1495,7 @@
 									<texture border="25">views/newgloss/border.png</texture>
 									<animation effect="fade" start="100" end="33" condition="!Control.HasFocus(82)">Conditional</animation>
 								</control>
-								<control type="image">
+								<!--<control type="image">
 									<posx>10</posx>
 									<posy>10</posy>
 									<width>220</width>
@@ -1499,7 +1503,7 @@
 									<texture border="5">views/newgloss/whitepanel.png</texture>
 									<visible>!Control.HasFocus(82)</visible>
 									<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
-								</control>
+								</control>-->
 							</control>
 						</focusedlayout>
 						<content>
