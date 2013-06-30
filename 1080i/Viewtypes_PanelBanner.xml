@@ -24,7 +24,7 @@
             <control type="wraplist" id="509">
 				<posx>840</posx>
 				<posy>0</posy>
-				<width>504</width>
+				<width>1008</width>
 				<height>714</height>
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -36,9 +36,9 @@
                 <ondown>509</ondown>
                 <onright>509</onright>
                 <preloaditems>2</preloaditems>
-                <focusposition>2</focusposition>
+                <focusposition>1</focusposition>
                 <visible>Container.Content(tvshows)</visible>
-                <itemlayout width="504" height="119">
+                <itemlayout width="504" height="119" condition="Skin.HasSetting(bannerpanel.showposter)">
 					<control type="image">
                         <description>Border</description>
                         <posx>-4</posx>
@@ -71,7 +71,99 @@
                         <aspectratio>stretch</aspectratio>
                     </control>
                 </itemlayout>
-                <focusedlayout width="504" height="119">
+                <itemlayout width="1008" height="238" condition="!Skin.HasSetting(bannerpanel.showposter)">
+                	<control type="group">
+                		<control type="image">
+							<description>Border</description>
+							<posx>-4</posx>
+							<posy>-4</posy>
+							<width>1016</width>
+							<height>246</height>
+							<texture border="35">arctic/common/border.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>Mod_Border_Fade</colordiffuse>
+						</control> 
+						<control type="image">
+							<description>Banner</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>226</height>
+							<texture border="15">arctic/common/whitepanel.png</texture>
+							<colordiffuse>ffcccccc</colordiffuse>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Banner</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>182</height>
+							<texture background="true" diffuse="arctic/banner/panel-top.png">$VAR[PlexBanner]</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>ff999999</colordiffuse>
+						</control>
+						<control type="image">
+							<description>Banner</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>182</height>
+							<texture border="25">arctic/banner/panel-top.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>Mod_Cover_Fade</colordiffuse>
+						</control>
+						<control type="group">
+							<posy>193</posy>
+							<posx>20</posx>
+							<control type="image">
+								<description>Rating star</description>
+								<posx>0</posx>
+								<posy>5</posy>
+								<width>21</width>
+								<height>20</height>
+								<texture>views/banner/other/rating.png</texture>
+								<visible>!IsEmpty(ListItem.Rating)</visible>
+							</control>
+							<control type="label">
+								<posx>27</posx>
+								<posy>0</posy>
+								<width>940</width>
+								<label>$INFO[ListItem.Rating]$INFO[ListItem.Genre, • ,]</label>
+								<font>Font-Alaska-S25-BL</font>
+								<textcolor>mod-infotags-l</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<animation effect="slide" end="-27" time="0" condition="IsEmpty(ListItem.Rating)">Conditional</animation>
+								<visible>!Container.Content(movies)</visible>
+							</control>
+							<control type="label">
+								<posx>27</posx>
+								<posy>0</posy>
+								<width>940</width>
+								<label>$INFO[ListItem.Rating]$INFO[ListItem.Genre, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
+								<font>Font-Alaska-S25-BL</font>
+								<textcolor>mod-infotags-l</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<animation effect="slide" end="-27" time="0" condition="IsEmpty(ListItem.Rating)">Conditional</animation>
+								<visible>Container.Content(movies)</visible>
+							</control>
+							<control type="label">
+								<posx>964</posx>
+								<posy>0</posy>
+								<width>940</width>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Font-Alaska-S25-BL</font>
+								<textcolor>mod-infotags-l</textcolor>
+								<scroll>false</scroll>
+								<align>right</align>
+							</control>
+						</control>
+						
+                    </control>
+                </itemlayout>
+                <focusedlayout width="504" height="119" condition="Skin.HasSetting(bannerpanel.showposter)">
                     <control type="group">
 						<control type="image">
                             <description>Border</description>
@@ -92,8 +184,86 @@
                             <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
                             <aspectratio>stretch</aspectratio>
                         </control>
-                        
-                        
+                    </control>
+                </focusedlayout>
+                <focusedlayout width="1008" height="238" condition="!Skin.HasSetting(bannerpanel.showposter)">
+                    <control type="group">
+						<control type="image">
+							<description>Border</description>
+							<posx>-4</posx>
+							<posy>-4</posy>
+							<width>1016</width>
+							<height>246</height>
+							<texture border="35">arctic/common/border.png</texture>
+							<aspectratio>stretch</aspectratio>
+							<colordiffuse>Mod_Border</colordiffuse>
+						</control> 
+						<control type="image">
+							<description>Banner</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>226</height>
+							<texture border="15">arctic/common/whitepanel.png</texture>
+							<colordiffuse>ffeeeeee</colordiffuse>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Banner</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>182</height>
+							<texture background="true" diffuse="arctic/banner/panel-top.png">$VAR[PlexBanner]</texture>
+							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="group">
+							<posy>193</posy>
+							<posx>20</posx>
+							<control type="image">
+								<description>Rating star</description>
+								<posx>0</posx>
+								<posy>5</posy>
+								<width>21</width>
+								<height>20</height>
+								<texture>views/banner/other/rating.png</texture>
+								<visible>!IsEmpty(ListItem.Rating)</visible>
+							</control>
+							<control type="label">
+								<posx>27</posx>
+								<posy>0</posy>
+								<width>940</width>
+								<label>$INFO[ListItem.Rating]$INFO[ListItem.Genre, • ,]</label>
+								<font>Font-Alaska-S25-BL</font>
+								<textcolor>mod-infotags</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<animation effect="slide" end="-27" time="0" condition="IsEmpty(ListItem.Rating)">Conditional</animation>
+								<visible>!Container.Content(movies)</visible>
+							</control>
+							<control type="label">
+								<posx>27</posx>
+								<posy>0</posy>
+								<width>940</width>
+								<label>$INFO[ListItem.Rating]$INFO[ListItem.Genre, • ,]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
+								<font>Font-Alaska-S25-BL</font>
+								<textcolor>mod-infotags</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<animation effect="slide" end="-27" time="0" condition="IsEmpty(ListItem.Rating)">Conditional</animation>
+								<visible>Container.Content(movies)</visible>
+							</control>
+							<control type="label">
+								<posx>964</posx>
+								<posy>0</posy>
+								<width>940</width>
+								<label>$INFO[ListItem.Label]</label>
+								<font>Font-Alaska-S25-BL</font>
+								<textcolor>mod-infotags</textcolor>
+								<scroll>false</scroll>
+								<align>right</align>
+							</control>
+						</control>
                     </control>
                 </focusedlayout>
             </control>
@@ -157,6 +327,7 @@
             </control>
             <control type="group">
                 <posx>1350</posx>
+                <visible>Skin.HasSetting(bannerpanel.showposter)</visible>
                 <control type="image">
                     <description>Border</description>
                     <posx>-10</posx>

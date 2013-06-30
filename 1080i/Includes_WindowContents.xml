@@ -243,7 +243,7 @@
     <variable name="extrafanart.path">
     	<value condition="Skin.HasSetting(tvshows.use.extrafanart) + [Container.Content(tvshows) | Container.Content(seasons)]">$INFO[ListItem.Path,,/extrafanart/]</value>
     	<value condition="Skin.HasSetting(tvshows.use.extrafanart) + Container.Content(episodes)">$INFO[ListItem.Path,,/../extrafanart/]</value>
-    	<value condition="Skin.HasSetting(music.use.extrafanart) + Container.Content(albums) | Container.Content(artists) | Container.Content(songs)">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/extrafanart/]</value>
+    	<value condition="Skin.HasSetting(music.use.extrafanart) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]">$INFO[Skin.String(cdartlocation)]$INFO[ListItem.Artist,,/extrafanart/]</value>
     	<value condition="Skin.HasSetting(movies.use.extrafanart) + [Container.Content(movies)]">$INFO[ListItem.Path,,/extrafanart/]</value>
     	<value>-</value>
     </variable>
@@ -277,7 +277,7 @@
             <imagepath background="true">$VAR[extrafanart.path]</imagepath>
             <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-            <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Window.IsActive(favourites) + [[Skin.HasSetting(tvshows.use.extrafanart) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(movies.use.extrafanart) + [Container.Content(movies)]  | [Skin.HasSetting(music.use.extrafanart) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]]]</visible>
+            <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Window.IsActive(favourites) + [[Skin.HasSetting(tvshows.use.extrafanart) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(movies.use.extrafanart) + Container.Content(movies)] | [Skin.HasSetting(music.use.extrafanart) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]]]</visible>
         </control>
     </include>
     <include name="BackgroundFanartMusicOSD">
