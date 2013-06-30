@@ -2,9 +2,9 @@
     <defaultcontrol always="true">9333</defaultcontrol>
     <onload condition="System.HasAddon(script.videolanguage) + !Container.Content(musicvideos)">RunScript(script.videolanguage,movieid=$INFO[ListItem.DBID])</onload>
     <onload>SetProperty(fanart_image,$INFO[ListItem.Art(fanart)],home)</onload>
-    <onload condition="Skin.HasSetting(MovieInformation.PlayTrailer)">AlarmClock(PlayTrailer,PlayMedia($INFO[ListItem.Trailer],false,1),00:01,silent)</onload>
+    <onload condition="Container.Content(movies) + Skin.HasSetting(MovieInformation.PlayTrailer)">AlarmClock(PlayTrailer,PlayMedia($INFO[ListItem.Trailer],false,1),00:01,silent)</onload>
     <onload>SendClick(2003,5)</onload>
-    <onload condition="Skin.HasSetting(PlayTrailer.Minimized) + Skin.HasSetting(MovieInformation.PlayTrailer) + !Skin.HasSetting(old.infostyle)">SetFocus(9336)</onload>
+    <onload condition="Container.Content(movies) + Skin.HasSetting(PlayTrailer.Minimized) + Skin.HasSetting(MovieInformation.PlayTrailer) + !Skin.HasSetting(old.infostyle)">SetFocus(9336)</onload>
     <onunload>ClearProperty(fanart_image,home)</onunload>
     <allowoverlay>no</allowoverlay>
     <controls>

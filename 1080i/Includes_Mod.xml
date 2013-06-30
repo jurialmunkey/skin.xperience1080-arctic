@@ -4971,8 +4971,10 @@
 				<visible allowhiddenfocus="true">false</visible>
 				<onleft>SetFocus(9333)</onleft>
 				<onright>SetFocus(9333)</onright>
+				<onback>SetFocus(9333)</onback>
 				<onclick>SetFocus(9333)</onclick>
 				<onclick condition="Player.HasVideo + Player.Playing">PlayerControl(Stop)</onclick>
+				<onback condition="Player.HasVideo + Player.Playing">PlayerControl(Stop)</onback>
 			</control>
             <!-- Info Stuff -->
             <control type="group">
