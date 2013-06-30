@@ -269,37 +269,70 @@
             </control>
             
             <control type="group">
-                <posx>0</posx>
-                <control type="image">
-                    <description>Border</description>
-                    <posx>-4</posx>
-                    <posy>-4</posy>
-                    <width>848</width>
-                    <height>484</height>
-                    <texture border="25">views/newgloss/border.png</texture>
-                    <aspectratio>stretch</aspectratio>
-                    <colordiffuse>Mod_Border</colordiffuse>
-                </control> 
-                <control type="image">
-                    <description>Landscape</description>
-                    <posx>6</posx>
-                    <posy>6</posy>
-                    <width>828</width>
-                    <height>464</height>
-                    <texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[ListInfoLandscapeVar]</texture>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <fadetime>200</fadetime>
+            	<control type="group">
+            		<visible>Skin.HasSetting(bannerpanel.showposter)</visible>
+					<control type="image">
+						<description>Border</description>
+						<posx>-4</posx>
+						<posy>-4</posy>
+						<width>848</width>
+						<height>484</height>
+						<texture border="25">views/newgloss/border.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>Mod_Border</colordiffuse>
+					</control> 
+					<control type="image">
+						<description>Landscape</description>
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>828</width>
+						<height>464</height>
+						<texture background="true" diffuse="views/newgloss/panel-fanart-diffuse.png">$VAR[ListInfoLandscapeVar]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="image">
+						<posx>734</posx>
+						<posy>6</posy>
+						<width>100</width>
+						<height>100</height>
+						<aspect>keepaspect</aspect>
+						<include>overlay.visibility</include>
+						<visible>!IsEmpty(ListItem.Overlay)</visible>
+					</control> 
                 </control>
-                <control type="image">
-                    <posx>734</posx>
-                    <posy>6</posy>
-                    <width>100</width>
-                    <height>100</height>
-                    <aspect>keepaspect</aspect>
-                    <include>overlay.visibility</include>
-                    <visible>!IsEmpty(ListItem.Overlay)</visible>
-                </control> 
-                
+                <control type="group">
+            		<visible>!Skin.HasSetting(bannerpanel.showposter)</visible>
+					<control type="image">
+						<description>Border</description>
+						<posx>-4</posx>
+						<posy>-4</posy>
+						<width>848</width>
+						<height>484</height>
+						<texture border="25">arctic/common/border.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>Mod_Border</colordiffuse>
+					</control> 
+					<control type="image">
+						<description>Landscape</description>
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>828</width>
+						<height>464</height>
+						<texture background="true" diffuse="arctic/reel/fanart-big.png">$VAR[ListInfoLandscapeVar]</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="image">
+						<posx>734</posx>
+						<posy>6</posy>
+						<width>100</width>
+						<height>100</height>
+						<aspect>keepaspect</aspect>
+						<include>overlay.visibility</include>
+						<visible>!IsEmpty(ListItem.Overlay)</visible>
+					</control> 
+                </control>
                 <control type="group">
                     <posy>472</posy>
                     <control type="label">
@@ -348,8 +381,6 @@
                     <aspectratio>stretch</aspectratio>
                     <fadetime>250</fadetime>
                 </control>  
-
-                 
             </control>
         </control>
     </include>    
