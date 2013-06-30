@@ -4967,8 +4967,13 @@
             </animation>
 
             <visible>!Skin.HasSetting(old.infostyle) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(musicvideos)]</visible>
-            
-
+			<control type="button" id="9336">
+				<visible allowhiddenfocus="true">false</visible>
+				<onleft>SetFocus(9333)</onleft>
+				<onright>SetFocus(9333)</onright>
+				<onclick>SetFocus(9333)</onclick>
+				<onclick condition="Player.HasVideo + Player.Playing">PlayerControl(Stop)</onclick>
+			</control>
             <!-- Info Stuff -->
             <control type="group">
                 <include>FullscreenDimensions</include>
@@ -4987,7 +4992,9 @@
                 <animation effect="slide" start="0" end="1485" time="400" tween="sine" easing="inout" condition="!IsEmpty(Window(3004).Property(ChooseArt)) + StringCompare(Window(3004).Property(ChooseArt),poster) + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]">Conditional</animation>
                 <animation effect="slide" start="0" end="1239" time="400" tween="sine" easing="inout" condition="!IsEmpty(Window(3004).Property(ChooseArt)) + [StringCompare(Window(3004).Property(ChooseArt),fanart) | StringCompare(Window(3004).Property(ChooseArt),landscape)] + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]">Conditional</animation>
                 <animation effect="slide" start="0" end="1701" time="400" tween="sine" easing="inout" condition="!IsEmpty(Window(3004).Property(ChooseArt)) + StringCompare(Window(3004).Property(ChooseArt),banner) + [Window.IsActive(filebrowser) | Window.IsActive(selectdialog) | Window.IsActive(DialogSelect.xml)]">Conditional</animation>
-                <animation effect="slide" end="-25" condition="true">Conditional</animation>
+                <animation effect="slide" end="-24,-9" condition="true">Conditional</animation>
+                <animation effect="slide" start="0" end="1264" time="400" tween="sine" easing="inout" condition="Control.HasFocus(9336)">Conditional</animation>
+
 				<!-- PLOT -->
 				<control type="group">
 					<posy>648</posy>
@@ -5018,6 +5025,8 @@
                 <control type="group">
                 	<posx>672</posx>
                 	<posy>540</posy>
+                	<visible>!Control.HasFocus(9336)</visible>
+                	<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
                 	<control type="image">
 						<posx>-472</posx>
 						<posy>-83</posy>
@@ -5031,6 +5040,13 @@
 						<width>1680</width>
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
+					</control>	
+					<control type="image">
+						<posx>-83</posx>
+						<posy>0</posy>
+						<width>84</width>
+						<height>83</height>
+						<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
 					</control>	
 					<control type="list" id="9333">
 						<posx>0</posx>
@@ -5070,7 +5086,7 @@
 								<posy>0</posy>
 								<width>84</width>
 								<height>83</height>
-								<texture border="3,90,3,90">views/list/other/separator-v.png</texture>
+								<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
 							</control>	
 						</itemlayout>
 						<focusedlayout height="83" width="300">
@@ -5136,7 +5152,7 @@
 								<posy>0</posy>
 								<width>84</width>
 								<height>83</height>
-								<texture border="3,90,3,90">views/list/other/separator-v.png</texture>
+								<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
 							</control>	
 						</focusedlayout>
 						<content>
@@ -5160,6 +5176,7 @@
 								<label>$LOCALIZE[20410]</label>
 								<onclick condition="!Skin.HasSetting(PlayTrailer.Minimized)">PreviousMenu</onclick>
 								<onclick condition="!Skin.HasSetting(PlayTrailer.Minimized)">PlayMedia($INFO[ListItem.Trailer])</onclick>
+								<onclick condition="Skin.HasSetting(PlayTrailer.Minimized)">SetFocus(9336)</onclick>
 								<onclick condition="Skin.HasSetting(PlayTrailer.Minimized)">PlayMedia($INFO[ListItem.Trailer],false,1)</onclick>
 								<visible>!IsEmpty(ListItem.Trailer)</visible>
 								<icon>aeonflags/addition/OSDVideoNF.png</icon>
@@ -5201,6 +5218,8 @@
 				</control>
 				<!-- DIRECTOR -->
 				<control type="group">
+					<visible>!Control.HasFocus(9336)</visible>
+                	<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 					<animation effect="slide" start="0" end="0,58" condition="IsEmpty(ListItem.Writer)">Conditional</animation>
 					<posx>985</posx>
 					<posy>257</posy>
@@ -5256,6 +5275,8 @@
 				<control type="group">
 					<posx>985</posx>
 					<posy>315</posy>
+					<visible>!Control.HasFocus(9336)</visible>
+                	<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 					<control type="image">
 						<posx>-785</posx>
 						<posy>-93</posy>
@@ -5289,6 +5310,8 @@
 				</control>
 				<!-- CAST -->
 				<control type="group">
+					<visible>!Control.HasFocus(9336)</visible>
+                	<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 					<include>FullscreenDimensions</include>
 					<control type="group">
 						<control type="button" id="9334">
@@ -5379,7 +5402,8 @@
 				<!-- POSTER -->
 				<control type="group">
 					<posx>180</posx>
-					<posy>190</posy>                
+					<posy>190</posy>    
+					<animation effect="slide" end="-45" time="400" tween="sine" easing="inout" condition="Control.HasFocus(9336)">Conditional</animation>            
 					<control type="image">
 						<description>Reflection</description>
 						<posx>0</posx>
@@ -5415,6 +5439,122 @@
 						<height>720</height>
 						<texture border="25">arctic/common/border.png</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+				</control>
+				<!-- FANART -->
+				<control type="group">
+					<posx>-1164</posx>
+					<posy>190</posy>   
+					<visible>Control.HasFocus(9336)</visible>
+					<animation type="Hidden">
+						<effect type="fade" start="100" end="0" delay="400" time="200"/>
+						<effect type="slide" end="-100" delay="0" time="400"/>
+					</animation>    
+					<control type="label">
+						<posx>1665</posx>
+						<posy>-35</posy>
+						<width>1200</width>
+						<label>19033</label>
+						<font>Font-Alaska-S28-L</font>
+						<textcolor>Mod_Tags</textcolor>
+						<scroll>false</scroll>
+						<align>right</align>
+						<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(9336)">Conditional</animation>
+					</control>
+					<control type="image">
+						<posx>1675</posx>
+						<posy>-45</posy>
+						<width>82</width>
+						<height>57</height>
+						<aspectratio aligny="top" align="left">keep</aspectratio>
+						<texture>arctic/common/right.png</texture>
+						<colordiffuse>Mod_Tags_Dark</colordiffuse>
+						<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(9336)">Conditional</animation>
+					</control>  
+					<control type="group">
+						<visible>!IsEmpty(ListItem.Art(fanart)) + [!Player.HasVideo | [Player.HasVideo + !Player.Playing]]</visible>
+						<control type="image">
+							<description>Reflection</description>
+							<posx>0</posx>
+							<posy>700</posy>
+							<width>1244</width>
+							<height>700</height>
+							<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$INFO[ListItem.Art(fanart)]</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Shadow</description>
+							<posx>-100</posx>
+							<posy>-10</posy>
+							<width>1444</width>
+							<height>710</height>
+							<texture border="150">views/posterview/shadow-focus.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Poster</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1244</width>
+							<height>700</height>
+							<texture background="true" diffuse="arctic/common/info-fanart.png">$INFO[ListItem.Art(fanart)]</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Border</description>
+							<posx>-10</posx>
+							<posy>-10</posy>
+							<width>1264</width>
+							<height>720</height>
+							<texture border="25">arctic/common/border.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+					</control>
+					<control type="group">
+						<visible>IsEmpty(ListItem.Art(fanart)) | [Player.HasVideo + Player.Playing]</visible>
+						<control type="image">
+							<description>Reflection</description>
+							<posx>0</posx>
+							<posy>700</posy>
+							<width>1244</width>
+							<height>700</height>
+							<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">windows/common/black.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Shadow</description>
+							<posx>-100</posx>
+							<posy>-10</posy>
+							<width>1444</width>
+							<height>710</height>
+							<texture border="150">views/posterview/shadow-focus.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Black Background</description>
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>1244</width>
+							<height>700</height>
+							<texture background="true" diffuse="arctic/common/info-fanart.png">windows/common/black.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
+						<control type="videowindow">
+							<description>Poster</description>
+							<posx>0</posx>
+							<posy>5</posy>
+							<width>1244</width>
+							<height>690</height>
+						</control>
+						<control type="image">
+							<description>Border</description>
+							<posx>-10</posx>
+							<posy>-10</posy>
+							<width>1264</width>
+							<height>720</height>
+							<texture border="25">arctic/common/border.png</texture>
+							<aspectratio scalediffuse="false">stretch</aspectratio>
+						</control>
 					</control>
 				</control>
             </control>

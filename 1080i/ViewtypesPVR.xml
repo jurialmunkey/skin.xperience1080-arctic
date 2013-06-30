@@ -1180,7 +1180,7 @@
 			    <posx>114</posx>
 			    <posy>223</posy>
 			    <width>2504</width>
-			    <height>489</height>
+			    <height>488</height>
 			    <texture border="25">views/newgloss/whitepanel-15-b.png</texture>
 			</control>
 			
@@ -1213,21 +1213,29 @@
 					</control>
 				</rulerlayout>
 				<channellayout height="80" width="505">
-				    <control type="image">
+				    <!--<control type="image">
 				        <posx>0</posx>
 				        <posy>1</posy>
-				        <width>500</width>
+				        <width>505</width>
 				        <height>81</height>
 				        <texture border="90,3,90,3">views/list/other/separator.png</texture>
 				        <colordiffuse>55ffffff</colordiffuse>
-				    </control>
+				    </control>-->
+				    <control type="image">
+					    <posx>0</posx>
+					    <posy>-1</posy>
+						<width>505</width>
+						<height>82</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="12">windows/pvr/genres/line.png</texture>
+					</control>
 				    <control type="image">
 				        <posx>0</posx>
 				        <posy>2</posy>
-				        <width>500</width>
+				        <width>504</width>
 				        <height>79</height>
 				        <texture>views/other/selected.png</texture>
-				        <colordiffuse>25FFFFFF</colordiffuse>
+				        <colordiffuse>99FFFFFF</colordiffuse>
 				        <aspectratio aligny="top">center</aspectratio>
 				        <visible>ListItem.IsSelected | ListItem.IsPlaying</visible>
 				    </control>
@@ -1267,19 +1275,26 @@
 				    </control>
 				</channellayout>
 				<focusedchannellayout height="80" width="505">
-					<control type="image">
+					<!--<control type="image">
 					    <posx>0</posx>
 					    <posy>1</posy>
-					    <width>500</width>
+					    <width>505</width>
 					    <height>81</height>
 					    <texture border="90,3,90,3">views/list/other/separator.png</texture>
 					    <colordiffuse>55ffffff</colordiffuse>
+					</control>-->
+					<control type="image">
+					    <posx>0</posx>
+					    <posy>-1</posy>
+						<width>505</width>
+						<height>82</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="12">windows/pvr/genres/line.png</texture>
 					</control>
-					
 					<control type="image">
 					    <posx>0</posx>
 					    <posy>0</posy>
-					    <width>500</width>
+					    <width>504</width>
 					    <height>81</height>
 					    <texture border="5">views/other/focus-mod.png</texture>
 					    <include>visiblehidefadeinfo</include>
@@ -1287,7 +1302,7 @@
 					<control type="image">
 					    <posx>0</posx>
 					    <posy>2</posy>
-					    <width>500</width>
+					    <width>504</width>
 					    <height>79</height>
 					    <texture>views/other/selected.png</texture>
 					    <colordiffuse>25FFFFFF</colordiffuse>
@@ -1332,6 +1347,14 @@
 					</control>
 				</focusedchannellayout>
 				<itemlayout height="80" width="100">
+					<control type="image" id="2">
+					    <posx>0</posx>
+					    <posy>-1</posy>
+						<width>100</width>
+						<height>82</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="12">windows/pvr/genres/line.png</texture>
+					</control>
 					<control type="image" id="2">
 					    <posx>2</posx>
 					    <posy>0</posy>
