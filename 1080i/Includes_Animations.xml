@@ -95,10 +95,10 @@
     </include>
     
     <include name="Animation_FanartFade">
-        <animation effect="fade" time="300">WindowOpen</animation>
-        <animation effect="fade" time="300">WindowClose</animation>
-        <animation effect="fade" time="300">Visible</animation>
-        <animation effect="fade" time="300">Hidden</animation>
+        <animation effect="fade" time="350">WindowOpen</animation>
+        <animation effect="fade" time="350">WindowClose</animation>
+        <animation effect="fade" time="350">Visible</animation>
+        <animation effect="fade" time="350">Hidden</animation>
     </include>
 
     <include name="visiblehidefade">

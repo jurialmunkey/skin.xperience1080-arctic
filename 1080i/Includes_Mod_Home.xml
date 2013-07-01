@@ -52,8 +52,10 @@
 			<animation effect="slide" start="0" end="0,110" time="0" condition="!Skin.HasSetting(panel.center)">Conditional</animation>
 			<control type="group">
 				<visible>!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
-				<animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
-				<animation effect="fade" start="0" end="100" time="250">Visible</animation>
+				<animation effect="fade" time="350">WindowOpen</animation>
+				<animation effect="fade" delay="200" time="350">WindowClose</animation>
+				<animation effect="fade" time="350">Visible</animation>
+				<animation effect="fade" time="350">Hidden</animation>
 			
 				<!-- Top DARK PANEL -->
 				<control type="group">

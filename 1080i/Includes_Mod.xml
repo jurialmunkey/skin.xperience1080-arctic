@@ -269,6 +269,18 @@
         <value>$INFO[ListItem.Thumb]</value>
     </variable>
     
+    <variable name="LandscapeViewVar">
+        <value condition="Container.Content(episodes)">$INFO[ListItem.Thumb]</value>
+        <!--<value condition="Skin.HasSetting(landscapeview.preferlogos) + !IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
+        <value condition="Skin.HasSetting(landscapeview.preferlogos) + !IsEmpty(ListItem.Art(tvshow.clearart))">$INFO[ListItem.Art(tvshow.clearart)]</value>
+        <value condition="Skin.HasSetting(landscapeview.preferlogos) + !IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+        <value condition="Skin.HasSetting(landscapeview.preferlogos) + !IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>-->
+        <value condition="!IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+        <value condition="IsEmpty(ListItem.Thumb)">$INFO[ListItem.ActualIcon,views/fallbacks/,/medium.png]</value>
+        <value>$INFO[ListItem.Thumb]</value>
+    </variable>
+    
     <variable name="ListInfoPosterVar">
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
         <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
@@ -2678,6 +2690,7 @@
 			<property name="single">$INFO[Skin.String(HomeMoviesSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeMoviesMultiImage)]</property>
 			<onclick>ActivateWindow(videos,movietitles,return)</onclick>
+			<icon>DefaultMovies.png</icon>
 		</item>
 		<item id="2">
 			<label>TV</label>
@@ -2685,6 +2698,7 @@
 			<property name="single">$INFO[Skin.String(HomeTVShowsSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeTVShowsMultiImage)]</property>
 			<onclick>ActivateWindow(videos,tvshowtitles,return)</onclick>
+			<icon>DefaultTVShows.png</icon>
 		</item>
 		<item id="3">
 			<label>Music</label>
@@ -2692,6 +2706,7 @@
 			<property name="single">$INFO[Skin.String(HomeMusicSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeMusicMultiImage)]</property>
 			<onclick>ActivateWindow(musiclibrary,albums,return)</onclick>
+			<icon>DefaultAudio.png</icon>
 		</item>
 		<item id="4">
 			<label>Live TV</label>
@@ -2701,6 +2716,7 @@
 			<onclick>ActivateWindow(PVR)</onclick>
 			<onclick>SetFocus(32)</onclick>
 			<onclick>SetFocus(11)</onclick>
+			<icon>DefaultTVGuide.png</icon>
 		</item>
 		<item id="5">
 			<label>Pictures</label>
@@ -2708,6 +2724,7 @@
 			<property name="single">$INFO[Skin.String(HomePicturesSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomePicturesMultiImage)]</property>
 			<onclick>ActivateWindow(pictures)</onclick>
+			<icon>DefaultPicture.png</icon>
 		</item>
 		<item id="6">
 			<label>Games</label>
@@ -2717,6 +2734,7 @@
 			<onclick condition="IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
 			<onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
 			<onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
+			<icon>DefaultGames.png</icon>
 		</item>
 		<item id="7">
 			<label>Programs</label>
@@ -2724,6 +2742,7 @@
 			<property name="single">$INFO[Skin.String(HomeProgramsSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeProgramsMultiImage)]</property>
 			<onclick>ActivateWindow(programs)</onclick>
+			<icon>DefaultAddonProgram.png</icon>
 		</item>
 		<item id="8">
 			<label>Weather</label>
@@ -2731,6 +2750,7 @@
 			<property name="single">$INFO[Skin.String(HomeWeatherSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeWeatherMultiImage)]</property>
 			<onclick>ActivateWindow(weather)</onclick>
+			<icon>DefaultAddonWeather.png</icon>
 		</item>
 		<item id="9">
 			<label>Settings</label>
@@ -2738,6 +2758,7 @@
 			<property name="single">$INFO[Skin.String(HomeSettingsSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeSettingsMultiImage)]</property>
 			<onclick>SetFocus(83)</onclick>
+			<icon>DefaultAddonService.png</icon>
 		</item>
 		<item id="10">
 			<label>Favourites</label>
@@ -2747,6 +2768,7 @@
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<visible>!Skin.HasSetting(disable.favourites)</visible>
+			<icon>DefaultFavourites.png</icon>
 		</item>
 	</include>
 	
@@ -5070,7 +5092,7 @@
 								<height>82</height>
 								<font>Font-Alaska-S34-BL</font>
 								<label>$INFO[ListItem.Label]</label>
-								<textcolor>mod-infotags-l</textcolor>
+								<textcolor>Mod_Tags_Light</textcolor>
 								<shadowcolor>mod-shadow</shadowcolor>
 								<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
 							</control>

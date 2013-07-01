@@ -44,6 +44,7 @@
             <aspectratio>stretch</aspectratio>
             <texture>windows/common/showcase_floor3.png</texture>
             <colordiffuse>Mod_Overlay_Floor</colordiffuse>
+            <include>visiblehidefadeinfo</include>
             <visible>![Skin.HasSetting(disable.dimfanart) | [Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]]</visible>
         </control>
         
@@ -52,6 +53,7 @@
             <include>FullscreenDimensions</include>
             <texture>windows/common/white.png</texture>
             <colordiffuse>Mod_Overlay_Dimfanart</colordiffuse>
+            <include>visiblehidefadeinfo</include>
             <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
         </control>
         
@@ -59,6 +61,7 @@
             <include>FullscreenDimensions</include>
             <texture>windows/common/white.png</texture>
             <colordiffuse>Mod_Overlay_Dimfanart_Extra</colordiffuse>
+            <include>visiblehidefadeinfo</include>
             <visible>Skin.HasSetting(disable.dimfanart) + ![Window.IsVisible(home) + !StringCompare(Skin.String(homescreen.style),metro)]</visible>
         </control>
         
@@ -205,29 +208,22 @@
     </variable>
 
     <include name="CommonContent">
-		<control type="group">
-            <animation effect="slide" end="0" time="0" delay="400" condition="!IsEmpty(Window(home).property(NoAnimation))" reversible="false">WindowClose</animation>
-            <control type="image">
-                <description>Custom Wallpaper Image</description>
-                <include>FullscreenDimensions</include>
-                <texture>windows/common/black.png</texture>
-                <include>visiblehidefadeinfo</include>
-            </control>
-        </control>
-        <control type="group">
-            <animation effect="slide" end="0" time="0" delay="400" condition="!IsEmpty(Window(home).property(NoAnimation))" reversible="false">WindowClose</animation>
-            <control type="multiimage">
-                <description>Custom Wallpaper Image</description>
-                <include>FullscreenDimensions</include>
-                <timeperimage>10000</timeperimage>
-                <randomize>true</randomize>
-                <fadetime>600</fadetime>
-                <loop>yes</loop>
-                <imagepath background="true">$VAR[Mod_BackgroundSingle]</imagepath>
-                <include>visiblehidefadeinfo</include>
-                <visible>![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
-            </control>
-        </control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>windows/common/white.png</texture>
+			<colordiffuse>Mod_EmptyBG</colordiffuse>
+		</control>
+		<control type="multiimage">
+			<description>Custom Wallpaper Image</description>
+			<include>FullscreenDimensions</include>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<fadetime>600</fadetime>
+			<loop>yes</loop>
+			<imagepath background="true">$VAR[Mod_BackgroundSingle]</imagepath>
+			<include>Animation_FanartFade</include>
+			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(sets)] + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+		</control>
     </include>
     
 <!-- ====== -->
@@ -320,6 +316,7 @@
             <texture background="true">special://skin/extras/fade/black_content.png</texture>
             <animation effect="fade" time="300" start="0" end="95" tween="sine" easing="out">WindowOpen</animation>
             <animation effect="fade" time="300" start="95" end="0" tween="sine" easing="in">WindowClose</animation>
+            <colordiffuse>Mod_EmptyBG</colordiffuse>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
@@ -333,6 +330,7 @@
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture background="true">special://skin/extras/fade/black_content.png</texture>
+            <colordiffuse>Mod_EmptyBG</colordiffuse>
             <animation effect="fade" time="300" start="0" end="95" tween="sine" easing="out" condition="!Window.IsActive(mediafilter) + !Window.IsVisible(contextmenu) + IsEmpty(Window(Home).Property(metadata.actors))">Visible</animation>
             <animation effect="fade" time="300" start="0" end="95" tween="sine" easing="out" delay="550" condition="Window.IsActive(mediafilter) | Window.IsVisible(contextmenu) | !IsEmpty(Window(Home).Property(metadata.actors))">Visible</animation>
             <animation effect="fade" time="300" start="95" end="0" tween="sine" easing="in">Hidden</animation>
@@ -351,6 +349,7 @@
     <include name="FadeBackgroundMovieInfo">
         <control type="image">
             <include>FullscreenDimensions</include>
+            <colordiffuse>Mod_EmptyBG</colordiffuse>
             <texture background="true">special://skin/extras/fade/black_content.png</texture>
             <animation effect="fade" time="300" start="0" end="95" tween="sine" easing="out">Visible</animation>
             <animation effect="fade" time="300" start="95" end="0" tween="sine" easing="in">Hidden</animation>
@@ -362,6 +361,7 @@
             <include>FullscreenDimensions</include>
             <texture background="true">special://skin/extras/fade/black2.png</texture>
             <include>OpenCloseAnimationTwo</include>
+            <colordiffuse>Mod_EmptyBG</colordiffuse>
             <visible>[ControlGroup(9000).HasFocus() | Window.IsActive(contextmenu)] + !Window.IsActive(shutdownmenu) + !Window.IsActive(movieinformation) + !Window.IsActive(1122) + !Window.IsActive(addoninformation) + !Window.IsActive(musicinformation)</visible>
         </control>
     </include>
@@ -370,6 +370,7 @@
             <include>FullscreenDimensions</include>
             <texture background="true">special://skin/extras/fade/black2.png</texture>
             <include>OpenCloseAnimationThree</include>
+            <colordiffuse>Mod_EmptyBG</colordiffuse>
         </control>
     </include>
     

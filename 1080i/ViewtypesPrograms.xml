@@ -41,9 +41,9 @@
                 <height>700</height>
                 <width>1420</width>
                 <pagecontrol>70</pagecontrol>
-                <onleft condition="substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">ActivateWindow(1122)</onleft>
-                <onleft condition="!Skin.HasSetting(KioskMode) + !substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">9010</onleft>
-                <onleft condition="Skin.HasSetting(KioskMode) + !substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">50</onleft>
+                <!--<onleft condition="substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">ActivateWindow(1122)</onleft>-->
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <onleft condition="Skin.HasSetting(KioskMode)">50</onleft>
                 <onright>70</onright>
                 <onup>50</onup>
                 <ondown>50</ondown>
@@ -348,7 +348,7 @@
 				<scrolltime tween="cubic" easing="out">500</scrolltime>
 				<orientation>horizontal</orientation>
 				<viewtype label="Info">list</viewtype>
-				<onup condition="substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">ActivateWindow(1122)</onup>
+				<!--<onup condition="substring(Container.FolderPath,plugin://plugin.program.advanced.launcher/,left)">ActivateWindow(1122)</onup>-->
 				<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
 				<ondown condition="Skin.HasSetting(KioskMode)">52</ondown>
 				<onright>52</onright>
