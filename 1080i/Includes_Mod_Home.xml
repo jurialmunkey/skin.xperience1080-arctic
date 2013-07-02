@@ -504,7 +504,7 @@
 						<include>Mod_83Content</include>
 					</content>
 				</control>
-			
+				
 				<!-- BOTTOM FANART AND INFO PANEL -->
 				<control type="group">
 					<posy>459</posy>

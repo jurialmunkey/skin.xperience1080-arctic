@@ -936,6 +936,22 @@
 			<label>41450</label>
 			<visible>Container(525).HasFocus(1)</visible>
 		</item>
+		<item id="14">
+			<description>Sets</description>
+			<property name="Poster">windows/home/icons/camera3.png</property>
+			<label>$LOCALIZE[20434]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(videolibrary,moviesets,return)</onclick>
+			<visible>Container(525).HasFocus(1)</visible>
+		</item>
+		<item id="13">
+			<description>Files</description>
+			<property name="Poster">windows/home/icons/folder.png</property>
+			<label>$LOCALIZE[1214]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(videolibrary,files,return)</onclick>
+			<visible>Container(525).HasFocus(1)</visible>
+		</item>
 		<item id="2">
 			<description>Directors</description>
 			<property name="Poster">windows/home/icons/thumbup.png</property>
@@ -950,6 +966,14 @@
 			<label>$LOCALIZE[344]</label>
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(videos,movieactors,return)</onclick>
+			<visible>Container(525).HasFocus(1)</visible>
+		</item>
+		<item id="15">
+			<description>Countries</description>
+			<property name="Poster">windows/home/icons/world.png</property>
+			<label>$LOCALIZE[20451]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(videolibrary,moviecountries,return)</onclick>
 			<visible>Container(525).HasFocus(1)</visible>
 		</item>
 		<item id="4">
@@ -1112,6 +1136,14 @@
 			<label>$LOCALIZE[42160] ($INFO[Window.Property(NextAired.TodayTotal)])</label>
 			<visible>Container(525).HasFocus(2)</visible>
 		</item>
+		<item id="13">
+			<description>Files</description>
+			<property name="Poster">windows/home/icons/folder.png</property>
+			<label>$LOCALIZE[1214]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(videolibrary,files,return)</onclick>
+			<visible>Container(525).HasFocus(2)</visible>
+		</item>
 		<item id="5">
 			<description>Actors</description>
 			<property name="Poster">windows/home/icons/profiles.png</property>
@@ -1136,14 +1168,14 @@
 			<onclick>ActivateWindow(videos,tvshowgenres,return)</onclick>   
 			<visible>Container(525).HasFocus(2)</visible>
 		</item>
-		<!--<item id="8">
+		<item id="8">
 			<description>Years</description>
 			<property name="Poster">windows/home/icons/ticket2.png</property>
 			<label>$LOCALIZE[652]</label>
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(videos,tvshowyears,return)</onclick>
 			<visible>Container(525).HasFocus(2)</visible>
-		</item>-->
+		</item>
 		<item id="9">
 			<label>$INFO[Skin.String(HomeTVShowTile1.Label)]</label>
 			<onclick condition="IsEmpty(Window.Property(EditTile)) + !stringcompare(Skin.String(HomeTVShowTile1.Type),4) + !stringcompare(Skin.String(HomeTVShowTile1.Type),5) + !stringcompare(Skin.String(HomeTVShowTile1.Type),6) + !stringcompare(Skin.String(HomeTVShowTile1.Type),7)">RunAddon($INFO[Skin.String(HomeTVShowTile1.Path)])</onclick>
@@ -1243,6 +1275,14 @@
 			<label>$LOCALIZE[652]</label>
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(musiclibrary,years,return)</onclick>
+			<visible>Container(525).HasFocus(3)</visible>
+		</item>
+		<item id="13">
+			<description>Files</description>
+			<property name="Poster">windows/home/icons/folder.png</property>
+			<label>$LOCALIZE[1214]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(musiclibrary,files,return)</onclick>
 			<visible>Container(525).HasFocus(3)</visible>
 		</item>
 		<item id="9">
@@ -5072,13 +5112,19 @@
 						<height>83</height>
 						<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
 					</control>	
+					<control type="button" id="9339">
+						<visible allowhiddenfocus="true">false</visible>
+						<onfocus>Skin.ToggleSetting(videoinfo.cinemaexperience)</onfocus>
+						<onfocus>SetFocus(9333)</onfocus>
+					</control>
 					<control type="list" id="9333">
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>1200</width>
 						<height>83</height>
 						<onup>SetFocus(9334)</onup>
-						<ondown>9333</ondown>
+						<ondown condition="System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin)">SetFocus(9339)</ondown>
+						<ondown condition="![System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin)]">SetFocus(9333)</ondown>
 						<onleft>SetFocus(9336)</onleft>
 						<onright>SetProperty(BounceRight,1,Home)</onright>
 						<scrolltime>0</scrolltime>
@@ -5183,7 +5229,7 @@
 							<item id="1">
 								<label>$LOCALIZE[41315]</label>
 								<onclick>SendClick(2003,8)</onclick>
-								<visible>!Container.Content(movies) | [Container.Content(movies) + !System.HasAddon(script.cinema.experience)] | [Container.Content(movies) + SubString(Container.FolderPath,plugin)]</visible>
+								<visible>!Container.Content(movies) | [Container.Content(movies) + !System.HasAddon(script.cinema.experience)] | [Container.Content(movies) + SubString(Container.FolderPath,plugin)] | Skin.HasSetting(videoinfo.cinemaexperience)</visible>
 								<icon>aeonflags/addition/OSDPlayNF.png</icon>
 								<thumb>aeonflags/addition/OSDPlayFO.png</thumb>
 							</item>
@@ -5192,7 +5238,7 @@
 								<label>$LOCALIZE[41315]</label>
 								<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
 								<onclick>Dialog.Close(MovieInformation)</onclick>
-								<visible>System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin)</visible>
+								<visible>System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin) + !Skin.HasSetting(videoinfo.cinemaexperience)</visible>
 								<icon>aeonflags/addition/OSDPlayNF.png</icon>
 								<thumb>aeonflags/addition/OSDPlayFO.png</thumb>
 							</item>
