@@ -5292,7 +5292,9 @@
 						<onup>9333</onup>
 						<ondown>50</ondown>                  
 						<onleft>9333</onleft>
-						<onright>9333</onright>
+						<onright condition="[!System.HasAddon(script.metadata.actors) | !IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) | Container.Content(musicvideos)] + !Window.IsVisible(3009)">SetProperty(BounceRight,1,Home)</onright>
+						<onright condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">SetProperty(script.metadata.actors.push,1,home)</onright>
+						<onright condition="System.HasAddon(script.metadata.actors) + IsEmpty(Window(Home).Property(script.metadata.actors.isactive)) + !Container.Content(musicvideos)">RunScript(script.metadata.actors,$INFO[ListItem.Director])</onright>
 						<onclick>SendClick(2003,13)</onclick>
 						<animation effect="fade" start="100" end="85" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(71)">Conditional</animation>
 						<visible>!IsEmpty(ListItem.Director)</visible>
