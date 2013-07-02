@@ -5235,12 +5235,12 @@
 							</item>
 							<item id="1">
 								<description>Cinema Experience</description>
-								<label>$LOCALIZE[41315]</label>
+								<label>$LOCALIZE[20338]</label>
 								<onclick>XBMC.RunScript(script.cinema.experience,movieid=$INFO[ListItem.DBID])</onclick>
 								<onclick>Dialog.Close(MovieInformation)</onclick>
 								<visible>System.HasAddon(script.cinema.experience) + Container.Content(movies) + !SubString(Container.FolderPath,plugin) + !Skin.HasSetting(videoinfo.cinemaexperience)</visible>
-								<icon>aeonflags/addition/OSDPlayNF.png</icon>
-								<thumb>aeonflags/addition/OSDPlayFO.png</thumb>
+								<icon>aeonflags/addition/OSDBookMarksNF.png</icon>
+								<thumb>aeonflags/addition/OSDBookMarksFO.png</thumb>
 							</item>
 							<item id="2">
 								<label>$LOCALIZE[20410]</label>
