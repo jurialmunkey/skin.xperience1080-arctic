@@ -121,8 +121,8 @@
                 <posy>221</posy>
                 <width>800</width>
                 <label>-</label>
-                <font>Font-Condensed-S34</font>
-                <textcolor>ddwhite</textcolor>
+                <font>Font-Alaska-S32-BL</font>
+                <textcolor>Mod_Tags</textcolor>
                 <align>center</align>
             </control>
             <control type="group" id="8003">
@@ -582,9 +582,9 @@
                 <posx>473</posx>
                 <posy>218</posy>
                 <width>974</width>
-                <font>Font-Condensed-S34</font>
+                <font>Font-Alaska-S32-BL</font>
+                <textcolor>Mod_Tags</textcolor>
                 <label>-</label>
-                <textcolor>ddwhite</textcolor>
                 <align>center</align>
             </control>
             
@@ -1543,9 +1543,9 @@
                     <posx>473</posx>
                     <posy>183</posy>
                     <width>974</width>
-                    <font>Font-Condensed-S34</font>
+                    <font>Font-Alaska-S32-BL</font>
+					<textcolor>Mod_Tags</textcolor>
                     <label>-</label>
-                    <textcolor>ddwhite</textcolor>
                     <align>center</align>
                 </control>
                 
@@ -1705,8 +1705,8 @@
                 <posy>152</posy>
                 <width>800</width>
                 <label>$INFO[ListItem.Title]</label>
-                <font>Font-Condensed-S34</font>
-                <textcolor>ddwhite</textcolor>
+                <font>Font-Alaska-S32-BL</font>
+                <textcolor>Mod_Tags</textcolor>
                 <align>center</align>
             </control>
             <control type="group">
