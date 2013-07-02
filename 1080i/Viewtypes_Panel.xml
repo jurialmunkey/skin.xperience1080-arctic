@@ -75,6 +75,15 @@
                     <include>overlay.visibility</include>
                     <visible>!IsEmpty(ListItem.Overlay)</visible>
                 </control> 
+                <control type="image">
+					<description>Glass</description>
+					<posx>6</posx>
+                    <posy>6</posy>
+                    <width>828</width>
+                    <height>464</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
                 
 
 
@@ -126,6 +135,15 @@
                     <texture background="true" diffuse="views/newgloss/panel-bigposter-diffuse.png">$VAR[WallPoster]</texture>
                     <aspectratio>stretch</aspectratio>  
                 </control>
+                <control type="image">
+					<description>Glass</description>
+					<posx>0</posx>
+                    <posy>6</posy>
+                    <width>492</width>
+                    <height>702</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
                 
             </control>
             <control type="panel" id="508">
@@ -186,18 +204,27 @@
                         <colordiffuse>Mod_Cover_Fade</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
+                    <control type="image">
+						<description>Glass</description>
+						<posx>6</posx>
+                        <posy>6</posy>
+                        <width>156</width>
+                        <height>226</height>
+						<texture border="25">arctic/common/glass-ring-5.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
                     <control type="label">
-							<posx>85</posx>
-							<posy>7</posy>
-							<width>156</width>
-							<height>226</height>
-							<label>$INFO[ListItem.Season]</label>
-							<font>Font-Season-Panel</font>
-							<textcolor>mod-infotags-d</textcolor>
-							<scroll>false</scroll>
-							<align>center</align>
-							<aligny>center</aligny>
-						</control>
+						<posx>85</posx>
+						<posy>7</posy>
+						<width>156</width>
+						<height>226</height>
+						<label>$INFO[ListItem.Season]</label>
+						<font>Font-Season-Panel</font>
+						<textcolor>mod-infotags-d</textcolor>
+						<scroll>false</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+					</control>
                     <control type="label">
                         <posx>84</posx>
                         <posy>6</posy>

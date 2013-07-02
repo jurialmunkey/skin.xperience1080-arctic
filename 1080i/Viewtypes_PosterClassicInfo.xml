@@ -58,8 +58,6 @@
                             <height>36</height>
                             <texture>views/posterview/shadow.png</texture>
                         </control>
-                        
-
                         <control type="image">
                             <description>Poster</description>
                             <posx>-32</posx>
@@ -76,6 +74,15 @@
                             <height>100</height>
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
+                        </control>
+                        <control type="image">
+                            <description>Glass</description>
+                            <posx>-32</posx>
+                            <posy>10</posy>
+                            <width>374</width>
+                            <height>561</height>
+                            <texture border="25">arctic/common/glass-ring.png</texture>
+                            <visible>Skin.HasSetting(covers.showglass)</visible>
                         </control>
                         <control type="image">
                             <description>Border</description>
@@ -160,6 +167,15 @@
                             <height>100</height>
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
+                        </control>
+                        <control type="image">
+                            <description>Glass</description>
+                            <posx>-32</posx>
+                            <posy>10</posy>
+                            <width>374</width>
+                            <height>561</height>
+                            <texture border="25">arctic/common/glass-ring.png</texture>
+                            <visible>Skin.HasSetting(covers.showglass)</visible>
                         </control>
                         <control type="image">
                             <description>Border</description>

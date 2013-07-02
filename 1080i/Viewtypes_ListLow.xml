@@ -595,6 +595,15 @@
 						<include>overlay.visibility</include>
 					</control>
 					<control type="image">
+						<description>Glass</description>
+						<posx>35</posx>
+						<posy>-65</posy>
+						<width>323</width>
+						<height>485</height>
+						<texture border="25">arctic/common/glass-ring.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
+					<control type="image">
 						<posx>25</posx>
 						<posy>-75</posy>
 						<width>343</width>

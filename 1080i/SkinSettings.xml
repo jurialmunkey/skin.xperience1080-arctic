@@ -855,6 +855,13 @@
                         <onclick>Skin.ToggleSetting(hide.glass)</onclick>
                         <label>Show glass borders on lists</label>
                     </control>
+                    <control type="radiobutton" id="3017">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(covers.showglass)</selected>
+                        <onclick>Skin.ToggleSetting(covers.showglass)</onclick>
+                        <label>Show glass borders on covers/posters</label>
+                    </control>
                     <control type="radiobutton" id="3007">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>

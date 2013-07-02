@@ -62,6 +62,15 @@
 								<visible>!Skin.HasSetting(BannerPlexLogos) + [IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
 							</control>
 							<control type="image">
+								<description>Glass</description>
+								<posx>3</posx>
+								<posy>3</posy>
+								<width>500</width>
+								<height>95</height>
+								<texture border="25">arctic/common/glass-ring.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
+							</control>
+							<control type="image">
 								<description>Border</description>
 								<posx>-7</posx>
 								<posy>-7</posy>
@@ -147,6 +156,15 @@
 								<texture background="true" diffuse="arctic/banner/plex-banner.png">$INFO[ListItem.Art(fanart)]</texture>
 								<aspectratio scalediffuse="false">scale</aspectratio>
 								<visible>!Skin.HasSetting(BannerPlexLogos) + [IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
+							</control>
+							<control type="image">
+								<description>Glass</description>
+								<posx>3</posx>
+								<posy>3</posy>
+								<width>500</width>
+								<height>95</height>
+								<texture border="25">arctic/common/glass-ring.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
 							</control>
 							<control type="image">
 								<description>Border</description>
@@ -245,6 +263,15 @@
 								<aspectratio scalediffuse="false">scale</aspectratio>
 								<visible>[IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
 							</control>
+							<control type="image">
+								<description>Glass</description>
+								<posx>41</posx>
+								<posy>35</posy>
+								<width>1600</width>
+								<height>296</height>
+								<texture border="25">arctic/common/glass-ring-top.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
+							</control>
 							<control type="group">
 								<posx>1560</posx>
 								<posy>35</posy>
@@ -258,6 +285,18 @@
 									<texture border="10" flipy="false">arctic/common/corner.png</texture>
 									<aspectratio>stretch</aspectratio>
 									<colordiffuse>22ffffff</colordiffuse>
+									<visible>!Skin.HasSetting(covers.showglass)</visible>
+								</control>
+								<control type="image">
+									<description>Panel</description>
+									<posx>-9</posx>
+									<posy>10</posy>
+									<width>80</width>
+									<height>53</height>
+									<texture border="10" flipy="false">arctic/common/corner.png</texture>
+									<aspectratio>stretch</aspectratio>
+									<colordiffuse>22ffffff</colordiffuse>
+									<visible>Skin.HasSetting(covers.showglass)</visible>
 								</control>
 								<control type="image">
 									<description>Panel</description>
@@ -348,6 +387,15 @@
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <fadetime>300</fadetime>
                     </control>
+                    <control type="image">
+						<description>Glass</description>
+						<posx>41</posx>
+        				<posy>35</posy>
+        				<width>530</width>
+        				<height>356</height>
+						<texture border="25">arctic/common/glass-ring-left.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
                     
 					<control type="group">
                     	<posx>1561</posx>

@@ -36,7 +36,7 @@
 			</control>-->
             <control type="fixedlist" id="503">
 				<posx>-310</posx>
-				<posy>185</posy>
+				<posy>195</posy>
 				<width>2500</width>
 				<height>800</height>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -74,6 +74,14 @@
 								<include>overlay.visibility</include>
 								<visible>!IsEmpty(ListItem.Overlay)</visible>
 							</control> 
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>828</width>
+								<height>464</height>
+								<texture border="25">arctic/common/glass-ring.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
+							</control>
 							<control type="image">
 								<description>Border</description>
 								<posx>0</posx>
@@ -128,6 +136,14 @@
 								<include>overlay.visibility</include>
 								<visible>!IsEmpty(ListItem.Overlay)</visible>
 							</control> 
+							<control type="image">
+								<posx>10</posx>
+								<posy>10</posy>
+								<width>828</width>
+								<height>464</height>
+								<texture border="25">arctic/common/glass-ring.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
+							</control>
 							<control type="image">
 								<description>Border</description>
 								<posx>0</posx>

@@ -59,6 +59,15 @@
                         <colordiffuse>ff666666</colordiffuse>
                         <aspectratio>stretch</aspectratio>
                     </control>
+                    <control type="image">
+						<description>Glass</description>
+						<posx>6</posx>
+                        <posy>6</posy>
+                        <width>492</width>
+                        <height>107</height>
+						<texture border="25">arctic/common/glass-ring.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
                     
                     <control type="image">
                         <description>Banner</description>
@@ -104,6 +113,15 @@
 							<colordiffuse>ff999999</colordiffuse>
 						</control>
 						<control type="image">
+							<description>Glass</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>182</height>
+							<texture border="25">arctic/common/glass-ring-top.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
+						<control type="image">
 							<description>Banner</description>
 							<posx>6</posx>
 							<posy>6</posy>
@@ -113,6 +131,7 @@
 							<aspectratio>stretch</aspectratio>
 							<colordiffuse>Mod_Cover_Fade</colordiffuse>
 						</control>
+						
 						<control type="group">
 							<posy>193</posy>
 							<posx>20</posx>
@@ -184,6 +203,15 @@
                             <texture background="true" diffuse="views/newgloss/banner-diffuse.png">$VAR[PlexBanner]</texture>
                             <aspectratio>stretch</aspectratio>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>6</posx>
+                            <posy>6</posy>
+                            <width>492</width>
+                            <height>107</height>
+							<texture border="25">arctic/common/glass-ring.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                     </control>
                 </focusedlayout>
                 <focusedlayout width="1008" height="238" condition="!Skin.HasSetting(bannerpanel.showposter)">
@@ -216,6 +244,15 @@
 							<height>182</height>
 							<texture background="true" diffuse="arctic/banner/panel-top.png">$VAR[PlexBanner]</texture>
 							<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+							<description>Glass</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>996</width>
+							<height>182</height>
+							<texture border="25">arctic/common/glass-ring-top.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
 						</control>
 						<control type="group">
 							<posy>193</posy>
@@ -300,6 +337,15 @@
 						<include>overlay.visibility</include>
 						<visible>!IsEmpty(ListItem.Overlay)</visible>
 					</control> 
+					<control type="image">
+						<description>Glass</description>
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>828</width>
+						<height>464</height>
+						<texture border="25">arctic/common/glass-ring.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
                 </control>
                 <control type="group">
             		<visible>!Skin.HasSetting(bannerpanel.showposter)</visible>
@@ -332,6 +378,15 @@
 						<include>overlay.visibility</include>
 						<visible>!IsEmpty(ListItem.Overlay)</visible>
 					</control> 
+					<control type="image">
+						<description>Glass</description>
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>828</width>
+						<height>464</height>
+						<texture border="25">arctic/common/glass-ring.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
                 </control>
                 <control type="group">
                     <posy>472</posy>
@@ -381,6 +436,15 @@
                     <aspectratio>stretch</aspectratio>
                     <fadetime>250</fadetime>
                 </control>  
+                <control type="image">
+					<description>Glass</description>
+					<posx>0</posx>
+                    <posy>6</posy>
+                    <width>492</width>
+                    <height>702</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
             </control>
         </control>
     </include>    

@@ -32,6 +32,15 @@
                 <fadetime>200</fadetime>
             </control>
             <control type="image">
+				<description>Glass</description>
+				<posx>6</posx>
+                <posy>6</posy>
+                <width>828</width>
+				<height>464</height>
+				<texture border="25">arctic/common/glass-ring.png</texture>
+				<visible>Skin.HasSetting(covers.showglass)</visible>
+			</control>
+            <control type="image">
                 <description>Border</description>
                 <posx>-4</posx>
                 <posy>-4</posy>
@@ -48,12 +57,13 @@
 				<height>714</height>
                 <include>FullscreenDimensions</include>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
-                <orientation>horizontal</orientation>
+                <orientation>vertical</orientation>
                 <pagecontrol>70</pagecontrol>
                 <viewtype label="Fanart Panel">list</viewtype>
-                <ondown>70</ondown>
-                <onleft>52</onleft>
-                <onright>52</onright>
+                <onright>70</onright>
+                <onleft condition="Skin.HasSetting(KioskMode)">52</onleft>
+                <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
+                <ondown>52</ondown>
                 <onup>52</onup>
                 <preloaditems>2</preloaditems>
                 <visible>Container.Content(albums) | Container.Content(artists)</visible>
@@ -78,6 +88,15 @@
                         <colordiffuse>ffcccccc</colordiffuse>
                         <aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
                     </control>
+                    <control type="image">
+						<description>Glass</description>
+						<posx>6</posx>
+                        <posy>6</posy>
+                        <width>226</width>
+                        <height>226</height>
+						<texture border="25">arctic/common/glass-ring.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+					</control>
                     <control type="image">
                         <description>Border</description>
                         <posx>-4</posx>
@@ -149,6 +168,15 @@
 							<height>226</height>
 							<texture background="true" diffuse="views/newgloss/musicwall-diffuse.png">views/newgloss/gloss.png</texture>
 							<aspectratio scalediffuse="false" align="right" aligny="top">keep</aspectratio>
+						</control>
+						<control type="image">
+							<description>Glass</description>
+							<posx>6</posx>
+							<posy>6</posy>
+							<width>226</width>
+							<height>226</height>
+							<texture border="25">arctic/common/glass-ring.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
 						</control>
 						<control type="image">
 							<description>Border</description>
@@ -282,28 +310,28 @@
 			</control>
 			<!--Scrollbar-->
             <control type="group">
-				<posx>865</posx>
-				<posy>182r</posy>
+				<posx>40r</posx>
+				<posy>60</posy>
                 <control type="image">
                     <description>Scrollbar background (visible on focus)</description>
-                    <width>900</width>
-                    <height>6</height>
-                    <texture border="6,3,6,3">views/other/scrollbar-h.png</texture>
+                    <width>6</width>
+                    <height>620</height>
+                    <texture border="3,6,3,6">views/other/scrollbar-h.png</texture>
                     <visible>Control.IsVisible(52) + Control.HasFocus(70)</visible>
                     <animation effect="fade" start="0" end="25" time="300" tween="sine" easing="inout">Visible</animation>
                     <animation effect="fade" start="25" end="0" time="300" tween="sine" easing="inout">Hidden</animation>
                 </control>
                 <control type="scrollbar" id="70">
                     <description>Scrollbar</description>
-                    <height>6</height>
-                    <width>900</width>
-                    <orientation>horizontal</orientation>
-                    <texturesliderbar border="6,3,6,3">views/other/scrollbar-h.png</texturesliderbar>
-                    <texturesliderbarfocus border="6,3,6,3">views/other/scrollbar-h-fo.png</texturesliderbarfocus>
+                    <width>6</width>
+                    <height>620</height>
+                    <orientation>vertical</orientation>
+                    <texturesliderbar border="3,6,3,6">views/other/scrollbar-h.png</texturesliderbar>
+                    <texturesliderbarfocus border="3,6,3,6">views/other/scrollbar-h-fo.png</texturesliderbarfocus>
                     <showonepage>false</showonepage>
-                    <onup>52</onup>
-                    <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
-                    <ondown condition="Skin.HasSetting(KioskMode)">52</ondown>
+                    <onleft>52</onleft>
+                    <onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+                    <onright condition="Skin.HasSetting(KioskMode)">52</onright>
                     <animation effect="fade" start="40" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
                     <visible>Control.IsVisible(52)</visible>
                 </control>

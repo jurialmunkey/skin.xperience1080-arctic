@@ -43,6 +43,14 @@
                     <fadetime>200</fadetime>
                 </control>
                 <control type="image">
+					<posx>6</posx>
+					<posy>6</posy>
+					<width>828</width>
+					<height>464</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
+                <control type="image">
                     <posx>734</posx>
                     <posy>6</posy>
                     <width>100</width>
@@ -141,7 +149,15 @@
                         <visible>!IsEmpty(ListItem.Overlay)</visible>
                         <colordiffuse>99ffffff</colordiffuse>
                     </control> 
-                    
+                    <control type="image">
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>156</width>
+						<height>226</height>
+						<texture border="25">arctic/common/glass-ring-5.png</texture>
+						<visible>Skin.HasSetting(covers.showglass)</visible>
+						<colordiffuse>cfffffff</colordiffuse>
+					</control>
                     <control type="image">
                         <description>Poster</description>
                         <posx>6</posx>
@@ -183,7 +199,15 @@
 							<aspect>keepaspect</aspect>
 							<include>overlay.visibility</include>
 							<visible>!IsEmpty(ListItem.Overlay)</visible>
-						</control> 
+						</control>
+						<control type="image">
+                            <posx>6</posx>
+							<posy>6</posy>
+							<width>156</width>
+							<height>226</height>
+                            <texture border="25">arctic/common/glass-ring-5.png</texture>
+                            <visible>Skin.HasSetting(covers.showglass)</visible>
+                        </control>
 						<control type="image">
 							<description>Border</description>
 							<posx>-4</posx>

@@ -234,7 +234,6 @@
                                     <height>18</height>
                                     <texture>views/posterview/shadow.png</texture>
                                 </control>
-                                <!-- POSTER -->
                                 <control type="image">
                                     <description>Poster</description>
                                     <posx>60</posx>
@@ -244,7 +243,6 @@
                                     <texture background="true" diffuse="arctic/poster/small.png">$VAR[PosterViewPoster]</texture>
                                     <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                                 </control>
-                                <!-- WATCHED OVERLAY -->
                                 <control type="image">
                                     <posx>252</posx>
                                     <posy>70</posy>
@@ -253,6 +251,15 @@
                                     <aspect>keepaspect</aspect>
                                     <include>overlay.visibility</include>
                                 </control>
+                                <control type="image">
+									<description>Glass</description>
+									<posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+									<texture border="25">arctic/common/glass-ring.png</texture>
+									<visible>Skin.HasSetting(covers.showglass)</visible>
+								</control>
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>
@@ -417,6 +424,15 @@
 									<include>overlay.visibility</include>
 								</control>
 								<control type="image">
+									<description>Glass</description>
+									<posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+									<texture border="25">arctic/common/glass-ring.png</texture>
+									<visible>Skin.HasSetting(covers.showglass)</visible>
+								</control>
+								<control type="image">
 									<description>Border</description>
 									<posx>50</posx>
 									<posy>60</posy>
@@ -497,6 +513,15 @@
                                     <aspect>keepaspect</aspect>
                                     <include>overlay.visibility</include>
                                 </control>
+                                <control type="image">
+									<description>Glass</description>
+									<posx>60</posx>
+                                    <posy>70</posy>
+                                    <width>267</width>
+                                    <height>400</height>
+									<texture border="25">arctic/common/glass-ring.png</texture>
+									<visible>Skin.HasSetting(covers.showglass)</visible>
+								</control>
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>

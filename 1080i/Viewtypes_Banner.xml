@@ -52,7 +52,15 @@
     	            <texture background="true" diffuse="arctic/banner/poster.png">$VAR[BannerListPosterLeft]</texture>
     	            <aspectratio scalediffuse="false">stretch</aspectratio>
     	        </control>
-    	        
+    	        <control type="image">
+					<description>Glass</description>
+					<posx>0</posx>
+    	            <posy>0</posy>
+    	            <width>466</width>
+    	            <height>700</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
     	    </control>
             <control type="group">
             	<visible>Skin.HasSetting(bannerlist.showposter)</visible>
@@ -93,6 +101,15 @@
     	            <texture background="true" diffuse="arctic/banner/poster.png">$INFO[ListItem.Art(poster)]</texture>
     	            <aspectratio scalediffuse="false">stretch</aspectratio>
     	        </control>
+    	        <control type="image">
+					<description>Glass</description>
+					<posx>0</posx>
+    	            <posy>0</posy>
+    	            <width>466</width>
+    	            <height>700</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
     	    </control>
             <control type="fixedlist" id="60">
                 <posx>0</posx>
@@ -268,8 +285,7 @@
                             <align>left</align>
                         </control>
                     </control>
-                </itemlayout>
-                
+                </itemlayout>    
                 <focusedlayout height="332" condition="Container.Content(Seasons)">
                     <control type="group">
                         <posx>622</posx>
@@ -291,6 +307,15 @@
                             <texture diffuse="arctic/banner/season.png" background="true">$VAR[WallPoster]</texture>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>175</width>
+                            <height>262</height>
+							<texture border="25">arctic/common/glass-ring-left.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="label">
                             <posx>230</posx>
                             <posy>73</posy>
@@ -366,6 +391,15 @@
                             <texture diffuse="arctic/banner/left.png" background="true">$VAR[ListInfoLandscapeVar]</texture>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>465</width>
+                            <height>262</height>
+							<texture border="25">arctic/common/glass-ring-left.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="group">
                             <posy>48</posy>
                             <posx>519</posx>
@@ -537,6 +571,15 @@
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <visible>[IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>1241</width>
+                            <height>229</height>
+							<texture border="25">arctic/common/glass-ring-top.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="group">
 							<posx>1195</posx>
 							<posy>35</posy>
@@ -550,6 +593,18 @@
 								<texture border="10" flipy="false">arctic/common/corner.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<colordiffuse>22ffffff</colordiffuse>
+								<visible>!Skin.HasSetting(covers.showglass)</visible>
+							</control>
+							<control type="image">
+								<description>Panel</description>
+								<posx>-9</posx>
+								<posy>10</posy>
+								<width>80</width>
+								<height>53</height>
+								<texture border="10" flipy="false">arctic/common/corner.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>22ffffff</colordiffuse>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
 							</control>
 							<control type="image">
 								<description>Panel</description>
@@ -647,6 +702,15 @@
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <visible>[IsEmpty(ListItem.Art(banner)) + !IsEmpty(ListItem.Art(fanart))]</visible>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>1241</width>
+                            <height>229</height>
+							<texture border="25">arctic/common/glass-ring-top.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="group">
 							<posx>1195</posx>
 							<posy>35</posy>
@@ -660,6 +724,18 @@
 								<texture border="10" flipy="false">arctic/common/corner.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<colordiffuse>22ffffff</colordiffuse>
+								<visible>!Skin.HasSetting(covers.showglass)</visible>
+							</control>
+							<control type="image">
+								<description>Panel</description>
+								<posx>-9</posx>
+								<posy>10</posy>
+								<width>80</width>
+								<height>53</height>
+								<texture border="10" flipy="false">arctic/common/corner.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>22ffffff</colordiffuse>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
 							</control>
 							<control type="image">
 								<description>Panel</description>

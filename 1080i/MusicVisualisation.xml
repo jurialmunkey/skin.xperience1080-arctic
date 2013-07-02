@@ -200,14 +200,15 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<fadetime>250</fadetime>
 							</control>
-							<!--<control type="image">
+							<control type="image">
+								<description>Glass</description>
 								<posx>30</posx>
 								<posy>-27</posy>
 								<width>444</width>
 								<height>444</height>
-								<texture diffuse="views/newgloss/cover-444.png">views/newgloss/gloss.png</texture>
-								<aspectratio scalediffuse="false" align="left" aligny="top">keep</aspectratio>
-							</control>-->
+								<texture border="25">arctic/common/glass-ring.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
+							</control>
 							<control type="image">
 								<posx>20</posx>
 								<posy>-37</posy>

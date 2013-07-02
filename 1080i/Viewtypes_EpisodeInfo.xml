@@ -183,6 +183,15 @@
 								<aspectratio scalediffuse="false">scale</aspectratio>
 							</control>
 							<control type="image">
+								<description>Glass</description>
+								<posx>300</posx>
+								<posy>-15</posy>
+								<width>546</width>
+								<height>307</height>
+								<texture border="25">arctic/common/glass-ring-left.png</texture>
+								<visible>Skin.HasSetting(covers.showglass)</visible>
+							</control>
+							<control type="image">
 								<posx>846</posx>
 								<posy>-15</posy>
 								<width>3</width>

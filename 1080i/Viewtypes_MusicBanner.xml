@@ -40,6 +40,15 @@
                     <fadetime>300</fadetime>
                 </control>
                 <control type="image">
+					<description>Glass</description>
+					<posx>45</posx>
+                    <posy>170</posy>
+                    <width>740</width>
+                    <height>740</height>
+					<texture border="25">arctic/common/glass-ring.png</texture>
+					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
+                <control type="image">
                     <posx>35</posx>
                     <posy>160</posy>
                     <width>760</width>
@@ -205,6 +214,15 @@
                             <texture diffuse="arctic/banner/left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>262</width>
+                            <height>262</height>
+							<texture border="25">arctic/common/glass-ring-left.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="group">
                             <posy>55</posy>
                             <posx>317</posx>
@@ -274,6 +292,15 @@
                             <texture diffuse="arctic/banner/left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>262</width>
+                            <height>262</height>
+							<texture border="25">arctic/common/glass-ring-left.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="group">
                         	<posx>1027</posx>
                         	<posy>35</posy>
@@ -358,6 +385,15 @@
                             <texture diffuse="arctic/banner/left-262.png" background="true">$VAR[SquareThumbSmall]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
+                        <control type="image">
+							<description>Glass</description>
+							<posx>35</posx>
+                            <posy>35</posy>
+                            <width>262</width>
+                            <height>262</height>
+							<texture border="25">arctic/common/glass-ring-left.png</texture>
+							<visible>Skin.HasSetting(covers.showglass)</visible>
+						</control>
                         <control type="group">
                         	<posx>1027</posx>
                         	<posy>35</posy>
