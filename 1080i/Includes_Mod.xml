@@ -320,52 +320,6 @@
         <value condition="Container(9333).HasFocus(4)">osd/fullscreen/buttons/lyrics-fo.png</value>
         <value condition="Container(9333).HasFocus(5)">osd/fullscreen/buttons/viz-presets-fo.png</value>
     </variable>
-   
-    <variable name="HomeMenuHintHorizontal">
-        <value condition="Container(20).HasFocus(2) + Control.HasFocus(88)">PRESS UP FOR RECENT FILMS</value>
-        <value condition="Container(20).HasFocus(2) + Control.HasFocus(82)">PRESS UP FOR SPOTLIGHT  •  PRESS DOWN TO RETURN TO MENU</value>
-        <value condition="Container(20).HasFocus(2) + Control.HasFocus(83)">PRESS UP FOR IN PROGRESS FILMS  •  PRESS DOWN FOR RECENT FILMS</value>
-        <value condition="Container(20).HasFocus(2) + Control.HasFocus(84)">PRESS DOWN FOR SPOTLIGHT</value>
-
-        <value condition="Container(20).HasFocus(3) + Control.HasFocus(88)">PRESS UP FOR RECENT EPISODES</value>
-        <value condition="Container(20).HasFocus(3) + Control.HasFocus(82)">PRESS DOWN TO RETURN TO MENU</value>
-
-        <value condition="Container(20).HasFocus(4) + Control.HasFocus(88)">PRESS UP FOR MOST PLAYED ALBUMS</value>
-        <value condition="Container(20).HasFocus(4) + Control.HasFocus(82)">PRESS UP FOR RECENTLY ADDED ALBUMS  •  PRESS DOWN TO RETURN TO MENU</value>
-        <value condition="Container(20).HasFocus(4) + Control.HasFocus(83)">PRESS UP FOR RANDOM ALBUMS  •  PRESS DOWN FOR MOST PLAYED ALBUMS</value>
-        <value condition="Container(20).HasFocus(4) + Control.HasFocus(84)">PRESS DOWN FOR RECENTLY ADDED ALBUMS</value> 
-    </variable>
-    
-    
-    <variable name="MovieAddonTileColorVar">
-        <value condition="!Skin.HasSetting(AddonTilesColored)">$INFO[Skin.String(moviecolor.name)]</value>
-		<value>Grey Tiles</value>
-    </variable>
-    
-    <variable name="TvAddonTileColorVar">
-        <value condition="!Skin.HasSetting(AddonTilesColored)">$INFO[Skin.String(tvcolor.name)]</value>
-		<value>Grey Tiles</value>
-    </variable>
-    
-    <variable name="MusicAddonTileColorVar">
-        <value condition="!Skin.HasSetting(AddonTilesColored)">$INFO[Skin.String(musiccolor.name)]</value>
-		<value>Grey Tiles</value>
-    </variable>
-    
-    <variable name="WeatherAddonTileColorVar">
-        <value condition="!Skin.HasSetting(AddonTilesColored)">$INFO[Skin.String(weathercolor.name)]</value>
-		<value>Grey Tiles</value>
-    </variable>
-    
-    <variable name="AppAddonTileColorVar">
-        <value condition="!Skin.HasSetting(AddonTilesColored)">$INFO[Skin.String(appcolor.name)]</value>
-		<value>Grey Tiles</value>
-    </variable>
-    
-    <variable name="PVRAddonTileColorVar">
-        <value condition="!Skin.HasSetting(AddonTilesColored)">$INFO[Skin.String(pvrcolor.name)]</value>
-		<value>Grey Tiles</value>
-    </variable>
     
     <variable name="ExtendPlotColor">
         <value condition="!IsEmpty(Window.Property(ExtendPlot))">mod-infotags</value>
@@ -2745,7 +2699,9 @@
 			<visible>!Skin.HasSetting(disable.music)</visible>
 			<property name="single">$INFO[Skin.String(HomeMusicSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeMusicMultiImage)]</property>
-			<onclick>ActivateWindow(musiclibrary,albums,return)</onclick>
+			<onclick condition="!Library.HasContent(music)">ActivateWindow(musicfiles)</onclick>
+			<onclick condition="Library.HasContent(music) + IsEmpty(Skin.String(music.path))">ActivateWindow(musiclibrary)</onclick>
+			<onclick condition="Library.HasContent(music) + !IsEmpty(Skin.String(music.path))">ActivateWindow(musiclibrary,$INFO[Skin.String(music.path)],return)</onclick>
 			<icon>DefaultAudio.png</icon>
 		</item>
 		<item id="4">

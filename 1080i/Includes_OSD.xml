@@ -11,12 +11,12 @@
     </include>
     
     <include name="OSDFwRwLabel">
-        <posx>1742</posx>
-        <posy>79</posy>
+        <posx>1710</posx>
+        <posy>85</posy>
         <width>150</width>
         <height>34</height>
-        <font>Font-Alaska-S34-BL</font>
-        <textcolor>mod-infotags-l</textcolor>
+        <font>Font-OSD-FwRw</font>
+        <textcolor>mod-infotags-d</textcolor>
         <shadowcolor>mod-shadow</shadowcolor>
         <align>right</align>
         <scroll>false</scroll>
@@ -245,7 +245,7 @@
                 <include>visiblehidefadeinfo</include>
                 <control type="image">
                     <description>Forwarding image</description>
-                    <posx>1730</posx>
+                    <posx>1695</posx>
                     <posy>47</posy>
                     <width>100</width>
                     <height>100</height>
@@ -254,7 +254,7 @@
                 </control>
                 <control type="image">
                     <description>Rewinding image</description>
-                    <posx>1730</posx>
+                    <posx>1695</posx>
                     <posy>47</posy>
                     <width>100</width>
                     <height>100</height>

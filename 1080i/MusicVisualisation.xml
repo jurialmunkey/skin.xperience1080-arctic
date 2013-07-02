@@ -190,6 +190,14 @@
 								<aspectratio align="center">keep</aspectratio>
 								<animation effect="rotate" center="auto" reversible="false" start="360" end="0" time="2500" loop="true" condition="Player.Playing">Conditional</animation>
 							</control>
+							<control type="image">
+								<description>Shadow focus</description>
+								<posx>-70</posx>
+								<posy>-37</posy>
+								<width>644</width>
+								<height>464</height>
+								<texture border="150">views/posterview/shadow-focus.png</texture>
+							</control>
 							<!-- LEFT ART POSTER -->
 							<control type="image">
 								<posx>30</posx>

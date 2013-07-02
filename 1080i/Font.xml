@@ -560,6 +560,12 @@
             <size>42</size>
         </font>
         <font>
+        	<name>Font-OSD-FwRw</name>
+        	<filename>BebasNeue.ttf</filename>
+            <size>52</size>
+            <style>bold</style>
+        </font>
+        <font>
         	<name>Font-OSD-Clock-Large</name>
         	<filename>BebasNeue.ttf</filename>
             <size>72</size>
