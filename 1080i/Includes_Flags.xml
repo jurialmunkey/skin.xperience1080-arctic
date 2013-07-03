@@ -12,7 +12,6 @@
         <value condition="SubString(ListItem.MPAA,12) | SubString(Container(100).ListItem.Property(MPAA),12)">de/12</value>
         <value condition="SubString(ListItem.MPAA,6) | SubString(Container(100).ListItem.Property(MPAA),6)">de/6</value>
         <value condition="SubString(ListItem.MPAA,0) | SubString(Container(100).ListItem.Property(MPAA),0)">de/0</value>
-        <value>us/nr</value>
     </variable>
     
     <variable name="MovieMPAAVar_UK">
@@ -24,7 +23,6 @@
         <value condition="SubString(ListItem.MPAA,18) | SubString(Container(100).ListItem.Property(MPAA),18)">uk/18</value>
         <value condition="SubString(ListItem.MPAA,UC) | SubString(Container(100).ListItem.Property(MPAA),UC)">uk/uc</value>
         <value condition="SubString(ListItem.MPAA,U) | SubString(Container(100).ListItem.Property(MPAA),U)">uk/u</value>
-        <value>us/nr</value>
     </variable>
     
     <variable name="MovieMPAAVar_US">
