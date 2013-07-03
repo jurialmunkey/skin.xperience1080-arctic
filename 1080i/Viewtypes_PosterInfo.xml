@@ -2,7 +2,6 @@
 <!-- ========================= -->
 <!-- Classic Poster small (56) -->
 <!-- ========================= -->
-
     <include name="Viewtype-PosterInfo">
         <control type="group">
             <include>FullscreenDimensions</include>
@@ -20,49 +19,116 @@
 					<animation effect="slide" start="0,75" end="0" time="250" delay="250" reversible="false">Visible</animation>
 					<visible>![Container(56).OnNext | Container(56).OnPrevious] + !Window.IsActive(movieinformation) + Control.IsVisible(56)</visible>
 					<control type="image">
-						<posx>0</posx>
+						<posx>100</posx>
 						<posy>0</posy>
 						<width>303</width>
 						<height>303</height>
-						<texture background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.10.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<include>discart.slide</include>
 					</control>	
 					<control type="image">
 						<posx>200</posx>
 						<posy>0</posy>
 						<width>303</width>
 						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.9.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-80" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+					</control>	
+					<control type="image">
+						<posx>300</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.8.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-70" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-140" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+					</control>	
+					<control type="image">
+						<posx>400</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.7.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-60" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-120" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-180" condition="IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))">Conditional</animation>
+					</control>	
+					<control type="image">
+						<posx>500</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.6.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-50" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-100" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-150" condition="IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-200" condition="IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))">Conditional</animation>
+					</control>	
+					<control type="image">
+						<posx>600</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.5.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-40" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-80" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-120" condition="IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-160" condition="IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-200" condition="IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))">Conditional</animation>
 					</control>
 					<control type="image">
-						<posx>400</posx>
+						<posx>700</posx>
 						<posy>0</posy>
 						<width>303</width>
 						<height>303</height>
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.4.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
-					</control>
-					<control type="image">
-						<posx>600</posx>
-						<posy>0</posy>
-						<width>303</width>
-						<height>303</height>
-						<texture background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
-						<aspectratio align="center">keep</aspectratio>
-						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-30" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-60" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-90" condition="IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-120" condition="IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-150" condition="IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))">Conditional</animation>
 					</control>
 					<control type="image">
 						<posx>800</posx>
 						<posy>0</posy>
 						<width>303</width>
 						<height>303</height>
+						<texture background="true">$INFO[Window(home).Property(Set.Movie.3.Art(discart))]</texture>
+						<aspectratio align="center">keep</aspectratio>
+						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-20" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-40" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-60" condition="IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-80" condition="IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-100" condition="IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))">Conditional</animation>
+					</control>
+					<control type="image">
+						<posx>900</posx>
+						<posy>0</posy>
+						<width>303</width>
+						<height>303</height>
 						<texture background="true">$INFO[Window(home).Property(Set.Movie.2.Art(discart))]</texture>
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
+						<animation effect="slide" end="-10" condition="IsEmpty(Window(home).Property(Set.Movie.10.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-20" condition="IsEmpty(Window(home).Property(Set.Movie.9.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-30" condition="IsEmpty(Window(home).Property(Set.Movie.8.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-40" condition="IsEmpty(Window(home).Property(Set.Movie.7.Art(discart)))">Conditional</animation>
+						<animation effect="slide" end="-50" condition="IsEmpty(Window(home).Property(Set.Movie.6.Art(discart)))">Conditional</animation>
 					</control>
 					<control type="image">
 						<posx>1000</posx>
@@ -600,7 +666,7 @@
 						<font>Font-Alaska-S25-NC</font>
 						<autoscroll delay="5000" time="3000" repeat="5000" />
 						<info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
-						<visible>substring(ListItem.Path,videodb://1/7,left) + !Skin.HasSetting(old.posterinfo) + ![Container(56).OnNext | Container(56).OnPrevious]</visible>
+						<visible>substring(ListItem.Path,videodb://1/7,left) + !Skin.HasSetting(old.posterinfo) + ![Container(56).OnNext | Container(56).OnPrevious] + Control.HasFocus(56)</visible>
 						<animation effect="fade" start="0" end="100" time="150" delay="300">Visible</animation>
 						<include>OptionsShutdownAnimation</include>
 					</control>

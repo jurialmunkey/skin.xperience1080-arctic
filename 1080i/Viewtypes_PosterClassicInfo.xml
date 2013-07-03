@@ -8,6 +8,7 @@
             <include>OptionsShutdownAnimation</include>
             <include>BannerListAnimations</include>
             <visible>!Window.IsActive(movieinformation) + Control.IsVisible(514)</visible>  
+            <posy>40</posy>
             <control type="fixedlist" id="514">
                 <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Actors) | Container.Content(Sets) | Container.HasFolders</visible>
                 <posx>-80</posx>
@@ -160,7 +161,7 @@
                         <!-- CD ART -->
 						<control type="image">
 							<posx>-22</posx>
-							<posy>100</posy>
+							<posy>90</posy>
 							<width>354</width>
 							<height>354</height>
 							<texture background="true">$INFO[ListItem.Art(discart)]</texture>
@@ -252,6 +253,20 @@
 					<textcolor>Mod_Tags</textcolor>
 					<align>justify</align>
 					<autoscroll delay="13000" time="3000" repeat="13000" />
+					<visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
+				</control>
+				<control type="textbox">
+					<description>Plot</description>
+					<posx>24</posx>
+					<posy>65</posy>
+					<width>1110</width>
+					<height>110</height>
+					<font>Font-Alaska-S25-NC</font>
+					<textcolor>Mod_Tags</textcolor>
+					<align>justify</align>
+					<autoscroll delay="13000" time="3000" repeat="13000" />
+					<info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
+					<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
 				</control>
 			</control>
         </control>
