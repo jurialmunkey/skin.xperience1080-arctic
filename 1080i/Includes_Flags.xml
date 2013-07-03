@@ -2,7 +2,6 @@
 
     <variable name="MovieMPAAVar">
         <value condition="StringCompare(Skin.String(MovieMPAALang),DE)">$VAR[MovieMPAAVar_DE]</value>
-        <value condition="StringCompare(Skin.String(MovieMPAALang),IT)">$VAR[MovieMPAAVar_IT]</value>
         <value condition="StringCompare(Skin.String(MovieMPAALang),UK)">$VAR[MovieMPAAVar_UK]</value>
         <value>$VAR[MovieMPAAVar_US]</value>
     </variable>
@@ -13,12 +12,7 @@
         <value condition="SubString(ListItem.MPAA,12) | SubString(Container(100).ListItem.Property(MPAA),12)">de/12</value>
         <value condition="SubString(ListItem.MPAA,6) | SubString(Container(100).ListItem.Property(MPAA),6)">de/6</value>
         <value condition="SubString(ListItem.MPAA,0) | SubString(Container(100).ListItem.Property(MPAA),0)">de/0</value>
-    </variable>
-    
-    <variable name="MovieMPAAVar_IT">
-        <value condition="SubString(ListItem.MPAA,T) | SubString(Container(100).ListItem.Property(MPAA),T)">it/t</value>
-        <value condition="SubString(ListItem.MPAA,14) | SubString(Container(100).ListItem.Property(MPAA),14)">it/vm14</value>
-        <value condition="SubString(ListItem.MPAA,18) | SubString(Container(100).ListItem.Property(MPAA),18)">it/vm18</value>
+        <value>us/nr</value>
     </variable>
     
     <variable name="MovieMPAAVar_UK">
@@ -30,6 +24,7 @@
         <value condition="SubString(ListItem.MPAA,18) | SubString(Container(100).ListItem.Property(MPAA),18)">uk/18</value>
         <value condition="SubString(ListItem.MPAA,UC) | SubString(Container(100).ListItem.Property(MPAA),UC)">uk/uc</value>
         <value condition="SubString(ListItem.MPAA,U) | SubString(Container(100).ListItem.Property(MPAA),U)">uk/u</value>
+        <value>us/nr</value>
     </variable>
     
     <variable name="MovieMPAAVar_US">
@@ -38,7 +33,7 @@
         <value condition="SubString(ListItem.MPAA,G) | SubString(Container(100).ListItem.Property(MPAA),G)">us/g</value>
         <value condition="StringCompare(ListItem.MPAA,R) | SubString(ListItem.MPAA,Rated R) | SubString(ListItem.MPAA,USA:R) | StringCompare(Container(100).ListItem.Property(MPAA),R) | SubString(Container(100).ListItem.Property(MPAA),Rated R) | SubString(Container(100).ListItem.Property(MPAA),USA:R)">us/r</value>
         <value condition="SubString(ListItem.MPAA,17) | SubString(Container(100).ListItem.Property(MPAA),17)">us/nc-17</value>
-        <value condition="SubString(ListItem.MPAA,Not Rated) | SubString(ListItem.MPAA,Unrated) | SubString(Container(100).ListItem.Property(MPAA),Not Rated) | SubString(Container(100).ListItem.Property(MPAA),Unrated)">us/nr</value>
+        <value>us/nr</value>
     </variable>
 
     <include name="AspectDimensionsSmall">

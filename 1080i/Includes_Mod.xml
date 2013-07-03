@@ -107,33 +107,18 @@
     </variable>
     
     <variable name="AeonFlagRating">
-        <value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">aeonflags/rating/MPAA_G_Certificate_US.png</value>
+        <!--<value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">aeonflags/rating/MPAA_G_Certificate_US.png</value>
         <value condition="[substring(ListItem.MPAA,Rated PG) + !substring(ListItem.MPAA,13)] | substring(ListItem.MPAA,USA:PG)">aeonflags/rating/MPAA_PG_Certificate_US.png</value>
         <value condition="[substring(ListItem.MPAA,PG-13) | substring(ListItem.MPAA,USA:PG-13)] + [!substring(ListItem.MPAA,USA:R) + !substring(ListItem.MPAA,rated R)]">aeonflags/rating/MPAA_PG-13_Certificate_US.png</value>
         <value condition="substring(ListItem.MPAA,Rated R) | substring(ListItem.MPAA,USA:R)">aeonflags/rating/MPAA_R_Certificate_US.png</value>
-        <value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">aeonflags/rating/MPAA_NC-17_Certificate_US.png</value>
+        <value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">aeonflags/rating/MPAA_NC-17_Certificate_US.png</value>-->
         <value condition="substring(listitem.mpaa,TV-Y) + ![substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)]">aeonflags/rating/tv-y.png</value>
         <value condition="substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)">aeonflags/rating/tv-y7.png</value>
         <value condition="substring(listitem.mpaa,TV-G)">aeonflags/rating/TV-G_Certificate_US.png</value>
         <value condition="substring(listitem.mpaa,TV-PG)">aeonflags/rating/TV-PG_Certificate_US.png</value>
         <value condition="substring(listitem.mpaa,TV-14)">aeonflags/rating/TV-14_Certificate_US.png</value>
         <value condition="substring(listitem.mpaa,TV-MA)">aeonflags/rating/TV-MA_Certificate_US.png</value>
-        <value>aeonflags/rating/MPAA_NR_Certificate_US.png</value>
-    </variable>
-    
-    <variable name="MPAAVar">
-        <value condition="substring(ListItem.MPAA,Rated G) | substring(ListItem.MPAA,USA:G)">G</value>
-        <value condition="[substring(ListItem.MPAA,Rated PG) + !substring(ListItem.MPAA,13)] | substring(ListItem.MPAA,USA:PG)">PG</value>
-        <value condition="[substring(ListItem.MPAA,PG-13) | substring(ListItem.MPAA,USA:PG-13)] + [!substring(ListItem.MPAA,USA:R) + !substring(ListItem.MPAA,rated R)]">PG13</value>
-        <value condition="substring(ListItem.MPAA,Rated R) | substring(ListItem.MPAA,USA:R)">R</value>
-        <value condition="substring(ListItem.MPAA, NC-17) | substring(ListItem.MPAA,USA:NC-17)">NC17</value>
-        <value condition="substring(listitem.mpaa,TV-Y) + ![substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)]">TV-Y</value>
-        <value condition="substring(listitem.mpaa,TV-Y7) | substring(listitem.mpaa,TV-Y7-FV)">TV-Y7</value>
-        <value condition="substring(listitem.mpaa,TV-G)">TV-G</value>
-        <value condition="substring(listitem.mpaa,TV-PG)">TV-PG</value>
-        <value condition="substring(listitem.mpaa,TV-14)">TV-14</value>
-        <value condition="substring(listitem.mpaa,TV-MA)">TV-MA</value>
-        <value>NR</value>
+        <value>aeonflags/rating/$VAR[MovieMPAAVar].png</value>
     </variable>
     
     <variable name="AeonFlagAspect">

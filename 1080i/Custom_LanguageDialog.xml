@@ -140,13 +140,13 @@
                             <onclick>Skin.SetString(MovieMPAALang,DE)</onclick>
                             <onclick>PreviousMenu</onclick>
                         </item>
-                        <item id="2">
+                        <!--<item id="2">
                             <description>IT</description>
                             <label>Italia</label>
                             <label2>IT</label2>
                             <onclick>Skin.SetString(MovieMPAALang,IT)</onclick>
                             <onclick>PreviousMenu</onclick>
-                        </item>
+                        </item>-->
                         <item id="39">
                             <description>UK</description>
                             <label>United Kingdom</label>
