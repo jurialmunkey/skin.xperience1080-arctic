@@ -5,7 +5,11 @@
     <include file="ViewtypesPVR.xml" />
     <include file="Viewtypes_AdvBanner.xml" />
     <include file="Viewtypes_AdvWall.xml" />
-    <include file="Viewtypes_AdvWallWide.xml" />
+    <include file="Viewtypes_AdvCarousel.xml" />
+    <include file="Viewtypes_AdvReel.xml" />
+    <include file="Viewtypes_AdvLandscape.xml" />
+    <include file="Viewtypes_AdvClassicInfo.xml" />
+    <include file="Viewtypes_AdvPosterInfo.xml" />
     
     <include file="Viewtypes_List.xml" />
     <include file="Viewtypes_ListLow.xml" />
@@ -82,7 +86,11 @@
         <include>Viewtype-AddonThumbnail</include>
         <include>Viewtype-AdvBanner</include>
         <include>Viewtype-AdvWall</include>
-        <include>Viewtype-AdvWallWide</include>
+        <include>Viewtype-AdvCarousel</include>
+        <include>Viewtype-AdvReel</include>
+        <include>Viewtype-AdvLandscape</include>
+        <include>Viewtype-AdvClassicInfo</include>
+        <include>Viewtype-AdvPosterInfo</include>
     </include>
     
     <include name="AddonViews">
