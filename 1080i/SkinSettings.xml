@@ -848,20 +848,6 @@
                         <onclick>Skin.ToggleSetting(HideFanart)</onclick>
                         <label>$LOCALIZE[41191]</label>
                     </control>
-                    <control type="radiobutton" id="3013">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>!Skin.HasSetting(hide.glass)</selected>
-                        <onclick>Skin.ToggleSetting(hide.glass)</onclick>
-                        <label>Show glass borders on lists</label>
-                    </control>
-                    <control type="radiobutton" id="3018">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(covers.showglass)</selected>
-                        <onclick>Skin.ToggleSetting(covers.showglass)</onclick>
-                        <label>Show glass borders on covers/posters</label>
-                    </control>
                     <control type="radiobutton" id="3007">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -907,19 +893,42 @@
                         <onclick>Skin.ToggleSetting(PlayTrailer.Minimized)</onclick>
                         <label>$LOCALIZE[41203]</label>
                     </control>
+                    <control type="radiobutton" id="3005">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
+                        <onclick>Skin.ToggleSetting(PreferLandscapeArt)</onclick>
+                        <label>Prefer landscape art when available</label>
+                    </control>
+                    <control type="radiobutton" id="3013">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(hide.glass)</selected>
+                        <onclick>Skin.ToggleSetting(hide.glass)</onclick>
+                        <label>Show glass borders on lists</label>
+                    </control>
+                    <control type="radiobutton" id="3018">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(covers.showglass)</selected>
+                        <onclick>Skin.ToggleSetting(covers.showglass)</onclick>
+                        <onclick condition="Skin.HasSetting(covers.showglass)">Skin.Reset(covers.showcases)</onclick>
+                        <label>Show glass borders on covers/posters</label>
+                    </control>
+                    <control type="radiobutton" id="3019">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(covers.showcases)</selected>
+                        <onclick>Skin.ToggleSetting(covers.showcases)</onclick>
+                        <onclick condition="Skin.HasSetting(covers.showcases)">Skin.Reset(covers.showglass)</onclick>
+                        <label>Show dvd cases</label>
+                    </control>
                     <control type="radiobutton" id="3017">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(old.infostyle)</selected>
                         <onclick>Skin.ToggleSetting(old.infostyle)</onclick>
                         <label>Use old info screens</label>
-                    </control>
-                    <control type="radiobutton" id="3005">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
-                        <onclick>Skin.ToggleSetting(PreferLandscapeArt)</onclick>
-                        <label>Prefer Landscape Art when available</label>
                     </control>
                     <control type="radiobutton" id="3006">
                         <width>1210</width>

@@ -16,6 +16,7 @@
             <visible>Control.IsVisible(60)</visible>
             <control type="group">
             	<visible>Skin.HasSetting(bannerlist.showposter)</visible>
+            	<animation effect="slide" start="0" end="0,35" condition="Skin.HasSetting(covers.showcases)">Conditional</animation>
                 <posx>75</posx>
 	            <posy>190</posy>
                 <control type="image">
@@ -60,6 +61,24 @@
     	            <height>700</height>
 					<texture border="25">arctic/common/glass-ring.png</texture>
 					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
+				<control type="image">
+					<description>Case Back</description>
+					<posx>-10</posx>
+    	            <posy>-10</posy>
+    	            <width>486</width>
+    	            <height>720</height>
+					<texture border="100">overlays/aeon/glass.png</texture>
+					<visible>Skin.HasSetting(covers.showcases)</visible>
+				</control>
+				<control type="image">
+					<description>Case Front</description>
+					<posx>-10</posx>
+    	            <posy>-65</posy>
+    	            <width>486</width>
+    	            <height>775</height>
+					<texture border="30,70,30,30">overlays/aeon/dvd.png</texture>
+					<visible>Skin.HasSetting(covers.showcases)</visible>
 				</control>
     	    </control>
             <control type="group">
@@ -109,6 +128,24 @@
     	            <height>700</height>
 					<texture border="25">arctic/common/glass-ring.png</texture>
 					<visible>Skin.HasSetting(covers.showglass)</visible>
+				</control>
+				<control type="image">
+					<description>Case Back</description>
+					<posx>-10</posx>
+    	            <posy>-10</posy>
+    	            <width>486</width>
+    	            <height>720</height>
+					<texture border="100">overlays/aeon/glass.png</texture>
+					<visible>Skin.HasSetting(covers.showcases)</visible>
+				</control>
+				<control type="image">
+					<description>Case Front</description>
+					<posx>-10</posx>
+    	            <posy>-65</posy>
+    	            <width>486</width>
+    	            <height>775</height>
+					<texture border="30,70,30,30">overlays/aeon/dvd.png</texture>
+					<visible>Skin.HasSetting(covers.showcases)</visible>
 				</control>
     	    </control>
             <control type="fixedlist" id="60">

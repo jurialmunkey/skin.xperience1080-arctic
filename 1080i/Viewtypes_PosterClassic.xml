@@ -96,6 +96,24 @@
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
+                        <control type="image">
+                            <description>Case Back</description>
+                            <posx>-42</posx>
+                            <posy>0</posy>
+                            <width>394</width>
+                            <height>581</height>
+                            <texture border="100">overlays/aeon/glass.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Case Front</description>
+                            <posx>-42</posx>
+                            <posy>-55</posy>
+                            <width>394</width>
+                            <height>636</height>
+                            <texture border="100">overlays/aeon/dvd.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
                     </control>
                 </itemlayout>
                 <itemlayout width="310" condition="[[IntegerGreaterThan(Container(506).NumItems,1) + !IntegerGreaterThan(Container(506).NumItems,2)] | [IntegerGreaterThan(Container(506).NumItems,3) + !IntegerGreaterThan(Container(506).NumItems,4)]]">
@@ -168,6 +186,24 @@
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
+                        <control type="image">
+                            <description>Case Back</description>
+                            <posx>-42</posx>
+                            <posy>0</posy>
+                            <width>394</width>
+                            <height>581</height>
+                            <texture border="100">overlays/aeon/glass.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Case Front</description>
+                            <posx>-42</posx>
+                            <posy>-55</posy>
+                            <width>394</width>
+                            <height>636</height>
+                            <texture border="100">overlays/aeon/dvd.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
                     </control>
                 </itemlayout>
                 <focusedlayout width="310" condition="![[IntegerGreaterThan(Container(506).NumItems,1) + !IntegerGreaterThan(Container(506).NumItems,2)] | [IntegerGreaterThan(Container(506).NumItems,3) + !IntegerGreaterThan(Container(506).NumItems,4)]]">
@@ -259,6 +295,24 @@
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
+                        <control type="image">
+                            <description>Case Back</description>
+                            <posx>-42</posx>
+                            <posy>0</posy>
+                            <width>394</width>
+                            <height>581</height>
+                            <texture border="100">overlays/aeon/glass.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Case Front</description>
+                            <posx>-42</posx>
+                            <posy>-55</posy>
+                            <width>394</width>
+                            <height>636</height>
+                            <texture border="100">overlays/aeon/dvd.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
                     </control>
                 </focusedlayout>
                 <focusedlayout width="310" condition="[[IntegerGreaterThan(Container(506).NumItems,1) + !IntegerGreaterThan(Container(506).NumItems,2)] | [IntegerGreaterThan(Container(506).NumItems,3) + !IntegerGreaterThan(Container(506).NumItems,4)]]">
@@ -355,6 +409,24 @@
                             <aspectratio>stretch</aspectratio>
                             <colordiffuse>Mod_Border</colordiffuse>
                         </control> 
+                        <control type="image">
+                            <description>Case Back</description>
+                            <posx>-42</posx>
+                            <posy>0</posy>
+                            <width>394</width>
+                            <height>581</height>
+                            <texture border="100">overlays/aeon/glass.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
+                        <control type="image">
+                            <description>Case Front</description>
+                            <posx>-42</posx>
+                            <posy>-55</posy>
+                            <width>394</width>
+                            <height>636</height>
+                            <texture border="100">overlays/aeon/dvd.png</texture>
+                            <visible>Skin.HasSetting(covers.showcases)</visible>
+                        </control>
                     </control>
                 </focusedlayout>
             </control>

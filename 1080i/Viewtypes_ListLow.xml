@@ -611,6 +611,24 @@
 						<texture border="25">arctic/common/border.png</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 					</control>
+					<control type="image">
+						<description>Case Back</description>
+						<posx>25</posx>
+						<posy>-75</posy>
+						<width>343</width>
+						<height>505</height>
+						<texture border="100">overlays/aeon/glass.png</texture>
+						<visible>Skin.HasSetting(covers.showcases)</visible>
+					</control>
+					<control type="image">
+						<description>Case Front</description>
+						<posx>25</posx>
+						<posy>-130</posy>
+						<width>343</width>
+						<height>560</height>
+						<texture border="30,70,30,30">overlays/aeon/dvd.png</texture>
+						<visible>Skin.HasSetting(covers.showcases)</visible>
+					</control>
 				</control>
             </control>
         </control>
