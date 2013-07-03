@@ -493,19 +493,11 @@
                     <effect type="slide" start="0" end="1685" time="320" delay="800" tween="cubic" />
                 </animation>
                 <control type="image">
-					<posx>10</posx>
-					<posy>10</posy>
-					<width>1430</width>
-					<height>270</height>
-					<texture border="5">views/newgloss/whitepanel.png</texture>
-					<colordiffuse>mod-infotags</colordiffuse>
-				</control>
-				<control type="image">
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>1450</width>
-					<height>290</height>
-					<texture border="25">views/newgloss/border.png</texture>
+					<posx>-5</posx>
+					<posy>-5</posy>
+					<width>1460</width>
+					<height>300</height>
+					<texture border="35">views/newgloss/whitepanel-15.png</texture>
 				</control>
 				
 				<!-- CONSOLES -->
@@ -519,7 +511,7 @@
 						<align>left</align>
 						<label>$ADDON[script.games.rom.collection.browser 50006]</label>
 						<font>Font-Alaska-S45-BL</font>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>mod-infotags-d</textcolor>
 						<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(500)">Conditional</animation>
 					</control>
 					<control type="wraplist" id="500">
@@ -536,22 +528,30 @@
 						<scrolltime>200</scrolltime>
 						<itemlayout height="48">
 							<control type="label">
-								<posx>0</posx>
+								<posx>5</posx>
 								<posy>0</posy>
 								<width>235</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>ffffffff</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="true">Conditional</animation>
 								<scroll>false</scroll>
 							</control>
 						</itemlayout>
 						<focusedlayout height="48">
-							<control type="label">
+							<control type="image">
 								<posx>0</posx>
+								<posy>0</posy>
+								<width>245</width>
+								<height>45</height>
+								<texture border="5">views/other/focus-mod.png</texture>
+								<visible>Control.HasFocus(500)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
 								<posy>0</posy>
 								<width>235</width>
 								<height>45</height>
@@ -562,6 +562,21 @@
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(500)">Conditional</animation>
 								<scroll>false</scroll>
+								<visible>Control.HasFocus(500)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>235</width>
+								<height>45</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>Font-Alaska-S29-BL</font>
+								<textcolor>mod-infotags</textcolor>								
+								<info>ListItem.Label</info>
+								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(500)">Conditional</animation>
+								<scroll>false</scroll>
+								<visible>!Control.HasFocus(500)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -578,7 +593,7 @@
 						<align>left</align>
 						<label>$ADDON[script.games.rom.collection.browser 50001]</label>
 						<font>Font-Alaska-S45-BL</font>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>mod-infotags-d</textcolor>
 						<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(600)">Conditional</animation>
 					</control>
 					<control type="wraplist" id="600">
@@ -595,22 +610,30 @@
 						<scrolltime>200</scrolltime>
 						<itemlayout height="48">
 							<control type="label">
-								<posx>0</posx>
+								<posx>5</posx>
 								<posy>0</posy>
 								<width>235</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>ffffffff</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="true">Conditional</animation>
 								<scroll>false</scroll>
 							</control>
 						</itemlayout>
 						<focusedlayout height="48">
-							<control type="label">
+							<control type="image">
 								<posx>0</posx>
+								<posy>0</posy>
+								<width>245</width>
+								<height>45</height>
+								<texture border="5">views/other/focus-mod.png</texture>
+								<visible>Control.HasFocus(600)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
 								<posy>0</posy>
 								<width>235</width>
 								<height>45</height>
@@ -621,6 +644,21 @@
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(600)">Conditional</animation>
 								<scroll>false</scroll>
+								<visible>Control.HasFocus(600)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>235</width>
+								<height>45</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>Font-Alaska-S29-BL</font>
+								<textcolor>mod-infotags</textcolor>
+								<info>ListItem.Label</info>
+								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(600)">Conditional</animation>
+								<scroll>false</scroll>
+								<visible>!Control.HasFocus(600)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -637,7 +675,7 @@
 						<align>left</align>
 						<label>$ADDON[script.games.rom.collection.browser 50000]</label>
 						<font>Font-Alaska-S45-BL</font>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>mod-infotags-d</textcolor>
 						<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(700)">Conditional</animation>
 					</control>
 					<control type="wraplist" id="700">
@@ -654,22 +692,30 @@
 						<scrolltime>200</scrolltime>
 						<itemlayout height="48">
 							<control type="label">
-								<posx>0</posx>
+								<posx>5</posx>
 								<posy>0</posy>
 								<width>165</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>ffffffff</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="true">Conditional</animation>
 								<scroll>false</scroll>
 							</control>
 						</itemlayout>
 						<focusedlayout height="48">
-							<control type="label">
+							<control type="image">
 								<posx>0</posx>
+								<posy>0</posy>
+								<width>175</width>
+								<height>45</height>
+								<texture border="5">views/other/focus-mod.png</texture>
+								<visible>Control.HasFocus(700)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
 								<posy>0</posy>
 								<width>165</width>
 								<height>45</height>
@@ -680,6 +726,21 @@
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(700)">Conditional</animation>
 								<scroll>false</scroll>
+								<visible>Control.HasFocus(700)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>165</width>
+								<height>45</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>Font-Alaska-S29-BL</font>
+								<textcolor>mod-infotags</textcolor>								
+								<info>ListItem.Label</info>
+								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(700)">Conditional</animation>
+								<scroll>false</scroll>
+								<visible>!Control.HasFocus(700)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -696,7 +757,7 @@
 						<align>left</align>
 						<label>$ADDON[script.games.rom.collection.browser 50002]</label>
 						<font>Font-Alaska-S45-BL</font>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>mod-infotags-d</textcolor>
 						<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(800)">Conditional</animation>
 					</control>
 					<control type="wraplist" id="800">
@@ -713,24 +774,32 @@
 						<scrolltime>200</scrolltime>
 						<itemlayout height="48">
 							<control type="label">
-								<posx>0</posx>
+								<posx>5</posx>
 								<posy>0</posy>
-								<width>285</width>
+								<width>275</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>ffffffff</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="true">Conditional</animation>
 								<scroll>false</scroll>
 							</control>
 						</itemlayout>
 						<focusedlayout height="48">
-							<control type="label">
+							<control type="image">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>285</width>
+								<height>45</height>
+								<texture border="5">views/other/focus-mod.png</texture>
+								<visible>Control.HasFocus(800)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>275</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
@@ -739,6 +808,21 @@
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(800)">Conditional</animation>
 								<scroll>false</scroll>
+								<visible>Control.HasFocus(800)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>275</width>
+								<height>45</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>Font-Alaska-S29-BL</font>
+								<textcolor>mod-infotags</textcolor>								
+								<info>ListItem.Label</info>
+								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(800)">Conditional</animation>
+								<scroll>false</scroll>
+								<visible>!Control.HasFocus(800)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -755,7 +839,7 @@
 						<align>left</align>
 						<label>$ADDON[script.games.rom.collection.browser 50007]</label>
 						<font>Font-Alaska-S45-BL</font>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>mod-infotags-d</textcolor>
 						<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(900)">Conditional</animation>
 					</control>
 					<control type="wraplist" id="900">
@@ -772,24 +856,32 @@
 						<scrolltime>200</scrolltime>
 						<itemlayout height="48">
 							<control type="label">
-								<posx>0</posx>
+								<posx>5</posx>
 								<posy>0</posy>
-								<width>100</width>
+								<width>90</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>ffffffff</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="true">Conditional</animation>
 								<scroll>false</scroll>
 							</control>
 						</itemlayout>
 						<focusedlayout height="48">
-							<control type="label">
+							<control type="image">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>100</width>
+								<height>45</height>
+								<texture border="5">views/other/focus-mod.png</texture>
+								<visible>Control.HasFocus(900)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>90</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
@@ -798,6 +890,21 @@
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(900)">Conditional</animation>
 								<scroll>false</scroll>
+								<visible>Control.HasFocus(900)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>90</width>
+								<height>45</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>Font-Alaska-S29-BL</font>
+								<textcolor>mod-infotags</textcolor>								
+								<info>ListItem.Label</info>
+								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(900)">Conditional</animation>
+								<scroll>false</scroll>
+								<visible>!Control.HasFocus(900)</visible>
 							</control>
 						</focusedlayout>
 					</control>
@@ -814,7 +921,7 @@
 						<align>left</align>
 						<label>Viewtype</label>
 						<font>Font-Alaska-S45-BL</font>
-						<textcolor>ffffffff</textcolor>
+						<textcolor>mod-infotags-d</textcolor>
 						<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(4900)">Conditional</animation>
 					</control>
 					<control type="wraplist" id="4900">
@@ -831,24 +938,32 @@
 						<scrolltime>200</scrolltime>
 						<itemlayout height="48">
 							<control type="label">
-								<posx>0</posx>
+								<posx>5</posx>
 								<posy>0</posy>
-								<width>200</width>
+								<width>190</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
 								<font>Font-Alaska-S29-BL</font>
-								<textcolor>ffffffff</textcolor>
+								<textcolor>mod-infotags</textcolor>
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="true">Conditional</animation>
 								<scroll>false</scroll>
 							</control>
 						</itemlayout>
 						<focusedlayout height="48">
-							<control type="label">
+							<control type="image">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>200</width>
+								<height>45</height>
+								<texture border="5">views/other/focus-mod.png</texture>
+								<visible>Control.HasFocus(4900)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>190</width>
 								<height>45</height>
 								<align>left</align>
 								<aligny>center</aligny>
@@ -857,6 +972,21 @@
 								<info>ListItem.Label</info>
 								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(4900)">Conditional</animation>
 								<scroll>false</scroll>
+								<visible>Control.HasFocus(4900)</visible>
+							</control>
+							<control type="label">
+								<posx>5</posx>
+								<posy>0</posy>
+								<width>190</width>
+								<height>45</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>Font-Alaska-S29-BL</font>
+								<textcolor>mod-infotags</textcolor>								
+								<info>ListItem.Label</info>
+								<animation effect="fade" start="100" end="65" time="100" condition="!Control.HasFocus(4900)">Conditional</animation>
+								<scroll>false</scroll>
+								<visible>!Control.HasFocus(4900)</visible>
 							</control>
 						</focusedlayout>
 						<content>
