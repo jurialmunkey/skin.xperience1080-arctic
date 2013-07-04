@@ -540,7 +540,7 @@
 			<orientation>vertical</orientation>
 			<textureslidernib flipx="true">arctic/common/slider-nf-v.png</textureslidernib>
 			<textureslidernibfocus flipx="true">arctic/common/slider-fo-v.png</textureslidernibfocus>
-			<showonepage>false</showonepage>
+			<showonepage>true</showonepage>
 			<onleft>53</onleft>
 			<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
 			<onright condition="Skin.HasSetting(KioskMode)">53</onright>

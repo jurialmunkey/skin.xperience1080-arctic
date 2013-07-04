@@ -681,7 +681,7 @@
 			<orientation>horizontal</orientation>
 			<textureslidernib >arctic/common/slider-nf-h.png</textureslidernib>
 			<textureslidernibfocus >arctic/common/slider-fo-h.png</textureslidernibfocus>
-			<showonepage>false</showonepage>
+			<showonepage>true</showonepage>
 			<onup>56</onup>
 			<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
 			<ondown condition="Skin.HasSetting(KioskMode)">56</ondown>
