@@ -63,7 +63,7 @@
  
            	<!-- PLOT -->
 			<control type="group">
-				<posy>648</posy>
+				<posy>652</posy>
 				<posx>680</posx>
 				<control type="label">
 					<posx>0</posx>
@@ -90,30 +90,37 @@
 			<!-- PLAY CONTROL LIST -->
 			<control type="group">
 				<posx>672</posx>
-				<posy>540</posy>
+				<posy>548</posy>
 				<visible>!Control.HasFocus(9336)</visible>
 				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 				<control type="image">
-					<posx>-472</posx>
+					<posx>-16</posx>
+					<posy>-16</posy> 
+					<width>1231</width>
+					<height>114</height>
+					<texture border="35">views/newgloss/whitepanel-15.png</texture>
+				</control>
+				<control type="image">
+					<posx>--27</posx>
 					<posy>-83</posy>
-					<width>1680</width>
+					<width>1135</width>
 					<height>84</height>
 					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 				</control>	
 				<control type="image">
-					<posx>-472</posx>
+					<posx>-27</posx>
 					<posy>0</posy>
-					<width>1680</width>
+					<width>1135</width>
 					<height>84</height>
 					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-				</control>	
-				<control type="image">
+				</control>
+				<!--<control type="image">
 					<posx>-83</posx>
 					<posy>0</posy>
 					<width>84</width>
 					<height>83</height>
 					<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
-				</control>	
+				</control>-->	
 				<control type="button" id="9339">
 					<visible allowhiddenfocus="true">false</visible>
 					<onfocus>Skin.ToggleSetting(videoinfo.cinemaexperience)</onfocus>
@@ -261,17 +268,17 @@
 				<animation effect="slide" start="0" end="0,58" condition="IsEmpty(ListItem.Writer)">Conditional</animation>
 				<posx>985</posx>
 				<posy>257</posy>
-				<control type="image">
-					<posx>-785</posx>
+				<!--<control type="image">
+					<posx>-240</posx>
 					<posy>-93</posy>
-					<width>1680</width>
+					<width>1135</width>
 					<height>84</height>
 					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-				</control>
+				</control>-->
 				<control type="image">
 					<posx>-10</posx>
 					<posy>-4</posy>
-					<width>860</width>
+					<width>890</width>
 					<height>46</height>
 					<texture border="5">views/other/focus-mod.png</texture>
 					<include>visiblehidefadeinfo</include>
@@ -313,9 +320,9 @@
 				<visible>!Control.HasFocus(9336)</visible>
 				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 				<control type="image">
-					<posx>-785</posx>
+					<posx>-240</posx>
 					<posy>-93</posy>
-					<width>1680</width>
+					<width>1135</width>
 					<height>84</height>
 					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 					<visible>!IsEmpty(ListItem.Writer)</visible>
@@ -353,9 +360,9 @@
 						<onleft>150</onleft>
 					</control>
 					<control type="image">
-						<posx>200</posx>
+						<posx>745</posx>
 						<posy>280</posy>
-						<width>1680</width>
+						<width>1135</width>
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 					</control>
@@ -408,7 +415,7 @@
 							<control type="image">
 								<posx>10</posx>
 								<posy>0</posy>
-								<width>885</width>
+								<width>890</width>
 								<height>42</height>
 								<texture border="5">views/other/focus-mod.png</texture>
 								<visible>Control.HasFocus(150)</visible>

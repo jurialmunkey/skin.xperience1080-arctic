@@ -110,7 +110,7 @@
                             <posy>-55</posy>
                             <width>394</width>
                             <height>636</height>
-                            <texture border="100">overlays/aeon/dvd.png</texture>
+							<texture border="15,70,15,30">overlays/aeon/$VAR[covers.showcases.var].png</texture>
                             <visible>Skin.HasSetting(covers.showcases)</visible>
                         </control>
                     </control>
@@ -222,7 +222,7 @@
                             <posy>-55</posy>
                             <width>394</width>
                             <height>636</height>
-                            <texture border="100">overlays/aeon/dvd.png</texture>
+							<texture border="15,70,15,30">overlays/aeon/$VAR[covers.showcases.var].png</texture>
                             <visible>Skin.HasSetting(covers.showcases)</visible>
                         </control>
                     </control>

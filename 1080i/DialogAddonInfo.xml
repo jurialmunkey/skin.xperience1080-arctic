@@ -72,19 +72,29 @@
 				<posx>672</posx>
 				<posy>540</posy>
 				<control type="image">
+					<posx>-16</posx>
+					<posy>-16</posy> 
+					<width>1231</width>
+					<height>114</height>
+					<texture border="35">views/newgloss/whitepanel-15.png</texture>
+					<visible>IsEmpty(ListItem.Property(Addon.broken))</visible>
+				</control>
+				<control type="image">
 					<posx>-472</posx>
 					<posy>-83</posy>
 					<width>1680</width>
 					<height>84</height>
 					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
+					<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
 				</control>	
 				<control type="image">
 					<posx>-472</posx>
-					<posy>0</posy>
+					<posy>8</posy>
 					<width>1680</width>
 					<height>84</height>
 					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-				</control>	
+					<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
+				</control>
 				<control type="grouplist" id="9333">
 					<posx>0</posx>
 					<posy>0</posy>
@@ -285,7 +295,7 @@
 				<visible>!IsEmpty(ListItem.Property(Addon.broken))</visible>
 				<width>1150</width>
 				<height>50</height>
-				<posy>540</posy>
+				<posy>543</posy>
 				<posx>670</posx>
 				<orientation>horizontal</orientation>
 				<control type="image">

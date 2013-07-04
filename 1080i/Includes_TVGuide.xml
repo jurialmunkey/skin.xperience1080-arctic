@@ -334,9 +334,8 @@
         <height>84</height>
         <align>left</align>
         <font>Font-Alaska-S34-BL</font>
-        <textcolor>mod-infotags</textcolor>
+        <textcolor>white</textcolor>
         <disabledcolor>mod-infotags-l</disabledcolor>
-        <shadowcolor>mod-shadow</shadowcolor>
         <textoffsetx>30</textoffsetx>
         <texturefocus border="90,3,90,3">views/list/other/separator.png</texturefocus>
         <texturenofocus border="90,3,90,3">views/list/other/separator.png</texturenofocus>
@@ -354,11 +353,11 @@
                 <texture>dialogs/shutdown/shadow.png</texture>
             </control>
             <control type="image">
-                <posx>-5</posx>
-                <posy>265</posy>
-                <width>490</width>
-                <height>200</height>
-                <texture border="7">windows/home/tile-grey.png</texture>
+                <posx>-20</posx>
+                <posy>254</posy>
+                <width>520</width>
+                <height>230</height>
+                <texture border="37">views/newgloss/whitepanel-15.png</texture>
                 <animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
             </control>
             <control type="image">
@@ -445,11 +444,11 @@
                 <texture>dialogs/shutdown/shadow.png</texture>
             </control>
             <control type="image">
-                <posx>-5</posx>
-                <posy>265</posy>
-                <width>490</width>
-                <height>200</height>
-                <texture border="7">windows/home/tile-grey.png</texture>
+                <posx>-20</posx>
+                <posy>254</posy>
+                <width>520</width>
+                <height>230</height>
+                <texture border="37">views/newgloss/whitepanel-15.png</texture>
                 <animation type="Focus">
                     <effect type="fade" start="60" end="100" time="300" tween="sine" easing="inout" />
                 </animation>

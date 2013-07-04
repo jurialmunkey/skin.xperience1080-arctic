@@ -680,7 +680,7 @@
 						<posy>-130</posy>
 						<width>343</width>
 						<height>560</height>
-						<texture border="30,70,30,30">overlays/aeon/dvd.png</texture>
+						<texture border="15,70,15,30">overlays/aeon/$VAR[covers.showcases.var].png</texture>
 						<visible>Skin.HasSetting(covers.showcases)</visible>
 					</control>
 				</control>

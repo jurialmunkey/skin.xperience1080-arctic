@@ -159,6 +159,11 @@
                             <label>$LOCALIZE[41280]</label>
                             <onclick>noop</onclick>
                         </item>
+                        <item id="39">
+                            <description>Unsupported Options</description>
+                            <label>Unofficial settings</label>
+                            <onclick>noop</onclick>
+                        </item>
                     </content>
                 </control>
             </control>
@@ -174,7 +179,7 @@
                     <posx>390</posx>
                     <posy>235</posy>
                     <height>40</height>
-                    <width>338</width>
+                    <width>400</width>
                     <align>left</align>
                     <font>Font-Alaska-S25-BL</font>
                     <label>[UPPERCASE]$LOCALIZE[5]:[/UPPERCASE]$INFO[Container(30).ListItem.Label, ,]</label>
@@ -848,73 +853,51 @@
                         <onclick>Skin.ToggleSetting(HideFanart)</onclick>
                         <label>$LOCALIZE[41191]</label>
                     </control>
-                    <control type="radiobutton" id="3007">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(disable.dimfanart)</selected>
-                        <onclick>Skin.ToggleSetting(disable.dimfanart)</onclick>
-                        <label>Show more background</label>
-                    </control>
-                    <control type="radiobutton" id="3014">
+                    <control type="radiobutton" id="3002">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>!Skin.HasSetting(hide.infotags)</selected>
                         <onclick>Skin.ToggleSetting(hide.infotags)</onclick>
                         <label>Show info tags</label>
                     </control>
-                    <control type="radiobutton" id="3015">
+                    <control type="radiobutton" id="3003">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>!Skin.HasSetting(hide.clearlogos)</selected>
                         <onclick>Skin.ToggleSetting(hide.clearlogos)</onclick>
-                        <label>Show logos</label>
+                        <label>Show bottom logo</label>
                         <enable>!Skin.HasSetting(hide.infotags)</enable>
-                        <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(3015)">Conditional</animation>
+                        <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(3002)">Conditional</animation>
                     </control>
-                    <control type="button" id="3020">
+                    <control type="button" id="3004">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41192]</label>
                         <label2 fallback="US">[COLOR=ff111111]$VAR[MovieMPAALangLabel][/COLOR]</label2>
                         <onclick>ActivateWindow(3006)</onclick>
                     </control>
-                    <control type="radiobutton" id="3002">
+                    <control type="radiobutton" id="3005">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(MovieInformation.PlayTrailer)</selected>
                         <onclick>Skin.ToggleSetting(MovieInformation.PlayTrailer)</onclick>
                         <label>$LOCALIZE[41202]</label>
                     </control>
-                    <control type="radiobutton" id="3003">
+                    <control type="radiobutton" id="3006">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(PlayTrailer.Minimized)</selected>
                         <onclick>Skin.ToggleSetting(PlayTrailer.Minimized)</onclick>
                         <label>$LOCALIZE[41203]</label>
                     </control>
-                    <control type="radiobutton" id="3005">
+                    <control type="radiobutton" id="3007">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
                         <onclick>Skin.ToggleSetting(PreferLandscapeArt)</onclick>
                         <label>Prefer landscape art when available</label>
                     </control>
-                    <control type="radiobutton" id="3016">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>!Skin.HasSetting(old.clock)</selected>
-                        <onclick>Skin.ToggleSetting(old.clock)</onclick>
-                        <onclick>ReloadSkin</onclick>
-                        <label>Use new clock</label>
-                    </control>
-                    <control type="radiobutton" id="3013">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>!Skin.HasSetting(hide.glass)</selected>
-                        <onclick>Skin.ToggleSetting(hide.glass)</onclick>
-                        <label>Show glass borders on lists</label>
-                    </control>
-                    <control type="radiobutton" id="3018">
+                    <control type="radiobutton" id="3008">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(covers.showglass)</selected>
@@ -922,7 +905,36 @@
                         <onclick condition="Skin.HasSetting(covers.showglass)">Skin.Reset(covers.showcases)</onclick>
                         <label>Show glass borders on covers/posters</label>
                     </control>
-                    <control type="radiobutton" id="3019">
+                </control>
+                
+                <!-- UNOFFICIAL SETTINGS -->
+                <control type="grouplist" id="5">
+                    <onleft>30</onleft>
+                    <include>SettingsCategoryGrouplistVars</include>
+                    <visible>Container(30).HasFocus(39)</visible>
+                    <control type="radiobutton" id="9001">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(disable.dimfanart)</selected>
+                        <onclick>Skin.ToggleSetting(disable.dimfanart)</onclick>
+                        <label>Show more background</label>
+                    </control>
+                    <control type="radiobutton" id="9003">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(old.clock)</selected>
+                        <onclick>Skin.ToggleSetting(old.clock)</onclick>
+                        <onclick>ReloadSkin</onclick>
+                        <label>Use old clock</label>
+                    </control>
+                    <control type="radiobutton" id="9004">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(hide.glass)</selected>
+                        <onclick>Skin.ToggleSetting(hide.glass)</onclick>
+                        <label>Show glass borders on lists</label>
+					</control>
+                    <control type="radiobutton" id="9005">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(covers.showcases)</selected>
@@ -930,14 +942,14 @@
                         <onclick condition="Skin.HasSetting(covers.showcases)">Skin.Reset(covers.showglass)</onclick>
                         <label>Show dvd cases</label>
                     </control>
-                    <control type="radiobutton" id="3017">
+                    <control type="radiobutton" id="9006">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(old.infostyle)</selected>
                         <onclick>Skin.ToggleSetting(old.infostyle)</onclick>
                         <label>Use old info screens</label>
                     </control>
-                    <control type="radiobutton" id="3006">
+                    <control type="radiobutton" id="9007">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(EPGGenreColors.Enabled)</selected>

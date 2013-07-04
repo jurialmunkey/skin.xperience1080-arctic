@@ -350,7 +350,7 @@
                                     <posy>5</posy>
                                     <width>287</width>
                                     <height>475</height>
-									<texture border="20,70,20,20">overlays/aeon/dvd.png</texture>
+									<texture border="15,70,15,30">overlays/aeon/$VAR[covers.showcases.var].png</texture>
 									<visible>Skin.HasSetting(covers.showcases)</visible>
 								</control>
                             </control>
@@ -540,7 +540,7 @@
                                     <posy>5</posy>
                                     <width>287</width>
                                     <height>475</height>
-									<texture border="20,70,20,20">overlays/aeon/dvd.png</texture>
+									<texture border="15,70,15,30">overlays/aeon/$VAR[covers.showcases.var].png</texture>
 									<visible>Skin.HasSetting(covers.showcases)</visible>
 								</control>
 							</control>
@@ -648,7 +648,7 @@
                                     <posy>5</posy>
                                     <width>287</width>
                                     <height>475</height>
-									<texture border="20,70,20,20">overlays/aeon/dvd.png</texture>
+									<texture border="15,70,15,30">overlays/aeon/$VAR[covers.showcases.var].png</texture>
 									<visible>Skin.HasSetting(covers.showcases)</visible>
 								</control>
                             </control>

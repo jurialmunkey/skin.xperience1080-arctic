@@ -386,7 +386,7 @@
 						<colordiffuse>mod-infotags-alt</colordiffuse>
 					</control>
 				</control>
-			
+				
 				<!-- SUBMENU ITEMS -->
 				<control type="list" id="83">
 					<include>listEndAnimation</include>
@@ -598,7 +598,6 @@
 					<control type="image">
 						<include>Mod_GreyPanelDimensions</include>
 					</control>
-				
 					<!-- HEADER FOR PANEL -->
 					<!-- search -->
 					<control type="label">

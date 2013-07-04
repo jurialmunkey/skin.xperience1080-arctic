@@ -61,29 +61,36 @@
 				<!-- CONTROL LIST -->
 				<control type="group">
 					<posx>672</posx>
-					<posy>540</posy>
+					<posy>548</posy>
 					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 					<control type="image">
-						<posx>-472</posx>
+						<posx>-16</posx>
+						<posy>-16</posy> 
+						<width>1231</width>
+						<height>114</height>
+						<texture border="35">views/newgloss/whitepanel-15.png</texture>
+					</control>
+					<control type="image">
+						<posx>--27</posx>
 						<posy>-83</posy>
-						<width>1680</width>
+						<width>1135</width>
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 					</control>	
 					<control type="image">
-						<posx>-472</posx>
+						<posx>-27</posx>
 						<posy>0</posy>
-						<width>1680</width>
+						<width>1135</width>
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-					</control>	
-					<control type="image">
+					</control>
+					<!--<control type="image">
 						<posx>-83</posx>
 						<posy>0</posy>
 						<width>84</width>
 						<height>83</height>
 						<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
-					</control>	
+					</control>-->
 					<control type="list" id="9000">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -213,7 +220,7 @@
 				</control>
 				<!-- MOD PLOT -->
 				<control type="group">
-					<posy>648</posy>
+					<posy>652</posy>
 					<posx>680</posx>
 					<animation effect="fade" start="0" end="100" time="300" tween="sine" delay="300" easing="in" condition="!Window.IsActive(movieinformation) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent))">WindowOpen</animation>
 					<control type="label">
@@ -245,9 +252,9 @@
 					<posx>985</posx>
 					<posy>257</posy>
 					<control type="image">
-						<posx>-785</posx>
+						<posx>-240</posx>
 						<posy>-93</posy>
-						<width>1680</width>
+						<width>1135</width>
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 					</control>
@@ -280,9 +287,9 @@
 					<posx>985</posx>
 					<posy>307</posy>
 					<control type="image">
-						<posx>-785</posx>
+						<posx>-240</posx>
 						<posy>-93</posy>
-						<width>1680</width>
+						<width>1135</width>
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 					</control>
@@ -509,7 +516,7 @@
 					<control type="image">
 						<posx>0</posx>
 						<posy>0</posy>
-						<width>860</width>
+						<width>890</width>
 						<height>35</height>
 						<texture border="5">views/other/focus-mod.png</texture>
 						<animation effect="slide" start="0,23" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(150).OnPrevious">Focus</animation>
