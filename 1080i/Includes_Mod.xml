@@ -161,7 +161,7 @@
     <variable name="SeasonalYear">
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Season)">S$INFO[ListItem.Season]</value>
         <value condition="Container.Content(seasons) + !IsEmpty(ListItem.Season)">S$INFO[ListItem.Season]</value>
-        <value condition="Container.Content(seasons) + IsEmpty(ListItem.Season)">Extras</value>
+        <value condition="Container.Content(seasons) + IsEmpty(ListItem.Season)">SP</value>
         <value condition="Container.Content(songs) + !IsEmpty(ListItem.Duration)">$INFO[ListItem.Duration]</value>
         <value condition="![Container.Content(songs) | Container.Content(seasons)] + !IsEmpty(ListItem.Year)">$INFO[ListItem.Year]</value>
         <value>N/A</value>

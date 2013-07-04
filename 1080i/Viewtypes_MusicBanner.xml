@@ -68,8 +68,8 @@
                 <viewtype label="Banner">list</viewtype>
                 <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
                 <onleft condition="Skin.HasSetting(KioskMode)">60</onleft>
-                <onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
-                <onright condition="Skin.HasSetting(KioskMode)">60</onright>
+                <onright>70</onright>
+                <pagecontrol>70</pagecontrol>
                 <onup>60</onup>
                 <ondown>60</ondown>
                 <movement>2</movement>
@@ -489,5 +489,22 @@
                 </focusedlayout>
             </control>
         </control>
+        <control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>26</width>
+			<height>1080</height>
+			<posx>1894</posx>
+			<orientation>vertical</orientation>
+			<textureslidernib flipx="true" >arctic/common/slider-nf-v.png</textureslidernib>
+			<textureslidernibfocus flipx="true" >arctic/common/slider-fo-v.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onleft>60</onleft>
+			<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+			<onright condition="Skin.HasSetting(KioskMode)">60</onright>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(60)</visible>
+		</control>
     </include>
 </includes>

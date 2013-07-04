@@ -18,9 +18,10 @@
                 <scrolltime tween="sine" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
                 <viewtype label="Reel">list</viewtype>
-                <onup>513</onup>
-                <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
-                <ondown condition="Skin.HasSetting(KioskMode)">513</ondown>
+                <ondown>70</ondown>
+                <pagecontrol>70</pagecontrol>
+                <onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
+                <onup condition="Skin.HasSetting(KioskMode)">513</onup>
                 <onleft>513</onleft>
                 <onright>513</onright>
                 <focusposition>1</focusposition>
@@ -140,5 +141,23 @@
                 </focusedlayout>
             </control>
         </control>
+        <!--Scrollbar-->			
+		<control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>1920</width>
+			<height>26</height>
+			<posy>26r</posy>
+			<orientation>horizontal</orientation>
+			<textureslidernib>arctic/common/slider-nf-h.png</textureslidernib>
+			<textureslidernibfocus>arctic/common/slider-fo-h.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onup>513</onup>
+			<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+			<ondown condition="Skin.HasSetting(KioskMode)">513</ondown>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(513)</visible>
+		</control>
     </include>    
 </includes>

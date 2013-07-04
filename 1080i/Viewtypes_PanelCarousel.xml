@@ -7,33 +7,6 @@
             <visible>Control.IsVisible(503) + !Window.IsActive(movieinformation)</visible>
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
-            <!--<control type="group">
-            	<posy>240</posy>
-				<animation effect="fade" start="0" end="100" time="400" delay="600" reversible="false">Visible</animation>
-				<visible>!Container(503).OnNext + !Container(503).OnPrevious + !Container(503).Scrolling</visible>
-				<control type="image">
-					<description>Left Arrow</description>
-					<posx>164</posx>
-					<posy>0</posy>
-					<width>48</width>
-					<height>48</height>
-					<texture background="true">dialogs/shutdown/left.png</texture>
-					<aspectratio>keep</aspectratio>
-					<animation effect="slide" end="68,250" time="400" condition="true">Conditional</animation>
-					<colordiffuse>Mod_Tags</colordiffuse>
-				</control>
-				<control type="image">
-					<description>Right Arrow</description>
-					<posx>212r</posx>
-					<posy>0</posy>
-					<width>48</width>
-					<height>48</height>
-					<texture background="true">dialogs/shutdown/right.png</texture>
-					<aspectratio>keep</aspectratio>
-					<animation effect="slide" end="-110,250" time="400" condition="true">Conditional</animation>
-					<colordiffuse>Mod_Tags</colordiffuse>
-				</control>
-			</control>-->
             <control type="fixedlist" id="503">
 				<posx>-310</posx>
 				<posy>195</posy>
@@ -42,9 +15,10 @@
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
                 <orientation>horizontal</orientation>
                 <viewtype label="Carousel">list</viewtype>
-                <onup>503</onup>
-                <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
-                <ondown condition="Skin.HasSetting(KioskMode)">503</ondown>
+                <ondown>70</ondown>
+                <pagecontrol>70</pagecontrol>
+                <onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
+                <onup condition="Skin.HasSetting(KioskMode)">503</onup>
                 <onleft>503</onleft>
                 <onright>503</onright>
                 <preloaditems>2</preloaditems>
@@ -187,5 +161,23 @@
                 </focusedlayout>
             </control>
         </control>
+        <!--Scrollbar-->			
+		<control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>1920</width>
+			<height>26</height>
+			<posy>26r</posy>
+			<orientation>horizontal</orientation>
+			<textureslidernib>arctic/common/slider-nf-h.png</textureslidernib>
+			<textureslidernibfocus>arctic/common/slider-fo-h.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onup>503</onup>
+			<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+			<ondown condition="Skin.HasSetting(KioskMode)">503</ondown>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(503)</visible>
+		</control>
     </include>    
 </includes>

@@ -221,32 +221,23 @@
                     </control>
                 </focusedlayout>
             </control>
-            <!--Scrollbar-->
-            <control type="group">
-				<posx>28r</posx>
-				<posy>80</posy>
-                <control type="image">
-                    <description>Scrollbar background (visible on focus)</description>
-                    <width>6</width>
-                    <height>586</height>
-                    <texture border="3,6,3,6">views/other/scrollbar.png</texture>
-                    <visible>Control.IsVisible(510) + Control.HasFocus(70)</visible>
-                    <animation effect="fade" start="0" end="25" time="300" tween="sine" easing="inout">Visible</animation>
-                    <animation effect="fade" start="25" end="0" time="300" tween="sine" easing="inout">Hidden</animation>
-                </control>
-                <control type="scrollbar" id="70">
-                    <description>Scrollbar</description>
-                    <width>6</width>
-                    <height>592</height>
-                    <orientation>vertical</orientation>
-                    <texturesliderbar border="3,6,3,6">views/other/scrollbar.png</texturesliderbar>
-                    <texturesliderbarfocus border="3,6,3,6">views/other/scrollbar-fo.png</texturesliderbarfocus>
-                    <showonepage>false</showonepage>
-                    <onleft>510</onleft>
-                    <animation effect="fade" start="40" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
-                    <visible>Control.IsVisible(510)</visible>
-                </control>
-            </control>
         </control>
+        <control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>26</width>
+			<height>1080</height>
+			<posx>1894</posx>
+			<orientation>vertical</orientation>
+			<textureslidernib flipx="true" >arctic/common/slider-nf-v.png</textureslidernib>
+			<textureslidernibfocus flipx="true" >arctic/common/slider-fo-v.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onleft>510</onleft>
+			<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+			<onright condition="Skin.HasSetting(KioskMode)">510</onright>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(510)</visible>
+		</control>
     </include>    
 </includes>

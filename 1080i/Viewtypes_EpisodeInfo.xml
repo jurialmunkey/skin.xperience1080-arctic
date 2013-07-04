@@ -20,8 +20,7 @@
 				<viewtype label="Episode Info">list</viewtype>
 				<onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
 				<onleft condition="Skin.HasSetting(KioskMode)">516</onleft>
-				<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
-				<onright condition="Skin.HasSetting(KioskMode)">516</onright>
+				<onright>70</onright>
 				<focusposition>3</focusposition>
 				<movement>0</movement>
 				<preloaditems>0</preloaditems>  
@@ -38,7 +37,7 @@
 							<textcolor>Mod_Tags_Dark</textcolor>
 							<scroll>false</scroll>
 							<align>right</align>
-							<visible>IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+							<visible>!inSubString(ListItem.Episode,S) + IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
 						</control>
 						<control type="label">
 							<posx>1125</posx>
@@ -49,7 +48,29 @@
 							<textcolor>Mod_Tags_Dark</textcolor>
 							<scroll>false</scroll>
 							<align>right</align>
-							<visible>!IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+							<visible>!SubString(ListItem.Episode,S) + !IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>$INFO[ListItem.Episode]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>Container.Content(episodes) + SubString(ListItem.Episode,S) + [StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>140</width>
+							<label>$INFO[ListItem.Episode]</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]</visible>
 						</control>
 						<control type="label">
 							<posx>1125</posx>
@@ -72,6 +93,17 @@
 							<scroll>false</scroll>
 							<align>right</align>
 							<visible>!IntegerGreaterThan(ListItem.Season,9) + Container.Content(seasons)</visible>
+						</control>
+						<control type="label">
+							<posx>1125</posx>
+							<posy>22</posy>
+							<width>120</width>
+							<label>SP</label>
+							<font>Font-Episode-Large</font>
+							<textcolor>Mod_Tags_Dark</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+							<visible>IsEmpty(ListItem.Season) + Container.Content(seasons)</visible>
 						</control>
 						<control type="label">
 							<posx>1125</posx>
@@ -116,6 +148,7 @@
 							<scroll>false</scroll>
 							<align>right</align>
 							<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+							<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>1020</posx>
@@ -127,6 +160,7 @@
 							<scroll>false</scroll>
 							<align>right</align>
 							<visible>Container.Content(seasons)</visible>
+							<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>1020</posx>
@@ -138,6 +172,7 @@
 							<scroll>false</scroll>
 							<align>right</align>
 							<visible>!Container.Content(Seasons)</visible>
+							<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
 						</control>
 						<control type="label">
 							<posx>1020</posx>
@@ -149,6 +184,7 @@
 							<scroll>false</scroll>
 							<align>right</align>
 							<visible>Container.Content(Seasons)</visible>
+							<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
 						</control>
 					</control>
 				</itemlayout>
@@ -251,7 +287,7 @@
 									<textcolor>mod-infotags-alt</textcolor>
 									<scroll>false</scroll>
 									<align>right</align>
-									<visible>IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+									<visible>IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes) + !SubString(ListItem.Episode,S)</visible>
 								</control>
 								<control type="label">
 									<posx>1125</posx>
@@ -262,7 +298,29 @@
 									<textcolor>mod-infotags-alt</textcolor>
 									<scroll>false</scroll>
 									<align>right</align>
-									<visible>!IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes)</visible>
+									<visible>!IntegerGreaterThan(ListItem.Episode,9) + Container.Content(episodes) + !SubString(ListItem.Episode,S)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>$INFO[ListItem.Episode]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>Container.Content(episodes) + SubString(ListItem.Episode,S) + [StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>140</width>
+									<label>$INFO[ListItem.Episode]</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]</visible>
 								</control>
 								<control type="label">
 									<posx>1125</posx>
@@ -285,6 +343,17 @@
 									<scroll>false</scroll>
 									<align>right</align>
 									<visible>!IntegerGreaterThan(ListItem.Season,9) + Container.Content(seasons)</visible>
+								</control>
+								<control type="label">
+									<posx>1125</posx>
+									<posy>22</posy>
+									<width>120</width>
+									<label>SP</label>
+									<font>Font-Episode-Large</font>
+									<textcolor>mod-infotags-alt</textcolor>
+									<scroll>false</scroll>
+									<align>right</align>
+									<visible>IsEmpty(ListItem.Season) + Container.Content(seasons)</visible>
 								</control>
 								<control type="label">
 									<posx>1125</posx>
@@ -319,50 +388,53 @@
 									<align>right</align>
 									<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(tvshows)</visible>
 								</control>
-								<control type="label">
-									<posx>1025</posx>
-									<posy>4</posy>
-									<width>900</width>
-									<label>$INFO[ListItem.Title]</label>
-									<font>Font-Alaska-S34-BL</font>
-									<textcolor>mod-infotags-alt</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-									<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
-								</control>
-								<control type="label">
-									<posx>1025</posx>
-									<posy>4</posy>
-									<width>900</width>
-									<label>20373</label>
-									<font>Font-Alaska-S34-BL</font>
-									<textcolor>mod-infotags-alt</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-									<visible>Container.Content(seasons)</visible>
-								</control>
-								<control type="label">
-									<posx>1025</posx>
-									<posy>34</posy>
-									<width>900</width>
-									<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</label>
-									<font>Font-Alaska-S25-BL</font>
-									<textcolor>mod-infotags-alt2</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-									<visible>Container.Content(Seasons)</visible>
-								</control>
-								<control type="label">
-									<posx>1025</posx>
-									<posy>34</posy>
-									<width>900</width>
-									<label>$INFO[ListItem.Premiered]</label>
-									<font>Font-Alaska-S25-BL</font>
-									<textcolor>mod-infotags-alt2</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-									<visible>!Container.Content(Seasons)</visible>
-								</control>								
+								<control type="group">
+									<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
+									<control type="label">
+										<posx>1025</posx>
+										<posy>4</posy>
+										<width>900</width>
+										<label>$INFO[ListItem.Title]</label>
+										<font>Font-Alaska-S34-BL</font>
+										<textcolor>mod-infotags-alt</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<visible>Container.Content(episodes) | Container.Content(tvshows)</visible>
+									</control>
+									<control type="label">
+										<posx>1025</posx>
+										<posy>4</posy>
+										<width>900</width>
+										<label>20373</label>
+										<font>Font-Alaska-S34-BL</font>
+										<textcolor>mod-infotags-alt</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<visible>Container.Content(seasons)</visible>
+									</control>
+									<control type="label">
+										<posx>1025</posx>
+										<posy>34</posy>
+										<width>900</width>
+										<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</label>
+										<font>Font-Alaska-S25-BL</font>
+										<textcolor>mod-infotags-alt2</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<visible>Container.Content(Seasons)</visible>
+									</control>
+									<control type="label">
+										<posx>1025</posx>
+										<posy>34</posy>
+										<width>900</width>
+										<label>$INFO[ListItem.Premiered]</label>
+										<font>Font-Alaska-S25-BL</font>
+										<textcolor>mod-infotags-alt2</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<visible>!Container.Content(Seasons)</visible>
+									</control>		
+								</control>						
 								<control type="textbox">
 									<description>Plot</description>
 									<posx>90</posx>
@@ -383,5 +455,22 @@
 			
 			</control>
         </control>
+        <control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>26</width>
+			<height>1080</height>
+			<posx>1894</posx>
+			<orientation>vertical</orientation>
+			<textureslidernib flipx="true">arctic/common/slider-nf-v.png</textureslidernib>
+			<textureslidernibfocus flipx="true">arctic/common/slider-fo-v.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onleft>516</onleft>
+			<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+			<onright condition="Skin.HasSetting(KioskMode)">516</onright>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(516)</visible>
+		</control>
     </include>
 </includes>

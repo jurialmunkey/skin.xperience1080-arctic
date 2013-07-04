@@ -270,5 +270,23 @@
 				</control>
 			</control>
         </control>
+        <!--Scrollbar-->			
+		<control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>1920</width>
+			<height>26</height>
+			<posy>26r</posy>
+			<orientation>horizontal</orientation>
+			<textureslidernib >arctic/common/slider-nf-h.png</textureslidernib>
+			<textureslidernibfocus >arctic/common/slider-fo-h.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onup>514</onup>
+			<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+			<ondown condition="Skin.HasSetting(KioskMode)">514</ondown>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(514)</visible>
+		</control>
     </include>
 </includes>

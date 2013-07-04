@@ -20,10 +20,9 @@
                     <scrolltime tween="cubic" easing="out">500</scrolltime>
                     <orientation>vertical</orientation>
                     <viewtype label="Wall">list</viewtype>
+                    <onright>70</onright>
                     <onleft condition="!Skin.HasSetting(KioskMode)">9010</onleft>
                     <onleft condition="Skin.HasSetting(KioskMode)">502</onleft>
-                    <onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
-                    <onright condition="Skin.HasSetting(KioskMode)">502</onright>
                     <onup>502</onup>
                     <ondown>502</ondown>
                     <preloaditems>2</preloaditems>
@@ -251,5 +250,22 @@
                 </control>
             </control>
         </control>
+        <control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>26</width>
+			<height>1080</height>
+			<posx>1894</posx>
+			<orientation>vertical</orientation>
+			<textureslidernib flipx="true" >arctic/common/slider-nf-v.png</textureslidernib>
+			<textureslidernibfocus flipx="true" >arctic/common/slider-fo-v.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onleft>502</onleft>
+			<onright condition="!Skin.HasSetting(KioskMode)">9010</onright>
+			<onright condition="Skin.HasSetting(KioskMode)">502</onright>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(502)</visible>
+		</control>
     </include>    
 </includes>

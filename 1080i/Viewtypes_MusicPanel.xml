@@ -269,34 +269,24 @@
 					<visible>!IsEmpty(ListItem.Property(Artist_Description)) + Container.Content(Artists)</visible>
 				</control>
 			</control>
-			<!--Scrollbar-->
-            <control type="group">
-				<posx>740</posx>
-				<posy>420r</posy>
-                <control type="image">
-                    <description>Scrollbar background (visible on focus)</description>
-                    <width>900</width>
-                    <height>6</height>
-                    <texture border="6,3,6,3">views/other/scrollbar-h.png</texture>
-                    <visible>Control.IsVisible(51) + Control.HasFocus(70)</visible>
-                    <animation effect="fade" start="0" end="25" time="300" tween="sine" easing="inout">Visible</animation>
-                    <animation effect="fade" start="25" end="0" time="300" tween="sine" easing="inout">Hidden</animation>
-                </control>
-                <control type="scrollbar" id="70">
-                    <description>Scrollbar</description>
-                    <height>6</height>
-                    <width>900</width>
-                    <orientation>horizontal</orientation>
-                    <texturesliderbar border="6,3,6,3">views/other/scrollbar-h.png</texturesliderbar>
-                    <texturesliderbarfocus border="6,3,6,3">views/other/scrollbar-h-fo.png</texturesliderbarfocus>
-                    <showonepage>false</showonepage>
-                    <onup>51</onup>
-                    <ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
-                    <ondown condition="Skin.HasSetting(KioskMode)">51</ondown>
-                    <animation effect="fade" start="40" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
-                    <visible>Control.IsVisible(51)</visible>
-                </control>
-            </control>
         </control>
+         <!--Scrollbar-->			
+		<control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>1920</width>
+			<height>26</height>
+			<posy>26r</posy>
+			<orientation>horizontal</orientation>
+			<textureslidernib >arctic/common/slider-nf-h.png</textureslidernib>
+			<textureslidernibfocus >arctic/common/slider-fo-h.png</textureslidernibfocus>
+			<showonepage>false</showonepage>
+			<onup>51</onup>
+			<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+			<ondown condition="Skin.HasSetting(KioskMode)">51</ondown>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(51)</visible>
+		</control>
     </include>    
 </includes>
