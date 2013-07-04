@@ -13,7 +13,7 @@
                 <visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Actors) | Container.Content(Sets) | Container.HasFolders</visible>
                 <posx>-80</posx>
                 <posy>0</posy>
-                <width>2500</width>
+                <width>2100</width>
                 <height>1230</height>
                 <pagecontrol>70</pagecontrol>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
