@@ -5325,7 +5325,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.1),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.1))</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.1)) + !Substring(Window.Property(AudioLanguage.1),und)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5333,7 +5333,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.2),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.2))</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.2)) + !Substring(Window.Property(AudioLanguage.2),und)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5341,7 +5341,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.3),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.3))</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.3)) + !Substring(Window.Property(AudioLanguage.3),und)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5349,7 +5349,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.4),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.4))</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.4)) + !Substring(Window.Property(AudioLanguage.4),und)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5357,7 +5357,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.5),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.5))</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.5)) + !Substring(Window.Property(AudioLanguage.5),und)</visible>
 						</control>
 						<control type="label">
 							<width max="1180">auto</width>
