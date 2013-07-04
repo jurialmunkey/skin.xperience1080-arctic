@@ -198,7 +198,7 @@
 							<control type="image">
 								<posx>265</posx>
 								<posy>-50</posy>
-								<width>1695</width>
+								<width>1694</width>
 								<height>377</height>
 								<texture border="50">arctic/common/banner-35.png</texture>
 							</control>
