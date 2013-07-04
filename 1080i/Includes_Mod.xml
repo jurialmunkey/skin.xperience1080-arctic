@@ -5161,7 +5161,7 @@
 									<height>82</height>
 									<font>Font-Alaska-S34-BL</font>
 									<label>$INFO[ListItem.Label]</label>
-									<textcolor>Mod_Tags_Light</textcolor>
+									<textcolor>mod-infotags-l</textcolor>
 									<shadowcolor>mod-shadow</shadowcolor>
 									<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
 								</control>
