@@ -336,15 +336,15 @@
 	</include>
 	<include name="infotags.anim">
 		<include>infotags.animation</include>
-		<visible>[[Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(hide.infotags)] | Window.IsVisible(movieinformation)</visible>
+		<visible>[[Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(hide.infotags)] | [[Window.IsVisible(movieinformation) | Window.IsVisible(albuminformation)] + !Skin.HasSetting(info.alwayshidetags)]</visible>
 	</include>
 	<include name="infotags.movie.anim">
 		<include>infotags.animation</include>
-		<visible>[[Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons)] + !Skin.HasSetting(hide.infotags)] | Window.IsVisible(movieinformation)</visible>
+		<visible>[[Container.Content(tvshows) | Container.Content(movies) | Container.Content(episodes) | Container.Content(seasons)] + !Skin.HasSetting(hide.infotags)] | [[Window.IsVisible(movieinformation) | Window.IsVisible(albuminformation)] + !Skin.HasSetting(info.alwayshidetags)]</visible>
 	</include>
 	<include name="infotags.music.anim">
 		<include>infotags.animation</include>
-		<visible>[[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(hide.infotags)] | Window.IsVisible(movieinformation)</visible>
+		<visible>[[Container.Content(artists) | Container.Content(albums) | Container.Content(songs)] + !Skin.HasSetting(hide.infotags)] | [[Window.IsVisible(movieinformation) | Window.IsVisible(albuminformation)] + !Skin.HasSetting(info.alwayshidetags)]</visible>
 	</include>
 	<!-- STAR RATING AND YEAR -->   
     <include name="CommonClearLogoRight">
@@ -410,7 +410,7 @@
 					<posy>172r</posy>
 					<animation effect="slide" end="-35" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
 					<animation effect="slide" end="-30" time="300" tween="sine" easing="inout" condition="PVR.IsRecording | PVR.HasTimer">Conditional</animation>
-					<visible>!Skin.HasSetting(hide.clearlogos)</visible>
+					<visible>!Skin.HasSetting(hide.clearlogos) + !Skin.HasSetting(hide.infotags)</visible>
 					<control type="image">
 						<posx>1</posx>
 						<posy>1</posy>
@@ -643,7 +643,7 @@
                 <posx>1060</posx>
                 <animation effect="slide" end="-35" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
 				<animation effect="slide" end="-30" time="300" tween="sine" easing="inout" condition="PVR.IsRecording | PVR.HasTimer">Conditional</animation>
-				<visible>!Skin.HasSetting(hide.clearlogos)</visible>
+				<visible>!Skin.HasSetting(hide.clearlogos) + !Skin.HasSetting(hide.infotags)</visible>
                 <control type="image" id="89456">
                     <posx>91</posx>
                     <posy>127r</posy>
@@ -4697,7 +4697,7 @@
 						<aspectratio>center</aspectratio>
 						<texture>$INFO[Window.Property(AudioLanguage.1),flags/language/,.png]</texture>
 						<include>visiblehidefadeflags</include>
-						<visible>!IsEmpty(Window.Property(AudioLanguage.1))</visible>
+						<visible>!IsEmpty(Window.Property(AudioLanguage.1)) + !Substring(Window.Property(AudioLanguage.1),und) + !Skin.HasSetting(info.hideflags)</visible>
 					</control>
 					<control type="image">
 						<width>48</width>
@@ -4705,7 +4705,7 @@
 						<aspectratio>center</aspectratio>
 						<texture>$INFO[Window.Property(AudioLanguage.2),flags/language/,.png]</texture>
 						<include>visiblehidefadeflags</include>
-						<visible>!IsEmpty(Window.Property(AudioLanguage.2))</visible>
+						<visible>!IsEmpty(Window.Property(AudioLanguage.2)) + !Substring(Window.Property(AudioLanguage.2),und) + !Skin.HasSetting(info.hideflags)</visible>
 					</control>
 					<control type="image">
 						<width>48</width>
@@ -4713,7 +4713,7 @@
 						<aspectratio>center</aspectratio>
 						<texture>$INFO[Window.Property(AudioLanguage.3),flags/language/,.png]</texture>
 						<include>visiblehidefadeflags</include>
-						<visible>!IsEmpty(Window.Property(AudioLanguage.3))</visible>
+						<visible>!IsEmpty(Window.Property(AudioLanguage.3)) + !Substring(Window.Property(AudioLanguage.3),und) + !Skin.HasSetting(info.hideflags)</visible>
 					</control>
 					<control type="image">
 						<width>48</width>
@@ -4721,7 +4721,7 @@
 						<aspectratio>center</aspectratio>
 						<texture>$INFO[Window.Property(AudioLanguage.4),flags/language/,.png]</texture>
 						<include>visiblehidefadeflags</include>
-						<visible>!IsEmpty(Window.Property(AudioLanguage.4))</visible>
+						<visible>!IsEmpty(Window.Property(AudioLanguage.4)) + !Substring(Window.Property(AudioLanguage.4),und) + !Skin.HasSetting(info.hideflags)</visible>
 					</control>
 					<control type="image">
 						<width>48</width>
@@ -4729,7 +4729,7 @@
 						<aspectratio>center</aspectratio>
 						<texture>$INFO[Window.Property(AudioLanguage.5),flags/language/,.png]</texture>
 						<include>visiblehidefadeflags</include>
-						<visible>!IsEmpty(Window.Property(AudioLanguage.5))</visible>
+						<visible>!IsEmpty(Window.Property(AudioLanguage.5)) + !Substring(Window.Property(AudioLanguage.5),und) + !Skin.HasSetting(info.hideflags)</visible>
 					</control>
 				</control>
                 <!-- BACKGROUND Fanart etc -->
@@ -5325,7 +5325,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.1),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.1)) + !Substring(Window.Property(AudioLanguage.1),und)</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.1)) + !Substring(Window.Property(AudioLanguage.1),und) + !Skin.HasSetting(info.hideflags)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5333,7 +5333,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.2),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.2)) + !Substring(Window.Property(AudioLanguage.2),und)</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.2)) + !Substring(Window.Property(AudioLanguage.2),und) + !Skin.HasSetting(info.hideflags)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5341,7 +5341,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.3),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.3)) + !Substring(Window.Property(AudioLanguage.3),und)</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.3)) + !Substring(Window.Property(AudioLanguage.3),und) + !Skin.HasSetting(info.hideflags)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5349,7 +5349,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.4),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.4)) + !Substring(Window.Property(AudioLanguage.4),und)</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.4)) + !Substring(Window.Property(AudioLanguage.4),und) + !Skin.HasSetting(info.hideflags)</visible>
 						</control>
 						<control type="image">
 							<width>48</width>
@@ -5357,7 +5357,7 @@
 							<aspectratio>center</aspectratio>
 							<texture>$INFO[Window.Property(AudioLanguage.5),flags/language/,.png]</texture>
 							<include>visiblehidefadeflags</include>
-							<visible>!IsEmpty(Window.Property(AudioLanguage.5)) + !Substring(Window.Property(AudioLanguage.5),und)</visible>
+							<visible>!IsEmpty(Window.Property(AudioLanguage.5)) + !Substring(Window.Property(AudioLanguage.5),und) + !Skin.HasSetting(info.hideflags)</visible>
 						</control>
 						<control type="label">
 							<width max="1180">auto</width>
@@ -5374,16 +5374,9 @@
 					<control type="group">
 						<visible>!Control.HasFocus(9336)</visible>
 						<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-						<animation effect="slide" start="0" end="0,58" condition="IsEmpty(ListItem.Writer)">Conditional</animation>
+						<!--<animation effect="slide" start="0" end="0,58" condition="IsEmpty(ListItem.Writer)">Conditional</animation>-->
 						<posx>985</posx>
-						<posy>257</posy>
-						<!--<control type="image">
-							<posx>-785</posx>
-							<posy>-93</posy>
-							<width>1680</width>
-							<height>84</height>
-							<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-						</control>-->
+						<posy>232</posy>
 						<control type="image">
 							<posx>-10</posx>
 							<posy>-4</posy>
@@ -5430,12 +5423,12 @@
 					<!-- WRITER -->
 					<control type="group">
 						<posx>985</posx>
-						<posy>315</posy>
+						<posy>280</posy>
 						<visible>!Control.HasFocus(9336)</visible>
 						<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 						<control type="image">
 							<posx>-240</posx>
-							<posy>-93</posy>
+							<posy>-88</posy>
 							<width>1135</width>
 							<height>84</height>
 							<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
@@ -5446,7 +5439,7 @@
 							<posy>0</posy>
 							<width>350</width>
 							<height>36</height>
-							<font>Font-Alaska-S38-BL</font>
+							<font>Font-Alaska-S32-BL</font>
 							<align>right</align>
 							<label>20417</label>
 							<textcolor>Mod_Tags_Light</textcolor>
@@ -5457,11 +5450,45 @@
 							<posy>0</posy>
 							<width>840</width>
 							<height>36</height>
-							<font>Font-Alaska-S38-BL</font>
+							<font>Font-Alaska-S32-BL</font>
 							<align>left</align>
 							<label>$INFO[ListItem.Writer]</label>
 							<textcolor>Mod_Tags_Light</textcolor>
 							<visible>!IsEmpty(ListItem.Writer)</visible>
+						</control>
+					</control>
+					<!-- GENRE AND DURATION -->
+					<control type="group">
+						<posx>985</posx>
+						<posy>324</posy>
+						<visible>!Control.HasFocus(9336)</visible>
+						<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+						<control type="image">
+							<posx>-240</posx>
+							<posy>-84</posy>
+							<width>1135</width>
+							<height>84</height>
+							<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
+						</control>	
+						<control type="label">
+							<posx>-50</posx>
+							<posy>0</posy>
+							<width>350</width>
+							<height>36</height>
+							<font>Font-Alaska-S27-BL</font>
+							<align>right</align>
+							<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+							<textcolor>Mod_Tags_Light</textcolor>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>840</width>
+							<height>36</height>
+							<font>Font-Alaska-S27-BL</font>
+							<align>left</align>
+							<label>$INFO[ListItem.Genre]</label>
+							<textcolor>Mod_Tags_Light</textcolor>
 						</control>
 					</control>
 					<!-- CAST -->
@@ -5486,7 +5513,7 @@
 								<posy>435</posy>
 								<width>280</width>
 								<label>206</label>
-								<font>Font-Alaska-S38-BL</font>
+								<font>Font-Alaska-S32-BL</font>
 								<textcolor>Mod_Tags_Light</textcolor>
 								<scroll>false</scroll>
 								<align>right</align>
@@ -5558,6 +5585,7 @@
 							</control>
 						</control>
 					</control>
+					
 				</control>     
 				
 				<!-- POSTER -->

@@ -865,46 +865,55 @@
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>!Skin.HasSetting(hide.clearlogos)</selected>
                         <onclick>Skin.ToggleSetting(hide.clearlogos)</onclick>
-                        <label>Show bottom logo</label>
+                        <label>Show clearlogo</label>
                         <enable>!Skin.HasSetting(hide.infotags)</enable>
                         <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(3002)">Conditional</animation>
+                        <visible>!Skin.HasSetting(hide.infotags)</visible>
                     </control>
-                    <control type="button" id="3004">
+                    <control type="radiobutton" id="3009">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(info.alwayshidetags)</selected>
+                        <onclick>Skin.ToggleSetting(info.alwayshidetags)</onclick>
+                        <label>Show info tags on info screens</label>
+                        <visible>Skin.HasSetting(hide.infotags)</visible>
+                    </control>
+                    <control type="radiobutton" id="3004">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(info.hideflags)</selected>
+                        <onclick>Skin.ToggleSetting(info.hideflags)</onclick>
+                        <label>Show language flags in movie info</label>
+                    </control>
+                    <control type="button" id="3005">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41192]</label>
                         <label2 fallback="US">[COLOR=ff111111]$VAR[MovieMPAALangLabel][/COLOR]</label2>
                         <onclick>ActivateWindow(3006)</onclick>
                     </control>
-                    <control type="radiobutton" id="3005">
+                    <control type="radiobutton" id="3006">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(MovieInformation.PlayTrailer)</selected>
                         <onclick>Skin.ToggleSetting(MovieInformation.PlayTrailer)</onclick>
                         <label>$LOCALIZE[41202]</label>
                     </control>
-                    <control type="radiobutton" id="3006">
+                    <control type="radiobutton" id="3007">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(PlayTrailer.Minimized)</selected>
                         <onclick>Skin.ToggleSetting(PlayTrailer.Minimized)</onclick>
                         <label>$LOCALIZE[41203]</label>
                     </control>
-                    <control type="radiobutton" id="3007">
+                    <control type="radiobutton" id="3008">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
                         <onclick>Skin.ToggleSetting(PreferLandscapeArt)</onclick>
                         <label>Prefer landscape art when available</label>
                     </control>
-                    <control type="radiobutton" id="3008">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(covers.showglass)</selected>
-                        <onclick>Skin.ToggleSetting(covers.showglass)</onclick>
-                        <onclick condition="Skin.HasSetting(covers.showglass)">Skin.Reset(covers.showcases)</onclick>
-                        <label>Show glass borders on covers/posters</label>
-                    </control>
+                    
                 </control>
                 
                 <!-- UNOFFICIAL SETTINGS -->
@@ -934,6 +943,14 @@
                         <onclick>Skin.ToggleSetting(hide.glass)</onclick>
                         <label>Show glass borders on lists</label>
 					</control>
+					<control type="radiobutton" id="9008">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(covers.showglass)</selected>
+                        <onclick>Skin.ToggleSetting(covers.showglass)</onclick>
+                        <onclick condition="Skin.HasSetting(covers.showglass)">Skin.Reset(covers.showcases)</onclick>
+                        <label>Show glass borders on covers/posters</label>
+                    </control>
                     <control type="radiobutton" id="9005">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
@@ -956,6 +973,7 @@
                         <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
                         <label>$LOCALIZE[41221]</label>
                     </control>
+                    
                 </control>
                 
                 <!-- OSD Settings -->

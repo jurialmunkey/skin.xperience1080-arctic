@@ -137,8 +137,8 @@
                             <height>561</height>
                             <texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
-                            <animation effect="fade" start="100" end="50" time="250" condition="true">UnFocus</animation>
-                            <animation effect="fade" end="100" start="50" time="250" condition="true">Focus</animation>
+                            <animation effect="fade" start="100" end="50" time="250" condition="Container(514).OnNext | Container(514).OnPrevious">UnFocus</animation>
+                            <animation effect="fade" end="100" start="50" time="250" condition="Container(514).OnNext | Container(514).OnPrevious">Focus</animation>
                         </control>
                         <control type="image">
                             <description>Shadow</description>
@@ -155,8 +155,8 @@
                             <width>580</width>
                             <height>571</height>
                             <texture>views/posterview/shadow-focus.png</texture>
-							<animation effect="fade" time="450" start="100" end="0">UnFocus</animation>
-							<animation effect="fade" time="250" end="100" start="0">Focus</animation>
+							<animation effect="fade" time="450" start="100" end="0" condition="Container(514).OnNext | Container(514).OnPrevious">UnFocus</animation>
+							<animation effect="fade" time="250" end="100" start="0" condition="Container(514).OnNext | Container(514).OnPrevious">Focus</animation>
                         </control>
                         <!-- CD ART -->
 						<control type="image">
@@ -231,9 +231,8 @@
             <control type="group">
             	<posy>693</posy>
             	<posx>502</posx>
-            	
             	<visible>![Container(514).OnNext | Container(514).OnPrevious]</visible>
-            	<animation effect="fade" start="0" end="100" delay="350" time="250">Visible</animation>
+            	<animation effect="fade" start="0" end="100" delay="450" time="250" reversible="false">Visible</animation>
 				<control type="label">
 					<posx>24</posx>
 					<posy>34</posy>
