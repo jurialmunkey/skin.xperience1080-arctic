@@ -973,6 +973,13 @@
                         <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
                         <label>$LOCALIZE[41221]</label>
                     </control>
+                    <control type="radiobutton" id="90089">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(info.showpath)</selected>
+                        <onclick>Skin.ToggleSetting(info.showpath)</onclick>
+                        <label>Show path in info screen</label>
+                    </control>
                     
                 </control>
                 
