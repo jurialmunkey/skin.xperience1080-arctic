@@ -2702,7 +2702,7 @@
 		</item>
 		<item id="5">
 			<label>Pictures</label>
-			<visible>!Skin.HasSetting(disable.pictures) + StringCompare(Skin.String(homescreen.style),simple)</visible>
+			<visible>!Skin.HasSetting(disable.pictures)</visible>
 			<property name="single">$INFO[Skin.String(HomePicturesSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomePicturesMultiImage)]</property>
 			<onclick>ActivateWindow(pictures)</onclick>
@@ -2747,6 +2747,7 @@
 			<visible>true</visible>
 			<property name="single">$INFO[Skin.String(HomeHomeSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeHomeMultiImage)]</property>
+			
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<visible>!Skin.HasSetting(disable.favourites)</visible>
@@ -5811,5 +5812,374 @@
 				</control>
             </control>
         </control>
+	</include>
+	<include name="metro-favourites">
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="200"  />
+				<effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" delay="200" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+				<effect type="slide" start="0,0" end="0,-75" time="300" tween="sine" easing="out" />
+			</animation>
+			<animation type="Conditional" condition="Window.IsActive(shutdownmenu)" reversible="false">
+				<effect type="zoom" start="100" end="92" time="300" delay="100" center="auto" tween="sine" easing="out"  />
+			</animation>
+			<animation type="Conditional" condition="!Window.IsActive(shutdownmenu)" reversible="false">
+				<effect type="zoom" start="92" end="100" time="300" delay="250" center="auto" tween="sine" easing="in"  />
+			</animation>
+			<control type="panel" id="450">
+				<description>Fav list</description>
+				<posx>51</posx>
+				<posy>197</posy>
+				<width>1818</width>
+				<height>606</height>
+				<onleft>60</onleft>
+				<onup>450</onup>
+				<onright>450</onright>
+				<ondown>450</ondown>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="List">List</viewtype>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<focusposition>2</focusposition>
+				<movement>1</movement>
+				<itemlayout width="303" height="303">
+					<control type="group">
+						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<posx>-5</posx>
+							<posy>-5</posy>
+							<width>313</width>
+							<height>313</height>
+							<texture border="35">views/newgloss/whitepanel-15.png</texture>
+							<colordiffuse>mod-osd</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture border="35">views/newgloss/whitepanel.png</texture>
+							<colordiffuse>mod-infotags</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture diffuse="views/newgloss/tile-283.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<texture border="7">windows/home/tile-overlay-r.png</texture>
+							<colordiffuse>99FFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>303</width>
+							<height>303</height>
+							<texture border="25">views/newgloss/border.png</texture>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font-Alaska-S33</font>
+							<textcolor>aawhite</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textoffsetx>20</textoffsetx>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="303" height="303">
+					<control type="group">
+						<control type="image">
+							<posx>-5</posx>
+							<posy>-5</posy>
+							<width>313</width>
+							<height>313</height>
+							<texture border="35">views/newgloss/whitepanel-15.png</texture>
+							<colordiffuse>mod-osd</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture border="35">views/newgloss/whitepanel.png</texture>
+							<colordiffuse>mod-infotags-d</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture diffuse="views/newgloss/tile-283.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture diffuse="views/newgloss/tile-283.png">views/newgloss/info-gloss.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<texture border="7">windows/home/tile-overlay-r.png</texture>
+							<colordiffuse>99FFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>303</width>
+							<height>303</height>
+							<texture border="25">views/newgloss/border.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>303</width>
+							<height>303</height>
+							<texture border="25">views/newgloss/border-fo.png</texture>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font-Alaska-S33</font>
+							<textcolor>ffffffff</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textoffsetx>20</textoffsetx>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image" id="62">
+				<animation effect="fade" start="100" end="0" time="0" delay="1500">WindowOpen</animation>
+			</control>
+			<control type="image" id="61">
+				<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+				<visible>Control.HasFocus(60) | !Control.IsVisible(62)</visible>
+			</control>
+			<control type="image" id="61">
+				<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" delay="1500">Hidden</animation>
+				<visible>!Control.HasFocus(60) + [Container(450).Scrolling | Container(450).OnScrollNext | Container(450).OnScrollPrevious]</visible>
+			</control>
+			<control type="image">
+				<description>Scrollbar background (visible on focus)</description>
+				<posx>26</posx>
+				<posy>267</posy>
+				<width>6</width>
+				<height>550</height>
+				<texture border="3,6,3,6">views/other/scrollbar.png</texture>
+				<visible>Control.HasFocus(60)</visible>
+				<animation effect="fade" start="0" end="25" time="300" tween="sine" easing="inout">Visible</animation>
+				<animation effect="fade" start="25" end="0" time="300" tween="sine" easing="inout">Hidden</animation>
+			</control>
+			<control type="scrollbar" id="60">
+				<description>Scrollbar</description>
+				<posx>26</posx>
+				<posy>267</posy>
+				<width>6</width>
+				<height>550</height>
+				<orientation>vertical</orientation>
+				<texturesliderbar border="3,6,3,6">views/other/scrollbar.png</texturesliderbar>
+				<texturesliderbarfocus border="3,6,3,6">views/other/scrollbar.png</texturesliderbarfocus>
+				<showonepage>false</showonepage>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<animation effect="fade" start="40" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(61)">Conditional</animation>
+			</control>
+		</control>
+	</include>
+	<include name="mod-favourites">
+		<control type="group">
+			<animation type="WindowOpen" reversible="false">
+				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="in" delay="200"  />
+				<effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" delay="200" />
+			</animation>
+			<animation type="WindowClose" reversible="false">
+				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+			</animation>
+			<animation type="Conditional" condition="Window.IsActive(shutdownmenu)" reversible="false">
+				<effect type="zoom" start="100" end="92" time="300" delay="100" center="auto" tween="sine" easing="out"  />
+			</animation>
+			<animation type="Conditional" condition="!Window.IsActive(shutdownmenu)" reversible="false">
+				<effect type="zoom" start="92" end="100" time="300" delay="250" center="auto" tween="sine" easing="in"  />
+			</animation>
+			<control type="list" id="450">
+				<description>Fav list</description>
+				<posx>38</posx>
+				<posy>540</posy>
+				<width>1842</width>
+				<height>303</height>
+				<onup condition="StringCompare(Skin.String(homescreen.style),panel)">PreviousMenu</onup>
+				<ondown condition="StringCompare(Skin.String(homescreen.style),simple)">PreviousMenu</ondown>
+				<viewtype label="List">List</viewtype>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<orientation>horizontal</orientation>
+				<preloaditems>2</preloaditems>
+				<focusposition>0</focusposition>
+				<movement>1</movement>
+				<itemlayout width="307" height="303">
+					<control type="group">
+						<animation effect="fade" end="100" time="0" condition="true">Conditional</animation>
+						<control type="image">
+							<posx>-5</posx>
+							<posy>-5</posy>
+							<width>313</width>
+							<height>313</height>
+							<texture border="35">views/newgloss/whitepanel-15.png</texture>
+							<colordiffuse>mod-osd</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture border="35">views/newgloss/whitepanel.png</texture>
+							<colordiffuse>mod-infotags-d</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture diffuse="views/newgloss/tile-283.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<texture border="7">windows/home/tile-overlay-r.png</texture>
+							<colordiffuse>99FFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>303</width>
+							<height>303</height>
+							<texture border="25">views/newgloss/border.png</texture>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font-Alaska-S33</font>
+							<textcolor>aawhite</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textoffsetx>20</textoffsetx>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="307" height="303">
+					<control type="group">
+						<control type="image">
+							<posx>-5</posx>
+							<posy>-5</posy>
+							<width>313</width>
+							<height>313</height>
+							<texture border="35">views/newgloss/whitepanel-15.png</texture>
+							<colordiffuse>mod-osd</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture border="35">views/newgloss/whitepanel.png</texture>
+							<colordiffuse>mod-infotags-d</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture diffuse="views/newgloss/tile-283.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>10</posy>
+							<width>283</width>
+							<height>283</height>
+							<texture diffuse="views/newgloss/tile-283.png">views/newgloss/info-gloss.png</texture>
+						</control>
+						<control type="image">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<texture border="7">windows/home/tile-overlay-r.png</texture>
+							<colordiffuse>99FFFFFF</colordiffuse>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>303</width>
+							<height>303</height>
+							<texture border="25">views/newgloss/border.png</texture>
+						</control>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>303</width>
+							<height>303</height>
+							<texture border="25">views/newgloss/border-fo.png</texture>
+						</control>
+						<control type="label">
+							<posx>10</posx>
+							<posy>227</posy>
+							<width>283</width>
+							<height>66</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>Font-Alaska-S33</font>
+							<textcolor>ffffffff</textcolor>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textoffsetx>20</textoffsetx>
+						</control>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image" id="62">
+				<animation effect="fade" start="100" end="0" time="0" delay="1500">WindowOpen</animation>
+			</control>
+			<control type="image" id="61">
+				<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0">Hidden</animation>
+				<visible>Control.HasFocus(60) | !Control.IsVisible(62)</visible>
+			</control>
+			<control type="image" id="61">
+				<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" delay="1500">Hidden</animation>
+				<visible>!Control.HasFocus(60) + [Container(450).Scrolling | Container(450).OnScrollNext | Container(450).OnScrollPrevious]</visible>
+			</control>
+		</control>
 	</include>
 </includes>

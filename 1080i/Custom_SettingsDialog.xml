@@ -142,7 +142,7 @@
                     <selected>!Skin.HasSetting(disable.pictures)</selected>
                     <onclick>Skin.ToggleSetting(disable.pictures)</onclick>
                     <label>$LOCALIZE[1]</label>
-                    <visible>StringCompare(Skin.String(homescreen.style),simple)</visible>
+                    <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
                 </control>
                 <control type="radiobutton" id="2113">
                     <width>1210</width>

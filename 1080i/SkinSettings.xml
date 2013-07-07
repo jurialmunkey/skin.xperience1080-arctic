@@ -247,112 +247,14 @@
                         <enable>Skin.HasSetting(StartupPlaylist)</enable>
                         <animation effect="fade" start="100" end="42" time="0" condition="!Control.IsEnabled(1009)">Conditional</animation>
                     </control>
-                    <control type="group" id="1007">
-                        <description>Fake spin control</description>
+                    <control type="radiobutton" id="1007">
                         <width>1210</width>
-                        <height>77</height>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-                            <visible>!ControlGroup(1007).HasFocus</visible>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1210</width>
-                            <height>77</height>
-                            <texture border="5">views/other/focus-mod.png</texture>
-                            <aspectratio>stretch</aspectratio>
-                            <visible>ControlGroup(1007).HasFocus</visible>
-                        </control>
-                        <control type="button" id="10071">
-                            <posx>1104</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>10072</onleft>
-                            <onright>10072</onright>
-                            <onup>1009</onup>
-                            <ondown>1013</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-down-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-down-nf.png</texturenofocus>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(GlobalRSS.Top)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.SetString(rss.setting,$LOCALIZE[1223])</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(rss.setting.pos)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.Reset(GlobalRSS.Top)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.SetBool(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.SetString(rss.setting,$LOCALIZE[41114])</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.SetString(rss.setting.pos,2)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetBool(GlobalRSS.Top)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.Reset(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetString(rss.setting,$LOCALIZE[41113])</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetString(rss.setting.pos,1)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(GlobalRSS.Top)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.SetString(rss.setting,$LOCALIZE[1223])</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(rss.setting.pos)</onclick>
-                        </control>
-                        <control type="button" id="10072">
-                            <posx>1147</posx>
-                            <posy>8</posy>
-                            <width>43</width>
-                            <height>60</height>
-                            <onleft>10071</onleft>
-                            <onright>10071</onright>
-                            <onup>1009</onup>
-                            <ondown>1001</ondown>
-                            <texturefocus>buttons/spinctrl/arrow-up-fo.png</texturefocus>
-                            <texturenofocus>buttons/spinctrl/arrow-up-nf.png</texturenofocus>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.Reset(GlobalRSS.Top)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetBool(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetString(rss.setting,$LOCALIZE[41114])</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetString(rss.setting.pos,2)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.Reset(GlobalRSS.Top)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.Reset(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.SetString(rss.setting,$LOCALIZE[1223])</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),1)">Skin.Reset(rss.setting.pos)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.SetBool(GlobalRSS.Top)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.Reset(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.SetString(rss.setting,$LOCALIZE[41113])</onclick>
-                            <onclick condition="stringcompare(Skin.String(rss.setting.pos),2)">Skin.SetString(rss.setting.pos,1)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.Reset(GlobalRSS.Top)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetBool(GlobalRSS.Bottom)</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetString(rss.setting,$LOCALIZE[41114])</onclick>
-                            <onclick condition="IsEmpty(Skin.String(rss.setting.pos))">Skin.SetString(rss.setting.pos,2)</onclick>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>mod-infotags-l</textcolor>
-                            <label>$LOCALIZE[20304]</label>
-                            <label2>$INFO[Skin.String(rss.setting)]</label2>
-                            <visible>!ControlGroup(1007).HasFocus</visible>
-                        </control>
-                        <control type="button">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>1120</width>
-                            <height>77</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <textoffsetx>35</textoffsetx>
-                            <font>Font-Condensed-S30-B</font>
-                            <textcolor>white</textcolor>
-                            <label>$LOCALIZE[20304]</label>
-                            <label2>$INFO[Skin.String(rss.setting)]</label2>
-                            <visible>ControlGroup(1007).HasFocus</visible>
-                        </control>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(rss.enabled)</selected>
+                        <onclick>Skin.ToggleSetting(rss.enabled)</onclick>
+                        <label>$LOCALIZE[20304]</label>
                     </control>
+                    
                     <control type="button" id="1013">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
@@ -361,16 +263,6 @@
                         <label2>$INFO[Skin.String(cdartlocation)]</label2>
                         <onup>1007</onup>
 						<ondown>1001</ondown>
-                    </control>
-                    <control type="button" id="1014">
-                        <width>1210</width>
-                        <include>SettingsCategoryDefaultButtonVars</include>
-                        <onclick>Skin.SetPath(pictures.slideshowpath)</onclick>
-                        <label>Programs slideshow path</label>
-                        <label2>$INFO[Skin.String(pictures.slideshowpath)]</label2>
-                        <onup>1007</onup>
-						<ondown>1001</ondown>
-						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.programs)</visible>
                     </control>
                 </control>
             
@@ -421,65 +313,34 @@
                         <onclick>ActivateWindow(3003)</onclick>
                         <label>$LOCALIZE[41140]</label>
                         <visible>StringCompare(Skin.String(homescreen.style),metro)</visible>
-                    </control>                    
-                    <!-- MOVIES WIDGET -->
-                    <control type="button" id="2011">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1210</width>
-						<height>77</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textoffsetx>35</textoffsetx>
-						<font>Font-Condensed-S30-B</font>
-						<include>SettingsCategoryDefaultButtonVars</include>
-						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[575])">Skin.SetString(movie.widget.type,$LOCALIZE[41552])</onclick>
-						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[41550])">Skin.SetString(movie.widget.type,$LOCALIZE[575])</onclick>
-						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[41552])">Skin.SetString(movie.widget.type,$LOCALIZE[41550])</onclick>
-						<onclick condition="stringcompare(Skin.String(movie.widget.type),$LOCALIZE[575])">Skin.SetString(movie.widget.type,$LOCALIZE[41552])</onclick>
-                        <label>$LOCALIZE[20342] $LOCALIZE[41162]</label>
-						<label2>$INFO[Skin.String(movie.widget.type)]</label2>
-						<visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
-					</control>
-					<!-- TV SHOWS WIDGET -->
-                    <control type="button" id="2012">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1210</width>
-						<height>77</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textoffsetx>35</textoffsetx>
-						<font>Font-Condensed-S30-B</font>
-						<include>SettingsCategoryDefaultButtonVars</include>
-						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41553])</onclick>
-						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41550])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41551])</onclick>
-						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41553])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41550])</onclick>
-						<onclick condition="stringcompare(Skin.String(tvshow.widget.type),$LOCALIZE[41551])">Skin.SetString(tvshow.widget.type,$LOCALIZE[41553])</onclick>
-                        <label>$LOCALIZE[20343] $LOCALIZE[41162]</label>
-						<label2>$INFO[Skin.String(tvshow.widget.type)]</label2>
-						<visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
-					</control>
-					<!-- Music WIDGET -->
-                    <control type="button" id="2013">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1210</width>
-						<height>77</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textoffsetx>35</textoffsetx>
-						<font>Font-Condensed-S30-B</font>
-						<include>SettingsCategoryDefaultButtonVars</include>
-						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41555])">Skin.SetString(music.widget.type,$LOCALIZE[41554])</onclick>
-						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41550])">Skin.SetString(music.widget.type,$LOCALIZE[41555])</onclick>
-						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41554])">Skin.SetString(music.widget.type,$LOCALIZE[41550])</onclick>
-						<onclick condition="stringcompare(Skin.String(music.widget.type),$LOCALIZE[41555])">Skin.SetString(music.widget.type,$LOCALIZE[41554])</onclick>												
-                        <label>$LOCALIZE[2] $LOCALIZE[41162]</label>
-						<label2>$INFO[Skin.String(music.widget.type)]</label2>
-						<visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
-					</control>
-					
+                    </control>          
+                    <control type="button" id="2008">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <onclick>ActivateWindow(3051)</onclick>
+                        <label>$LOCALIZE[41140]</label>
+                        <visible>!StringCompare(Skin.String(homescreen.style),metro)</visible>
+                    </control>              
+					<control type="button" id="2009">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <onclick>Skin.SetPath(pictures.slideshowpath)</onclick>
+                        <label>Programs slideshow path</label>
+                        <label2>$INFO[Skin.String(pictures.slideshowpath)]</label2>
+                        <onup>1007</onup>
+						<ondown>1001</ondown>
+						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.programs)</visible>
+                    </control>
+                    <control type="button" id="2010">
+                        <width>1210</width>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <onclick>Skin.SetPath(pictures.slideshowpath2)</onclick>
+                        <label>Pictures slideshow path</label>
+                        <label2>$INFO[Skin.String(pictures.slideshowpath2)]</label2>
+                        <onup>1007</onup>
+						<ondown>1001</ondown>
+						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.pictures)</visible>
+                    </control>
 					
                     <control type="radiobutton" id="2004">
                         <width>1210</width>
@@ -540,8 +401,8 @@
                             <height>60</height>
                             <onleft>20072</onleft>
                             <onright>20072</onright>
-                            <onup>2005</onup>
-                            <ondown>2008</ondown>
+                            <onup>2006</onup>
+                            <ondown>2001</ondown>
                             <texturefocus>buttons/spinctrl/arrow-down-fo.png</texturefocus>
                             <texturenofocus>buttons/spinctrl/arrow-down-nf.png</texturenofocus>
                             <onclick condition="stringcompare(Skin.String(music.name),$LOCALIZE[1038])">Skin.SetString(music.name,$LOCALIZE[14022])</onclick>
@@ -934,7 +795,7 @@
                         <selected>Skin.HasSetting(old.clock)</selected>
                         <onclick>Skin.ToggleSetting(old.clock)</onclick>
                         <onclick>ReloadSkin</onclick>
-                        <label>Use old clock</label>
+                        <label>Use simple clock</label>
                     </control>
                     <control type="radiobutton" id="9004">
                         <width>1210</width>

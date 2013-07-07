@@ -51,7 +51,7 @@
 			<posy>110</posy>
 			<animation effect="slide" start="0" end="0,110" time="0" condition="!Skin.HasSetting(panel.center)">Conditional</animation>
 			<control type="group">
-				<visible>!Window.IsVisible(favourites) + !Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
+				<visible>!Window.IsVisible(script-globalsearch-main.xml) + !Window.IsVisible(script-globalsearch-infodialog.xml) + !Window.IsVisible(script-globalsearch-contextmenu.xml) + !Window.IsVisible(virtualkeyboard) + IsEmpty(Window.Property(HomeSearch)) + !Window.IsVisible(playercontrols)</visible>
 				<animation effect="fade" time="350">WindowOpen</animation>
 				<animation effect="fade" delay="200" time="350">WindowClose</animation>
 				<animation effect="fade" time="350">Visible</animation>
@@ -192,6 +192,16 @@
 						<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="image">
+						<width>49</width>
+						<visible>!Skin.HasSetting(disable.pictures)</visible>
+					</control>
+					<control type="label">
+						<label>10002</label>
+						<include>Mod_HomeLabel</include>
+						<animation effect="fade" start="100" end="30" time="250" condition="!Control.HasFocus(525) | !Container(525).HasFocus(5)">Conditional</animation>
+						<visible>!Skin.HasSetting(disable.pictures)</visible>
+					</control>
+					<control type="image">
 						<width>30</width>
 						<visible>!Skin.HasSetting(disable.programs)</visible>
 					</control>
@@ -221,7 +231,7 @@
 					</control>
 				</control>
 				<control type="list" id="525">
-					<onup>SetFocus(83,0)</onup>
+					<onup condition="!Container(525).HasFocus(5)">SetFocus(83,0)</onup>
 					<ondown condition="Container(525).HasFocus(1) | Container(525).HasFocus(2) | Container(525).HasFocus(3)">SetFocus(82)</ondown>
 					<ondown condition="Container(525).HasFocus(9) | Container(525).HasFocus(10)">SetFocus(84,0)</ondown>
 					<ondown condition="Container(525).HasFocus(4) | Container(525).HasFocus(5) | Container(525).HasFocus(6) | Container(525).HasFocus(7)  | Container(525).HasFocus(8)">SetFocus(84,0)</ondown>
@@ -647,6 +657,14 @@
 						<include>Mod_RecentLabel</include>
 						<visible>Container(525).HasFocus(7) + !Control.HasFocus(84)</visible>
 					</control>
+					<!-- pictures -->
+					<control type="label">
+						<posx>48</posx>
+						<posy>260</posy>
+						<label>$LOCALIZE[10002]</label>
+						<include>Mod_RecentLabel</include>
+						<visible>Container(525).HasFocus(5) + !Control.HasFocus(84)</visible>
+					</control>
 					<!-- weather -->
 					<control type="label">
 						<posx>48</posx>
@@ -672,12 +690,97 @@
 						<visible>Control.HasFocus(84)</visible>
 					</control>
 				
+					<!-- PICTURES -->
+					<control type="group">
+						<posx>48</posx>
+						<posy>330</posy>
+						<visible>Container(525).HasFocus(5) + !Control.HasFocus(84) + !IsEmpty(Skin.String(pictures.slideshowpath2))</visible>
+						<animation effect="fade" start="0" end="100" time="350">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="450" condition="Window.IsActive(favourites)">Conditional</animation>
+						<animation effect="fade" start="0" end="100" delay="150" time="450" condition="!Window.IsActive(favourites)">Conditional</animation>
+						<control type="group">
+							<control type="image">
+								<posx>-15</posx>
+								<posy>-25</posy>
+								<width>581</width>
+								<height>340</height>
+								<texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="multiimage">
+								<posx>0</posx>
+								<posy>-10</posy>
+								<width>551</width>
+								<height>310</height>
+								<timeperimage>10000</timeperimage>
+								<randomize>true</randomize>
+								<fadetime>600</fadetime>
+								<loop>yes</loop>
+								<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+								<animation effect="fade" start="100" delay="500" end="0" time="10">Hidden</animation>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<imagepath background="true" diffuse="views/newgloss/tile-572.png">$INFO[Skin.String(pictures.slideshowpath2)]</imagepath>
+							</control>
+						</control>
+						<control type="group">
+							<posx>636</posx>
+							<control type="image">
+								<posx>-15</posx>
+								<posy>-25</posy>
+								<width>581</width>
+								<height>340</height>
+								<texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="multiimage">
+								<posx>0</posx>
+								<posy>-10</posy>
+								<width>551</width>
+								<height>310</height>
+								<timeperimage>10000</timeperimage>
+								<randomize>true</randomize>
+								<fadetime>600</fadetime>
+								<loop>yes</loop>
+								<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+								<animation effect="fade" start="100" delay="500" end="0" time="10">Hidden</animation>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<imagepath background="true" diffuse="views/newgloss/tile-572.png">$INFO[Skin.String(pictures.slideshowpath2)]</imagepath>
+							</control>
+						</control>
+						<control type="group">
+							<posx>1272</posx>
+							<control type="image">
+								<posx>-15</posx>
+								<posy>-25</posy>
+								<width>581</width>
+								<height>340</height>
+								<texture border="35">views/newgloss/whitepanel-15.png</texture>
+								<colordiffuse>mod-infotags-d</colordiffuse>
+							</control>
+							<control type="multiimage">
+								<posx>0</posx>
+								<posy>-10</posy>
+								<width>551</width>
+								<height>310</height>
+								<timeperimage>10000</timeperimage>
+								<randomize>true</randomize>
+								<fadetime>600</fadetime>
+								<loop>yes</loop>
+								<animation effect="fade" start="0" end="100" time="0">Visible</animation>
+								<animation effect="fade" start="100" delay="500" end="0" time="10">Hidden</animation>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<imagepath background="true" diffuse="views/newgloss/tile-572.png">$INFO[Skin.String(pictures.slideshowpath2)]</imagepath>
+							</control>
+						</control>
+					</control>
 					<!-- SYSTEM INFO -->
 					<control type="group">
 						<posx>48</posx>
 						<posy>330</posy>
-						<visible>[!Control.HasFocus(84) + [Container(525).HasFocus(9) | Container(525).HasFocus(10) | Container(525).HasFocus(7)] | [Control.HasFocus(84) + !Container(84).HasFocus(0)]]</visible>
-						<animation effect="fade" start="0" end="100" time="250">Visible</animation>
+						<visible>[!Control.HasFocus(84) + [[Container(525).HasFocus(5) + IsEmpty(Skin.String(pictures.slideshowpath2))] | Container(525).HasFocus(9) | Container(525).HasFocus(10) | Container(525).HasFocus(7)] | [Control.HasFocus(84) + !Container(84).HasFocus(0)]]</visible>
+						<animation effect="fade" start="0" end="100" time="350">Visible</animation>
+						<animation effect="fade" start="100" end="0" time="450" condition="Window.IsActive(favourites)">Conditional</animation>
+						<animation effect="fade" start="0" end="100" delay="150" time="450" condition="!Window.IsActive(favourites)">Conditional</animation>
 						<control type="group">
 							<visible>Container(525).HasFocus(7) + !IsEmpty(Skin.String(pictures.slideshowpath)) + !Control.HasFocus(84)</visible>
 							<control type="image">

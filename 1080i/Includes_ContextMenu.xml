@@ -246,12 +246,14 @@
         <control type="grouplist" id="2000">
             <description>Custom group list</description>
             <posx>-160</posx>
-            <posy>-380</posy>
+            <posy>124</posy>
             <width>1000</width>
             <height>100</height>
             <itemgap>-275</itemgap>
             <orientation>horizontal</orientation>
             <scrolltime>0</scrolltime>
+            <animation effect="slide" end="0,-350" condition="StringCompare(Skin.String(homescreen.style),simple)">Conditional</animation>
+            <animation effect="slide" end="0,203" condition="StringCompare(Skin.String(homescreen.style),metro)">Conditional</animation>
             <control type="button" id="2001">
                 <width>350</width>
                 <height>100</height>
