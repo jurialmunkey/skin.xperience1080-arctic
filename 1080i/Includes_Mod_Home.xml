@@ -29,6 +29,27 @@
 		<height>1490</height>
 		<texture border="35">views/newgloss/whitepanel-15.png</texture>
 	</include>
+	<include name="Widgets_Slide">
+		<!--<visible>![Container(525).OnNext | Container(525).OnPrevious]</visible>
+		<animation effect="fade" start="0" end="100" delay="100" time="150" reversible="false" condition="![Container(525).OnNext | Container(525).OnPrevious]">Conditional</animation>
+		<animation effect="fade" start="0" end="100" delay="0" time="250" reversible="false">Visible</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,9)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,8)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,7)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,6)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,5)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,4)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,3)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,2)">Conditional</animation>
+		<animation effect="slide" end="92" condition="!Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,1)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,7)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,6)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,5)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,4)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,3)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,2)">Conditional</animation>
+		<animation effect="slide" end="115" condition="Container(525).HasFocus(3) + !IntegerGreaterThan(Container(82).NumItems,1)">Conditional</animation>-->
+	</include>
 
 	<variable name="Mod_FlagStars">
         <value condition="IntegerGreaterThan(Container(82).ListItem.Property(Rating),9)">aeonflags/music/rating/rating5.png</value>
@@ -609,7 +630,7 @@
 						<include>Mod_GreyPanelDimensions</include>
 					</control>
 					<!-- HEADER FOR PANEL -->
-					<!-- search -->
+					<!-- favs -->
 					<control type="label">
 						<posx>48</posx>
 						<posy>260</posy>
@@ -624,6 +645,7 @@
 						<label>$INFO[Skin.String(movie.widget.type)]</label>
 						<include>Mod_RecentLabel</include>
 						<visible>Container(525).HasFocus(1) + !Control.HasFocus(84)</visible>
+						<include>Widgets_Slide</include>
 					</control>
 					<!-- recent episodes -->
 					<control type="label">
@@ -632,6 +654,7 @@
 						<label>$INFO[Skin.String(tvshow.widget.type)]</label>
 						<include>Mod_RecentLabel</include>
 						<visible>Container(525).HasFocus(2) + !Control.HasFocus(84)</visible>
+						<include>Widgets_Slide</include>
 					</control>
 					<!-- most played albums -->
 					<control type="label">
@@ -640,6 +663,7 @@
 						<label>$INFO[Skin.String(music.widget.type)]</label>
 						<include>Mod_RecentLabel</include>
 						<visible>Container(525).HasFocus(3) + !Control.HasFocus(84)</visible>
+						<include>Widgets_Slide</include>
 					</control>
 					<!-- live tv -->
 					<control type="label">
@@ -1466,6 +1490,7 @@
 						<viewtype>list</viewtype>
 						<orientation>horizontal</orientation>
 						<visible>![Control.HasFocus(84) | Control.HasFocus(85)]</visible>
+						<include>Widgets_Slide</include>
 						<itemlayout width="184" condition="!Container(525).HasFocus(3)">
 							<control type="group">
 								<animation effect="fade" start="100" end="66" condition="true">Conditional</animation>
