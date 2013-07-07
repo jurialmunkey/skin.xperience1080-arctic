@@ -610,14 +610,13 @@
 						<visible>!Container(525).HasFocus(3)</visible>
 					</control>
 					<control type="image">
-						<posx>1572</posx>
-						<posy>-28</posy>
-						<width>380</width>
-						<height>380</height>
-						<texture>windows/home/icons/music.png</texture>
-						<aspectratio align="right" aligny="center">keep</aspectratio>
+						<posx>1480</posx>
+						<posy>10</posy>
+						<width>400</width>
+						<height>220</height>
+						<texture fallback="DefaultAudio.png">$INFO[Skin.String(cdartlocation)]$INFO[Container(82).ListItem.Label,,/logo.png]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<visible>Container(525).HasFocus(3)</visible>
-						<colordiffuse>mod-infotags-alt</colordiffuse>
 					</control>
 				</control>
 			
