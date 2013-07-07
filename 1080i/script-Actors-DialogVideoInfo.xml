@@ -457,7 +457,7 @@
 					<posy>700</posy>
 					<width>466</width>
 					<height>700</height>
-					<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$INFO[ListItem.Icon]</texture>
+					<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png" falback="views/fallbacks/DefaultActor.png/medium.png">$INFO[ListItem.Icon]</texture>
 					<aspectratio scalediffuse="false">stretch</aspectratio>
 				</control>
 				<control type="image">

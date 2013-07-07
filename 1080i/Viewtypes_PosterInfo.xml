@@ -278,7 +278,7 @@
                                     <effect type="zoom" end="75" time="0" center="190,340" />
                                 </animation>
                                 <animation effect="Conditional" condition="!IntegerGreaterThan(Container(56).NumItems,1)">
-                                    <effect type="fade" end="0" time="0" center="190,340" />
+                                    <effect type="fade" start="100" end="0" time="0" center="190,340" />
                                 </animation>
                                 <!-- REFLECTION-->
                                 <control type="image">
@@ -356,7 +356,7 @@
                         </itemlayout>
                         <focusedlayout width="1344" condition="!Skin.HasSetting(old.posterinfo) + !Container.Content(episodes)">
 							<control type="group">
-								<animation effect="slide" time="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>						
+								<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>						
 								<animation effect="fade" end="0" start="100" time="0" delay="0" condition="[Container(56).OnNext | Container(56).OnPrevious]">UnFocus</animation>
 								<posx>350</posx>
 								<posy>152</posy>
@@ -449,8 +449,8 @@
 									<effect type="zoom" start="100" end="75" time="100" tween="sine" easing="out" center="190,340" />
 								</animation>	
 								
-								<animation effect="fade" time="0" end="0" condition="!IntegerGreaterThan(Container(56).NumItems,1)">UnFocus</animation>	
-								<animation effect="slide" time="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>						
+								<animation effect="fade" time="0" start="100" end="0" condition="!IntegerGreaterThan(Container(56).NumItems,1)">UnFocus</animation>	
+								<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>						
 								<control type="image">
 									<description>Reflection</description>
 									<posx>60</posx>

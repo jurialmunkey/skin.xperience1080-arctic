@@ -4,6 +4,7 @@
         <control type="group" id="80">
             <description>Home Buttons</description>
             <include condition="StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(hide.infotags)">Animation_FanartFade</include>
+            <animation effect="fade" end="0" condition="[StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Skin.HasSetting(simple.lowerbar)]">Conditional</animation>
             <control type="button" id="21">
                 <description>Shutdown Button</description>
                 <posx>72</posx>

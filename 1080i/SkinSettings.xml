@@ -834,13 +834,22 @@
                         <onclick>Skin.ToggleSetting(EPGGenreColors.Enabled)</onclick>
                         <label>$LOCALIZE[41221]</label>
                     </control>
-                    <control type="radiobutton" id="90089">
+                    <control type="radiobutton" id="9009">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(info.showpath)</selected>
                         <onclick>Skin.ToggleSetting(info.showpath)</onclick>
                         <label>Show path in info screen</label>
                     </control>
+                    <!--<control type="radiobutton" id="9010">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>Skin.HasSetting(simple.lowerbar)</selected>
+                        <onclick>Skin.ToggleSetting(simple.lowerbar)</onclick>
+                        <onclick>ReloadSkin</onclick>
+                        <label>Lower simple homescreen</label>
+                        <visible>StringCompare(Skin.String(homescreen.style),simple)</visible>
+                    </control>-->
                     
                 </control>
                 

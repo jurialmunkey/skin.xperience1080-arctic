@@ -205,8 +205,8 @@
         </control>
     </include>
     <include name="Common-Clock">
-    	<include condition="!Skin.HasSetting(old.clock)">SimpleHome-Clock</include>
-        <include condition="Skin.HasSetting(old.clock)">Old-Common-Clock</include>
+    	<include condition="!Skin.HasSetting(old.clock) + ![StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Skin.HasSetting(simple.lowerbar)]">SimpleHome-Clock</include>
+        <include condition="Skin.HasSetting(old.clock) + ![StringCompare(Skin.String(homescreen.style),simple) + Window.IsActive(home) + Skin.HasSetting(simple.lowerbar)]">Old-Common-Clock</include>
     </include>
     
     <variable name="OptionsButtonTexture">

@@ -1488,7 +1488,7 @@
 						<height>600</height>
 						<viewtype>list</viewtype>
 						<orientation>horizontal</orientation>
-						<visible>![Control.HasFocus(84) | Control.HasFocus(85)]</visible>
+						<visible>![Control.HasFocus(84) | Control.HasFocus(85) | Window.IsActive(favourites)]</visible>
 						<include>Widgets_Slide</include>
 						<itemlayout width="184" condition="!Container(525).HasFocus(3)">
 							<control type="group">

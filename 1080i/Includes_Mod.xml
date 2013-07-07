@@ -5623,7 +5623,7 @@
 						<posy>700</posy>
 						<width>466</width>
 						<height>700</height>
-						<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png">$VAR[VideoInfoThumb]</texture>
+						<texture background="true" flipy="true" diffuse="views/posterview/diffuse-ref.png" fallback="views/fallbacks/DefaultActor.png/medium.png">$VAR[VideoInfoThumb]</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 					</control>
 					<control type="image">
@@ -5641,7 +5641,7 @@
 						<posy>0</posy>
 						<width>466</width>
 						<height>700</height>
-						<texture background="true" diffuse="arctic/banner/poster.png">$VAR[VideoInfoThumb]</texture>
+						<texture background="true" diffuse="arctic/banner/poster.png" fallback="views/fallbacks/DefaultActor.png/medium.png">$VAR[VideoInfoThumb]</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 					</control>
 					<control type="image">
@@ -6019,7 +6019,7 @@
 				<effect type="slide" start="0,-75" end="0,0" time="350" tween="cubic" easing="out" delay="200" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
-				<effect type="fade" start="100" end="0" time="250" tween="sine" easing="out" />
+				<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
 			</animation>
 			<animation type="Conditional" condition="Window.IsActive(shutdownmenu)" reversible="false">
 				<effect type="zoom" start="100" end="92" time="300" delay="100" center="auto" tween="sine" easing="out"  />
