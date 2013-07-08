@@ -3,7 +3,7 @@
 		<align>left</align>
 		<font>Font-ModHome</font>
 		<textcolor>white</textcolor>
-		<width min="0" max="225">auto</width>
+		<width min="0" max="250">auto</width>
 		<scroll>false</scroll>
 	</include>
 	<include name="Mod_RecentLabel">

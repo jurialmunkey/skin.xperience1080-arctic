@@ -121,11 +121,6 @@
         <value>aeonflags/rating/$VAR[MovieMPAAVar].png</value>
     </variable>
     
-    <variable name="AeonFlagAspect">
-        <value condition="!IsEmpty(ListItem.VideoAspect) + [Container.Content(episodes) | Container.Content(movies)]">$INFO[ListItem.VideoAspect,aeonflags/aspectratio/,.png]</value>
-        <value>aeonflags/aspectratio/default.png</value>
-    </variable>
-    
     <variable name="AeonFlagStudio">
         <value condition="!IsEmpty(ListItem.Studio)">$INFO[ListItem.Studio,aeonflags/studios/,.png]</value>
         <value>aeonflags/studios/default-studio.png</value>
@@ -144,11 +139,16 @@
     </variable>
     
     <variable name="AeonFlagStars">
-        <value condition="IntegerGreaterThan(ListItem.Rating,9)">aeonflags/music/rating/rating5.png</value>
-        <value condition="IntegerGreaterThan(ListItem.Rating,7)">aeonflags/music/rating/rating4.png</value>
-        <value condition="IntegerGreaterThan(ListItem.Rating,5)">aeonflags/music/rating/rating3.png</value>
-        <value condition="IntegerGreaterThan(ListItem.Rating,3)">aeonflags/music/rating/rating2.png</value>
-        <value condition="IntegerGreaterThan(ListItem.Rating,1)">aeonflags/music/rating/rating1.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,8.9)">aeonflags/music/rating/rating5.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,7.9)">aeonflags/music/rating/rating4.5.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,6.9)">aeonflags/music/rating/rating4.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,5.9)">aeonflags/music/rating/rating3.5.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,4.9)">aeonflags/music/rating/rating3.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,3.9)">aeonflags/music/rating/rating2.5.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,2.9)">aeonflags/music/rating/rating2.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,1.9)">aeonflags/music/rating/rating1.5.png</value>
+        <value condition="IntegerGreaterThan(ListItem.Rating,0.9)">aeonflags/music/rating/rating1.png</value>
+        <value condition="!IsEmpty(ListItem.StarRating)">$INFO[ListItem.StarRating,aeonflags/music/rating/,]</value>
         <value>aeonflags/music/rating/rating0.png</value>
     </variable>
     
@@ -358,7 +358,7 @@
 					<width>150</width>
 					<height>64</height>
 					<aspectratio align="right" aligny="top">keep</aspectratio>
-					<texture fallback="aeonflags/music/rating/rating0.png">$INFO[ListItem.StarRating,aeonflags/music/rating/,]</texture>
+					<texture fallback="aeonflags/music/rating/rating0.png">$VAR[AeonFlagStars]</texture>
 					<colordiffuse>Mod_Tags</colordiffuse>
 					<include>infotags.anim</include>
 				</control>
