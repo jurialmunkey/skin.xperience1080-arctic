@@ -576,7 +576,7 @@
 						<align>left</align>
 						<font>Font-ModHome</font>
 						<textcolor>eedddddd</textcolor>
-						<width>700</width>
+						<width>1010</width>
 						<scroll>false</scroll>
 					</control>
 					<control type="label">
@@ -586,7 +586,7 @@
 						<align>left</align>
 						<font>Font-Alaska-S28-L</font>
 						<textcolor>eebbbbbb</textcolor>
-						<width>700</width>
+						<width>1010</width>
 						<scroll>false</scroll>
 					</control>
 					<control type="textbox">
