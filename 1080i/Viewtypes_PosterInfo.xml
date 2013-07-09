@@ -342,6 +342,33 @@
 										<align>right</align>
 									</control>
 								</control>
+								<control type="group">
+									<posx>60</posx>
+									<posy>70</posy>
+									<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
+									<control type="image">
+										<description>Panel</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>70</width>
+										<height>70</height>
+										<texture flipx="true">arctic/common/triangle.png</texture>
+										<aspectratio aligny="top" align="left">keep</aspectratio>
+										<colordiffuse>ff111111</colordiffuse>
+										<include>new.overlay.visibility</include>
+									</control>
+									<control type="label">
+										<posx>33</posx>
+										<posy>1</posy>
+										<width>80</width>
+										<label>★</label>
+										<font>Font-Condensed-S34</font>
+										<textcolor>ff00ccff</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<include>new.overlay.visibility</include>
+									</control>
+								</control>
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>
@@ -548,6 +575,33 @@
 										<align>right</align>
 									</control>
 								</control>
+								<control type="group">
+									<posx>60</posx>
+									<posy>70</posy>
+									<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
+									<control type="image">
+										<description>Panel</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>70</width>
+										<height>70</height>
+										<texture flipx="true">arctic/common/triangle.png</texture>
+										<aspectratio aligny="top" align="left">keep</aspectratio>
+										<colordiffuse>ff111111</colordiffuse>
+										<include>new.overlay.visibility</include>
+									</control>
+									<control type="label">
+										<posx>33</posx>
+										<posy>1</posy>
+										<width>80</width>
+										<label>★</label>
+										<font>Font-Condensed-S34</font>
+										<textcolor>ff00ccff</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<include>new.overlay.visibility</include>
+									</control>
+								</control>
 								<control type="image">
 									<description>Border</description>
 									<posx>50</posx>
@@ -669,6 +723,33 @@
 										<textcolor>ff00ddaa</textcolor>
 										<scroll>false</scroll>
 										<align>right</align>
+									</control>
+								</control>
+								<control type="group">
+									<posx>60</posx>
+									<posy>70</posy>
+									<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
+									<control type="image">
+										<description>Panel</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>70</width>
+										<height>70</height>
+										<texture flipx="true">arctic/common/triangle.png</texture>
+										<aspectratio aligny="top" align="left">keep</aspectratio>
+										<colordiffuse>ff111111</colordiffuse>
+										<include>new.overlay.visibility</include>
+									</control>
+									<control type="label">
+										<posx>33</posx>
+										<posy>1</posy>
+										<width>80</width>
+										<label>★</label>
+										<font>Font-Condensed-S34</font>
+										<textcolor>ff00ccff</textcolor>
+										<scroll>false</scroll>
+										<align>right</align>
+										<include>new.overlay.visibility</include>
 									</control>
 								</control>
                                 <control type="image">
