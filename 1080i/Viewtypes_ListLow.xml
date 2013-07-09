@@ -650,8 +650,8 @@
 						<fadetime>200</fadetime>
 					</control>
 					<control type="group">
-						<posx>278</posx>
-						<posy>340</posy>
+						<posx>35</posx>
+						<posy>-65</posy>
 						<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 						<control type="image">
 							<description>Panel</description>
@@ -659,13 +659,13 @@
 							<posy>0</posy>
 							<width>80</width>
 							<height>80</height>
-							<texture flipy="true">arctic/common/triangle.png</texture>
-							<aspectratio aligny="bottom" align="right">keep</aspectratio>
+							<texture flipx="true">arctic/common/triangle.png</texture>
+							<aspectratio aligny="top" align="left">keep</aspectratio>
 							<colordiffuse>ff111111</colordiffuse>
 						</control>
 						<control type="label">
-							<posx>70</posx>
-							<posy>40</posy>
+							<posx>42</posx>
+							<posy>6</posy>
 							<width>80</width>
 							<label>‡</label>
 							<font>Font-Alaska-S45-BL</font>

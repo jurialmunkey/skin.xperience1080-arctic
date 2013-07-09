@@ -52,7 +52,7 @@
 						<control type="group">
 							<posx>182</posx>
 							<posy>300</posy>
-							<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
@@ -247,7 +247,7 @@
 							<control type="group">
 								<posx>182</posx>
 								<posy>300</posy>
-								<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+								<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 								<control type="image">
 									<description>Panel</description>
 									<posx>0</posx>

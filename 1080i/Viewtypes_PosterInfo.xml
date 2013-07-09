@@ -319,21 +319,21 @@
 									<visible>Skin.HasSetting(covers.showglass)</visible>
 								</control>
 								<control type="group">
-									<posx>257</posx>
-									<posy>400</posy>
+									<posx>60</posx>
+									<posy>70</posy>
 									<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
 										<width>70</width>
 										<height>70</height>
-										<texture flipy="true">arctic/common/triangle.png</texture>
-										<aspectratio aligny="bottom" align="right">keep</aspectratio>
+										<texture flipx="true">arctic/common/triangle.png</texture>
+										<aspectratio aligny="top" align="left">keep</aspectratio>
 										<colordiffuse>ff111111</colordiffuse>
 									</control>
 									<control type="label">
-										<posx>62</posx>
-										<posy>34</posy>
+										<posx>34</posx>
+										<posy>4</posy>
 										<width>80</width>
 										<label>‡</label>
 										<font>Font-Alaska-S38-BL</font>
@@ -342,54 +342,6 @@
 										<align>right</align>
 									</control>
 								</control>
-								<!--<control type="group">
-									<posx>267</posx>
-									<posy>70</posy>
-									<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-									<control type="image">
-										<description>Panel</description>
-										<posx>-1</posx>
-										<posy>1</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>22ffffff</colordiffuse>
-										<visible>!Skin.HasSetting(covers.showglass)</visible>
-									</control>
-									<control type="image">
-										<description>Panel</description>
-										<posx>-9</posx>
-										<posy>10</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>22ffffff</colordiffuse>
-										<visible>Skin.HasSetting(covers.showglass)</visible>
-									</control>
-									<control type="image">
-										<description>Panel</description>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>ff111111</colordiffuse>
-									</control>
-									<control type="label">
-										<posx>31</posx>
-										<posy>5</posy>
-										<width>58</width>
-										<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-										<font>Font-Alaska-S25-BL</font>
-										<textcolor>mod-infotags-alt</textcolor>
-										<scroll>false</scroll>
-										<align>center</align>
-										<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-									</control>
-								</control>-->
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>
@@ -573,21 +525,21 @@
 									<visible>Skin.HasSetting(covers.showglass)</visible>
 								</control>
 								<control type="group">
-									<posx>257</posx>
-									<posy>400</posy>
+									<posx>60</posx>
+									<posy>70</posy>
 									<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
 										<width>70</width>
 										<height>70</height>
-										<texture flipy="true">arctic/common/triangle.png</texture>
-										<aspectratio aligny="bottom" align="right">keep</aspectratio>
+										<texture flipx="true">arctic/common/triangle.png</texture>
+										<aspectratio aligny="top" align="left">keep</aspectratio>
 										<colordiffuse>ff111111</colordiffuse>
 									</control>
 									<control type="label">
-										<posx>62</posx>
-										<posy>34</posy>
+										<posx>34</posx>
+										<posy>4</posy>
 										<width>80</width>
 										<label>‡</label>
 										<font>Font-Alaska-S38-BL</font>
@@ -596,54 +548,6 @@
 										<align>right</align>
 									</control>
 								</control>
-								<!--<control type="group">
-									<posx>267</posx>
-									<posy>70</posy>
-									<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-									<control type="image">
-										<description>Panel</description>
-										<posx>-1</posx>
-										<posy>1</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>22ffffff</colordiffuse>
-										<visible>!Skin.HasSetting(covers.showglass)</visible>
-									</control>
-									<control type="image">
-										<description>Panel</description>
-										<posx>-9</posx>
-										<posy>10</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>22ffffff</colordiffuse>
-										<visible>Skin.HasSetting(covers.showglass)</visible>
-									</control>
-									<control type="image">
-										<description>Panel</description>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>ff111111</colordiffuse>
-									</control>
-									<control type="label">
-										<posx>31</posx>
-										<posy>5</posy>
-										<width>58</width>
-										<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-										<font>Font-Alaska-S25-BL</font>
-										<textcolor>mod-infotags-alt</textcolor>
-										<scroll>false</scroll>
-										<align>center</align>
-										<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-									</control>
-								</control>-->
 								<control type="image">
 									<description>Border</description>
 									<posx>50</posx>
@@ -744,21 +648,21 @@
 									<visible>Skin.HasSetting(covers.showglass)</visible>
 								</control>
 								<control type="group">
-									<posx>257</posx>
-									<posy>400</posy>
+									<posx>60</posx>
+									<posy>70</posy>
 									<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
 										<width>70</width>
 										<height>70</height>
-										<texture flipy="true">arctic/common/triangle.png</texture>
-										<aspectratio aligny="bottom" align="right">keep</aspectratio>
+										<texture flipx="true">arctic/common/triangle.png</texture>
+										<aspectratio aligny="top" align="left">keep</aspectratio>
 										<colordiffuse>ff111111</colordiffuse>
 									</control>
 									<control type="label">
-										<posx>62</posx>
-										<posy>34</posy>
+										<posx>34</posx>
+										<posy>4</posy>
 										<width>80</width>
 										<label>‡</label>
 										<font>Font-Alaska-S38-BL</font>
@@ -767,54 +671,6 @@
 										<align>right</align>
 									</control>
 								</control>
-								<!--<control type="group">
-									<posx>267</posx>
-									<posy>70</posy>
-									<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-									<control type="image">
-										<description>Panel</description>
-										<posx>-1</posx>
-										<posy>1</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>22ffffff</colordiffuse>
-										<visible>!Skin.HasSetting(covers.showglass)</visible>
-									</control>
-									<control type="image">
-										<description>Panel</description>
-										<posx>-9</posx>
-										<posy>10</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>22ffffff</colordiffuse>
-										<visible>Skin.HasSetting(covers.showglass)</visible>
-									</control>
-									<control type="image">
-										<description>Panel</description>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>60</width>
-										<height>40</height>
-										<texture border="10" flipy="false">arctic/common/corner.png</texture>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>ff111111</colordiffuse>
-									</control>
-									<control type="label">
-										<posx>31</posx>
-										<posy>5</posy>
-										<width>58</width>
-										<label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
-										<font>Font-Alaska-S25-BL</font>
-										<textcolor>mod-infotags-alt</textcolor>
-										<scroll>false</scroll>
-										<align>center</align>
-										<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
-									</control>
-								</control>-->
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>
