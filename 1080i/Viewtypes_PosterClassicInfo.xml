@@ -68,7 +68,7 @@
                             <texture background="true" diffuse="arctic/poster/classic.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
-                        <control type="image">
+                        <!--<control type="image">
                             <posx>242</posx>
                             <posy>10</posy>
                             <width>100</width>
@@ -76,7 +76,7 @@
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
                             <visible>!Container.Content(tvshows)</visible>
-                        </control>
+                        </control>-->
                         <control type="image">
                             <description>Glass</description>
                             <posx>-32</posx>
@@ -132,6 +132,31 @@
 								<scroll>false</scroll>
 								<align>center</align>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
+							</control>
+						</control>
+						<control type="group">
+							<posx>262</posx>
+							<posy>491</posy>
+							<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+							<control type="image">
+								<description>Panel</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>80</height>
+								<texture flipy="true">arctic/common/triangle.png</texture>
+								<aspectratio aligny="bottom" align="right">keep</aspectratio>
+								<colordiffuse>ff111111</colordiffuse>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<posy>40</posy>
+								<width>80</width>
+								<label>‡</label>
+								<font>Font-Alaska-S45-BL</font>
+								<textcolor>ff00ddaa</textcolor>
+								<scroll>false</scroll>
+								<align>right</align>
 							</control>
 						</control>
                         <control type="image">
@@ -229,7 +254,7 @@
                             <texture background="true" diffuse="arctic/poster/classic.png">$VAR[PosterViewPosterAlt]</texture>
                             <aspectratio align="center" scalediffuse="false">stretch</aspectratio>
                         </control>
-                        <control type="image">
+                        <!--<control type="image">
                             <posx>242</posx>
                             <posy>10</posy>
                             <width>100</width>
@@ -237,7 +262,7 @@
                             <aspect>keepaspect</aspect>
                             <include>overlay.visibility</include>
                             <visible>!Container.Content(tvshows)</visible>
-                        </control>
+                        </control>-->
                         <control type="image">
                             <description>Glass</description>
                             <posx>-32</posx>
@@ -293,6 +318,31 @@
 								<scroll>false</scroll>
 								<align>center</align>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
+							</control>
+						</control>
+						<control type="group">
+							<posx>262</posx>
+							<posy>491</posy>
+							<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+							<control type="image">
+								<description>Panel</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>80</width>
+								<height>80</height>
+								<texture flipy="true">arctic/common/triangle.png</texture>
+								<aspectratio aligny="bottom" align="right">keep</aspectratio>
+								<colordiffuse>ff111111</colordiffuse>
+							</control>
+							<control type="label">
+								<posx>70</posx>
+								<posy>40</posy>
+								<width>80</width>
+								<label>‡</label>
+								<font>Font-Alaska-S45-BL</font>
+								<textcolor>ff00ddaa</textcolor>
+								<scroll>false</scroll>
+								<align>right</align>
 							</control>
 						</control>
                         <control type="image">

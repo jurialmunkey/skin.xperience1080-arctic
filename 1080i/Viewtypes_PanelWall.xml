@@ -50,18 +50,6 @@
 					<texture border="25">arctic/common/glass-ring.png</texture>
 					<visible>Skin.HasSetting(covers.showglass)</visible>
 				</control>
-                <control type="image">
-                    <posx>734</posx>
-                    <posy>6</posy>
-                    <width>100</width>
-                    <height>100</height>
-                    <aspect>keepaspect</aspect>
-                    <include>overlay.visibility</include>
-                    <visible>!IsEmpty(ListItem.Overlay)</visible>
-                </control> 
-                
-
-
                 <control type="group">
                     <posy>472</posy>
                     <control type="label">
@@ -140,16 +128,6 @@
                         <colordiffuse>cfffffff</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>112</posx>
-                        <posy>6</posy>
-                        <width>50</width>
-                        <height>50</height>
-                        <aspect>keepaspect</aspect>
-                        <include>overlay.visibility</include>
-                        <visible>!IsEmpty(ListItem.Overlay)</visible>
-                        <colordiffuse>99ffffff</colordiffuse>
-                    </control> 
-                    <control type="image">
 						<posx>6</posx>
 						<posy>6</posy>
 						<width>156</width>
@@ -157,6 +135,22 @@
 						<texture border="25">arctic/common/glass-ring-5.png</texture>
 						<visible>Skin.HasSetting(covers.showglass)</visible>
 						<colordiffuse>cfffffff</colordiffuse>
+					</control>
+					
+					<control type="group">
+						<posx>102</posx>
+						<posy>172</posy>
+						<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+						<control type="label">
+							<posx>56</posx>
+							<posy>26</posy>
+							<width>80</width>
+							<label>‡</label>
+							<font>Font-Alaska-S38-BL</font>
+							<textcolor>ff00ddaa</textcolor>
+							<scroll>false</scroll>
+							<align>right</align>
+						</control>
 					</control>
                     <control type="image">
                         <description>Poster</description>
@@ -192,15 +186,6 @@
 							<aspectratio>stretch</aspectratio>
 						</control>
 						<control type="image">
-							<posx>112</posx>
-							<posy>6</posy>
-							<width>50</width>
-							<height>50</height>
-							<aspect>keepaspect</aspect>
-							<include>overlay.visibility</include>
-							<visible>!IsEmpty(ListItem.Overlay)</visible>
-						</control>
-						<control type="image">
                             <posx>6</posx>
 							<posy>6</posy>
 							<width>156</width>
@@ -208,6 +193,21 @@
                             <texture border="25">arctic/common/glass-ring-5.png</texture>
                             <visible>Skin.HasSetting(covers.showglass)</visible>
                         </control>
+                        <control type="group">
+							<posx>102</posx>
+							<posy>172</posy>
+							<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+							<control type="label">
+								<posx>56</posx>
+								<posy>26</posy>
+								<width>80</width>
+								<label>‡</label>
+								<font>Font-Alaska-S38-BL</font>
+								<textcolor>ff00ddaa</textcolor>
+								<scroll>false</scroll>
+								<align>right</align>
+							</control>
+						</control>
 						<control type="image">
 							<description>Border</description>
 							<posx>-4</posx>
