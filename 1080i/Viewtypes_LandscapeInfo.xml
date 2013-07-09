@@ -192,10 +192,10 @@
                     	<animation effect="Conditional" condition="true">
                             <effect type="zoom" start="110" end="110" time="0" center="auto" />
                         </animation>
-                        <animation type="Focus">
+                        <animation type="Focus" condition="Skin.HasSetting(landscapeview.zoom)">
                             <effect type="zoom" start="100" end="106" time="350" tween="sine" easing="out" center="192,280" />
                         </animation>
-                        <animation type="Unfocus">
+                        <animation type="Unfocus" condition="Skin.HasSetting(landscapeview.zoom)">
                             <effect type="zoom" start="106" end="100" time="250" tween="sine" easing="out" center="192,280" />
                         </animation>
                         <control type="image">

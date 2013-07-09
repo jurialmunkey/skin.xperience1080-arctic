@@ -375,17 +375,17 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(509)</visible>
                     </control>
-                    <!--<control type="radiobutton" id="124">
+                    <control type="radiobutton" id="124">
                         <include>optionsbuttonsdimensions</include>
-                        <selected>Skin.HasSetting(landscapeview.preferlogos)</selected>
-                        <onclick>Skin.ToggleSetting(landscapeview.preferlogos)</onclick>
-                        <label>Prefer clearart</label>
+                        <selected>Skin.HasSetting(landscapeview.zoom)</selected>
+                        <onclick>Skin.ToggleSetting(landscapeview.zoom)</onclick>
+                        <label>Focus zoom</label>
                         <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
                         <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
                         <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
                         <radioposx>-19</radioposx>
-                        <visible>Control.IsVisible(507) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
-                    </control>-->
+                        <visible>Control.IsVisible(507)</visible>
+                    </control>
                     
                     <!-- Lower Info Toggles -->
                     <control type="radiobutton" id="108">
