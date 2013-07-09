@@ -114,6 +114,17 @@
 					<label2>$INFO[Skin.String(defaultpanel.widget.type)]</label2>
 					<visible>StringCompare(Skin.String(homescreen.style),panel)</visible>
 				</control>
+				<control type="radiobutton" id="2104">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>648</width>
+					<height>77</height>
+					<include>SettingsCategoryPanelRadioButtonVars</include>
+					<onclick>Skin.ToggleSetting(settings.widget.usedefault)</onclick>
+					<selected>Skin.HasSetting(settings.widget.usedefault)</selected>										
+					<label>Use default widget for settings</label>
+					<visible>StringCompare(Skin.String(homescreen.style),panel) + !stringcompare(Skin.String(defaultpanel.widget.type),$LOCALIZE[10511])</visible>
+				</control>
             </control>
             
             <control type="group" id="10">

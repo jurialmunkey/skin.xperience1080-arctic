@@ -180,6 +180,22 @@
         <textoffsetx>35</textoffsetx>
     </include>
     
+    <include name="SettingsCategoryPanelRadioButtonVars">
+        <height>77</height>
+        <radioposx>530</radioposx>
+        <align>left</align>
+        <aligny>center</aligny>
+        <textureradiofocus>buttons/radio/radio-light-fo.png</textureradiofocus>
+        <textureradionofocus>buttons/radio/radio-light-nf.png</textureradionofocus>
+        <texturefocus border="5">views/other/focus-mod.png</texturefocus>
+        <texturenofocus border="90,3,90,3">views/list/other/separator-l.png</texturenofocus>
+        <textcolor>mod-infotags-l</textcolor>
+        <focusedcolor>white</focusedcolor>
+        <disabledcolor>mod-infotags-vl</disabledcolor>
+        <font>Font-Condensed-S30-B</font>
+        <textoffsetx>35</textoffsetx>
+    </include>
+    
     <include name="SettingsCategoryGrouplistVars">
         <posx>355</posx>
         <posy>281</posy>
