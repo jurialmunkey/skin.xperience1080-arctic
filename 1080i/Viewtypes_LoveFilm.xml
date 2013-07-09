@@ -7,6 +7,28 @@
             <visible>Control.IsVisible(519) + !Window.IsActive(movieinformation)</visible>
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
+            <control type="group">
+            	<posy>500</posy>
+            	<animation effect="fade" start="0" end="100" delay="400" time="350" reversible="false" condition="![Container(519).OnNext | Container(519).OnPrevious]">Conditional</animation>
+            	<control type="image">
+					<description>Left</description>
+					<posx>-8</posx>
+					<width>100</width>
+					<height>100</height>
+					<texture>buttons/options-left.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<colordiffuse>Mod_Tags_Dark</colordiffuse>
+				</control>
+				<control type="image">
+					<description>Left</description>
+					<posx>1828</posx>
+					<width>100</width>
+					<height>100</height>
+					<texture>buttons/options-right.png</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<colordiffuse>Mod_Tags_Dark</colordiffuse>
+				</control>
+            </control>
             <control type="wraplist" id="519">
 				<posx>0</posx>
 				<posy>160</posy>
