@@ -47,12 +47,7 @@
                             <width>580</width>
                             <height>491</height>
                             <texture>views/posterview/shadow-focus.png</texture>
-                            <animation type="Focus" condition="Container(507).OnNext | Container(507).OnPrevious">
-								<effect type="fade" start="0" end="100" time="350" />
-							</animation>
-							<animation type="Unfocus" condition="Container(507).OnNext | Container(507).OnPrevious">
-								<effect type="fade" start="100" end="0" time="250" />
-							</animation>
+
                         </control>
                         <control type="image">
                             <description>Back bit</description>
@@ -197,12 +192,12 @@
                     	<animation effect="Conditional" condition="true">
                             <effect type="zoom" start="110" end="110" time="0" center="auto" />
                         </animation>
-                        <!--<animation type="Focus">
-                            <effect type="zoom" start="110" end="120" time="350" tween="sine" easing="out" center="auto" />
+                        <animation type="Focus">
+                            <effect type="zoom" start="100" end="106" time="350" tween="sine" easing="out" center="192,280" />
                         </animation>
                         <animation type="Unfocus">
-                            <effect type="zoom" start="110" end="120" time="250" tween="sine" easing="out" center="auto" />
-                        </animation>-->
+                            <effect type="zoom" start="106" end="100" time="250" tween="sine" easing="out" center="192,280" />
+                        </animation>
                         <control type="image">
                             <description>Reflection</description>
                             <posx>0</posx>
@@ -220,12 +215,6 @@
                             <width>580</width>
                             <height>491</height>
                             <texture>views/posterview/shadow-focus.png</texture>
-                            <animation type="Focus" condition="Container(507).OnNext | Container(507).OnPrevious">
-								<effect type="fade" start="0" end="100" time="350" />
-							</animation>
-							<animation type="Unfocus" condition="Container(507).OnNext | Container(507).OnPrevious">
-								<effect type="fade" start="100" end="0" time="250" />
-							</animation>
                         </control>
                         <control type="image">
                             <description>Back bit</description>

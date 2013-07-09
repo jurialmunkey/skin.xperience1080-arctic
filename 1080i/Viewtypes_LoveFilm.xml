@@ -1,0 +1,149 @@
+<includes>
+<!-- =============== -->
+<!-- Lovefilm (519)      -->
+<!-- =============== -->
+    <include name="Viewtype-LoveFilm">
+        <control type="group">
+            <visible>Control.IsVisible(519) + !Window.IsActive(movieinformation)</visible>
+            <include>CommonViewAnimations</include>
+            <include>OptionsShutdownAnimation</include>
+            <control type="wraplist" id="519">
+				<posx>0</posx>
+				<posy>160</posy>
+				<width>1920</width>
+				<height>800</height>
+                <scrolltime tween="cubic" easing="out">500</scrolltime>
+                <orientation>horizontal</orientation>
+                <viewtype label="Lovefilm">list</viewtype>
+                <ondown>70</ondown>
+                <pagecontrol>70</pagecontrol>
+                <onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
+                <onup condition="Skin.HasSetting(KioskMode)">519</onup>
+                <onleft>519</onleft>
+                <onright>519</onright>
+                <preloaditems>2</preloaditems>
+                <focusposition>0</focusposition>
+                <itemlayout  width="1920">
+                	<control type="group">
+                        <control type="image">
+                        	<posx>50</posx>
+                        	<width>1820</width>
+                        	<height>754</height>
+                        	<texture border="70">arctic/common/banner-35.png</texture>
+                        	<colordiffuse>ffeeeeee</colordiffuse>
+                        </control>
+                        <control type="image">
+							<description>Landscape</description>
+							<posx>619</posx>
+							<posy>35</posy>
+							<width>1216</width>
+							<height>684</height>
+							<texture background="true" diffuse="arctic/banner/lovefilm.png">$VAR[ListInfoLandscapeVar]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="textbox">
+							<posx>100</posx>
+							<posy>40</posy>
+							<width>509</width>
+							<height>100</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mod-infotags</textcolor>
+							<font>Font-Alaska-S45-BL</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+						</control>
+						<control type="textbox">
+							<posx>100</posx>
+							<posy>150</posy>
+							<width>504</width>
+							<height>560</height>
+							<label>$INFO[ListItem.Plot]</label>
+							<textcolor>mod-infotags</textcolor>
+							<font>Font-Alaska-S25-NC</font>
+							<align>justify</align>
+							<scroll>false</scroll>
+						</control>
+					</control>
+                </itemlayout>
+                <focusedlayout width="1920">
+					<control type="group">
+                        <control type="image">
+                        	<posx>50</posx>
+                        	<width>1820</width>
+                        	<height>754</height>
+                        	<texture border="70">arctic/common/banner-35.png</texture>
+                        	<colordiffuse>ffeeeeee</colordiffuse>
+                        </control>
+                        <control type="image">
+							<description>Landscape</description>
+							<posx>619</posx>
+							<posy>35</posy>
+							<width>1216</width>
+							<height>684</height>
+							<texture background="true" diffuse="arctic/banner/lovefilm.png">$VAR[ListInfoLandscapeVar]</texture>
+							<aspectratio scalediffuse="false">scale</aspectratio>
+							<fadetime>200</fadetime>
+						</control>
+						<control type="textbox">
+							<posx>100</posx>
+							<posy>40</posy>
+							<width>509</width>
+							<height>100</height>
+							<label>$INFO[ListItem.Label]   [COLOR=ff00bb99]‡[/COLOR]</label>
+							<textcolor>mod-infotags</textcolor>
+							<font>Font-Alaska-S45-BL</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
+						</control>
+						<control type="textbox">
+							<posx>100</posx>
+							<posy>40</posy>
+							<width>509</width>
+							<height>100</height>
+							<label>$INFO[ListItem.Label]</label>
+							<textcolor>mod-infotags</textcolor>
+							<font>Font-Alaska-S45-BL</font>
+							<align>left</align>
+							<aligny>top</aligny>
+							<scroll>false</scroll>
+							<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
+						</control>
+						<control type="textbox">
+							<posx>100</posx>
+							<posy>150</posy>
+							<width>504</width>
+							<height>560</height>
+							<label>$INFO[ListItem.Plot]</label>
+							<textcolor>mod-infotags</textcolor>
+							<font>Font-Alaska-S25-NC</font>
+							<align>justify</align>
+							<scroll>false</scroll>
+						</control>
+					</control>
+                </focusedlayout>
+            </control>
+        </control>
+        <!--Scrollbar-->			
+		<control type="scrollbar" id="70">
+			<description>Scrollbar</description>
+			<width>1920</width>
+			<height>26</height>
+			<posy>26r</posy>
+			<orientation>horizontal</orientation>
+			<textureslidernib>arctic/common/slider-nf-h.png</textureslidernib>
+			<textureslidernibfocus>arctic/common/slider-fo-h.png</textureslidernibfocus>
+			<showonepage>true</showonepage>
+			<onup>519</onup>
+			<ondown condition="!Skin.HasSetting(KioskMode)">9010</ondown>
+			<ondown condition="Skin.HasSetting(KioskMode)">519</ondown>
+			<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.IsVisible(9772)">Conditional</animation>
+			<animation effect="fade" start="40" end="100" time="300" tween="sine" easing="inout" condition="Control.HasFocus(70)">Conditional</animation>
+			<animation effect="fade" start="100" end="40" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+			<visible>Control.IsVisible(519)</visible>
+		</control>
+    </include>    
+</includes>

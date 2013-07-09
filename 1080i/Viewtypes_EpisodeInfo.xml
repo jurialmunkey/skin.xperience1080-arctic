@@ -178,7 +178,7 @@
 							<posx>1025</posx>
 							<posy>34</posy>
 							<width>900</width>
-							<label>†  $INFO[ListItem.Premiered]</label>
+							<label>$INFO[ListItem.Premiered]</label>
 							<font>Font-Alaska-S25-BL</font>
 							<textcolor>Mod_Tags_Light</textcolor>
 							<scroll>false</scroll>
@@ -439,7 +439,7 @@
 										<posx>1025</posx>
 										<posy>34</posy>
 										<width>900</width>
-										<label>‡  $INFO[ListItem.Premiered]</label>
+										<label>[COLOR=ff00ddaa]‡[/COLOR]  $INFO[ListItem.Premiered]</label>
 										<font>Font-Alaska-S25-BL</font>
 										<textcolor>mod-infotags-alt2</textcolor>
 										<scroll>false</scroll>
@@ -451,7 +451,7 @@
 										<posx>1025</posx>
 										<posy>34</posy>
 										<width>900</width>
-										<label>†  $INFO[ListItem.Premiered]</label>
+										<label>$INFO[ListItem.Premiered]</label>
 										<font>Font-Alaska-S25-BL</font>
 										<textcolor>mod-infotags-alt2</textcolor>
 										<scroll>false</scroll>
