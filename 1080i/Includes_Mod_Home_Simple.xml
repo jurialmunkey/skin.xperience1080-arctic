@@ -426,7 +426,8 @@
 						<visible>!Skin.HasSetting(disable.games)</visible>
 					</control>
 					<control type="label">
-						<label>15016</label>
+						<label>$VAR[simple.custom.label]</label>
+						<label condition="IsEmpty(Skin.String(HomeProgramTile5.Path))">15016</label>
 						<include>Mod_HomeLabel</include>
 						<animation effect="fade" start="100" end="30" time="250" condition="Control.HasFocus(85) | Control.HasFocus(84) | !Container(525).HasFocus(6)">Conditional</animation>
 						<visible>!Skin.HasSetting(disable.games)</visible>

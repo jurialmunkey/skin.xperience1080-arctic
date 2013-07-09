@@ -98,6 +98,14 @@
                 <control type="group">
 					<posy>904</posy>
 					<posx>285r</posx>
+					<control type="image">
+						<description>Small weather</description>
+						<posx>-1000</posx>
+						<posy>-1000</posy>
+						<width>1</width>
+						<height>1</height>
+						<texture>weather/small/$INFO[Weather.FanartCode].png</texture>
+					</control>
 					<control type="label">
 						<description>Clock label</description>
 						<posx>13</posx>

@@ -9,7 +9,11 @@
 		<value condition="StringCompare(Skin.String(homescreen.style),simple) + !Control.HasFocus(85)">mod-infotags-d</value>
 		<value>Mod_Tags_Dark</value>
 	</variable>
-	
+	<variable name="simple.custom.label">
+		<value condition="!IsEmpty(Skin.String(HomeProgramTile5.Path)) + !IsEmpty(Skin.String(HomeProgramTile5.Label))">$INFO[Skin.String(HomeProgramTile5.Label)]</value>
+		<value condition="!IsEmpty(Skin.String(HomeProgramTile5.Path)) + IsEmpty(Skin.String(HomeProgramTile5.Label))">$LOCALIZE[20190]</value>
+		<value>$LOCALIZE[15016]</value>
+	</variable>
 	<variable name="simplehome.dark">
 		<value condition="StringCompare(Skin.String(homescreen.style),simple) + Window.IsVisible(home)">mod-infotags-d</value>
 		<value>Mod_Tags_Dark</value>
@@ -2709,13 +2713,17 @@
 			<icon>DefaultPicture.png</icon>
 		</item>
 		<item id="6">
-			<label>Games</label>
+			<label>Custom</label>
 			<visible>!Skin.HasSetting(disable.games) + StringCompare(Skin.String(homescreen.style),simple)</visible>
 			<property name="single">$INFO[Skin.String(HomeGamesSingleImage)]</property>
 			<property name="multi">$INFO[Skin.String(HomeGamesMultiImage)]</property>
-			<onclick condition="IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
-			<onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
-			<onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeProgramTile5.Path)) + IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeProgramTile5.Path)) + !IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
+			<onclick condition="IsEmpty(Skin.String(HomeProgramTile5.Path)) + Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
+			<onclick condition="!stringcompare(Skin.String(HomeProgramTile5.Type),4) + !stringcompare(Skin.String(HomeProgramTile5.Type),5) + !stringcompare(Skin.String(HomeProgramTile5.Type),6) + !stringcompare(Skin.String(HomeProgramTile5.Type),7)">RunAddon($INFO[Skin.String(HomeProgramTile5.Path)])</onclick>
+			<onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(HomeProgramTile5.Path)],return)</onclick>
+			<onclick condition="stringcompare(Skin.String(HomeProgramTile5.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(HomeProgramTile5.Path)],return)</onclick>
+			<onclick condition="[stringcompare(Skin.String(HomeProgramTile5.Type),6) | stringcompare(Skin.String(HomeProgramTile5.Type),7)]">$INFO[Skin.String(HomeProgramTile5.Path)]</onclick>
 			<icon>DefaultGames.png</icon>
 		</item>
 		<item id="7">

@@ -149,8 +149,20 @@
                     <include>SettingsDialogRadioButtonVars</include>
                     <selected>!Skin.HasSetting(disable.games)</selected>
                     <onclick>Skin.ToggleSetting(disable.games)</onclick>
-                    <label>$LOCALIZE[15016]</label>
+                    <label>$LOCALIZE[636]</label>
                     <visible>StringCompare(Skin.String(homescreen.style),simple)</visible>
+                </control>
+                <control type="button" id="2114">
+                    <width>1210</width>
+                    <include>SettingsDialogRadioButtonVars</include>
+                    <label>Edit Custom..</label>
+                    <visible>StringCompare(Skin.String(homescreen.style),simple) + !Skin.HasSetting(disable.games)</visible>
+                    <onclick>Skin.SetBool(HomeProgramTile5)</onclick>
+					<onclick condition="IsEmpty(Skin.String(HomeProgramTile5.Type))">Skin.SetString(HomeProgramTile5.Type,0)</onclick>
+					<onclick condition="IsEmpty(Skin.String(HomeProgramTile5.TypeName))">Skin.SetString(HomeProgramTile5.TypeName,$LOCALIZE[41145])</onclick>
+					<onclick>SetProperty(SingleDialog,custom,3003)</onclick>
+					<onclick>SetProperty(Dialog,$LOCALIZE[41136],skinsettings)</onclick>
+					<onclick>ActivateWindow(3003)</onclick>
                 </control>
             </control>
             

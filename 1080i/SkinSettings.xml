@@ -1013,7 +1013,7 @@
                     <control type="button" id="5013">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
-                        <label>$LOCALIZE[15016]</label>
+                        <label>$LOCALIZE[20190]</label>
                         <onclick>ClearProperty(CustomDialogType)</onclick>
                         <onclick>ClearProperty(CustomDialog)</onclick>
                         <onclick>SetProperty(Dialog,$LOCALIZE[15016])</onclick>
