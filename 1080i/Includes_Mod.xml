@@ -1362,6 +1362,24 @@
 			<onclick>ActivateWindow(programs)</onclick>
 			<visible>Container(525).HasFocus(7)</visible>
 		</item>
+		<item id="5">
+			<description>Games</description>
+			<property name="Poster">windows/home/icons/games.png</property>
+			<label>$LOCALIZE[15016]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick condition="IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
+			<onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
+			<onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
+			<visible>Container(525).HasFocus(7)</visible>
+		</item>
+		<item id="6">
+			<description>Pictures</description>
+			<property name="Poster">windows/home/icons/pictures.png</property>
+			<label>$LOCALIZE[1]</label>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>ActivateWindow(pictures)</onclick>
+			<visible>Container(525).HasFocus(7)</visible>
+		</item>
 		<item id="2">
 			<description>Addons</description>
 			<property name="Poster">windows/home/icons/addons.png</property>
@@ -1386,24 +1404,6 @@
 			<onclick>SetFocus(525)</onclick>
 			<onclick>ActivateWindow(Favourites)</onclick>
 			<visible>true</visible>
-			<visible>Container(525).HasFocus(7)</visible>
-		</item>
-		<item id="5">
-			<description>Games</description>
-			<property name="Poster">windows/home/icons/games.png</property>
-			<label>$LOCALIZE[15016]</label>
-			<onclick>SetFocus(525)</onclick>
-			<onclick condition="IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,plugin://plugin.program.advanced.launcher,return)</onclick>
-			<onclick condition="!IsEmpty(Skin.String(GameTile.Path)) + !Skin.HasSetting(UseRCB)">ActivateWindow(10001,$INFO[Skin.String(GameTile.Path)],return)</onclick>
-			<onclick condition="Skin.HasSetting(UseRCB)">RunScript(script.games.rom.collection.browser)</onclick>
-			<visible>Container(525).HasFocus(7)</visible>
-		</item>
-		<item id="6">
-			<description>Pictures</description>
-			<property name="Poster">windows/home/icons/pictures.png</property>
-			<label>$LOCALIZE[1]</label>
-			<onclick>SetFocus(525)</onclick>
-			<onclick>ActivateWindow(pictures)</onclick>
 			<visible>Container(525).HasFocus(7)</visible>
 		</item>
 		<item id="7">

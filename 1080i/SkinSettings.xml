@@ -329,7 +329,7 @@
                         <label2>$INFO[Skin.String(pictures.slideshowpath)]</label2>
                         <onup>1007</onup>
 						<ondown>1001</ondown>
-						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.programs)</visible>
+						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.programs) + stringcompare(Skin.String(defaultpanel.widget.type),$LOCALIZE[10511])</visible>
                     </control>
                     <control type="button" id="2010">
                         <width>1210</width>
@@ -339,7 +339,7 @@
                         <label2>$INFO[Skin.String(pictures.slideshowpath2)]</label2>
                         <onup>1007</onup>
 						<ondown>1001</ondown>
-						<visible>StringCompare(Skin.String(homescreen.style),panel) + !Skin.HasSetting(disable.pictures)</visible>
+						<visible>StringCompare(Skin.String(homescreen.style),panel) + [!Skin.HasSetting(disable.pictures) | stringcompare(Skin.String(defaultpanel.widget.type),$LOCALIZE[129])]</visible>
                     </control>
 					
                     <control type="radiobutton" id="2004">
