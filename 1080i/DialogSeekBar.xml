@@ -51,7 +51,6 @@
                     <texture border="35">views/newgloss/whitepanel-15.png</texture>
                     <colordiffuse>dd000000</colordiffuse>
 					<visible>[[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)]</visible>
-
                 </control>
                 <control type="group">
                     <animation effect="slide" start="0,0" end="0,213" time="300" tween="cubic" easing="inout" condition="[Player.ShowInfo | Window.IsVisible(fullscreeninfo)] + !Window.IsActive(videoosd)">Conditional</animation>
@@ -230,7 +229,7 @@
                                 <visible>!VideoPlayer.Content(LiveTV) + Player.Paused</visible>
                             </control>
                             <control type="grouplist">
-                                <posx>360</posx>
+                                <posx>355</posx>
                                 <posy>779</posy>
                                 <width>1300</width>
                                 <height>100</height>
@@ -240,7 +239,7 @@
                                 <usecontrolcoords>true</usecontrolcoords>
                                 <control type="label">
                                     <posx>0</posx>
-                                    <posy>19</posy>
+                                    <posy>15</posy>
                                     <width min="0" max="400">auto</width>
                                     <height>100</height>
                                     <label>[B]$INFO[VideoPlayer.ChannelNumber][/B]</label>

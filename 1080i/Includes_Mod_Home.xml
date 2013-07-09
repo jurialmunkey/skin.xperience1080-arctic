@@ -195,7 +195,7 @@
 					</control>
 					<control type="image">
 						<width>30</width>
-						<visible>!Skin.HasSetting(disable.pvr)</visible>
+						<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="image">
 						<width>19</width>
@@ -204,7 +204,7 @@
 						<include>visiblehidefadeinfo</include>
 						<colordiffuse>white</colordiffuse>
 						<animation effect="fade" start="100" end="0" time="250" condition="!Control.HasFocus(525) | !Container(525).HasFocus(4)">Conditional</animation>
-						<visible>!Skin.HasSetting(disable.pvr)</visible>
+						<visible>!Skin.HasSetting(disable.pvr) + System.GetBool(pvrmanager.enabled)</visible>
 					</control>
 					<control type="label">
 						<label>41220</label>

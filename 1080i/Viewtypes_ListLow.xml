@@ -636,18 +636,19 @@
 						<posy>-65</posy>
 						<width>323</width>
 						<height>485</height>
+						<texture diffuse="arctic/poster/lowinfo.png" background="true">windows/common/black.png</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<fadetime>200</fadetime>
+					</control>
+					<control type="image">
+						<posx>35</posx>
+						<posy>-65</posy>
+						<width>323</width>
+						<height>485</height>
 						<texture diffuse="arctic/poster/lowinfo.png" background="true">$VAR[ListInfoPosterVar]</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<fadetime>200</fadetime>
 					</control>
-					<!--<control type="image">
-						<posx>258</posx>
-						<posy>-65</posy>
-						<width>100</width>
-						<height>100</height>
-						<aspect>keepaspect</aspect>
-						<include>overlay.visibility</include>
-					</control>-->
 					<control type="group">
 						<posx>278</posx>
 						<posy>340</posy>

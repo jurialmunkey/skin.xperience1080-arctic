@@ -273,7 +273,7 @@
 								<visible>Skin.HasSetting(covers.showglass)</visible>
 							</control>
 							<control type="group">
-								<posx>1560</posx>
+								<posx>1561</posx>
 								<posy>35</posy>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]] | Container.Content(movies)</visible>
 								<control type="image">

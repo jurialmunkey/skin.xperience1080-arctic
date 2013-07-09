@@ -28,6 +28,7 @@
     <include file="Viewtypes_PosterClassicInfo.xml" />
     <include file="Viewtypes_PosterInfo.xml" />
     <include file="Viewtypes_EpisodeInfo.xml" />
+    <include file="viewtypes_LoveFilm.xml" />
 
     <include file="Viewtypes_MusicList.xml" />
     <include file="Viewtypes_MusicPanel.xml" />
@@ -56,6 +57,7 @@
 		<include>Viewtype-LandscapeCarousel</include>   <!--id(513) -->
 		<include>Viewtype-ClassicPosterInfo</include>   <!--id(514) -->
 		<include>Viewtype-EpisodeInfo</include>		    <!--id(516) -->
+        <include>Viewtype-LoveFilm</include>            <!--id(519)  -->
         <include>Viewtype-Banner</include>              <!--id(60)  -->
         <include condition="Skin.HasSetting(NextAired.Enabled)">NextAiredInfo</include>
     </include>
