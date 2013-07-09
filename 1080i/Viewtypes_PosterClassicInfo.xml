@@ -86,7 +86,7 @@
                             <texture border="25">arctic/common/glass-ring.png</texture>
                             <visible>Skin.HasSetting(covers.showglass)</visible>
                         </control>
-                        <control type="group">
+                        <!--<control type="group">
 							<posx>262</posx>
 							<posy>10</posy>
 							<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
@@ -133,11 +133,11 @@
 								<align>center</align>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 							</control>
-						</control>
+						</control>-->
 						<control type="group">
 							<posx>262</posx>
 							<posy>491</posy>
-							<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
@@ -272,7 +272,7 @@
                             <texture border="25">arctic/common/glass-ring.png</texture>
                             <visible>Skin.HasSetting(covers.showglass)</visible>
                         </control>
-                        <control type="group">
+                        <!--<control type="group">
 							<posx>262</posx>
 							<posy>10</posy>
 							<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
@@ -319,11 +319,11 @@
 								<align>center</align>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 							</control>
-						</control>
+						</control>-->
 						<control type="group">
 							<posx>262</posx>
 							<posy>491</posy>
-							<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>

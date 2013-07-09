@@ -321,7 +321,7 @@
 								<control type="group">
 									<posx>257</posx>
 									<posy>400</posy>
-									<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+									<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -342,7 +342,7 @@
 										<align>right</align>
 									</control>
 								</control>
-								<control type="group">
+								<!--<control type="group">
 									<posx>267</posx>
 									<posy>70</posy>
 									<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
@@ -389,7 +389,7 @@
 										<align>center</align>
 										<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 									</control>
-								</control>
+								</control>-->
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>
@@ -575,7 +575,7 @@
 								<control type="group">
 									<posx>257</posx>
 									<posy>400</posy>
-									<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+									<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -596,7 +596,7 @@
 										<align>right</align>
 									</control>
 								</control>
-								<control type="group">
+								<!--<control type="group">
 									<posx>267</posx>
 									<posy>70</posy>
 									<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
@@ -643,7 +643,7 @@
 										<align>center</align>
 										<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 									</control>
-								</control>
+								</control>-->
 								<control type="image">
 									<description>Border</description>
 									<posx>50</posx>
@@ -746,7 +746,7 @@
 								<control type="group">
 									<posx>257</posx>
 									<posy>400</posy>
-									<visible>Container.Content(movies) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+									<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 									<control type="image">
 										<posx>0</posx>
 										<posy>0</posy>
@@ -767,7 +767,7 @@
 										<align>right</align>
 									</control>
 								</control>
-								<control type="group">
+								<!--<control type="group">
 									<posx>267</posx>
 									<posy>70</posy>
 									<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
@@ -814,7 +814,7 @@
 										<align>center</align>
 										<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 									</control>
-								</control>
+								</control>-->
                                 <control type="image">
                                     <description>Border</description>
                                     <posx>50</posx>
