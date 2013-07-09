@@ -189,6 +189,7 @@
 								<texture background="true" fallback="osd/fullscreen/cd.png">$INFO[Player.FolderPath,,cdart.png]</texture>
 								<aspectratio align="center">keep</aspectratio>
 								<animation effect="rotate" center="auto" reversible="false" start="360" end="0" time="2500" loop="true" condition="Player.Playing">Conditional</animation>
+								<visible>Skin.HasSetting(CDArt.Enabled)</visible>
 							</control>
 							<control type="image">
 								<description>Shadow focus</description>
