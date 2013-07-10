@@ -51,7 +51,7 @@
         <!-- DIM FANART -->
         <control type="image">
             <include>FullscreenDimensions</include>
-            <texture>windows/common/white.png</texture>
+            <texture>arctic/common/nofanart.png</texture>
             <colordiffuse>Mod_Overlay_Dimfanart</colordiffuse>
             <include>visiblehidefadeinfo</include>
             <visible>![Window.IsVisible(home) + StringCompare(Skin.String(homescreen.style),simple)]</visible>
@@ -122,6 +122,14 @@
                 <effect type="slide" end="0,-75" time="700" delay="300" />
             </animation>
 		</control>
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture>arctic/common/nofanart.png</texture>
+			<colordiffuse>Mod_EmptyBG</colordiffuse>
+			<visible>Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+			<animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
+		</control>
+
     </include>
     
     
@@ -201,13 +209,13 @@
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + IsEmpty(Container(20).ListItem.property(single)) + IsEmpty(Container(20).ListItem.property(multi)) + !IsEmpty(Skin.String(GlobalBackdropSingle)) + !IsEmpty(Skin.String(GlobalBackdropSingle))">$INFO[Skin.String(GlobalBackdropSingle)]</value>
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + !IsEmpty(Container(20).ListItem.property(multi))">$INFO[Container(20).ListItem.property(multi)]</value>
     	<value condition="StringCompare(Skin.String(homescreen.style),metro) + IsEmpty(Container(20).ListItem.property(multi)) + !IsEmpty(Container(20).ListItem.property(single))">$INFO[Container(20).ListItem.property(single)]</value>
-    	<value>windows/common/white.png</value>
+    	<value>arctic/common/nofanart.png</value>
     </variable>
 
     <include name="CommonContent">
 		<control type="image">
 			<include>FullscreenDimensions</include>
-			<texture>windows/common/white.png</texture>
+			<texture>arctic/common/nofanart.png</texture>
 			<colordiffuse>Mod_EmptyBG</colordiffuse>
 		</control>
 		<control type="multiimage">
@@ -219,7 +227,7 @@
 			<loop>yes</loop>
 			<imagepath background="true">$VAR[Mod_BackgroundSingle]</imagepath>
 			<include>Animation_FanartFade</include>
-			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(sets)] + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(sets)] + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
 		</control>
     </include>
     
