@@ -228,6 +228,64 @@
                         <texturefocus border="70,2,2,2">dialogs/options/buttons/custom-back-fo.png</texturefocus>
                         <texturenofocus border="70,2,2,2">dialogs/options/buttons/custom-back-nf.png</texturenofocus>
                     </control>
+                    <!-- WRAP AND FIXED OPTIONS -->
+                    <!-- Landscape -->
+                    <control type="radiobutton" id="151">
+                        <include>optionsbuttonsdimensions</include>
+                        <selected>Skin.HasSetting(viewtype.landscape.wrap)</selected>
+                        <onclick>Skin.ToggleSetting(viewtype.landscape.wrap)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <label>Wrap list</label>
+                        <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                        <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                        <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                        <radioposx>-19</radioposx>
+                        <visible>Control.IsVisible(507)</visible>
+                    </control>
+                    <!-- Classic Poster -->
+                    <control type="radiobutton" id="152">
+                        <include>optionsbuttonsdimensions</include>
+                        <selected>Skin.HasSetting(viewtype.classicposter.wrap)</selected>
+                        <onclick>Skin.ToggleSetting(viewtype.classicposter.wrap)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <label>Wrap list</label>
+                        <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                        <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                        <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                        <radioposx>-19</radioposx>
+                        <visible>Control.IsVisible(506)</visible>
+                    </control>
+                    <!-- Classic Info -->
+                    <control type="radiobutton" id="153">
+                        <include>optionsbuttonsdimensions</include>
+                        <selected>Skin.HasSetting(viewtype.classicposterinfo.wrap)</selected>
+                        <onclick>Skin.ToggleSetting(viewtype.classicposterinfo.wrap)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <label>Wrap list</label>
+                        <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                        <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                        <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                        <radioposx>-19</radioposx>
+                        <visible>Control.IsVisible(514)</visible>
+                    </control>
+                    <!-- Poster Info -->
+                    <control type="radiobutton" id="154">
+                        <include>optionsbuttonsdimensions</include>
+                        <selected>Skin.HasSetting(viewtype.posterinfo.wrap)</selected>
+                        <onclick>Skin.ToggleSetting(viewtype.posterinfo.wrap)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <label>Wrap list</label>
+                        <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                        <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                        <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                        <radioposx>-19</radioposx>
+                        <visible>Control.IsVisible(56)</visible>
+                    </control>
+                    
+                    
+                    
+                    
+                    
                     <control type="radiobutton" id="102">
                         <include>optionsbuttonsdimensions</include>
                         <label>Show Discart</label>
@@ -386,6 +444,9 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(507)</visible>
                     </control>
+                    
+                    
+                    
                     
                     <!-- Lower Info Toggles -->
                     <control type="radiobutton" id="108">
