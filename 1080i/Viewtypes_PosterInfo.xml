@@ -106,7 +106,7 @@
 		<focusedlayout width="1344" condition="!Skin.HasSetting(old.posterinfo) + !Container.Content(episodes)">
 			<control type="group">
 				<animation effect="fade" end="0" start="100" time="0" delay="0" condition="[Container(56).OnNext | Container(56).OnPrevious]">UnFocus</animation>
-				<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>						
+				<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1) + !Skin.HasSetting(viewtype.posterinfo.wrap)">Conditional</animation>						
 				<posx>350</posx>
 				<posy>152</posy>
 				<!-- REFLECTION -->
@@ -197,7 +197,7 @@
 				<animation type="Unfocus" condition="Container(56).OnPrevious">
 					<effect type="zoom" start="100" end="75" time="100" tween="sine" easing="out" center="190,340" />
 				</animation>	
-				<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1)">Conditional</animation>						
+				<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1) + !Skin.HasSetting(viewtype.posterinfo.wrap)">Conditional</animation>						
 
 				<control type="image">
 					<description>Reflection</description>
