@@ -50,16 +50,16 @@
 							<colordiffuse>ffcccccc</colordiffuse>
 						</control>
 						<control type="group">
-							<posx>182</posx>
-							<posy>300</posy>
+							<posx>5</posx>
+							<posy>5</posy>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>60</width>
 								<height>60</height>
-								<texture>$VAR[arctic.watched.bottom]</texture>
-								<aspectratio aligny="bottom" align="right">keep</aspectratio>
+								<texture>$VAR[arctic.watched]</texture>
+								<aspectratio aligny="top" align="left">keep</aspectratio>
 							</control>
 						</control>
                         <control type="image">
@@ -233,16 +233,16 @@
 								<visible>Skin.HasSetting(covers.showglass)</visible>
 							</control>
 							<control type="group">
-								<posx>182</posx>
-								<posy>300</posy>
+								<posx>5</posx>
+								<posy>5</posy>
 								<control type="image">
 									<description>Panel</description>
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>60</width>
 									<height>60</height>
-									<texture>$VAR[arctic.watched.bottom]</texture>
-									<aspectratio aligny="bottom" align="right">keep</aspectratio>
+									<texture>$VAR[arctic.watched]</texture>
+									<aspectratio aligny="top" align="left">keep</aspectratio>
 								</control>
 							</control>
 							<control type="image">

@@ -739,19 +739,19 @@
                         <label>Show info tags on info screens</label>
                         <visible>Skin.HasSetting(hide.infotags)</visible>
                     </control>
-                    <control type="radiobutton" id="3004">
-                        <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>!Skin.HasSetting(info.hideflags)</selected>
-                        <onclick>Skin.ToggleSetting(info.hideflags)</onclick>
-                        <label>Show language flags in movie info</label>
-                    </control>
                     <control type="button" id="3005">
                         <width>1210</width>
                         <include>SettingsCategoryDefaultButtonVars</include>
                         <label>$LOCALIZE[41192]</label>
                         <label2 fallback="US">[COLOR=ff111111]$VAR[MovieMPAALangLabel][/COLOR]</label2>
                         <onclick>ActivateWindow(3006)</onclick>
+                    </control>
+                    <control type="radiobutton" id="3004">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(info.hideflags)</selected>
+                        <onclick>Skin.ToggleSetting(info.hideflags)</onclick>
+                        <label>Show language flags in movie info</label>
                     </control>
                     <control type="radiobutton" id="3006">
                         <width>1210</width>
@@ -767,12 +767,11 @@
                         <onclick>Skin.ToggleSetting(PlayTrailer.Minimized)</onclick>
                         <label>$LOCALIZE[41203]</label>
                     </control>
-                    <control type="radiobutton" id="3008">
+                    <control type="button" id="3008">
                         <width>1210</width>
-                        <include>SettingsCategoryRadioButtonVars</include>
-                        <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
-                        <onclick>Skin.ToggleSetting(PreferLandscapeArt)</onclick>
-                        <label>Prefer landscape art when available</label>
+                        <include>SettingsCategoryDefaultButtonVars</include>
+                        <label>Watched overlay settings</label>
+                        <onclick>ActivateWindow(3052)</onclick>
                     </control>
                     
                 </control>
