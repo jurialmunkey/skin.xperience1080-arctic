@@ -98,7 +98,7 @@
 							<control type="group">
 								<posx>758</posx>
 								<posy>394</posy>
-								<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+								<visible>[Container.Content(movies) | Container.Content(episodes) | !SubString(ListItem.Overlay,UnWatched.png)]</visible>
 								<control type="image">
 									<posx>0</posx>
 									<posy>0</posy>
@@ -212,7 +212,7 @@
 							<control type="group">
 								<posx>758</posx>
 								<posy>394</posy>
-								<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+								<visible>[Container.Content(movies) | Container.Content(episodes) | !SubString(ListItem.Overlay,UnWatched.png)]</visible>
 								<control type="image">
 									<description>Panel</description>
 									<posx>0</posx>

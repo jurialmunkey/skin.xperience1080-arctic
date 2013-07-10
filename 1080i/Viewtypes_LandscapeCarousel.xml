@@ -49,7 +49,7 @@
 							<posx>758</posx>
 							<posy>394</posy>
 							<animation effect="zoom" start="100" end="50" center="10,10" condition="true">Conditional</animation>
-							<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+							<visible>[Container.Content(movies) | Container.Content(episodes) | !SubString(ListItem.Overlay,UnWatched.png)]</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
@@ -149,7 +149,7 @@
                         <control type="group">
 							<posx>758</posx>
 							<posy>394</posy>
-							<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
+							<visible>[Container.Content(movies) | Container.Content(episodes) | !SubString(ListItem.Overlay,UnWatched.png)]</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
