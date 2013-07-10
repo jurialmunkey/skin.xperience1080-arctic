@@ -9,6 +9,193 @@
 		<value condition="Container.Content(tvshows)">$LOCALIZE[20351]</value>
 		<value>$LOCALIZE[42131]</value>
 	</variable>
+	<include name="Viewtype-LowList-Content">
+		<width>1000</width>
+		<height>275</height>
+		<posx>359</posx>
+		<posy>145</posy>
+		<scrolltime tween="cubic" easing="out">350</scrolltime>
+		<orientation>vertical</orientation>
+		<viewtype label="Low List">list</viewtype>
+		<onleft>70</onleft>
+		<onright>72</onright>
+		<onup>511</onup>
+		<ondown>511</ondown>
+		<focusposition>2</focusposition>
+		<movement>2</movement>
+		<preloaditems>2</preloaditems>
+		<pagecontrol>70</pagecontrol>
+		<itemlayout height="55">
+			<control type="image">
+				<posx>0</posx>
+				<posy>50</posy>
+				<width>905</width>
+				<height>60</height>
+				<texture background="true" border="30">views/list/other/separator.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="group">
+				<posx>12</posx>
+				<posy>12</posy>
+				<control type="image">
+					<posx>-15</posx>
+					<posy>-24</posy>
+					<width>70</width>
+					<height>70</height>
+					<texture background="true">views/list/other/star_nofo.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="label">                        
+					<posx>50</posx>
+					<posy>0</posy>
+					<width>500</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font-Alaska-S25-BL</font>
+					<textcolor>77eeeeee</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+				</control>
+				<control type="label">                        
+					<posx>825</posx>
+					<posy>0</posy>
+					<width>500</width>
+					<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+					<font>Font-Condensed-S20-B</font>
+					<textcolor>77eeeeee</textcolor>
+					<scroll>false</scroll>
+					<align>right</align>
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+					<animation effect="slide" end="-60" condition="!IsEmpty(ListItem.VideoResolution)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>784</posx>
+					<posy>0</posy>
+					<width>42</width>
+					<height>28</height>
+					<aspect>keepaspect</aspect>
+					<texture>$VAR[LowListHDSDFlag]</texture>
+					<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					<colordiffuse>cc777777</colordiffuse>
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
+					<description>Watched/unwatched overlay</description>
+					<posx>808</posx>
+					<posy>-36</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspect>keepaspect</aspect>
+					<colordiffuse>7fffffff</colordiffuse>
+					<texture>$VAR[DefaultListOverlay]</texture>
+				</control>
+				<control type="image">
+					<description>Watched/unwatched overlay</description>
+					<posx>808</posx>
+					<posy>-36</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspect>keepaspect</aspect>
+					<include>overlay.diffuse</include>
+					<texture>$VAR[DefaultListOverlay]</texture>
+				</control>
+			</control>
+		</itemlayout>
+		<focusedlayout height="55">
+			
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>905</width>
+				<height>53</height>
+				<texture background="true">windows/common/white.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>dd1e1e1e</colordiffuse>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>50</posy>
+				<width>905</width>
+				<height>60</height>
+				<texture background="true" border="30">views/list/other/separator.png</texture>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="group">
+				<posx>12</posx>
+				<posy>12</posy>
+				<control type="image">
+					<posx>-15</posx>
+					<posy>-24</posy>
+					<width>70</width>
+					<height>70</height>
+					<texture background="true">views/list/other/star_fo.png</texture>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+				</control>
+				<control type="label">                        
+					<posx>50</posx>
+					<posy>0</posy>
+					<width>700</width>
+					<label>$INFO[ListItem.Label]</label>
+					<font>Font-Alaska-S25-BL</font>
+					<textcolor>FFffffff</textcolor>
+					<scroll>false</scroll>
+					<align>left</align>
+				</control>
+				<control type="label">                        
+					<posx>825</posx>
+					<posy>0</posy>
+					<width>700</width>
+					<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+					<font>Font-Condensed-S20-B</font>
+					<textcolor>ffffffff</textcolor>
+					<scroll>false</scroll>
+					<align>right</align>
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+					<animation effect="slide" end="-60" condition="!IsEmpty(ListItem.VideoResolution)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>784</posx>
+					<posy>0</posy>
+					<width>42</width>
+					<height>28</height>
+					<aspect>keepaspect</aspect>
+					<texture>$VAR[LowListHDSDFlag]</texture>
+					<visible>!IsEmpty(ListItem.VideoResolution)</visible>
+					<colordiffuse>cceeeeee</colordiffuse>
+					<visible>Container.Content(movies) | Container.Content(episodes)</visible>
+				</control>
+				<control type="image">
+					<description>Watched/unwatched overlay</description>
+					<posx>808</posx>
+					<posy>-36</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspect>keepaspect</aspect>
+					<colordiffuse>AFFFFFFF</colordiffuse>
+					<texture>$VAR[DefaultListOverlay]</texture>
+				</control>
+				<control type="image">
+					<description>Watched/unwatched overlay</description>
+					<posx>808</posx>
+					<posy>-36</posy>
+					<width>100</width>
+					<height>100</height>
+					<aspect>keepaspect</aspect>
+					<include>overlay.diffuse</include>
+					<texture>$VAR[DefaultListOverlay]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype-LowList-Wrap">
+		<control type="wraplist" id="511">
+			<include>Viewtype-LowList-Content</include>
+		</control>    
+	</include>
+	<include name="Viewtype-LowList-Fixed">
+		<control type="fixedlist" id="511">
+			<include>Viewtype-LowList-Content</include>
+		</control>    
+	</include>
     <include name="Viewtype-LowList">    
         <control type="group">
             <include>FullscreenDimensions</include>
@@ -185,185 +372,9 @@
                         <texture border="35">arctic/common/panel.png</texture>
                     </control>
                 </control>        
-
                 <!-- LIST ITEMS -->
-                <control type="fixedlist" id="511">
-                    <width>1000</width>
-                    <height>275</height>
-                    <posx>359</posx>
-                    <posy>145</posy>
-                    <scrolltime tween="cubic" easing="out">350</scrolltime>
-                    <orientation>vertical</orientation>
-                    <viewtype label="Low List">list</viewtype>
-                    <onleft>70</onleft>
-                    <onright>72</onright>
-                    <onup>511</onup>
-                    <ondown>511</ondown>
-                    <focusposition>2</focusposition>
-                    <movement>2</movement>
-                    <preloaditems>2</preloaditems>
-                    <pagecontrol>70</pagecontrol>
-                    <itemlayout height="55">
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>50</posy>
-                            <width>905</width>
-                            <height>60</height>
-                            <texture background="true" border="30">views/list/other/separator.png</texture>
-                            <aspectratio>stretch</aspectratio>
-                        </control>
-                        <control type="group">
-                            <posx>12</posx>
-                            <posy>12</posy>
-                            <control type="image">
-                                <posx>-15</posx>
-                                <posy>-24</posy>
-                                <width>70</width>
-                                <height>70</height>
-                                <texture background="true">views/list/other/star_nofo.png</texture>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                            </control>
-                            <control type="label">                        
-                                <posx>50</posx>
-                                <posy>0</posy>
-                                <width>500</width>
-                                <label>$INFO[ListItem.Label]</label>
-                                <font>Font-Alaska-S25-BL</font>
-                                <textcolor>77eeeeee</textcolor>
-                                <scroll>false</scroll>
-                                <align>left</align>
-                            </control>
-                            <control type="label">                        
-                                <posx>825</posx>
-                                <posy>0</posy>
-                                <width>500</width>
-                                <label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                                <font>Font-Condensed-S20-B</font>
-                                <textcolor>77eeeeee</textcolor>
-                                <scroll>false</scroll>
-                                <align>right</align>
-                                <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-								<animation effect="slide" end="-60" condition="!IsEmpty(ListItem.VideoResolution)">Conditional</animation>
-                            </control>
-                            <control type="image">
-								<posx>784</posx>
-                                <posy>0</posy>
-								<width>42</width>
-								<height>28</height>
-								<aspect>keepaspect</aspect>
-								<texture>$VAR[LowListHDSDFlag]</texture>
-								<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-								<colordiffuse>cc777777</colordiffuse>
-								<visible>Container.Content(movies) | Container.Content(episodes)</visible>
-							</control>
-                            <control type="image">
-                                <description>Watched/unwatched overlay</description>
-                                <posx>808</posx>
-                                <posy>-36</posy>
-                                <width>100</width>
-                                <height>100</height>
-                                <aspect>keepaspect</aspect>
-                                <colordiffuse>7fffffff</colordiffuse>
-                                <texture>$VAR[DefaultListOverlay]</texture>
-                            </control>
-                            <control type="image">
-                                <description>Watched/unwatched overlay</description>
-                                <posx>808</posx>
-                                <posy>-36</posy>
-                                <width>100</width>
-                                <height>100</height>
-                                <aspect>keepaspect</aspect>
-                                <include>overlay.diffuse</include>
-                                <texture>$VAR[DefaultListOverlay]</texture>
-                            </control>
-                        </control>
-                    </itemlayout>
-                    <focusedlayout height="55">
-                        
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>905</width>
-                            <height>53</height>
-                            <texture background="true">windows/common/white.png</texture>
-                            <aspectratio>stretch</aspectratio>
-                            <colordiffuse>dd1e1e1e</colordiffuse>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>50</posy>
-                            <width>905</width>
-                            <height>60</height>
-                            <texture background="true" border="30">views/list/other/separator.png</texture>
-                            <aspectratio>stretch</aspectratio>
-                        </control>
-                        <control type="group">
-                            <posx>12</posx>
-                            <posy>12</posy>
-                            <control type="image">
-                                <posx>-15</posx>
-                                <posy>-24</posy>
-                                <width>70</width>
-                                <height>70</height>
-                                <texture background="true">views/list/other/star_fo.png</texture>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                            </control>
-                            <control type="label">                        
-                                <posx>50</posx>
-                                <posy>0</posy>
-                                <width>700</width>
-                                <label>$INFO[ListItem.Label]</label>
-                                <font>Font-Alaska-S25-BL</font>
-                                <textcolor>FFffffff</textcolor>
-                                <scroll>false</scroll>
-                                <align>left</align>
-                            </control>
-                            <control type="label">                        
-                                <posx>825</posx>
-                                <posy>0</posy>
-                                <width>700</width>
-                                <label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
-                                <font>Font-Condensed-S20-B</font>
-                                <textcolor>ffffffff</textcolor>
-                                <scroll>false</scroll>
-                                <align>right</align>
-                                <visible>Container.Content(movies) | Container.Content(episodes)</visible>
-                                <animation effect="slide" end="-60" condition="!IsEmpty(ListItem.VideoResolution)">Conditional</animation>
-                            </control>
-                            <control type="image">
-								<posx>784</posx>
-                                <posy>0</posy>
-								<width>42</width>
-								<height>28</height>
-								<aspect>keepaspect</aspect>
-								<texture>$VAR[LowListHDSDFlag]</texture>
-								<visible>!IsEmpty(ListItem.VideoResolution)</visible>
-								<colordiffuse>cceeeeee</colordiffuse>
-								<visible>Container.Content(movies) | Container.Content(episodes)</visible>
-							</control>
-                            <control type="image">
-                                <description>Watched/unwatched overlay</description>
-                                <posx>808</posx>
-                                <posy>-36</posy>
-                                <width>100</width>
-                                <height>100</height>
-                                <aspect>keepaspect</aspect>
-                                <colordiffuse>AFFFFFFF</colordiffuse>
-                                <texture>$VAR[DefaultListOverlay]</texture>
-                            </control>
-                            <control type="image">
-                                <description>Watched/unwatched overlay</description>
-                                <posx>808</posx>
-                                <posy>-36</posy>
-                                <width>100</width>
-                                <height>100</height>
-                                <aspect>keepaspect</aspect>
-                                <include>overlay.diffuse</include>
-                                <texture>$VAR[DefaultListOverlay]</texture>
-                            </control>
-                        </control>
-                    </focusedlayout>
-                </control>                
+				<include condition="!Skin.HasSetting(viewtype.lowlist.wrap)">Viewtype-LowList-Fixed</include>
+				<include condition="Skin.HasSetting(viewtype.lowlist.wrap)">Viewtype-LowList-Wrap</include>
                 <!-- INFO SIDE -->
                 <control type="group">
                     <posy>114</posy>
