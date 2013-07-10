@@ -129,7 +129,6 @@
 			<visible>Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
 			<animation effect="fade" start="100" end="50" condition="true">Conditional</animation>
 		</control>
-
     </include>
     
     
@@ -266,6 +265,8 @@
             <fadetime>500</fadetime>
             <include>Animation_FanartFade</include>
             <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Window.IsActive(favourites)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
         </control>
         <control type="multiimage">
             <aspectratio>scale</aspectratio>
@@ -276,8 +277,8 @@
             <loop>yes</loop>
             <include>Animation_FanartFade</include>
             <imagepath background="true">$VAR[extrafanart.path]</imagepath>
-            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
-            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
+            <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(Fanart.Animate)">Conditional</animation>
             <visible>!Skin.HasSetting(HideFanart) + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo] + !Window.IsActive(favourites) + [[Skin.HasSetting(tvshows.use.extrafanart) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(movies.use.extrafanart) + Container.Content(movies)] | [Skin.HasSetting(music.use.extrafanart) + [Container.Content(albums) | Container.Content(artists) | Container.Content(songs)]]]</visible>
         </control>
     </include>
