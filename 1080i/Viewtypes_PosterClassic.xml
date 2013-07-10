@@ -70,53 +70,14 @@
                         <control type="group">
                             <posx>-32</posx>
                             <posy>10</posy>
-							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>80</width>
 								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
+								<texture>$VAR[arctic.watched]</texture>
 								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>42</posx>
-								<posy>5</posy>
-								<width>80</width>
-								<label>‡</label>
-								<font>Font-Alaska-S45-BL</font>
-								<textcolor>ff00ddaa</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-							</control>
-						</control>
-						<control type="group">
-                            <posx>-32</posx>
-                            <posy>10</posy>
-							<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
-							<control type="image">
-								<description>Panel</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
-								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-								<include>new.overlay.visibility</include>
-							</control>
-							<control type="label">
-								<posx>40</posx>
-								<posy>4</posy>
-								<width>80</width>
-								<label>★</label>
-								<font>Font-Condensed-S40</font>
-								<textcolor>ff00ccff</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-								<include>new.overlay.visibility</include>
 							</control>
 						</control>
                         <control type="image">
@@ -204,53 +165,14 @@
                         <control type="group">
                             <posx>-32</posx>
                             <posy>10</posy>
-							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>80</width>
 								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
+								<texture>$VAR[arctic.watched]</texture>
 								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>42</posx>
-								<posy>5</posy>
-								<width>80</width>
-								<label>‡</label>
-								<font>Font-Alaska-S45-BL</font>
-								<textcolor>ff00ddaa</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-							</control>
-						</control>
-						<control type="group">
-                            <posx>-32</posx>
-                            <posy>10</posy>
-							<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
-							<control type="image">
-								<description>Panel</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
-								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-								<include>new.overlay.visibility</include>
-							</control>
-							<control type="label">
-								<posx>40</posx>
-								<posy>4</posy>
-								<width>80</width>
-								<label>★</label>
-								<font>Font-Condensed-S40</font>
-								<textcolor>ff00ccff</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-								<include>new.overlay.visibility</include>
 							</control>
 						</control>
                         <control type="image">
@@ -357,53 +279,14 @@
                         <control type="group">
                             <posx>-32</posx>
                             <posy>10</posy>
-							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>80</width>
 								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
+								<texture>$VAR[arctic.watched]</texture>
 								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>42</posx>
-								<posy>5</posy>
-								<width>80</width>
-								<label>‡</label>
-								<font>Font-Alaska-S45-BL</font>
-								<textcolor>ff00ddaa</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-							</control>
-						</control>
-						<control type="group">
-                            <posx>-32</posx>
-                            <posy>10</posy>
-							<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
-							<control type="image">
-								<description>Panel</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
-								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-								<include>new.overlay.visibility</include>
-							</control>
-							<control type="label">
-								<posx>40</posx>
-								<posy>4</posy>
-								<width>80</width>
-								<label>★</label>
-								<font>Font-Condensed-S40</font>
-								<textcolor>ff00ccff</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-								<include>new.overlay.visibility</include>
 							</control>
 						</control>
                         <control type="image">
@@ -515,53 +398,14 @@
                         <control type="group">
                             <posx>-32</posx>
                             <posy>10</posy>
-							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>80</width>
 								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
+								<texture>$VAR[arctic.watched]</texture>
 								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>42</posx>
-								<posy>5</posy>
-								<width>80</width>
-								<label>‡</label>
-								<font>Font-Alaska-S45-BL</font>
-								<textcolor>ff00ddaa</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-							</control>
-						</control>
-						<control type="group">
-                            <posx>-32</posx>
-                            <posy>10</posy>
-							<visible>SubString(ListItem.Overlay,UnWatched.png)</visible>
-							<control type="image">
-								<description>Panel</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture flipx="true">arctic/common/triangle.png</texture>
-								<aspectratio aligny="top" align="left">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-								<include>new.overlay.visibility</include>
-							</control>
-							<control type="label">
-								<posx>40</posx>
-								<posy>4</posy>
-								<width>80</width>
-								<label>★</label>
-								<font>Font-Condensed-S40</font>
-								<textcolor>ff00ccff</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
-								<include>new.overlay.visibility</include>
 							</control>
 						</control>
                         <control type="image">

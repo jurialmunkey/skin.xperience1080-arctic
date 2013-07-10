@@ -52,26 +52,14 @@
 						<control type="group">
 							<posx>182</posx>
 							<posy>300</posy>
-							<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>60</width>
 								<height>60</height>
-								<texture flipy="true">arctic/common/triangle.png</texture>
+								<texture>$VAR[arctic.watched.bottom]</texture>
 								<aspectratio aligny="bottom" align="right">keep</aspectratio>
-								<colordiffuse>ff111111</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>56</posx>
-								<posy>26</posy>
-								<width>80</width>
-								<label>‡</label>
-								<font>Font-Alaska-S38-BL</font>
-								<textcolor>ff00ddaa</textcolor>
-								<scroll>false</scroll>
-								<align>right</align>
 							</control>
 						</control>
                         <control type="image">
@@ -247,26 +235,14 @@
 							<control type="group">
 								<posx>182</posx>
 								<posy>300</posy>
-								<visible>!SubString(ListItem.Overlay,UnWatched.png)</visible>
 								<control type="image">
 									<description>Panel</description>
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>60</width>
 									<height>60</height>
-									<texture flipy="true">arctic/common/triangle.png</texture>
+									<texture>$VAR[arctic.watched.bottom]</texture>
 									<aspectratio aligny="bottom" align="right">keep</aspectratio>
-									<colordiffuse>ff111111</colordiffuse>
-								</control>
-								<control type="label">
-									<posx>56</posx>
-									<posy>26</posy>
-									<width>80</width>
-									<label>‡</label>
-									<font>Font-Alaska-S38-BL</font>
-									<textcolor>ff00ddaa</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
 								</control>
 							</control>
 							<control type="image">

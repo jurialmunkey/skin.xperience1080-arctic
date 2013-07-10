@@ -250,36 +250,13 @@
 							<control type="group">
 								<posx>290</posx>
 								<posy>-25</posy>
-								<control type="image">
-                            		<posx>11</posx>
-                            		<posy>11</posy>
-									<width>75</width>
-									<height>75</height>
-									<aspectratio align="left" aligny="top">keep</aspectratio>
-									<texture  flipx="true" flipy="false">arctic/common/triangle.png</texture>
-									<colordiffuse>22ffffff</colordiffuse>
-								</control>
                             	<control type="image">
                             		<posx>10</posx>
                             		<posy>10</posy>
 									<width>75</width>
 									<height>75</height>
 									<aspectratio align="left" aligny="top">keep</aspectratio>
-									<texture  flipx="true" flipy="false">arctic/common/triangle.png</texture>
-									<colordiffuse>ff111111</colordiffuse>
-								</control>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio align="left" aligny="top">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-								</control>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio align="left" aligny="top">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-									<include>overlay.diffuse</include>
+									<texture>$VAR[arctic.watched]</texture>
 								</control>
 							</control>
 							<control type="group">

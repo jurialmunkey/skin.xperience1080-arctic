@@ -98,53 +98,14 @@
 							<control type="group">
 								<posx>758</posx>
 								<posy>394</posy>
-								<visible>[Container.Content(movies) | Container.Content(episodes)] + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+								<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
 								<control type="image">
-									<description>Panel</description>
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>80</width>
 									<height>80</height>
-									<texture flipy="true">arctic/common/triangle.png</texture>
+									<texture>$VAR[arctic.watched.bottom]</texture>
 									<aspectratio aligny="bottom" align="right">keep</aspectratio>
-									<colordiffuse>ff111111</colordiffuse>
-								</control>
-								<control type="label">
-									<posx>70</posx>
-									<posy>40</posy>
-									<width>80</width>
-									<label>‡</label>
-									<font>Font-Alaska-S45-BL</font>
-									<textcolor>ff00ddaa</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-								</control>
-							</control>
-							<control type="group">
-								<posx>758</posx>
-								<posy>394</posy>
-								<visible>[Container.Content(movies) | Container.Content(episodes)] + SubString(ListItem.Overlay,UnWatched.png)</visible>
-								<control type="image">
-									<description>Panel</description>
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>80</width>
-									<height>80</height>
-									<texture flipy="true">arctic/common/triangle.png</texture>
-									<aspectratio aligny="bottom" align="right">keep</aspectratio>
-									<colordiffuse>ff111111</colordiffuse>
-									<include>new.overlay.visibility</include>
-								</control>
-								<control type="label">
-									<posx>72</posx>
-									<posy>41</posy>
-									<width>80</width>
-									<label>★</label>
-									<font>Font-Condensed-S40</font>
-									<textcolor>ff00ccff</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-									<include>new.overlay.visibility</include>
 								</control>
 							</control>
 							<control type="image">
@@ -251,53 +212,15 @@
 							<control type="group">
 								<posx>758</posx>
 								<posy>394</posy>
-								<visible>[Container.Content(movies) | Container.Content(episodes)] + !SubString(ListItem.Overlay,UnWatched.png)</visible>
+								<visible>[Container.Content(movies) | Container.Content(episodes)]</visible>
 								<control type="image">
 									<description>Panel</description>
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>80</width>
 									<height>80</height>
-									<texture flipy="true">arctic/common/triangle.png</texture>
+									<texture>$VAR[arctic.watched.bottom]</texture>
 									<aspectratio aligny="bottom" align="right">keep</aspectratio>
-									<colordiffuse>ff111111</colordiffuse>
-								</control>
-								<control type="label">
-									<posx>70</posx>
-									<posy>40</posy>
-									<width>80</width>
-									<label>‡</label>
-									<font>Font-Alaska-S45-BL</font>
-									<textcolor>ff00ddaa</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-								</control>
-							</control>
-							<control type="group">
-								<posx>758</posx>
-								<posy>394</posy>
-								<visible>[Container.Content(movies) | Container.Content(episodes)] + SubString(ListItem.Overlay,UnWatched.png)</visible>
-								<control type="image">
-									<description>Panel</description>
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>80</width>
-									<height>80</height>
-									<texture flipy="true">arctic/common/triangle.png</texture>
-									<aspectratio aligny="bottom" align="right">keep</aspectratio>
-									<colordiffuse>ff111111</colordiffuse>
-									<include>new.overlay.visibility</include>
-								</control>
-								<control type="label">
-									<posx>72</posx>
-									<posy>41</posy>
-									<width>80</width>
-									<label>★</label>
-									<font>Font-Condensed-S40</font>
-									<textcolor>ff00ccff</textcolor>
-									<scroll>false</scroll>
-									<align>right</align>
-									<include>new.overlay.visibility</include>
 								</control>
 							</control>
 							<control type="image">
