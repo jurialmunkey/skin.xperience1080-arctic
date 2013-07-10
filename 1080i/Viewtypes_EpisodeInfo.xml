@@ -412,7 +412,7 @@
 										<align>right</align>
 										<visible>Container.Content(Seasons)</visible>
 									</control>
-									<control type="label">
+									<!--<control type="label">
 										<posx>1025</posx>
 										<posy>34</posy>
 										<width>900</width>
@@ -423,7 +423,7 @@
 										<align>right</align>
 										<visible>!Container.Content(Seasons) + !SubString(ListItem.Overlay,UnWatched.png)</visible>
 										<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
-									</control>
+									</control>-->
 									<control type="label">
 										<posx>1025</posx>
 										<posy>34</posy>
@@ -433,7 +433,7 @@
 										<textcolor>mod-infotags-alt2</textcolor>
 										<scroll>false</scroll>
 										<align>right</align>
-										<visible>!Container.Content(Seasons) + SubString(ListItem.Overlay,UnWatched.png)</visible>
+										<visible>!Container.Content(Seasons)</visible>
 										<animation effect="slide" end="-40" condition="Container.Content(episodes) + SubString(ListItem.Episode,S) + ![StringCompare(ListItem.Episode,S1) | StringCompare(ListItem.Episode,S2) | StringCompare(ListItem.Episode,S3) | StringCompare(ListItem.Episode,S4) | StringCompare(ListItem.Episode,S5) | StringCompare(ListItem.Episode,S6) | StringCompare(ListItem.Episode,S7) | StringCompare(ListItem.Episode,S8) | StringCompare(ListItem.Episode,S9)]">Conditional</animation>
 									</control>	
 								</control>						
