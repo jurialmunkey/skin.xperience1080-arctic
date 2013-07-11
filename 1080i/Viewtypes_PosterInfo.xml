@@ -3,9 +3,9 @@
 <!-- Classic Poster small (56) -->
 <!-- ========================= -->
 	<include name="Viewtype-PosterInfo-Content">
-		<posx>-172</posx>
+		<posx>-275</posx>
 		<posy>350</posy>
-		<width>2200</width>
+		<width>2350</width>
 		<height>730</height>
 		<pagecontrol>70</pagecontrol>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -16,8 +16,8 @@
 		<onup condition="!Skin.HasSetting(KioskMode)">9010</onup>
 		<onup condition="Skin.HasSetting(KioskMode)">56</onup>
 		<ondown>70</ondown>
-		<focusposition>1</focusposition>
-		<movement>0</movement>
+		<focusposition>2</focusposition>
+		<movement>1</movement>
 		<preloaditems>0</preloaditems>  
 		<itemlayout width="224" condition="!Container.Content(episodes)">
 			<control type="group">
@@ -106,7 +106,6 @@
 		<focusedlayout width="1344" condition="!Skin.HasSetting(old.posterinfo) + !Container.Content(episodes)">
 			<control type="group">
 				<animation effect="fade" end="0" start="100" time="0" delay="0" condition="[Container(56).OnNext | Container(56).OnPrevious]">UnFocus</animation>
-				<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1) + !Skin.HasSetting(viewtype.posterinfo.wrap)">Conditional</animation>						
 				<posx>350</posx>
 				<posy>152</posy>
 				<!-- REFLECTION -->
@@ -197,8 +196,6 @@
 				<animation type="Unfocus" condition="Container(56).OnPrevious">
 					<effect type="zoom" start="100" end="75" time="100" tween="sine" easing="out" center="190,340" />
 				</animation>	
-				<animation effect="slide" time="0" start="0" end="120" condition="!IntegerGreaterThan(Container(56).NumItems,1) + !Skin.HasSetting(viewtype.posterinfo.wrap)">Conditional</animation>						
-
 				<control type="image">
 					<description>Reflection</description>
 					<posx>60</posx>
@@ -305,7 +302,6 @@
 				<animation type="Unfocus" condition="[Container(56).OnNext | Container(56).OnPrevious]">
 					<effect type="zoom" start="100" end="75" time="250" tween="sine" easing="out" center="190,340" />
 				</animation>
-
 				<!-- REFLECTION -->
 				<control type="image">
 					<description>Reflection</description>
@@ -556,120 +552,7 @@
 						<aspectratio align="center">keep</aspectratio>
 						<visible>Container.Content(movies) + Skin.HasSetting(showdiscart)</visible>
 					</control>									
-				</control>
-                <control type="group">
-                    <visible>!Window.IsActive(movieinformation) + Control.IsVisible(56) + Skin.HasSetting(old.posterinfo)</visible>
-                    <animation effect="slide" start="0" end="0,200" time="150" delay="600" reversible="false" condition="Skin.HasSetting(AltPosterInfo)">Conditional</animation>
-                    <posx>395</posx>
-                    <posy>160</posy>
-                    <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>1452</width>
-                        <height>331</height>
-                        <texture border="50">arctic/common/banner-35.png</texture>
-                    </control>
-					<control type="group">
-						<posx>1362</posx>
-						<posy>21</posy>
-						<control type="image">
-							<posx>-21</posx>
-							<posy>11</posy>
-							<width>75</width>
-							<height>75</height>
-							<aspectratio align="top" aligny="right">keep</aspectratio>
-							<texture  flipx="false" flipy="false">arctic/common/triangle.png</texture>
-							<colordiffuse>eeffffff</colordiffuse>
-						</control>
-						<control type="image">
-							<posx>-20</posx>
-							<posy>10</posy>
-							<width>75</width>
-							<height>75</height>
-							<aspectratio align="top" aligny="right">keep</aspectratio>
-							<texture  flipx="false" flipy="false">arctic/common/triangle.png</texture>
-							<colordiffuse>ff222222</colordiffuse>
-							<visible>!Skin.HasSetting(banner.dark)</visible>
-						</control>
-						<control type="image">
-							<width>66</width>
-							<height>66</height>
-							<aspectratio align="top" aligny="right">keep</aspectratio>
-							<texture>$VAR[BannerOverlayNF]</texture>
-						</control>
-						<control type="image">
-							<width>66</width>
-							<height>66</height>
-							<aspectratio align="top" aligny="right">keep</aspectratio>
-							<texture>$VAR[BannerOverlayNF]</texture>
-							<include>overlay.diffuse</include>
-						</control>
-					</control>
-                    <control type="image">
-                        <posx>35</posx>
-                        <posy>35</posy>
-                        <width>465</width>
-                        <height>262</height>
-                        <texture diffuse="arctic/banner/left.png" background="true">$VAR[ListInfoLandscapeVar]</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <fadetime>200</fadetime>
-                    </control>
-                    <control type="group">
-                        <posy>14</posy>
-                        <posx>332</posx>
-                        <control type="label">
-                            <posx>190</posx>
-                            <posy>44</posy>
-                            <width>680</width>
-                            <label>$INFO[ListItem.Label]</label>
-                            <font>Font-Alaska-S34-BL</font>
-                            <textcolor>mod-infotags</textcolor>
-                            <scroll>false</scroll>
-                            <align>left</align>
-                        </control>
-                        <control type="label">
-                            <posx>190</posx>
-                            <posy>78</posy>
-                            <width>680</width>
-                            <label>$INFO[ListItem.Year]$INFO[ListItem.Genre, • ,]</label>
-                            <font>Font-Alaska-S25-BL</font>
-                            <textcolor>mod-infotags-li</textcolor>
-                            <scroll>false</scroll>
-                            <align>left</align>
-                        </control>
-                        <control type="group">
-                            <visible>![Container(56).OnNext | Container(56).OnPrevious]</visible>
-                            <animation effect="fade" end="100" start="0" time="500" delay="0" reversible="false">Visible</animation>
-                            <control type="textbox">
-                                <description>Plot</description>
-                                <posx>190</posx>
-                                <posy>118</posy>
-                                <width>870</width>
-                                <height>145</height>
-                                <label>$INFO[ListItem.Plot]</label>
-                                <align>justify</align>
-                                <textcolor>mod-infotags-li</textcolor>
-                                <autoscroll delay="13000" time="3000" repeat="13000" />
-                                <font>Font-Alaska-S25-NC</font>
-                                <visible>!substring(ListItem.Path,videodb://1/7,left)</visible>
-                            </control>
-                            <control type="textbox">
-                                <description>Plot</description>
-                                <posx>190</posx>
-                                <posy>118</posy>
-                                <width>870</width>
-                                <height>145</height>
-                                <align>justify</align>
-                                <textcolor>mod-infotags-li</textcolor>
-                                <font>Font-Alaska-S25-NC</font>
-								<autoscroll delay="5000" time="3000" repeat="5000" />
-								<info>Window(home).Property(Set.Movies.ExtendedPlot)</info>
-								<visible>substring(ListItem.Path,videodb://1/7,left)</visible>
-                            </control>
-                        </control>
-                    </control>
-                </control>
-                <!-- END BANNER INFO -->            
+				</control>                
                 <control type="group">
                     <visible>!Window.IsActive(movieinformation) + !Window.IsActive(script-Actors-DialogInfo.xml) + !Window.IsActive(script-Actors-DialogVideoInfo.xml) + IsEmpty(Window(Home).Property(script.metadata.actors.hasparent)) + Control.IsVisible(56)</visible>
 					<include condition="!Skin.HasSetting(viewtype.posterinfo.wrap)">Viewtype-PosterInfo-Fixed</include>
