@@ -495,7 +495,7 @@
 						<posy>0</posy>
 						<width>670</width>
 						<height>35</height>
-						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,]</label>
+						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,] $VAR[Metadata.Actors.InLibrary]</label>
 						<font>Font-Condensed-S29</font>
 						<textcolor>Mod_Tags_Light</textcolor>
 						<selectedcolor>Mod_Tags_Light</selectedcolor>
@@ -521,7 +521,7 @@
 						<posy>0</posy>
 						<width>670</width>
 						<height>35</height>
-						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,]</label>
+						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,] $VAR[Metadata.Actors.InLibrary]</label>
 						<textcolor>Mod_Tags</textcolor>
 						<font>Font-Condensed-S29</font>
 						<align>left</align>
@@ -534,7 +534,7 @@
 						<posy>0</posy>
 						<width>670</width>
 						<height>35</height>
-						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,]</label>
+						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,] $VAR[Metadata.Actors.InLibrary]</label>
 						<textcolor>white</textcolor>
 						<font>Font-Condensed-S29</font>
 						<align>left</align>

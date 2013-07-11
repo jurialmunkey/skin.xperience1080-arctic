@@ -3305,6 +3305,10 @@
 			<aligny>center</aligny>
 		</control>
 	</include>
+	<variable name="Metadata.Actors.InLibrary">
+		<value condition="Container(150).ListItem.Property(LibraryHasMovie)">★</value>
+		<value>-</value>
+	</variable>
 	<include name="old-albuminfostyle">
         <control type="group">
             <posx>0</posx>
