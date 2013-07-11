@@ -79,12 +79,29 @@
 					<posx>0</posx>
 					<posy>40</posy>
 					<width>1200</width>
-					<height>180</height>
+					<height>198</height>
 					<label>$INFO[ListItem.Plot]</label>
-					<font>Font-Alaska-S25-NC</font>
+					<font>Font-Condensed-S29</font>
 					<textcolor>Mod_Tags</textcolor>
 					<align>justify</align>
 					<autoscroll delay="13000" time="3000" repeat="13000" />
+					<pagecontrol>70</pagecontrol>
+				</control>
+				<control type="scrollbar" id="70">
+					<description>Scrollbar</description>
+					<posx>1218</posx>
+					<posy>50</posy>
+					<width>3</width>
+					<height>155</height>
+					<onup>9333</onup>
+					<onleft>9333</onleft>
+					<onright>9333</onright>
+					<texturesliderbar border="1">views/other/scrollbar-sq.png</texturesliderbar>
+					<texturesliderbarfocus border="1">views/other/scrollbar-sq.png</texturesliderbarfocus>
+					<orientation>vertical</orientation>
+					<showonepage>false</showonepage>
+					<animation effect="fade" start="80" end="35" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+					<visible allowhiddenfocus="true">Control.HasFocus(70)</visible>
 				</control>
 			</control>
 			<!-- PLAY CONTROL LIST -->
@@ -135,7 +152,8 @@
 					<onleft condition="Window.IsActive(movieinformation) + IsEmpty(Container(50).Property(ParentDir))">PreviousMenu</onleft>
 					<onleft condition="!Window.IsActive(movieinformation) + IsEmpty(Container(50).Property(ParentDir)) + !Window.IsVisible(3008)">SetProperty(BounceLeft,1,Home)</onleft>
                     <onright>150</onright>
-                    <onup>150</onup>
+                    <onup>71</onup>
+                    <ondown>70</ondown>
 					<scrolltime>0</scrolltime>
 					<orientation>horizontal</orientation>
 					<focusposition>0</focusposition>
@@ -264,92 +282,127 @@
 			</control>
 			<!-- DIRECTOR -->
 			<control type="group">
+				<visible>!Control.HasFocus(9336) + !IsEmpty(ListItem.Director)</visible>
 				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-				<animation effect="slide" start="0" end="0,58" condition="IsEmpty(ListItem.Writer)">Conditional</animation>
-				<posx>985</posx>
-				<posy>257</posy>
-				<!--<control type="image">
-					<posx>-240</posx>
-					<posy>-93</posy>
-					<width>1135</width>
-					<height>84</height>
-					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-				</control>-->
+				<posx>680</posx>
+				<posy>375</posy>
 				<control type="image">
 					<posx>-10</posx>
-					<posy>-4</posy>
-					<width>890</width>
-					<height>46</height>
+					<posy>35</posy>
+					<width>300</width>
+					<height>32</height>
 					<texture border="5">views/other/focus-mod.png</texture>
+					<animation effect="slide" start="0,83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(9333).OnPrevious">Focus</animation>
+					<animation effect="slide" start="0,-83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(9333).OnNext">Focus</animation>
 					<include>visiblehidefadeinfo</include>
 					<visible>Control.HasFocus(71)</visible>
 				</control>
 				<control type="label">
-					<posx>-50</posx>
+					<posx>0</posx>
 					<posy>0</posy>
-					<width>350</width>
+					<width>280</width>
 					<height>36</height>
-					<font>Font-Alaska-S38-BL</font>
-					<align>right</align>
+					<font>Font-Alaska-S34-BL</font>
+					<align>left</align>
 					<label>20339</label>
-					<textcolor>Mod_Tags_Light</textcolor>
-					<visible>!IsEmpty(ListItem.Director)</visible>
+					<textcolor>Mod_Tags_Dark</textcolor>
 				</control>
 				<control type="button" id="71">
 					<posx>0</posx>
-					<posy>0</posy>
-					<width>840</width>
-					<height>36</height>
-					<font>Font-Alaska-S38-BL</font>
+					<posy>32</posy>
+					<width>280</width>
+					<height>32</height>
+					<font>Font-Condensed-S29</font>
 					<align>left</align>
 					<label>$INFO[ListItem.Director]</label>
-					<textcolor>Mod_Tags_Light</textcolor>
+					<textcolor>Mod_Tags</textcolor>
 					<focusedcolor>ffffffff</focusedcolor>
 					<onup>9333</onup>
-					<ondown>150</ondown>                  
+					<ondown>9333</ondown>                  
 					<onleft>9333</onleft>
-					<onright>Action(select)</onright>
-					<animation effect="fade" start="100" end="85" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(71)">Conditional</animation>
-					<visible>!IsEmpty(ListItem.Director)</visible>
+					<onright>150</onright>
+					<onclick>Action(select)</onclick>
 				</control>
 			</control>
-			<!-- WRITER -->
+			<!-- RUN TIME -->
 			<control type="group">
-				<posx>985</posx>
-				<posy>315</posy>
-				<visible>!Control.HasFocus(9336)</visible>
-				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-				<control type="image">
-					<posx>-240</posx>
-					<posy>-93</posy>
-					<width>1135</width>
-					<height>84</height>
-					<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-					<visible>!IsEmpty(ListItem.Writer)</visible>
-				</control>	
-				<control type="label">
-					<posx>-50</posx>
-					<posy>0</posy>
-					<width>350</width>
-					<height>36</height>
-					<font>Font-Alaska-S38-BL</font>
-					<align>right</align>
-					<label>20417</label>
-					<textcolor>Mod_Tags_Light</textcolor>
-					<visible>!IsEmpty(ListItem.Writer)</visible>
-				</control>
+				<posx>680</posx>
+				<posy>460</posy>
+				<visible>!IsEmpty(ListItem.Duration)</visible>
 				<control type="label">
 					<posx>0</posx>
 					<posy>0</posy>
+					<width>280</width>
+					<height>36</height>
+					<font>Font-Alaska-S34-BL</font>
+					<align>left</align>
+					<label>2050</label>
+					<textcolor>Mod_Tags_Dark</textcolor>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>32</posy>
+					<width>280</width>
+					<height>36</height>
+					<font>Font-Condensed-S29</font>
+					<align>left</align>
+					<label>$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+					<textcolor>Mod_Tags</textcolor>
+				</control>
+			</control>		
+			<!-- GENRE -->
+			<control type="group">
+				<posx>680</posx>
+				<posy>205</posy>
+				<visible>!IsEmpty(ListItem.Genre)</visible>
+				<animation effect="slide" start="0" end="0,85" condition="IsEmpty(ListItem.Writer)">Conditional</animation>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>350</width>
+					<height>36</height>
+					<font>Font-Alaska-S34-BL</font>
+					<align>left</align>
+					<label>515</label>
+					<textcolor>Mod_Tags_Dark</textcolor>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>32</posy>
 					<width>840</width>
 					<height>36</height>
-					<font>Font-Alaska-S38-BL</font>
+					<font>Font-Condensed-S29</font>
+					<align>left</align>
+					<label>$INFO[ListItem.Genre]</label>
+					<textcolor>Mod_Tags</textcolor>
+				</control>
+			</control>	
+			<!-- WRITER -->
+			<control type="group">
+				<posx>680</posx>
+				<posy>290</posy>
+				<visible>!IsEmpty(ListItem.Writer)</visible>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>350</width>
+					<height>36</height>
+					<font>Font-Alaska-S34-BL</font>
+					<align>left</align>
+					<label>20417</label>
+					<textcolor>Mod_Tags_Dark</textcolor>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>32</posy>
+					<width>840</width>
+					<height>36</height>
+					<font>Font-Condensed-S29</font>
 					<align>left</align>
 					<label>$INFO[ListItem.Writer]</label>
-					<textcolor>Mod_Tags_Light</textcolor>
-					<visible>!IsEmpty(ListItem.Writer)</visible>
+					<textcolor>Mod_Tags</textcolor>
 				</control>
-			</control>
+			</control>	
 			<!-- CAST -->
 			<control type="group">
 				<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
@@ -359,22 +412,15 @@
 						<onfocus>Action(left)</onfocus>
 						<onleft>150</onleft>
 					</control>
-					<control type="image">
-						<posx>745</posx>
-						<posy>280</posy>
-						<width>1135</width>
-						<height>84</height>
-						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-					</control>
 					<control type="label">
-						<posx>935</posx>
-						<posy>435</posy>
+						<posx>985</posx>
+						<posy>375</posy>
 						<width>280</width>
 						<label>206</label>
-						<font>Font-Alaska-S38-BL</font>
-						<textcolor>Mod_Tags_Light</textcolor>
+						<font>Font-Alaska-S34-BL</font>
+						<textcolor>Mod_Tags_Dark</textcolor>
 						<scroll>false</scroll>
-						<align>right</align>
+						<align>left</align>
 					</control> 
 					<control type="button" id="152">
 						<visible allowhiddenfocus="true">false</visible>
@@ -384,59 +430,61 @@
 					</control>
 					<control type="list" id="150">
 						<posx>965</posx>
-						<posy>368</posy>
+						<posy>407</posy>
 						<width>900</width>
-						<height>168</height>
-						<onleft>SetFocus(9333)</onleft>
+						<height>128</height>
+						<onup>SetFocus(9333)</onup>
 						<onright>Action(select)</onright>
 						<!-- Prevent mulitple selections by changing focus -->
 						<onright>SetFocus(152)</onright>
-						<onup>71</onup>
+						<onleft>71</onleft>
 						<ondown>9333</ondown>
 						<pagecontrol>151</pagecontrol>
 						<scrolltime tween="cubic" easing="out">500</scrolltime>
 						<orientation>vertical</orientation>
 						<focusposition>0</focusposition>
 						<viewtype label="actor list">list</viewtype>
-						<itemlayout height="42">
+						<itemlayout height="32">
 							<control type="label">
 								<posx>20</posx>
-								<posy>6</posy>
+								<posy>-1</posy>
 								<width>870</width>
 								<label>$INFO[ListItem.label]</label>
-								<font>Font-Alaska-S27-BL</font>
-								<textcolor>Mod_Tags_Light</textcolor>
+								<font>Font-Condensed-S29</font>
+								<textcolor>Mod_Tags</textcolor>
 								<align>justify</align>
 								<aligny>center</aligny>
 								<scroll>false</scroll>
 							</control>  
 						</itemlayout>
-						<focusedlayout height="42">
+						<focusedlayout height="32">
 							<control type="image">
 								<posx>10</posx>
 								<posy>0</posy>
 								<width>890</width>
-								<height>42</height>
+								<height>32</height>
 								<texture border="5">views/other/focus-mod.png</texture>
+								<animation effect="slide" start="0,83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(9333).OnPrevious">Focus</animation>
+								<animation effect="slide" start="0,-83" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(9333).OnNext">Focus</animation>
 								<visible>Control.HasFocus(150)</visible>
 							</control>
 							<control type="label">
 								<posx>20</posx>
-								<posy>6</posy>
+								<posy>-1</posy>
 								<width>870</width>
 								<label>$INFO[ListItem.Label]</label>
-								<font>Font-Alaska-S27-BL</font>
-								<textcolor>Mod_Tags_Light</textcolor>
+								<font>Font-Condensed-S29</font>
+								<textcolor>Mod_Tags</textcolor>
 								<align>justify</align>
 								<aligny>center</aligny>
 								<visible>!Control.HasFocus(150)</visible>
 							</control>
 							<control type="label">
 								<posx>20</posx>
-								<posy>6</posy>
+								<posy>-1</posy>
 								<width>870</width>
 								<label>$INFO[ListItem.Label]</label>
-								<font>Font-Alaska-S27-BL</font>
+								<font>Font-Condensed-S29</font>
 								<textcolor>white</textcolor>
 								<align>justify</align>
 								<aligny>center</aligny>

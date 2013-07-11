@@ -58,6 +58,94 @@
 					<effect type="zoom" start="100" end="75" center="640,540" time="250" tween="sine" easing="inout" />
 					<effect type="slide" start="0" end="-2320" time="500" delay="0" tween="sine" easing="inout" />
 				</animation>	
+				
+				
+				<!-- BIRTHDAY -->
+				<control type="group">
+					<visible>!IsEmpty(ListItem.Property(Birthday))</visible>
+					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+					<animation effect="slide" end="0,-85" condition="!IsEmpty(ListItem.Property(PlaceOfBirth))">Conditional</animation>
+					<animation effect="slide" end="0,-85" condition="!IsEmpty(ListItem.Property(Deathday))">Conditional</animation>					<posx>1380</posx>
+					<posy>460</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>350</width>
+						<height>36</height>
+						<font>Font-Alaska-S34-BL</font>
+						<align>left</align>
+						<label>$ADDON[script.metadata.actors 32012]</label>
+						<textcolor>Mod_Tags_Dark</textcolor>
+					</control>
+					<control type="button">
+						<posx>0</posx>
+						<posy>32</posy>
+						<width>840</width>
+						<height>36</height>
+						<font>Font-Condensed-S29</font>
+						<align>left</align>
+						<label>$INFO[ListItem.Property(Birthday)]$INFO[ListItem.Property(AgeLong), (,)]</label>
+						<textcolor>Mod_Tags</textcolor>
+						<focusedcolor>ffffffff</focusedcolor>
+					</control>
+				</control>
+				<!-- PLACE OF BIRTH -->
+				<control type="group">
+					<visible>!IsEmpty(ListItem.Property(PlaceOfBirth))</visible>
+					<animation effect="slide" end="0,-85" condition="!IsEmpty(ListItem.Property(Deathday))">Conditional</animation>
+					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+					<posx>1380</posx>
+					<posy>460</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>350</width>
+						<height>36</height>
+						<font>Font-Alaska-S34-BL</font>
+						<align>left</align>
+						<label>$ADDON[script.metadata.actors 32014]</label>
+						<textcolor>Mod_Tags_Dark</textcolor>
+					</control>
+					<control type="button">
+						<posx>0</posx>
+						<posy>32</posy>
+						<width>840</width>
+						<height>36</height>
+						<font>Font-Condensed-S29</font>
+						<align>left</align>
+						<label>$INFO[ListItem.Property(PlaceOfBirth)]</label>
+						<textcolor>Mod_Tags</textcolor>
+						<focusedcolor>ffffffff</focusedcolor>
+					</control>
+				</control>
+				<!-- DEATH DAY -->
+				<control type="group">
+					<visible>!IsEmpty(ListItem.Property(Deathday))</visible>
+					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+					<posx>1380</posx>
+					<posy>460</posy>
+					<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>350</width>
+						<height>36</height>
+						<font>Font-Alaska-S34-BL</font>
+						<align>left</align>
+						<label>$ADDON[script.metadata.actors 32013]</label>
+						<textcolor>Mod_Tags_Dark</textcolor>
+					</control>
+					<control type="button">
+						<posx>0</posx>
+						<posy>32</posy>
+						<width>840</width>
+						<height>36</height>
+						<font>Font-Condensed-S29</font>
+						<align>left</align>
+						<label>$INFO[ListItem.Property(Deathday)]$INFO[ListItem.Property(DeathageLong), (,)]</label>
+						<textcolor>Mod_Tags</textcolor>
+						<focusedcolor>ffffffff</focusedcolor>
+					</control>
+				</control>
 				<!-- CONTROL LIST -->
 				<control type="group">
 					<posx>672</posx>
@@ -84,13 +172,6 @@
 						<height>84</height>
 						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
 					</control>
-					<!--<control type="image">
-						<posx>-83</posx>
-						<posy>0</posy>
-						<width>84</width>
-						<height>83</height>
-						<texture border="3,83,3,83">views/list/other/separator-v.png</texture>
-					</control>-->
 					<control type="list" id="9000">
 						<posx>0</posx>
 						<posy>0</posy>
@@ -101,7 +182,7 @@
 						<onleft condition="!Window.IsActive(movieinformation) + IsEmpty(Container(50).Property(ParentDir)) + !Window.IsVisible(3008)">SetProperty(BounceLeft,1,Home)</onleft>
 						<onright>150</onright>
 						<onup>150</onup>
-						<ondown>9000</ondown>
+						<ondown>70</ondown>
 						<scrolltime>0</scrolltime>
 						<orientation>horizontal</orientation>
 						<focusposition>0</focusposition>
@@ -228,8 +309,8 @@
 						<posy>0</posy>
 						<width>1200</width>
 						<label>$INFO[ListItem.Title]</label>
-						<font>Font-Alaska-S32-BL</font>
-						<textcolor>Mod_Tags</textcolor>
+						<font>Font-Alaska-S34-BL</font>
+						<textcolor>Mod_Tags_Dark</textcolor>
 						<scroll>false</scroll>
 						<align>left</align>
 					</control>
@@ -237,121 +318,31 @@
 						<posx>0</posx>
 						<posy>40</posy>
 						<width>1200</width>
-						<height>180</height>
+						<height>198</height>
 						<label>$INFO[ListItem.Property(Biography)]</label>
-						<font>Font-Alaska-S25-NC</font>
+						<font>Font-Condensed-S29</font>
 						<textcolor>Mod_Tags</textcolor>
 						<align>justify</align>
+						<pagecontrol>70</pagecontrol>
 						<autoscroll delay="13000" time="3000" repeat="13000" />
 					</control>
-				</control>
-				<!-- BIRTHDAY -->
-				<control type="group">
-					<visible>!IsEmpty(ListItem.Property(Birthday))</visible>
-					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-					<posx>985</posx>
-					<posy>257</posy>
-					<control type="image">
-						<posx>-240</posx>
-						<posy>-93</posy>
-						<width>1135</width>
-						<height>84</height>
-						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-					</control>
-					<control type="label">
-						<posx>-50</posx>
-						<posy>-2</posy>
-						<width>350</width>
-						<height>36</height>
-						<font>Font-Alaska-S29-BL</font>
-						<align>right</align>
-						<label>$ADDON[script.metadata.actors 32012]</label>
-						<textcolor>Mod_Tags_Light</textcolor>
-					</control>
-					<control type="button">
-						<posx>0</posx>
-						<posy>-2</posy>
-						<width>840</width>
-						<height>36</height>
-						<font>Font-Alaska-S29-BL</font>
-						<align>left</align>
-						<label>$INFO[ListItem.Property(Birthday)]$INFO[ListItem.Property(AgeLong), (,)]</label>
-						<textcolor>Mod_Tags_Light</textcolor>
-						<focusedcolor>ffffffff</focusedcolor>
+					<control type="scrollbar" id="70">
+						<description>Scrollbar</description>
+						<posx>1218</posx>
+						<posy>50</posy>
+						<width>3</width>
+						<height>155</height>
+						<onup>9000</onup>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<texturesliderbar border="1">views/other/scrollbar-sq.png</texturesliderbar>
+						<texturesliderbarfocus border="1">views/other/scrollbar-sq.png</texturesliderbarfocus>
+						<orientation>vertical</orientation>
+						<showonepage>false</showonepage>
+						<animation effect="fade" start="80" end="35" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(70)">Conditional</animation>
+						<visible allowhiddenfocus="true">Control.HasFocus(70)</visible>
 					</control>
 				</control>
-				<!-- PLACE OF BIRTH -->
-				<control type="group">
-					<visible>!IsEmpty(ListItem.Property(PlaceOfBirth))</visible>
-					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-					<posx>985</posx>
-					<posy>307</posy>
-					<control type="image">
-						<posx>-240</posx>
-						<posy>-93</posy>
-						<width>1135</width>
-						<height>84</height>
-						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-					</control>
-					<control type="image">
-						<posx>-785</posx>
-						<posy>-43</posy>
-						<width>1680</width>
-						<height>84</height>
-						<texture border="90,3,90,3">views/list/other/separator-l.png</texture>
-					</control>
-					<control type="label">
-						<posx>-50</posx>
-						<posy>-2</posy>
-						<width>350</width>
-						<height>36</height>
-						<font>Font-Alaska-S29-BL</font>
-						<align>right</align>
-						<label>$ADDON[script.metadata.actors 32014]</label>
-						<textcolor>Mod_Tags_Light</textcolor>
-					</control>
-					<control type="button">
-						<posx>0</posx>
-						<posy>-2</posy>
-						<width>840</width>
-						<height>36</height>
-						<font>Font-Alaska-S29-BL</font>
-						<align>left</align>
-						<label>$INFO[ListItem.Property(PlaceOfBirth)]</label>
-						<textcolor>Mod_Tags_Light</textcolor>
-						<focusedcolor>ffffffff</focusedcolor>
-					</control>
-				</control>
-				<!-- DEATH DAY -->
-				<control type="group">
-					<visible>!IsEmpty(ListItem.Property(Deathday))</visible>
-					<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-					<posx>985</posx>
-					<posy>207</posy>
-					<control type="label">
-						<posx>-50</posx>
-						<posy>-2</posy>
-						<width>350</width>
-						<height>36</height>
-						<font>Font-Alaska-S29-BL</font>
-						<align>right</align>
-						<label>$ADDON[script.metadata.actors 32013]</label>
-						<textcolor>Mod_Tags_Light</textcolor>
-					</control>
-					<control type="button">
-						<posx>0</posx>
-						<posy>-2</posy>
-						<width>840</width>
-						<height>36</height>
-						<font>Font-Alaska-S29-BL</font>
-						<align>left</align>
-						<label>$INFO[ListItem.Property(Deathday)]$INFO[ListItem.Property(DeathageLong), (,)]</label>
-						<textcolor>Mod_Tags_Light</textcolor>
-						<focusedcolor>ffffffff</focusedcolor>
-					</control>
-				</control>
-			
-				
 				<!-- MOD POSTER -->
 				<control type="group">
 					<posx>180</posx>
@@ -457,15 +448,25 @@
 			
 			<!-- KNOWN MOVIES -->
 			<control type="label">
-				<posx>935</posx>
-				<posy>435</posy>
-				<width>280</width>
-				<label>20342</label>
-				<font>Font-Alaska-S38-BL</font>
-				<textcolor>Mod_Tags_Light</textcolor>
+				<posx>680</posx>
+				<posy>290</posy>
+				<width>670</width>
+				<label>$ADDON[script.metadata.actors 32010]</label>
+				<font>Font-Alaska-S34-BL</font>
+				<textcolor>Mod_Tags_Dark</textcolor>
 				<scroll>false</scroll>
-				<align>right</align>
-			</control>  
+				<align>left</align>
+			</control> 
+			<control type="label">
+				<posx>680</posx>
+				<posy>322</posy>
+				<width>670</width>
+				<label>[B]$INFO[ListItem.Property(TotalMovies),, $ADDON[script.metadata.actors 32011]][/B]</label>
+				<font>Font-Condensed-S29</font>
+				<textcolor>Mod_Tags</textcolor>
+				<scroll>false</scroll>
+				<align>left</align>
+			</control>   
 			<control type="button" id="152">
 				<visible allowhiddenfocus="true">false</visible>
 				<onfocus condition="!IsEmpty(Window(Home).Property(script.metadata.actors.showmovies)) + !IntegerGreaterThan(Container(150).NumItems,0)">SetFocus(152)</onfocus>
@@ -473,7 +474,7 @@
 				<onfocus condition="!IsEmpty(Window(Home).Property(script.metadata.actors.showmovies)) + IntegerGreaterThan(Container(150).NumItems,0)">SetFocus(150)</onfocus>
 			</control>
 			<control type="list" id="150">
-				<posx>950</posx>
+				<posx>645</posx>
 				<posy>354</posy>
 				<width>1215</width>
 				<height>175</height>
@@ -489,22 +490,13 @@
 				<focusposition>0</focusposition>
 				<viewtype label="movie list">list</viewtype>
 				<itemlayout height="35">
-					<control type="image">
-						<posx>3</posx>
-						<posy>3</posy>
-						<width>23</width>
-						<height>28</height>
-						<texture>views/other/isInLibrary.png</texture>
-						<colordiffuse>Mod_Tags</colordiffuse>
-						<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-					</control>
 					<control type="label">
 						<posx>35</posx>
 						<posy>0</posy>
-						<width>800</width>
+						<width>670</width>
 						<height>35</height>
 						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,]</label>
-						<font>Font-Alaska-S29-BL</font>
+						<font>Font-Condensed-S29</font>
 						<textcolor>Mod_Tags_Light</textcolor>
 						<selectedcolor>Mod_Tags_Light</selectedcolor>
 						<align>left</align>
@@ -514,9 +506,9 @@
 				</itemlayout>
 				<focusedlayout height="35">
 					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>890</width>
+						<posx>25</posx>
+						<posy>2</posy>
+						<width>690</width>
 						<height>35</height>
 						<texture border="5">views/other/focus-mod.png</texture>
 						<animation effect="slide" start="0,23" end="0,0" time="300" reversible="false" tween="back" easing="out" condition="Container(150).OnPrevious">Focus</animation>
@@ -524,23 +516,14 @@
 						<include>visiblehidefadeinfo</include>
 						<visible>Control.HasFocus(150)</visible>
 					</control>
-					<control type="image">
-						<posx>3</posx>
-						<posy>3</posy>
-						<width>23</width>
-						<height>28</height>
-						<texture>views/other/isInLibrary.png</texture>
-						<colordiffuse>eewhite</colordiffuse>
-						<visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
-					</control>
 					<control type="label">
 						<posx>35</posx>
 						<posy>0</posy>
-						<width>800</width>
+						<width>670</width>
 						<height>35</height>
 						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,]</label>
 						<textcolor>Mod_Tags</textcolor>
-						<font>Font-Alaska-S29-BL</font>
+						<font>Font-Condensed-S29</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>false</scroll>
@@ -549,11 +532,11 @@
 					<control type="label">
 						<posx>35</posx>
 						<posy>0</posy>
-						<width>800</width>
+						<width>670</width>
 						<height>35</height>
 						<label>$INFO[ListItem.Year,, ]$INFO[ListItem.Label]$INFO[ListItem.Property(role), ... ,]</label>
 						<textcolor>white</textcolor>
-						<font>Font-Alaska-S29-BL</font>
+						<font>Font-Condensed-S29</font>
 						<align>left</align>
 						<aligny>center</aligny>
 						<scroll>false</scroll>
