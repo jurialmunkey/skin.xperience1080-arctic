@@ -2960,27 +2960,29 @@
 			<colordiffuse>mod-infotags-alt</colordiffuse>
 		</control>
 		<control type="label">
-			<posx>45</posx>
-			<posy>241</posy>
-			<width>243</width>
+			<posx>40</posx>
+			<posy>246</posy>
+			<width>250</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags-alt</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
+			<scroll>false</scroll>
 			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
 		<control type="label">
-			<posx>288</posx>
-			<posy>241</posy>
+			<posx>294</posx>
+			<posy>246</posy>
 			<width>243</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label2]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags-alt</textcolor>
 			<align>right</align>
 			<aligny>center</aligny>
+			<scroll>false</scroll>
 			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
 		<control type="image">
@@ -2993,27 +2995,29 @@
 			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 		<control type="label">
-			<posx>45</posx>
-			<posy>241</posy>
-			<width>243</width>
+			<posx>40</posx>
+			<posy>246</posy>
+			<width>253</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
+			<scroll>false</scroll>
 			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 		<control type="label">
-			<posx>288</posx>
-			<posy>241</posy>
+			<posx>294</posx>
+			<posy>246</posy>
 			<width>243</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label2]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags</textcolor>
 			<align>right</align>
 			<aligny>center</aligny>
+			<scroll>false</scroll>
 			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 	</include>
@@ -3031,14 +3035,15 @@
 				<aspectratio align="center">keep</aspectratio>
 			</control>
 			<control type="label">
-				<posx>45</posx>
-				<posy>241</posy>
-				<width>342</width>
+				<posx>40</posx>
+				<posy>246</posy>
+				<width>352</width>
 				<height>66</height>
 				<label>$INFO[ListItem.Label]</label>
-				<font>Font-Alaska-S29-BL</font>
+				<font>Font-Alaska-S27-BL</font>
 				<textcolor>mod-infotags</textcolor>
 				<align>left</align>
+				<scroll>false</scroll>
 				<aligny>center</aligny>
 			</control>
 		</control>
@@ -3054,14 +3059,15 @@
 				<aspectratio align="center">keep</aspectratio>
 			</control>
 			<control type="label">
-				<posx>45</posx>
-				<posy>241</posy>
-				<width>342</width>
+				<posx>40</posx>
+				<posy>246</posy>
+				<width>352</width>
 				<height>66</height>
 				<label>$INFO[ListItem.Label]</label>
-				<font>Font-Alaska-S29-BL</font>
+				<font>Font-Alaska-S27-BL</font>
 				<textcolor>mod-infotags-alt</textcolor>
 				<align>left</align>
+				<scroll>false</scroll>
 				<aligny>center</aligny>
 			</control>
 		</control>
@@ -3196,26 +3202,28 @@
 			<colordiffuse>mod-infotags-alt</colordiffuse>
 		</control>
 		<control type="label">
-			<posx>45</posx>
-			<posy>241</posy>
-			<width>243</width>
+			<posx>40</posx>
+			<posy>246</posy>
+			<width>253</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags-alt</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
+			<scroll>false</scroll>
 		</control>
 		<control type="label">
-			<posx>288</posx>
-			<posy>241</posy>
+			<posx>294</posx>
+			<posy>246</posy>
 			<width>243</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label2]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags-alt</textcolor>
 			<align>right</align>
 			<aligny>center</aligny>
+			<scroll>false</scroll>
 		</control>
 		<control type="image">
 			<posx>14</posx>
@@ -3285,13 +3293,14 @@
 			<aspectratio align="center">keep</aspectratio>
 		</control>
 		<control type="label">
-			<posx>45</posx>
-			<posy>241</posy>
-			<width>342</width>
+			<posx>40</posx>
+			<posy>246</posy>
+			<width>352</width>
 			<height>66</height>
 			<label>$INFO[ListItem.Label]</label>
-			<font>Font-Alaska-S29-BL</font>
+			<font>Font-Alaska-S27-BL</font>
 			<textcolor>mod-infotags-alt</textcolor>
+			<scroll>false</scroll>
 			<align>left</align>
 			<aligny>center</aligny>
 		</control>
