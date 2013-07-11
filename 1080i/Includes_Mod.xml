@@ -3306,8 +3306,8 @@
 		</control>
 	</include>
 	<variable name="Metadata.Actors.InLibrary">
-		<value condition="Container(150).ListItem.Property(LibraryHasMovie)">★</value>
-		<value>-</value>
+		<value condition="Container(150).ListItem.Property(LibraryHasMovie)">  ★</value>
+		<value></value>
 	</variable>
 	<include name="old-albuminfostyle">
         <control type="group">
@@ -5246,6 +5246,7 @@
 					<control type="group">
 						<visible>!Control.HasFocus(9336)</visible>
 						<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
+						<animation effect="slide" start="0" end="-305" condition="IsEmpty(ListItem.Duration) + IsEmpty(ListItem.Director)">Conditional</animation>
 						<include>FullscreenDimensions</include>
 						<control type="group">
 							<control type="button" id="9334">
