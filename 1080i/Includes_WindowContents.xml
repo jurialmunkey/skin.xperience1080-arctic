@@ -143,7 +143,7 @@
         <include>CommonOverlay</include>
     </include>
     <include name="CommonItemsMusicOSD">
-        <include condition="Skin.HasSetting(OSDVisualisation.Enabled) + ![System.HasAddon(script.artistslideshow) + Skin.HasSetting(ArtistSlideShow.Enabled)]">OSDVisualisation</include>
+        <include condition="Skin.HasSetting(OSDVisualisation.Enabled)">OSDVisualisation</include>
         <include>BackgroundFanartMusicOSD</include>
     </include>
     <include name="CommonSettingsItems">
@@ -302,7 +302,8 @@
             <include>Animation_FanartFade</include>
             <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
             <visible>System.HasAddon(script.artistslideshow) + Skin.HasSetting(ArtistSlideShow.Enabled)</visible>
-            <animation effect="zoom" start="110" end="130" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
+            <animation effect="fade" start="100" end="65" time="0" condition="Skin.HasSetting(OSDVisualisation.ShowFanart)">Conditional</animation>
+            <animation effect="zoom" start="120" end="140" center="auto" time="10000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
             <animation effect="slide" start="-30,-30" end="30,30" time="6000" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(ArtistSlideshow.Animate)">Conditional</animation>
         </control>
     </include>

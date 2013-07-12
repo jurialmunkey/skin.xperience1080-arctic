@@ -861,7 +861,7 @@
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(OSDVisualisation.Enabled)</selected>
-                        <onclick condition="!Skin.HasSetting(OSDVisualisation.Enabled)">Skin.Reset(ArtistSlideShow.Enabled)</onclick>
+                        <onclick condition="Skin.HasSetting(OSDVisualisation.Enabled)">Skin.Reset(OSDVisualisation.ShowFanart)</onclick>
                         <onclick>Skin.ToggleSetting(OSDVisualisation.Enabled)</onclick>
                         <label>$LOCALIZE[41240]</label>
                     </control>
@@ -877,7 +877,6 @@
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>
                         <selected>Skin.HasSetting(ArtistSlideShow.Enabled)</selected>
-                        <onclick condition="!Skin.HasSetting(ArtistSlideShow.Enabled)">Skin.Reset(OSDVisualisation.Enabled)</onclick>
                         <onclick>Skin.ToggleSetting(ArtistSlideShow.Enabled)</onclick>
                         <enable>System.HasAddon(script.artistslideshow)</enable>
                         <label>$LOCALIZE[41103]</label>
