@@ -23,11 +23,10 @@
         <control type="image">
             <description>media info background image</description>
             <posx>-100</posx>
-            <posy>209</posy>
+            <posy>65</posy>
             <width>2120</width>
             <height>662</height>
-            <texture border="43,42,43,42">osd/fullscreen/back-codec.png</texture>
-            <bordertexture border="43,42,43,42">osd/fullscreen/back-codec.png</bordertexture>
+            <texture>arctic/osd/fade.png</texture>
             <aspectratio>stretch</aspectratio>
             <animation type="WindowOpen">
                 <effect type="fade" start="0" end="100" tween="sine" easing="inout" time="250" />
@@ -56,43 +55,15 @@
         		<width>1720</width>
         		<height>544</height>
         		<autoscroll time="2000" delay="10000" repeat="10000">!Control.HasFocus(101)</autoscroll>
-        		<pagecontrol>102</pagecontrol>
         		<font>Font-Condensed-S50</font>
         		<textcolor>aawhite</textcolor>
         		<align>center</align>
         	</control>
-        	<control type="image">
-        	    <description>Scrollbar background</description>
-        	    <posx>1830</posx>
-        	    <posy>59</posy>
-        	    <width>6</width>
-        	    <height>544</height>
-        	    <texture border="1">views/other/scrollbar-sq.png</texture>
-        	    <visible>Control.IsVisible(102) | Control.IsVisible(112) | Control.IsVisible(122)</visible>
-        	    <animation effect="fade" start="40" end="20" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(102) + !Control.HasFocus(112) + !Control.HasFocus(122)">Conditional</animation>
-        	</control>
-        	<control type="scrollbar" id="102">
-        	    <description>Scrollbar</description>
-        	    <posx>1830</posx>
-        	    <posy>59</posy>
-        	    <width>6</width>
-        	    <height>544</height>
-        	    <onup>102</onup>
-        	    <ondown>102</ondown>                  
-        	    <onleft>102</onleft>
-        	    <onright>102</onright>
-        	    <texturesliderbar border="1">views/other/scrollbar-sq.png</texturesliderbar>
-        	    <texturesliderbarfocus border="1">views/other/scrollbar-sq.png</texturesliderbarfocus>
-        	    <orientation>vertical</orientation>
-        	    <showonepage>false</showonepage>
-        	    <animation effect="fade" start="85" end="50" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(102)">Conditional</animation>
-        	    <visible>Control.IsVisible(100)</visible>
-        	</control>
         	<control type="fixedlist" id="110">
         	    <posx>100</posx>
-        	    <posy>59</posy>
+        	    <posy>30</posy>
         	    <width>1720</width>
-        	    <height>544</height>
+        	    <height>415</height>
         		<onleft>112</onleft>
         		<onright>112</onright>
         		<onup>110</onup>
@@ -101,7 +72,7 @@
         		<pagecontrol>112</pagecontrol>
         		<scrolltime tween="cubic" easing="out">500</scrolltime>
         		<focusposition>3</focusposition>
-        		<movement>4</movement>
+        		<movement>2</movement>
         		<itemlayout width="1720" height="68">
         		    <control type="label">
         		        <posx>860</posx>
