@@ -265,66 +265,20 @@
                     <posy>118</posy>
                     <posx>1274</posx>
                     <visible>!Container.Content(songs)</visible>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>42</posy>
-                        <width>550</width>
-                        <label>$INFO[ListItem.Label]</label>
-                        <font>Font-Alaska-S34-BL</font>
-                        <textcolor>cceeeeee</textcolor>
-                        <scroll>false</scroll>
-                        <align>left</align>
-                    </control>
-					<control type="label">
-						<posx>0</posx>
-						<posy>76</posy>
-						<width>550</width>
-						<label>$INFO[ListItem.Year]$INFO[ListItem.Genre, • ,]</label>
-						<font>Font-Alaska-S25-BL</font>
-						<textcolor>cceeeeee</textcolor>
-						<scroll>false</scroll>
-						<align>left</align>
-						<visible>Container.Content(albums)</visible>
-					</control>
-					<control type="label">
-						<posx>0</posx>
-						<posy>76</posy>
-						<width>550</width>
-						<label>$INFO[Window(home).Property(Artist.Albums.Count),,  $LOCALIZE[132]]$INFO[Window(home).Property(Artist.Albums.PlayCount),  •  ,  $LOCALIZE[576]]</label>
-						<font>Font-Alaska-S25-BL</font>
-						<textcolor>cceeeeee</textcolor>
-						<scroll>false</scroll>
-						<align>left</align>
-						<visible>Container.Content(artists)</visible>
-					</control>
                     <control type="group">
                         <visible>![Container(57).OnNext | Container(57).OnPrevious]</visible>
                         <animation effect="fade" end="100" start="0" time="500" delay="0" reversible="false">Visible</animation>
                         <control type="textbox">
                             <description>Plot</description>
                             <posx>0</posx>
-                            <posy>114</posy>
-                            <width>565</width>
-                            <height>177</height>
-                            <label>$INFO[ListItem.Property(Artist_Description)]</label>
+                            <posy>42</posy>
+                            <width>560</width>
+                            <height>240</height>
+                            <label>$VAR[MusicPlotBox]</label>
                             <align>justify</align>
                             <textcolor>cceeeeee</textcolor>
                             <autoscroll delay="13000" time="3000" repeat="13000" />
                             <font>Font-Condensed-S25</font>
-                            <visible>Container.Content(artists)</visible>
-                        </control>
-                        <control type="textbox">
-                            <description>Plot</description>
-                            <posx>0</posx>
-                            <posy>114</posy>
-                            <width>565</width>
-                            <height>177</height>
-                            <label>$INFO[ListItem.Property(Album_Description)]</label>
-                            <align>justify</align>
-                            <textcolor>cceeeeee</textcolor>
-                            <autoscroll delay="13000" time="3000" repeat="13000" />
-                            <font>Font-Condensed-S25</font>
-                            <visible>Container.Content(albums)</visible>
                         </control>
                     </control>
                 </control>
@@ -362,7 +316,7 @@
 							<posx>0</posx>
 							<posy>42</posy>
 							<width>550</width>
-							<label>$INFO[ListItem.Title]</label>
+							<label>$INFO[ListItem.Artist]</label>
 							<font>Font-Alaska-S34-BL</font>
 							<textcolor>ddeeeeee</textcolor>
 							<scroll>false</scroll>
@@ -397,7 +351,7 @@
 							<posx>0</posx>
 							<posy>45</posy>
 							<width>1250</width>
-							<label>$INFO[ListItem.Label,,: ]$VAR[lowlist.tagline]</label>
+							<label>$INFO[ListItem.Label]</label>
 							<font>Font-Alaska-S29-BL</font>
 							<textcolor>cceeeeee</textcolor>
 							<scroll>false</scroll>
@@ -409,47 +363,18 @@
 							<include>Mod_Banner_Stars</include>
 						</control>
 						<control type="group">
-							<control type="label">
-								<posx>0</posx>
-								<posy>76</posy>
-								<width>1200</width>
-								<label>$INFO[ListItem.Year]$INFO[ListItem.Genre, • ,]</label>
-								<font>Font-Alaska-S25-BL</font>
-								<textcolor>cceeeeee</textcolor>
-								<scroll>false</scroll>
-								<align>left</align>
-							</control>
-						</control>
-						<control type="group">
 							<posx>0</posx>
 							<posy>-10</posy>
 							<control type="group">
-								<visible>![Container(56).OnNext | Container(56).OnPrevious] + Container.Content(Albums)</visible>
+								<visible>![Container(56).OnNext | Container(56).OnPrevious]</visible>
 								<animation effect="fade" end="100" start="0" time="350" delay="300" reversible="false">Visible</animation>
 								<control type="textbox">
 									<description>Plot</description>
 									<posx>0</posx>
-									<posy>125</posy>
+									<posy>95</posy>
 									<width>1335</width>
-									<height>180</height>
-									<label>$INFO[ListItem.Property(Album_Description)]</label>
-									<align>justify</align>
-									<textcolor>mod-infotags-alt2</textcolor>
-									<autoscroll delay="13000" time="3000" repeat="13000" />
-									<font>Font-Condensed-S25</font>
-									<pagecontrol>73</pagecontrol>
-								</control>
-							</control>
-							<control type="group">
-								<visible>![Container(56).OnNext | Container(56).OnPrevious] + Container.Content(Artists)</visible>
-								<animation effect="fade" end="100" start="0" time="350" delay="300" reversible="false">Visible</animation>
-								<control type="textbox">
-									<description>Plot</description>
-									<posx>0</posx>
-									<posy>97</posy>
-									<width>1335</width>
-									<height>208</height>
-									<label>$INFO[ListItem.Property(Artist_Description)]</label>
+									<height>210</height>
+									<label>$VAR[MusicPlotBox]</label>
 									<align>justify</align>
 									<textcolor>mod-infotags-alt2</textcolor>
 									<autoscroll delay="13000" time="3000" repeat="13000" />

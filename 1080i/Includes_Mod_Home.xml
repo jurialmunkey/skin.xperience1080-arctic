@@ -16,9 +16,9 @@
 		<animation effect="fade" start="100" end="20" time="0" condition="![Control.HasFocus(82) | Control.HasFocus(84)]">Conditional</animation>
 	</include>
 	<include name="Mod_GreyPanelDimensions">
-		<posx>-15</posx>
+		<posx>-5</posx>
 		<posy>205</posy>
-		<width>1950</width>
+		<width>1930</width>
 		<height>490</height>
 		<texture border="35">views/newgloss/whitepanel-15.png</texture>
 	</include>
@@ -61,10 +61,10 @@
     </variable>
     
 	<include name="panel.slideup.anim">
-		<animation effect="slide" start="0" end="0,-110" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(82) | Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
+		<animation effect="slide" start="0" end="0,-70" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(82) | Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
 	</include>
 	<include name="panel.slidedown.anim">
-		<animation effect="slide" start="0" end="0,110" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(82) | Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
+		<animation effect="slide" start="0" end="0,150" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(82) | Control.HasFocus(83) | Control.HasFocus(84)">Conditional</animation>
 	</include>
 	
 	<include name="Mod_HomeList">
@@ -77,7 +77,7 @@
 				<animation effect="fade" delay="200" time="350">WindowClose</animation>
 				<animation effect="fade" time="350">Visible</animation>
 				<animation effect="fade" time="350">Hidden</animation>
-			
+				
 				<!-- Top DARK PANEL -->
 				<control type="group">
 					<include>panel.slideup.anim</include>
@@ -85,37 +85,27 @@
 						<posx>-10</posx>
 						<posy>140</posy>
 						<width>1940</width>
-						<height>100</height>
+						<height>950</height>
 						<texture border="25">views/newgloss/border-glass.png</texture>
-						<colordiffuse>77ffffff</colordiffuse>
+						<colordiffuse>bbffffff</colordiffuse>
 					</control>
 					<control type="image">
-						<posx>0</posx>
+						<posx>10</posx>
 						<posy>160</posy>
-						<width>1920</width>
-						<height>540</height>
-						<texture border="5">views/newgloss/whitepanel.png</texture>
-						<colordiffuse>ff181818</colordiffuse>
+						<width>1900</width>
+						<height>520</height>
+						<texture border="15">arctic/common/panel.png</texture>
 					</control>
 				</control>
 				<!-- Bottom DARK PANEL -->
 				<control type="group">
 					<include>panel.slidedown.anim</include>
 					<control type="image">
-						<posx>-10</posx>
-						<posy>620</posy>
-						<width>1940</width>
-						<height>100</height>
-						<texture border="25">views/newgloss/border-glass.png</texture>
-						<colordiffuse>77ffffff</colordiffuse>
-					</control>
-					<control type="image">
-						<posx>0</posx>
-						<posy>160</posy>
-						<width>1920</width>
-						<height>540</height>
-						<texture border="5">views/newgloss/whitepanel.png</texture>
-						<colordiffuse>ff181818</colordiffuse>
+						<posx>10</posx>
+						<posy>220</posy>
+						<width>1900</width>
+						<height>480</height>
+						<texture border="15">arctic/common/panel.png</texture>
 					</control>
 				</control>
 			
@@ -279,7 +269,7 @@
 					<onright>84</onright>
 					<onback>525</onback>
 					<posx>35</posx>
-					<posy>594</posy>
+					<posy>636</posy>
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<width>1840</width>
 					<height>220</height>
@@ -394,11 +384,11 @@
 			
 				<control type="group">
 					<visible>Control.HasFocus(83) + IntegerGreaterThan(Container(83).NumItems,10)</visible>
-					<posy>204</posy>
+					<posy>244</posy>
 					<animation effect="fade" start="0" end="100" time="350" delay="150" reversible="false">Visible</animation>
 					<control type="image">
 						<description>Left Arrow</description>
-						<posx>6</posx>
+						<posx>12</posx>
 						<posy>0</posy>
 						<width>28</width>
 						<height>28</height>
@@ -408,7 +398,7 @@
 					</control>
 					<control type="image">
 						<description>Right Arrow</description>
-						<posx>38r</posx>
+						<posx>44r</posx>
 						<posy>0</posy>
 						<width>28</width>
 						<height>28</height>
@@ -543,30 +533,29 @@
 					<include>panel.slidedown.anim</include>
 					<animation effect="fade" start="0" end="100" time="450" tween="cubic" easing="out" reversible="false">Visible</animation>
 					<control type="image">
-						<posx>20</posx>
+						<posx>30</posx>
 						<posy>20</posy>
 						<width>391</width>
 						<height>200</height>
-						<texture diffuse="views/newgloss/landscape-391-220.png">$INFO[Container(82).ListItem.Icon]</texture>
-						<aspectratio>scale</aspectratio>
+						<texture diffuse="arctic/home/fanart.png">$INFO[Container(82).ListItem.Icon]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
 						<visible>!IsEmpty(Container(82).ListItem.Icon)</visible>
 					</control>
 					<control type="image">
-						<posx>20</posx>
+						<posx>30</posx>
 						<posy>20</posy>
 						<width>391</width>
 						<height>200</height>
-						<texture diffuse="views/newgloss/landscape-391-220.png">$INFO[Container(82).ListItem.Property(poster)]</texture>
-						<aspectratio>scale</aspectratio>
+						<texture diffuse="arctic/home/fanart.png">$INFO[Container(82).ListItem.Property(poster)]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
 						<visible>IsEmpty(Container(82).ListItem.Icon)</visible>
 					</control>
 					<control type="image">
-						<posx>10</posx>
+						<posx>20</posx>
 						<posy>10</posy>
 						<width>411</width>
 						<height>220</height>
-						<texture border="25">views/newgloss/border.png</texture>
-						<colordiffuse>55ffffff</colordiffuse>
+						<texture border="25">arctic/common/border.png</texture>
 						<visible>!IsEmpty(Container(82).ListItem.Icon) | !IsEmpty(Container(82).ListItem.Property(poster))</visible>
 					</control>
 					<control type="label">
@@ -621,8 +610,8 @@
 				</control>
 			
 				<control type="group">
-					<animation effect="slide" start="0" end="0,-110" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(82) | Control.HasFocus(84)">Conditional</animation>
-					<animation effect="slide" start="0" end="0,110" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(83)">Conditional</animation>
+					<animation effect="slide" start="0" end="0,-70" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(82) | Control.HasFocus(84)">Conditional</animation>
+					<animation effect="slide" start="0" end="0,150" time="350" tween="cubic" easing="inout" condition="Control.HasFocus(83)">Conditional</animation>
 					<include>listEndAnimation</include>
 					<!-- GREY PANEL -->
 					<control type="image">
@@ -1011,7 +1000,7 @@
 							<control type="image">
 								<posx>-5</posx>
 								<posy>-5</posy>
-								<width>199</width>
+								<width>204</width>
 								<height>199</height>
 								<texture border="35">views/newgloss/whitepanel-15.png</texture>
 								<colordiffuse>88eeeeee</colordiffuse>
@@ -1140,7 +1129,7 @@
 								</control>
 							</control>
 							<control type="group">
-								<posx>371</posx>
+								<posx>365</posx>
 								<control type="image">
 									<posx>-5</posx>
 									<posy>-5</posy>
@@ -1239,7 +1228,7 @@
 								</control>
 							</control>
 							<control type="group">
-								<posx>742</posx>
+								<posx>730</posx>
 								<control type="image">
 									<posx>-5</posx>
 									<posy>-5</posy>
@@ -1508,13 +1497,13 @@
 									<posy>10</posy>
 									<width>169</width>
 									<height>254</height>
-									<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+									<texture diffuse="arctic/home/poster.png">$INFO[ListItem.Property(poster)]</texture>
 								</control>
 							</control>
 							<control type="image">
 								<width>189</width>
 								<height>274</height>
-								<texture border="25">views/newgloss/border.png</texture>
+								<texture border="25">arctic/common/border.png</texture>
 								<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
 							</control>
 							<control type="image">
@@ -1545,13 +1534,13 @@
 										<posy>10</posy>
 										<width>220</width>
 										<height>220</height>
-										<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+										<texture diffuse="arctic/home/cover.png">$INFO[ListItem.Property(poster)]</texture>
 									</control>
 								</control>
 								<control type="image">
 									<width>240</width>
 									<height>240</height>
-									<texture border="25">views/newgloss/border.png</texture>
+									<texture border="25">arctic/common/border.png</texture>
 									<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
 								</control>
 								<control type="image">
@@ -1559,7 +1548,7 @@
 									<posy>10</posy>
 									<width>220</width>
 									<height>220</height>
-									<texture border="5">views/newgloss/whitepanel.png</texture>
+									<texture border="15">arctic/common/whitepanel.png</texture>
 									<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
 									<visible>Control.HasFocus(82)</visible>
 								</control>
@@ -1580,24 +1569,15 @@
 									<posy>10</posy>
 									<width>169</width>
 									<height>254</height>
-									<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+									<texture diffuse="arctic/home/poster.png">$INFO[ListItem.Property(poster)]</texture>
 								</control>
 							</control>
 							<control type="image">
 								<width>189</width>
 								<height>274</height>
-								<texture border="25">views/newgloss/border.png</texture>
+								<texture border="25">arctic/common/border.png</texture>
 								<animation effect="fade" start="100" end="33" condition="!Control.HasFocus(82)">Conditional</animation>
 							</control>
-							<!--<control type="image">
-								<posx>10</posx>
-								<posy>10</posy>
-								<width>169</width>
-								<height>254</height>
-								<texture border="5">views/newgloss/whitepanel.png</texture>
-								<visible>!Control.HasFocus(82)</visible>
-								<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
-							</control>-->
 						</focusedlayout>
 						<focusedlayout width="230" condition="Container(525).HasFocus(3)">
 							<control type="group">
@@ -1616,24 +1596,15 @@
 										<posy>10</posy>
 										<width>220</width>
 										<height>220</height>
-										<texture diffuse="views/newgloss/poster-179-268.png">$INFO[ListItem.Property(poster)]</texture>
+										<texture diffuse="arctic/home/cover.png">$INFO[ListItem.Property(poster)]</texture>
 									</control>
 								</control>
 								<control type="image">
 									<width>240</width>
 									<height>240</height>
-									<texture border="25">views/newgloss/border.png</texture>
+									<texture border="25">arctic/common/border.png</texture>
 									<animation effect="fade" start="100" end="33" condition="!Control.HasFocus(82)">Conditional</animation>
 								</control>
-								<!--<control type="image">
-									<posx>10</posx>
-									<posy>10</posy>
-									<width>220</width>
-									<height>220</height>
-									<texture border="5">views/newgloss/whitepanel.png</texture>
-									<visible>!Control.HasFocus(82)</visible>
-									<animation effect="fade" start="100" end="33" condition="true">Conditional</animation>
-								</control>-->
 							</control>
 						</focusedlayout>
 						<content>

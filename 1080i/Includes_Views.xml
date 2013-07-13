@@ -29,6 +29,7 @@
     <include file="Viewtypes_PosterInfo.xml" />
     <include file="Viewtypes_EpisodeInfo.xml" />
     <include file="viewtypes_LoveFilm.xml" />
+    <include file="viewtypes_GlassList.xml" />
 
     <include file="Viewtypes_MusicList.xml" />
     <include file="Viewtypes_MusicPanel.xml" />
@@ -38,7 +39,7 @@
 	<include file="Viewtypes_MusicCoverInfo.xml" />
 	<include file="Viewtypes_MusicBanner.xml" />
 	<include file="Viewtypes_MusicListLow.xml" />
-	<include file="Viewtypes_SongInfo.xml" />
+	<include file="Viewtypes_MusicShortList.xml" />
 	
     <include name="VideoViews">
         <include>Viewtype-List</include>                <!--id(50)  -->
@@ -57,6 +58,7 @@
 		<include>Viewtype-LandscapeCarousel</include>   <!--id(513) -->
 		<include>Viewtype-ClassicPosterInfo</include>   <!--id(514) -->
 		<include>Viewtype-EpisodeInfo</include>		    <!--id(516) -->
+		<include>Viewtype-GlassList</include>		    <!--id(516) -->
         <include>Viewtype-LoveFilm</include>            <!--id(519)  -->
         <include>Viewtype-Banner</include>              <!--id(60)  -->
         <include condition="Skin.HasSetting(NextAired.Enabled)">NextAiredInfo</include>
@@ -70,8 +72,8 @@
         <include>Viewtype-MusicLowList</include>		<!-- (54) -->
         <include>Viewtype-MusicPanelBig</include>		<!-- (55) -->
         <include>Viewtype-ClassicCoverView</include>	<!-- (56) -->
+        <include>Viewtype-MusicShortList</include>		<!-- (57) -->
         <include>Viewtype-CoverList</include>			<!-- (60) -->
-        <include>Viewtype-InfoList</include>			<!-- (516) -->
     </include>
     
     <include name="MusicFileViews">

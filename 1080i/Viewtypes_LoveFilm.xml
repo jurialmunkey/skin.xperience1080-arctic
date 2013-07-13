@@ -8,7 +8,7 @@
             <include>CommonViewAnimations</include>
             <include>OptionsShutdownAnimation</include>
             <control type="group">
-            	<posy>500</posy>
+            	<posy>510</posy>
             	<animation effect="fade" start="0" end="100" delay="400" time="350" reversible="false" condition="![Container(519).OnNext | Container(519).OnPrevious]">Conditional</animation>
             	<control type="image">
 					<description>Left</description>
@@ -31,7 +31,7 @@
             </control>
             <control type="wraplist" id="519">
 				<posx>0</posx>
-				<posy>160</posy>
+				<posy>170</posy>
 				<width>1920</width>
 				<height>800</height>
                 <scrolltime tween="cubic" easing="out">500</scrolltime>
@@ -91,17 +91,25 @@
                 </itemlayout>
                 <focusedlayout width="1920">
 					<control type="group">
+						<control type="image">
+                        	<posx>75</posx>
+                        	<posy>25</posy>
+                        	<width>1760</width>
+                        	<height>684</height>
+                        	<texture border="24">arctic/common/16white.png</texture>
+                        	<colordiffuse>bbwhite</colordiffuse>
+                        </control>
                         <control type="image">
                         	<posx>50</posx>
-                        	<width>1820</width>
-                        	<height>754</height>
-                        	<texture border="70">arctic/common/banner-35.png</texture>
-                        	<colordiffuse>ffeeeeee</colordiffuse>
+                        	<posy>0</posy>
+                        	<width>1810</width>
+                        	<height>734</height>
+                        	<texture border="100">arctic/osd/white-25.png</texture>
                         </control>
                         <control type="image">
 							<description>Landscape</description>
 							<posx>619</posx>
-							<posy>35</posy>
+							<posy>25</posy>
 							<width>1216</width>
 							<height>684</height>
 							<texture background="true" diffuse="arctic/banner/lovefilm.png">$VAR[ListInfoLandscapeVar]</texture>
@@ -115,7 +123,7 @@
 							<control type="image">
 								<description>Panel</description>
 								<posx>0</posx>
-								<posy>0</posy>
+								<posy>-10</posy>
 								<width>80</width>
 								<height>80</height>
 								<texture>$VAR[arctic.watched.bottom]</texture>
@@ -124,7 +132,7 @@
 						</control>
 						<control type="textbox">
 							<posx>100</posx>
-							<posy>40</posy>
+							<posy>46</posy>
 							<width>509</width>
 							<height>100</height>
 							<label>$INFO[ListItem.Label]</label>
@@ -136,9 +144,9 @@
 						</control>
 						<control type="textbox">
 							<posx>100</posx>
-							<posy>150</posy>
-							<width>504</width>
-							<height>560</height>
+							<posy>160</posy>
+							<width>498</width>
+							<height>530</height>
 							<label>$INFO[ListItem.Plot]</label>
 							<textcolor>mod-infotags</textcolor>
 							<font>Font-Alaska-S25-NC</font>

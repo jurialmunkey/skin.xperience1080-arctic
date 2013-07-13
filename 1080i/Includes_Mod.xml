@@ -1,4 +1,10 @@
 <includes>
+	<variable name="MusicPlotBox">
+		<value condition="Container.Content(albums) + !IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description),[B]$LOCALIZE[183][/B][CR],]$INFO[Window(home).Property(Album.Songs.Tracklist),[CR][CR][B]$LOCALIZE[182][/B][CR],]</value>
+		<value condition="Container.Content(albums) + IsEmpty(ListItem.Property(Album_Description))">$INFO[Window(home).Property(Album.Songs.Tracklist),[B]$LOCALIZE[182][/B][CR],]</value>
+		<value condition="Container.Content(artists) + !IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description),[B]$LOCALIZE[21887][/B][CR],]$INFO[Window(home).Property(Artist.Album.1.Title),[CR][CR][B]$LOCALIZE[21888][/B][CR],]$INFO[Window(home).Property(Artist.Album.2.Title),[CR],]$INFO[Window(home).Property(Artist.Album.3.Title),[CR],]$INFO[Window(home).Property(Artist.Album.4.Title),[CR],]$INFO[Window(home).Property(Artist.Album.5.Title),[CR],]$INFO[Window(home).Property(Artist.Album.6.Title),[CR],]$INFO[Window(home).Property(Artist.Album.7.Title),[CR],]$INFO[Window(home).Property(Artist.Album.8.Title),[CR],]$INFO[Window(home).Property(Artist.Album.9.Title),[CR],]$INFO[Window(home).Property(Artist.Album.10.Title),[CR],]</value>
+		<value condition="Container.Content(artists) + IsEmpty(ListItem.Property(Artist_Description))">$INFO[Window(home).Property(Artist.Album.1.Title),[B]$LOCALIZE[21888][/B][CR],]$INFO[Window(home).Property(Artist.Album.2.Title),[CR],]$INFO[Window(home).Property(Artist.Album.3.Title),[CR],]$INFO[Window(home).Property(Artist.Album.4.Title),[CR],]$INFO[Window(home).Property(Artist.Album.5.Title),[CR],]$INFO[Window(home).Property(Artist.Album.6.Title),[CR],]$INFO[Window(home).Property(Artist.Album.7.Title),[CR],]$INFO[Window(home).Property(Artist.Album.8.Title),[CR],]$INFO[Window(home).Property(Artist.Album.9.Title),[CR],]$INFO[Window(home).Property(Artist.Album.10.Title),[CR],]</value>
+	</variable>
 	<variable name="covers.showcases.var">
 		<value condition="substring(ListItem.Path,videodb://1/7,left)">set</value>
         <value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">bluray</value>
@@ -2970,7 +2976,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<scroll>false</scroll>
-			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
+			<visible>IsEmpty(ListItem.Property(showlabel) + ![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
 		<control type="label">
 			<posx>294</posx>
@@ -2983,7 +2989,7 @@
 			<align>right</align>
 			<aligny>center</aligny>
 			<scroll>false</scroll>
-			<visible>![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
+			<visible>IsEmpty(ListItem.Property(showlabel) + ![IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))]</visible>
 		</control>
 		<control type="image">
 			<posx>24</posx>
@@ -2992,7 +2998,7 @@
 			<height>283</height>
 			<texture>$INFO[ListItem.Icon]</texture>
 			<colordiffuse>mod-infotags-d</colordiffuse>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
+			<visible>IsEmpty(ListItem.Property(showlabel) + IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 		<control type="label">
 			<posx>40</posx>
@@ -3005,7 +3011,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<scroll>false</scroll>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
+			<visible>IsEmpty(ListItem.Property(showlabel) + IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 		<control type="label">
 			<posx>294</posx>
@@ -3018,7 +3024,7 @@
 			<align>right</align>
 			<aligny>center</aligny>
 			<scroll>false</scroll>
-			<visible>IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
+			<visible>IsEmpty(ListItem.Property(showlabel) + IsEmpty(ListItem.Property(movietile)) + IsEmpty(ListItem.Property(tvtile)) + IsEmpty(ListItem.Property(musictile)) + IsEmpty(ListItem.Property(pvrtile)) + IsEmpty(ListItem.Property(weathertile)) + IsEmpty(ListItem.Property(apptile))  + IsEmpty(ListItem.Property(hometile))</visible>
 		</control>
 	</include>
 	<include name="Mod_MetroTile382_Item">
@@ -3045,6 +3051,7 @@
 				<align>left</align>
 				<scroll>false</scroll>
 				<aligny>center</aligny>
+				<visible>IsEmpty(ListItem.Property(showlabel)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -3069,6 +3076,7 @@
 				<align>left</align>
 				<scroll>false</scroll>
 				<aligny>center</aligny>
+				<visible>IsEmpty(ListItem.Property(showlabel)</visible>
 			</control>
 		</control>
 	</include>
@@ -3200,6 +3208,9 @@
 			<height>283</height>
 			<texture>$INFO[ListItem.Icon]</texture>
 			<colordiffuse>mod-infotags-alt</colordiffuse>
+			<animation type="Focus" condition="IsEmpty(ListItem.Property(animate))">
+				<effect type="zoom" start="75" end="100" time="200" delay="50" tween="sine" easing="in" center="auto" />
+			</animation>
 		</control>
 		<control type="label">
 			<posx>40</posx>
@@ -3212,6 +3223,7 @@
 			<align>left</align>
 			<aligny>center</aligny>
 			<scroll>false</scroll>
+			<visible>IsEmpty(ListItem.Property(showlabel)</visible>
 		</control>
 		<control type="label">
 			<posx>294</posx>
@@ -3224,6 +3236,7 @@
 			<align>right</align>
 			<aligny>center</aligny>
 			<scroll>false</scroll>
+			<visible>IsEmpty(ListItem.Property(showlabel)</visible>
 		</control>
 		<control type="image">
 			<posx>14</posx>
@@ -3291,6 +3304,9 @@
 			<texture>$INFO[ListItem.Icon]</texture>
 			<colordiffuse>mod-infotags-alt</colordiffuse>
 			<aspectratio align="center">keep</aspectratio>
+			<animation type="Focus" condition="IsEmpty(ListItem.Property(animate))">
+				<effect type="zoom" start="75" end="100" time="200" delay="50" tween="sine" easing="in" center="auto" />
+			</animation>
 		</control>
 		<control type="label">
 			<posx>40</posx>
@@ -3303,6 +3319,7 @@
 			<scroll>false</scroll>
 			<align>left</align>
 			<aligny>center</aligny>
+			<visible>IsEmpty(ListItem.Property(showlabel)</visible>
 		</control>
 	</include>
 	<variable name="Metadata.Actors.InLibrary">

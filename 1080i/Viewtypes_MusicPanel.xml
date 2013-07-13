@@ -20,6 +20,7 @@
 				<texture border="25">views/newgloss/border-glass.png</texture>
 				<aspectratio>stretch</aspectratio>
 				<colordiffuse>Mod_Panel_Glass</colordiffuse>
+				<visible>!Skin.HasSetting(viewtypes.hidepanel)</visible>
 			</control> 
 
             <control type="image">

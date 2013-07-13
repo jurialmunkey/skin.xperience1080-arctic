@@ -1,7 +1,7 @@
 <includes>
 	<include name="Mod_SimpleHomeList">
 		<control type="group">
-			<animation effect="slide" start="0" end="0,162" time="0" condition="Skin.HasSetting(simple.lowerbar)">Conditional</animation>
+			<animation effect="slide" start="0" end="0,164" time="250" condition="Skin.HasSetting(simple.lowerbar)">Conditional</animation>
 			<control type="group">
 				<posy>1080</posy>
 				<animation effect="slide" start="0" end="0,-840" time="550" delay="150" tween="back" easing="out" condition="Control.HasFocus(82)">Conditional</animation>
@@ -14,7 +14,6 @@
 					<texture border="25">views/newgloss/border-glass.png</texture>
 					<colordiffuse>77ffffff</colordiffuse>
 				</control>
-			
 				<!-- DARK PANEL -->
 				<control type="image">
 					<posx>0</posx>
@@ -291,31 +290,6 @@
 					<height>450</height>
 					<texture border="5">views/newgloss/whitepanel.png</texture>
 					<colordiffuse>dd000000</colordiffuse>
-				</control>
-				<!-- CLOCK LOWER BAR -->
-				<control type="group">
-					<posy>176</posy>
-					<posx>120r</posx>
-					<visible>Skin.HasSetting(simple.lowerbar)</visible>
-					<control type="label">
-						<label>$INFO[System.Time]</label>
-						<width>180</width>
-						<label>$INFO[System.Time]</label>
-						<font>Font-Alaska-S29-BL</font>
-						<textcolor>white</textcolor>
-						<animation effect="fade" start="100" end="60" time="250" condition="true">Conditional</animation>
-						<animation effect="slide" end="-45" time="300" tween="sine" easing="inout" condition="Window.IsActive(mutebug)">Conditional</animation>
-					</control>
-					<control type="image">
-						<description>Mute</description>
-						<posy>-33</posy>
-						<posx>40</posx>
-						<width>100</width>
-						<height>100</height>
-						<texture>overlays/volume/muted.png</texture>
-						<include>visiblehidefadeinfo</include>
-						<visible>Window.IsActive(mutebug)</visible>
-					</control>
 				</control>
 				<control type="grouplist">
 					<visible>!Skin.HasSetting(simplehome.carousel)</visible>

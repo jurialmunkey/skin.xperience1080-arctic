@@ -44,7 +44,7 @@
         	<animation effect="slide" end="0" start="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">Visible</animation>
 			<include condition="StringCompare(Skin.String(homescreen.style),simple)">Mod_SimpleHomeList</include>
 		</control>
-		
+		<include condition="StringCompare(Skin.String(homescreen.style),panel)">Mod_HomeList</include>
 		<!-- Profile Stuff -->
 		<include>HomeProfileInfo</include>
 		<!-- Fade background -->
@@ -56,9 +56,10 @@
         	<animation effect="slide" end="0" start="0,500" time="250" condition="StringCompare(Skin.String(homescreen.style),simple)">Visible</animation>	
 			<include condition="!Skin.HasSetting(HideHomeButtons)">shutdown-favs</include>
 		</control>
+		
 		<!-- Common/profile info -->
 		<include>Common-Home-Info</include>
 		
-		<include condition="StringCompare(Skin.String(homescreen.style),panel)">Mod_HomeList</include>
+		
     </controls>
 </window>

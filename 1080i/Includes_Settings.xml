@@ -1846,7 +1846,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeVideoTile1.ShowLabel))">Skin.SetString(HomeVideoTile1.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeVideoTile1.ShowLabel))">Skin.Reset(HomeVideoTile1.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeVideoTile1.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeVideoTile1.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2018,7 +2018,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeVideoTile2.ShowLabel))">Skin.SetString(HomeVideoTile2.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeVideoTile2.ShowLabel))">Skin.Reset(HomeVideoTile2.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeVideoTile2.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeVideoTile2.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2190,7 +2190,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeVideoTile3.ShowLabel))">Skin.SetString(HomeVideoTile3.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeVideoTile3.ShowLabel))">Skin.Reset(HomeVideoTile3.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeVideoTile3.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeVideoTile3.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2362,7 +2362,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeVideoTile4.ShowLabel))">Skin.SetString(HomeVideoTile4.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeVideoTile4.ShowLabel))">Skin.Reset(HomeVideoTile4.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeVideoTile4.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeVideoTile4.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2534,7 +2534,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeTVShowTile1.ShowLabel))">Skin.SetString(HomeTVShowTile1.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeTVShowTile1.ShowLabel))">Skin.Reset(HomeTVShowTile1.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeTVShowTile1.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeTVShowTile1.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2706,7 +2706,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeTVShowTile2.ShowLabel))">Skin.SetString(HomeTVShowTile2.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeTVShowTile2.ShowLabel))">Skin.Reset(HomeTVShowTile2.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeTVShowTile2.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeTVShowTile2.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -2878,7 +2878,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeMusicTile1.ShowLabel))">Skin.SetString(HomeMusicTile1.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeMusicTile1.ShowLabel))">Skin.Reset(HomeMusicTile1.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeMusicTile1.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeMusicTile1.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3050,7 +3050,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeMusicTile2.ShowLabel))">Skin.SetString(HomeMusicTile2.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeMusicTile2.ShowLabel))">Skin.Reset(HomeMusicTile2.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeMusicTile2.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeMusicTile2.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3222,7 +3222,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeProgramTile1.ShowLabel))">Skin.SetString(HomeProgramTile1.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeProgramTile1.ShowLabel))">Skin.Reset(HomeProgramTile1.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeProgramTile1.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeProgramTile1.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3394,7 +3394,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeProgramTile2.ShowLabel))">Skin.SetString(HomeProgramTile2.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeProgramTile2.ShowLabel))">Skin.Reset(HomeProgramTile2.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeProgramTile2.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeProgramTile2.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3566,7 +3566,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeProgramTile3.ShowLabel))">Skin.SetString(HomeProgramTile3.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeProgramTile3.ShowLabel))">Skin.Reset(HomeProgramTile3.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeProgramTile3.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeProgramTile3.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3738,7 +3738,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeProgramTile4.ShowLabel))">Skin.SetString(HomeProgramTile4.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeProgramTile4.ShowLabel))">Skin.Reset(HomeProgramTile4.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeProgramTile4.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeProgramTile4.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>
@@ -3909,7 +3909,7 @@
                 <label>$LOCALIZE[41156]</label>
                 <onclick condition="IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))">Skin.SetString(HomeProgramTile5.ShowLabel,on)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))">Skin.Reset(HomeProgramTile5.ShowLabel)</onclick>
-                <selected>!IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))</selected>
+                <selected>IsEmpty(Skin.String(HomeProgramTile5.ShowLabel))</selected>
             </control>
             <control type="radiobutton" id="2404">
                 <include>SettingsCustomDialogRadioButtonVars</include>

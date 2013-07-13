@@ -1,7 +1,7 @@
 <window>
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>yes</allowoverlay>
-    <views>50,53,56,57,502,503,504,505,506,507,508,509,510,511,513,514,516,519,60</views>
+    <views>50,53,56,57,502,503,504,505,506,507,508,509,510,511,513,514,516,517,519,60</views>
     <backgroundcolor>0</backgroundcolor>
     <onload condition="System.HasAddon(script.tvtunes) + Library.HasContent(TVShows) + !Player.HasMedia + Skin.HasSetting(TVTunes.Enabled)">RunScript(script.tvtunes,backend=True&amp;loop=False)</onload>
     <onload condition="System.HasAddon(script.tv.show.next.aired) + Library.HasContent(TVShows) + Skin.HasSetting(NextAired.Enabled)">RunScript(script.tv.show.next.aired,backend=True)</onload>
@@ -294,11 +294,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(511)</visible>
                     </control>
-                    
-                    
-                    
-                    
-                    
+					<!-- Disc Art -->
                     <control type="radiobutton" id="102">
                         <include>optionsbuttonsdimensions</include>
                         <label>Show Discart</label>
@@ -310,6 +306,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Container.Content(movies) + [Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(56) | Control.IsVisible(514)]</visible>
                     </control>
+                    <!-- Banner Plex Clear Logo -->
                     <control type="radiobutton" id="103">
                         <include>optionsbuttonsdimensions</include>
                         <label>Use clearlogo in list</label>
@@ -321,6 +318,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(53)</visible>
                     </control>
+                    <!-- Hide Panel -->
                     <control type="radiobutton" id="104">
                         <include>optionsbuttonsdimensions</include>
                         <label>Hide panel</label>
@@ -332,7 +330,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(510) | Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(503)</visible>
                     </control>
-                    
+                    <!-- Poster Info Hide Info -->
                     <control type="radiobutton" id="110">
                         <include>optionsbuttonsdimensions</include>
                         <label>Use alt info style</label>
@@ -344,6 +342,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(56)</visible>
                     </control>
+                    <!-- Hide Wall Info -->
                     <control type="radiobutton" id="111">
                         <include>optionsbuttonsdimensions</include>
                         <label>Hide info pop-up</label>
@@ -355,6 +354,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(502)</visible>
                     </control>
+                    <!-- Use Banners -->
                     <control type="radiobutton" id="112">
                         <include>optionsbuttonsdimensions</include>
                         <label>Use wide banners</label>
@@ -377,6 +377,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(60) + Container.Content(tvshows)</visible>
                     </control>
+                    <!-- Show Plot in Tvshow Banners -->
                     <control type="radiobutton" id="114">
                         <include>optionsbuttonsdimensions</include>
                         <label>Show plot</label>
@@ -388,7 +389,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(60) + [[!Skin.HasSetting(bannerlist.moviebanners) + Container.Content(movies)] | [!Skin.HasSetting(bannerlist.tvshowbanners) + Container.Content(tvshows)]]</visible>
                     </control>
-                    
+                    <!-- Prefer Landscape Art -->
                     <control type="radiobutton" id="115">
                         <include>optionsbuttonsdimensions</include>
                         <selected>Skin.HasSetting(PreferLandscapeArt)</selected>
@@ -400,7 +401,7 @@
                         <radioposx>-19</radioposx>
                         <visible>[Control.IsVisible(60) + ![[Container.Content(tvshows) + !Skin.HasSetting(bannerlist.tvshowbanners)] | [Container.Content(movies) + !Skin.HasSetting(bannerlist.moviebanners)]]] | Control.IsVisible(508) | Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(513)</visible>
                     </control>
-                    
+                    <!-- Use Alt Banner Plex Banner -->
                     <control type="radiobutton" id="116">
                         <include>optionsbuttonsdimensions</include>
                         <selected>Skin.HasSetting(new.bannerplex)</selected>
@@ -413,6 +414,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(53)</visible>
                     </control>
+                    <!-- Show Episode Thumb As Fanart in Low List -->
                     <control type="radiobutton" id="118">
                         <include>optionsbuttonsdimensions</include>
                         <selected>Skin.HasSetting(lowlist.showepisodethumb)</selected>
@@ -424,6 +426,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(511) + Container.Content(episodes)</visible>
                     </control>
+                    <!-- Show Poster Next to Banner -->
                     <control type="radiobutton" id="119">
                         <include>optionsbuttonsdimensions</include>
                         <selected>Skin.HasSetting(bannerlist.showposter)</selected>
@@ -435,6 +438,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(60)</visible>
                     </control>
+                    <!-- Show Poster in Banner Panel -->
                     <control type="radiobutton" id="123">
                         <include>optionsbuttonsdimensions</include>
                         <selected>Skin.HasSetting(bannerpanel.showposter)</selected>
@@ -446,6 +450,7 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(509)</visible>
                     </control>
+                    <!-- Zoom Landscape View -->
                     <control type="radiobutton" id="124">
                         <include>optionsbuttonsdimensions</include>
                         <selected>Skin.HasSetting(landscapeview.zoom)</selected>
@@ -457,9 +462,19 @@
                         <radioposx>-19</radioposx>
                         <visible>Control.IsVisible(507)</visible>
                     </control>
-                    
-                    
-                    
+                    <!-- Episode Info Right -->
+                    <control type="radiobutton" id="170">
+                        <include>optionsbuttonsdimensions</include>
+                        <selected>Skin.HasSetting(episodeinfo.rightside)</selected>
+                        <onclick>Skin.ToggleSetting(episodeinfo.rightside)</onclick>
+                        <onclick>ReloadSkin()</onclick>
+                        <label>Right align</label>
+                        <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                        <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                        <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                        <radioposx>-19</radioposx>
+                        <visible>Control.IsVisible(516)</visible>
+                    </control>
                     
                     <!-- Lower Info Toggles -->
                     <control type="radiobutton" id="108">
@@ -714,6 +729,17 @@
                         <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
                         <onclick>Container.SetViewMode(519)</onclick>
                         <selected>Control.IsVisible(519)</selected>
+                        <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
+                        <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
+                        <radioposx>-19</radioposx>
+                        <visible>Container.Content(episodes) | Container.Content(Seasons) | Container.Content(tvshows) | Container.Content(movies)</visible>
+                    </control>
+                    <control type="radiobutton" id="226">
+                        <include>optionsbuttonsdimensions</include>
+                        <label>Glass List</label>
+                        <texturefocus>dialogs/options/buttons/default-fo.png</texturefocus>
+                        <onclick>Container.SetViewMode(517)</onclick>
+                        <selected>Control.IsVisible(517)</selected>
                         <textureradiofocus>buttons/radio/options-radio-button-fo.png</textureradiofocus>
                         <textureradionofocus>buttons/radio/options-radio-button-nf.png</textureradionofocus>
                         <radioposx>-19</radioposx>
