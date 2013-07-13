@@ -158,7 +158,7 @@
 							<control type="label">
 								<posx>100</posx>
 								<posy>4</posy>
-								<width>905</width>
+								<width>705</width>
 								<label>$INFO[ListItem.Title]</label>
 								<font>Font-Alaska-S34-BL</font>
 								<textcolor>mod-infotags</textcolor>
@@ -169,7 +169,7 @@
 							<control type="label">
 								<posx>100</posx>
 								<posy>34</posy>
-								<width>905</width>
+								<width>705</width>
 								<label>$INFO[ListItem.Premiered,, • ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 								<font>Font-Alaska-S25-BL</font>
 								<textcolor>mod-infotags-l</textcolor>
@@ -180,7 +180,7 @@
 							<control type="label">
 								<posx>100</posx>
 								<posy>4</posy>
-								<width>905</width>
+								<width>705</width>
 								<label>20373</label>
 								<font>Font-Alaska-S34-BL</font>
 								<textcolor>mod-infotags</textcolor>
@@ -191,7 +191,7 @@
 							<control type="label">
 								<posx>100</posx>
 								<posy>34</posy>
-								<width>905</width>
+								<width>705</width>
 								<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</label>
 								<font>Font-Alaska-S25-BL</font>
 								<textcolor>mod-infotags-l</textcolor>
@@ -315,7 +315,7 @@
 								<control type="label">
 									<posx>100</posx>
 									<posy>4</posy>
-									<width>905</width>
+									<width>705</width>
 									<label>$INFO[ListItem.Title]</label>
 									<font>Font-Alaska-S34-BL</font>
 									<textcolor>mod-infotags-alt</textcolor>
@@ -326,7 +326,7 @@
 								<control type="label">
 									<posx>100</posx>
 									<posy>34</posy>
-									<width>905</width>
+									<width>705</width>
 									<label>$INFO[ListItem.Premiered,, • ]$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
 									<font>Font-Alaska-S25-BL</font>
 									<textcolor>mod-infotags-alt2</textcolor>
@@ -337,7 +337,7 @@
 								<control type="label">
 									<posx>100</posx>
 									<posy>4</posy>
-									<width>905</width>
+									<width>705</width>
 									<label>20373</label>
 									<font>Font-Alaska-S34-BL</font>
 									<textcolor>mod-infotags-alt</textcolor>
@@ -348,7 +348,7 @@
 								<control type="label">
 									<posx>100</posx>
 									<posy>34</posy>
-									<width>905</width>
+									<width>705</width>
 									<label>$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes),  •  , $LOCALIZE[16101]]</label>
 									<font>Font-Alaska-S25-BL</font>
 									<textcolor>mod-infotags-alt2</textcolor>
