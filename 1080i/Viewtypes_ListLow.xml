@@ -355,14 +355,7 @@
                         <texture>views/posterview/shadow.png</texture>
                         <aspectratio>stretch</aspectratio>
                     </control>
-                     <!-- BORDER -->
-					<control type="image">
-						<posx>0</posx>
-						<posy>110</posy>
-						<width>1894</width>
-						<height>345</height>
-						<texture border="50">arctic/common/banner-35.png</texture>
-					</control>
+
                     <!-- BANNER -->
                     <control type="image">
                         <posx>35</posx>
@@ -609,7 +602,13 @@
 					</control>
                 </control>
 
-               
+                <control type="image">
+                    <posx>40</posx>
+                    <posy>135</posy>
+                    <width>1829</width>
+                    <height>296</height>
+                    <texture border="25">views/newgloss/border-right-no.png</texture>
+                </control>
                 <!-- CD ART -->
                 <control type="image">
                     <posx>45</posx>
