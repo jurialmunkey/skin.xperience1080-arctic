@@ -196,6 +196,14 @@
 								<posy>40</posy>
 								<width>370</width>
 								<height>370</height>
+								<texture diffuse="arctic/osd/370.png" background="true">views/fallbacks/DefaultAlbumCover.png/square-large.png</texture>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+							</control>
+							<control type="image">
+								<posx>30</posx>
+								<posy>40</posy>
+								<width>370</width>
+								<height>370</height>
 								<texture diffuse="arctic/osd/370.png" background="true">$INFO[Player.Art(thumb)]</texture>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<fadetime>250</fadetime>
