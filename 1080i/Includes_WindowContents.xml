@@ -226,7 +226,7 @@
 			<loop>yes</loop>
 			<imagepath background="true">$VAR[Mod_BackgroundSingle]</imagepath>
 			<include>Animation_FanartFade</include>
-			<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(albums) | Container.Content(artists) | Container.Content(songs) | Container.Content(sets)] + ![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
+			<visible>![Skin.HasSetting(BackgroundVideo) + Player.HasVideo]</visible>
 		</control>
     </include>
     
