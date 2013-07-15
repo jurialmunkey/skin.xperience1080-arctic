@@ -334,7 +334,7 @@
 							<font>Font-Episode-Large</font>
 							<textcolor>mod-infotags-alt</textcolor>
 							<scroll>false</scroll>
-							<align>right</align>
+							<align>left</align>
 							<visible>IsEmpty(ListItem.Season) + Container.Content(seasons)</visible>
 						</control>
 						<control type="label">
@@ -345,7 +345,7 @@
 							<font>Font-Episode-Large</font>
 							<textcolor>mod-infotags-alt</textcolor>
 							<scroll>false</scroll>
-							<align>right</align>
+							<align>left</align>
 							<visible>!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),9) + Container.Content(tvshows)</visible>
 						</control>
 						<control type="label">
@@ -356,7 +356,7 @@
 							<font>Font-Episode-Large</font>
 							<textcolor>mod-infotags-alt</textcolor>
 							<scroll>false</scroll>
-							<align>right</align>
+							<align>left</align>
 							<visible>!IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),9) + Container.Content(tvshows)</visible>
 						</control>
 						<control type="label">
@@ -367,7 +367,7 @@
 							<font>Font-Episode-Large</font>
 							<textcolor>mod-infotags-alt</textcolor>
 							<scroll>false</scroll>
-							<align>right</align>
+							<align>left</align>
 							<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),99) + Container.Content(tvshows)</visible>
 						</control>
 						<control type="group">

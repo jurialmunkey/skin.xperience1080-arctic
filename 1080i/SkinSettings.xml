@@ -768,12 +768,21 @@
                         <label>$LOCALIZE[41203]</label>
                     </control>
                     <control type="button" id="3008">
-                        <width>1210</width>
-                        <include>SettingsCategoryDefaultButtonVars</include>
-                        <label>Watched overlay settings</label>
-                        <onclick>ActivateWindow(3052)</onclick>
-                    </control>
-                    
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1210</width>
+						<height>77</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textoffsetx>35</textoffsetx>
+						<font>Font-Condensed-S30-B</font>
+						<include>SettingsCategoryDefaultButtonVars</include>
+						<onclick>Skin.ToggleSetting(overlay.show.banners)</onclick>
+						<onclick condition="Skin.HasSetting(overlay.show.banners)">Skin.SetString(overlay.show.banners.text,Text Banner)</onclick>
+						<onclick condition="!Skin.HasSetting(overlay.show.banners)">Skin.SetString(overlay.show.banners.text,Checkmarks)</onclick>
+						<label>Overlay style</label>
+						<label2>$INFO[Skin.String(overlay.show.banners.text)]</label2>
+					</control>	
                 </control>
                 
                 <!-- UNOFFICIAL SETTINGS -->

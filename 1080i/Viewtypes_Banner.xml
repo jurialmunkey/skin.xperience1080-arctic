@@ -440,11 +440,11 @@
                             <posy>48</posy>
                             <posx>519</posx>
                             <control type="group">
-                            	<posx>702</posx>
-                            	<posy>-27</posy>
+                            	<posx>687</posx>
+                            	<posy>-42</posy>
                             	<control type="image">
-                            		<posx>-21</posx>
-                            		<posy>11</posy>
+                            		<posx>-6</posx>
+                            		<posy>26</posy>
 									<width>75</width>
 									<height>75</height>
 									<aspectratio align="top" aligny="right">keep</aspectratio>
@@ -452,27 +452,19 @@
 									<colordiffuse>eeffffff</colordiffuse>
 								</control>
                             	<control type="image">
-                            		<posx>-20</posx>
-                            		<posy>10</posy>
+                            		<posx>-5</posx>
+                            		<posy>25</posy>
 									<width>75</width>
 									<height>75</height>
 									<aspectratio align="top" aligny="right">keep</aspectratio>
 									<texture  flipx="false" flipy="false">arctic/common/triangle.png</texture>
 									<colordiffuse>ff222222</colordiffuse>
-									<visible>!Skin.HasSetting(banner.dark)</visible>
 								</control>
 								<control type="image">
-									<width>66</width>
-									<height>66</height>
+									<width>100</width>
+									<height>100</height>
 									<aspectratio align="top" aligny="right">keep</aspectratio>
 									<texture>$VAR[BannerOverlayNF]</texture>
-								</control>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio align="top" aligny="right">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-									<include>overlay.diffuse</include>
 								</control>
 							</control>
                             <control type="label">
@@ -619,7 +611,7 @@
                         <control type="group">
 							<posx>1196</posx>
 							<posy>35</posy>
-							<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]] | Container.Content(movies)</visible>
+							<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>-1</posx>
@@ -663,25 +655,16 @@
 								<align>center</align>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 							</control>
-							<control type="group">
-								<visible>Container.Content(movies)</visible>
-								<posy>-4</posy>
-								<posx>8</posx>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio aligny="top" align="center">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-								</control>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio aligny="top" align="center">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-									<include>overlay.diffuse</include>
-								</control>
-							</control>
 						</control>
+						<control type="image">
+							<description>Watched Overlay</description>
+							<posx>35</posx>
+							<posy>35</posy>
+							<width>80</width>
+							<height>80</height>
+							<texture>$VAR[arctic.watched]</texture>
+							<aspectratio aligny="top" align="left">keep</aspectratio>
+						</control>	
 						<control type="image">
 							<posx>35</posx>
 							<posy>206</posy>
@@ -750,7 +733,7 @@
                         <control type="group">
 							<posx>1196</posx>
 							<posy>35</posy>
-							<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]] | Container.Content(movies)</visible>
+							<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 							<control type="image">
 								<description>Panel</description>
 								<posx>-1</posx>
@@ -794,25 +777,16 @@
 								<align>center</align>
 								<visible>[IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(tvshows) | Container.Content(seasons)]]</visible>
 							</control>
-							<control type="group">
-								<visible>Container.Content(movies)</visible>
-								<posy>-4</posy>
-								<posx>8</posx>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio aligny="top" align="center">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-								</control>
-								<control type="image">
-									<width>66</width>
-									<height>66</height>
-									<aspectratio aligny="top" align="center">keep</aspectratio>
-									<texture>$VAR[BannerOverlayNF]</texture>
-									<include>overlay.diffuse</include>
-								</control>
-							</control>
 						</control>
+						<control type="image">
+							<description>Watched Overlay</description>
+							<posx>35</posx>
+							<posy>35</posy>
+							<width>80</width>
+							<height>80</height>
+							<texture>$VAR[arctic.watched]</texture>
+							<aspectratio aligny="top" align="left">keep</aspectratio>
+						</control>	
 						<control type="image">
 							<posx>35</posx>
 							<posy>206</posy>
