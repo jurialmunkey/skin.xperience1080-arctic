@@ -192,7 +192,7 @@
         <control type="button" id="1000">
             <description>button template</description>
             <width>380</width>
-            <textcolor>77white</textcolor>
+            <textcolor>mod-infotags</textcolor>
             <texturefocus border="45,2,45,2">dialogs/context/selection.png</texturefocus>
             <include>ContextMenuButtonVars</include>
         </control>
