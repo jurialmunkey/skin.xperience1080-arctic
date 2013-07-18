@@ -906,6 +906,13 @@
                         <onclick>Skin.ToggleSetting(CDArt.Enabled)</onclick>
                         <label>$LOCALIZE[41107]</label>
                     </control>
+                    <control type="radiobutton" id="8007">
+                        <width>1210</width>
+                        <include>SettingsCategoryRadioButtonVars</include>
+                        <selected>!Skin.HasSetting(ShowOSDPoster)</selected>
+                        <onclick>Skin.ToggleSetting(ShowOSDPoster)</onclick>
+                        <label>Prefer clearlogo for video OSD</label>
+                    </control>
                     <control type="radiobutton" id="8006">
                         <width>1210</width>
                         <include>SettingsCategoryRadioButtonVars</include>

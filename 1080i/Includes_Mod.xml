@@ -2756,6 +2756,14 @@
 			<onclick>SetFocus(83)</onclick>
 			<icon>DefaultAddonService.png</icon>
 		</item>
+		<item id="11">
+			<label>PlayDVD</label>
+			<property name="single">$INFO[Skin.String(HomeHomeSingleImage)]</property>
+			<property name="multi">$INFO[Skin.String(HomeHomeMultiImage)]</property>
+			<onclick>SetFocus(525)</onclick>
+			<onclick>PlayDVD</onclick>
+			<visible>System.HasMediaDVD</visible>
+		</item>
 		<item id="10">
 			<label>Favourites</label>
 			<visible>true</visible>
