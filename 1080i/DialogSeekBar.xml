@@ -247,6 +247,16 @@
                             <posy>832</posy>
                             <visible>VideoPlayer.Content(Movies)</visible>
                             <control type="image">
+                                <posx>65</posx>
+                                <posy>-260</posy>
+                                <width>300</width>
+                                <height>300</height>
+                                <texture background="true">$INFO[Player.Art(discart)]</texture>
+                                <aspectratio scalediffuse="false" align="center">keep</aspectratio>
+                                <visible>Skin.HasSetting(ShowOSDPoster) + Skin.HasSetting(CDArt.Enabled)</visible>
+								<animation effect="rotate" center="auto" reversible="false" start="360" end="0" time="2500" loop="true" condition="Player.Playing">Conditional</animation>
+                            </control>
+                            <control type="image">
                                 <posx>55</posx>
                                 <posy>-120</posy>
                                 <width>320</width>
